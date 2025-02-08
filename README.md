@@ -58,4 +58,12 @@ The only files that you need to host your applet are index.html, index.css image
 To host on Neocities, make a new folder to contain your project (in my [example page](https://cherrvak.neocities.org/furrycreator/index.html), the folder is called "furrycreator"). Place the files index.html, index.css and imagemaker.js in this folder. Then place the folder imagemakerAssets in the same directory, but be careful to preserve the subfolder structure: the Neocities drag-and-drop GUI won't preserve the seperate folders for each part, which will break the code, so you're better off making a folder called imagemakerAssets and dragging-and-dropping in each part folder one-by-one. Then your completed applet will be on the page `https://your-neocities-page.neocities.org/your-folder-name/` (ex: https://cherrvak.neocities.org/furrycreator/)
 
 ## TODO
-- Add item shift button or draggable items?
+
+- Programmable layering
+  - Allows menu order to be different
+- Linked assets
+  - Certain shoes only work with certain feet
+  - Outfits
+- Multi-layer items
+  - IE some hats have front and back part
+- Movable assets

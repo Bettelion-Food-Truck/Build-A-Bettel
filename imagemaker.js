@@ -67,18 +67,87 @@ window.addEventListener('load', function (ev) {
 		const response = await fetch("./parts.json");
 		const json = await response.json();
 		parts = json.parts;
+
+		parts.forEach((element, index) => {
+
+			// TODO Is this necessary? Or should I use the folder as the UID?
+			element.uid = "part_" + index.toString().padStart(3, "0");
+		});
 	}
 
 	/**
 	 * Assign canvases to list of layer canvases
 	 */
 	function initCanvases() {
-		for (let partIdx = 0; partIdx < parts.length; partIdx++) {
-			let cnv = document.createElement('canvas');
-			cnv.height = HEIGHT;
-			cnv.width = WIDTH;
-			layerCanvases.push(cnv);
+
+		// TODO Determine if layers should be inside of the parts array or if they should be their own subobject in parts.json
+
+		const layerSortedParts = parts.toSorted((a, b) => {
+			// Sort by layer if set, otherwise put at end
+			if (a.layer !== undefined && b.layer !== undefined) {
+				return a.layer - b.layer;
+			} else if (a.layer !== undefined) {
+				return -1;
+			} else if (b.layer !== undefined) {
+				return 1;
+			} else {
+				return 0;
+			}
+		});
+
+		// Loop first for set layers
+		for (let i = 0; i < layerSortedParts.length; i++) {
+
+			let layer = layerSortedParts[i].layer;
+			if (layer === undefined) {
+				// unset layer
+				continue;
+			}
+
+			layerCanvases[layer] = initCanvasLayer();
 		}
+
+		// Loop again for unset layers
+		for (let i = 0; i < parts.length; i++) {
+
+			let layer = parts[i].layer;
+			if (layer !== undefined) {
+				// set layer
+				continue;
+			}
+
+			// Add to the top of the stack
+			layer = layerCanvases.length;
+
+			// Update
+			layerSortedParts[i].layer = layer;
+			var foundIndex = parts.findIndex(x => x.uid == layerSortedParts[i].uid);
+			parts[foundIndex].layer = layer;
+
+			// Build layer
+			layerCanvases[layer] = initCanvasLayer();
+		}
+
+		// Make blank layers in case of missing ones
+		for (let i = 0; i < layerCanvases.length; i++) {
+			if (typeof layerCanvases[i] === 'undefined') {
+				layerCanvases[i] = initCanvasLayer();
+			}
+		}
+
+		console.log(parts, layerCanvases.length);
+	}
+
+	/**
+	 * @returns {HTMLCanvasElement} A new canvas element with the dimensions of the main canvas
+	 */
+	function initCanvasLayer() {
+
+		let canvas = document.createElement('canvas');
+		canvas.height = HEIGHT;
+		canvas.width = WIDTH;
+
+		return canvas;
 	}
 
 	/**
@@ -310,22 +379,6 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Create a new Image from a path
-	 *
-	 * @image {string} the path to the Image source .png
-	 */
-	async function newLayer(image) {
-		let myLayer;
-		if (image === null) {
-			myLayer = null;
-		}
-		else {
-			myLayer = await (loadImage(image));
-		}
-		return myLayer;
-	}
-
-	/**
 	 * Force newLayer to wait until an image is fully loaded before assigning it to layerStack
 	 *
 	 * @path {string} the path to the Image source .png
@@ -423,6 +476,8 @@ window.addEventListener('load', function (ev) {
 				".png")
 			;
 		let img = await (loadImage(imgPath));
+
+		// TODO set canvas according to part layer
 		clearCanvas(layerCanvases[partIndex]);
 		ctx = layerCanvases[partIndex].getContext('2d');
 		ctx.drawImage(img, 0, 0);

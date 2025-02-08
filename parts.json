@@ -2,6 +2,7 @@
   "parts": [
     {
       "folder": "body",
+      "layer": 10,
       "items": [
         "default"
       ],
@@ -11,6 +12,7 @@
     },
     {
       "folder": "hands",
+      "layer": 11,
       "items": [
         "normal",
         "corrupted"
@@ -21,6 +23,7 @@
     },
     {
       "folder": "feet",
+      "layer": 9,
       "items": [
         "flat",
         "pointed"
@@ -189,6 +192,7 @@
     },
     {
       "folder": "backgrounds",
+      "layer": 0,
       "items": [
         "remove"
       ],

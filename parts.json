@@ -1,8 +1,33 @@
 {
+  "layers": [
+    "backgrounds",
+    "background-characters",
+    "accessories-rear",
+    "pants-back",
+    "hats-back",
+    "body",
+    "undies",
+    "feet",
+    "expressions",
+    "makeup",
+    "hair",
+    "pants",
+    "shoes",
+    "shirts",
+    "belts",
+    "jackets",
+    "hats",
+    "neck",
+    "hands",
+    "gloves",
+    "accessories",
+    "props",
+    "frames",
+    "filters"
+  ],
   "parts": [
     {
       "folder": "body",
-      "layer": 10,
       "items": [
         "default"
       ],
@@ -12,7 +37,6 @@
     },
     {
       "folder": "hands",
-      "layer": 11,
       "items": [
         "normal",
         "corrupted"
@@ -23,7 +47,6 @@
     },
     {
       "folder": "feet",
-      "layer": 9,
       "items": [
         "flat",
         "pointed"
@@ -134,6 +157,15 @@
       "noneAllowed": true
     },
     {
+      "folder": "accessories-face",
+      "items": [
+        "remove"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
       "folder": "neck",
       "items": [
         "showman-cravat"
@@ -155,7 +187,7 @@
       "noneAllowed": true
     },
     {
-      "folder": "accessories-back",
+      "folder": "accessories-rear",
       "items": [
         "showman-ribbon"
       ],
@@ -192,7 +224,6 @@
     },
     {
       "folder": "backgrounds",
-      "layer": 0,
       "items": [
         "remove"
       ],

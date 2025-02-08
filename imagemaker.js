@@ -34,8 +34,6 @@ window.addEventListener('load', function (ev) {
 	// global state variables
 	/* Is the extra info screen currently visible? */
 	let infoVisible = false;
-	/* Is the palette select menu visible and item select menu invisible? */
-	let paletteVisible = false;
 	/* Index of part whose menu is currently displayed */
 	let selectedPart = 0;
 	/* 1d array of colors where selectedColors[i] is the color selected for part i */
@@ -156,8 +154,8 @@ window.addEventListener('load', function (ev) {
 	function initButtons() {
 		randomButton.addEventListener('click', randomize);
 		infoButton.addEventListener('click', toggleInfo);
-		paletteButton.addEventListener('click', togglePalette);
-		itemsButton.addEventListener('click', toggleItems);
+		paletteButton.addEventListener('click', showPalette);
+		itemsButton.addEventListener('click', showItems);
 		return null;
 	}
 
@@ -218,7 +216,7 @@ window.addEventListener('load', function (ev) {
 			paletteButton.style.display = "inline-flex";
 		}
 		updatePalette();
-		toggleItems();
+		showItems();
 		return null;
 	}
 
@@ -431,8 +429,7 @@ window.addEventListener('load', function (ev) {
 	/**
 	 * Display palette menu, hide item menu
 	 */
-	function togglePalette() {
-		paletteVisible = true;
+	function showPalette() {
 		document.getElementById("imagemaker_colorpalette").style.display = "flex";
 		document.getElementById("imagemaker_itemlist").style.display = "none";
 	}
@@ -440,8 +437,7 @@ window.addEventListener('load', function (ev) {
 	/**
 	 * Display item menu, hide palette menu
 	 */
-	function toggleItems() {
-		paletteVisible = false;
+	function showItems() {
 		document.getElementById("imagemaker_colorpalette").style.display = "none";
 		document.getElementById("imagemaker_itemlist").style.display = "flex";
 	}

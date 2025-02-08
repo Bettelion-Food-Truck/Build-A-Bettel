@@ -1,5 +1,6 @@
 window.addEventListener('load', function (ev) {
 	let parts = [];
+	let layers = [];
 	// code below this line controls functionality
 	// dw about if you're just editing visual assets
 
@@ -65,6 +66,7 @@ window.addEventListener('load', function (ev) {
 		const response = await fetch("./parts.json");
 		const json = await response.json();
 		parts = json.parts;
+		layers = json.layers;
 
 		parts.forEach((element, index) => {
 

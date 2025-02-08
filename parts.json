@@ -1,27 +1,103 @@
-{"parts": [
-    { "folder": "body",
-      "items": ["sleek", "fluffy"],
-      "colorMode": "multiply",
-      "colors": ["FFBD6C", "FFFFFF"],
+{
+  "parts": [
+    {
+      "folder": "body",
+      "items": [
+        "base"
+      ],
+      "colorMode": null,
+      "colors": [],
       "noneAllowed": false
     },
-    { "folder": "ears",
-      "items": ["small", "big"],
-      "colorMode": "manual",
-      "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
+    {
+      "folder": "pants",
+      "items": [
+        "showman-pant-front"
+      ],
+      "colorMode": null,
+      "colors": [],
       "noneAllowed": true
     },
-    { "folder": "tail",
-      "items": ["long", "short"],
-      "colorMode": "fill",
-      "colors": ["FFFFFF", "FFBD6C"],
-      "noneAllowed": false,
-      "moveable": false
+    {
+      "folder": "shirts",
+      "items": [
+        "showman-shirt"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
     },
-    { "folder": "accessories",
-      "items": ["bow", "crown"],
+    {
+      "folder": "shoes",
+      "items": [
+        "showman-shoes"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "jackets",
+      "items": [
+        "showman-jacket"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "belts",
+      "items": [
+        "showman-skeleton-belt"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "gloves",
+      "items": [
+        "showman-gloves"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "hats",
+      "items": [
+        "showman-hat-front"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "neck",
+      "items": [
+        "showman-cravat"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories",
+      "items": [
+        "showman-ribbon"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories-back",
+      "items": [
+        "showman-heart-brooch"
+      ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": true
     }
-]}
+  ]
+}

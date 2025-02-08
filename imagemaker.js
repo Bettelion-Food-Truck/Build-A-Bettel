@@ -1,5 +1,7 @@
 window.addEventListener('load', function (ev) {
 	let parts = [];
+	let layers = [];
+
 	// code below this line controls functionality
 	// dw about if you're just editing visual assets
 
@@ -61,16 +63,11 @@ window.addEventListener('load', function (ev) {
 	/**
 	 * Fetch parts info from parts.json and initialize the parts variable.
 	 */
-	async function initParts(data) {
+	async function initParts() {
 		const response = await fetch("./parts.json");
 		const json = await response.json();
 		parts = json.parts;
-
-		parts.forEach((element, index) => {
-
-			// TODO Is this necessary? Or should I use the folder as the UID?
-			element.uid = "part_" + index.toString().padStart(3, "0");
-		});
+		layers = json.layers;
 	}
 
 	/**
@@ -78,52 +75,25 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initCanvases() {
 
-		// TODO Determine if layers should be inside of the parts array or if they should be their own subobject in parts.json
+		// Create layers noted in parts.json
+		for (let i = 0; i < layers.length; i++) {
 
-		const layerSortedParts = parts.toSorted((a, b) => {
-			// Sort by layer if set, otherwise put at end
-			if (a.layer !== undefined && b.layer !== undefined) {
-				return a.layer - b.layer;
-			} else if (a.layer !== undefined) {
-				return -1;
-			} else if (b.layer !== undefined) {
-				return 1;
-			} else {
-				return 0;
-			}
-		});
-
-		// Loop first for set layers
-		for (let i = 0; i < layerSortedParts.length; i++) {
-
-			let layer = layerSortedParts[i].layer;
-			if (layer === undefined) {
-				// unset layer
-				continue;
-			}
-
-			layerCanvases[layer] = initCanvasLayer();
+			layerCanvases[i] = initCanvasLayer();
 		}
 
-		// Loop again for unset layers
+		// Check each part folder has a layer
 		for (let i = 0; i < parts.length; i++) {
 
-			let layer = parts[i].layer;
-			if (layer !== undefined) {
-				// set layer
+			let layerIndex = layers.indexOf(parts[i].folder);
+
+			if (layerIndex >= 0) {
 				continue;
 			}
 
-			// Add to the top of the stack
-			layer = layerCanvases.length;
-
-			// Update
-			layerSortedParts[i].layer = layer;
-			var foundIndex = parts.findIndex(x => x.uid == layerSortedParts[i].uid);
-			parts[foundIndex].layer = layer;
-
-			// Build layer
-			layerCanvases[layer] = initCanvasLayer();
+			// No layer set, assign to the end
+			layerIndex = layers.length;
+			layers[layerIndex] = parts[i].folder;
+			layerCanvases[layerIndex] = initCanvasLayer();
 		}
 
 		// Make blank layers in case of missing ones
@@ -132,8 +102,6 @@ window.addEventListener('load', function (ev) {
 				layerCanvases[i] = initCanvasLayer();
 			}
 		}
-
-		console.log(parts, layerCanvases.length);
 	}
 
 	/**
@@ -271,15 +239,29 @@ window.addEventListener('load', function (ev) {
 	 * Render Images in layerStack to canvas and update save URL
 	 */
 	async function renderLayerStack() {
+
 		clearCanvas(workingCanvas);
 		let timer = setTimeout(function () { loading.style.display = "block"; }, 500);
-		for (let partId = 0; partId < parts.length; partId++) {
-			clearCanvas(layerCanvases[partId]);
-			if (selectedItemIndex[partId] !== null) {
-				await imageFromIndex(partId, selectedItemIndex[partId], selectedColors[partId]);
+
+		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
+
+			clearCanvas(layerCanvases[layerIndex]);
+
+			// Find parts in layer
+			partList = parts.map((part, i) => part.folder === layers[layerIndex] ? i : undefined).filter(x => x !== undefined);
+
+			// Render each part in current layer
+			for (let partId of partList) {
+
+				if (selectedItemIndex[partId] !== null) {
+					await imageFromIndex(partId, selectedItemIndex[partId], selectedColors[partId]);
+				}
 			}
-			workingContext.drawImage(layerCanvases[partId], 0, 0);
+
+			// Draw layer
+			workingContext.drawImage(layerCanvases[layerIndex], 0, 0);
 		}
+
 		clearCanvas(canvas);
 		clearTimeout(timer);
 		loading.style.display = "none";
@@ -455,7 +437,7 @@ window.addEventListener('load', function (ev) {
 
 	/**
 	 * Render parts[partIndex].items[itemIndex] in color
-	 * parts[partIndex].colors[colorIndex] to layerCanvases[partIndex]
+	 * parts[partIndex].colors[colorIndex] to layerCanvases[layerIndex]
 	 */
 	async function imageFromIndex(partIndex, itemIndex, colorIndex) {
 		let imgPath = (parts[partIndex].colors.length > 0)
@@ -473,9 +455,15 @@ window.addEventListener('load', function (ev) {
 			;
 		let img = await (loadImage(imgPath));
 
-		// TODO set canvas according to part layer
-		clearCanvas(layerCanvases[partIndex]);
-		ctx = layerCanvases[partIndex].getContext('2d');
+		const layerIndex = layers.indexOf(parts[partIndex].folder);
+
+		if (layerIndex < 0) {
+			// Somethings wrong, exit
+			return;
+		}
+
+		clearCanvas(layerCanvases[layerIndex]);
+		ctx = layerCanvases[layerIndex].getContext('2d');
 		ctx.drawImage(img, 0, 0);
 	}
 

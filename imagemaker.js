@@ -249,7 +249,6 @@ window.addEventListener('load', function (ev) {
 
 			// Find parts in layer
 			partList = parts.map((part, i) => part.folder === layers[layerIndex] ? i : undefined).filter(x => x !== undefined);
-			console.log(partList, layers[layerIndex]);
 
 			// Render each part in current layer
 			for (let partId of partList) {

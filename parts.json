@@ -59,7 +59,9 @@
     },
     {
       "folder": "makeup",
-      "items": [],
+      "items": [
+        "remove"
+      ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": false
@@ -159,35 +161,45 @@
     },
     {
       "folder": "props",
-      "items": [],
+      "items": [
+        "remove"
+      ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": false
     },
     {
       "folder": "filters",
-      "items": [],
+      "items": [
+        "remove"
+      ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": false
     },
     {
       "folder": "frames",
-      "items": [],
+      "items": [
+        "remove"
+      ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": false
     },
     {
       "folder": "backgrounds",
-      "items": [],
+      "items": [
+        "remove"
+      ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": false
     },
     {
       "folder": "background-characters",
-      "items": [],
+      "items": [
+        "remove"
+      ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": false

@@ -3,8 +3,63 @@
     {
       "folder": "body",
       "items": [
-        "base"
+        "default"
       ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "hands",
+      "items": [
+        "normal",
+        "corrupted"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "feet",
+      "items": [
+        "flat",
+        "pointed"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "expressions",
+      "items": [
+        "default"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "hair",
+      "items": [
+        "default"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "undies",
+      "items": [
+        "boxers",
+        "briefs"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "makeup",
+      "items": [],
       "colorMode": null,
       "colors": [],
       "noneAllowed": false
@@ -101,6 +156,41 @@
       "colorMode": null,
       "colors": [],
       "noneAllowed": true
+    },
+    {
+      "folder": "props",
+      "items": [],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "filters",
+      "items": [],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "frames",
+      "items": [],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "backgrounds",
+      "items": [],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "background-characters",
+      "items": [],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
     }
   ]
 }

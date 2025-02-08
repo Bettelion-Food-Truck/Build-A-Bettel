@@ -337,18 +337,22 @@ body {
 }
 
 .imagemaker_parts_menu_wrapper {
-    flex: 0 0 70px;
+    flex: 0 0 75px;
     position: relative;
     padding-left: 18.18%;
 }
 
 .imagemaker_parts_menu {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+
+    height: 100%;
     margin: 0;
     white-space: nowrap;
+
     background-color: var(--parts-menu-color, #eee);
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: scrollbar;
 }
 
 .imagemaker_parts_menu ul {

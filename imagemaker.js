@@ -67,6 +67,7 @@ window.addEventListener('load', function (ev) {
 		const response = await fetch("./parts.json");
 		const json = await response.json();
 		parts = json.parts;
+		console.log(parts);
 	}
 
 	/**

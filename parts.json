@@ -86,8 +86,12 @@
       "items": [
         "showman-heart-brooch"
       ],
-      "colorMode": null,
-      "colors": [],
+      "colorMode": "multiply",
+      "colors": [
+        "FFFFFF",
+        "FFBD6C",
+        "BBDE49"
+      ],
       "noneAllowed": true
     },
     {

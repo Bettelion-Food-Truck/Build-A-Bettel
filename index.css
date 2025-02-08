@@ -50,11 +50,11 @@ body {
     .imagemaker_container_wrapper {
 	width: 800px;
     }
-    
+
     .imagemaker_container {
 	flex-direction: row;
     }
-    
+
     .imagemaker_canvas_wrapper {
 	max-height: 100%;
     }
@@ -144,7 +144,7 @@ body {
     .loading {
     font-size: 3vh;
     }
-    
+
     .imagemaker_container_wrapper {
 	width: 95vw;
 	min-height: 95vh;
@@ -204,16 +204,16 @@ body {
     .imagemaker_parts_menu_wrapper {
 	min-height: 10vh;
     }
-    
+
     .imagemaker_parts_menu {
 	height: 100%;
     }
 
-     .imagemaker_parts_menu ul {
+    .imagemaker_parts_menu ul {
 	width: auto;
 	height: 100%;
-     }
-     
+    }
+
     .imagemaker_parts_menu ul li {
 	width: 9vh;
 	height: 9vh;
@@ -253,7 +253,7 @@ body {
 	width: 8vh;
 	height: 8vh;
     }
-    
+
 }
 
 .imagemaker_container_wrapper {
@@ -307,8 +307,8 @@ body {
     position: absolute;
     font-size: 3vh;
     background-color: var(--loading-bg-color, #FFFFFF);
-    //padding: 3px;
-    //bottom: 4px;
+    /* padding: 3px; */
+    /* bottom: 4px; */
 }
 
 .imagemaker_canvas_wrapper canvas {

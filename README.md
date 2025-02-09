@@ -27,6 +27,8 @@ To ensure all items line up correctly when layered, it is suggested to drawn all
 
 All assets are stored in the `assets` folder in different groups. Each group is known as a part. A part could be a shirt, pants, hair, etc. Every asset, once arranged into part folders, is known as an item. Each part folder can have many items.
 
+All files should be in lowercase only. There should be no spaces. If there is a division between works, use a dash.
+
 ### Data structure
 
 The game doesn't know anything about the image assets by itself. It requires the information stored within `assets/data.json`. There are two objects of data within this file: layers and parts.

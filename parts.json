@@ -33,7 +33,8 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": false,
+      "hidePartList": true
     },
     {
       "folder": "hands",

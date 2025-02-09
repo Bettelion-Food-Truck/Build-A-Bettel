@@ -59,8 +59,6 @@ To host on Neocities, make a new folder to contain your project (in my [example 
 
 ## TODO
 
-- Programmable layering
-  - Allows menu order to be different
 - Linked assets
   - Certain shoes only work with certain feet
   - Outfits

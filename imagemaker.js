@@ -57,7 +57,16 @@ window.addEventListener('load', function (ev) {
 		initPalette();
 		await initItemFunctions();
 		await randomize();
-		await updateSelectedPart(0);
+
+		let firstPart = 0;
+		for (let i = 0; i < parts.length; i++) {
+			if (parts[i].hidePartList) {
+				continue;
+			}
+			firstPart = i;
+			break;
+		}
+		await updateSelectedPart(firstPart);
 	}
 
 	/**
@@ -274,15 +283,25 @@ window.addEventListener('load', function (ev) {
 	 * Initialize partsElements
 	 */
 	function initPartsElements() {
+
 		for (let i = 0; i < parts.length; i++) {
+
 			let part = document.createElement('li');
 			let partIcon = document.createElement('img');
+
 			partIcon.src = assetsPath + parts[i].folder + "/icon.png";
 			part.appendChild(partIcon);
+
 			part.id = "part_" + i.toString();
+
+			if (parts[i].hidePartList) {
+				part.style.display = "none";
+			}
+
 			document.getElementById('parts_list').appendChild(part);
 			partsElements[i] = part;
 		}
+
 		return null;
 	}
 

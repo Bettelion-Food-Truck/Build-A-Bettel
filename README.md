@@ -86,6 +86,8 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 
 ## TODO
 
+- Reset button to bring back to blank base
+- Remove randomize from init
 - Linked assets
   - Certain shoes only work with certain feet
   - Outfits

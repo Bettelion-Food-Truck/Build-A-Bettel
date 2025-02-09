@@ -57,6 +57,7 @@ window.addEventListener('load', function (ev) {
 		await initArrays();
 		initPalette();
 		await initItemFunctions();
+
 		await randomize();
 
 		let firstPart = 0;

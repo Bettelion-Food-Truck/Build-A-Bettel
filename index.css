@@ -9,6 +9,8 @@
     /* the color/image filepath of the random button */
     --random-button-color: #ffbd15;
     --random-button-png: "none";
+    /* the color filepath of the parts menu background*/
+    --parts-menu-color: #eee;
     /* the color/image filepath of the items menu background*/
     --control-panel-color: #ccc;
     --control-panel-png: "none";

@@ -13,13 +13,13 @@
     "hair",
     "pants",
     "shoes",
+    "hands",
+    "gloves",
     "shirts",
     "belts",
     "jackets",
     "hats",
     "neck",
-    "hands",
-    "gloves",
     "accessories",
     "props",
     "frames",
@@ -33,7 +33,8 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": false,
+      "hidePartList": true
     },
     {
       "folder": "hands",

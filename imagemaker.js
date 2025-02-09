@@ -57,7 +57,16 @@ window.addEventListener('load', function (ev) {
 		initPalette();
 		await initItemFunctions();
 		await randomize();
-		await updateSelectedPart(0);
+
+		let firstPart = 0;
+		for (let i = 0; i < parts.length; i++) {
+			if (parts[i].hidePartList) {
+				continue;
+			}
+			firstPart = i;
+			break;
+		}
+		await updateSelectedPart(firstPart);
 	}
 
 	/**
@@ -140,8 +149,11 @@ window.addEventListener('load', function (ev) {
 	 * Create color select DOM elements for every part's colors
 	 */
 	function initPalette() {
+
 		for (let i = 0; i < parts.length; i++) {
+
 			for (let j = 0; j < parts[i].colors.length; j++) {
+
 				let colorElement = document.createElement('li');
 				colorElement.style.backgroundColor = "#" + parts[i].colors[j];
 				colorElement.addEventListener('click', function () {
@@ -152,6 +164,7 @@ window.addEventListener('load', function (ev) {
 				document.getElementById("colorpalette_list").appendChild(colorElement);
 			}
 		}
+
 		return null;
 	}
 
@@ -160,31 +173,36 @@ window.addEventListener('load', function (ev) {
 	 * @param {number} partId The id of the selected part
 	 */
 	async function updateSelectedPart(partId) {
+
 		selectedPart = partId;
+
 		for (let i = 0; i < parts.length; i++) {
+
 			if (i == partId) {
 				partsElements[i].classList.add('selected');
-			}
-			else {
+			} else {
 				partsElements[i].classList.remove('selected');;
 			}
+
 			for (let j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
+
 				if (i == partId) {
 					itemsElements[i][j].style.display = "inline-flex";
-				}
-				else {
+				} else {
 					itemsElements[i][j].style.display = "none";
 				}
 			}
 		}
+
 		if (parts[partId].colors.length === 0) {
 			paletteButton.style.display = "none";
-		}
-		else {
+		} else {
 			paletteButton.style.display = "inline-flex";
 		}
+
 		updatePalette();
 		showItems();
+
 		return null;
 	}
 
@@ -192,28 +210,32 @@ window.addEventListener('load', function (ev) {
 	 * Display image with randomly selected items
 	 */
 	async function randomize() {
+
 		for (let i = 0; i < parts.length; i++) {
+
 			let noneCount = Number(parts[i].noneAllowed);
 			let itemRange = parts[i].items.length + noneCount;
 			let itemIndex = Math.floor(Math.random() * itemRange);
 			let colorRange = parts[i].colors.length;
 			let colorIndex = Math.floor(Math.random() * colorRange);
 			selectedColors[i] = colorIndex;
+
 			if (noneCount > 0 && itemIndex === 0) {
 				selectedItemIndex[i] = null;
-			}
-			else {
+			} else {
 				selectedItemIndex[i] = itemIndex - noneCount;
 			}
+
 			for (j = 0; j < itemRange; j++) {
+
 				if (j == itemIndex) {
 					itemsElements[i][j].classList.add("selected");
-				}
-				else {
+				} else {
 					itemsElements[i][j].classList.remove("selected");
 				}
 			}
 		}
+
 		await renderLayerStack();
 		return null;
 	}
@@ -222,10 +244,12 @@ window.addEventListener('load', function (ev) {
 	 * Assign item select callback functions to partsElements and itemsElements members
 	 */
 	async function initItemFunctions() {
+
 		for (let i = 0; i < parts.length; i++) {
 			partsElements[i].addEventListener('click', function () {
 				updateSelectedPart(i);
 			});
+
 			for (let j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
 				itemsElements[i][j].addEventListener('click', function () {
 					updateSelectedItem(i, j);
@@ -274,15 +298,25 @@ window.addEventListener('load', function (ev) {
 	 * Initialize partsElements
 	 */
 	function initPartsElements() {
+
 		for (let i = 0; i < parts.length; i++) {
+
 			let part = document.createElement('li');
 			let partIcon = document.createElement('img');
+
 			partIcon.src = assetsPath + parts[i].folder + "/icon.png";
 			part.appendChild(partIcon);
+
 			part.id = "part_" + i.toString();
+
+			if (parts[i].hidePartList) {
+				part.style.display = "none";
+			}
+
 			document.getElementById('parts_list').appendChild(part);
 			partsElements[i] = part;
 		}
+
 		return null;
 	}
 
@@ -290,13 +324,17 @@ window.addEventListener('load', function (ev) {
 	 * Initialize itemsElements
 	 */
 	function initItemsElements() {
+
 		for (let i = 0; i < parts.length; i++) {
 			itemsElements.push([]);
+
 			for (let j = 0; j < parts[i].items.length; j++) {
 				itemsElements[i].push(null);
 			}
 		}
+
 		for (let i = 0; i < parts.length; i++) {
+
 			if (parts[i].noneAllowed) {
 				let noneButton = document.createElement('li');
 				let noneButtonIcon = document.createElement('img');
@@ -306,6 +344,7 @@ window.addEventListener('load', function (ev) {
 				noneButton.style.display = "none";
 				itemsElements[i][0] = noneButton;
 			}
+
 			for (let j = 0; j < parts[i].items.length; j++) {
 				let item = document.createElement('li');
 				let itemIcon = document.createElement('img');
@@ -320,6 +359,7 @@ window.addEventListener('load', function (ev) {
 				itemsElements[i][j + Number(parts[i].noneAllowed)] = item;
 			}
 		}
+
 		return null;
 	}
 
@@ -331,21 +371,24 @@ window.addEventListener('load', function (ev) {
 	 * Update UI to visibly select a parts[partId].items[itemId] and render it to the canvas
 	 */
 	async function updateSelectedItem(partId, itemId) {
+
 		for (let j = 0; j < (parts[partId].items.length + Number(parts[partId].noneAllowed)); j++) {
+
 			if (j == itemId) {
 				itemsElements[partId][j].classList.add("selected");
-			}
-			else {
+			} else {
 				itemsElements[partId][j].classList.remove("selected");
 			}
 		}
+
 		let selectedNone = (parts[partId].noneAllowed && itemId == 0);
+
 		if (selectedNone) {
 			selectedItemIndex[partId] = null;
-		}
-		else {
+		} else {
 			selectedItemIndex[partId] = itemId - Number(parts[partId].noneAllowed);
 		}
+
 		await renderLayerStack();
 		return null;
 	}
@@ -377,13 +420,14 @@ window.addEventListener('load', function (ev) {
 	 * Display info menu if it's visible, hide it if it's invisible
 	 */
 	function toggleInfo() {
+
 		let infoWrap = document.getElementById("info_wrap");
+
 		if (infoVisible) {
 			infoWrap.style.display = "none";
 			infoVisible = false;
 			infoButton.textContent = "?";
-		}
-		else {
+		} else {
 			infoWrap.style.display = "block";
 			infoVisible = true;
 			infoButton.textContent = "X";
@@ -394,13 +438,15 @@ window.addEventListener('load', function (ev) {
 	 * Display palette of selectedPart
 	 */
 	function updatePalette() {
+
 		for (let i = 0; i < parts.length; i++) {
+
 			for (let j = 0; j < parts[i].colors.length; j++) {
+
 				if (i === selectedPart) {
 					document.getElementById("color_" + i.toString()
 						+ "_" + j.toString()).style.display = "inline-block";
-				}
-				else {
+				} else {
 					document.getElementById("color_" + i.toString()
 						+ "_" + j.toString()).style.display = "none";
 				}
@@ -429,9 +475,11 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function selectColor(partId, colorId) {
 		selectedColors[partId] = colorId;
+
 		if (selectedItemIndex[partId] != null) {
 			await renderLayerStack();
 		}
+
 		return null;
 	}
 

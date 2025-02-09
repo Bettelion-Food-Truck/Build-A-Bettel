@@ -6,7 +6,7 @@ window.addEventListener('load', function (ev) {
 	// dw about if you're just editing visual assets
 
 	/* relative path to the folder containing part folders */
-	const assetsPath = "imagemakerAssets/"
+	const assetsPath = "assets/"
 
 	// DOM Elements
 	const canvas = document.getElementById("my-canvas-object");
@@ -50,7 +50,7 @@ window.addEventListener('load', function (ev) {
 	init();
 
 	async function init() {
-		await initParts();
+		await initData();
 		initButtons();
 		initCanvases()
 		await initArrays();
@@ -70,10 +70,10 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Fetch parts info from parts.json and initialize the parts variable.
+	 * Fetch parts info from data.json and initialize the parts variable.
 	 */
-	async function initParts() {
-		const response = await fetch("./parts.json");
+	async function initData() {
+		const response = await fetch("./data.json");
 		const json = await response.json();
 		parts = json.parts;
 		layers = json.layers;
@@ -84,7 +84,7 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initCanvases() {
 
-		// Create layers noted in parts.json
+		// Create layers noted in data.json
 		for (let i = 0; i < layers.length; i++) {
 
 			layerCanvases[i] = initCanvasLayer();

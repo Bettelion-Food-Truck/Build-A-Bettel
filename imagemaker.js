@@ -6,7 +6,8 @@ window.addEventListener('load', function (ev) {
 	// dw about if you're just editing visual assets
 
 	/* relative path to the folder containing part folders */
-	const assetsPath = "imagemakerAssets/"
+	const ASSET_PATH = "assets/"
+	const UI_ASSETS = "ui_icons/"
 
 	// DOM Elements
 	const canvas = document.getElementById("my-canvas-object");
@@ -50,7 +51,7 @@ window.addEventListener('load', function (ev) {
 	init();
 
 	async function init() {
-		await initParts();
+		await initData();
 		initButtons();
 		initCanvases()
 		await initArrays();
@@ -70,10 +71,10 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Fetch parts info from parts.json and initialize the parts variable.
+	 * Fetch parts info from data.json and initialize the parts variable.
 	 */
-	async function initParts() {
-		const response = await fetch("./parts.json");
+	async function initData() {
+		const response = await fetch(ASSET_PATH + "data.json");
 		const json = await response.json();
 		parts = json.parts;
 		layers = json.layers;
@@ -84,7 +85,7 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initCanvases() {
 
-		// Create layers noted in parts.json
+		// Create layers noted in data.json
 		for (let i = 0; i < layers.length; i++) {
 
 			layerCanvases[i] = initCanvasLayer();
@@ -304,7 +305,7 @@ window.addEventListener('load', function (ev) {
 			let part = document.createElement('li');
 			let partIcon = document.createElement('img');
 
-			partIcon.src = assetsPath + parts[i].folder + "/icon.png";
+			partIcon.src = ASSET_PATH + parts[i].folder + "/icon.png";
 			part.appendChild(partIcon);
 
 			part.id = "part_" + i.toString();
@@ -338,7 +339,7 @@ window.addEventListener('load', function (ev) {
 			if (parts[i].noneAllowed) {
 				let noneButton = document.createElement('li');
 				let noneButtonIcon = document.createElement('img');
-				noneButtonIcon.src = assetsPath + "none_button.svg";
+				noneButtonIcon.src = ASSET_PATH + UI_ASSETS + "none_button.svg";
 				noneButton.appendChild(noneButtonIcon);
 				document.getElementById("itemlist_list").appendChild(noneButton);
 				noneButton.style.display = "none";
@@ -349,7 +350,7 @@ window.addEventListener('load', function (ev) {
 				let item = document.createElement('li');
 				let itemIcon = document.createElement('img');
 				itemIcon.id = "icon_" + i.toString() + "_" + j.toString();
-				itemIcon.src = (assetsPath +
+				itemIcon.src = (ASSET_PATH +
 					parts[i].folder + "/" +
 					parts[i].items[j] + ".png");
 				item.appendChild(itemIcon);
@@ -490,13 +491,13 @@ window.addEventListener('load', function (ev) {
 	async function imageFromIndex(partIndex, itemIndex, colorIndex) {
 		let imgPath = (parts[partIndex].colors.length > 0)
 			?
-			(assetsPath +
+			(ASSET_PATH +
 				parts[partIndex].folder + "/" +
 				parts[partIndex].items[itemIndex] + "_" +
 				parts[partIndex].colors[colorIndex] +
 				".png")
 			:
-			(assetsPath +
+			(ASSET_PATH +
 				parts[partIndex].folder + "/" +
 				parts[partIndex].items[itemIndex] +
 				".png")

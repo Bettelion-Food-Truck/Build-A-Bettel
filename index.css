@@ -9,6 +9,8 @@
     /* the color/image filepath of the random button */
     --random-button-color: #ffbd15;
     --random-button-png: "none";
+    /* the color filepath of the parts menu background*/
+    --parts-menu-color: #eee;
     /* the color/image filepath of the items menu background*/
     --control-panel-color: #ccc;
     --control-panel-png: "none";
@@ -16,16 +18,16 @@
     --item-button-color: #fff;
     /* the color/image filepath of the item menu toggle button */
     --item-toggle-color: #fff;
-    --item-toggle-svg: url("imagemakerAssets/item_toggle.svg");
+    --item-toggle-svg: url("assets/ui_icons/item_toggle.svg");
     /* the color/image filepath of the palette toggle button */
     --palette-toggle-color: #fff;
-    --palette-toggle-svg: url("imagemakerAssets/palette_toggle.svg");
+    --palette-toggle-svg: url("assets/ui_icons/palette_toggle.svg");
     /* the color/image filepath of the info button */
     --info-toggle-color: #fff;
     --info-toggle-png: "none";
     /* the color/image filepath of the info button */
     --move-toggle-color: #fff;
-    --move-toggle-svg: url("imagemakerAssets/move_toggle.svg");
+    --move-toggle-svg: url("assets/ui_icons/move_toggle.svg");
     /* the image filepath of the logo */
     --logo-png: "none";
     --save-button-color: #00b33c;

@@ -1,62 +1,86 @@
+# Bettel Hackrew
+
 ## Info
 
-hackrew is a framework for making character creator/dressup game applets a la [picrew](https://picrew.me/). You can check out an online demo [here](https://ksadov.github.io/hackrew/), or see a more complex version on [Neocities](https://cherrvak.neocities.org/furrycreator/index.html). To make your own character creator, fork this repo or download the files and follow the instructions below.
+Bettel Hackrew is a dress up game focused on Gavis Bettel similar to [picrew](https://picrew.me/). This game is built upon [Hackrew](https://github.com/ksadov/hackrew). To use the image color generator, you will need Python 3 installed. You will also need to run it off a server if you want to use it locally; Python has a good option built in.
 
-## Instructions
+## Developing
 
-### Step 1: start a web server
+### Start a web server
 
-The applet won't run correctly unless it's launched from a server. To launch it from your own machine, cd into the hackrew folder, run `python -m http.server` (you'll need [Python 3 installed on your machine](https://www.python.org/downloads/)) from the command line and navigate to [http://localhost:8000/](http://localhost:8000/) in your browser. Once you're done developing your character creator, you can host it on a remote server, like Neocities or Github Pages.
+This game requires the use of a web server to run. The easiest way to launch it from your own machine is using Python (as the color tool is also built in python).
 
-### Step 2: specify your parts
-The character creator applet's visual components are comprised of "parts" (ex: "body", "ears", "tail", "accessories"), which have varieties called "items" (ex: the items for ears are "small" and "big"). Each item is represented by a .png image with a transparent background. The applet allows the user to create different characters by layering different item .pngs on top of each other.
+- Open the command line
+- CD into the game directory
+- Run the command `python -m http.server`
+- Navigate to [http://localhost:8000/](http://localhost:8000/) in a web browser
 
-Parts are listed in parts.json in the order in which they're rendered: parts near the bottom are visually layered on top of parts near the top. Parts have the following fields:
+Success, it runs.
+
+### Create visual assets
+
+This game uses drawn assets as the different outfit options. Each outfit option, or asset, needs to be a .png file. It also must be the same size as the drawing surface; this game is set to use a size of 1000px by 1000px.
+
+To ensure all items line up correctly when layered, it is suggested to drawn all assets on different layers of the same file. Programs like GIMP or Procreate make this easy. Then when the assets are done, export each layer as a .png with a transparent background.
+
+### File structure
+
+All assets are stored in the `assets` folder in different groups. Each group is known as a part. A part could be a shirt, pants, hair, etc. Every asset, once arranged into part folders, is known as an item. Each part folder can have many items.
+
+### Data structure
+
+The game doesn't know anything about the image assets by itself. It requires the information stored within `assets/data.json`. There are two objects of data within this file: layers and parts.
+
+Layers defines the visual order of the indidual parts. Layers are rendered in order of this array. The first layer is on the bottom and the last layer is on the top.
+
+Parts defines all the individual parts of the character (ie body, ears, shirt, pants, etc). Parts also determines the order of the menu for building the character. Parts at the top of the object are first in the menu.
+
+Parts have the following fields:
 
 - `"folder"`: the name of the folder that will contain the part's visual assets
 - `"items"`: the names of the items belonging to the part
-- `"colorMode"`: Can be `"fill"`, `"multiply"`, `"manual"` or `null`. See Step 3 for details.
+- `"colorMode"`: Can be `"fill"`, `"multiply"`, `"manual"` or `null`. See the next section, item variants, for details.
 - `"colors"`: 6-character strings containing the the hexcodes of colors.
 - `"noneAllowed"`: `true` if this part is optional, false otherwise
 - `"hidePartList"`: `true` to remove the category from the part list. This is used if there is only one option for a body.
 
 Ex:
 ```
-{ "folder": "ears",
-      "items": ["small", "big"],
-      "colorMode": "manual",
-      "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
-      "noneAllowed": true
-    }
+{
+  "folder": "ears",
+  "items": ["small", "big"],
+  "colorMode": "manual",
+  "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
+  "noneAllowed": true,
+  "hidePartList": false
+}
 ```
-### Step 3: create visual assets
 
-All item .png files must have the same dimensions as the canvas; this is currently set to 1000px x 1000px. To ensure that the items line up correctly when layered, I recommend drawing items on different layers of the same file in a digital art program like Gimp or Procreate, then saving each layer seperately as a .png.
+### Item variants
 
-Each part can come in multiple colors (ex: ears can be white, orange or green). For every part `part` and item `item`, the folder `imagemakerAssets/part` must contain a file named `item.png`. This file will represent the part in the part select menu. If the part has no color options, this file will also be used as an image for the character creator.
+In addition to each part having multiple variantions of items, the items themselves can come in multiple colors. Above we mention `"colorMode"` and `"colors"`. These indicate additional variations of each item. If a part has color options, then the `"colorMode"` field determines whether the item files for each color are manually or automatically generated.
 
-If a part has color options, then the `"colorMode"` field determines whether the item files for each color are  manually or automatically generated.
+To manually create color variants for each item of a part, set `"colorMode`" to `"manual"` and for each item and each color of hexcode `"XXXXXX"`, create a .png `assets/part/item_XXXXXX.png` depicting item in color `XXXXXX`.
 
-To manually create color variants for each item of a part `part`, set `"colorMode`" to `"manual"` and for each item `item` and each color of hexcode `"XXXXXX"`, create a .png `imagemakerAssets/part/item_XXXXXX.png` depicting `item` in color `XXXXXX`.
+To generate color variants automatically, you'll need to run the Python script `generate_colored_images.py`. The script uses files of the form `"assets/part/item.png`" as templates to generate colored versions of each item. If a part has `"colorMode"` `"fill"`, the script fills the template's pixels of RGB value `(123, 123, 123)` with the desired color, preserving alpha. If a part has `"colorMode"` `"multiply"`, the script treats the template as an alpha-preserving multiply layer over the desired color.
 
-To generate color variants automatically, you'll need to run the Python script `generate_colored_images.py`. The script uses files of the form `"imagemakerAssets/part/item.png`" as templates to generate colored versions of each item. If a part has `"colorMode"` `"fill"`, the script fills the template's pixels of RGB value `(123, 123, 123)` with the desired color, preserving alpha. If a part has `"colorMode"` `"multiply"`, the script treats the template as an alpha-preserving multiply layer over the desired color.
-
-To run the Python script, you'll need [pipenv](https://pypi.org/project/pipenv/) installed and on your $PATH. Then from within the hackrew directory:
-```
-pipenv install
-pipenv run python3 generate_colored_images.py
+You will need to install the python module `PIL` on your system first. Once that is installed, run the command below from the root directory of this game in a terminal.
 
 ```
-The script will take a while to run, but at the end you'll have your color variant image files in the correct folders.
+python generate_colored_images.py
+```
 
-### Step 4: edit the UI
-To change the colors and graphics of the UI, edit the variables at the top of index.css.
+The script might take a while to run, but at the end you'll have your color variant image files in the correct folders.
 
-### Step 5: host your applet
+### Edit the UI
 
-The only files that you need to host your applet are index.html, index.css imagemaker.js, and the imagemakerAssets folder. To host on Github pages, fork this repo, customize the files, and follow the intrucutions [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+Easy UI changes can be done by editing index.css; specifically the variables allow for easy updates to colors and images.
 
-To host on Neocities, make a new folder to contain your project (in my [example page](https://cherrvak.neocities.org/furrycreator/index.html), the folder is called "furrycreator"). Place the files index.html, index.css and imagemaker.js in this folder. Then place the folder imagemakerAssets in the same directory, but be careful to preserve the subfolder structure: the Neocities drag-and-drop GUI won't preserve the seperate folders for each part, which will break the code, so you're better off making a folder called imagemakerAssets and dragging-and-dropping in each part folder one-by-one. Then your completed applet will be on the page `https://your-neocities-page.neocities.org/your-folder-name/` (ex: https://cherrvak.neocities.org/furrycreator/)
+## Deploying
+
+Hosting the game is simple. You only need index.html, index.css, imagemaker.js, and the assets folder. Upload these files and the folder to your webhost and all is done. Ensure the file structure remains intact
+
+Hosting on GitHub Pages is even easier, just fork this project, customize as needed, then follow the the intrucutions [about creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
 ## TODO
 
@@ -67,3 +91,4 @@ To host on Neocities, make a new folder to contain your project (in my [example 
   - IE some hats have front and back part
 - Movable assets
 - Preview image for asset
+- Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator

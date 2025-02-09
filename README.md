@@ -18,6 +18,7 @@ Parts are listed in parts.json in the order in which they're rendered: parts nea
 - `"colorMode"`: Can be `"fill"`, `"multiply"`, `"manual"` or `null`. See Step 3 for details.
 - `"colors"`: 6-character strings containing the the hexcodes of colors.
 - `"noneAllowed"`: `true` if this part is optional, false otherwise
+- `"hidePartList"`: `true` to remove the category from the part list. This is used if there is only one option for a body.
 
 Ex:
 ```
@@ -30,7 +31,7 @@ Ex:
 ```
 ### Step 3: create visual assets
 
-All item .png files must have the same dimensions. To ensure that the items line up correctly when layered, I recommend drawing items on different layers of the same file in a digital art program like Gimp or Procreate, then saving each layer seperately as a .png.
+All item .png files must have the same dimensions as the canvas; this is currently set to 1000px x 1000px. To ensure that the items line up correctly when layered, I recommend drawing items on different layers of the same file in a digital art program like Gimp or Procreate, then saving each layer seperately as a .png.
 
 Each part can come in multiple colors (ex: ears can be white, orange or green). For every part `part` and item `item`, the folder `imagemakerAssets/part` must contain a file named `item.png`. This file will represent the part in the part select menu. If the part has no color options, this file will also be used as an image for the character creator.
 
@@ -65,3 +66,4 @@ To host on Neocities, make a new folder to contain your project (in my [example 
 - Multi-layer items
   - IE some hats have front and back part
 - Movable assets
+- Preview image for asset

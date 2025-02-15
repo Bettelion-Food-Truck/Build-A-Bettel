@@ -25,6 +25,10 @@
     "frames",
     "filters"
   ],
+  "sets": [
+    "showman",
+    "bettelgoose"
+  ],
   "parts": [
     {
       "folder": "body",

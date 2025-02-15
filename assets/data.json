@@ -3,8 +3,8 @@
     "backgrounds",
     "background-characters",
     "accessories-rear",
-    "pants-back",
-    "hats-back",
+    "pants_back",
+    "hats_back",
     "body",
     "undies",
     "feet",
@@ -101,7 +101,17 @@
     {
       "folder": "pants",
       "items": [
-        "showman-pant-front",
+        {
+          "item": "showman-pant-front",
+          "multilayer": [
+            {
+              "item": "showman-pant-back",
+              "layer": "pants_back"
+            }
+          ],
+          "set": "showman",
+          "requires": {}
+        },
         "bettelgoose-pants"
       ],
       "colorMode": null,

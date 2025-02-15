@@ -266,9 +266,12 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function renderLayerStack() {
 
+		// TODO Perform complex item checks for requirements
+
 		clearCanvas(workingCanvas);
 		let timer = setTimeout(function () { loading.style.display = "block"; }, 500);
 
+		// Render layers
 		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
 			clearCanvas(layerCanvases[layerIndex]);
@@ -280,11 +283,13 @@ window.addEventListener('load', function (ev) {
 			for (let partId of partList) {
 
 				if (selectedItemIndex[partId] !== null) {
-					await imageFromIndex(partId, selectedItemIndex[partId], selectedColors[partId]);
+					await renderItemToCanvas(partId, selectedItemIndex[partId], selectedColors[partId]);
 				}
 			}
+		}
 
-			// Draw layer
+		// Draw layers
+		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 			workingContext.drawImage(layerCanvases[layerIndex], 0, 0);
 		}
 
@@ -348,16 +353,24 @@ window.addEventListener('load', function (ev) {
 			}
 
 			for (let j = 0; j < parts[i].items.length; j++) {
+
 				let item = document.createElement('li');
 				let itemIcon = document.createElement('img');
+				let itemName = parts[i].items[j];
+				if (typeof itemName !== "string") {
+					itemName = itemName.item;
+				}
+
 				itemIcon.id = "icon_" + i.toString() + "_" + j.toString();
 				itemIcon.src = (ASSET_PATH +
 					parts[i].folder + "/" +
-					parts[i].items[j] + ".png");
+					itemName + ".png");
 				item.appendChild(itemIcon);
 				item.id = "item_" + i.toString() + "_" + j.toString();
 				item.style.display = "none";
+
 				document.getElementById("itemlist_list").appendChild(item);
+
 				itemsElements[i][j + Number(parts[i].noneAllowed)] = item;
 			}
 		}
@@ -486,34 +499,63 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Render parts[partIndex].items[itemIndex] in color
-	 * parts[partIndex].colors[colorIndex] to layerCanvases[layerIndex]
+	 * Render parts[partIndex].items[itemIndex] (with variants + options) to layerCanvases[layerIndex]
 	 */
-	async function imageFromIndex(partIndex, itemIndex, colorIndex) {
-		let imgPath = (parts[partIndex].colors.length > 0)
-			?
-			(ASSET_PATH +
-				parts[partIndex].folder + "/" +
-				parts[partIndex].items[itemIndex] + "_" +
-				parts[partIndex].colors[colorIndex] +
-				".png")
-			:
-			(ASSET_PATH +
-				parts[partIndex].folder + "/" +
-				parts[partIndex].items[itemIndex] +
-				".png")
-			;
-		let img = await (loadImage(imgPath));
+	async function renderItemToCanvas(partIndex, itemIndex, colorIndex) {
 
-		const layerIndex = layers.indexOf(parts[partIndex].folder);
+		const partLocation = ASSET_PATH + parts[partIndex].folder;
+		const item = parts[partIndex].items[itemIndex];
+
+		// Set color variant item
+		const color = (parts[partIndex].colors.length > 0) ?
+			"_" + parts[partIndex].colors[colorIndex]
+			:
+			"";
+
+		if (typeof item === "string") {
+			// Simple item
+
+			const imgPath = partLocation + "/" + item + color + ".png";
+			const layerIndex = layers.indexOf(parts[partIndex].folder);
+
+			await (renderImage(imgPath, layerIndex));
+		} else {
+			// Complex item
+
+			// Render the base layer
+			const imgPath = partLocation + "/" + item.item + color + ".png";
+			const layerIndex = layers.indexOf(parts[partIndex].folder);
+
+			await (renderImage(imgPath, layerIndex));
+
+			// Render additional layers
+			if (item.multilayer) {
+
+				for (let i = 0; i < item.multilayer.length; i++) {
+
+					const addImgPath = partLocation + "/" + item.multilayer[i].item + color + ".png";
+					const addLayerIndex = layers.indexOf(item.multilayer[i].layer);
+
+					await (renderImage(addImgPath, addLayerIndex));
+				}
+			}
+		}
+	}
+
+	async function renderImage(imgPath, layerIndex) {
 
 		if (layerIndex < 0) {
 			// Somethings wrong, exit
 			return;
 		}
 
+		console.log(imgPath, layerIndex);
+		console.log(layerCanvases[layerIndex]);
+
+		let img = await (loadImage(imgPath));
+
 		clearCanvas(layerCanvases[layerIndex]);
-		ctx = layerCanvases[layerIndex].getContext('2d');
+		let ctx = layerCanvases[layerIndex].getContext('2d');
 		ctx.drawImage(img, 0, 0);
 	}
 

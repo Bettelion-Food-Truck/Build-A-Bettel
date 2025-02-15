@@ -549,9 +549,6 @@ window.addEventListener('load', function (ev) {
 			return;
 		}
 
-		console.log(imgPath, layerIndex);
-		console.log(layerCanvases[layerIndex]);
-
 		let img = await (loadImage(imgPath));
 
 		clearCanvas(layerCanvases[layerIndex]);

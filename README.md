@@ -96,3 +96,4 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 - Movable assets
 - Preview image for asset
 - Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator
+- Update generate_colored_images.py to match new file and data structures

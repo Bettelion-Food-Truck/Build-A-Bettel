@@ -97,3 +97,4 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 - Preview image for asset
 - Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator
 - Update generate_colored_images.py to match new file and data structures
+- See if there's a way to batch async for faster response time on multi-layer items or item sets

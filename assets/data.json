@@ -167,7 +167,17 @@
     {
       "folder": "hats",
       "items": [
-        "showman-hat-front"
+        {
+          "item": "showman-hat-front",
+          "multilayer": [
+            {
+              "item": "showman-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "set": "showman",
+          "requires": {}
+        }
       ],
       "colorMode": null,
       "colors": [],

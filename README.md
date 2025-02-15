@@ -27,6 +27,8 @@ To ensure all items line up correctly when layered, it is suggested to drawn all
 
 All assets are stored in the `assets` folder in different groups. Each group is known as a part. A part could be a shirt, pants, hair, etc. Every asset, once arranged into part folders, is known as an item. Each part folder can have many items.
 
+All files should be in lowercase only. There should be no spaces. If there is a division between works, use a dash.
+
 ### Data structure
 
 The game doesn't know anything about the image assets by itself. It requires the information stored within `assets/data.json`. There are two objects of data within this file: layers and parts.
@@ -84,11 +86,13 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 
 ## TODO
 
+- Reset button to bring back to blank base
+- Remove randomize from init
 - Linked assets
   - Certain shoes only work with certain feet
   - Outfits
-- Multi-layer items
-  - IE some hats have front and back part
 - Movable assets
 - Preview image for asset
 - Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator
+- Update generate_colored_images.py to match new file and data structures
+- See if there's a way to batch async for faster response time on multi-layer items or item sets

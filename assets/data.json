@@ -3,16 +3,16 @@
     "backgrounds",
     "background-characters",
     "accessories-rear",
-    "pants-back",
-    "hats-back",
+    "pants_back",
+    "hats_back",
     "body",
     "undies",
     "feet",
     "expressions",
     "makeup",
     "hair",
-    "pants",
     "shoes",
+    "pants",
     "hands",
     "gloves",
     "shirts",
@@ -24,6 +24,10 @@
     "props",
     "frames",
     "filters"
+  ],
+  "sets": [
+    "showman",
+    "bettelgoose"
   ],
   "parts": [
     {
@@ -97,7 +101,18 @@
     {
       "folder": "pants",
       "items": [
-        "showman-pant-front"
+        {
+          "item": "showman-pant-front",
+          "multilayer": [
+            {
+              "item": "showman-pant-back",
+              "layer": "pants_back"
+            }
+          ],
+          "set": "showman",
+          "requires": {}
+        },
+        "bettelgoose-pants"
       ],
       "colorMode": null,
       "colors": [],
@@ -106,7 +121,8 @@
     {
       "folder": "shirts",
       "items": [
-        "showman-shirt"
+        "showman-shirt",
+        "bettelgoose"
       ],
       "colorMode": null,
       "colors": [],
@@ -151,7 +167,17 @@
     {
       "folder": "hats",
       "items": [
-        "showman-hat-front"
+        {
+          "item": "showman-hat-front",
+          "multilayer": [
+            {
+              "item": "showman-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "set": "showman",
+          "requires": {}
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -203,7 +229,7 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     },
     {
       "folder": "filters",
@@ -212,7 +238,7 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     },
     {
       "folder": "frames",
@@ -221,16 +247,16 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     },
     {
       "folder": "backgrounds",
       "items": [
-        "remove"
+        "pink-diamonds"
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     },
     {
       "folder": "background-characters",
@@ -239,7 +265,7 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     }
   ]
 }

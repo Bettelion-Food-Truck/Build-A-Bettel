@@ -91,8 +91,6 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 - Linked assets
   - Certain shoes only work with certain feet
   - Outfits
-- Multi-layer items
-  - IE some hats have front and back part
 - Movable assets
 - Preview image for asset
 - Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator

@@ -112,8 +112,7 @@
               "layer": "pants_back"
             }
           ],
-          "set": "showman",
-          "requires": {}
+          "set": "showman"
         },
         {
           "item": "bettelgoose-pants",
@@ -203,8 +202,7 @@
               "layer": "hats_back"
             }
           ],
-          "set": "showman",
-          "requires": {}
+          "set": "showman"
         }
       ],
       "colorMode": null,

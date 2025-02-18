@@ -266,7 +266,7 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function renderLayerStack() {
 
-		// TODO Perform complex item checks for requirements
+		loading.style.display = "block";
 
 		clearCanvas(workingCanvas);
 		let timer = setTimeout(function () { loading.style.display = "block"; }, 500);
@@ -276,10 +276,10 @@ window.addEventListener('load', function (ev) {
 
 			clearCanvas(layerCanvases[layerIndex]);
 
-			// Find parts in layer
+			// Find parts that belong in layer
 			partList = parts.map((part, i) => part.folder === layers[layerIndex] ? i : undefined).filter(x => x !== undefined);
 
-			// Render each part in current layer
+			// Render each part in current layer (Usually O=1)
 			for (let partId of partList) {
 
 				if (selectedItemIndex[partId] !== null) {

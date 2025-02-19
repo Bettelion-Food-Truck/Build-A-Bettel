@@ -52,10 +52,14 @@ window.addEventListener('load', function (ev) {
 
 	async function init() {
 		await initData();
+
 		initButtons();
 		initCanvases()
-		await initArrays();
+
+		await initPartsElements();
+		await initItemsElements();
 		initPalette();
+
 		await initItemFunctions();
 
 		await randomize();
@@ -77,8 +81,22 @@ window.addEventListener('load', function (ev) {
 	async function initData() {
 		const response = await fetch(ASSET_PATH + "data.json");
 		const json = await response.json();
+
 		parts = json.parts;
-		layers = json.layers;
+
+		// Build layer data to know which part is associated
+		rawLayers = json.layers;
+		layers = []
+
+		for (let layerIndex = 0; layerIndex < rawLayers.length; layerIndex++) {
+
+			partList = parts.map((part, i) => part.folder === rawLayers[layerIndex] ? i : undefined).filter(x => x !== undefined);
+
+			layers[layerIndex] = {
+				"layer": rawLayers[layerIndex],
+				"partId": partList[0]
+			}
+		}
 	}
 
 	/**
@@ -95,15 +113,16 @@ window.addEventListener('load', function (ev) {
 		// Check each part folder has a layer
 		for (let i = 0; i < parts.length; i++) {
 
-			let layerIndex = layers.indexOf(parts[i].folder);
-
-			if (layerIndex >= 0) {
+			if (layers.filter(x => x.layer === parts[i].folder).length > 0) {
 				continue;
 			}
 
 			// No layer set, assign to the end
-			layerIndex = layers.length;
-			layers[layerIndex] = parts[i].folder;
+			let layerIndex = layers.length;
+			layers[layerIndex] = {
+				"layer": parts[i].folder,
+				"partId": i
+			};
 			layerCanvases[layerIndex] = initCanvasLayer();
 		}
 
@@ -135,15 +154,6 @@ window.addEventListener('load', function (ev) {
 		infoButton.addEventListener('click', toggleInfo);
 		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
-		return null;
-	}
-
-	/**
-	 * Initialize partsElements, itemsElements
-	 */
-	async function initArrays() {
-		initPartsElements();
-		initItemsElements();
 		return null;
 	}
 
@@ -266,25 +276,20 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function renderLayerStack() {
 
-		// TODO Perform complex item checks for requirements
-
 		clearCanvas(workingCanvas);
 		let timer = setTimeout(function () { loading.style.display = "block"; }, 500);
+
+		checkPartRequirements();
 
 		// Render layers
 		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
 			clearCanvas(layerCanvases[layerIndex]);
 
-			// Find parts in layer
-			partList = parts.map((part, i) => part.folder === layers[layerIndex] ? i : undefined).filter(x => x !== undefined);
+			const partId = layers[layerIndex].partId;
 
-			// Render each part in current layer
-			for (let partId of partList) {
-
-				if (selectedItemIndex[partId] !== null) {
-					await renderItemToCanvas(partId, selectedItemIndex[partId], selectedColors[partId]);
-				}
+			if (selectedItemIndex[partId] !== null && selectedItemIndex[partId] !== undefined) {
+				await renderItemToCanvas(layerIndex, partId, selectedItemIndex[partId], selectedColors[partId]);
 			}
 		}
 
@@ -387,6 +392,16 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function updateSelectedItem(partId, itemId) {
 
+		markSelectedItem(partId, itemId);
+		await renderLayerStack();
+		return null;
+	}
+
+	/**
+	 * Update UI to visibly select a parts[partId].items[itemId]
+	 */
+	async function markSelectedItem(partId, itemId) {
+
 		for (let j = 0; j < (parts[partId].items.length + Number(parts[partId].noneAllowed)); j++) {
 
 			if (j == itemId) {
@@ -403,9 +418,6 @@ window.addEventListener('load', function (ev) {
 		} else {
 			selectedItemIndex[partId] = itemId - Number(parts[partId].noneAllowed);
 		}
-
-		await renderLayerStack();
-		return null;
 	}
 
 	/**
@@ -499,9 +511,62 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
+	 * Checks current selections for incompatible parts
+	 */
+	function checkPartRequirements() {
+
+		// Check for part requirements
+		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
+
+			const partId = layers[layerIndex].partId;
+
+			if (selectedItemIndex[partId] !== null && selectedItemIndex[partId] !== undefined) {
+
+				const itemIndex = selectedItemIndex[partId];
+				const item = parts[partId].items[itemIndex];
+
+				if (typeof item !== "string" && item.requires) {
+					// Complex item with a requirement
+
+					// Locate part
+					for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
+
+						if (parts[neededPartIndex].folder === item.requires.part) {
+
+							const part = parts[neededPartIndex];
+
+							// Locate the item
+							for (let neededItemIndex = 0; neededItemIndex < part.items.length; neededItemIndex++) {
+
+								let itemName = part.items[neededItemIndex];
+								if (typeof itemName !== "string") {
+									itemName = itemName.item;
+								}
+
+								if (itemName === item.requires.item) {
+
+									// Select the item
+									markSelectedItem(
+										neededPartIndex,
+										neededItemIndex + (part.noneAllowed ? 1 : 0)
+									);
+									break;
+								}
+
+								// TODO Need to indicate incompatible options
+							}
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
 	 * Render parts[partIndex].items[itemIndex] (with variants + options) to layerCanvases[layerIndex]
 	 */
-	async function renderItemToCanvas(partIndex, itemIndex, colorIndex) {
+	async function renderItemToCanvas(layerIndex, partIndex, itemIndex, colorIndex) {
 
 		const partLocation = ASSET_PATH + parts[partIndex].folder;
 		const item = parts[partIndex].items[itemIndex];
@@ -516,7 +581,6 @@ window.addEventListener('load', function (ev) {
 			// Simple item
 
 			const imgPath = partLocation + "/" + item + color + ".png";
-			const layerIndex = layers.indexOf(parts[partIndex].folder);
 
 			await (renderImage(imgPath, layerIndex));
 		} else {
@@ -524,7 +588,6 @@ window.addEventListener('load', function (ev) {
 
 			// Render the base layer
 			const imgPath = partLocation + "/" + item.item + color + ".png";
-			const layerIndex = layers.indexOf(parts[partIndex].folder);
 
 			await (renderImage(imgPath, layerIndex));
 

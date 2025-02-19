@@ -10,6 +10,7 @@
     "feet",
     "expressions",
     "makeup",
+    "accessories-face",
     "hair",
     "shoes",
     "pants",
@@ -82,7 +83,10 @@
       "folder": "undies",
       "items": [
         "boxers",
-        "briefs",
+        {
+          "item": "briefs",
+          "set": "showman"
+        },
         "leaf"
       ],
       "colorMode": null,
@@ -109,10 +113,12 @@
               "layer": "pants_back"
             }
           ],
-          "set": "showman",
-          "requires": {}
+          "set": "showman"
         },
-        "bettelgoose-pants"
+        {
+          "item": "bettelgoose-pants",
+          "set": "bettelgoose"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -121,8 +127,14 @@
     {
       "folder": "shirts",
       "items": [
-        "showman-shirt",
-        "bettelgoose"
+        {
+          "item": "showman-shirt",
+          "set": "showman"
+        },
+        {
+          "item": "bettelgoose",
+          "set": "bettelgoose"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -131,7 +143,14 @@
     {
       "folder": "shoes",
       "items": [
-        "showman-shoes"
+        {
+          "item": "showman-shoes",
+          "set": "showman",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -140,7 +159,10 @@
     {
       "folder": "jackets",
       "items": [
-        "showman-jacket"
+        {
+          "item": "showman-jacket",
+          "set": "showman"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -149,7 +171,10 @@
     {
       "folder": "belts",
       "items": [
-        "showman-skeleton-belt"
+        {
+          "item": "showman-skeleton-belt",
+          "set": "showman"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -158,7 +183,10 @@
     {
       "folder": "gloves",
       "items": [
-        "showman-gloves"
+        {
+          "item": "showman-gloves",
+          "set": "showman"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -175,8 +203,7 @@
               "layer": "hats_back"
             }
           ],
-          "set": "showman",
-          "requires": {}
+          "set": "showman"
         }
       ],
       "colorMode": null,
@@ -195,7 +222,10 @@
     {
       "folder": "neck",
       "items": [
-        "showman-cravat"
+        {
+          "item": "showman-cravat",
+          "set": "showman"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -204,7 +234,10 @@
     {
       "folder": "accessories",
       "items": [
-        "showman-heart-brooch"
+        {
+          "item": "showman-heart-brooch",
+          "set": "showman"
+        }
       ],
       "colorMode": "multiply",
       "colors": [
@@ -216,7 +249,10 @@
     {
       "folder": "accessories-rear",
       "items": [
-        "showman-ribbon"
+        {
+          "item": "showman-ribbon",
+          "set": "showman"
+        }
       ],
       "colorMode": null,
       "colors": [],

@@ -52,10 +52,14 @@ window.addEventListener('load', function (ev) {
 
 	async function init() {
 		await initData();
+
 		initButtons();
 		initCanvases()
-		await initArrays();
+
+		await initPartsElements();
+		await initItemsElements();
 		initPalette();
+
 		await initItemFunctions();
 
 		await randomize();
@@ -150,15 +154,6 @@ window.addEventListener('load', function (ev) {
 		infoButton.addEventListener('click', toggleInfo);
 		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
-		return null;
-	}
-
-	/**
-	 * Initialize partsElements, itemsElements
-	 */
-	async function initArrays() {
-		initPartsElements();
-		initItemsElements();
 		return null;
 	}
 
@@ -284,14 +279,14 @@ window.addEventListener('load', function (ev) {
 		clearCanvas(workingCanvas);
 		let timer = setTimeout(function () { loading.style.display = "block"; }, 500);
 
-		// Check for layer requirements
+		checkPartRequirements();
 
 		// Render layers
 		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
 			clearCanvas(layerCanvases[layerIndex]);
 
-			const partId = layers[layerIndex]["partId"];
+			const partId = layers[layerIndex].partId;
 
 			if (selectedItemIndex[partId] !== null && selectedItemIndex[partId] !== undefined) {
 				await renderItemToCanvas(layerIndex, partId, selectedItemIndex[partId], selectedColors[partId]);
@@ -513,6 +508,59 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Checks current selections for incompatible parts
+	 */
+	function checkPartRequirements() {
+
+		// Check for part requirements
+		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
+
+			const partId = layers[layerIndex].partId;
+
+			if (selectedItemIndex[partId] !== null && selectedItemIndex[partId] !== undefined) {
+
+				const itemIndex = selectedItemIndex[partId];
+				const item = parts[partId].items[itemIndex];
+
+				if (typeof item !== "string" && item.requires) {
+					// Complex item with a requirement
+
+					// Locate part
+					for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
+
+						if (parts[neededPartIndex].folder === item.requires.part) {
+
+							const part = parts[neededPartIndex];
+
+							// Locate the item
+							for (let neededItemIndex = 0; neededItemIndex < part.items.length; neededItemIndex++) {
+
+								let itemName = part.items[neededItemIndex];
+								if (typeof itemName !== "string") {
+									itemName = itemName.item;
+								}
+
+								if (itemName === item.requires.item) {
+
+									// Select the item
+									markSelectedItem(
+										neededPartIndex,
+										neededItemIndex + (part.noneAllowed ? 1 : 0)
+									);
+									break;
+								}
+
+								// TODO Need to indicate incompatible options
+							}
+							break;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	/**

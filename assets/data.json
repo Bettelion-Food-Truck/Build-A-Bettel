@@ -147,8 +147,8 @@
           "item": "showman-shoes",
           "set": "showman",
           "requires": {
-            "layer": "feet",
-            "item": "flat"
+            "part": "feet",
+            "item": "pointed"
           }
         }
       ],

@@ -310,7 +310,6 @@ window.addEventListener('load', function (ev) {
 		loading.style.display = "none";
 		context.drawImage(workingCanvas, 0, 0);
 		await updateSave();
-		return null;
 	}
 
 	/**
@@ -333,15 +332,21 @@ window.addEventListener('load', function (ev) {
 
 			part.id = "part_" + i.toString();
 
-			if (parts[i].hidePartList) {
+			// Hide if commanded or only one option with no variants
+			if (
+				parts[i].hidePartList || (
+					parts[i].items.length <= 1 &&
+					!parts[i].noneAllowed && (
+						!parts[i].colors || parts[i].colors.length === 0
+					)
+				)
+			) {
 				part.style.display = "none";
 			}
 
 			document.getElementById('parts_list').appendChild(part);
 			partsElements[i] = part;
 		}
-
-		return null;
 	}
 
 	/**

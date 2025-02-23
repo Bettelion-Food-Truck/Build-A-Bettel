@@ -79,7 +79,7 @@ window.addEventListener('load', function (ev) {
 	 * Fetch parts info from data.json and initialize the parts variable.
 	 */
 	async function initData() {
-		const response = await fetch(ASSET_PATH + "data.json");
+		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
 
 		parts = json.parts;

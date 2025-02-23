@@ -86,10 +86,6 @@ body {
 	height: 100%
     }
 
-    .imagemaker_parts_menu ul {
-	margin-left: 10px;
-    }
-
     .imagemaker_itemlist ul li {
 	width: 33.2%;
     }
@@ -163,14 +159,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100%
-    }
-
-    .imagemaker_parts_menu_wrapper {
-	padding-left: 18.18%;
-    }
-
-    .imagemaker_parts_menu ul {
-	margin-left: 0px;
     }
 
     .imagemaker_itemlist ul li {
@@ -253,6 +241,10 @@ body {
     align-items: center;
 }
 
+.imagemaker_canvas_wrapper canvas {
+    background: repeating-conic-gradient(#e0e0e0 0% 25%, transparent 0% 50%) 50% / 100px 100px;
+}
+
 .imagemaker_save_button {
     display: flex;
     justify-content: center;
@@ -278,9 +270,13 @@ body {
 .loading {
     position: absolute;
     font-size: 3vh;
+    font-weight: bold;
     background-color: var(--loading-bg-color, #FFFFFF);
-    /* padding: 3px; */
-    /* bottom: 4px; */
+    opacity: 0.75;
+    padding: 1rem;
+
+    border-radius: 5px;
+    border: 3px solid purple;
 }
 
 .imagemaker_canvas_wrapper canvas {
@@ -311,7 +307,6 @@ body {
 .imagemaker_parts_menu_wrapper {
     flex: 0 0 75px;
     position: relative;
-    padding-left: 18.18%;
 }
 
 .imagemaker_parts_menu {
@@ -531,3 +526,12 @@ body {
     font-size: 1rem;
 }
 
+#feature_buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#feature_buttons div {
+    display: inline-block;
+    cursor: pointer;
+}

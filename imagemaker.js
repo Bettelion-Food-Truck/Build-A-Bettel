@@ -328,6 +328,9 @@ window.addEventListener('load', function (ev) {
 			}
 
 			partIcon.src = partIconSrc;
+			partIcon.alt = parts[i].name ? parts[i].name : parts[i].folder;
+			partIcon.title = parts[i].name ? parts[i].name : parts[i].folder;
+
 			part.appendChild(partIcon);
 
 			part.id = "part_" + i.toString();
@@ -367,7 +370,11 @@ window.addEventListener('load', function (ev) {
 			if (parts[i].noneAllowed) {
 				let noneButton = document.createElement('li');
 				let noneButtonIcon = document.createElement('img');
+
 				noneButtonIcon.src = ASSET_PATH + UI_ASSETS + "none_button.svg";
+				noneButtonIcon.alt = "Icon indicating no item selected";
+				noneButtonIcon.title = "None";
+
 				noneButton.appendChild(noneButtonIcon);
 				document.getElementById("itemlist_list").appendChild(noneButton);
 				noneButton.style.display = "none";
@@ -378,6 +385,7 @@ window.addEventListener('load', function (ev) {
 
 				let item = document.createElement('li');
 				let itemIcon = document.createElement('img');
+
 				let itemName = parts[i].items[j];
 				if (typeof itemName !== "string") {
 					itemName = itemName.item;
@@ -387,6 +395,10 @@ window.addEventListener('load', function (ev) {
 				itemIcon.src = (ASSET_PATH +
 					parts[i].folder + "/" +
 					itemName + ".png");
+
+				itemIcon.alt = itemName;// TODO better alt text
+				itemIcon.title = itemName;// TODO better title text
+
 				item.appendChild(itemIcon);
 				item.id = "item_" + i.toString() + "_" + j.toString();
 				item.style.display = "none";

@@ -84,13 +84,20 @@ window.addEventListener('load', function (ev) {
 
 		parts = json.parts;
 
+		for (let partIndex = 0; partIndex < parts.length; partIndex++) {
+
+			if (!parts[partIndex].layer) {
+				parts[partIndex].layer = parts[partIndex].folder;
+			}
+		}
+
 		// Build layer data to know which part is associated
 		rawLayers = json.layers;
 		layers = []
 
 		for (let layerIndex = 0; layerIndex < rawLayers.length; layerIndex++) {
 
-			partList = parts.map((part, i) => part.folder === rawLayers[layerIndex] ? i : undefined).filter(x => x !== undefined);
+			partList = parts.map((part, i) => part.layer === rawLayers[layerIndex] ? i : undefined).filter(x => x !== undefined);
 
 			layers[layerIndex] = {
 				"layer": rawLayers[layerIndex],
@@ -113,14 +120,14 @@ window.addEventListener('load', function (ev) {
 		// Check each part folder has a layer
 		for (let i = 0; i < parts.length; i++) {
 
-			if (layers.filter(x => x.layer === parts[i].folder).length > 0) {
+			if (layers.filter(x => x.layer === parts[i].layer).length > 0) {
 				continue;
 			}
 
 			// No layer set, assign to the end
 			let layerIndex = layers.length;
 			layers[layerIndex] = {
-				"layer": parts[i].folder,
+				"layer": parts[i].layer,
 				"partId": i
 			};
 			layerCanvases[layerIndex] = initCanvasLayer();
@@ -531,7 +538,7 @@ window.addEventListener('load', function (ev) {
 					// Locate part
 					for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
 
-						if (parts[neededPartIndex].folder === item.requires.part) {
+						if (parts[neededPartIndex].layer === item.requires.part) {
 
 							const part = parts[neededPartIndex];
 

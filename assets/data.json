@@ -23,6 +23,7 @@
     "hats",
     "neck",
     "accessories-front",
+    "jewelry",
     "frames",
     "filters"
   ],
@@ -362,6 +363,15 @@
           "item": "january-2025-keychain",
           "set": "january-2025"
         }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "jewelry",
+      "items": [
+        "remove"
       ],
       "colorMode": null,
       "colors": [],

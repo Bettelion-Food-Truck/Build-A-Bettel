@@ -86,21 +86,6 @@ body {
 	height: 100%
     }
 
-    .imagemaker_info_show_button {
-	position: absolute;
-	top: auto;
-	right: auto;
-	bottom: 4px;
-	left: 4px;
-	width: 50px;
-	height: 50px;
-    }
-
-    .imagemaker_random_button {
-	min-width: 60px;
-	font-size: 14px;
-    }
-
     .imagemaker_parts_menu ul {
 	margin-left: 10px;
     }
@@ -180,17 +165,6 @@ body {
 	height: 100%
     }
 
-    .imagemaker_info_show_button {
-	position: absolute;
-	top: 4px;
-	right: 4px;
-	bottom: auto;
-	left: auto;
-	height: 6vh;
-	width: 6vh;
-	font-size: 5vh
-    }
-
     .imagemaker_parts_menu_wrapper {
 	padding-left: 18.18%;
     }
@@ -225,10 +199,6 @@ body {
 	width: 100%;
 	height: 100%;
 	position: relative;
-    }
-
-    .imagemaker_random_button {
-	font-size: 4vw;
     }
 
     .imagemaker_ctrl_buttons {
@@ -376,25 +346,6 @@ body {
     cursor: pointer;
 }
 
-.imagemaker_random_button {
-    position: absolute;
-    top: 0;
-    right: auto;
-    bottom: 0;
-    left: 0;
-    width: 18.18%;
-    background-color: var(--random-button-color, #ffbd16);
-    color: #fff;
-    text-align: center;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: var(--random-button-png, "none");
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .imagemaker_control_panel_wrapper {
     position: relative;
     flex: 1;
@@ -499,22 +450,6 @@ body {
     position: absolute;
 }
 
-.imagemaker_info_show_button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--info-toggle-color, #fff);
-    background-image: var(--info-toggle-png, "none");
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #333;
-    border: 0 solid #aaa;
-    border-radius: 50%;
-    cursor: pointer;
-    text-align: center;
-    z-index: 20;
-}
-
 .imagemaker_logo {
     position: absolute;
     top: 6px;
@@ -534,6 +469,11 @@ body {
 
 .selected {
     border: 3px solid var(--select-color, #ff0000);
+}
+
+#parts_list li:not(.selected),
+#itemlist_list li:not(.selected) {
+    border: 3px solid transparent;
 }
 
 .imagemaker_info_wrapper {

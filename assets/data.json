@@ -19,6 +19,7 @@
     "shirts",
     "belts",
     "jackets",
+    "jackets-2",
     "hats",
     "neck",
     "accessories",
@@ -199,6 +200,35 @@
     },
     {
       "folder": "jackets",
+      "items": [
+        {
+          "item": "showman-jacket",
+          "set": "showman"
+        },
+        {
+          "item": "bettelgoose",
+          "set": "bettelgoose"
+        },
+        {
+          "item": "january-2025-haori",
+          "set": "january-2025"
+        },
+        {
+          "item": "january-2025-kimono-jacket",
+          "set": "january-2025"
+        },
+        {
+          "item": "punk-jacket",
+          "set": "punk"
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "jackets",
+      "layer": "jackets-2",
       "items": [
         {
           "item": "showman-jacket",

@@ -28,7 +28,8 @@
   ],
   "sets": [
     "showman",
-    "bettelgoose"
+    "punk",
+    "january-2025"
   ],
   "parts": [
     {
@@ -73,7 +74,8 @@
     {
       "folder": "hair",
       "items": [
-        "default"
+        "default",
+        "second"
       ],
       "colorMode": null,
       "colors": [],
@@ -96,11 +98,12 @@
     {
       "folder": "makeup",
       "items": [
-        "remove"
+        "blush-heavy",
+        "eyeshadow"
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     },
     {
       "folder": "pants",
@@ -118,6 +121,10 @@
         {
           "item": "bettelgoose-pants",
           "set": "bettelgoose"
+        },
+        {
+          "item": "punk-pants",
+          "set": "punk"
         }
       ],
       "colorMode": null,
@@ -132,8 +139,12 @@
           "set": "showman"
         },
         {
-          "item": "bettelgoose",
-          "set": "bettelgoose"
+          "item": "january-2025-shirt",
+          "set": "january-2025"
+        },
+        {
+          "item": "punk-shirt",
+          "set": "punk"
         }
       ],
       "colorMode": null,
@@ -150,6 +161,36 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "january-2025-shoes-heels",
+          "set": "january-2025",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "punk-boots",
+          "set": "punk",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "tabi-flats",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "tabi-heels",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -162,6 +203,22 @@
         {
           "item": "showman-jacket",
           "set": "showman"
+        },
+        {
+          "item": "bettelgoose",
+          "set": "bettelgoose"
+        },
+        {
+          "item": "january-2025-haori",
+          "set": "january-2025"
+        },
+        {
+          "item": "january-2025-kimono-jacket",
+          "set": "january-2025"
+        },
+        {
+          "item": "punk-jacket",
+          "set": "punk"
         }
       ],
       "colorMode": null,
@@ -174,6 +231,14 @@
         {
           "item": "showman-skeleton-belt",
           "set": "showman"
+        },
+        {
+          "item": "january-2025-obi",
+          "set": "january-2025"
+        },
+        {
+          "item": "punk-belt",
+          "set": "punk"
         }
       ],
       "colorMode": null,
@@ -186,6 +251,10 @@
         {
           "item": "showman-gloves",
           "set": "showman"
+        },
+        {
+          "item": "punk-rings",
+          "set": "punk"
         }
       ],
       "colorMode": null,
@@ -204,7 +273,12 @@
             }
           ],
           "set": "showman"
-        }
+        },
+        {
+          "item": "january-2025-hat",
+          "set": "january-2025"
+        },
+        "cat-ears"
       ],
       "colorMode": null,
       "colors": [],
@@ -213,11 +287,18 @@
     {
       "folder": "accessories-face",
       "items": [
-        "remove"
+        {
+          "item": "showman-mask",
+          "set": "showman"
+        },
+        {
+          "item": "punk-earrings",
+          "set": "punk"
+        }
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     },
     {
       "folder": "neck",
@@ -225,6 +306,14 @@
         {
           "item": "showman-cravat",
           "set": "showman"
+        },
+        {
+          "item": "january-2025-neck-ribbon",
+          "set": "january-2025"
+        },
+        {
+          "item": "punk-necklace",
+          "set": "punk"
         }
       ],
       "colorMode": null,
@@ -237,13 +326,14 @@
         {
           "item": "showman-heart-brooch",
           "set": "showman"
+        },
+        {
+          "item": "january-2025-keychain",
+          "set": "january-2025"
         }
       ],
-      "colorMode": "multiply",
-      "colors": [
-        "FFFFFF",
-        "FFBD6C"
-      ],
+      "colorMode": null,
+      "colors": [],
       "noneAllowed": true
     },
     {
@@ -252,7 +342,8 @@
         {
           "item": "showman-ribbon",
           "set": "showman"
-        }
+        },
+        "angel-wings"
       ],
       "colorMode": null,
       "colors": [],
@@ -288,7 +379,8 @@
     {
       "folder": "backgrounds",
       "items": [
-        "pink-diamonds"
+        "pink-diamonds",
+        "pink-and-checkered"
       ],
       "colorMode": null,
       "colors": [],

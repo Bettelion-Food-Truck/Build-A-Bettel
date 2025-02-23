@@ -97,3 +97,5 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 - See if there's a way to batch async for faster response time on multi-layer items or item sets
 - Zoom feature
 - Undo and Redo functions
+- Category notes
+  - IE Feet: "Often dictated by the shoes, might not allow changing" or something

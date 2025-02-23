@@ -229,6 +229,7 @@
     {
       "folder": "jackets",
       "layer": "jackets-2",
+      "icon": "icon-2",
       "items": [
         {
           "item": "showman-jacket",

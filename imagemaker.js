@@ -92,7 +92,7 @@ window.addEventListener('load', function (ev) {
 		}
 
 		// Build layer data to know which part is associated
-		rawLayers = json.layers;
+		let rawLayers = json.layers;
 		layers = []
 
 		for (let layerIndex = 0; layerIndex < rawLayers.length; layerIndex++) {
@@ -323,7 +323,12 @@ window.addEventListener('load', function (ev) {
 			let part = document.createElement('li');
 			let partIcon = document.createElement('img');
 
-			partIcon.src = ASSET_PATH + parts[i].folder + "/icon.png";
+			let partIconSrc = `${ASSET_PATH}${parts[i].folder}/icon.png`;
+			if (parts[i].icon) {
+				partIconSrc = `${ASSET_PATH}${parts[i].folder}/${parts[i].icon}.png`;
+			}
+
+			partIcon.src = partIconSrc;
 			part.appendChild(partIcon);
 
 			part.id = "part_" + i.toString();

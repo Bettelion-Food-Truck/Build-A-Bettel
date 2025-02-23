@@ -336,7 +336,6 @@ body {
 .imagemaker_parts_menu ul li {
     position: relative;
     min-width: 48px;
-    margin: 4px 2px 4px 2px;
     display: inline-flex;
     justify-content: center;
     align-items: center;

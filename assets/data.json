@@ -1,7 +1,7 @@
 {
   "layers": [
     "backgrounds",
-    "background-characters",
+    "companions",
     "accessories-rear",
     "pants_back",
     "hats_back",
@@ -22,7 +22,7 @@
     "jackets-2",
     "hats",
     "neck",
-    "accessories",
+    "accessories-front",
     "props",
     "frames",
     "filters"
@@ -200,6 +200,7 @@
     },
     {
       "folder": "jackets",
+      "icon": "icon-1",
       "items": [
         {
           "item": "showman-jacket",
@@ -352,7 +353,7 @@
       "noneAllowed": true
     },
     {
-      "folder": "accessories",
+      "folder": "accessories-front",
       "items": [
         {
           "item": "showman-heart-brooch",
@@ -418,7 +419,7 @@
       "noneAllowed": true
     },
     {
-      "folder": "background-characters",
+      "folder": "companions",
       "items": [
         "remove"
       ],

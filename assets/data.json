@@ -23,7 +23,6 @@
     "hats",
     "neck",
     "accessories-front",
-    "props",
     "frames",
     "filters"
   ],
@@ -376,15 +375,6 @@
           "set": "showman"
         },
         "angel-wings"
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": true
-    },
-    {
-      "folder": "props",
-      "items": [
-        "remove"
       ],
       "colorMode": null,
       "colors": [],

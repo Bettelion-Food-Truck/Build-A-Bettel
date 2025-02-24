@@ -18,6 +18,7 @@
     "gloves",
     "shirts",
     "belts",
+    "vests",
     "jackets",
     "jackets-2",
     "hats",
@@ -193,6 +194,15 @@
             "item": "pointed"
           }
         }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "vests",
+      "items": [
+        "remove"
       ],
       "colorMode": null,
       "colors": [],

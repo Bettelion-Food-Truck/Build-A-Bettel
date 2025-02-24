@@ -18,6 +18,7 @@
     "gloves",
     "shirts",
     "belts",
+    "vests",
     "jackets",
     "jackets-2",
     "hats",
@@ -61,7 +62,8 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true,
+      "hidePartList": true
     },
     {
       "folder": "expressions",
@@ -156,6 +158,14 @@
       "folder": "shoes",
       "items": [
         {
+          "item": "flat",
+          "folder": "feet",
+          "requires": {
+            "part": "feet",
+            "item": "none"
+          }
+        },
+        {
           "item": "showman-shoes",
           "set": "showman",
           "requires": {
@@ -193,6 +203,15 @@
             "item": "pointed"
           }
         }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "vests",
+      "items": [
+        "remove"
       ],
       "colorMode": null,
       "colors": [],

@@ -62,7 +62,8 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true,
+      "hidePartList": true
     },
     {
       "folder": "expressions",
@@ -157,6 +158,14 @@
       "folder": "shoes",
       "items": [
         {
+          "item": "flat",
+          "folder": "feet",
+          "requires": {
+            "part": "feet",
+            "item": "none"
+          }
+        },
+        {
           "item": "showman-shoes",
           "set": "showman",
           "requires": {
@@ -197,7 +206,7 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": true
+      "noneAllowed": false
     },
     {
       "folder": "vests",

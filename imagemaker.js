@@ -79,7 +79,7 @@ window.addEventListener('load', function (ev) {
 	 * Fetch parts info from data.json and initialize the parts variable.
 	 */
 	async function initData() {
-		const response = await fetch(ASSET_PATH + "data.json");
+		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
 
 		parts = json.parts;
@@ -310,7 +310,6 @@ window.addEventListener('load', function (ev) {
 		loading.style.display = "none";
 		context.drawImage(workingCanvas, 0, 0);
 		await updateSave();
-		return null;
 	}
 
 	/**
@@ -329,19 +328,28 @@ window.addEventListener('load', function (ev) {
 			}
 
 			partIcon.src = partIconSrc;
+			partIcon.alt = parts[i].name ? parts[i].name : parts[i].folder;
+			partIcon.title = parts[i].name ? parts[i].name : parts[i].folder;
+
 			part.appendChild(partIcon);
 
 			part.id = "part_" + i.toString();
 
-			if (parts[i].hidePartList) {
+			// Hide if commanded or only one option with no variants
+			if (
+				parts[i].hidePartList || (
+					parts[i].items.length <= 1 &&
+					!parts[i].noneAllowed && (
+						!parts[i].colors || parts[i].colors.length === 0
+					)
+				)
+			) {
 				part.style.display = "none";
 			}
 
 			document.getElementById('parts_list').appendChild(part);
 			partsElements[i] = part;
 		}
-
-		return null;
 	}
 
 	/**
@@ -362,7 +370,12 @@ window.addEventListener('load', function (ev) {
 			if (parts[i].noneAllowed) {
 				let noneButton = document.createElement('li');
 				let noneButtonIcon = document.createElement('img');
+
+				noneButton.id = "icon_" + i.toString() + "_none";
 				noneButtonIcon.src = ASSET_PATH + UI_ASSETS + "none_button.svg";
+				noneButtonIcon.alt = "Icon indicating no item selected";
+				noneButtonIcon.title = "None";
+
 				noneButton.appendChild(noneButtonIcon);
 				document.getElementById("itemlist_list").appendChild(noneButton);
 				noneButton.style.display = "none";
@@ -373,15 +386,22 @@ window.addEventListener('load', function (ev) {
 
 				let item = document.createElement('li');
 				let itemIcon = document.createElement('img');
+
+				let asset = parts[i].items[j];
+
 				let itemName = parts[i].items[j];
 				if (typeof itemName !== "string") {
-					itemName = itemName.item;
+					itemName = asset.item;
 				}
 
 				itemIcon.id = "icon_" + i.toString() + "_" + j.toString();
 				itemIcon.src = (ASSET_PATH +
-					parts[i].folder + "/" +
+					(asset.folder ? asset.folder : parts[i].folder) + "/" +
 					itemName + ".png");
+
+				itemIcon.alt = itemName;// TODO better alt text
+				itemIcon.title = itemName;// TODO better title text
+
 				item.appendChild(itemIcon);
 				item.id = "item_" + i.toString() + "_" + j.toString();
 				item.style.display = "none";
@@ -546,27 +566,46 @@ window.addEventListener('load', function (ev) {
 						if (parts[neededPartIndex].layer === item.requires.part) {
 
 							const part = parts[neededPartIndex];
+							let neededPartFound = false;
 
 							// Locate the item
-							for (let neededItemIndex = 0; neededItemIndex < part.items.length; neededItemIndex++) {
+							if (item.requires.item === "none" && part.noneAllowed) {
 
-								let itemName = part.items[neededItemIndex];
-								if (typeof itemName !== "string") {
-									itemName = itemName.item;
+								markSelectedItem(
+									neededPartIndex,
+									0
+								);
+
+								neededPartFound = true;
+							} else {
+								for (let neededItemIndex = 0; neededItemIndex < part.items.length; neededItemIndex++) {
+
+									let itemName = part.items[neededItemIndex];
+									if (typeof itemName !== "string") {
+										itemName = itemName.item;
+									}
+
+									if (itemName === item.requires.item) {
+
+										neededPartFound = true;
+
+										// Select the item
+										markSelectedItem(
+											neededPartIndex,
+											neededItemIndex + (part.noneAllowed ? 1 : 0)
+										);
+										break;
+									}
+
+									// TODO Need to indicate incompatible options
 								}
-
-								if (itemName === item.requires.item) {
-
-									// Select the item
-									markSelectedItem(
-										neededPartIndex,
-										neededItemIndex + (part.noneAllowed ? 1 : 0)
-									);
-									break;
-								}
-
-								// TODO Need to indicate incompatible options
 							}
+
+							if (!neededPartFound) {
+
+								console.error("%c Error:", "color:red; font-weight: bold;", `Required item "${item.requires.item}" not found in part "${item.requires.part}"`);
+							}
+
 							break;
 						}
 					}
@@ -580,7 +619,6 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function renderItemToCanvas(layerIndex, partIndex, itemIndex, colorIndex) {
 
-		const partLocation = ASSET_PATH + parts[partIndex].folder;
 		const item = parts[partIndex].items[itemIndex];
 
 		// Set color variant item
@@ -592,11 +630,14 @@ window.addEventListener('load', function (ev) {
 		if (typeof item === "string") {
 			// Simple item
 
-			const imgPath = partLocation + "/" + item + color + ".png";
+			const imgPath = ASSET_PATH + parts[partIndex].folder + "/" + item + color + ".png";
 
 			await (renderImage(imgPath, layerIndex));
 		} else {
 			// Complex item
+
+			// Set asset folder
+			const partLocation = ASSET_PATH + (item.folder ? item.folder : parts[partIndex].folder);
 
 			// Render the base layer
 			const imgPath = partLocation + "/" + item.item + color + ".png";

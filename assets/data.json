@@ -14,6 +14,7 @@
     "hair",
     "shoes",
     "pants",
+    "accessories-hand",
     "hands",
     "gloves",
     "shirts",
@@ -31,7 +32,8 @@
   "sets": [
     "showman",
     "punk",
-    "january-2025"
+    "january-2025",
+    "flex"
   ],
   "parts": [
     {
@@ -128,6 +130,10 @@
         {
           "item": "punk-pants",
           "set": "punk"
+        },
+        {
+          "item": "flex",
+          "set": "flex"
         }
       ],
       "colorMode": null,
@@ -202,6 +208,14 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "flex",
+          "set": "flex",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -240,6 +254,10 @@
         {
           "item": "punk-jacket",
           "set": "punk"
+        },
+        {
+          "item": "flex",
+          "set": "flex"
         }
       ],
       "colorMode": null,
@@ -270,6 +288,10 @@
         {
           "item": "punk-jacket",
           "set": "punk"
+        },
+        {
+          "item": "flex",
+          "set": "flex"
         }
       ],
       "colorMode": null,
@@ -329,7 +351,8 @@
           "item": "january-2025-hat",
           "set": "january-2025"
         },
-        "cat-ears"
+        "cat-ears",
+        "party-hat"
       ],
       "colorMode": null,
       "colors": [],
@@ -410,6 +433,15 @@
       "noneAllowed": true
     },
     {
+      "folder": "accessories-hand",
+      "items": [
+        "balloons"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
       "folder": "filters",
       "items": [
         "remove"
@@ -431,7 +463,8 @@
       "folder": "backgrounds",
       "items": [
         "pink-diamonds",
-        "pink-and-checkered"
+        "pink-and-checkered",
+        "arcade"
       ],
       "colorMode": null,
       "colors": [],

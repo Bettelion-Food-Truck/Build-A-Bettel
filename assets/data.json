@@ -14,7 +14,6 @@
     "hair",
     "shoes",
     "pants",
-    "accessories-hand",
     "hands",
     "gloves",
     "shirts",
@@ -25,6 +24,7 @@
     "hats",
     "neck",
     "accessories-front",
+    "accessories-hand",
     "jewelry",
     "frames",
     "filters"

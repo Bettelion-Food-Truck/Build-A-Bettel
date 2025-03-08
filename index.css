@@ -1,38 +1,50 @@
 :root {
     /* the color of the background of the loading sign*/
     --loading-bg-color: #FFFFFF;
+
     /* the color of the border around selected part and icon buttons */
     --select-color: #FF0000;
+
     /* the color/image filepath of the background of the image display area */
     --image-background-color: hsla(0,0%,93.3%,.5);
     --image-background-png: "none";
+
     /* the color/image filepath of the random button */
     --random-button-color: #ffbd15;
     --random-button-png: "none";
+
     /* the color filepath of the parts menu background*/
     --parts-menu-color: #eee;
+
     /* the color/image filepath of the items menu background*/
     --control-panel-color: #ccc;
     --control-panel-png: "none";
+
     /* the color of the item buttons */
     --item-button-color: #fff;
+
     /* the color/image filepath of the item menu toggle button */
     --item-toggle-color: #fff;
     --item-toggle-img: url("assets/ui_icons/icon-grid.png");
+
     /* the color/image filepath of the palette toggle button */
     --palette-toggle-color: #fff;
     --palette-toggle-img: url("assets/ui_icons/icon-colors.png");
+
     /* the color/image filepath of the info button */
     --info-toggle-color: #fff;
     --info-toggle-png: "none";
+
     /* the color/image filepath of the info button */
     --move-toggle-color: #fff;
     --move-toggle-img: url("assets/ui_icons/move_toggle.svg");
+
     /* the image filepath of the logo */
     --logo-png: "none";
     --save-button-color: #00b33c;
 }
 
+/* Page setup */
 * {
     min-height: 0;
     min-width: 0;
@@ -46,169 +58,13 @@ body {
     padding: 0;
 }
 
+/* Common styling */
+
 .imagemaker {
     height: 100vh;
     max-width: 100vh;
 }
 
-@media (orientation: landscape) {
-    .imagemaker_container {
-	flex-direction: row;
-    }
-
-    .imagemaker_canvas_wrapper {
-	max-height: 100%;
-    }
-
-    .imagemaker_save_button {
-	top: 5px;
-	height: 36px;
-    }
-
-    .imagemaker_ctrl_buttons {
-	position: absolute;
-	top: 4px;
-	right: 4px;
-	bottom: auto;
-	left: auto;
-	width: 50px;
-	height: 50px;
-	z-index: 0;
-    }
-
-    .imagemaker_control_wrapper {
-	position: relative;
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	min-width: 275px;
-	height: 100%
-    }
-
-    .imagemaker_itemlist ul li {
-	width: 33.2%;
-    }
-
-    .imagemaker_parts_menu {
-	height: 68px;
-    }
-
-    .imagemaker_parts_menu ul li {
-	width: 60px;
-	height: auto;
-    }
-
-    .imagemaker_ctrl_buttons .button_show_itemlist {
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-    }
-
-    .imagemaker_ctrl_buttons .button_show_colorpalette {
-	align-items: center;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	left: -55px;
-    }
-
-    .imagemaker_colorpalette ul li {
-	width: 48px;
-	height: 48px;
-    }
-
-    .imagemaker_info_content {
-	font-size: 3vh;
-    }
-}
-
-@media (orientation: portrait) {
-    .loading {
-    font-size: 3vh;
-    }
-
-    .imagemaker_container {
-	flex-direction: column;
-    }
-
-    .imagemaker_canvas_wrapper {
-	max-height: 50vh;
-    }
-
-    .imagemaker_save_button {
-	height: 4vh;
-	font-size: 3vh;
-    }
-
-    .imagemaker_ctrl_buttons {
-	bottom: 4px;
-	right: 4px;
-	top: auto;
-	left: auto;
-    }
-
-    .imagemaker_control_wrapper {
-	position: relative;
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	height: 100%
-    }
-
-    .imagemaker_itemlist ul li {
-	width: 23.75%;
-    }
-
-    .imagemaker_parts_menu_wrapper {
-	min-height: 10vh;
-    }
-
-    .imagemaker_parts_menu {
-	height: 100%;
-    }
-
-    .imagemaker_parts_menu ul {
-	width: auto;
-	height: 100%;
-    }
-
-    .imagemaker_parts_menu ul li {
-	width: 9vh;
-	height: 9vh;
-    }
-
-    .imagemaker_parts_menu ul li img {
-	width: 100%;
-	height: 100%;
-	position: relative;
-    }
-
-    .imagemaker_ctrl_buttons {
-	width: 6vh;
-	height: 6vh;
-    }
-
-    .imagemaker_ctrl_buttons .button_show_colorpalette {
-	width: 6vh;
-	height: 6vh;
-	line-height: 6vh;
-	left: -10vh;
-	bottom: 4px;
-    }
-
-    .imagemaker_ctrl_buttons .button_show_itemlist {
-	width: 6vh;
-	height: 6vh;
-	bottom: 4px;
-	right: 4px;
-    }
-
-    .imagemaker_colorpalette ul li {
-	width: 8vh;
-	height: 8vh;
-    }
-
-}
 
 .imagemaker_container_wrapper {
     position: relative;
@@ -518,4 +374,165 @@ body {
 #feature_buttons div {
     display: inline-block;
     cursor: pointer;
+}
+
+/* Portrait specific changes */
+@media (orientation: portrait) {
+    .loading {
+    font-size: 3vh;
+    }
+
+    .imagemaker_container {
+	flex-direction: column;
+    }
+
+    .imagemaker_canvas_wrapper {
+	max-height: 50vh;
+    }
+
+    .imagemaker_save_button {
+	height: 4vh;
+	font-size: 3vh;
+    }
+
+    .imagemaker_ctrl_buttons {
+	bottom: 4px;
+	right: 4px;
+	top: auto;
+	left: auto;
+    }
+
+    .imagemaker_control_wrapper {
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	height: 100%
+    }
+
+    .imagemaker_itemlist ul li {
+	width: 23.75%;
+    }
+
+    .imagemaker_parts_menu_wrapper {
+	min-height: 10vh;
+    }
+
+    .imagemaker_parts_menu {
+	height: 100%;
+    }
+
+    .imagemaker_parts_menu ul {
+	width: auto;
+	height: 100%;
+    }
+
+    .imagemaker_parts_menu ul li {
+	width: 9vh;
+	height: 9vh;
+    }
+
+    .imagemaker_parts_menu ul li img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+    }
+
+    .imagemaker_ctrl_buttons {
+	width: 6vh;
+	height: 6vh;
+    }
+
+    .imagemaker_ctrl_buttons .button_show_colorpalette {
+	width: 6vh;
+	height: 6vh;
+	line-height: 6vh;
+	left: -10vh;
+	bottom: 4px;
+    }
+
+    .imagemaker_ctrl_buttons .button_show_itemlist {
+	width: 6vh;
+	height: 6vh;
+	bottom: 4px;
+	right: 4px;
+    }
+
+    .imagemaker_colorpalette ul li {
+	width: 8vh;
+	height: 8vh;
+    }
+
+}
+
+/* Lanscape specific changes */
+@media (orientation: landscape) {
+    .imagemaker_container {
+	flex-direction: row;
+    }
+
+    .imagemaker_canvas_wrapper {
+	max-height: 100%;
+    }
+
+    .imagemaker_save_button {
+	top: 5px;
+	height: 36px;
+    }
+
+    .imagemaker_ctrl_buttons {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	bottom: auto;
+	left: auto;
+	width: 50px;
+	height: 50px;
+	z-index: 0;
+    }
+
+    .imagemaker_control_wrapper {
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	min-width: 275px;
+	height: 100%
+    }
+
+    .imagemaker_itemlist ul li {
+	width: 33.2%;
+    }
+
+    .imagemaker_parts_menu {
+	height: 68px;
+    }
+
+    .imagemaker_parts_menu ul li {
+	width: 60px;
+	height: auto;
+    }
+
+    .imagemaker_ctrl_buttons .button_show_itemlist {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+    }
+
+    .imagemaker_ctrl_buttons .button_show_colorpalette {
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	left: -55px;
+    }
+
+    .imagemaker_colorpalette ul li {
+	width: 48px;
+	height: 48px;
+    }
+
+    .imagemaker_info_content {
+	font-size: 3vh;
+    }
 }

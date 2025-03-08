@@ -1,7 +1,10 @@
 import json
 from PIL import Image
 
-with open('assets/data.json') as parts_json:
+ASSET_FOLDER = "assets/"
+DATA_FILE = "data.json"
+
+with open(ASSET_FOLDER + DATA_FILE) as parts_json:
     parts = json.load(parts_json)['parts']
 
 fillColor = (200, 200, 200)
@@ -19,7 +22,7 @@ def color_template():
                 if not isinstance(item, str):
                     itemName = item['item']
 
-                fileprefix = "assets/" + part['folder'] +  "/" + itemName
+                fileprefix = ASSET_FOLDER + part['folder'] +  "/" + itemName
                 templatesource = fileprefix + ".png"
 
                 with Image.open(templatesource) as template:

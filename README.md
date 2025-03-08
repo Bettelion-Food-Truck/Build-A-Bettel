@@ -66,7 +66,13 @@ To manually create color variants for each item of a part, set `"colorMode`" to 
 
 To generate color variants automatically, you'll need to run the Python script `generate_colored_images.py`. The script uses files of the form `"assets/part/item.png`" as templates to generate colored versions of each item. If a part has `"colorMode"` `"fill"`, the script fills the template's pixels of RGB value `(123, 123, 123)` with the desired color, preserving alpha. If a part has `"colorMode"` `"multiply"`, the script treats the template as an alpha-preserving multiply layer over the desired color.
 
-You will need to install the python module `PIL` on your system first. Once that is installed, run the command below from the root directory of this game in a terminal.
+This next stage requires Python 3. You will also need to install the python module `PIL` on your system first.
+
+```
+pip install pillow
+```
+
+Once that is installed, run the command below from the root directory of this game in a terminal.
 
 ```
 python generate_colored_images.py

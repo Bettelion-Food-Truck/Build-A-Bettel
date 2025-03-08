@@ -440,23 +440,6 @@ body {
     position: absolute;
 }
 
-.imagemaker_logo {
-    position: absolute;
-    top: 6px;
-    right: auto;
-    bottom: auto;
-    left: 6px;
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color:  #ff597e;
-    background-image: var(--logo-png, "none");
-    width: 66px;
-    height: 20px;
-    filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff);
-    display: none;
-}
-
 .selected {
     border: 3px solid var(--select-color, #ff0000);
 }

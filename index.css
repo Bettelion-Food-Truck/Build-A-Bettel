@@ -65,9 +65,9 @@ body {
 
     height: 100vh;
     width: 100%;
-    max-width: calc(100vw - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
+    max-width: calc(100vw - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
 
     border: 3px solid black;
 }
@@ -129,7 +129,7 @@ body {
     font-weight: bold;
     background-color: var(--loading-bg-color, #ffffff);
     opacity: 0.75;
-    padding: 1rem;
+    padding: 15px;
 
     border-radius: 5px;
     border: 3px solid purple;
@@ -222,25 +222,25 @@ body {
     height: 100%;
 }
 
-.imagemaker_parts_menu_wrapper {
+.parts_menu_wrapper {
     flex: 0 0 75px;
     position: relative;
 }
 
-.imagemaker_parts_menu {
+.parts_menu {
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
 
-    height: 100%;
+    height: 68px;
     margin: 0;
     white-space: nowrap;
 
     background-color: var(--parts-menu-color, #eee);
 }
 
-.imagemaker_parts_menu ul {
+.parts_menu ul {
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
@@ -249,12 +249,14 @@ body {
     list-style: "none";
 }
 
-.imagemaker_parts_menu ul li {
-    position: relative;
-    min-width: 48px;
+.parts_menu ul li {
+    width: 60px;
+    height: auto;
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
     cursor: pointer;
 }
 
@@ -370,7 +372,7 @@ body {
     margin: 0;
     padding: 0;
     vertical-align: middle;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .feature_buttons {
@@ -386,8 +388,8 @@ body {
         border: 3px solid black;
         border-radius: 3px;
 
-        padding: 0.2rem 0.4rem;
-        margin: 0 0.15rem;
+        padding: 3px 6px;
+        margin: 0 2px;
     }
 }
 
@@ -416,15 +418,6 @@ body {
 
 .imagemaker_itemlist ul li {
     width: 33.2%;
-}
-
-.imagemaker_parts_menu {
-    height: 68px;
-}
-
-.imagemaker_parts_menu ul li {
-    width: 60px;
-    height: auto;
 }
 
 .imagemaker_colorpalette ul li {
@@ -492,25 +485,25 @@ body {
         width: 23.75%;
     }
 
-    .imagemaker_parts_menu_wrapper {
+    .parts_menu_wrapper {
         min-height: 10vh;
     }
 
-    .imagemaker_parts_menu {
+    .parts_menu {
         height: 100%;
     }
 
-    .imagemaker_parts_menu ul {
+    .parts_menu ul {
         width: auto;
         height: 100%;
     }
 
-    .imagemaker_parts_menu ul li {
+    .parts_menu ul li {
         width: 9vh;
         height: 9vh;
     }
 
-    .imagemaker_parts_menu ul li img {
+    .parts_menu ul li img {
         width: 100%;
         height: 100%;
         position: relative;

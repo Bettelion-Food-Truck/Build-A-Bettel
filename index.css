@@ -260,14 +260,14 @@ body {
     cursor: pointer;
 }
 
-.imagemaker_control_panel_wrapper {
+.control_panel_wrapper {
     position: relative;
     flex: 1;
     overflow: hidden;
     flex-grow: 1;
 }
 
-.imagemaker_control_panel {
+.control_panel {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -294,6 +294,8 @@ body {
 }
 
 .imagemaker_itemlist ul li {
+    width: 33.2%;
+
     margin: 5px;
     background-color: var(--item-button-color, #fff);
     border-radius: 4px;
@@ -414,10 +416,6 @@ body {
     flex-direction: column;
     min-width: 275px;
     height: 100%;
-}
-
-.imagemaker_itemlist ul li {
-    width: 33.2%;
 }
 
 .imagemaker_colorpalette ul li {

@@ -399,8 +399,8 @@ window.addEventListener('load', function (ev) {
 					(asset.folder ? asset.folder : parts[i].folder) + "/" +
 					itemName + ".png");
 
-				itemIcon.alt = itemName;// TODO better alt text
-				itemIcon.title = itemName;// TODO better title text
+				itemIcon.alt = asset.name ? asset.name : itemName;
+				itemIcon.title = asset.name ? asset.name : itemName;
 
 				item.appendChild(itemIcon);
 				item.id = "item_" + i.toString() + "_" + j.toString();

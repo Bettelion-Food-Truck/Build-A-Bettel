@@ -373,16 +373,23 @@ body {
     font-size: 1rem;
 }
 
-#feature_buttons {
+.feature_buttons {
     margin-top: 10px;
     margin-bottom: 10px;
-}
 
-#feature_buttons div {
-    display: inline-block;
-    cursor: pointer;
-}
+    display: flex;
+    justify-content: center;
 
+    & div {
+        cursor: pointer;
+
+        border: 3px solid black;
+        border-radius: 3px;
+
+        padding: 0.2rem 0.4rem;
+        margin: 0 0.15rem;
+    }
+}
 
 .imagemaker_container {
     flex-direction: row;

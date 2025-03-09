@@ -3,18 +3,17 @@
     "backgrounds",
     "companions",
     "accessories-rear",
-    "pants_back",
     "hats_back",
+    "vests_back",
+    "pants_back",
     "body",
     "undies",
     "feet",
     "expressions",
     "makeup",
     "accessories-face",
-    "hair",
     "shoes",
     "pants",
-    "accessories-hand",
     "hands",
     "gloves",
     "shirts",
@@ -22,9 +21,11 @@
     "vests",
     "jackets",
     "jackets-2",
+    "hair",
     "hats",
     "neck",
     "accessories-front",
+    "accessories-hand",
     "jewelry",
     "frames",
     "filters"
@@ -33,7 +34,8 @@
     "showman",
     "punk",
     "january-2025",
-    "flex"
+    "flex",
+    "debut-underlayer"
   ],
   "parts": [
     {
@@ -134,6 +136,10 @@
         {
           "item": "flex",
           "set": "flex"
+        },
+        {
+          "item": "debut-underlayer",
+          "set": "debut-underlayer"
         }
       ],
       "colorMode": null,
@@ -154,6 +160,10 @@
         {
           "item": "punk-shirt",
           "set": "punk"
+        },
+        {
+          "item": "debut-underlayer",
+          "set": "debut-underlayer"
         }
       ],
       "colorMode": null,
@@ -216,6 +226,14 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "debut-underlayer",
+          "set": "debut-underlayer",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -225,7 +243,16 @@
     {
       "folder": "vests",
       "items": [
-        "remove"
+        {
+          "item": "debut-underlayer",
+          "multilayer": [
+            {
+              "item": "debut-underlayer-back",
+              "layer": "vests_back"
+            }
+          ],
+          "set": "debut-underlayer"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -328,6 +355,10 @@
         {
           "item": "punk-rings",
           "set": "punk"
+        },
+        {
+          "item": "debut-underlayer",
+          "set": "debut-underlayer"
         }
       ],
       "colorMode": null,
@@ -388,6 +419,10 @@
         {
           "item": "punk-necklace",
           "set": "punk"
+        },
+        {
+          "item": "debut-underlayer-choker",
+          "set": "debut-underlayer"
         }
       ],
       "colorMode": null,
@@ -464,7 +499,8 @@
       "items": [
         "pink-diamonds",
         "pink-and-checkered",
-        "arcade"
+        "arcade",
+        "purple-lace"
       ],
       "colorMode": null,
       "colors": [],

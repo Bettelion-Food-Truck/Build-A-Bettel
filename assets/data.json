@@ -4,6 +4,8 @@
     "companions",
     "accessories-rear",
     "hats_back",
+    "jackets_2_back",
+    "jackets_back",
     "vests_back",
     "pants_back",
     "body",
@@ -20,7 +22,7 @@
     "belts",
     "vests",
     "jackets",
-    "jackets-2",
+    "jackets_2",
     "hair",
     "hats",
     "neck",
@@ -35,7 +37,8 @@
     "punk",
     "january-2025",
     "flex",
-    "debut-underlayer"
+    "debut-underlayer",
+    "second-outfit"
   ],
   "parts": [
     {
@@ -140,6 +143,10 @@
         {
           "item": "debut-underlayer",
           "set": "debut-underlayer"
+        },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -164,6 +171,10 @@
         {
           "item": "debut-underlayer",
           "set": "debut-underlayer"
+        },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -234,6 +245,10 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -252,6 +267,10 @@
             }
           ],
           "set": "debut-underlayer"
+        },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -285,6 +304,26 @@
         {
           "item": "flex",
           "set": "flex"
+        },
+        {
+          "item": "second-outfit-jacket-1",
+          "multilayer": [
+            {
+              "item": "second-outfit-jacket-1-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": "second-outfit"
+        },
+        {
+          "item": "second-outfit-jacket-2",
+          "multilayer": [
+            {
+              "item": "second-outfit-jacket-2-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -293,7 +332,7 @@
     },
     {
       "folder": "jackets",
-      "layer": "jackets-2",
+      "layer": "jackets_2",
       "icon": "icon-2",
       "items": [
         {
@@ -319,6 +358,26 @@
         {
           "item": "flex",
           "set": "flex"
+        },
+        {
+          "item": "second-outfit-jacket-1",
+          "multilayer": [
+            {
+              "item": "second-outfit-jacket-1-back",
+              "layer": "jackets_2_back"
+            }
+          ],
+          "set": "second-outfit"
+        },
+        {
+          "item": "second-outfit-jacket-2",
+          "multilayer": [
+            {
+              "item": "second-outfit-jacket-2-back",
+              "layer": "jackets_2_back"
+            }
+          ],
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -359,6 +418,10 @@
         {
           "item": "debut-underlayer",
           "set": "debut-underlayer"
+        },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -382,6 +445,10 @@
           "item": "january-2025-hat",
           "set": "january-2025"
         },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
+        },
         "cat-ears",
         "party-hat"
       ],
@@ -399,6 +466,10 @@
         {
           "item": "punk-earrings",
           "set": "punk"
+        },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,
@@ -423,6 +494,10 @@
         {
           "item": "debut-underlayer-choker",
           "set": "debut-underlayer"
+        },
+        {
+          "item": "second-outfit",
+          "set": "second-outfit"
         }
       ],
       "colorMode": null,

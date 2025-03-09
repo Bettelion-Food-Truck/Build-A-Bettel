@@ -99,9 +99,8 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 - Movable assets
 - Preview image for asset in cases where it is multi-layer, tiny, or similar
 - Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator
-- Update generate_colored_images.py to match new file and data structures
+- Update generate_colored_images.py to handle multi-layer assets
 - See if there's a way to batch async for faster response time on multi-layer items or item sets
 - Zoom feature
 - Undo and Redo functions
-- Category notes
-  - IE Feet: "Often dictated by the shoes, might not allow changing" or something
+- Link to outfit option with URL args

@@ -55,7 +55,10 @@
       "folder": "hands",
       "items": [
         "normal",
-        "corrupted"
+        {
+          "item": "corrupted",
+          "set": "second-outfit"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -85,7 +88,10 @@
       "folder": "hair",
       "items": [
         "default",
-        "second",
+        {
+          "item": "second",
+          "set": "second-outfit"
+        },
         {
           "item": "bald",
           "hide": true

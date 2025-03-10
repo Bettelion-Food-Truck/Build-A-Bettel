@@ -89,7 +89,7 @@
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": false
+      "noneAllowed": true
     },
     {
       "folder": "undies",
@@ -248,7 +248,11 @@
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": "second-outfit",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,

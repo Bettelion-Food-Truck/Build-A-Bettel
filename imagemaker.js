@@ -305,7 +305,7 @@ window.addEventListener('load', function (ev) {
 	/**
 	 * Select outfit
 	 */
-	async function selectOutfit(outfit, fillOtherItems = false) {
+	async function selectOutfit(outfit) {
 
 		for (let i = 0; i < parts.length; i++) {
 
@@ -331,17 +331,7 @@ window.addEventListener('load', function (ev) {
 				}
 			}
 
-			if (fillOtherItems && !outfitFound) {
-				// Outfit not in slot but try to fill
-
-				let itemIndex = Math.floor(Math.random() * itemRange);
-
-				if (noneCount > 0 && itemIndex === 0) {
-					selectedItemIndex[i] = null;
-				} else {
-					selectedItemIndex[i] = itemIndex - noneCount;
-				}
-			} else if (!fillOtherItems && !parts[i].noneAllowed && typeof selectedItemIndex[i] === 'undefined') {
+			if (!parts[i].noneAllowed) {
 				// Required items must be filled
 
 				selectedItemIndex[i] = 0;

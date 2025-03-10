@@ -517,16 +517,16 @@ window.addEventListener('load', function (ev) {
 	 * Display palette menu, hide item menu
 	 */
 	function showPalette() {
-		document.getElementById("imagemaker_colorpalette").style.display = "flex";
-		document.getElementById("imagemaker_itemlist").style.display = "none";
+		document.getElementById("color_palette_wrapper").style.display = "flex";
+		document.getElementById("item_list_wrapper").style.display = "none";
 	}
 
 	/**
 	 * Display item menu, hide palette menu
 	 */
 	function showItems() {
-		document.getElementById("imagemaker_colorpalette").style.display = "none";
-		document.getElementById("imagemaker_itemlist").style.display = "flex";
+		document.getElementById("color_palette_wrapper").style.display = "none";
+		document.getElementById("item_list_wrapper").style.display = "flex";
 	}
 
 	/**

@@ -716,7 +716,9 @@ window.addEventListener('load', function (ev) {
 			// Render the base layer
 			const imgPath = partLocation + "/" + item.item + color + ".png";
 
-			await (renderImage(imgPath, layerIndex));
+			if (!item.hide) {
+				await (renderImage(imgPath, layerIndex));
+			}
 
 			// Render additional layers
 			if (item.multilayer) {

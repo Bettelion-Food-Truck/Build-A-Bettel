@@ -86,7 +86,10 @@
       "items": [
         "default",
         "second",
-        "bald"
+        {
+          "item": "bald",
+          "hide": true
+        }
       ],
       "colorMode": null,
       "colors": [],

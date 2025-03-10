@@ -1,6 +1,7 @@
 window.addEventListener('load', function (ev) {
 	let parts = [];
 	let layers = [];
+	let outfits = [];
 
 	// code below this line controls functionality
 	// dw about if you're just editing visual assets
@@ -17,11 +18,18 @@ window.addEventListener('load', function (ev) {
 	const HEIGHT = canvas.height;
 
 	const randomButton = document.getElementById("random_button");
-	const infoButton = document.getElementById("info_button");
+	const resetButton = this.document.getElementById("reset_button");
+
 	const paletteButton = document.getElementById("palette_button");
 	const itemsButton = document.getElementById("items_button");
 	const saveButton = document.getElementById("save_button");
+
 	const loading = document.getElementById("loading");
+
+	const infoButton = document.getElementById("info_button");
+	const infoModal = document.getElementById("info_modal");
+	const infoModalClose = document.getElementById("info_modal_close");
+
 	/* 1d array of part select button DOM elements */
 	const partsElements = [];
 	/* 2d array of item select button DOM elements */
@@ -35,8 +43,6 @@ window.addEventListener('load', function (ev) {
 	const workingContext = workingCanvas.getContext('2d');
 
 	// global state variables
-	/* Is the extra info screen currently visible? */
-	let infoVisible = false;
 	/* Index of part whose menu is currently displayed */
 	let selectedPart = 0;
 	/* 1d array of colors where selectedColors[i] is the color selected for part i */
@@ -62,7 +68,8 @@ window.addEventListener('load', function (ev) {
 
 		await initItemFunctions();
 
-		await randomize();
+		// Load game into a default outfit
+		await selectOutfit(outfits[0]);
 
 		let firstPart = 0;
 		for (let i = 0; i < parts.length; i++) {
@@ -81,6 +88,8 @@ window.addEventListener('load', function (ev) {
 	async function initData() {
 		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
+
+		outfits = json.sets;
 
 		parts = json.parts;
 
@@ -158,10 +167,18 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initButtons() {
 		randomButton.addEventListener('click', randomize);
-		infoButton.addEventListener('click', toggleInfo);
+		resetButton.addEventListener('click', reset);
+
 		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
-		return null;
+
+		infoButton.addEventListener('click', toggleInfo);
+		infoModal.addEventListener('click', (event) => {
+			if (event.target == infoModal) {
+				toggleInfo();
+			}
+		});
+		infoModalClose.addEventListener('click', toggleInfo);
 	}
 
 	/**
@@ -256,7 +273,74 @@ window.addEventListener('load', function (ev) {
 		}
 
 		await renderLayerStack();
-		return null;
+	}
+
+	async function reset() {
+		console.log("RESET");
+
+
+		for (let i = 0; i < parts.length; i++) {
+
+			selectedItemIndex[i] = null;
+
+			if (!parts[i].noneAllowed) {
+				// Required items must be filled
+
+				selectedItemIndex[i] = 0;
+			}
+
+			for (j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
+
+				if (j == selectedItemIndex[i]) {
+					itemsElements[i][j].classList.add("selected");
+				} else {
+					itemsElements[i][j].classList.remove("selected");
+				}
+			}
+		}
+
+		await renderLayerStack();
+	}
+
+	/**
+	 * Select outfit
+	 */
+	async function selectOutfit(outfit) {
+
+		for (let i = 0; i < parts.length; i++) {
+
+			let items = parts[i].items;
+
+			let noneCount = Number(parts[i].noneAllowed);
+			let itemRange = items.length + noneCount;
+
+			if (!parts[i].noneAllowed) {
+				// Required items must be filled
+
+				selectedItemIndex[i] = 0;
+			}
+
+			// Attempt to load outfit
+			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
+
+				if (items[itemIndex].set && items[itemIndex].set === outfit) {
+
+					selectedItemIndex[i] = itemIndex;
+					break;
+				}
+			}
+
+			for (j = 0; j < itemRange; j++) {
+
+				if (j == selectedItemIndex[i]) {
+					itemsElements[i][j].classList.add("selected");
+				} else {
+					itemsElements[i][j].classList.remove("selected");
+				}
+			}
+		}
+
+		await renderLayerStack();
 	}
 
 	/**
@@ -399,8 +483,8 @@ window.addEventListener('load', function (ev) {
 					(asset.folder ? asset.folder : parts[i].folder) + "/" +
 					itemName + ".png");
 
-				itemIcon.alt = itemName;// TODO better alt text
-				itemIcon.title = itemName;// TODO better title text
+				itemIcon.alt = asset.name ? asset.name : itemName;
+				itemIcon.title = asset.name ? asset.name : itemName;
 
 				item.appendChild(itemIcon);
 				item.id = "item_" + i.toString() + "_" + j.toString();
@@ -480,17 +564,7 @@ window.addEventListener('load', function (ev) {
 	 */
 	function toggleInfo() {
 
-		let infoWrap = document.getElementById("info_wrap");
-
-		if (infoVisible) {
-			infoWrap.style.display = "none";
-			infoVisible = false;
-			infoButton.textContent = "?";
-		} else {
-			infoWrap.style.display = "block";
-			infoVisible = true;
-			infoButton.textContent = "X";
-		}
+		infoModal.style.display = infoModal.offsetParent ? "none" : "block";
 	}
 
 	/**
@@ -517,16 +591,16 @@ window.addEventListener('load', function (ev) {
 	 * Display palette menu, hide item menu
 	 */
 	function showPalette() {
-		document.getElementById("imagemaker_colorpalette").style.display = "flex";
-		document.getElementById("imagemaker_itemlist").style.display = "none";
+		document.getElementById("color_palette_wrapper").style.display = "flex";
+		document.getElementById("item_list_wrapper").style.display = "none";
 	}
 
 	/**
 	 * Display item menu, hide palette menu
 	 */
 	function showItems() {
-		document.getElementById("imagemaker_colorpalette").style.display = "none";
-		document.getElementById("imagemaker_itemlist").style.display = "flex";
+		document.getElementById("color_palette_wrapper").style.display = "none";
+		document.getElementById("item_list_wrapper").style.display = "flex";
 	}
 
 	/**
@@ -642,7 +716,9 @@ window.addEventListener('load', function (ev) {
 			// Render the base layer
 			const imgPath = partLocation + "/" + item.item + color + ".png";
 
-			await (renderImage(imgPath, layerIndex));
+			if (!item.hide) {
+				await (renderImage(imgPath, layerIndex));
+			}
 
 			// Render additional layers
 			if (item.multilayer) {
@@ -650,7 +726,7 @@ window.addEventListener('load', function (ev) {
 				for (let i = 0; i < item.multilayer.length; i++) {
 
 					const addImgPath = partLocation + "/" + item.multilayer[i].item + color + ".png";
-					const addLayerIndex = layers.indexOf(item.multilayer[i].layer);
+					const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
 					await (renderImage(addImgPath, addLayerIndex));
 				}
@@ -671,5 +747,4 @@ window.addEventListener('load', function (ev) {
 		let ctx = layerCanvases[layerIndex].getContext('2d');
 		ctx.drawImage(img, 0, 0);
 	}
-
 }, false);

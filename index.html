@@ -35,66 +35,79 @@
 	<noscript>This system requires javascript to function.</noscript>
 
 	<script src="imagemaker.js"></script>
-	<div id="image-maker" class="imagemaker">
-		<div class="imagemaker_container_wrapper">
-			<div id="info_wrap" class="imagemaker_info_wrapper">
-				<div class="imagemaker_info_content">
+
+	<div class="app_wrapper">
+
+		<div class="container">
+			<div class="canvas_wrapper">
+				<canvas id="my-canvas-object" width="1000" height="1000"></canvas>
+				<a id="save" class="save_button" download="new_image.png">
+					Save
+				</a>
+
+				<a class="loading" id="loading">
+					Loading...
+				</a>
+
+				<div class="part_control_wrapper">
+					<span id="move_button" class="moves"></span>
+					<span id="items_button" class="items"></span>
+					<span id="palette_button" class="palette"></span>
+				</div>
+			</div>
+
+			<div class="item_selection_wrapper">
+				<div class="feature_buttons">
+					<!-- TODO Control update with new functions -->
+					<div id="reset_button">Reset</div>
+					<div style="display: none;">Outfits</div>
+					<div style="display: none;">Parts</div>
+					<div id="info_button">Credit</div>
+				</div>
+
+				<div class="parts_menu_wrapper">
+					<div class="parts_menu">
+						<ul id="parts_list">
+							<li id="random_button">
+								<img src="assets/ui_icons/icon-random.png" alt="Randomize outfit"
+									title="Randomize outfit" />
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="control_panel_wrapper">
+					<div class="control_panel">
+						<div id="item_list_wrapper" class="item_list_wrapper">
+							<ul id="itemlist_list">
+							</ul>
+						</div>
+						<div id="color_palette_wrapper" class="color_palette_wrapper">
+							<ul id="colorpalette_list">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="info_modal" class="info_modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2>Bettel Hackrew</h2>
+					<span id="info_modal_close" class="close">&times;</span>
+				</div>
+				<div class="modal-body">
+
 					<p>
 						Bettel Hackrew is built upon the open-source character creator framework <a
 							href="https://github.com/ksadov/hackrew" target="_blank">hackrew</a>.
 					</p>
+
 				</div>
 			</div>
-			<div class="imagemaker_container">
-				<div class="imagemaker_canvas_wrapper">
-					<canvas id="my-canvas-object" width="1000" height="1000"></canvas>
-					<a class="imagemaker_save_button" id="save" download="new_image.png">
-						Save
-					</a>
-					<a class="loading" id="loading">
-						Loading...
-					</a>
-					<div class="imagemaker_ctrl_buttons">
-						<span id="move_button" class="button_show_controller"></span>
-						<span id="items_button" class="button_show_itemlist"></span>
-						<span id="palette_button" class="button_show_colorpalette"></span>
-					</div>
-				</div>
-				<div class="imagemaker_control_wrapper">
-					<div style="display: none;">
-						<!-- TODO Control update with new functions -->
-						<span>Reset</span>
-						<span>Outfits</span>
-						<span>Body</span>
-						<span>Clothing</span>
-						<span>Random</span>
-					</div>
-					<div class="imagemaker_parts_menu_wrapper">
-						<div class="imagemaker_parts_menu">
-							<ul id="parts_list">
-							</ul>
-						</div>
-						<div class="imagemaker_random_button" id="random_button">
-							Random
-						</div>
-					</div>
-					<div class="imagemaker_control_panel_wrapper">
-						<div class="imagemaker_control_panel">
-							<div id="imagemaker_itemlist" class="imagemaker_itemlist">
-								<ul id="itemlist_list">
-								</ul>
-							</div>
-							<div id="imagemaker_colorpalette" class="imagemaker_colorpalette">
-								<ul id="colorpalette_list">
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<span id="info_button" class="imagemaker_info_show_button">?</span>
-			</div>
-			<a class="imagemaker_logo" href="/" exact=""></a>
 		</div>
+
 	</div>
 </body>
 

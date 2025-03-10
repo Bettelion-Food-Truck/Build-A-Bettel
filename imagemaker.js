@@ -265,7 +265,66 @@ window.addEventListener('load', function (ev) {
 		}
 
 		await renderLayerStack();
-		return null;
+	}
+
+	/**
+	 * Select outfit
+	 */
+	async function selectOutfit(outfit, fillOtherItems = false) {
+
+		for (let i = 0; i < parts.length; i++) {
+
+			let items = parts[i].items;
+
+			let noneCount = Number(parts[i].noneAllowed);
+			let itemRange = items.length + noneCount;
+
+			// TODO color is always random currently; fix
+			let colorRange = parts[i].colors.length;
+			let colorIndex = Math.floor(Math.random() * colorRange);
+			selectedColors[i] = colorIndex;
+
+			// Attempt to load outfit
+			let outfitFound = false;
+			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
+
+				if (items[itemIndex].set && items[itemIndex].set === outfit) {
+
+					selectedItemIndex[i] = itemIndex;
+					outfitFound = true;
+					break;
+				}
+			}
+
+			if (fillOtherItems && !outfitFound) {
+				// Outfit not in slot but try to fill
+
+				let itemIndex = Math.floor(Math.random() * itemRange);
+
+				if (noneCount > 0 && itemIndex === 0) {
+					selectedItemIndex[i] = null;
+				} else {
+					selectedItemIndex[i] = itemIndex - noneCount;
+				}
+			} else if (!fillOtherItems && !parts[i].noneAllowed && typeof selectedItemIndex[i] === 'undefined') {
+				// Required items must be filled
+
+				console.log(selectedItemIndex[i]);
+
+				selectedItemIndex[i] = 0;
+			}
+
+			for (j = 0; j < itemRange; j++) {
+
+				if (j == selectedItemIndex[i]) {
+					itemsElements[i][j].classList.add("selected");
+				} else {
+					itemsElements[i][j].classList.remove("selected");
+				}
+			}
+		}
+
+		await renderLayerStack();
 	}
 
 	/**

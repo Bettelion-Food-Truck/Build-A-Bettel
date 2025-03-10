@@ -314,27 +314,20 @@ window.addEventListener('load', function (ev) {
 			let noneCount = Number(parts[i].noneAllowed);
 			let itemRange = items.length + noneCount;
 
-			// TODO color is always random currently; fix
-			let colorRange = parts[i].colors.length;
-			let colorIndex = Math.floor(Math.random() * colorRange);
-			selectedColors[i] = colorIndex;
+			if (!parts[i].noneAllowed) {
+				// Required items must be filled
+
+				selectedItemIndex[i] = 0;
+			}
 
 			// Attempt to load outfit
-			let outfitFound = false;
 			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
 
 				if (items[itemIndex].set && items[itemIndex].set === outfit) {
 
 					selectedItemIndex[i] = itemIndex;
-					outfitFound = true;
 					break;
 				}
-			}
-
-			if (!parts[i].noneAllowed) {
-				// Required items must be filled
-
-				selectedItemIndex[i] = 0;
 			}
 
 			for (j = 0; j < itemRange; j++) {

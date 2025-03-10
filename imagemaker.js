@@ -18,6 +18,8 @@ window.addEventListener('load', function (ev) {
 	const HEIGHT = canvas.height;
 
 	const randomButton = document.getElementById("random_button");
+	const resetButton = this.document.getElementById("reset_button");
+
 	const paletteButton = document.getElementById("palette_button");
 	const itemsButton = document.getElementById("items_button");
 	const saveButton = document.getElementById("save_button");
@@ -165,6 +167,8 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initButtons() {
 		randomButton.addEventListener('click', randomize);
+		resetButton.addEventListener('click', reset);
+
 		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
 
@@ -271,6 +275,33 @@ window.addEventListener('load', function (ev) {
 		await renderLayerStack();
 	}
 
+	async function reset() {
+		console.log("RESET");
+
+
+		for (let i = 0; i < parts.length; i++) {
+
+			selectedItemIndex[i] = null;
+
+			if (!parts[i].noneAllowed) {
+				// Required items must be filled
+
+				selectedItemIndex[i] = 0;
+			}
+
+			for (j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
+
+				if (j == selectedItemIndex[i]) {
+					itemsElements[i][j].classList.add("selected");
+				} else {
+					itemsElements[i][j].classList.remove("selected");
+				}
+			}
+		}
+
+		await renderLayerStack();
+	}
+
 	/**
 	 * Select outfit
 	 */
@@ -312,8 +343,6 @@ window.addEventListener('load', function (ev) {
 				}
 			} else if (!fillOtherItems && !parts[i].noneAllowed && typeof selectedItemIndex[i] === 'undefined') {
 				// Required items must be filled
-
-				console.log(selectedItemIndex[i]);
 
 				selectedItemIndex[i] = 0;
 			}

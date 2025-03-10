@@ -1,6 +1,7 @@
 window.addEventListener('load', function (ev) {
 	let parts = [];
 	let layers = [];
+	let outfits = [];
 
 	// code below this line controls functionality
 	// dw about if you're just editing visual assets
@@ -65,7 +66,8 @@ window.addEventListener('load', function (ev) {
 
 		await initItemFunctions();
 
-		await randomize();
+		// Load game into a default outfit
+		await selectOutfit(outfits[0]);
 
 		let firstPart = 0;
 		for (let i = 0; i < parts.length; i++) {
@@ -84,6 +86,8 @@ window.addEventListener('load', function (ev) {
 	async function initData() {
 		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
+
+		outfits = json.sets;
 
 		parts = json.parts;
 

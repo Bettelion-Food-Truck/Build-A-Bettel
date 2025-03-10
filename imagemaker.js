@@ -17,11 +17,16 @@ window.addEventListener('load', function (ev) {
 	const HEIGHT = canvas.height;
 
 	const randomButton = document.getElementById("random_button");
-	const infoButton = document.getElementById("info_button");
 	const paletteButton = document.getElementById("palette_button");
 	const itemsButton = document.getElementById("items_button");
 	const saveButton = document.getElementById("save_button");
+
 	const loading = document.getElementById("loading");
+
+	const infoButton = document.getElementById("info_button");
+	const infoModal = document.getElementById("info_modal");
+	const infoModalClose = document.getElementById("info_modal_close");
+
 	/* 1d array of part select button DOM elements */
 	const partsElements = [];
 	/* 2d array of item select button DOM elements */
@@ -35,8 +40,6 @@ window.addEventListener('load', function (ev) {
 	const workingContext = workingCanvas.getContext('2d');
 
 	// global state variables
-	/* Is the extra info screen currently visible? */
-	let infoVisible = false;
 	/* Index of part whose menu is currently displayed */
 	let selectedPart = 0;
 	/* 1d array of colors where selectedColors[i] is the color selected for part i */
@@ -158,10 +161,16 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initButtons() {
 		randomButton.addEventListener('click', randomize);
-		infoButton.addEventListener('click', toggleInfo);
 		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
-		return null;
+
+		infoButton.addEventListener('click', toggleInfo);
+		infoModal.addEventListener('click', (event) => {
+			if (event.target == infoModal) {
+				toggleInfo();
+			}
+		});
+		infoModalClose.addEventListener('click', toggleInfo);
 	}
 
 	/**
@@ -480,17 +489,7 @@ window.addEventListener('load', function (ev) {
 	 */
 	function toggleInfo() {
 
-		let infoWrap = document.getElementById("info_wrap");
-
-		if (infoVisible) {
-			infoWrap.style.display = "none";
-			infoVisible = false;
-			infoButton.textContent = "?";
-		} else {
-			infoWrap.style.display = "block";
-			infoVisible = true;
-			infoButton.textContent = "X";
-		}
+		infoModal.style.display = infoModal.offsetParent ? "none" : "block";
 	}
 
 	/**
@@ -517,16 +516,16 @@ window.addEventListener('load', function (ev) {
 	 * Display palette menu, hide item menu
 	 */
 	function showPalette() {
-		document.getElementById("imagemaker_colorpalette").style.display = "flex";
-		document.getElementById("imagemaker_itemlist").style.display = "none";
+		document.getElementById("color_palette_wrapper").style.display = "flex";
+		document.getElementById("item_list_wrapper").style.display = "none";
 	}
 
 	/**
 	 * Display item menu, hide palette menu
 	 */
 	function showItems() {
-		document.getElementById("imagemaker_colorpalette").style.display = "none";
-		document.getElementById("imagemaker_itemlist").style.display = "flex";
+		document.getElementById("color_palette_wrapper").style.display = "none";
+		document.getElementById("item_list_wrapper").style.display = "flex";
 	}
 
 	/**

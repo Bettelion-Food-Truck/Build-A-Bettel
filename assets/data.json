@@ -85,11 +85,12 @@
       "folder": "hair",
       "items": [
         "default",
-        "second"
+        "second",
+        "bald"
       ],
       "colorMode": null,
       "colors": [],
-      "noneAllowed": true
+      "noneAllowed": false
     },
     {
       "folder": "undies",

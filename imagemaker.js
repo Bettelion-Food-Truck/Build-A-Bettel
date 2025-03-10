@@ -650,7 +650,7 @@ window.addEventListener('load', function (ev) {
 				for (let i = 0; i < item.multilayer.length; i++) {
 
 					const addImgPath = partLocation + "/" + item.multilayer[i].item + color + ".png";
-					const addLayerIndex = layers.indexOf(item.multilayer[i].layer);
+					const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
 					await (renderImage(addImgPath, addLayerIndex));
 				}
@@ -671,5 +671,4 @@ window.addEventListener('load', function (ev) {
 		let ctx = layerCanvases[layerIndex].getContext('2d');
 		ctx.drawImage(img, 0, 0);
 	}
-
 }, false);

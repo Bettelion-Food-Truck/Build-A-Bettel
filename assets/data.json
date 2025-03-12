@@ -38,7 +38,8 @@
     "punk",
     "january-2025",
     "flex",
-    "debut-underlayer"
+    "debut-underlayer",
+    "bettelmaid"
   ],
   "parts": [
     {
@@ -158,6 +159,10 @@
         {
           "item": "second-outfit",
           "set": "second-outfit"
+        },
+        {
+          "item": "bettelmaid",
+          "set": "bettelmaid"
         }
       ],
       "colorMode": null,
@@ -186,6 +191,10 @@
         {
           "item": "second-outfit",
           "set": "second-outfit"
+        },
+        {
+          "item": "bettelmaid",
+          "set": "bettelmaid"
         }
       ],
       "colorMode": null,
@@ -264,6 +273,14 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "bettelmaid",
+          "set": "bettelmaid",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -286,6 +303,10 @@
         {
           "item": "second-outfit",
           "set": "second-outfit"
+        },
+        {
+          "item": "bettelmaid",
+          "set": "bettelmaid"
         }
       ],
       "colorMode": null,
@@ -464,6 +485,10 @@
           "item": "second-outfit",
           "set": "second-outfit"
         },
+        {
+          "item": "bettelmaid",
+          "set": "bettelmaid"
+        },
         "cat-ears",
         "party-hat"
       ],
@@ -513,6 +538,10 @@
         {
           "item": "second-outfit",
           "set": "second-outfit"
+        },
+        {
+          "item": "bettelmaid",
+          "set": "bettelmaid"
         }
       ],
       "colorMode": null,
@@ -529,6 +558,10 @@
         {
           "item": "january-2025-keychain",
           "set": "january-2025"
+        },
+        {
+          "item": "debut-underlayer",
+          "set": "debut-underlayer"
         }
       ],
       "colorMode": null,

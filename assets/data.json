@@ -20,6 +20,7 @@
     "hands",
     "gloves",
     "shirts",
+    "accessories-hand",
     "belts",
     "vests",
     "jackets",
@@ -29,19 +30,21 @@
     "hats",
     "neck",
     "accessories-front",
-    "accessories-hand",
+    "accessories-front_2",
     "jewelry",
+    "jewelry_2",
     "frames",
     "filters"
   ],
   "sets": [
-    "pirate",
+    "magni",
     "second-outfit",
     "showman",
     "punk",
     "january-2025",
     "flex",
     "debut-underlayer",
+    "pirate",
     "bettelmaid",
     "battel"
   ],
@@ -211,6 +214,12 @@
           "set": [
             "pirate"
           ]
+        },
+        {
+          "item": "magni-pants",
+          "set": [
+            "magni"
+          ]
         }
       ],
       "colorMode": null,
@@ -261,6 +270,12 @@
           "item": "pirate-shirt",
           "set": [
             "pirate"
+          ]
+        },
+        {
+          "item": "magni-shirt",
+          "set": [
+            "magni"
           ]
         }
       ],
@@ -373,6 +388,12 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "magni-boots",
+          "set": [
+            "magni"
+          ]
         }
       ],
       "colorMode": null,
@@ -405,6 +426,12 @@
           "item": "bettelmaid",
           "set": [
             "bettelmaid"
+          ]
+        },
+        {
+          "item": "magni-vest",
+          "set": [
+            "magni"
           ]
         }
       ],
@@ -492,6 +519,18 @@
           ],
           "set": [
             "pirate"
+          ]
+        },
+        {
+          "item": "magni-jacket",
+          "multilayer": [
+            {
+              "item": "magni-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": [
+            "magni"
           ]
         }
       ],
@@ -637,6 +676,12 @@
           "set": [
             "second-outfit"
           ]
+        },
+        {
+          "item": "magni-gloves",
+          "set": [
+            "magni"
+          ]
         }
       ],
       "colorMode": null,
@@ -686,6 +731,12 @@
           "item": "pirate-hat",
           "set": [
             "pirate"
+          ]
+        },
+        {
+          "item": "magni-hat",
+          "set": [
+            "magni"
           ]
         },
         "cat-ears",
@@ -775,6 +826,7 @@
     },
     {
       "folder": "accessories-front",
+      "icon": "icon-1",
       "items": [
         {
           "item": "showman-heart-brooch",
@@ -799,6 +851,34 @@
           "set": [
             "bettelmaid"
           ]
+        },
+        {
+          "item": "magni-front-accessory-1",
+          "set": [
+            "magni"
+          ]
+        },
+        "magni-front-accessory-2"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories-front",
+      "layer": "accessories-front_2",
+      "icon": "icon-2",
+      "items": [
+        "showman-heart-brooch",
+        "january-2025-keychain",
+        "debut-underlayer",
+        "bettelmaid",
+        "magni-front-accessory-1",
+        {
+          "item": "magni-front-accessory-2",
+          "set": [
+            "magni"
+          ]
         }
       ],
       "colorMode": null,
@@ -807,6 +887,7 @@
     },
     {
       "folder": "jewelry",
+      "icon": "icon-1",
       "items": [
         {
           "item": "punk-earrings",
@@ -819,6 +900,32 @@
           "set": [
             "second-outfit",
             "battel"
+          ]
+        },
+        {
+          "item": "magni-jewelry-1",
+          "set": [
+            "magni"
+          ]
+        },
+        "magni-jewelry-2"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "jewelry",
+      "layer": "jewelry_2",
+      "icon": "icon-2",
+      "items": [
+        "punk-earrings",
+        "second-outfit",
+        "magni-jewelry-1",
+        {
+          "item": "magni-jewelry-2",
+          "set": [
+            "magni"
           ]
         }
       ],

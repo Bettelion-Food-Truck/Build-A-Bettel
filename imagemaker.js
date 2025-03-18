@@ -279,8 +279,6 @@ window.addEventListener('load', function (ev) {
 	}
 
 	async function reset() {
-		console.log("RESET");
-
 
 		for (let i = 0; i < parts.length; i++) {
 
@@ -375,10 +373,16 @@ window.addEventListener('load', function (ev) {
 
 		checkPartRequirements();
 
-		// Render layers
+		// Clear layers
 		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
+			// Clearing layers is done first because sometimes layers are rendered out of order due to special logics
+			// Additional execution time is minimal for data set size
 
 			clearCanvas(layerCanvases[layerIndex]);
+		}
+
+		// Render images to layers
+		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
 			const partId = layers[layerIndex].partId;
 
@@ -387,7 +391,7 @@ window.addEventListener('load', function (ev) {
 			}
 		}
 
-		// Draw layers
+		// Draw layers onto master
 		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 			workingContext.drawImage(layerCanvases[layerIndex], 0, 0);
 		}
@@ -720,6 +724,13 @@ window.addEventListener('load', function (ev) {
 			const imgPath = partLocation + "/" + item.item + color + ".png";
 
 			if (!item.hide) {
+
+				// Special different layer for some items
+				if (item.layer) {
+
+					layerIndex = layers.findIndex(layer => layer.layer === item.layer);
+				}
+
 				await (renderImage(imgPath, layerIndex));
 			}
 

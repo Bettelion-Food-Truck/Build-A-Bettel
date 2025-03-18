@@ -17,10 +17,11 @@
     "accessories-face",
     "shoes",
     "pants",
+    "handheld_back",
     "hands",
     "gloves",
     "shirts",
-    "accessories-hand",
+    "handheld",
     "belts",
     "vests",
     "jackets",
@@ -1000,7 +1001,7 @@
       "noneAllowed": true
     },
     {
-      "folder": "accessories-hand",
+      "folder": "handheld",
       "items": [
         {
           "item": "pirate-handheld",

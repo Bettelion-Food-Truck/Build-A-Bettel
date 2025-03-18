@@ -909,7 +909,6 @@
       "layer": "accessories-front_2",
       "icon": "icon-2",
       "items": [
-        "showman-heart-brooch",
         "january-2025-keychain",
         "debut-underlayer",
         "bettelmaid",
@@ -965,6 +964,7 @@
       "layer": "jewelry_2",
       "icon": "icon-2",
       "items": [
+        "showman-heart-brooch",
         "punk-earrings",
         "second-outfit",
         "magni-jewelry-1",

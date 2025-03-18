@@ -13,6 +13,7 @@
     "feet",
     "expressions",
     "makeup",
+    "facial-hair",
     "accessories-face",
     "shoes",
     "pants",
@@ -123,6 +124,15 @@
         "blush-heavy",
         "eyeshadow",
         "tictactoe"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "facial-hair",
+      "items": [
+        "remove"
       ],
       "colorMode": null,
       "colors": [],

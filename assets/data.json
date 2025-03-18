@@ -38,7 +38,7 @@
     "filters"
   ],
   "sets": [
-    "sims",
+    "unchained",
     "second-outfit",
     "showman",
     "punk",
@@ -48,7 +48,8 @@
     "pirate",
     "bettelmaid",
     "battel",
-    "magni"
+    "magni",
+    "sims"
   ],
   "parts": [
     {
@@ -426,6 +427,12 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "unchained-boots",
+          "set": [
+            "unchained"
+          ]
         }
       ],
       "colorMode": null,
@@ -564,6 +571,12 @@
           "set": [
             "magni"
           ]
+        },
+        {
+          "item": "unchained-robe",
+          "set": [
+            "unchained"
+          ]
         }
       ],
       "colorMode": null,
@@ -627,7 +640,8 @@
               "layer": "jackets_back"
             }
           ]
-        }
+        },
+        "unchained-robe"
       ],
       "colorMode": null,
       "colors": [],
@@ -653,6 +667,13 @@
           "item": "punk-belt",
           "set": [
             "punk"
+          ]
+        },
+        {
+          "item": "unchained-belt",
+          "layer": "belt_elevated",
+          "set": [
+            "unchained"
           ]
         }
       ],
@@ -697,6 +718,12 @@
           "item": "sims-gloves",
           "set": [
             "sims"
+          ]
+        },
+        {
+          "item": "unchained-gloves",
+          "set": [
+            "unchained"
           ]
         }
       ],
@@ -846,6 +873,12 @@
           "item": "bettelmaid",
           "set": [
             "bettelmaid"
+          ]
+        },
+        {
+          "item": "unchained-scarf",
+          "set": [
+            "unchained"
           ]
         }
       ],

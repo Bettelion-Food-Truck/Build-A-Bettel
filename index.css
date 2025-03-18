@@ -266,6 +266,12 @@ ul li img {
     }
 }
 
+@media (hover: none) {
+    .zoom_control_wrapper {
+        display: none;
+    }
+}
+
 .item_selection_wrapper {
     position: relative;
 

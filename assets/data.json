@@ -35,6 +35,7 @@
     "filters"
   ],
   "sets": [
+    "battel",
     "second-outfit",
     "showman",
     "punk",
@@ -96,7 +97,8 @@
         {
           "item": "second",
           "set": [
-            "second-outfit"
+            "second-outfit",
+            "battel"
           ]
         },
         {
@@ -186,7 +188,8 @@
         {
           "item": "second-outfit",
           "set": [
-            "second-outfit"
+            "second-outfit",
+            "battel"
           ]
         },
         {
@@ -230,7 +233,8 @@
         {
           "item": "second-outfit",
           "set": [
-            "second-outfit"
+            "second-outfit",
+            "battel"
           ]
         },
         {
@@ -322,7 +326,8 @@
         {
           "item": "second-outfit",
           "set": [
-            "second-outfit"
+            "second-outfit",
+            "battel"
           ],
           "requires": {
             "part": "feet",
@@ -362,7 +367,8 @@
         {
           "item": "second-outfit",
           "set": [
-            "second-outfit"
+            "second-outfit",
+            "battel"
           ]
         },
         {
@@ -432,6 +438,18 @@
               "item": "second-outfit-jacket-2-back",
               "layer": "jackets_back"
             }
+          ],
+          "set": [
+            "battel"
+          ]
+        },
+        {
+          "item": "battel-jacket",
+          "multilayer": [
+            {
+              "item": "battel-jacket-back",
+              "layer": "jackets_back"
+            }
           ]
         }
       ],
@@ -496,6 +514,18 @@
           ],
           "set": [
             "second-outfit"
+          ]
+        },
+        {
+          "item": "battel-jacket",
+          "multilayer": [
+            {
+              "item": "battel-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": [
+            "battel"
           ]
         }
       ],
@@ -595,6 +625,12 @@
             "bettelmaid"
           ]
         },
+        {
+          "item": "battel-hat",
+          "set": [
+            "battel"
+          ]
+        },
         "cat-ears",
         "party-hat"
       ],
@@ -612,15 +648,15 @@
           ]
         },
         {
-          "item": "punk-earrings",
-          "set": [
-            "punk"
-          ]
-        },
-        {
           "item": "second-outfit",
           "set": [
             "second-outfit"
+          ]
+        },
+        {
+          "item": "battel-mask",
+          "set": [
+            "battel"
           ]
         }
       ],
@@ -658,7 +694,8 @@
         {
           "item": "second-outfit",
           "set": [
-            "second-outfit"
+            "second-outfit",
+            "battel"
           ]
         },
         {
@@ -692,6 +729,12 @@
           "set": [
             "debut-underlayer"
           ]
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ]
         }
       ],
       "colorMode": null,
@@ -701,7 +744,19 @@
     {
       "folder": "jewelry",
       "items": [
-        "remove"
+        {
+          "item": "punk-earrings",
+          "set": [
+            "punk"
+          ]
+        },
+        {
+          "item": "second-outfit",
+          "set": [
+            "second-outfit",
+            "battel"
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],

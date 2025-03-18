@@ -92,8 +92,6 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 
 ## TODO
 
-- Reset button to bring back to blank base
-- Remove randomize from init, default to an outfit
 - Linked assets
   - Outfits
 - Movable assets
@@ -101,7 +99,6 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 - Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator
 - Update generate_colored_images.py to handle multi-layer assets
 - See if there's a way to batch async for faster response time on multi-layer items or item sets
-- Zoom feature
 - Undo and Redo functions
 - Link to outfit option with URL args
 - Randomly generatored outfit prompts

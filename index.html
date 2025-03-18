@@ -29,6 +29,8 @@
 
 	<link rel="icon" href="assets/favicon.png">
 	<link rel="stylesheet" href="index.css">
+
+	<script src="https://unpkg.com/@panzoom/panzoom@4.6.0/dist/panzoom.min.js"></script>
 </head>
 
 <body>
@@ -41,7 +43,7 @@
 		<!-- Game container -->
 		<div class="container">
 			<div class="canvas_wrapper">
-				<canvas id="my-canvas-object" width="1000" height="1000"></canvas>
+				<canvas id="main-canvas" width="1000" height="1000"></canvas>
 				<a id="save" class="save_button" download="new_image.png">
 					Save
 				</a>
@@ -54,6 +56,12 @@
 					<span id="move_button" class="moves"></span>
 					<span id="items_button" class="items"></span>
 					<span id="palette_button" class="palette"></span>
+				</div>
+
+				<div class="zoom_control_wrapper">
+					<span id="zoom_in_button" class="zoom_in"></span>
+					<span id="zoom_out_button" class="zoom_out"></span>
+					<span id="zoom_reset_button" class="zoom_reset"></span>
 				</div>
 			</div>
 

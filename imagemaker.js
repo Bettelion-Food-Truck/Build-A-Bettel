@@ -324,7 +324,7 @@ window.addEventListener('load', function (ev) {
 			// Attempt to load outfit
 			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
 
-				if (items[itemIndex].set && items[itemIndex].set === outfit) {
+				if (items[itemIndex].set && items[itemIndex].set.indexOf(outfit) >= 0) {
 
 					selectedItemIndex[i] = itemIndex;
 					break;

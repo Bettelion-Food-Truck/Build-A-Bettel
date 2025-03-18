@@ -60,7 +60,9 @@
         "normal",
         {
           "item": "corrupted",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         }
       ],
       "colorMode": null,
@@ -93,7 +95,9 @@
         "default",
         {
           "item": "second",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "bald",
@@ -110,7 +114,9 @@
         "boxers",
         {
           "item": "briefs",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         "leaf"
       ],
@@ -149,31 +155,45 @@
               "layer": "pants_back"
             }
           ],
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "bettelgoose-pants",
-          "set": "bettelgoose"
+          "set": [
+            "bettelgoose"
+          ]
         },
         {
           "item": "punk-pants",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "flex",
-          "set": "flex"
+          "set": [
+            "flex"
+          ]
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "bettelmaid",
-          "set": "bettelmaid"
+          "set": [
+            "bettelmaid"
+          ]
         }
       ],
       "colorMode": null,
@@ -185,27 +205,39 @@
       "items": [
         {
           "item": "showman-shirt",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-shirt",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-shirt",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "bettelmaid",
-          "set": "bettelmaid"
+          "set": [
+            "bettelmaid"
+          ]
         }
       ],
       "colorMode": null,
@@ -225,7 +257,9 @@
         },
         {
           "item": "showman-shoes",
-          "set": "showman",
+          "set": [
+            "showman"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -233,7 +267,9 @@
         },
         {
           "item": "january-2025-shoes-heels",
-          "set": "january-2025",
+          "set": [
+            "january-2025"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -241,7 +277,9 @@
         },
         {
           "item": "punk-boots",
-          "set": "punk",
+          "set": [
+            "punk"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -263,7 +301,9 @@
         },
         {
           "item": "flex",
-          "set": "flex",
+          "set": [
+            "flex"
+          ],
           "requires": {
             "part": "feet",
             "item": "flat"
@@ -271,7 +311,9 @@
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer",
+          "set": [
+            "debut-underlayer"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -279,7 +321,9 @@
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit",
+          "set": [
+            "second-outfit"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -287,7 +331,9 @@
         },
         {
           "item": "bettelmaid",
-          "set": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -309,15 +355,21 @@
               "layer": "vests_back"
             }
           ],
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "bettelmaid",
-          "set": "bettelmaid"
+          "set": [
+            "bettelmaid"
+          ]
         }
       ],
       "colorMode": null,
@@ -330,26 +382,36 @@
       "items": [
         {
           "item": "showman-jacket",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "bettelgoose",
-          "set": "bettelgoose"
+          "set": [
+            "bettelgoose"
+          ]
         },
         {
           "item": "january-2025-haori"
         },
         {
           "item": "january-2025-kimono-jacket",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-jacket",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "flex",
-          "set": "flex"
+          "set": [
+            "flex"
+          ]
         },
         {
           "item": "second-outfit-jacket-1",
@@ -359,7 +421,9 @@
               "layer": "jackets_back"
             }
           ],
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "second-outfit-jacket-2",
@@ -382,26 +446,36 @@
       "items": [
         {
           "item": "showman-jacket",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "bettelgoose",
-          "set": "bettelgoose"
+          "set": [
+            "bettelgoose"
+          ]
         },
         {
           "item": "january-2025-haori",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "january-2025-kimono-jacket"
         },
         {
           "item": "punk-jacket",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "flex",
-          "set": "flex"
+          "set": [
+            "flex"
+          ]
         },
         {
           "item": "second-outfit-jacket-1",
@@ -420,7 +494,9 @@
               "layer": "jackets_2_back"
             }
           ],
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         }
       ],
       "colorMode": null,
@@ -432,16 +508,22 @@
       "items": [
         {
           "item": "showman-skeleton-belt",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-obi",
           "layer": "belt_elevated",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-belt",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         }
       ],
       "colorMode": null,
@@ -453,19 +535,27 @@
       "items": [
         {
           "item": "showman-gloves",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "punk-rings",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         }
       ],
       "colorMode": null,
@@ -483,19 +573,27 @@
               "layer": "hats_back"
             }
           ],
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-hat",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "bettelmaid",
-          "set": "bettelmaid"
+          "set": [
+            "bettelmaid"
+          ]
         },
         "cat-ears",
         "party-hat"
@@ -509,15 +607,21 @@
       "items": [
         {
           "item": "showman-mask",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "punk-earrings",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         }
       ],
       "colorMode": null,
@@ -529,27 +633,39 @@
       "items": [
         {
           "item": "showman-cravat",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-neck-ribbon",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-necklace",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "debut-underlayer-choker",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "bettelmaid",
-          "set": "bettelmaid"
+          "set": [
+            "bettelmaid"
+          ]
         }
       ],
       "colorMode": null,
@@ -561,15 +677,21 @@
       "items": [
         {
           "item": "showman-heart-brooch",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-keychain",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         }
       ],
       "colorMode": null,
@@ -590,7 +712,9 @@
       "items": [
         {
           "item": "showman-ribbon",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         "angel-wings"
       ],

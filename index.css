@@ -31,8 +31,20 @@
     --palette-toggle-img: url("assets/ui_icons/icon-colors.png");
 
     /* the color/image filepath of the info button */
-    --info-toggle-color: #ffffff;
-    --info-toggle-png: "none";
+    --move-toggle-color: #ffffff;
+    --move-toggle-img: url("assets/ui_icons/move_toggle.svg");
+
+    /* the color/image filepath of the zoom in button */
+    --zoom-in-color: #00000000;
+    --zoom-in-img: url("assets/ui_icons/zoom-in.png");
+
+    /* the color/image filepath of the zoom out button */
+    --zoom-out-color: #00000000;
+    --zoom-out-img: url("assets/ui_icons/zoom-out.png");
+
+    /* the color/image filepath of the zoom reset button */
+    --zoom-reset-color: #00000000;
+    --zoom-reset-img: url("assets/ui_icons/zoom-reset.png");
 
     /* the color/image filepath of the info button */
     --move-toggle-color: #ffffff;
@@ -161,7 +173,11 @@ ul li img {
     height: 50px;
     z-index: 0;
 
-    .items {
+    .items,
+    .palette,
+    .moves {
+        position: absolute;
+
         width: 50px;
         height: 50px;
 
@@ -169,63 +185,84 @@ ul li img {
         justify-content: center;
         align-items: center;
 
-        background-color: var(--item-toggle-color, #ffffff);
-        background-image: var(--item-toggle-img, "none");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
-        border: 0 solid #aaaaaa;
         cursor: pointer;
         text-align: center;
-        position: absolute;
+    }
+
+    .items {
+        background-color: var(--item-toggle-color, #ffffff);
+        background-image: var(--item-toggle-img, "none");
     }
 
     .palette {
-        width: 50px;
-        height: 50px;
-
         left: -55px;
-
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
 
         background-color: var(--palette-toggle-color, #ffffff);
         background-image: var(--palette-toggle-img, "none");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        border: 0 solid #aaaaaa;
-        cursor: pointer;
-        text-align: center;
-        position: absolute;
     }
 
     .moves {
         /* TODO: implement movable parts*/
         display: none;
-        /* display: inline-flex; */
-        width: 50px;
-        height: 50px;
 
         left: -110px;
+
+        background-color: var(--move-toggle-color, #ffffff);
+        background-image: var(--move-toggle-img, "none");
+    }
+}
+
+.zoom_control_wrapper {
+    position: absolute;
+    top: 60px;
+    right: 4px;
+    bottom: auto;
+    left: auto;
+
+    width: 50px;
+    height: 50px;
+    z-index: 0;
+
+    .zoom_in,
+    .zoom_out,
+    .zoom_reset {
+        position: absolute;
+
+        width: 50px;
+        height: 50px;
 
         justify-content: center;
         align-items: center;
 
-        background-color: var(--move-toggle-color, #ffffff);
-        background-image: var(--move-toggle-img, "none");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
-        color: #333;
-        border: 0 solid #aaaaaa;
         cursor: pointer;
         text-align: center;
-        position: absolute;
+    }
+
+    .zoom_in {
+        background-color: var(--zoom-in-color, #ffffff);
+        background-image: var(--zoom-in-img, "none");
+    }
+
+    .zoom_out {
+        left: -55px;
+
+        background-color: var(--zoom-out-color, #ffffff);
+        background-image: var(--zoom-out-img, "none");
+    }
+
+    .zoom_reset {
+        left: -110px;
+
+        background-color: var(--zoom-reset-color, #ffffff);
+        background-image: var(--zoom-reset-img, "none");
     }
 }
 
@@ -518,21 +555,16 @@ ul li img {
 
         width: 6vh;
         height: 6vh;
+    }
 
-        .palette {
-            width: 6vh;
-            height: 6vh;
-            line-height: 6vh;
-            left: -10vh;
-            bottom: 4px;
-        }
+    .zoom_control_wrapper {
+        bottom: 60px;
+        right: 4px;
+        top: auto;
+        left: auto;
 
-        .items {
-            width: 6vh;
-            height: 6vh;
-            bottom: 4px;
-            right: 4px;
-        }
+        width: 6vh;
+        height: 6vh;
     }
 
     .item_selection_wrapper {

@@ -11,7 +11,7 @@ window.addEventListener('load', function (ev) {
 	const UI_ASSETS = "ui_icons/"
 
 	// DOM Elements
-	const canvas = document.getElementById("my-canvas-object");
+	const canvas = document.getElementById("main-canvas");
 	const context = canvas.getContext('2d');
 
 	const WIDTH = canvas.width;
@@ -23,6 +23,10 @@ window.addEventListener('load', function (ev) {
 	const paletteButton = document.getElementById("palette_button");
 	const itemsButton = document.getElementById("items_button");
 	const saveButton = document.getElementById("save_button");
+
+	const zoomInButton = document.getElementById("zoom_in_button");
+	const zoomOutButton = document.getElementById("zoom_out_button");
+	const zoomResetButton = document.getElementById("zoom_reset_button");
 
 	const loading = document.getElementById("loading");
 
@@ -80,6 +84,8 @@ window.addEventListener('load', function (ev) {
 			break;
 		}
 		await updateSelectedPart(firstPart);
+
+		initPanZoom();
 	}
 
 	/**
@@ -205,6 +211,38 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Sets up and binds elements for use with the PanZoom CDN import
+	 */
+	function initPanZoom() {
+
+		if (typeof Panzoom === "undefined") {
+
+			console.warn("PanZoom not found");
+
+			return;
+		}
+
+		const panzoom = Panzoom(canvas, {
+			maxScale: 3,
+			minScale: 1,
+			panOnlyWhenZoomed: true,
+		});
+
+		canvas.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+		zoomInButton.addEventListener('click', panzoom.zoomIn);
+		zoomOutButton.addEventListener('click', panzoom.zoomOut);
+		zoomResetButton.addEventListener('click', panzoom.reset);
+
+		// Forces canvas back into center of view on no zoom to help with view reset
+		canvas.addEventListener('panzoomchange', (_) => {
+
+			if (panzoom.getScale() === 1) {
+				panzoom.reset();
+			}
+		})
 	}
 
 	/**
@@ -397,9 +435,12 @@ window.addEventListener('load', function (ev) {
 		}
 
 		clearCanvas(canvas);
+
 		clearTimeout(timer);
 		loading.style.display = "none";
+
 		context.drawImage(workingCanvas, 0, 0);
+
 		await updateSave();
 	}
 

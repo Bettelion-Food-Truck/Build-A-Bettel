@@ -104,3 +104,5 @@ Hosting on GitHub Pages is even easier, just fork this project, customize as nee
 - Zoom feature
 - Undo and Redo functions
 - Link to outfit option with URL args
+- Randomly generatored outfit prompts
+  - "[ACTIVITY] with [PERSON]"  https://docs.google.com/spreadsheets/d/17TfUtMgxoDnYnRRSim2hISMf0PcoA4q1mTjpCXvtPs4/edit?gid=0#gid=0

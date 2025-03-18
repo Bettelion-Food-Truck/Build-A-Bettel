@@ -326,8 +326,7 @@
           "set": "bettelgoose"
         },
         {
-          "item": "january-2025-haori",
-          "set": "january-2025"
+          "item": "january-2025-haori"
         },
         {
           "item": "january-2025-kimono-jacket",
@@ -358,8 +357,7 @@
               "item": "second-outfit-jacket-2-back",
               "layer": "jackets_back"
             }
-          ],
-          "set": "second-outfit"
+          ]
         }
       ],
       "colorMode": null,
@@ -384,8 +382,7 @@
           "set": "january-2025"
         },
         {
-          "item": "january-2025-kimono-jacket",
-          "set": "january-2025"
+          "item": "january-2025-kimono-jacket"
         },
         {
           "item": "punk-jacket",
@@ -402,8 +399,7 @@
               "item": "second-outfit-jacket-1-back",
               "layer": "jackets_2_back"
             }
-          ],
-          "set": "second-outfit"
+          ]
         },
         {
           "item": "second-outfit-jacket-2",

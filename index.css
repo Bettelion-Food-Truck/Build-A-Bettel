@@ -427,7 +427,7 @@ ul li img {
         margin: auto;
         padding: 0;
 
-        background-color: #c0c0c0;
+        background-color: #e0e0e0;
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 
@@ -469,14 +469,19 @@ ul li img {
 
     .modal-body {
         padding: 2px 16px;
+        font-size: 110%;
     }
 
     .cook-wrapper {
         display: grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         column-gap: 10px;
         row-gap: 10px;
+        justify-items: center;
+        align-items: stretch;
+
+        margin-bottom: 1.5rem;
 
         img {
             max-width: 100%;

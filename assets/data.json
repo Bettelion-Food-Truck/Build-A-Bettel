@@ -1009,7 +1009,25 @@
             "pirate"
           ]
         },
-        "balloons"
+        "balloons",
+        {
+          "item": "rose",
+          "multilayer": [
+            {
+              "item": "rose-back",
+              "layer": "handheld_back"
+            }
+          ]
+        },
+        {
+          "item": "microphone",
+          "multilayer": [
+            {
+              "item": "microphone-back",
+              "layer": "handheld_back"
+            }
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],

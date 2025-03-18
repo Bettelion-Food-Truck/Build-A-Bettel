@@ -22,6 +22,7 @@
     "belts",
     "vests",
     "jackets",
+    "belt_elevated",
     "jackets_2",
     "hair",
     "hats",
@@ -425,6 +426,7 @@
         },
         {
           "item": "january-2025-obi",
+          "layer": "belt_elevated",
           "set": "january-2025"
         },
         {

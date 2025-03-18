@@ -14,7 +14,7 @@
     "expressions",
     "makeup",
     "facial-hair",
-    "accessories-face",
+    "mask",
     "shoes",
     "pants",
     "handheld_back",
@@ -28,6 +28,7 @@
     "belt_elevated",
     "jackets_2",
     "hair",
+    "mask_elevated",
     "hats",
     "neck",
     "accessories-front",
@@ -787,7 +788,7 @@
       "noneAllowed": true
     },
     {
-      "folder": "accessories-face",
+      "folder": "mask",
       "items": [
         {
           "item": "showman-mask",
@@ -813,7 +814,10 @@
             "pirate"
           ]
         },
-        "pink-monocle"
+        {
+          "item": "pink-monocle",
+          "layer": "mask_elevated"
+        }
       ],
       "colorMode": null,
       "colors": [],

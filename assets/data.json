@@ -13,22 +13,27 @@
     "feet",
     "expressions",
     "makeup",
+    "facial-hair",
     "accessories-face",
     "shoes",
     "pants",
+    "handheld_back",
     "hands",
     "gloves",
     "shirts",
+    "handheld",
     "belts",
     "vests",
     "jackets",
+    "belt_elevated",
     "jackets_2",
     "hair",
     "hats",
     "neck",
     "accessories-front",
-    "accessories-hand",
+    "accessories-front_2",
     "jewelry",
+    "jewelry_2",
     "frames",
     "filters"
   ],
@@ -38,7 +43,13 @@
     "punk",
     "january-2025",
     "flex",
-    "debut-underlayer"
+    "debut-underlayer",
+    "pirate",
+    "bettelmaid",
+    "battel",
+    "magni",
+    "sims",
+    "unchained"
   ],
   "parts": [
     {
@@ -57,7 +68,9 @@
         "normal",
         {
           "item": "corrupted",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         }
       ],
       "colorMode": null,
@@ -90,7 +103,10 @@
         "default",
         {
           "item": "second",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit",
+            "battel"
+          ]
         },
         {
           "item": "bald",
@@ -107,7 +123,9 @@
         "boxers",
         {
           "item": "briefs",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         "leaf"
       ],
@@ -127,6 +145,22 @@
       "noneAllowed": true
     },
     {
+      "folder": "facial-hair",
+      "items": [
+        {
+          "item": "pirate-facial-hair",
+          "set": [
+            "pirate"
+          ]
+        },
+        "pirate-mustache",
+        "pirate-beard"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
       "folder": "pants",
       "items": [
         {
@@ -137,27 +171,68 @@
               "layer": "pants_back"
             }
           ],
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "bettelgoose-pants",
-          "set": "bettelgoose"
+          "set": [
+            "bettelgoose"
+          ]
         },
         {
           "item": "punk-pants",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "flex",
-          "set": "flex"
+          "set": [
+            "flex"
+          ]
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit",
+            "battel"
+          ]
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ]
+        },
+        {
+          "item": "pirate-pants",
+          "set": [
+            "pirate"
+          ]
+        },
+        {
+          "item": "magni-pants",
+          "set": [
+            "magni"
+          ]
+        },
+        {
+          "item": "sims-shorts",
+          "requires": {
+            "part": "undies",
+            "item": "briefs"
+          },
+          "set": [
+            "sims"
+          ]
         }
       ],
       "colorMode": null,
@@ -169,23 +244,58 @@
       "items": [
         {
           "item": "showman-shirt",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-shirt",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-shirt",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit",
+            "battel"
+          ]
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ]
+        },
+        {
+          "item": "pirate-shirt",
+          "set": [
+            "pirate"
+          ]
+        },
+        {
+          "item": "magni-shirt",
+          "set": [
+            "magni"
+          ]
+        },
+        {
+          "item": "sims-blouse",
+          "set": [
+            "sims"
+          ]
         }
       ],
       "colorMode": null,
@@ -205,7 +315,9 @@
         },
         {
           "item": "showman-shoes",
-          "set": "showman",
+          "set": [
+            "showman"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -213,7 +325,9 @@
         },
         {
           "item": "january-2025-shoes-heels",
-          "set": "january-2025",
+          "set": [
+            "january-2025"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -221,7 +335,9 @@
         },
         {
           "item": "punk-boots",
-          "set": "punk",
+          "set": [
+            "punk"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -243,7 +359,9 @@
         },
         {
           "item": "flex",
-          "set": "flex",
+          "set": [
+            "flex"
+          ],
           "requires": {
             "part": "feet",
             "item": "flat"
@@ -251,7 +369,9 @@
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer",
+          "set": [
+            "debut-underlayer"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
@@ -259,11 +379,60 @@
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit",
+          "set": [
+            "second-outfit",
+            "battel"
+          ],
           "requires": {
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "pirate-boots",
+          "set": [
+            "pirate"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "magni-boots",
+          "set": [
+            "magni"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "sims-shoes",
+          "set": [
+            "sims"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "unchained-boots",
+          "set": [
+            "unchained"
+          ]
         }
       ],
       "colorMode": null,
@@ -281,11 +450,28 @@
               "layer": "vests_back"
             }
           ],
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit",
+            "battel"
+          ]
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ]
+        },
+        {
+          "item": "magni-vest",
+          "set": [
+            "magni"
+          ]
         }
       ],
       "colorMode": null,
@@ -298,27 +484,30 @@
       "items": [
         {
           "item": "showman-jacket",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
-          "item": "bettelgoose",
-          "set": "bettelgoose"
-        },
-        {
-          "item": "january-2025-haori",
-          "set": "january-2025"
+          "item": "january-2025-haori"
         },
         {
           "item": "january-2025-kimono-jacket",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-jacket",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "flex",
-          "set": "flex"
+          "set": [
+            "flex"
+          ]
         },
         {
           "item": "second-outfit-jacket-1",
@@ -328,7 +517,9 @@
               "layer": "jackets_back"
             }
           ],
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
         },
         {
           "item": "second-outfit-jacket-2",
@@ -338,7 +529,39 @@
               "layer": "jackets_back"
             }
           ],
-          "set": "second-outfit"
+          "set": [
+            "battel"
+          ]
+        },
+        {
+          "item": "pirate-coat",
+          "multilayer": [
+            {
+              "item": "pirate-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": [
+            "pirate"
+          ]
+        },
+        {
+          "item": "magni-jacket",
+          "multilayer": [
+            {
+              "item": "magni-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": [
+            "magni"
+          ]
+        },
+        {
+          "item": "unchained-robe",
+          "set": [
+            "unchained"
+          ]
         }
       ],
       "colorMode": null,
@@ -350,30 +573,17 @@
       "layer": "jackets_2",
       "icon": "icon-2",
       "items": [
-        {
-          "item": "showman-jacket",
-          "set": "showman"
-        },
-        {
-          "item": "bettelgoose",
-          "set": "bettelgoose"
-        },
+        "showman-jacket",
+        "bettelgoose",
         {
           "item": "january-2025-haori",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
-        {
-          "item": "january-2025-kimono-jacket",
-          "set": "january-2025"
-        },
-        {
-          "item": "punk-jacket",
-          "set": "punk"
-        },
-        {
-          "item": "flex",
-          "set": "flex"
-        },
+        "january-2025-kimono-jacket",
+        "punk-jacket",
+        "flex",
         {
           "item": "second-outfit-jacket-1",
           "multilayer": [
@@ -381,8 +591,7 @@
               "item": "second-outfit-jacket-1-back",
               "layer": "jackets_2_back"
             }
-          ],
-          "set": "second-outfit"
+          ]
         },
         {
           "item": "second-outfit-jacket-2",
@@ -392,7 +601,30 @@
               "layer": "jackets_2_back"
             }
           ],
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
+        },
+        {
+          "item": "battel-jacket",
+          "multilayer": [
+            {
+              "item": "battel-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": [
+            "battel"
+          ]
+        },
+        {
+          "item": "pirate-coat",
+          "multilayer": [
+            {
+              "item": "pirate-coat-back",
+              "layer": "jackets_back"
+            }
+          ]
         }
       ],
       "colorMode": null,
@@ -404,15 +636,29 @@
       "items": [
         {
           "item": "showman-skeleton-belt",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-obi",
-          "set": "january-2025"
+          "layer": "belt_elevated",
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-belt",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
+        },
+        {
+          "item": "unchained-belt",
+          "layer": "belt_elevated",
+          "set": [
+            "unchained"
+          ]
         }
       ],
       "colorMode": null,
@@ -424,19 +670,45 @@
       "items": [
         {
           "item": "showman-gloves",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "punk-rings",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "debut-underlayer",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
+        },
+        {
+          "item": "magni-gloves",
+          "set": [
+            "magni"
+          ]
+        },
+        {
+          "item": "sims-gloves",
+          "set": [
+            "sims"
+          ]
+        },
+        {
+          "item": "unchained-gloves",
+          "set": [
+            "unchained"
+          ]
         }
       ],
       "colorMode": null,
@@ -454,18 +726,61 @@
               "layer": "hats_back"
             }
           ],
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-hat",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit"
+          ]
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ]
+        },
+        {
+          "item": "battel-hat",
+          "set": [
+            "battel"
+          ]
+        },
+        {
+          "item": "pirate-hat",
+          "set": [
+            "pirate"
+          ]
+        },
+        {
+          "item": "magni-hat",
+          "set": [
+            "magni"
+          ]
+        },
+        {
+          "item": "sims-hat",
+          "multilayer": [
+            {
+              "item": "sims-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "set": [
+            "sims"
+          ]
         },
         "cat-ears",
-        "party-hat"
+        "party-hat",
+        "demon-horns"
       ],
       "colorMode": null,
       "colors": [],
@@ -476,16 +791,29 @@
       "items": [
         {
           "item": "showman-mask",
-          "set": "showman"
-        },
-        {
-          "item": "punk-earrings",
-          "set": "punk"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
-        }
+          "set": [
+            "second-outfit"
+          ]
+        },
+        {
+          "item": "battel-mask",
+          "set": [
+            "battel"
+          ]
+        },
+        {
+          "item": "pirate-eyepatch",
+          "set": [
+            "pirate"
+          ]
+        },
+        "pink-monocle"
       ],
       "colorMode": null,
       "colors": [],
@@ -496,23 +824,46 @@
       "items": [
         {
           "item": "showman-cravat",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
         {
           "item": "january-2025-neck-ribbon",
-          "set": "january-2025"
+          "set": [
+            "january-2025"
+          ]
         },
         {
           "item": "punk-necklace",
-          "set": "punk"
+          "set": [
+            "punk"
+          ]
         },
         {
           "item": "debut-underlayer-choker",
-          "set": "debut-underlayer"
+          "set": [
+            "debut-underlayer"
+          ]
         },
         {
           "item": "second-outfit",
-          "set": "second-outfit"
+          "set": [
+            "second-outfit",
+            "battel"
+          ]
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ]
+        },
+        {
+          "item": "unchained-scarf",
+          "set": [
+            "unchained"
+          ]
         }
       ],
       "colorMode": null,
@@ -521,14 +872,52 @@
     },
     {
       "folder": "accessories-front",
+      "icon": "icon-1",
       "items": [
         {
-          "item": "showman-heart-brooch",
-          "set": "showman"
+          "item": "january-2025-keychain",
+          "set": [
+            "january-2025"
+          ]
         },
         {
-          "item": "january-2025-keychain",
-          "set": "january-2025"
+          "item": "debut-underlayer",
+          "set": [
+            "debut-underlayer"
+          ]
+        },
+        {
+          "item": "bettelmaid",
+          "set": [
+            "bettelmaid"
+          ]
+        },
+        {
+          "item": "magni-front-accessory-1",
+          "set": [
+            "magni"
+          ]
+        },
+        "magni-front-accessory-2"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories-front",
+      "layer": "accessories-front_2",
+      "icon": "icon-2",
+      "items": [
+        "january-2025-keychain",
+        "debut-underlayer",
+        "bettelmaid",
+        "magni-front-accessory-1",
+        {
+          "item": "magni-front-accessory-2",
+          "set": [
+            "magni"
+          ]
         }
       ],
       "colorMode": null,
@@ -537,8 +926,54 @@
     },
     {
       "folder": "jewelry",
+      "icon": "icon-1",
       "items": [
-        "remove"
+        {
+          "item": "showman-heart-brooch",
+          "set": [
+            "showman"
+          ]
+        },
+        {
+          "item": "punk-earrings",
+          "set": [
+            "punk"
+          ]
+        },
+        {
+          "item": "second-outfit",
+          "set": [
+            "second-outfit",
+            "battel"
+          ]
+        },
+        {
+          "item": "magni-jewelry-1",
+          "set": [
+            "magni"
+          ]
+        },
+        "magni-jewelry-2"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "jewelry",
+      "layer": "jewelry_2",
+      "icon": "icon-2",
+      "items": [
+        "showman-heart-brooch",
+        "punk-earrings",
+        "second-outfit",
+        "magni-jewelry-1",
+        {
+          "item": "magni-jewelry-2",
+          "set": [
+            "magni"
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -549,18 +984,45 @@
       "items": [
         {
           "item": "showman-ribbon",
-          "set": "showman"
+          "set": [
+            "showman"
+          ]
         },
-        "angel-wings"
+        "angel-wings",
+        "demon-tail"
       ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": true
     },
     {
-      "folder": "accessories-hand",
+      "folder": "handheld",
       "items": [
-        "balloons"
+        {
+          "item": "pirate-handheld",
+          "set": [
+            "pirate"
+          ]
+        },
+        "balloons",
+        {
+          "item": "rose",
+          "multilayer": [
+            {
+              "item": "rose-back",
+              "layer": "handheld_back"
+            }
+          ]
+        },
+        {
+          "item": "microphone",
+          "multilayer": [
+            {
+              "item": "microphone-back",
+              "layer": "handheld_back"
+            }
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -590,7 +1052,8 @@
         "pink-diamonds",
         "pink-and-checkered",
         "arcade",
-        "purple-lace"
+        "purple-lace",
+        "cotton-candy-diamonds"
       ],
       "colorMode": null,
       "colors": [],

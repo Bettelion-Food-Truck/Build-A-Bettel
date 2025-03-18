@@ -133,6 +133,8 @@ window.addEventListener('load', function (ev) {
 				continue;
 			}
 
+			console.warn(`Part layer not found for ${parts[i].layer}`);
+
 			// No layer set, assign to the end
 			let layerIndex = layers.length;
 			layers[layerIndex] = {
@@ -145,6 +147,7 @@ window.addEventListener('load', function (ev) {
 		// Make blank layers in case of missing ones
 		for (let i = 0; i < layerCanvases.length; i++) {
 			if (typeof layerCanvases[i] === 'undefined') {
+				console.warn(`Building layer for ${layers[i].layer}`);
 				layerCanvases[i] = initCanvasLayer();
 			}
 		}
@@ -276,8 +279,6 @@ window.addEventListener('load', function (ev) {
 	}
 
 	async function reset() {
-		console.log("RESET");
-
 
 		for (let i = 0; i < parts.length; i++) {
 
@@ -323,7 +324,7 @@ window.addEventListener('load', function (ev) {
 			// Attempt to load outfit
 			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
 
-				if (items[itemIndex].set && items[itemIndex].set === outfit) {
+				if (items[itemIndex].set && items[itemIndex].set.indexOf(outfit) >= 0) {
 
 					selectedItemIndex[i] = itemIndex;
 					break;
@@ -332,7 +333,7 @@ window.addEventListener('load', function (ev) {
 
 			for (j = 0; j < itemRange; j++) {
 
-				if (j == selectedItemIndex[i]) {
+				if (j == selectedItemIndex[i] + noneCount) {
 					itemsElements[i][j].classList.add("selected");
 				} else {
 					itemsElements[i][j].classList.remove("selected");
@@ -372,10 +373,16 @@ window.addEventListener('load', function (ev) {
 
 		checkPartRequirements();
 
-		// Render layers
+		// Clear layers
 		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
+			// Clearing layers is done first because sometimes layers are rendered out of order due to special logics
+			// Additional execution time is minimal for data set size
 
 			clearCanvas(layerCanvases[layerIndex]);
+		}
+
+		// Render images to layers
+		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
 			const partId = layers[layerIndex].partId;
 
@@ -384,7 +391,7 @@ window.addEventListener('load', function (ev) {
 			}
 		}
 
-		// Draw layers
+		// Draw layers onto master
 		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 			workingContext.drawImage(layerCanvases[layerIndex], 0, 0);
 		}
@@ -564,7 +571,7 @@ window.addEventListener('load', function (ev) {
 	 */
 	function toggleInfo() {
 
-		infoModal.style.display = infoModal.offsetParent ? "none" : "block";
+		infoModal.style.display = infoModal.style.display === "block" ? "none" : "block";
 	}
 
 	/**
@@ -717,6 +724,13 @@ window.addEventListener('load', function (ev) {
 			const imgPath = partLocation + "/" + item.item + color + ".png";
 
 			if (!item.hide) {
+
+				// Special different layer for some items
+				if (item.layer) {
+
+					layerIndex = layers.findIndex(layer => layer.layer === item.layer);
+				}
+
 				await (renderImage(imgPath, layerIndex));
 			}
 

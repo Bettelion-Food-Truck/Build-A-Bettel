@@ -37,7 +37,7 @@
     "filters"
   ],
   "sets": [
-    "magni",
+    "sims",
     "second-outfit",
     "showman",
     "punk",
@@ -46,7 +46,8 @@
     "debut-underlayer",
     "pirate",
     "bettelmaid",
-    "battel"
+    "battel",
+    "magni"
   ],
   "parts": [
     {
@@ -220,6 +221,16 @@
           "set": [
             "magni"
           ]
+        },
+        {
+          "item": "sims-shorts",
+          "requires": {
+            "part": "undies",
+            "item": "briefs"
+          },
+          "set": [
+            "sims"
+          ]
         }
       ],
       "colorMode": null,
@@ -276,6 +287,12 @@
           "item": "magni-shirt",
           "set": [
             "magni"
+          ]
+        },
+        {
+          "item": "sims-blouse",
+          "set": [
+            "sims"
           ]
         }
       ],
@@ -393,7 +410,21 @@
           "item": "magni-boots",
           "set": [
             "magni"
-          ]
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "sims-shoes",
+          "set": [
+            "sims"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -682,6 +713,12 @@
           "set": [
             "magni"
           ]
+        },
+        {
+          "item": "sims-gloves",
+          "set": [
+            "sims"
+          ]
         }
       ],
       "colorMode": null,
@@ -737,6 +774,18 @@
           "item": "magni-hat",
           "set": [
             "magni"
+          ]
+        },
+        {
+          "item": "sims-hat",
+          "multilayer": [
+            {
+              "item": "sims-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "set": [
+            "sims"
           ]
         },
         "cat-ears",

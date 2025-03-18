@@ -489,12 +489,6 @@
           ]
         },
         {
-          "item": "bettelgoose",
-          "set": [
-            "bettelgoose"
-          ]
-        },
-        {
           "item": "january-2025-haori"
         },
         {
@@ -537,15 +531,6 @@
           ],
           "set": [
             "battel"
-          ]
-        },
-        {
-          "item": "battel-jacket",
-          "multilayer": [
-            {
-              "item": "battel-jacket-back",
-              "layer": "jackets_back"
-            }
           ]
         },
         {
@@ -640,8 +625,7 @@
               "layer": "jackets_back"
             }
           ]
-        },
-        "unchained-robe"
+        }
       ],
       "colorMode": null,
       "colors": [],

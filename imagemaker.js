@@ -133,6 +133,8 @@ window.addEventListener('load', function (ev) {
 				continue;
 			}
 
+			console.warn(`Part layer not found for ${parts[i].layer}`);
+
 			// No layer set, assign to the end
 			let layerIndex = layers.length;
 			layers[layerIndex] = {
@@ -145,6 +147,7 @@ window.addEventListener('load', function (ev) {
 		// Make blank layers in case of missing ones
 		for (let i = 0; i < layerCanvases.length; i++) {
 			if (typeof layerCanvases[i] === 'undefined') {
+				console.warn(`Building layer for ${layers[i].layer}`);
 				layerCanvases[i] = initCanvasLayer();
 			}
 		}

@@ -575,39 +575,17 @@
       "layer": "jackets_2",
       "icon": "icon-2",
       "items": [
-        {
-          "item": "showman-jacket",
-          "set": [
-            "showman"
-          ]
-        },
-        {
-          "item": "bettelgoose",
-          "set": [
-            "bettelgoose"
-          ]
-        },
+        "showman-jacket",
+        "bettelgoose",
         {
           "item": "january-2025-haori",
           "set": [
             "january-2025"
           ]
         },
-        {
-          "item": "january-2025-kimono-jacket"
-        },
-        {
-          "item": "punk-jacket",
-          "set": [
-            "punk"
-          ]
-        },
-        {
-          "item": "flex",
-          "set": [
-            "flex"
-          ]
-        },
+        "january-2025-kimono-jacket",
+        "punk-jacket",
+        "flex",
         {
           "item": "second-outfit-jacket-1",
           "multilayer": [
@@ -880,12 +858,6 @@
       "icon": "icon-1",
       "items": [
         {
-          "item": "showman-heart-brooch",
-          "set": [
-            "showman"
-          ]
-        },
-        {
           "item": "january-2025-keychain",
           "set": [
             "january-2025"
@@ -940,6 +912,12 @@
       "folder": "jewelry",
       "icon": "icon-1",
       "items": [
+        {
+          "item": "showman-heart-brooch",
+          "set": [
+            "showman"
+          ]
+        },
         {
           "item": "punk-earrings",
           "set": [

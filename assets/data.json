@@ -35,14 +35,15 @@
     "filters"
   ],
   "sets": [
-    "battel",
+    "pirate",
     "second-outfit",
     "showman",
     "punk",
     "january-2025",
     "flex",
     "debut-underlayer",
-    "bettelmaid"
+    "bettelmaid",
+    "battel"
   ],
   "parts": [
     {
@@ -140,7 +141,14 @@
     {
       "folder": "facial-hair",
       "items": [
-        "remove"
+        {
+          "item": "pirate-facial-hair",
+          "set": [
+            "pirate"
+          ]
+        },
+        "pirate-mustache",
+        "pirate-beard"
       ],
       "colorMode": null,
       "colors": [],
@@ -197,6 +205,12 @@
           "set": [
             "bettelmaid"
           ]
+        },
+        {
+          "item": "pirate-pants",
+          "set": [
+            "pirate"
+          ]
         }
       ],
       "colorMode": null,
@@ -241,6 +255,12 @@
           "item": "bettelmaid",
           "set": [
             "bettelmaid"
+          ]
+        },
+        {
+          "item": "pirate-shirt",
+          "set": [
+            "pirate"
           ]
         }
       ],
@@ -338,6 +358,16 @@
           "item": "bettelmaid",
           "set": [
             "bettelmaid"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "pirate-boots",
+          "set": [
+            "pirate"
           ],
           "requires": {
             "part": "feet",
@@ -451,6 +481,18 @@
               "layer": "jackets_back"
             }
           ]
+        },
+        {
+          "item": "pirate-coat",
+          "multilayer": [
+            {
+              "item": "pirate-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "set": [
+            "pirate"
+          ]
         }
       ],
       "colorMode": null,
@@ -526,6 +568,15 @@
           ],
           "set": [
             "battel"
+          ]
+        },
+        {
+          "item": "pirate-coat",
+          "multilayer": [
+            {
+              "item": "pirate-coat-back",
+              "layer": "jackets_back"
+            }
           ]
         }
       ],
@@ -631,6 +682,12 @@
             "battel"
           ]
         },
+        {
+          "item": "pirate-hat",
+          "set": [
+            "pirate"
+          ]
+        },
         "cat-ears",
         "party-hat",
         "demon-horns"
@@ -658,6 +715,12 @@
           "item": "battel-mask",
           "set": [
             "battel"
+          ]
+        },
+        {
+          "item": "pirate-eyepatch",
+          "set": [
+            "pirate"
           ]
         }
       ],
@@ -782,6 +845,12 @@
     {
       "folder": "accessories-hand",
       "items": [
+        {
+          "item": "pirate-handheld",
+          "set": [
+            "pirate"
+          ]
+        },
         "balloons"
       ],
       "colorMode": null,

@@ -564,7 +564,7 @@ window.addEventListener('load', function (ev) {
 	 */
 	function toggleInfo() {
 
-		infoModal.style.display = infoModal.offsetParent ? "none" : "block";
+		infoModal.style.display = infoModal.style.display === "block" ? "none" : "block";
 	}
 
 	/**

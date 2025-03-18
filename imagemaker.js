@@ -333,7 +333,7 @@ window.addEventListener('load', function (ev) {
 
 			for (j = 0; j < itemRange; j++) {
 
-				if (j == selectedItemIndex[i]) {
+				if (j == selectedItemIndex[i] + noneCount) {
 					itemsElements[i][j].classList.add("selected");
 				} else {
 					itemsElements[i][j].classList.remove("selected");

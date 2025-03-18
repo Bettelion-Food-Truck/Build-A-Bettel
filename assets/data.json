@@ -38,7 +38,6 @@
     "filters"
   ],
   "sets": [
-    "unchained",
     "second-outfit",
     "showman",
     "punk",
@@ -49,7 +48,8 @@
     "bettelmaid",
     "battel",
     "magni",
-    "sims"
+    "sims",
+    "unchained"
   ],
   "parts": [
     {

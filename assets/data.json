@@ -936,28 +936,35 @@
           "item": "showman-heart-brooch",
           "set": [
             "showman"
-          ]
+          ],
+          "thumbnail": true
         },
         {
           "item": "punk-earrings",
           "set": [
             "punk"
-          ]
+          ],
+          "thumbnail": true
         },
         {
           "item": "second-outfit",
           "set": [
             "second-outfit",
             "battel"
-          ]
+          ],
+          "thumbnail": true
         },
         {
           "item": "magni-jewelry-1",
           "set": [
             "magni"
-          ]
+          ],
+          "thumbnail": true
         },
-        "magni-jewelry-2"
+        {
+          "item": "magni-jewelry-2",
+          "thumbnail": true
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -968,15 +975,28 @@
       "layer": "jewelry_2",
       "icon": "icon-2",
       "items": [
-        "showman-heart-brooch",
-        "punk-earrings",
-        "second-outfit",
-        "magni-jewelry-1",
+        {
+          "item": "showman-heart-brooch",
+          "thumbnail": true
+        },
+        {
+          "item": "punk-earrings",
+          "thumbnail": true
+        },
+        {
+          "item": "second-outfit",
+          "thumbnail": true
+        },
+        {
+          "item": "magni-jewelry-1",
+          "thumbnail": true
+        },
         {
           "item": "magni-jewelry-2",
           "set": [
             "magni"
-          ]
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,

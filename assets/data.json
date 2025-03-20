@@ -994,6 +994,13 @@
           "thumbnail": true
         },
         {
+          "item": "punk-necklace",
+          "set": [
+            "punk"
+          ],
+          "thumbnail": true
+        },
+        {
           "item": "second-outfit",
           "set": [
             "second-outfit",
@@ -1028,6 +1035,10 @@
         },
         {
           "item": "punk-earrings",
+          "thumbnail": true
+        },
+        {
+          "item": "punk-necklace",
           "thumbnail": true
         },
         {

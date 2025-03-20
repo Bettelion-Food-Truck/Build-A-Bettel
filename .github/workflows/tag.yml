@@ -1,24 +1,28 @@
-name: Bump version
+name: Tag with date
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - name: Get tag name from date and hash
         id: tag_name
         run: |
-          echo "date=$(date +'%y%m.%d')" >> "$GITHUB_ENV"
+          echo "date=$(date +'%Y%m%d')" >> "$GITHUB_ENV"
           echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
       - name: Bump version and push tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          custom_tag: ${{ env.date }}-${{ env.sha_short }}
+          custom_tag: "${{ env.date }}-${{ env.sha_short }}"
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:

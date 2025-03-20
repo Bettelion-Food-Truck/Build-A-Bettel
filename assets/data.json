@@ -15,6 +15,7 @@
     "makeup",
     "facial-hair",
     "mask",
+    "socks",
     "shoes",
     "pants",
     "handheld_back",
@@ -28,6 +29,7 @@
     "belt_elevated",
     "jackets_2",
     "hair",
+    "glasses",
     "mask_elevated",
     "hats",
     "neck",
@@ -125,7 +127,8 @@
         {
           "item": "briefs",
           "set": [
-            "showman"
+            "showman",
+            "second-outfit"
           ]
         },
         "leaf"
@@ -156,6 +159,45 @@
         },
         "pirate-mustache",
         "pirate-beard"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "socks",
+      "items": [
+        {
+          "item": "fishnets-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "fishnets-pointed",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "sims-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "sims-pointed",
+          "set": [
+            "sims"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -781,7 +823,8 @@
         },
         "cat-ears",
         "party-hat",
-        "demon-horns"
+        "demon-horns",
+        "halo"
       ],
       "colorMode": null,
       "colors": [],
@@ -813,11 +856,16 @@
           "set": [
             "pirate"
           ]
-        },
-        {
-          "item": "pink-monocle",
-          "layer": "mask_elevated"
         }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "glasses",
+      "items": [
+        "pink-monocle"
       ],
       "colorMode": null,
       "colors": [],
@@ -936,28 +984,42 @@
           "item": "showman-heart-brooch",
           "set": [
             "showman"
-          ]
+          ],
+          "thumbnail": true
         },
         {
           "item": "punk-earrings",
           "set": [
             "punk"
-          ]
+          ],
+          "thumbnail": true
+        },
+        {
+          "item": "punk-necklace",
+          "set": [
+            "punk"
+          ],
+          "thumbnail": true
         },
         {
           "item": "second-outfit",
           "set": [
             "second-outfit",
             "battel"
-          ]
+          ],
+          "thumbnail": true
         },
         {
           "item": "magni-jewelry-1",
           "set": [
             "magni"
-          ]
+          ],
+          "thumbnail": true
         },
-        "magni-jewelry-2"
+        {
+          "item": "magni-jewelry-2",
+          "thumbnail": true
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -968,15 +1030,32 @@
       "layer": "jewelry_2",
       "icon": "icon-2",
       "items": [
-        "showman-heart-brooch",
-        "punk-earrings",
-        "second-outfit",
-        "magni-jewelry-1",
+        {
+          "item": "showman-heart-brooch",
+          "thumbnail": true
+        },
+        {
+          "item": "punk-earrings",
+          "thumbnail": true
+        },
+        {
+          "item": "punk-necklace",
+          "thumbnail": true
+        },
+        {
+          "item": "second-outfit",
+          "thumbnail": true
+        },
+        {
+          "item": "magni-jewelry-1",
+          "thumbnail": true
+        },
         {
           "item": "magni-jewelry-2",
           "set": [
             "magni"
-          ]
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,

@@ -86,6 +86,7 @@ window.addEventListener('load', function (ev) {
 		await updateSelectedPart(firstPart);
 
 		initPanZoom();
+		initHorizontalScroll();
 	}
 
 	/**
@@ -243,6 +244,24 @@ window.addEventListener('load', function (ev) {
 				panzoom.reset();
 			}
 		})
+	}
+
+	/**
+	 * Enables horizontal scrolling of the parts menu when the mouse wheel is used
+	 */
+	function initHorizontalScroll() {
+
+		const container = document.getElementById("parts_menu");
+
+		container.addEventListener("wheel", function (e) {
+
+			if (Math.abs(e.deltaY) > 0) {
+
+				e.preventDefault();
+
+				container.scrollLeft += e.deltaY;
+			}
+		});
 	}
 
 	/**

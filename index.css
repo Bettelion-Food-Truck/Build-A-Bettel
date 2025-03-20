@@ -170,6 +170,26 @@ ul li img {
     z-index: 0;
 }
 
+.part_control_wrapper .items,
+.part_control_wrapper .palette,
+.part_control_wrapper .moves {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
+    text-align: center;
+}
+
 .part_control_wrapper .items {
     background-color: var(--item-toggle-color, #ffffff);
     background-image: var(--item-toggle-img, "none");
@@ -202,6 +222,25 @@ ul li img {
     width: 50px;
     height: 50px;
     z-index: 0;
+}
+
+.zoom_control_wrapper .zoom_in,
+.zoom_control_wrapper .zoom_out,
+.zoom_control_wrapper .zoom_reset {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
+    text-align: center;
 }
 
 .zoom_control_wrapper .zoom_in {

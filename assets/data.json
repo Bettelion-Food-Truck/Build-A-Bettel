@@ -15,6 +15,7 @@
     "makeup",
     "facial-hair",
     "mask",
+    "socks",
     "shoes",
     "pants",
     "handheld_back",
@@ -161,6 +162,15 @@
       "colors": [],
       "noneAllowed": true
     },
+    {
+      "folder": "socks",
+      "items": [
+        {
+          "item": "fishnets-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
     {
       "folder": "pants",
       "items": [

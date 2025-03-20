@@ -29,6 +29,7 @@
     "belt_elevated",
     "jackets_2",
     "hair",
+    "glasses",
     "mask_elevated",
     "hats",
     "neck",
@@ -171,6 +172,36 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "fishnets-pointed",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "sims-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "sims-pointed",
+          "set": [
+            "sims"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
     {
       "folder": "pants",
       "items": [
@@ -824,11 +855,16 @@
           "set": [
             "pirate"
           ]
-        },
-        {
-          "item": "pink-monocle",
-          "layer": "mask_elevated"
         }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "glasses",
+      "items": [
+        "pink-monocle"
       ],
       "colorMode": null,
       "colors": [],

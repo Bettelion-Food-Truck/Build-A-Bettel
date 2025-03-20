@@ -89,17 +89,3 @@ Easy UI changes can be done by editing index.css; specifically the variables all
 Hosting the game is simple. You only need index.html, index.css, imagemaker.js, and the assets folder. Upload these files and the folder to your webhost and all is done. Ensure the file structure remains intact
 
 Hosting on GitHub Pages is even easier, just fork this project, customize as needed, then follow the the intrucutions [about creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
-
-## TODO
-
-- Linked assets
-  - Outfits
-- Movable assets
-- Preview image for asset in cases where it is multi-layer, tiny, or similar
-- Integrate some accessibility changes from https://github.com/npz-web/a11y-avatar-creator
-- Update generate_colored_images.py to handle multi-layer assets
-- See if there's a way to batch async for faster response time on multi-layer items or item sets
-- Undo and Redo functions
-- Link to outfit option with URL args
-- Randomly generatored outfit prompts
-  - "[ACTIVITY] with [PERSON]"  https://docs.google.com/spreadsheets/d/17TfUtMgxoDnYnRRSim2hISMf0PcoA4q1mTjpCXvtPs4/edit?gid=0#gid=0

@@ -16,8 +16,9 @@
     "facial-hair",
     "mask",
     "socks",
-    "shoes",
     "pants",
+    "shoes",
+    "pants_elevated",
     "handheld_back",
     "hands",
     "gloves",
@@ -220,6 +221,7 @@
         },
         {
           "item": "bettelgoose-pants",
+          "layer": "pants_elevated",
           "set": [
             "bettelgoose"
           ]
@@ -251,6 +253,7 @@
         },
         {
           "item": "bettelmaid",
+          "layer": "pants_elevated",
           "set": [
             "bettelmaid"
           ]
@@ -351,6 +354,7 @@
         {
           "item": "flat",
           "folder": "feet",
+          "layer": "feet",
           "requires": {
             "part": "feet",
             "item": "none"
@@ -475,7 +479,11 @@
           "item": "unchained-boots",
           "set": [
             "unchained"
-          ]
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,

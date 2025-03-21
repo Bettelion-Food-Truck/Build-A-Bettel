@@ -203,9 +203,6 @@ ul li img {
 }
 
 .part_control_wrapper .moves {
-    /* TODO: implement movable parts*/
-    display: none;
-
     left: -110px;
 
     background-color: var(--move-toggle-color, #ffffff);

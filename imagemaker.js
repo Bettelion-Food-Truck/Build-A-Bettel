@@ -360,7 +360,7 @@ window.addEventListener('load', function (ev) {
 		await renderLayerStack();
 	}
 
-	async function reset() {
+	async function reset(render = true) {
 
 		for (let i = 0; i < parts.length; i++) {
 
@@ -382,7 +382,10 @@ window.addEventListener('load', function (ev) {
 			}
 		}
 
-		await renderLayerStack();
+		if (render) {
+
+			await renderLayerStack();
+		}
 	}
 
 	/**

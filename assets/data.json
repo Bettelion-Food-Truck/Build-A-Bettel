@@ -663,7 +663,12 @@
       "icon": "icon-2",
       "items": [
         "showman-jacket",
-        "bettelgoose",
+        {
+          "item": "bettelgoose",
+          "outfits": [
+            "bettelgoose"
+          ]
+        },
         {
           "item": "january-2025-haori",
           "outfits": [

@@ -3,9 +3,6 @@ window.addEventListener('load', function (ev) {
 	let layers = [];
 	let outfits = [];
 
-	// code below this line controls functionality
-	// dw about if you're just editing visual assets
-
 	/* relative path to the folder containing part folders */
 	const ASSET_PATH = "assets/"
 	const UI_ASSETS = "ui_icons/"
@@ -34,6 +31,14 @@ window.addEventListener('load', function (ev) {
 	const infoModal = document.getElementById("info_modal");
 	const infoModalClose = document.getElementById("info_modal_close");
 
+	const partContainer = document.getElementById("parts_menu");
+	const partsList = document.getElementById("parts_list");
+
+	const itemWrapper = document.getElementById("item_list_wrapper");
+	const itemList = document.getElementById("item_list");
+	const paletteWrapper = document.getElementById("color_palette_wrapper");
+	const paletteList = document.getElementById("color_palette_list");
+
 	/* 1d array of part select button DOM elements */
 	const partsElements = [];
 	/* 2d array of item select button DOM elements */
@@ -49,11 +54,14 @@ window.addEventListener('load', function (ev) {
 	// global state variables
 	/* Index of part whose menu is currently displayed */
 	let selectedPart = 0;
+
 	/* 1d array of colors where selectedColors[i] is the color selected for part i */
 	let selectedColors = []
+
 	/* 1d array of indices of items currently selected,
 	where selectedItemIndex[i] is the index of the selected item for of part i*/
 	let selectedItemIndex = []
+
 	/* 1d array of canvases of items currently selected,
 	where layerCanvases[i] depicts the selected item of part i in the selected color*/
 	const layerCanvases = [];
@@ -207,7 +215,8 @@ window.addEventListener('load', function (ev) {
 				});
 				colorElement.id = "color_" + i.toString() + "_" + j.toString();
 				colorElement.style.display = "none";
-				document.getElementById("colorpalette_list").appendChild(colorElement);
+
+				paletteList.appendChild(colorElement);
 			}
 		}
 
@@ -251,15 +260,13 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initHorizontalScroll() {
 
-		const container = document.getElementById("parts_menu");
-
-		container.addEventListener("wheel", function (e) {
+		partContainer.addEventListener("wheel", function (e) {
 
 			if (Math.abs(e.deltaY) > 0) {
 
 				e.preventDefault();
 
-				container.scrollLeft += e.deltaY;
+				partContainer.scrollLeft += e.deltaY;
 			}
 		});
 	}
@@ -498,7 +505,7 @@ window.addEventListener('load', function (ev) {
 				part.style.display = "none";
 			}
 
-			document.getElementById('parts_list').appendChild(part);
+			partsList.appendChild(part);
 			partsElements[i] = part;
 		}
 	}
@@ -528,7 +535,7 @@ window.addEventListener('load', function (ev) {
 				noneButtonIcon.title = "None";
 
 				noneButton.appendChild(noneButtonIcon);
-				document.getElementById("itemlist_list").appendChild(noneButton);
+				itemList.appendChild(noneButton);
 				noneButton.style.display = "none";
 				itemsElements[i][0] = noneButton;
 			}
@@ -562,7 +569,7 @@ window.addEventListener('load', function (ev) {
 				item.id = "item_" + i.toString() + "_" + j.toString();
 				item.style.display = "none";
 
-				document.getElementById("itemlist_list").appendChild(item);
+				itemList.appendChild(item);
 
 				itemsElements[i][j + Number(parts[i].noneAllowed)] = item;
 			}
@@ -582,7 +589,6 @@ window.addEventListener('load', function (ev) {
 
 		markSelectedItem(partId, itemId);
 		await renderLayerStack();
-		return null;
 	}
 
 	/**
@@ -613,7 +619,6 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function updateSave() {
 		save.href = canvas.toDataURL("image/png");
-		return null;
 	}
 
 	/**
@@ -663,16 +668,16 @@ window.addEventListener('load', function (ev) {
 	 * Display palette menu, hide item menu
 	 */
 	function showPalette() {
-		document.getElementById("color_palette_wrapper").style.display = "flex";
-		document.getElementById("item_list_wrapper").style.display = "none";
+		paletteWrapper.style.display = "flex";
+		itemWrapper.style.display = "none";
 	}
 
 	/**
 	 * Display item menu, hide palette menu
 	 */
 	function showItems() {
-		document.getElementById("color_palette_wrapper").style.display = "none";
-		document.getElementById("item_list_wrapper").style.display = "flex";
+		paletteWrapper.style.display = "none";
+		itemWrapper.style.display = "flex";
 	}
 
 	/**

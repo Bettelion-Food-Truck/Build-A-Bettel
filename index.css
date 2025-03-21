@@ -304,7 +304,9 @@ ul li img {
 .parts_menu {
     overflow-x: auto;
     overflow-y: hidden;
+
     scrollbar-width: thin;
+    scrollbar-color: var(--random-purple-color, purple) lightgrey;
     -webkit-overflow-scrolling: touch;
 
     height: calc(var(--part-control-size, 60px) * 1.15);
@@ -359,7 +361,9 @@ ul li img {
 
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+
     scrollbar-width: thin;
+    scrollbar-color: var(--random-purple-color, purple) lightgrey;
 }
 
 .item_list_wrapper ul {

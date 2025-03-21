@@ -618,7 +618,7 @@ window.addEventListener('load', function (ev) {
 	 * Update download save button with latest version of the canvas
 	 */
 	async function updateSave() {
-		save.href = canvas.toDataURL("image/png");
+		saveButton.href = canvas.toDataURL("image/png");
 	}
 
 	/**

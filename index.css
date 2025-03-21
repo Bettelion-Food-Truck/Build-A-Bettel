@@ -595,7 +595,7 @@ ul li img {
     }
 
     .item_list_wrapper ul li {
-        width: 23.75%;
+        width: calc(100% / 4 - 6px);
     }
 
     .parts_menu_wrapper {

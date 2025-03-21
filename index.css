@@ -200,6 +200,7 @@ ul li img {
 }
 
 .part_control_wrapper .palette {
+    display: none;
     left: calc(-1 * (var(--ui-control-size, 50px) + 5px));
 
     background-color: var(--palette-toggle-color, #ffffff);
@@ -334,6 +335,14 @@ ul li img {
     cursor: pointer;
 }
 
+.outfit_wrapper,
+.component_wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 .control_panel_wrapper {
     position: relative;
     flex: 1;
@@ -385,6 +394,10 @@ ul li img {
     vertical-align: middle;
 
     cursor: pointer;
+}
+
+.item_list_wrapper ul li.outfit {
+    display: inline-flex;
 }
 
 .color_palette_wrapper {
@@ -599,7 +612,7 @@ ul li img {
     }
 
     .item_list_wrapper ul li {
-        width: calc(100% / 4 - 6px);
+        width: calc(100% / 5 - 6px);
     }
 
     .parts_menu_wrapper {

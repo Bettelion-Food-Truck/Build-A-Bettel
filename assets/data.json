@@ -41,19 +41,59 @@
     "frames",
     "filters"
   ],
-  "sets": [
-    "second-outfit",
-    "showman",
-    "punk",
-    "january-2025",
-    "flex",
-    "debut-underlayer",
-    "pirate",
-    "bettelmaid",
-    "battel",
-    "magni",
-    "sims",
-    "unchained"
+  "outfits": [
+    {
+      "uid": "second-outfit",
+      "name": "Second Outfit"
+    },
+    {
+      "uid": "battel",
+      "name": "Bat"
+    },
+    {
+      "uid": "bettelgoose",
+      "name": "Goose"
+    },
+    {
+      "uid": "bettelmaid",
+      "name": "Maid"
+    },
+    {
+      "uid": "debut-underlayer",
+      "name": "Debut - Underlayer"
+    },
+    {
+      "uid": "flex",
+      "name": "Casual Red"
+    },
+    {
+      "uid": "january-2025",
+      "name": "January 2025"
+    },
+    {
+      "uid": "magni",
+      "name": "Magni Cosplay"
+    },
+    {
+      "uid": "pirate",
+      "name": "Pirate"
+    },
+    {
+      "uid": "punk",
+      "name": "Punk"
+    },
+    {
+      "uid": "showman",
+      "name": "Showman"
+    },
+    {
+      "uid": "sims",
+      "name": "Sims"
+    },
+    {
+      "uid": "unchained",
+      "name": "Unchained"
+    }
   ],
   "parts": [
     {
@@ -72,7 +112,7 @@
         "normal",
         {
           "item": "corrupted",
-          "set": [
+          "outfits": [
             "second-outfit"
           ]
         }
@@ -107,7 +147,7 @@
         "default",
         {
           "item": "second",
-          "set": [
+          "outfits": [
             "second-outfit",
             "battel"
           ]
@@ -127,7 +167,7 @@
         "boxers",
         {
           "item": "briefs",
-          "set": [
+          "outfits": [
             "showman",
             "second-outfit",
             "sims"
@@ -155,7 +195,7 @@
       "items": [
         {
           "item": "pirate-facial-hair",
-          "set": [
+          "outfits": [
             "pirate"
           ]
         },
@@ -192,7 +232,7 @@
         },
         {
           "item": "sims-pointed",
-          "set": [
+          "outfits": [
             "sims"
           ],
           "requires": {
@@ -216,38 +256,38 @@
               "layer": "pants_back"
             }
           ],
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
         {
           "item": "bettelgoose-pants",
           "layer": "pants_elevated",
-          "set": [
+          "outfits": [
             "bettelgoose"
           ]
         },
         {
           "item": "punk-pants",
-          "set": [
+          "outfits": [
             "punk"
           ]
         },
         {
           "item": "flex",
-          "set": [
+          "outfits": [
             "flex"
           ]
         },
         {
           "item": "debut-underlayer",
-          "set": [
+          "outfits": [
             "debut-underlayer"
           ]
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit",
             "battel"
           ]
@@ -255,25 +295,25 @@
         {
           "item": "bettelmaid",
           "layer": "pants_elevated",
-          "set": [
+          "outfits": [
             "bettelmaid"
           ]
         },
         {
           "item": "pirate-pants",
-          "set": [
+          "outfits": [
             "pirate"
           ]
         },
         {
           "item": "magni-pants",
-          "set": [
+          "outfits": [
             "magni"
           ]
         },
         {
           "item": "sims-shorts",
-          "set": [
+          "outfits": [
             "sims"
           ]
         }
@@ -287,56 +327,56 @@
       "items": [
         {
           "item": "showman-shirt",
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
         {
           "item": "january-2025-shirt",
-          "set": [
+          "outfits": [
             "january-2025"
           ]
         },
         {
           "item": "punk-shirt",
-          "set": [
+          "outfits": [
             "punk"
           ]
         },
         {
           "item": "debut-underlayer",
-          "set": [
+          "outfits": [
             "debut-underlayer"
           ]
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit",
             "battel"
           ]
         },
         {
           "item": "bettelmaid",
-          "set": [
+          "outfits": [
             "bettelmaid"
           ]
         },
         {
           "item": "pirate-shirt",
-          "set": [
+          "outfits": [
             "pirate"
           ]
         },
         {
           "item": "magni-shirt",
-          "set": [
+          "outfits": [
             "magni"
           ]
         },
         {
           "item": "sims-blouse",
-          "set": [
+          "outfits": [
             "sims"
           ]
         },
@@ -360,7 +400,7 @@
         },
         {
           "item": "showman-shoes",
-          "set": [
+          "outfits": [
             "showman"
           ],
           "requires": {
@@ -370,7 +410,7 @@
         },
         {
           "item": "january-2025-shoes-heels",
-          "set": [
+          "outfits": [
             "january-2025"
           ],
           "requires": {
@@ -380,7 +420,7 @@
         },
         {
           "item": "punk-boots",
-          "set": [
+          "outfits": [
             "punk"
           ],
           "requires": {
@@ -404,7 +444,7 @@
         },
         {
           "item": "flex",
-          "set": [
+          "outfits": [
             "flex"
           ],
           "requires": {
@@ -414,7 +454,7 @@
         },
         {
           "item": "debut-underlayer",
-          "set": [
+          "outfits": [
             "debut-underlayer"
           ],
           "requires": {
@@ -424,7 +464,7 @@
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit",
             "battel"
           ],
@@ -435,7 +475,7 @@
         },
         {
           "item": "bettelmaid",
-          "set": [
+          "outfits": [
             "bettelmaid"
           ],
           "requires": {
@@ -445,7 +485,7 @@
         },
         {
           "item": "pirate-boots",
-          "set": [
+          "outfits": [
             "pirate"
           ],
           "requires": {
@@ -455,7 +495,7 @@
         },
         {
           "item": "magni-boots",
-          "set": [
+          "outfits": [
             "magni"
           ],
           "requires": {
@@ -465,7 +505,7 @@
         },
         {
           "item": "sims-shoes",
-          "set": [
+          "outfits": [
             "sims"
           ],
           "requires": {
@@ -475,7 +515,7 @@
         },
         {
           "item": "unchained-boots",
-          "set": [
+          "outfits": [
             "unchained"
           ],
           "requires": {
@@ -499,26 +539,26 @@
               "layer": "vests_back"
             }
           ],
-          "set": [
+          "outfits": [
             "debut-underlayer"
           ]
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit",
             "battel"
           ]
         },
         {
           "item": "bettelmaid",
-          "set": [
+          "outfits": [
             "bettelmaid"
           ]
         },
         {
           "item": "magni-vest",
-          "set": [
+          "outfits": [
             "magni"
           ]
         }
@@ -533,7 +573,7 @@
       "items": [
         {
           "item": "showman-jacket",
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
@@ -542,19 +582,19 @@
         },
         {
           "item": "january-2025-kimono-jacket",
-          "set": [
+          "outfits": [
             "january-2025"
           ]
         },
         {
           "item": "punk-jacket",
-          "set": [
+          "outfits": [
             "punk"
           ]
         },
         {
           "item": "flex",
-          "set": [
+          "outfits": [
             "flex"
           ]
         },
@@ -566,7 +606,7 @@
               "layer": "jackets_back"
             }
           ],
-          "set": [
+          "outfits": [
             "second-outfit"
           ]
         },
@@ -578,7 +618,7 @@
               "layer": "jackets_back"
             }
           ],
-          "set": [
+          "outfits": [
             "battel"
           ]
         },
@@ -590,7 +630,7 @@
               "layer": "jackets_back"
             }
           ],
-          "set": [
+          "outfits": [
             "pirate"
           ]
         },
@@ -602,13 +642,13 @@
               "layer": "jackets_back"
             }
           ],
-          "set": [
+          "outfits": [
             "magni"
           ]
         },
         {
           "item": "unchained-robe",
-          "set": [
+          "outfits": [
             "unchained"
           ]
         }
@@ -626,7 +666,7 @@
         "bettelgoose",
         {
           "item": "january-2025-haori",
-          "set": [
+          "outfits": [
             "january-2025"
           ]
         },
@@ -650,7 +690,7 @@
               "layer": "jackets_2_back"
             }
           ],
-          "set": [
+          "outfits": [
             "second-outfit"
           ]
         },
@@ -662,7 +702,7 @@
               "layer": "jackets_back"
             }
           ],
-          "set": [
+          "outfits": [
             "battel"
           ]
         },
@@ -685,27 +725,27 @@
       "items": [
         {
           "item": "showman-skeleton-belt",
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
         {
           "item": "january-2025-obi",
           "layer": "belt_elevated",
-          "set": [
+          "outfits": [
             "january-2025"
           ]
         },
         {
           "item": "punk-belt",
-          "set": [
+          "outfits": [
             "punk"
           ]
         },
         {
           "item": "unchained-belt",
           "layer": "belt_elevated",
-          "set": [
+          "outfits": [
             "unchained"
           ]
         }
@@ -719,43 +759,43 @@
       "items": [
         {
           "item": "showman-gloves",
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
         {
           "item": "punk-rings",
-          "set": [
+          "outfits": [
             "punk"
           ]
         },
         {
           "item": "debut-underlayer",
-          "set": [
+          "outfits": [
             "debut-underlayer"
           ]
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit"
           ]
         },
         {
           "item": "magni-gloves",
-          "set": [
+          "outfits": [
             "magni"
           ]
         },
         {
           "item": "sims-gloves",
-          "set": [
+          "outfits": [
             "sims"
           ]
         },
         {
           "item": "unchained-gloves",
-          "set": [
+          "outfits": [
             "unchained"
           ]
         }
@@ -775,43 +815,43 @@
               "layer": "hats_back"
             }
           ],
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
         {
           "item": "january-2025-hat",
-          "set": [
+          "outfits": [
             "january-2025"
           ]
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit"
           ]
         },
         {
           "item": "bettelmaid",
-          "set": [
+          "outfits": [
             "bettelmaid"
           ]
         },
         {
           "item": "battel-hat",
-          "set": [
+          "outfits": [
             "battel"
           ]
         },
         {
           "item": "pirate-hat",
-          "set": [
+          "outfits": [
             "pirate"
           ]
         },
         {
           "item": "magni-hat",
-          "set": [
+          "outfits": [
             "magni"
           ]
         },
@@ -823,7 +863,7 @@
               "layer": "hats_back"
             }
           ],
-          "set": [
+          "outfits": [
             "sims"
           ]
         },
@@ -842,25 +882,25 @@
       "items": [
         {
           "item": "showman-mask",
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit"
           ]
         },
         {
           "item": "battel-mask",
-          "set": [
+          "outfits": [
             "battel"
           ]
         },
         {
           "item": "pirate-eyepatch",
-          "set": [
+          "outfits": [
             "pirate"
           ]
         }
@@ -883,44 +923,44 @@
       "items": [
         {
           "item": "showman-cravat",
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
         {
           "item": "january-2025-neck-ribbon",
-          "set": [
+          "outfits": [
             "january-2025"
           ]
         },
         {
           "item": "punk-necklace",
-          "set": [
+          "outfits": [
             "punk"
           ]
         },
         {
           "item": "debut-underlayer-choker",
-          "set": [
+          "outfits": [
             "debut-underlayer"
           ]
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit",
             "battel"
           ]
         },
         {
           "item": "bettelmaid",
-          "set": [
+          "outfits": [
             "bettelmaid"
           ]
         },
         {
           "item": "unchained-scarf",
-          "set": [
+          "outfits": [
             "unchained"
           ]
         }
@@ -935,25 +975,25 @@
       "items": [
         {
           "item": "january-2025-keychain",
-          "set": [
+          "outfits": [
             "january-2025"
           ]
         },
         {
           "item": "debut-underlayer",
-          "set": [
+          "outfits": [
             "debut-underlayer"
           ]
         },
         {
           "item": "bettelmaid",
-          "set": [
+          "outfits": [
             "bettelmaid"
           ]
         },
         {
           "item": "magni-front-accessory-1",
-          "set": [
+          "outfits": [
             "magni"
           ]
         },
@@ -974,7 +1014,7 @@
         "magni-front-accessory-1",
         {
           "item": "magni-front-accessory-2",
-          "set": [
+          "outfits": [
             "magni"
           ]
         }
@@ -989,28 +1029,28 @@
       "items": [
         {
           "item": "showman-heart-brooch",
-          "set": [
+          "outfits": [
             "showman"
           ],
           "thumbnail": true
         },
         {
           "item": "punk-earrings",
-          "set": [
+          "outfits": [
             "punk"
           ],
           "thumbnail": true
         },
         {
           "item": "punk-necklace",
-          "set": [
+          "outfits": [
             "punk"
           ],
           "thumbnail": true
         },
         {
           "item": "second-outfit",
-          "set": [
+          "outfits": [
             "second-outfit",
             "battel"
           ],
@@ -1018,7 +1058,7 @@
         },
         {
           "item": "magni-jewelry-1",
-          "set": [
+          "outfits": [
             "magni"
           ],
           "thumbnail": true
@@ -1063,7 +1103,7 @@
         },
         {
           "item": "magni-jewelry-2",
-          "set": [
+          "outfits": [
             "magni"
           ],
           "thumbnail": true
@@ -1082,7 +1122,7 @@
       "items": [
         {
           "item": "showman-ribbon",
-          "set": [
+          "outfits": [
             "showman"
           ]
         },
@@ -1098,7 +1138,7 @@
       "items": [
         {
           "item": "pirate-handheld",
-          "set": [
+          "outfits": [
             "pirate"
           ]
         },

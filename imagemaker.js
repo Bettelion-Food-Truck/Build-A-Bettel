@@ -88,7 +88,7 @@ window.addEventListener('load', function (ev) {
 		await initItemFunctions();
 
 		// Load game into a default outfit
-		await selectOutfit(outfits[0]);
+		await selectOutfit(outfits[0].uid);
 
 		let firstPart = 0;
 		for (let i = 0; i < parts.length; i++) {
@@ -111,7 +111,7 @@ window.addEventListener('load', function (ev) {
 		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
 
-		outfits = json.sets;
+		outfits = json.outfits;
 
 		parts = json.parts;
 
@@ -399,7 +399,7 @@ window.addEventListener('load', function (ev) {
 			// Attempt to load outfit
 			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
 
-				if (items[itemIndex].set && items[itemIndex].set.indexOf(outfit) >= 0) {
+				if (items[itemIndex].outfits && items[itemIndex].outfits.indexOf(outfit) >= 0) {
 
 					selectedItemIndex[i] = itemIndex;
 					break;

@@ -5,6 +5,7 @@ window.addEventListener('load', function (ev) {
 
 	/* relative path to the folder containing part folders */
 	const ASSET_PATH = "assets/"
+	const OUTFIT_PATH = "outfits/";
 	const UI_ASSETS = "ui_icons/"
 
 	// DOM Elements
@@ -46,10 +47,14 @@ window.addEventListener('load', function (ev) {
 	const paletteWrapper = document.getElementById("color_palette_wrapper");
 	const paletteList = document.getElementById("color_palette_list");
 
+	const outfitList = document.getElementById("outfit_list");
+
 	/* 1d array of part select button DOM elements */
 	const partsElements = [];
 	/* 2d array of item select button DOM elements */
 	const itemsElements = [];
+	/* 1d array of outfit select button DOM elements */
+	const outfitElements = [];
 
 	/* Render layers to this 1st and then canvas so that images render all at
 	   once instead of one layer at a time */
@@ -84,6 +89,8 @@ window.addEventListener('load', function (ev) {
 		await initPartsElements();
 		await initItemsElements();
 		initPalette();
+
+		await initOutfitElements();
 
 		await initItemFunctions();
 
@@ -587,6 +594,35 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Initialize outfitElements
+	 */
+	function initOutfitElements() {
+
+		for (let i = 0; i < outfits.length; i++) {
+
+			let outfit = outfits[i];
+
+			let outfitWrapper = document.createElement('li');
+			let outfitIcon = document.createElement('img');
+
+			outfitIcon.id = "outfit_icon_" + i.toString();
+			outfitIcon.src = ASSET_PATH + OUTFIT_PATH +
+				outfit.uid + ".png";
+
+			outfitIcon.alt = outfit.name ? outfit.name : outfit.uid;
+			outfitIcon.title = outfit.name ? outfit.name : outfit.uid;
+
+			outfitWrapper.appendChild(outfitIcon);
+			outfitWrapper.id = "outfit_" + i.toString();
+			outfitWrapper.className = "outfit";
+
+			outfitList.appendChild(outfitWrapper);
+
+			outfitElements[i] = outfitWrapper;
+		}
 	}
 
 	function clearCanvas(canvas) {

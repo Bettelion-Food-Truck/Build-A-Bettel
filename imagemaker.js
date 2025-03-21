@@ -430,7 +430,7 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Assign item select callback functions to partsElements and itemsElements members
+	 * Assign item select callback functions to partsElements, itemsElements, and outfitElements members
 	 */
 	async function initItemFunctions() {
 
@@ -445,7 +445,13 @@ window.addEventListener('load', function (ev) {
 				});
 			}
 		}
-		return null;
+
+		for (let i = 0; i < outfits.length; i++) {
+			outfitElements[i].addEventListener('click', function () {
+				reset(false);
+				selectOutfit(outfits[i].uid);
+			});
+		}
 	}
 
 	/**

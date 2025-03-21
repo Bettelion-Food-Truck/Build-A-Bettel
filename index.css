@@ -52,6 +52,10 @@
 
     /* random purple color */
     --random-purple-color: #660073;
+
+    /* control sizes */
+    --ui-control-size: 50px;
+    --part-control-size: 60px;
 }
 
 * {
@@ -165,8 +169,8 @@ ul li img {
     bottom: auto;
     left: auto;
 
-    width: 50px;
-    height: 50px;
+    width: var(--ui-control-size, 50px);
+    height: var(--ui-control-size, 50px);
     z-index: 0;
 }
 
@@ -175,8 +179,8 @@ ul li img {
 .part_control_wrapper .moves {
     position: absolute;
 
-    width: 50px;
-    height: 50px;
+    width: var(--ui-control-size, 50px);
+    height: var(--ui-control-size, 50px);
 
     display: inline-flex;
     justify-content: center;
@@ -196,14 +200,14 @@ ul li img {
 }
 
 .part_control_wrapper .palette {
-    left: -55px;
+    left: calc(-1 * (var(--ui-control-size, 50px) + 5px));
 
     background-color: var(--palette-toggle-color, #ffffff);
     background-image: var(--palette-toggle-img, "none");
 }
 
 .part_control_wrapper .moves {
-    left: -110px;
+    left: calc(-2 * (var(--ui-control-size, 50px) + 5px));
 
     background-color: var(--move-toggle-color, #ffffff);
     background-image: var(--move-toggle-img, "none");
@@ -211,13 +215,13 @@ ul li img {
 
 .zoom_control_wrapper {
     position: absolute;
-    top: 60px;
+    top: calc(var(--ui-control-size, 50px) * 1.2);
     right: 4px;
     bottom: auto;
     left: auto;
 
-    width: 50px;
-    height: 50px;
+    width: var(--ui-control-size, 50px);
+    height: var(--ui-control-size, 50px);
     z-index: 0;
 }
 
@@ -226,8 +230,8 @@ ul li img {
 .zoom_control_wrapper .zoom_reset {
     position: absolute;
 
-    width: 50px;
-    height: 50px;
+    width: var(--ui-control-size, 50px);
+    height: var(--ui-control-size, 50px);
 
     justify-content: center;
     align-items: center;
@@ -277,12 +281,13 @@ ul li img {
     max-width: 375px;
 }
 
-.item_selection_wrapper .selected {
-    border: 3px solid var(--select-color, #ff0000);
-}
-
 .item_selection_wrapper li {
     border: 3px solid transparent;
+    border-radius: 3px;
+}
+
+.item_selection_wrapper li.selected {
+    border-color: var(--select-color, #ff0000);
 }
 
 .parts_menu_wrapper {
@@ -297,7 +302,7 @@ ul li img {
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
 
-    height: 68px;
+    height: calc(var(--part-control-size, 60px) * 1.15);
     margin: 0;
     white-space: nowrap;
 }
@@ -312,8 +317,8 @@ ul li img {
 }
 
 .parts_menu ul li {
-    width: 60px;
-    height: auto;
+    width: var(--part-control-size, 60px);
+    height: var(--part-control-size, 60px);
 
     display: inline-flex;
     justify-content: center;
@@ -365,7 +370,6 @@ ul li img {
 
     list-style-type: none;
 
-    border-radius: 4px;
     margin: 3px;
     padding: 0;
 

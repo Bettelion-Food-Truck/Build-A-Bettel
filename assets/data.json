@@ -129,7 +129,8 @@
           "item": "briefs",
           "set": [
             "showman",
-            "second-outfit"
+            "second-outfit",
+            "sims"
           ]
         },
         "leaf"
@@ -272,10 +273,6 @@
         },
         {
           "item": "sims-shorts",
-          "requires": {
-            "part": "undies",
-            "item": "briefs"
-          },
           "set": [
             "sims"
           ]

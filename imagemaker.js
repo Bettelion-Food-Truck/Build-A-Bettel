@@ -14,8 +14,12 @@ window.addEventListener('load', function (ev) {
 	const WIDTH = canvas.width;
 	const HEIGHT = canvas.height;
 
+	const loading = document.getElementById("loading");
+
 	const randomButton = document.getElementById("random_button");
-	const resetButton = this.document.getElementById("reset_button");
+	const resetButton = document.getElementById("reset_button");
+	const outfitButton = document.getElementById("outfit_button");
+	const componentButton = document.getElementById("component_button");
 
 	const paletteButton = document.getElementById("palette_button");
 	const itemsButton = document.getElementById("items_button");
@@ -25,17 +29,20 @@ window.addEventListener('load', function (ev) {
 	const zoomOutButton = document.getElementById("zoom_out_button");
 	const zoomResetButton = document.getElementById("zoom_reset_button");
 
-	const loading = document.getElementById("loading");
-
 	const infoButton = document.getElementById("info_button");
 	const infoModal = document.getElementById("info_modal");
 	const infoModalClose = document.getElementById("info_modal_close");
+
+	const outfitWrapper = document.getElementById("outfit_wrapper");
+
+	const componentWrapper = document.getElementById("component_wrapper");
 
 	const partContainer = document.getElementById("parts_menu");
 	const partsList = document.getElementById("parts_list");
 
 	const itemWrapper = document.getElementById("item_list_wrapper");
 	const itemList = document.getElementById("item_list");
+
 	const paletteWrapper = document.getElementById("color_palette_wrapper");
 	const paletteList = document.getElementById("color_palette_list");
 
@@ -185,7 +192,11 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initButtons() {
 		randomButton.addEventListener('click', randomize);
+
 		resetButton.addEventListener('click', reset);
+
+		outfitButton.addEventListener('click', showOutfits);
+		componentButton.addEventListener('click', showComponents);
 
 		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
@@ -662,6 +673,28 @@ window.addEventListener('load', function (ev) {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Display outfit menu, hide component menu
+	 */
+	function showOutfits() {
+		outfitButton.style.display = "none";
+		componentButton.style.display = "block";
+
+		outfitWrapper.style.display = "flex";
+		componentWrapper.style.display = "none";
+	}
+
+	/**
+	 * Display component menu, hide outfit menu
+	 */
+	function showComponents() {
+		outfitButton.style.display = "block";
+		componentButton.style.display = "none";
+
+		outfitWrapper.style.display = "none";
+		componentWrapper.style.display = "flex";
 	}
 
 	/**

@@ -200,6 +200,7 @@ ul li img {
 }
 
 .part_control_wrapper .palette {
+    display: none;
     left: calc(-1 * (var(--ui-control-size, 50px) + 5px));
 
     background-color: var(--palette-toggle-color, #ffffff);
@@ -332,6 +333,14 @@ ul li img {
     align-items: center;
 
     cursor: pointer;
+}
+
+.outfit_wrapper,
+.component_wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .control_panel_wrapper {

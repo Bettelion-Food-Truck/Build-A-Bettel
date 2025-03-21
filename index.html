@@ -54,7 +54,7 @@
 
 				<div class="part_control_wrapper">
 					<span id="items_button" class="items"></span>
-					<span id="palette_button" class="palette" style="display: none;"></span>
+					<span id="palette_button" class="palette"></span>
 					<!-- TODO: implement movable parts -->
 					<span id="move_button" class="moves" style="display: none;"></span>
 				</div>
@@ -70,33 +70,49 @@
 				<div class="feature_buttons">
 					<!-- TODO Control update with new functions -->
 					<div id="reset_button">Reset</div>
-					<div style="display: none;">Outfits</div>
-					<div style="display: none;">Parts</div>
+					<div id="outfit_button">Outfits</div>
+					<div id="component_button" style="display: none;">Components</div>
 					<div id="info_button">Credit</div>
 				</div>
 
-				<div class="parts_menu_wrapper">
-					<div id="parts_menu" class="parts_menu">
-						<ul id="parts_list">
-							<li id="random_button">
-								<img src="assets/ui_icons/icon-random.png" alt="Randomize outfit"
-									title="Randomize outfit" />
-							</li>
-						</ul>
+				<div id="outfit_wrapper" class="outfit_wrapper" style="display: none;">
+					<p>Here we show all the outfits!</p>
+
+					<div class="control_panel_wrapper">
+						<div class="control_panel">
+							<div class="item_list_wrapper">
+								<ul id="item_list_X">
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="control_panel_wrapper">
-					<div class="control_panel">
-						<div id="item_list_wrapper" class="item_list_wrapper">
-							<ul id="item_list">
-							</ul>
-						</div>
-						<div id="color_palette_wrapper" class="color_palette_wrapper">
-							<ul id="color_palette_list">
+				<div id="component_wrapper" class="component_wrapper">
+					<div class="parts_menu_wrapper">
+						<div id="parts_menu" class="parts_menu">
+							<ul id="parts_list">
+								<li id="random_button">
+									<img src="assets/ui_icons/icon-random.png" alt="Randomize outfit"
+										title="Randomize outfit" />
+								</li>
 							</ul>
 						</div>
 					</div>
+
+					<div class="control_panel_wrapper">
+						<div class="control_panel">
+							<div id="item_list_wrapper" class="item_list_wrapper">
+								<ul id="item_list">
+								</ul>
+							</div>
+							<div id="color_palette_wrapper" class="color_palette_wrapper">
+								<ul id="color_palette_list">
+								</ul>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>

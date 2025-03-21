@@ -339,7 +339,8 @@
           "set": [
             "sims"
           ]
-        }
+        },
+        "snank"
       ],
       "colorMode": null,
       "colors": [],
@@ -826,6 +827,7 @@
             "sims"
           ]
         },
+        "phantom-beanie",
         "cat-ears",
         "party-hat",
         "demon-horns",
@@ -1024,6 +1026,10 @@
         {
           "item": "magni-jewelry-2",
           "thumbnail": true
+        },
+        {
+          "item": "memento",
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1060,6 +1066,10 @@
           "set": [
             "magni"
           ],
+          "thumbnail": true
+        },
+        {
+          "item": "memento",
           "thumbnail": true
         }
       ],

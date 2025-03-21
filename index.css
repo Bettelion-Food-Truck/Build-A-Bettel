@@ -396,6 +396,10 @@ ul li img {
     cursor: pointer;
 }
 
+.item_list_wrapper ul li.outfit {
+    display: inline-flex;
+}
+
 .color_palette_wrapper {
     display: none;
     /*display: flex;*/
@@ -608,7 +612,7 @@ ul li img {
     }
 
     .item_list_wrapper ul li {
-        width: calc(100% / 4 - 6px);
+        width: calc(100% / 5 - 6px);
     }
 
     .parts_menu_wrapper {

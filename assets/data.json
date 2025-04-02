@@ -38,6 +38,7 @@
     "neck",
     "accessories-front",
     "accessories-front_2",
+    "accessories-front_3",
     "jewelry",
     "jewelry_2",
     "frames",
@@ -117,21 +118,6 @@
       "hidePartList": true
     },
     {
-      "folder": "hands",
-      "items": [
-        "normal",
-        {
-          "item": "corrupted",
-          "outfits": [
-            "second-outfit"
-          ]
-        }
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": false
-    },
-    {
       "folder": "feet",
       "items": [
         "flat",
@@ -141,15 +127,6 @@
       "colors": [],
       "noneAllowed": true,
       "hidePartList": true
-    },
-    {
-      "folder": "expressions",
-      "items": [
-        "default"
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": false
     },
     {
       "folder": "hair",
@@ -188,78 +165,6 @@
       "colorMode": null,
       "colors": [],
       "noneAllowed": false
-    },
-    {
-      "folder": "makeup",
-      "items": [
-        "blush-heavy",
-        "eyeshadow",
-        "tictactoe",
-        {
-          "item": "jester",
-          "outfits": [
-            "jester"
-          ]
-        }
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": true
-    },
-    {
-      "folder": "facial-hair",
-      "items": [
-        {
-          "item": "pirate-facial-hair",
-          "outfits": [
-            "pirate"
-          ]
-        },
-        "pirate-mustache",
-        "pirate-beard"
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": true
-    },
-    {
-      "folder": "socks",
-      "items": [
-        {
-          "item": "fishnets-flat",
-          "requires": {
-            "part": "feet",
-            "item": "flat"
-          }
-        },
-        {
-          "item": "fishnets-pointed",
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "sims-flat",
-          "requires": {
-            "part": "feet",
-            "item": "flat"
-          }
-        },
-        {
-          "item": "sims-pointed",
-          "outfits": [
-            "sims"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        }
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": true
     },
     {
       "folder": "pants",
@@ -426,169 +331,6 @@
       "colorMode": null,
       "colors": [],
       "noneAllowed": true
-    },
-    {
-      "folder": "shoes",
-      "items": [
-        {
-          "item": "flat",
-          "folder": "feet",
-          "layer": "feet",
-          "requires": {
-            "part": "feet",
-            "item": "none"
-          }
-        },
-        {
-          "item": "showman-shoes",
-          "outfits": [
-            "showman"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "january-2025-shoes-heels",
-          "outfits": [
-            "january-2025"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "punk-boots",
-          "layer": "shoes-covered",
-          "outfits": [
-            "punk"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "tabi-flats",
-          "requires": {
-            "part": "feet",
-            "item": "flat"
-          }
-        },
-        {
-          "item": "tabi-heels",
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "flex",
-          "outfits": [
-            "flex"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "flat"
-          }
-        },
-        {
-          "item": "debut-underlayer",
-          "outfits": [
-            "debut-underlayer"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "second-outfit",
-          "outfits": [
-            "second-outfit",
-            "battel"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "bettelmaid",
-          "outfits": [
-            "bettelmaid"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "pirate-boots",
-          "outfits": [
-            "pirate"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "magni-boots",
-          "outfits": [
-            "magni"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "flat"
-          }
-        },
-        {
-          "item": "sims-shoes",
-          "outfits": [
-            "sims"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        },
-        {
-          "item": "unchained-boots",
-          "outfits": [
-            "unchained"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "flat"
-          }
-        },
-        {
-          "item": "goosevp",
-          "outfits": [
-            "goosevp"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "flat"
-          }
-        },
-        {
-          "item": "jester",
-          "outfits": [
-            "jester"
-          ],
-          "requires": {
-            "part": "feet",
-            "item": "pointed"
-          }
-        }
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": false
     },
     {
       "folder": "vests",
@@ -835,31 +577,224 @@
       "noneAllowed": true
     },
     {
-      "folder": "gloves",
+      "folder": "socks",
       "items": [
         {
-          "item": "showman-gloves",
+          "item": "fishnets-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "fishnets-pointed",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "sims-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "sims-pointed",
+          "outfits": [
+            "sims"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "shoes",
+      "items": [
+        {
+          "item": "flat",
+          "folder": "feet",
+          "layer": "feet",
+          "requires": {
+            "part": "feet",
+            "item": "none"
+          }
+        },
+        {
+          "item": "showman-shoes",
+          "outfits": [
+            "showman"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "january-2025-shoes-heels",
+          "outfits": [
+            "january-2025"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "punk-boots",
+          "layer": "shoes-covered",
+          "outfits": [
+            "punk"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "tabi-flats",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "tabi-heels",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "flex",
+          "outfits": [
+            "flex"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "debut-underlayer",
+          "outfits": [
+            "debut-underlayer"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "second-outfit",
+          "outfits": [
+            "second-outfit",
+            "battel"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "bettelmaid",
+          "outfits": [
+            "bettelmaid"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "pirate-boots",
+          "outfits": [
+            "pirate"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "magni-boots",
+          "outfits": [
+            "magni"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "sims-shoes",
+          "outfits": [
+            "sims"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "unchained-boots",
+          "outfits": [
+            "unchained"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "neck",
+      "items": [
+        {
+          "item": "showman-cravat",
           "outfits": [
             "showman"
           ]
         },
         {
-          "item": "punk-rings",
+          "item": "january-2025-neck-ribbon",
           "outfits": [
-            "punk"
-          ],
-          "thumbnail": true
+            "january-2025"
+          ]
         },
         {
-          "item": "punk-rings-right",
-          "thumbnail": true
-        },
-        {
-          "item": "punk-rings-left",
-          "thumbnail": true
-        },
-        {
-          "item": "debut-underlayer",
+          "item": "debut-underlayer-choker",
           "outfits": [
             "debut-underlayer"
           ]
@@ -867,25 +802,32 @@
         {
           "item": "second-outfit",
           "outfits": [
-            "second-outfit"
+            "second-outfit",
+            "battel"
           ]
         },
         {
-          "item": "magni-gloves",
+          "item": "bettelmaid",
           "outfits": [
-            "magni"
+            "bettelmaid"
           ]
         },
         {
-          "item": "sims-gloves",
-          "outfits": [
-            "sims"
-          ]
-        },
-        {
-          "item": "unchained-gloves",
+          "item": "unchained-scarf",
           "outfits": [
             "unchained"
+          ]
+        },
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
+        },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
           ]
         }
       ],
@@ -984,6 +926,48 @@
       "noneAllowed": true
     },
     {
+      "folder": "expressions",
+      "items": [
+        "default"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "facial-hair",
+      "items": [
+        {
+          "item": "pirate-facial-hair",
+          "outfits": [
+            "pirate"
+          ]
+        },
+        "pirate-mustache",
+        "pirate-beard"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "makeup",
+      "items": [
+        "blush-heavy",
+        "eyeshadow",
+        "tictactoe",
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
+          ]
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
       "folder": "mask",
       "items": [
         {
@@ -1019,124 +1003,6 @@
       "folder": "glasses",
       "items": [
         "pink-monocle"
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": true
-    },
-    {
-      "folder": "neck",
-      "items": [
-        {
-          "item": "showman-cravat",
-          "outfits": [
-            "showman"
-          ]
-        },
-        {
-          "item": "january-2025-neck-ribbon",
-          "outfits": [
-            "january-2025"
-          ]
-        },
-        {
-          "item": "debut-underlayer-choker",
-          "outfits": [
-            "debut-underlayer"
-          ]
-        },
-        {
-          "item": "second-outfit",
-          "outfits": [
-            "second-outfit",
-            "battel"
-          ]
-        },
-        {
-          "item": "bettelmaid",
-          "outfits": [
-            "bettelmaid"
-          ]
-        },
-        {
-          "item": "unchained-scarf",
-          "outfits": [
-            "unchained"
-          ]
-        },
-        {
-          "item": "goosevp",
-          "outfits": [
-            "goosevp"
-          ]
-        },
-        {
-          "item": "jester",
-          "outfits": [
-            "jester"
-          ]
-        }
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": true
-    },
-    {
-      "folder": "accessories-front",
-      "icon": "icon-1",
-      "items": [
-        {
-          "item": "january-2025-keychain",
-          "outfits": [
-            "january-2025"
-          ]
-        },
-        {
-          "item": "debut-underlayer",
-          "outfits": [
-            "debut-underlayer"
-          ]
-        },
-        {
-          "item": "bettelmaid",
-          "outfits": [
-            "bettelmaid"
-          ]
-        },
-        {
-          "item": "magni-front-accessory-1",
-          "outfits": [
-            "magni"
-          ]
-        },
-        "magni-front-accessory-2",
-        {
-          "item": "goosevp",
-          "outfits": [
-            "goosevp"
-          ]
-        }
-      ],
-      "colorMode": null,
-      "colors": [],
-      "noneAllowed": true
-    },
-    {
-      "folder": "accessories-front",
-      "layer": "accessories-front_2",
-      "icon": "icon-2",
-      "items": [
-        "january-2025-keychain",
-        "debut-underlayer",
-        "bettelmaid",
-        "magni-front-accessory-1",
-        {
-          "item": "magni-front-accessory-2",
-          "outfits": [
-            "magni"
-          ]
-        },
-        "goosevp"
       ],
       "colorMode": null,
       "colors": [],
@@ -1237,20 +1103,72 @@
       "noneAllowed": true
     },
     {
-      "folder": "accessories-rear",
+      "folder": "hands",
+      "items": [
+        "normal",
+        {
+          "item": "corrupted",
+          "outfits": [
+            "second-outfit"
+          ]
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "gloves",
       "items": [
         {
-          "item": "showman-ribbon",
+          "item": "showman-gloves",
           "outfits": [
             "showman"
           ]
         },
-        "angel-wings",
-        "demon-tail",
         {
-          "item": "goosevp",
+          "item": "punk-rings",
           "outfits": [
-            "goosevp"
+            "punk"
+          ],
+          "thumbnail": true
+        },
+        {
+          "item": "punk-rings-right",
+          "thumbnail": true
+        },
+        {
+          "item": "punk-rings-left",
+          "thumbnail": true
+        },
+        {
+          "item": "debut-underlayer",
+          "outfits": [
+            "debut-underlayer"
+          ]
+        },
+        {
+          "item": "second-outfit",
+          "outfits": [
+            "second-outfit"
+          ]
+        },
+        {
+          "item": "magni-gloves",
+          "outfits": [
+            "magni"
+          ]
+        },
+        {
+          "item": "sims-gloves",
+          "outfits": [
+            "sims"
+          ]
+        },
+        {
+          "item": "unchained-gloves",
+          "outfits": [
+            "unchained"
           ]
         }
       ],
@@ -1292,16 +1210,106 @@
       "noneAllowed": true
     },
     {
-      "folder": "filters",
+      "folder": "accessories-front",
+      "icon": "icon-1",
       "items": [
-        "remove"
+        {
+          "item": "january-2025-keychain",
+          "outfits": [
+            "january-2025"
+          ]
+        },
+        {
+          "item": "debut-underlayer",
+          "outfits": [
+            "debut-underlayer"
+          ]
+        },
+        {
+          "item": "bettelmaid",
+          "outfits": [
+            "bettelmaid"
+          ]
+        },
+        {
+          "item": "magni-front-accessory-1",
+          "outfits": [
+            "magni"
+          ]
+        },
+        "magni-front-accessory-2",
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": true
     },
     {
-      "folder": "frames",
+      "folder": "accessories-front",
+      "layer": "accessories-front_2",
+      "icon": "icon-2",
+      "items": [
+        "january-2025-keychain",
+        "debut-underlayer",
+        "bettelmaid",
+        "magni-front-accessory-1",
+        {
+          "item": "magni-front-accessory-2",
+          "outfits": [
+            "magni"
+          ]
+        },
+        "goosevp"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories-front",
+      "layer": "accessories-front_3",
+      "icon": "icon-3",
+      "items": [
+        "january-2025-keychain",
+        "debut-underlayer",
+        "bettelmaid",
+        "magni-front-accessory-1",
+        "magni-front-accessory-2",
+        "goosevp"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories-rear",
+      "items": [
+        {
+          "item": "showman-ribbon",
+          "outfits": [
+            "showman"
+          ]
+        },
+        "angel-wings",
+        "demon-tail",
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "companions",
       "items": [
         "remove"
       ],
@@ -1323,7 +1331,16 @@
       "noneAllowed": true
     },
     {
-      "folder": "companions",
+      "folder": "frames",
+      "items": [
+        "remove"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "filters",
       "items": [
         "remove"
       ],

@@ -82,7 +82,7 @@
       "name": "Casual Red"
     },
     {
-      "uid": "goosevp",
+      "uid": "goose-vp",
       "name": "Goose VP"
     },
     {
@@ -251,9 +251,9 @@
           ]
         },
         {
-          "item": "goosevp",
+          "item": "goose-vp",
           "outfits": [
-            "goosevp"
+            "goose-vp"
           ]
         },
         {
@@ -326,9 +326,9 @@
           ]
         },
         {
-          "item": "goosevp",
+          "item": "goose-vp",
           "outfits": [
-            "goosevp"
+            "goose-vp"
           ]
         },
         {
@@ -766,9 +766,9 @@
           }
         },
         {
-          "item": "goosevp",
+          "item": "goose-vp",
           "outfits": [
-            "goosevp"
+            "goose-vp"
           ],
           "requires": {
             "part": "feet",
@@ -831,9 +831,9 @@
           ]
         },
         {
-          "item": "goosevp",
+          "item": "goose-vp",
           "outfits": [
-            "goosevp"
+            "goose-vp"
           ]
         },
         {
@@ -911,9 +911,9 @@
           ]
         },
         {
-          "item": "goosevp",
+          "item": "goose-vp",
           "outfits": [
-            "goosevp"
+            "goose-vp"
           ]
         },
         {
@@ -1251,9 +1251,9 @@
         },
         "magni-front-accessory-2",
         {
-          "item": "goosevp",
+          "item": "goose-vp",
           "outfits": [
-            "goosevp"
+            "goose-vp"
           ]
         }
       ],
@@ -1276,7 +1276,7 @@
             "magni"
           ]
         },
-        "goosevp"
+        "goose-vp"
       ],
       "colorMode": null,
       "colors": [],
@@ -1292,7 +1292,7 @@
         "bettelmaid",
         "magni-front-accessory-1",
         "magni-front-accessory-2",
-        "goosevp"
+        "goose-vp"
       ],
       "colorMode": null,
       "colors": [],
@@ -1310,9 +1310,9 @@
         "angel-wings",
         "demon-tail",
         {
-          "item": "goosevp",
+          "item": "goose-vp",
           "outfits": [
-            "goosevp"
+            "goose-vp"
           ]
         }
       ],

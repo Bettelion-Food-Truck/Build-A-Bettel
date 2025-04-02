@@ -131,17 +131,22 @@
     {
       "folder": "hair",
       "items": [
-        "default",
+        {
+          "item": "default",
+          "thumbnail": true
+        },
         {
           "item": "second",
           "outfits": [
             "second-outfit",
             "battel"
-          ]
+          ],
+          "thumbnail": true
         },
         {
           "item": "bald",
-          "hide": true
+          "hide": true,
+          "thumbnail": true
         }
       ],
       "colorMode": null,

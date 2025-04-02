@@ -16,6 +16,7 @@
     "facial-hair",
     "mask",
     "socks",
+    "shirts-tucked-in",
     "pants",
     "shoes",
     "pants_elevated",
@@ -47,6 +48,22 @@
       "name": "Second Outfit"
     },
     {
+      "uid": "debut-underlayer",
+      "name": "Debut - Underlayer"
+    },
+    {
+      "uid": "showman",
+      "name": "Showman"
+    },
+    {
+      "uid": "unchained",
+      "name": "Unchained"
+    },
+    {
+      "uid": "january-2025",
+      "name": "January 2025"
+    },
+    {
       "uid": "battel",
       "name": "Bat"
     },
@@ -55,24 +72,20 @@
       "name": "Goose"
     },
     {
-      "uid": "goosevp",
-      "name": "Goose VP"
-    },
-    {
       "uid": "bettelmaid",
       "name": "Maid"
-    },
-    {
-      "uid": "debut-underlayer",
-      "name": "Debut - Underlayer"
     },
     {
       "uid": "flex",
       "name": "Casual Red"
     },
     {
-      "uid": "january-2025",
-      "name": "January 2025"
+      "uid": "goosevp",
+      "name": "Goose VP"
+    },
+    {
+      "uid": "jester",
+      "name": "Jester"
     },
     {
       "uid": "magni",
@@ -87,16 +100,8 @@
       "name": "Punk"
     },
     {
-      "uid": "showman",
-      "name": "Showman"
-    },
-    {
       "uid": "sims",
       "name": "Sims"
-    },
-    {
-      "uid": "unchained",
-      "name": "Unchained"
     }
   ],
   "parts": [
@@ -188,7 +193,13 @@
       "items": [
         "blush-heavy",
         "eyeshadow",
-        "tictactoe"
+        "tictactoe",
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -326,6 +337,12 @@
           "outfits": [
             "goosevp"
           ]
+        },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
+          ]
         }
       ],
       "colorMode": null,
@@ -394,6 +411,13 @@
           "item": "goosevp",
           "outfits": [
             "goosevp"
+          ]
+        },
+        {
+          "item": "jester",
+          "layer": "shirts-tucked-in",
+          "outfits": [
+            "jester"
           ]
         },
         "snank"
@@ -548,6 +572,16 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -586,6 +620,12 @@
           "item": "magni-vest",
           "outfits": [
             "magni"
+          ]
+        },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
           ]
         }
       ],
@@ -677,6 +717,12 @@
           "outfits": [
             "unchained"
           ]
+        },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
+          ]
         }
       ],
       "colorMode": null,
@@ -745,7 +791,8 @@
               "layer": "jackets_back"
             }
           ]
-        }
+        },
+        "jester"
       ],
       "colorMode": null,
       "colors": [],
@@ -905,6 +952,16 @@
             "goosevp"
           ]
         },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
+          ],
+          "requires": {
+            "part": "hair",
+            "item": "bald"
+          }
+        },
         "phantom-beanie",
         "cat-ears",
         "party-hat",
@@ -1006,6 +1063,12 @@
           "item": "goosevp",
           "outfits": [
             "goosevp"
+          ]
+        },
+        {
+          "item": "jester",
+          "outfits": [
+            "jester"
           ]
         }
       ],

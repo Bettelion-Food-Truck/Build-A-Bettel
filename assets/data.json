@@ -55,6 +55,10 @@
       "name": "Goose"
     },
     {
+      "uid": "goosevp",
+      "name": "Goose VP"
+    },
+    {
       "uid": "bettelmaid",
       "name": "Maid"
     },
@@ -316,6 +320,12 @@
           "outfits": [
             "sims"
           ]
+        },
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
         }
       ],
       "colorMode": null,
@@ -378,6 +388,12 @@
           "item": "sims-blouse",
           "outfits": [
             "sims"
+          ]
+        },
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
           ]
         },
         "snank"
@@ -517,6 +533,16 @@
           "item": "unchained-boots",
           "outfits": [
             "unchained"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
           ],
           "requires": {
             "part": "feet",
@@ -873,6 +899,12 @@
             "sims"
           ]
         },
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
         "party-hat",
@@ -969,6 +1001,12 @@
           "outfits": [
             "unchained"
           ]
+        },
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
         }
       ],
       "colorMode": null,
@@ -1003,7 +1041,13 @@
             "magni"
           ]
         },
-        "magni-front-accessory-2"
+        "magni-front-accessory-2",
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -1023,7 +1067,8 @@
           "outfits": [
             "magni"
           ]
-        }
+        },
+        "goosevp"
       ],
       "colorMode": null,
       "colors": [],
@@ -1133,7 +1178,13 @@
           ]
         },
         "angel-wings",
-        "demon-tail"
+        "demon-tail",
+        {
+          "item": "goosevp",
+          "outfits": [
+            "goosevp"
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],

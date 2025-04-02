@@ -4,9 +4,11 @@ window.addEventListener('load', function (ev) {
 	let outfits = [];
 
 	/* relative path to the folder containing part folders */
-	const ASSET_PATH = "assets/"
-	const OUTFIT_PATH = "outfits/";
-	const UI_ASSETS = "ui_icons/"
+	const BASE_ASSET_PATH = "assets/";
+	const ASSET_PATH = BASE_ASSET_PATH;
+	const OUTFIT_PATH = BASE_ASSET_PATH + "outfits/";
+	const UI_ASSETS = BASE_ASSET_PATH + "ui_icons/";
+	const THUMBNAIL_PATH = "thumbnails/";
 
 	// DOM Elements
 	const canvas = document.getElementById("main-canvas");
@@ -557,7 +559,7 @@ window.addEventListener('load', function (ev) {
 				let noneButtonIcon = document.createElement('img');
 
 				noneButton.id = "icon_" + i.toString() + "_none";
-				noneButtonIcon.src = ASSET_PATH + UI_ASSETS + "none_button.svg";
+				noneButtonIcon.src = UI_ASSETS + "none_button.svg";
 				noneButtonIcon.alt = "Icon indicating no item selected";
 				noneButtonIcon.title = "None";
 
@@ -586,7 +588,7 @@ window.addEventListener('load', function (ev) {
 				itemIcon.id = "icon_" + i.toString() + "_" + j.toString();
 				itemIcon.src = (ASSET_PATH +
 					(asset.folder ? asset.folder : parts[i].folder) + "/" +
-					(thumbnail ? "thumbnail/" : "") +
+					(thumbnail ? THUMBNAIL_PATH : "") +
 					itemName + ".png");
 
 				itemIcon.alt = asset.name ? asset.name : itemName;
@@ -618,7 +620,7 @@ window.addEventListener('load', function (ev) {
 			let outfitIcon = document.createElement('img');
 
 			outfitIcon.id = "outfit_icon_" + i.toString();
-			outfitIcon.src = ASSET_PATH + OUTFIT_PATH +
+			outfitIcon.src = OUTFIT_PATH +
 				outfit.uid + ".png";
 
 			outfitIcon.alt = outfit.name ? outfit.name : outfit.uid;

@@ -849,6 +849,14 @@
           "thumbnail": true
         },
         {
+          "item": "punk-rings-right",
+          "thumbnail": true
+        },
+        {
+          "item": "punk-rings-left",
+          "thumbnail": true
+        },
+        {
           "item": "debut-underlayer",
           "outfits": [
             "debut-underlayer"
@@ -966,7 +974,8 @@
         "cat-ears",
         "party-hat",
         "demon-horns",
-        "halo"
+        "halo",
+        "dog-ears"
       ],
       "colorMode": null,
       "colors": [],
@@ -1026,12 +1035,6 @@
           "item": "january-2025-neck-ribbon",
           "outfits": [
             "january-2025"
-          ]
-        },
-        {
-          "item": "punk-necklace",
-          "outfits": [
-            "punk"
           ]
         },
         {

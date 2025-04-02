@@ -156,16 +156,23 @@
     {
       "folder": "undies",
       "items": [
-        "boxers",
+        {
+          "item": "boxers",
+          "thumbnail": true
+        },
         {
           "item": "briefs",
           "outfits": [
             "showman",
             "second-outfit",
             "sims"
-          ]
+          ],
+          "thumbnail": true
         },
-        "leaf"
+        {
+          "item": "leaf",
+          "thumbnail": true
+        }
       ],
       "colorMode": null,
       "colors": [],

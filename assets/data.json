@@ -17,6 +17,7 @@
     "mask",
     "socks",
     "shirts-tucked-in",
+    "shoes-covered",
     "pants",
     "shoes",
     "pants_elevated",
@@ -460,6 +461,7 @@
         },
         {
           "item": "punk-boots",
+          "layer": "shoes-covered",
           "outfits": [
             "punk"
           ],

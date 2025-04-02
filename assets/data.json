@@ -772,7 +772,8 @@
           "item": "punk-rings",
           "outfits": [
             "punk"
-          ]
+          ],
+          "thumbnail": true
         },
         {
           "item": "debut-underlayer",

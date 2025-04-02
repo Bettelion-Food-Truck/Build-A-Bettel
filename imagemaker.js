@@ -8,6 +8,7 @@ window.addEventListener('load', function (ev) {
 	const ASSET_PATH = BASE_ASSET_PATH;
 	const OUTFIT_PATH = BASE_ASSET_PATH + "outfits/";
 	const UI_ASSETS = BASE_ASSET_PATH + "ui_icons/";
+	const THUMBNAIL_PATH = "thumbnails/";
 
 	// DOM Elements
 	const canvas = document.getElementById("main-canvas");
@@ -587,7 +588,7 @@ window.addEventListener('load', function (ev) {
 				itemIcon.id = "icon_" + i.toString() + "_" + j.toString();
 				itemIcon.src = (ASSET_PATH +
 					(asset.folder ? asset.folder : parts[i].folder) + "/" +
-					(thumbnail ? "thumbnail/" : "") +
+					(thumbnail ? THUMBNAIL_PATH : "") +
 					itemName + ".png");
 
 				itemIcon.alt = asset.name ? asset.name : itemName;

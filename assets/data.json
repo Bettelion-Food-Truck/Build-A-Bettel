@@ -1354,7 +1354,12 @@
     {
       "folder": "filters",
       "items": [
-        "remove"
+        "black",
+        "blue",
+        "pink",
+        "purple",
+        "white",
+        "yellow"
       ],
       "colorMode": null,
       "colors": [],

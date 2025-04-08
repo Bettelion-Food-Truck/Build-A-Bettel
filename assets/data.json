@@ -1354,6 +1354,9 @@
     {
       "folder": "filters",
       "items": [
+        "full-hearts",
+        "line-hearts",
+        "shoujo-bubbles",
         "black",
         "blue",
         "pink",

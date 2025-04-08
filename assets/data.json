@@ -1336,7 +1336,9 @@
         "pink-and-checkered",
         "arcade",
         "purple-lace",
-        "cotton-candy-diamonds"
+        "cotton-candy-diamonds",
+        "pink-lilies",
+        "black-glitter"
       ],
       "colorMode": null,
       "colors": [],
@@ -1354,7 +1356,15 @@
     {
       "folder": "filters",
       "items": [
-        "remove"
+        "full-hearts",
+        "line-hearts",
+        "shoujo-bubbles",
+        "black",
+        "blue",
+        "pink",
+        "purple",
+        "white",
+        "yellow"
       ],
       "colorMode": null,
       "colors": [],

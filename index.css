@@ -46,9 +46,8 @@
     --zoom-reset-color: #00000000;
     --zoom-reset-img: url("assets/ui_icons/zoom-reset.png");
 
-    /* the image filepath of the logo */
-    --logo-png: "none";
-    --save-button-color: #00b33c;
+    /* save button vars */
+    --save-button-color: #006400;
 
     /* random purple color */
     --random-purple-color: #660073;
@@ -88,8 +87,8 @@ ul li img {
     position: relative;
     margin: 0 auto;
 
-    height: 100vh;
-    max-width: calc(100vw - 20px);
+    height: 100%;
+    max-width: calc(100% - 20px);
 
     border: 3px solid black;
 }
@@ -128,26 +127,31 @@ ul li img {
     object-fit: scale-down;
 }
 
-.save_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    padding: 4px 8px;
-    background: var(--save-button-color, #555555);
-    border-radius: 4px;
-    text-align: center;
-    word-break: break-all;
-    color: #fff;
-    cursor: pointer;
+.save_button_wrapper {
     position: absolute;
     top: 5px;
-    right: auto;
-    bottom: 4px;
     left: 4px;
-    background-image: var(--download-button-png, "none");
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+.save_button {
+	display: inline-block;
+
+	background-color: var(--save-button-color, #555555);
+	border: 1px solid #000000;
+	border-radius: 5px;
+
+	cursor: pointer;
+	color: #ffffff;
+
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-decoration: none;
+
+	padding: 6px 12px;
+}
+
+.save_button:hover {
+	filter: brightness(1.2);
 }
 
 .loading {
@@ -458,11 +462,6 @@ ul li img {
     margin: 0 2px;
 }
 
-.save_button {
-    top: 5px;
-    height: 36px;
-}
-
 .info_modal {
     display: none;
 
@@ -564,11 +563,6 @@ ul li img {
 
     .canvas_wrapper {
         max-height: 50vh;
-    }
-
-    .save_button {
-        height: 4vh;
-        font-size: 3vh;
     }
 
     .part_control_wrapper {

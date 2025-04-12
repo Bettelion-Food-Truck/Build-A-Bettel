@@ -485,6 +485,7 @@ ul li img {
     position: relative;
 
     width: 80%;
+    max-width: 800px;
     margin: auto;
     padding: 0;
 
@@ -548,6 +549,13 @@ ul li img {
 .info_modal .cook-wrapper img {
     max-width: 100%;
     height: auto;
+}
+
+@media (max-width: 500px) {
+
+    .info_modal .cook-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Portrait layout changes */

@@ -76,6 +76,12 @@ body {
     overflow: hidden;
 }
 
+@supports (max-height: 100dvh) {
+    body {
+        height:100dvh;
+    }
+}
+
 ul li img {
     width: 100%;
     height: 100%;

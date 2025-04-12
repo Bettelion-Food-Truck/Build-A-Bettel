@@ -104,6 +104,10 @@
     {
       "uid": "sims",
       "name": "Sims"
+    },
+    {
+      "uid": "spa",
+      "name": "Spa Day"
     }
   ],
   "parts": [
@@ -479,6 +483,18 @@
           "outfits": [
             "jester"
           ]
+        },
+        {
+          "item": "bathrobe",
+          "multilayer": [
+            {
+              "item": "bathrobe-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "spa"
+          ]
         }
       ],
       "colorMode": null,
@@ -548,7 +564,16 @@
             }
           ]
         },
-        "jester"
+        "jester",
+        {
+          "item": "bathrobe",
+          "multilayer": [
+            {
+              "item": "bathrobe-back",
+              "layer": "jackets_back"
+            }
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -784,6 +809,16 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "bath-slippers",
+          "outfits": [
+            "spa"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -840,6 +875,12 @@
           "item": "jester",
           "outfits": [
             "jester"
+          ]
+        },
+        {
+          "item": "neck-towel",
+          "outfits": [
+            "spa"
           ]
         }
       ],
@@ -926,6 +967,16 @@
             "item": "bald"
           }
         },
+        {
+          "item": "hair-towel",
+          "outfits": [
+            "spa"
+          ],
+          "requires": {
+            "part": "hair",
+            "item": "bald"
+          }
+        },
         "phantom-beanie",
         "cat-ears",
         "party-hat",
@@ -1005,6 +1056,12 @@
           "outfits": [
             "pirate"
           ]
+        },
+        {
+          "item": "spa-mask",
+          "outfits": [
+            "spa"
+          ]
         }
       ],
       "colorMode": null,
@@ -1014,7 +1071,13 @@
     {
       "folder": "glasses",
       "items": [
-        "pink-monocle"
+        "pink-monocle",
+        {
+          "item": "cucumbers",
+          "outfits": [
+            "spa"
+          ]
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -1214,6 +1277,12 @@
               "item": "microphone-back",
               "layer": "handheld_back"
             }
+          ]
+        },
+        {
+          "item": "water-bottle",
+          "outfits": [
+            "spa"
           ]
         }
       ],

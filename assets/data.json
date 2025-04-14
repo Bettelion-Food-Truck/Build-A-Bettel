@@ -83,7 +83,7 @@
     },
     {
       "uid": "flex",
-      "name": "Casual Red"
+      "name": "Flex"
     },
     {
       "uid": "goose-vp",
@@ -216,6 +216,7 @@
         },
         {
           "item": "flex",
+          "layer": "pants_elevated",
           "outfits": [
             "flex"
           ]
@@ -260,6 +261,7 @@
         },
         {
           "item": "goose-vp",
+          "layer": "pants_elevated",
           "outfits": [
             "goose-vp"
           ]

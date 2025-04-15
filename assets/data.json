@@ -112,6 +112,10 @@
     {
       "uid": "spa",
       "name": "Spa Day"
+    },
+    {
+      "uid": "ruze",
+      "name": "Ruze Cosplay"
     }
   ],
   "parts": [
@@ -277,6 +281,12 @@
           "outfits": [
             "clown"
           ]
+        },
+        {
+          "item": "ruze-pants",
+          "outfits": [
+            "ruze"
+          ]
         }
       ],
       "colorMode": null,
@@ -358,6 +368,12 @@
           "item": "clown",
           "outfits": [
             "clown"
+          ]
+        },
+        {
+          "item": "ruze-top",
+          "outfits": [
+            "ruze"
           ]
         },
         "snank"
@@ -512,6 +528,18 @@
           ],
           "outfits": [
             "spa"
+          ]
+        },
+        {
+          "item": "ruze-coat",
+          "multilayer": [
+            {
+              "item": "ruze-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "ruze"
           ]
         }
       ],
@@ -842,6 +870,16 @@
           "item": "clown-shoes",
           "outfits": [
             "clown"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "ruze-shoes",
+          "outfits": [
+            "ruze"
           ],
           "requires": {
             "part": "feet",

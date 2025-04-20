@@ -28,6 +28,9 @@
     "handheld",
     "belts",
     "vests",
+    "accessories-front_under-jacket",
+    "accessories-front_2_under-jacket",
+    "accessories-front_3_under-jacket",
     "jackets",
     "belt_elevated",
     "jackets_2",
@@ -45,6 +48,10 @@
     "filters"
   ],
   "outfits": [
+    {
+      "uid": "ruze",
+      "name": "Ruze Cosplay"
+    },
     {
       "uid": "second-outfit",
       "name": "Second Outfit"
@@ -83,7 +90,7 @@
     },
     {
       "uid": "flex",
-      "name": "Casual Red"
+      "name": "Flex"
     },
     {
       "uid": "goose-vp",
@@ -112,6 +119,10 @@
     {
       "uid": "spa",
       "name": "Spa Day"
+    },
+    {
+      "uid": "dead-world",
+      "name": "Dead World"
     }
   ],
   "parts": [
@@ -216,6 +227,7 @@
         },
         {
           "item": "flex",
+          "layer": "pants_elevated",
           "outfits": [
             "flex"
           ]
@@ -260,6 +272,7 @@
         },
         {
           "item": "goose-vp",
+          "layer": "pants_elevated",
           "outfits": [
             "goose-vp"
           ]
@@ -274,6 +287,18 @@
           "item": "clown-shorts",
           "outfits": [
             "clown"
+          ]
+        },
+        {
+          "item": "ruze-pants",
+          "outfits": [
+            "ruze"
+          ]
+        },
+        {
+          "item": "deadworld-pants",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -358,6 +383,18 @@
             "clown"
           ]
         },
+        {
+          "item": "ruze-top",
+          "outfits": [
+            "ruze"
+          ]
+        },
+        {
+          "item": "deadworld-shirt",
+          "outfits": [
+            "dead-world"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -402,6 +439,12 @@
           "item": "jester",
           "outfits": [
             "jester"
+          ]
+        },
+        {
+          "item": "deadworld-harness",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -511,6 +554,30 @@
           "outfits": [
             "spa"
           ]
+        },
+        {
+          "item": "ruze-coat",
+          "multilayer": [
+            {
+              "item": "ruze-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "ruze"
+          ]
+        },
+        {
+          "item": "deadworld-coat",
+          "multilayer": [
+            {
+              "item": "deadworld-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "dead-world"
+          ]
         }
       ],
       "colorMode": null,
@@ -586,6 +653,24 @@
           "multilayer": [
             {
               "item": "bathrobe-back",
+              "layer": "jackets_back"
+            }
+          ]
+        },
+        {
+          "item": "ruze-coat",
+          "multilayer": [
+            {
+              "item": "ruze-coat-back",
+              "layer": "jackets_back"
+            }
+          ]
+        },
+        {
+          "item": "deadworld-coat",
+          "multilayer": [
+            {
+              "item": "deadworld-coat-back",
               "layer": "jackets_back"
             }
           ]
@@ -845,6 +930,26 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "ruze-shoes",
+          "outfits": [
+            "ruze"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "deadworld-shoes",
+          "outfits": [
+            "dead-world"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -913,6 +1018,12 @@
           "item": "clown-ruffle",
           "outfits": [
             "clown"
+          ]
+        },
+        {
+          "item": "deadworld-cravat",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -1021,6 +1132,18 @@
             "clown"
           ]
         },
+        {
+          "item": "deadworld-hat-front",
+          "multilayer": [
+            {
+              "item": "deadworld-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "outfits": [
+            "dead-world"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
         "party-hat",
@@ -1073,6 +1196,12 @@
           "item": "clown",
           "outfits": [
             "clown"
+          ]
+        },
+        {
+          "item": "deadworld-makeup",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -1180,6 +1309,13 @@
         {
           "item": "memento",
           "thumbnail": true
+        },
+        {
+          "item": "deadworld-jewelry",
+          "outfits": [
+            "dead-world"
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1220,6 +1356,10 @@
         },
         {
           "item": "memento",
+          "thumbnail": true
+        },
+        {
+          "item": "deadworld-jewelry",
           "thumbnail": true
         }
       ],
@@ -1301,6 +1441,12 @@
           "outfits": [
             "clown"
           ]
+        },
+        {
+          "item": "deadworld-gloves",
+          "outfits": [
+            "dead-world"
+          ]
         }
       ],
       "colorMode": null,
@@ -1380,6 +1526,18 @@
           "outfits": [
             "goose-vp"
           ]
+        },
+        {
+          "item": "ruze-front-accessory-1",
+          "outfits": [
+            "ruze"
+          ],
+          "layer": "accessories-front_under-jacket"
+        },
+        {
+          "item": "ruze-front-accessory-2",
+          "outfits": [],
+          "layer": "accessories-front_under-jacket"
         }
       ],
       "colorMode": null,
@@ -1401,7 +1559,19 @@
             "magni"
           ]
         },
-        "goose-vp"
+        "goose-vp",
+        {
+          "item": "ruze-front-accessory-1",
+          "outfits": [],
+          "layer": "accessories-front_2_under-jacket"
+        },
+        {
+          "item": "ruze-front-accessory-2",
+          "outfits": [
+            "ruze"
+          ],
+          "layer": "accessories-front_2_under-jacket"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -1417,7 +1587,15 @@
         "bettelmaid",
         "magni-front-accessory-1",
         "magni-front-accessory-2",
-        "goose-vp"
+        "goose-vp",
+        {
+          "item": "ruze-front-accessory-1",
+          "layer": "accessories-front_3_under-jacket"
+        },
+        {
+          "item": "ruze-front-accessory-2",
+          "layer": "accessories-front_3_under-jacket"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -1463,7 +1641,13 @@
         "purple-lace",
         "cotton-candy-diamonds",
         "pink-lilies",
-        "black-glitter"
+        "black-glitter",
+        "rainbow-cloud",
+        "grayscale-holostars",
+        "rainbow-holostars",
+        "bettel-text",
+        "city",
+        "purple-sky"
       ],
       "colorMode": null,
       "colors": [],

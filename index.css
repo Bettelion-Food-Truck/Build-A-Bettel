@@ -3,7 +3,7 @@
     --loading-bg-color: #ffffff;
 
     /* the color of the border around selected part and icon buttons */
-    --select-color: #ff0000;
+    --select-color: #660073;
 
     /* the color/image filepath of the background of the image display area */
     --image-background-color: hsla(0, 0%, 93.3%, 0.5);
@@ -24,27 +24,27 @@
 
     /* the color/image filepath of the item menu toggle button */
     --item-toggle-color: #ffffff;
-    --item-toggle-img: url("assets/ui_icons/icon-grid.png");
+    --item-toggle-img: url("assets/icons/ui/icon-grid.png");
 
     /* the color/image filepath of the palette toggle button */
     --palette-toggle-color: #ffffff;
-    --palette-toggle-img: url("assets/ui_icons/icon-colors.png");
+    --palette-toggle-img: url("assets/icons/ui/icon-colors.png");
 
     /* the color/image filepath of the info button */
     --move-toggle-color: #ffffff;
-    --move-toggle-img: url("assets/ui_icons/move_toggle.svg");
+    --move-toggle-img: url("assets/icons/ui/move_toggle.svg");
 
     /* the color/image filepath of the zoom in button */
     --zoom-in-color: #00000000;
-    --zoom-in-img: url("assets/ui_icons/zoom-in.png");
+    --zoom-in-img: url("assets/icons/ui/zoom-in.png");
 
     /* the color/image filepath of the zoom out button */
     --zoom-out-color: #00000000;
-    --zoom-out-img: url("assets/ui_icons/zoom-out.png");
+    --zoom-out-img: url("assets/icons/ui/zoom-out.png");
 
     /* the color/image filepath of the zoom reset button */
     --zoom-reset-color: #00000000;
-    --zoom-reset-img: url("assets/ui_icons/zoom-reset.png");
+    --zoom-reset-img: url("assets/icons/ui/zoom-reset.png");
 
     /* save button vars */
     --save-button-color: #006400;
@@ -97,6 +97,12 @@ ul li img {
     max-width: calc(100% - 20px);
 
     border: 3px solid black;
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 .container {

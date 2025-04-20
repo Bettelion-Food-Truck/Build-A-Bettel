@@ -1646,7 +1646,13 @@
         "rainbow-holostars",
         "bettel-text",
         "city",
-        "purple-sky"
+        "purple-sky",
+        "yellow-bettelion",
+        "paper",
+        "mountain",
+        "mansion",
+        "infinity",
+        "blue-bettelion"
       ],
       "colorMode": null,
       "colors": [],
@@ -1655,7 +1661,9 @@
     {
       "folder": "frames",
       "items": [
-        "remove"
+        "remove",
+        "lace",
+        "star"
       ],
       "colorMode": null,
       "colors": [],

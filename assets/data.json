@@ -2,6 +2,7 @@
   "layers": [
     "backgrounds",
     "companions",
+    "accessories-rear_back",
     "accessories-rear",
     "hats_back",
     "jackets_2_back",
@@ -125,6 +126,10 @@
     {
       "uid": "vesper",
       "name": "Vesper Cosplay"
+    },
+    {
+      "uid": "bettelzebub",
+      "name": "Bettelzebub"
     }
   ],
   "parts": [
@@ -308,6 +313,12 @@
           "outfits": [
             "vesper"
           ]
+        },
+        {
+          "item": "bettelzebub-pants",
+          "outfits": [
+            "bettelzebub"
+          ]
         }
       ],
       "colorMode": null,
@@ -413,6 +424,18 @@
           ],
           "outfits": [
             "vesper"
+          ]
+        },
+        {
+          "item": "bettelzebub-shirt",
+          "multilayer": [
+            {
+              "item": "bettelzebub-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
           ]
         },
         "snank"
@@ -975,6 +998,16 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "bettelzebub-shoes",
+          "outfits": [
+            "bettelzebub"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -1049,6 +1082,12 @@
           "item": "deadworld-cravat",
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "bettelzebub-necklace",
+          "outfits": [
+            "bettelzebub"
           ]
         }
       ],
@@ -1167,6 +1206,12 @@
           ],
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "bettelzebub-crown",
+          "outfits": [
+            "bettelzebub"
           ]
         },
         "phantom-beanie",
@@ -1615,6 +1660,18 @@
           "item": "goose-vp",
           "outfits": [
             "goose-vp"
+          ]
+        },
+        {
+          "item": "bettelzebub-wings",
+          "multilayer": [
+            {
+              "item": "bettelzebub-cape",
+              "layer": "accessories-rear_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
           ]
         }
       ],

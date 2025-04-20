@@ -7,7 +7,10 @@ window.addEventListener('load', function (ev) {
 	const BASE_ASSET_PATH = "assets/";
 	const ASSET_PATH = BASE_ASSET_PATH;
 	const OUTFIT_PATH = BASE_ASSET_PATH + "outfits/";
-	const UI_ASSETS = BASE_ASSET_PATH + "ui_icons/";
+
+	const ICONS_PARTS = BASE_ASSET_PATH + "icons/parts/";
+	const UI_ASSETS = BASE_ASSET_PATH + "icons/ui/";
+
 	const THUMBNAIL_PATH = "thumbnails/";
 
 	// DOM Elements
@@ -509,9 +512,9 @@ window.addEventListener('load', function (ev) {
 			let part = document.createElement('li');
 			let partIcon = document.createElement('img');
 
-			let partIconSrc = `${ASSET_PATH}${parts[i].folder}/icon.png`;
+			let partIconSrc = `${ICONS_PARTS}${parts[i].folder}/icon.png`;
 			if (parts[i].icon) {
-				partIconSrc = `${ASSET_PATH}${parts[i].folder}/${parts[i].icon}.png`;
+				partIconSrc = `${ICONS_PARTS}${parts[i].folder}/${parts[i].icon}.png`;
 			}
 
 			partIcon.src = partIconSrc;

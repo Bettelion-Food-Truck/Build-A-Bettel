@@ -88,11 +88,11 @@ window.addEventListener('load', function (ev) {
 		initButtons();
 		initCanvases()
 
-		await initPartsElements();
-		await initItemsElements();
+		initPartsElements();
+		initItemsElements();
 		initPalette();
 
-		await initOutfitElements();
+		initOutfitElements();
 
 		await initItemFunctions();
 
@@ -137,7 +137,7 @@ window.addEventListener('load', function (ev) {
 
 		for (let layerIndex = 0; layerIndex < rawLayers.length; layerIndex++) {
 
-			partList = parts.map((part, i) => part.layer === rawLayers[layerIndex] ? i : undefined).filter(x => x !== undefined);
+			let partList = parts.map((part, i) => part.layer === rawLayers[layerIndex] ? i : undefined).filter(x => x !== undefined);
 
 			layers[layerIndex] = {
 				"layer": rawLayers[layerIndex],

@@ -112,6 +112,14 @@
     {
       "uid": "spa",
       "name": "Spa Day"
+    },
+    {
+      "uid": "ruze",
+      "name": "Ruze Cosplay"
+    },
+    {
+      "uid": "dead-world",
+      "name": "Dead World"
     }
   ],
   "parts": [
@@ -277,6 +285,18 @@
           "outfits": [
             "clown"
           ]
+        },
+        {
+          "item": "ruze-pants",
+          "outfits": [
+            "ruze"
+          ]
+        },
+        {
+          "item": "deadworld-pants",
+          "outfits": [
+            "dead-world"
+          ]
         }
       ],
       "colorMode": null,
@@ -360,6 +380,18 @@
             "clown"
           ]
         },
+        {
+          "item": "ruze-top",
+          "outfits": [
+            "ruze"
+          ]
+        },
+        {
+          "item": "deadworld-shirt",
+          "outfits": [
+            "dead-world"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -404,6 +436,12 @@
           "item": "jester",
           "outfits": [
             "jester"
+          ]
+        },
+        {
+          "item": "deadworld-harness",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -512,6 +550,30 @@
           ],
           "outfits": [
             "spa"
+          ]
+        },
+        {
+          "item": "ruze-coat",
+          "multilayer": [
+            {
+              "item": "ruze-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "ruze"
+          ]
+        },
+        {
+          "item": "deadworld-coat",
+          "multilayer": [
+            {
+              "item": "deadworld-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -847,6 +909,26 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "ruze-shoes",
+          "outfits": [
+            "ruze"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "deadworld-shoes",
+          "outfits": [
+            "dead-world"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -915,6 +997,12 @@
           "item": "clown-ruffle",
           "outfits": [
             "clown"
+          ]
+        },
+        {
+          "item": "deadworld-cravat",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -1023,6 +1111,18 @@
             "clown"
           ]
         },
+        {
+          "item": "deadworld-hat-front",
+          "multilayer": [
+            {
+              "item": "deadworld-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "outfits": [
+            "dead-world"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
         "party-hat",
@@ -1075,6 +1175,12 @@
           "item": "clown",
           "outfits": [
             "clown"
+          ]
+        },
+        {
+          "item": "deadworld-makeup",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -1181,6 +1287,13 @@
         },
         {
           "item": "memento",
+          "thumbnail": true
+        },
+        {
+          "item": "deadworld-jewelry",
+          "outfits": [
+            "dead-world"
+          ],
           "thumbnail": true
         }
       ],
@@ -1302,6 +1415,12 @@
           "item": "clown",
           "outfits": [
             "clown"
+          ]
+        },
+        {
+          "item": "deadworld-gloves",
+          "outfits": [
+            "dead-world"
           ]
         }
       ],
@@ -1465,7 +1584,13 @@
         "purple-lace",
         "cotton-candy-diamonds",
         "pink-lilies",
-        "black-glitter"
+        "black-glitter",
+        "rainbow-cloud",
+        "grayscale-holostars",
+        "rainbow-holostars",
+        "bettel-text",
+        "city",
+        "purple-sky"
       ],
       "colorMode": null,
       "colors": [],

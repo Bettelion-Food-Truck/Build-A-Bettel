@@ -8,6 +8,7 @@
     "jackets_back",
     "vests_back",
     "pants_back",
+    "shirts_back",
     "body",
     "undies",
     "feet",
@@ -120,6 +121,10 @@
     {
       "uid": "dead-world",
       "name": "Dead World"
+    },
+    {
+      "uid": "vesper",
+      "name": "Vesper Cosplay"
     }
   ],
   "parts": [
@@ -297,6 +302,12 @@
           "outfits": [
             "dead-world"
           ]
+        },
+        {
+          "item": "vesper-pants",
+          "outfits": [
+            "vesper"
+          ]
         }
       ],
       "colorMode": null,
@@ -392,6 +403,18 @@
             "dead-world"
           ]
         },
+        {
+          "item": "vesper-shirt",
+          "multilayer": [
+            {
+              "item": "vesper-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "vesper"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -443,7 +466,8 @@
           "outfits": [
             "dead-world"
           ]
-        }
+        },
+        "vesper-vest"
       ],
       "colorMode": null,
       "colors": [],
@@ -574,6 +598,18 @@
           ],
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "vesper-jacket",
+          "multilayer": [
+            {
+              "item": "vesper-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "vesper"
           ]
         }
       ],
@@ -928,6 +964,16 @@
           "requires": {
             "part": "feet",
             "item": "pointed"
+          }
+        },
+        {
+          "item": "vesper-boots",
+          "outfits": [
+            "vesper"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
           }
         }
       ],
@@ -1295,6 +1341,10 @@
             "dead-world"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "vesper-jewelry",
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1421,6 +1471,12 @@
           "item": "deadworld-gloves",
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "vesper-gloves",
+          "outfits": [
+            "vesper"
           ]
         }
       ],

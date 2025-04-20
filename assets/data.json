@@ -734,6 +734,48 @@
               "layer": "jackets_back"
             }
           ]
+        },
+        {
+          "item": "ruze-coat",
+          "multilayer": [
+            {
+              "item": "ruze-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "ruze"
+          ]
+        },
+        {
+          "item": "deadworld-coat",
+          "multilayer": [
+            {
+              "item": "deadworld-coat-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "dead-world"
+          ]
+        },
+        {
+          "item": "vesper-jacket",
+          "multilayer": [
+            {
+              "item": "vesper-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "vesper"
+          ]
+        },
+        {
+          "item": "woven-fates-jacket",
+          "outfits": [
+            "woven-fates"
+          ]
         }
       ],
       "colorMode": null,

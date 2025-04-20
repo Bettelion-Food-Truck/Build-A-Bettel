@@ -130,6 +130,10 @@
     {
       "uid": "bettelzebub",
       "name": "Bettelzebub"
+    },
+    {
+      "uid": "woven-fates",
+      "name": "Woven Fates"
     }
   ],
   "parts": [
@@ -319,6 +323,12 @@
           "outfits": [
             "bettelzebub"
           ]
+        },
+        {
+          "item": "woven-fates-pants",
+          "outfits": [
+            "woven-fates"
+          ]
         }
       ],
       "colorMode": null,
@@ -436,6 +446,12 @@
           ],
           "outfits": [
             "bettelzebub"
+          ]
+        },
+        {
+          "item": "woven-fates-shirt",
+          "outfits": [
+            "woven-fates"
           ]
         },
         "snank"
@@ -633,6 +649,12 @@
           ],
           "outfits": [
             "vesper"
+          ]
+        },
+        {
+          "item": "woven-fates-jacket",
+          "outfits": [
+            "woven-fates"
           ]
         }
       ],
@@ -1003,6 +1025,16 @@
           "item": "bettelzebub-shoes",
           "outfits": [
             "bettelzebub"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "woven-fates-shoes",
+          "outfits": [
+            "woven-fates"
           ],
           "requires": {
             "part": "feet",
@@ -1522,6 +1554,12 @@
           "item": "vesper-gloves",
           "outfits": [
             "vesper"
+          ]
+        },
+        {
+          "item": "woven-fates-gloves",
+          "outfits": [
+            "woven-fates"
           ]
         }
       ],

@@ -28,6 +28,9 @@
     "handheld",
     "belts",
     "vests",
+    "accessories-front_under-jacket",
+    "accessories-front_2_under-jacket",
+    "accessories-front_3_under-jacket",
     "jackets",
     "belt_elevated",
     "jackets_2",
@@ -45,6 +48,10 @@
     "filters"
   ],
   "outfits": [
+    {
+      "uid": "ruze",
+      "name": "Ruze Cosplay"
+    },
     {
       "uid": "second-outfit",
       "name": "Second Outfit"
@@ -112,10 +119,6 @@
     {
       "uid": "spa",
       "name": "Spa Day"
-    },
-    {
-      "uid": "ruze",
-      "name": "Ruze Cosplay"
     },
     {
       "uid": "dead-world",
@@ -650,6 +653,24 @@
           "multilayer": [
             {
               "item": "bathrobe-back",
+              "layer": "jackets_back"
+            }
+          ]
+        },
+        {
+          "item": "ruze-coat",
+          "multilayer": [
+            {
+              "item": "ruze-coat-back",
+              "layer": "jackets_back"
+            }
+          ]
+        },
+        {
+          "item": "deadworld-coat",
+          "multilayer": [
+            {
+              "item": "deadworld-coat-back",
               "layer": "jackets_back"
             }
           ]
@@ -1336,6 +1357,10 @@
         {
           "item": "memento",
           "thumbnail": true
+        },
+        {
+          "item": "deadworld-jewelry",
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1501,6 +1526,18 @@
           "outfits": [
             "goose-vp"
           ]
+        },
+        {
+          "item": "ruze-front-accessory-1",
+          "outfits": [
+            "ruze"
+          ],
+          "layer": "accessories-front_under-jacket"
+        },
+        {
+          "item": "ruze-front-accessory-2",
+          "outfits": [],
+          "layer": "accessories-front_under-jacket"
         }
       ],
       "colorMode": null,
@@ -1522,7 +1559,19 @@
             "magni"
           ]
         },
-        "goose-vp"
+        "goose-vp",
+        {
+          "item": "ruze-front-accessory-1",
+          "outfits": [],
+          "layer": "accessories-front_2_under-jacket"
+        },
+        {
+          "item": "ruze-front-accessory-2",
+          "outfits": [
+            "ruze"
+          ],
+          "layer": "accessories-front_2_under-jacket"
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -1538,7 +1587,15 @@
         "bettelmaid",
         "magni-front-accessory-1",
         "magni-front-accessory-2",
-        "goose-vp"
+        "goose-vp",
+        {
+          "item": "ruze-front-accessory-1",
+          "layer": "accessories-front_3_under-jacket"
+        },
+        {
+          "item": "ruze-front-accessory-2",
+          "layer": "accessories-front_3_under-jacket"
+        }
       ],
       "colorMode": null,
       "colors": [],

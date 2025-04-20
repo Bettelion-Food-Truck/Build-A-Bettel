@@ -2,12 +2,14 @@
   "layers": [
     "backgrounds",
     "companions",
+    "accessories-rear_back",
     "accessories-rear",
     "hats_back",
     "jackets_2_back",
     "jackets_back",
     "vests_back",
     "pants_back",
+    "shirts_back",
     "body",
     "undies",
     "feet",
@@ -123,6 +125,18 @@
     {
       "uid": "dead-world",
       "name": "Dead World"
+    },
+    {
+      "uid": "vesper",
+      "name": "Vesper Cosplay"
+    },
+    {
+      "uid": "bettelzebub",
+      "name": "Bettelzebub"
+    },
+    {
+      "uid": "woven-fates",
+      "name": "Woven Fates"
     }
   ],
   "parts": [
@@ -300,6 +314,24 @@
           "outfits": [
             "dead-world"
           ]
+        },
+        {
+          "item": "vesper-pants",
+          "outfits": [
+            "vesper"
+          ]
+        },
+        {
+          "item": "bettelzebub-pants",
+          "outfits": [
+            "bettelzebub"
+          ]
+        },
+        {
+          "item": "woven-fates-pants",
+          "outfits": [
+            "woven-fates"
+          ]
         }
       ],
       "colorMode": null,
@@ -395,6 +427,36 @@
             "dead-world"
           ]
         },
+        {
+          "item": "vesper-shirt",
+          "multilayer": [
+            {
+              "item": "vesper-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "vesper"
+          ]
+        },
+        {
+          "item": "bettelzebub-shirt",
+          "multilayer": [
+            {
+              "item": "bettelzebub-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
+          ]
+        },
+        {
+          "item": "woven-fates-shirt",
+          "outfits": [
+            "woven-fates"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -446,7 +508,8 @@
           "outfits": [
             "dead-world"
           ]
-        }
+        },
+        "vesper-vest"
       ],
       "colorMode": null,
       "colors": [],
@@ -578,6 +641,24 @@
           "outfits": [
             "dead-world"
           ]
+        },
+        {
+          "item": "vesper-jacket",
+          "multilayer": [
+            {
+              "item": "vesper-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "vesper"
+          ]
+        },
+        {
+          "item": "woven-fates-jacket",
+          "outfits": [
+            "woven-fates"
+          ]
         }
       ],
       "colorMode": null,
@@ -674,6 +755,18 @@
               "layer": "jackets_back"
             }
           ]
+        },
+        {
+          "item": "vesper-jacket",
+          "multilayer": [
+            {
+              "item": "vesper-jacket-back",
+              "layer": "jackets_back"
+            }
+          ]
+        },
+        {
+          "item": "woven-fates-jacket"
         }
       ],
       "colorMode": null,
@@ -950,6 +1043,36 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "vesper-boots",
+          "outfits": [
+            "vesper"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "bettelzebub-shoes",
+          "outfits": [
+            "bettelzebub"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "woven-fates-shoes",
+          "outfits": [
+            "woven-fates"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -1024,6 +1147,12 @@
           "item": "deadworld-cravat",
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "bettelzebub-necklace",
+          "outfits": [
+            "bettelzebub"
           ]
         }
       ],
@@ -1142,6 +1271,12 @@
           ],
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "bettelzebub-crown",
+          "outfits": [
+            "bettelzebub"
           ]
         },
         "phantom-beanie",
@@ -1316,6 +1451,10 @@
             "dead-world"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "vesper-jewelry",
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1446,6 +1585,18 @@
           "item": "deadworld-gloves",
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "vesper-gloves",
+          "outfits": [
+            "vesper"
+          ]
+        },
+        {
+          "item": "woven-fates-gloves",
+          "outfits": [
+            "woven-fates"
           ]
         }
       ],
@@ -1617,6 +1768,18 @@
           "outfits": [
             "goose-vp"
           ]
+        },
+        {
+          "item": "bettelzebub-wings",
+          "multilayer": [
+            {
+              "item": "bettelzebub-cape",
+              "layer": "accessories-rear_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
+          ]
         }
       ],
       "colorMode": null,
@@ -1647,7 +1810,13 @@
         "rainbow-holostars",
         "bettel-text",
         "city",
-        "purple-sky"
+        "purple-sky",
+        "yellow-bettelion",
+        "paper",
+        "mountain",
+        "mansion",
+        "infinity",
+        "blue-bettelion"
       ],
       "colorMode": null,
       "colors": [],
@@ -1656,7 +1825,9 @@
     {
       "folder": "frames",
       "items": [
-        "remove"
+        "remove",
+        "lace",
+        "star"
       ],
       "colorMode": null,
       "colors": [],

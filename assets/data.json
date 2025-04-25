@@ -137,6 +137,10 @@
     {
       "uid": "woven-fates",
       "name": "Woven Fates"
+    },
+    {
+      "uid": "inkya-impulse",
+      "name": "Inkya Impulse"
     }
   ],
   "parts": [
@@ -332,6 +336,12 @@
           "outfits": [
             "woven-fates"
           ]
+        },
+        {
+          "item": "inkya-impulse-pants",
+          "outfits": [
+            "inkya-impulse"
+          ]
         }
       ],
       "colorMode": null,
@@ -455,6 +465,12 @@
           "item": "woven-fates-shirt",
           "outfits": [
             "woven-fates"
+          ]
+        },
+        {
+          "item": "inkya-impulse-shirt",
+          "outfits": [
+            "inkya-impulse"
           ]
         },
         "snank"
@@ -801,6 +817,13 @@
           "outfits": [
             "unchained"
           ]
+        },
+        {
+          "item": "inkya-impulse-belt",
+          "layer": "belt_elevated",
+          "outfits": [
+            "inkya-impulse"
+          ]
         }
       ],
       "colorMode": null,
@@ -1068,6 +1091,16 @@
           "item": "woven-fates-shoes",
           "outfits": [
             "woven-fates"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "inkya-impulse-shoes",
+          "outfits": [
+            "inkya-impulse"
           ],
           "requires": {
             "part": "feet",
@@ -1598,6 +1631,12 @@
           "outfits": [
             "woven-fates"
           ]
+        },
+        {
+          "item": "inkya-impulse-sleeves",
+          "outfits": [
+            "inkya-impulse"
+          ]
         }
       ],
       "colorMode": null,
@@ -1689,6 +1728,13 @@
           "item": "ruze-front-accessory-2",
           "outfits": [],
           "layer": "accessories-front_under-jacket"
+        },
+        {
+          "item": "inkya-impulse-skirt-front",
+          "outfits": [
+            "inkya-impulse"
+          ],
+          "layer": "accessories-front_under-jacket"
         }
       ],
       "colorMode": null,
@@ -1722,6 +1768,13 @@
             "ruze"
           ],
           "layer": "accessories-front_2_under-jacket"
+        },
+        {
+          "item": "inkya-impulse-skirt-front",
+          "outfits": [
+            "inkya-impulse"
+          ],
+          "layer": "accessories-front_2_under-jacket"
         }
       ],
       "colorMode": null,
@@ -1745,6 +1798,13 @@
         },
         {
           "item": "ruze-front-accessory-2",
+          "layer": "accessories-front_3_under-jacket"
+        },
+        {
+          "item": "inkya-impulse-skirt-front",
+          "outfits": [
+            "inkya-impulse"
+          ],
           "layer": "accessories-front_3_under-jacket"
         }
       ],
@@ -1780,6 +1840,10 @@
           "outfits": [
             "bettelzebub"
           ]
+        },
+        {
+          "item": "inkya-impulse-skirt",
+          "outfits": "inkya-impulse"
         }
       ],
       "colorMode": null,

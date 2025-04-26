@@ -1,7 +1,6 @@
 {
   "layers": [
     "backgrounds",
-    "companions",
     "accessories-rear_back",
     "accessories-rear",
     "hats_back",
@@ -47,6 +46,7 @@
     "accessories-front_3",
     "jewelry",
     "jewelry_2",
+    "companions",
     "frames",
     "filters"
   ],
@@ -1947,7 +1947,17 @@
     {
       "folder": "companions",
       "items": [
-        "remove"
+        "remove",
+        "feed-me-phantom",
+        "sock-puppet-ears",
+        "jerry",
+        "left-shoulder-phantom",
+        "phantompy",
+        "skeleton",
+        "skrunkly-phantom",
+        "snank",
+        "sock-puppet",
+        "sock-puppet-ears-two"
       ],
       "colorMode": null,
       "colors": [],
@@ -1990,7 +2000,8 @@
         "ghost",
         "ghost-2",
         "candle",
-        "bone"
+        "bone",
+        "honk"
       ],
       "colorMode": null,
       "colors": [],

@@ -1363,9 +1363,14 @@
             "bettelzebub"
           ]
         },
+        {
+          "item": "party-hat",
+          "outfits": [
+            "punk"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
-        "party-hat",
         "demon-horns",
         "halo",
         "dog-ears"

@@ -1985,7 +1985,12 @@
       "items": [
         "remove",
         "lace",
-        "star"
+        "star",
+        "sock-puppet",
+        "ghost",
+        "ghost-2",
+        "candle",
+        "bone"
       ],
       "colorMode": null,
       "colors": [],

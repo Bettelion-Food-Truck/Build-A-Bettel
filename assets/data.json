@@ -17,6 +17,7 @@
     "makeup",
     "facial-hair",
     "mask",
+    "shoes-covered-full",
     "socks",
     "shirts-tucked-in",
     "shoes-covered",
@@ -141,6 +142,10 @@
     {
       "uid": "inkya-impulse",
       "name": "Inkya Impulse"
+    },
+    {
+      "uid": "betsy",
+      "name": "Betsy"
     }
   ],
   "parts": [
@@ -183,6 +188,13 @@
         {
           "item": "bald",
           "hide": true,
+          "thumbnail": true
+        },
+        {
+          "item": "betsy-hair",
+          "outfits": [
+            "betsy"
+          ],
           "thumbnail": true
         }
       ],
@@ -342,6 +354,12 @@
           "outfits": [
             "inkya-impulse"
           ]
+        },
+        {
+          "item": "betsy-skirt",
+          "outfits": [
+            "betsy"
+          ]
         }
       ],
       "colorMode": null,
@@ -471,6 +489,12 @@
           "item": "inkya-impulse-shirt",
           "outfits": [
             "inkya-impulse"
+          ]
+        },
+        {
+          "item": "betsy-sweatshirt",
+          "outfits": [
+            "betsy"
           ]
         },
         "snank"
@@ -863,6 +887,16 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "betsy-socks",
+          "outfits": [
+            "betsy"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1106,6 +1140,17 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "betsy-loafers",
+          "layer": "shoes-covered-full",
+          "outfits": [
+            "betsy"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1186,6 +1231,12 @@
           "item": "bettelzebub-necklace",
           "outfits": [
             "bettelzebub"
+          ]
+        },
+        {
+          "item": "betsy-choker",
+          "outfits": [
+            "betsy"
           ]
         }
       ],
@@ -1487,6 +1538,16 @@
         },
         {
           "item": "vesper-jewelry",
+          "outfits": [
+            "vesper"
+          ],
+          "thumbnail": true
+        },
+        {
+          "item": "betsy-earrings",
+          "outfits": [
+            "betsy"
+          ],
           "thumbnail": true
         }
       ],
@@ -1532,6 +1593,10 @@
         },
         {
           "item": "deadworld-jewelry",
+          "thumbnail": true
+        },
+        {
+          "item": "betsy-earrings",
           "thumbnail": true
         }
       ],
@@ -1637,6 +1702,18 @@
           "outfits": [
             "inkya-impulse"
           ]
+        },
+        {
+          "item": "betsy-nail-polish",
+          "outfits": [
+            "betsy"
+          ]
+        },
+        {
+          "item": "betsy-nail-polish-purple"
+        },
+        {
+          "item": "betsy-nail-polish-black"
         }
       ],
       "colorMode": null,
@@ -1675,6 +1752,12 @@
           "item": "water-bottle",
           "outfits": [
             "spa"
+          ]
+        },
+        {
+          "item": "betsy-cellphone",
+          "outfits": [
+            "betsy"
           ]
         }
       ],
@@ -1735,6 +1818,12 @@
             "inkya-impulse"
           ],
           "layer": "accessories-front_under-jacket"
+        },
+        {
+          "item": "betsy-bow",
+          "outfits": [
+            "betsy"
+          ]
         }
       ],
       "colorMode": null,

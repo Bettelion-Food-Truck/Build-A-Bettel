@@ -48,6 +48,7 @@
     "jewelry_2",
     "companions",
     "frames",
+    "hashtags",
     "filters"
   ],
   "outfits": [
@@ -2036,6 +2037,18 @@
         "eyes",
         "eyes-2",
         "eyes-3"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "hashtags",
+      "items": [
+        "bottom-left",
+        "bottom-right",
+        "top-left",
+        "top-right"
       ],
       "colorMode": null,
       "colors": [],

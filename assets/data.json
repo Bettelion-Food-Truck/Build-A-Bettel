@@ -148,6 +148,10 @@
     {
       "uid": "betsy",
       "name": "Betsy"
+    },
+    {
+      "uid": "octavio",
+      "name": "Octavio"
     }
   ],
   "parts": [
@@ -362,6 +366,13 @@
           "outfits": [
             "betsy"
           ]
+        },
+        {
+          "item": "octavio-pants",
+          "layer": "pants_elevated",
+          "outfits": [
+            "octavio"
+          ]
         }
       ],
       "colorMode": null,
@@ -497,6 +508,18 @@
           "item": "betsy-sweatshirt",
           "outfits": [
             "betsy"
+          ]
+        },
+        {
+          "item": "octavio-shirt",
+          "multilayer": [
+            {
+              "item": "octavio-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "octavio"
           ]
         },
         "snank"
@@ -701,6 +724,18 @@
           "outfits": [
             "woven-fates"
           ]
+        },
+        {
+          "item": "octavio-coat",
+          "multilayer": [
+            {
+              "item": "octavio-coat-back",
+            "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "octavio"
+          ]
         }
       ],
       "colorMode": null,
@@ -809,6 +844,15 @@
         },
         {
           "item": "woven-fates-jacket"
+        },
+        {
+          "item": "octavio-coat",
+          "multilayer": [
+            {
+              "item": "octavio-coat-back",
+            "layer": "jackets_back"
+            }
+          ]
         }
       ],
       "colorMode": null,
@@ -849,6 +893,12 @@
           "layer": "belt_elevated",
           "outfits": [
             "inkya-impulse"
+          ]
+        },
+        {
+          "item": "octavio-belt",
+          "outfits": [
+            "octavio"
           ]
         }
       ],
@@ -1167,6 +1217,16 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "octavio-shoes",
+          "outfits": [
+            "octavio"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1253,6 +1313,12 @@
           "item": "betsy-choker",
           "outfits": [
             "betsy"
+          ]
+        },
+        {
+          "item": "octavio-tie",
+          "outfits": [
+            "octavio"
           ]
         }
       ],
@@ -1771,7 +1837,8 @@
         {
           "item": "vesper-gloves",
           "outfits": [
-            "vesper"
+            "vesper",
+            "octavio"
           ]
         },
         {

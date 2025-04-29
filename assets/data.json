@@ -12,7 +12,8 @@
     "body",
     "undies",
     "feet",
-    "expressions",
+    "eyes",
+    "mouth",
     "makeup",
     "facial-hair",
     "mask",
@@ -1396,9 +1397,64 @@
       "noneAllowed": true
     },
     {
-      "folder": "expressions",
+      "folder": "eyes",
       "items": [
-        "default"
+        {
+          "item": "default",
+          "thumbnail": true
+        },
+        {
+          "item": "wink-right",
+          "thumbnail": true
+        },
+        {
+          "item": "wink-left",
+          "thumbnail": true
+        },
+        {
+          "item": "surprise",
+          "thumbnail": true
+        },
+        {
+          "item": "sad",
+          "thumbnail": true
+        },
+        {
+          "item": "closed",
+          "thumbnail":true
+        },
+        {
+          "item": "angry",
+          "thumbnail": true
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "mouth",
+      "items": [
+        {
+          "item": "default",
+          "thumbnail": true
+        },
+        {
+          "item": "surprise",
+          "thumbnail": true
+        },
+        {
+          "item": "sad",
+          "thumbnail": true
+        },
+        {
+          "item": "happy",
+          "thumbnail": true
+        },
+        {
+          "item": "disgust",
+          "thumbnail": true
+        }
       ],
       "colorMode": null,
       "colors": [],

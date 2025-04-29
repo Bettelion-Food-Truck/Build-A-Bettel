@@ -1,7 +1,6 @@
 {
   "layers": [
     "backgrounds",
-    "companions",
     "accessories-rear_back",
     "accessories-rear",
     "hats_back",
@@ -13,10 +12,12 @@
     "body",
     "undies",
     "feet",
-    "expressions",
+    "eyes",
+    "mouth",
     "makeup",
     "facial-hair",
     "mask",
+    "shoes-covered-full",
     "socks",
     "shirts-tucked-in",
     "shoes-covered",
@@ -46,7 +47,9 @@
     "accessories-front_3",
     "jewelry",
     "jewelry_2",
+    "companions",
     "frames",
+    "hashtags",
     "filters"
   ],
   "outfits": [
@@ -137,6 +140,18 @@
     {
       "uid": "woven-fates",
       "name": "Woven Fates"
+    },
+    {
+      "uid": "inkya-impulse",
+      "name": "Inkya Impulse"
+    },
+    {
+      "uid": "betsy",
+      "name": "Betsy"
+    },
+    {
+      "uid": "octavio",
+      "name": "Octavio"
     }
   ],
   "parts": [
@@ -179,6 +194,13 @@
         {
           "item": "bald",
           "hide": true,
+          "thumbnail": true
+        },
+        {
+          "item": "betsy-hair",
+          "outfits": [
+            "betsy"
+          ],
           "thumbnail": true
         }
       ],
@@ -332,6 +354,25 @@
           "outfits": [
             "woven-fates"
           ]
+        },
+        {
+          "item": "inkya-impulse-pants",
+          "outfits": [
+            "inkya-impulse"
+          ]
+        },
+        {
+          "item": "betsy-skirt",
+          "outfits": [
+            "betsy"
+          ]
+        },
+        {
+          "item": "octavio-pants",
+          "layer": "pants_elevated",
+          "outfits": [
+            "octavio"
+          ]
         }
       ],
       "colorMode": null,
@@ -455,6 +496,30 @@
           "item": "woven-fates-shirt",
           "outfits": [
             "woven-fates"
+          ]
+        },
+        {
+          "item": "inkya-impulse-shirt",
+          "outfits": [
+            "inkya-impulse"
+          ]
+        },
+        {
+          "item": "betsy-sweatshirt",
+          "outfits": [
+            "betsy"
+          ]
+        },
+        {
+          "item": "octavio-shirt",
+          "multilayer": [
+            {
+              "item": "octavio-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "octavio"
           ]
         },
         "snank"
@@ -659,6 +724,18 @@
           "outfits": [
             "woven-fates"
           ]
+        },
+        {
+          "item": "octavio-coat",
+          "multilayer": [
+            {
+              "item": "octavio-coat-back",
+            "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "octavio"
+          ]
         }
       ],
       "colorMode": null,
@@ -767,6 +844,15 @@
         },
         {
           "item": "woven-fates-jacket"
+        },
+        {
+          "item": "octavio-coat",
+          "multilayer": [
+            {
+              "item": "octavio-coat-back",
+            "layer": "jackets_back"
+            }
+          ]
         }
       ],
       "colorMode": null,
@@ -800,6 +886,19 @@
           "layer": "belt_elevated",
           "outfits": [
             "unchained"
+          ]
+        },
+        {
+          "item": "inkya-impulse-belt",
+          "layer": "belt_elevated",
+          "outfits": [
+            "inkya-impulse"
+          ]
+        },
+        {
+          "item": "octavio-belt",
+          "outfits": [
+            "octavio"
           ]
         }
       ],
@@ -839,6 +938,30 @@
           "requires": {
             "part": "feet",
             "item": "pointed"
+          }
+        },
+        {
+          "item": "betsy-socks",
+          "outfits": [
+            "betsy"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "psock-heel",
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "psock-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
           }
         }
       ],
@@ -1073,6 +1196,37 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "inkya-impulse-shoes",
+          "outfits": [
+            "inkya-impulse"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "betsy-loafers",
+          "layer": "shoes-covered-full",
+          "outfits": [
+            "betsy"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "octavio-shoes",
+          "outfits": [
+            "octavio"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1153,6 +1307,18 @@
           "item": "bettelzebub-necklace",
           "outfits": [
             "bettelzebub"
+          ]
+        },
+        {
+          "item": "betsy-choker",
+          "outfits": [
+            "betsy"
+          ]
+        },
+        {
+          "item": "octavio-tie",
+          "outfits": [
+            "octavio"
           ]
         }
       ],
@@ -1279,21 +1445,82 @@
             "bettelzebub"
           ]
         },
+        {
+          "item": "party-hat",
+          "outfits": [
+            "punk"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
-        "party-hat",
         "demon-horns",
         "halo",
-        "dog-ears"
+        "dog-ears",
+        "sleephat"
       ],
       "colorMode": null,
       "colors": [],
       "noneAllowed": true
     },
     {
-      "folder": "expressions",
+      "folder": "eyes",
       "items": [
-        "default"
+        {
+          "item": "default",
+          "thumbnail": true
+        },
+        {
+          "item": "wink-right",
+          "thumbnail": true
+        },
+        {
+          "item": "wink-left",
+          "thumbnail": true
+        },
+        {
+          "item": "surprise",
+          "thumbnail": true
+        },
+        {
+          "item": "sad",
+          "thumbnail": true
+        },
+        {
+          "item": "closed",
+          "thumbnail":true
+        },
+        {
+          "item": "angry",
+          "thumbnail": true
+        }
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": false
+    },
+    {
+      "folder": "mouth",
+      "items": [
+        {
+          "item": "default",
+          "thumbnail": true
+        },
+        {
+          "item": "surprise",
+          "thumbnail": true
+        },
+        {
+          "item": "sad",
+          "thumbnail": true
+        },
+        {
+          "item": "happy",
+          "thumbnail": true
+        },
+        {
+          "item": "disgust",
+          "thumbnail": true
+        }
       ],
       "colorMode": null,
       "colors": [],
@@ -1309,7 +1536,8 @@
           ]
         },
         "pirate-mustache",
-        "pirate-beard"
+        "pirate-beard",
+        "whiskers"
       ],
       "colorMode": null,
       "colors": [],
@@ -1391,7 +1619,12 @@
           "outfits": [
             "spa"
           ]
-        }
+        },
+        "snail-eyes",
+        "sleepmask",
+        "silly-glasses",
+        "raycon",
+        "pink-glasses"
       ],
       "colorMode": null,
       "colors": [],
@@ -1454,6 +1687,16 @@
         },
         {
           "item": "vesper-jewelry",
+          "outfits": [
+            "vesper"
+          ],
+          "thumbnail": true
+        },
+        {
+          "item": "betsy-earrings",
+          "outfits": [
+            "betsy"
+          ],
           "thumbnail": true
         }
       ],
@@ -1499,6 +1742,10 @@
         },
         {
           "item": "deadworld-jewelry",
+          "thumbnail": true
+        },
+        {
+          "item": "betsy-earrings",
           "thumbnail": true
         }
       ],
@@ -1590,7 +1837,8 @@
         {
           "item": "vesper-gloves",
           "outfits": [
-            "vesper"
+            "vesper",
+            "octavio"
           ]
         },
         {
@@ -1598,6 +1846,24 @@
           "outfits": [
             "woven-fates"
           ]
+        },
+        {
+          "item": "inkya-impulse-sleeves",
+          "outfits": [
+            "inkya-impulse"
+          ]
+        },
+        {
+          "item": "betsy-nail-polish",
+          "outfits": [
+            "betsy"
+          ]
+        },
+        {
+          "item": "betsy-nail-polish-purple"
+        },
+        {
+          "item": "betsy-nail-polish-black"
         }
       ],
       "colorMode": null,
@@ -1636,6 +1902,12 @@
           "item": "water-bottle",
           "outfits": [
             "spa"
+          ]
+        },
+        {
+          "item": "betsy-cellphone",
+          "outfits": [
+            "betsy"
           ]
         }
       ],
@@ -1689,6 +1961,22 @@
           "item": "ruze-front-accessory-2",
           "outfits": [],
           "layer": "accessories-front_under-jacket"
+        },
+        {
+          "item": "inkya-impulse-skirt-front",
+          "outfits": [
+            "inkya-impulse"
+          ],
+          "layer": "accessories-front_under-jacket"
+        },
+        {
+          "item": "betsy-bow",
+          "outfits": [
+            "betsy"
+          ]
+        },
+        {
+          "item": "braids"
         }
       ],
       "colorMode": null,
@@ -1722,6 +2010,16 @@
             "ruze"
           ],
           "layer": "accessories-front_2_under-jacket"
+        },
+        {
+          "item": "inkya-impulse-skirt-front",
+          "outfits": [
+            "inkya-impulse"
+          ],
+          "layer": "accessories-front_2_under-jacket"
+        },
+        {
+          "item": "braids"
         }
       ],
       "colorMode": null,
@@ -1746,6 +2044,16 @@
         {
           "item": "ruze-front-accessory-2",
           "layer": "accessories-front_3_under-jacket"
+        },
+        {
+          "item": "inkya-impulse-skirt-front",
+          "outfits": [
+            "inkya-impulse"
+          ],
+          "layer": "accessories-front_3_under-jacket"
+        },
+        {
+          "item": "braids"
         }
       ],
       "colorMode": null,
@@ -1780,6 +2088,10 @@
           "outfits": [
             "bettelzebub"
           ]
+        },
+        {
+          "item": "inkya-impulse-skirt",
+          "outfits": "inkya-impulse"
         }
       ],
       "colorMode": null,
@@ -1789,7 +2101,17 @@
     {
       "folder": "companions",
       "items": [
-        "remove"
+        "remove",
+        "feed-me-phantom",
+        "sock-puppet-ears",
+        "jerry",
+        "left-shoulder-phantom",
+        "phantompy",
+        "skeleton",
+        "skrunkly-phantom",
+        "snank",
+        "sock-puppet",
+        "sock-puppet-ears-two"
       ],
       "colorMode": null,
       "colors": [],
@@ -1816,7 +2138,8 @@
         "mountain",
         "mansion",
         "infinity",
-        "blue-bettelion"
+        "blue-bettelion",
+        "trippy"
       ],
       "colorMode": null,
       "colors": [],
@@ -1827,7 +2150,29 @@
       "items": [
         "remove",
         "lace",
-        "star"
+        "star",
+        "sock-puppet",
+        "ghost",
+        "ghost-2",
+        "candle",
+        "bone",
+        "honk",
+        "sock-puppet-2",
+        "eyes",
+        "eyes-2",
+        "eyes-3"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "hashtags",
+      "items": [
+        "bottom-left",
+        "bottom-right",
+        "top-left",
+        "top-right"
       ],
       "colorMode": null,
       "colors": [],

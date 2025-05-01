@@ -2101,7 +2101,6 @@
     {
       "folder": "companions",
       "items": [
-        "remove",
         "feed-me-phantom",
         "sock-puppet-ears",
         "jerry",
@@ -2148,7 +2147,6 @@
     {
       "folder": "frames",
       "items": [
-        "remove",
         "lace",
         "star",
         "sock-puppet",

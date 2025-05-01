@@ -152,6 +152,10 @@
     {
       "uid": "octavio",
       "name": "Octavio"
+    },
+    {
+      "uid": "debut",
+      "name": "Debut"
     }
   ],
   "parts": [
@@ -748,6 +752,18 @@
           "outfits": [
             "bettelzebub"
           ]
+        },
+        {
+          "item": "debut-jacket",
+          "multilayer": [
+            {
+              "item": "debut-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "debut"
+          ]
         }
       ],
       "colorMode": null,
@@ -1063,7 +1079,8 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "debut"
           ],
           "requires": {
             "part": "feet",
@@ -1888,6 +1905,12 @@
         },
         {
           "item": "betsy-nail-polish-black"
+        },
+        {
+          "item": "debut-gloves",
+          "outfits": [
+            "debut"
+          ]
         }
       ],
       "colorMode": null,
@@ -2001,6 +2024,15 @@
         },
         {
           "item": "braids"
+        },
+        {
+          "item": "debut-coat-charm"
+        },
+        {
+          "item": "debut-circus-whip",
+          "outfits": [
+            "debut"
+          ]
         }
       ],
       "colorMode": null,
@@ -2044,6 +2076,15 @@
         },
         {
           "item": "braids"
+        },
+        {
+          "item": "debut-coat-charm",
+          "outfits": [
+            "debut"
+          ]
+        },
+        {
+          "item": "debut-circus-whip"
         }
       ],
       "colorMode": null,
@@ -2078,6 +2119,12 @@
         },
         {
           "item": "braids"
+        },
+        {
+          "item": "debut-coat-charm"
+        },
+        {
+          "item": "debut-circus-whip"
         }
       ],
       "colorMode": null,

@@ -53,11 +53,6 @@
 		<div class="container">
 			<div class="canvas_wrapper">
 				<canvas id="main-canvas" width="1000" height="1000"></canvas>
-				<div class="save_button_wrapper">
-					<a id="save_button" class="save_button" href="#" download="gb.png">
-						Save
-					</a>
-				</div>
 
 				<a class="loading" id="loading">
 					Loading...
@@ -79,11 +74,16 @@
 
 			<div class="item_selection_wrapper">
 				<div class="feature_buttons">
-					<!-- TODO Control update with new functions -->
-					<div id="reset_button">Reset</div>
-					<div id="outfit_button">Outfits</div>
-					<div id="component_button" style="display: none;">Components</div>
-					<div id="info_button">Credits</div>
+					<div>
+						<a id="reset_button">Reset</a>
+						<a id="outfit_button">Outfits</a>
+						<a id="component_button" style="display: none;">Components</a>
+						<a id="info_button">Credits</a>
+					</div>
+
+					<a id="save_button" href="#" download="gb.png">
+						Save
+					</a>
 				</div>
 
 				<div id="outfit_wrapper" class="outfit_wrapper" style="display: none;">

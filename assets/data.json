@@ -1,7 +1,7 @@
 {
   "layers": [
     "backgrounds",
-    "accessories-rear_back",
+    "jackets_far_back",
     "accessories-rear",
     "hats_back",
     "jackets_2_back",
@@ -730,11 +730,23 @@
           "multilayer": [
             {
               "item": "octavio-coat-back",
-            "layer": "jackets_back"
+              "layer": "jackets_back"
             }
           ],
           "outfits": [
             "octavio"
+          ]
+        },
+        {
+          "item": "bettelzebub-cape",
+          "multilayer": [
+            {
+              "item": "bettelzebub-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
           ]
         }
       ],
@@ -852,6 +864,18 @@
               "item": "octavio-coat-back",
             "layer": "jackets_back"
             }
+          ]
+        },
+        {
+          "item": "bettelzebub-cape",
+          "multilayer": [
+            {
+              "item": "bettelzebub-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
           ]
         }
       ],
@@ -2078,20 +2102,14 @@
           ]
         },
         {
+          "item": "inkya-impulse-skirt",
+          "outfits": "inkya-impulse"
+        },
+        {
           "item": "bettelzebub-wings",
-          "multilayer": [
-            {
-              "item": "bettelzebub-cape",
-              "layer": "accessories-rear_back"
-            }
-          ],
           "outfits": [
             "bettelzebub"
           ]
-        },
-        {
-          "item": "inkya-impulse-skirt",
-          "outfits": "inkya-impulse"
         }
       ],
       "colorMode": null,

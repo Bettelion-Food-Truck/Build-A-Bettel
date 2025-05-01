@@ -429,12 +429,16 @@ ul li img {
     font-size: 16px;
 }
 
-.feature_buttons {
-    margin: 10px 0;
-
+.feature_buttons,
+.feature_buttons > div {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.feature_buttons {
+    margin: 5px 0;
+    flex-wrap: wrap;
 }
 
 .feature_buttons a {
@@ -446,7 +450,7 @@ ul li img {
     border-radius: 3px;
 
     padding: 4px 8px;
-    margin: 0 2px;
+    margin: 5px 2px;
 
     background-color: var(--random-purple-color, purple);
 	color: #ffffff;

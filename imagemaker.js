@@ -103,6 +103,9 @@ window.addEventListener('load', function (ev) {
 
 		await initItemFunctions();
 
+		initPanZoom();
+		initHorizontalScroll();
+
 		// Load game into a default outfit
 		await selectOutfit(outfits[0].uid);
 
@@ -115,11 +118,6 @@ window.addEventListener('load', function (ev) {
 			break;
 		}
 		await updateSelectedPart(firstPart);
-
-		initPanZoom();
-		initHorizontalScroll();
-
-		hideLoading();
 	}
 
 	/**

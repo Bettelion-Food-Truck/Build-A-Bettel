@@ -588,8 +588,13 @@ ul li img {
         top: auto;
         left: auto;
 
-        width: 6vh;
-        height: 6vh;
+        width: calc(var(--ui-control-size, 50px) * 0.75);
+        height: calc(var(--ui-control-size, 50px) * 0.75);
+    }
+
+    .part_control_wrapper .controls {
+        width: calc(var(--ui-control-size, 50px) * 0.75);
+        height: calc(var(--ui-control-size, 50px) * 0.75);
     }
 
     .zoom_control_wrapper {
@@ -598,23 +603,27 @@ ul li img {
         top: auto;
         left: auto;
 
-        width: 6vh;
-        height: 6vh;
+        width: calc(var(--ui-control-size, 50px) * 0.75);
+        height: calc(var(--ui-control-size, 50px) * 0.75);
+    }
+
+    .zoom_control_wrapper .controls {
+        width: calc(var(--ui-control-size, 50px) * 0.75);
+        height: calc(var(--ui-control-size, 50px) * 0.75);
+
+        bottom: auto;
     }
 
     .zoom_control_wrapper .zoom_in {
-        top: calc(-2 * (var(--ui-control-size, 50px) + 5px));
-        bottom: auto;
+        top: calc(-2 * (var(--ui-control-size, 50px) * 0.75 + 5px));
     }
 
     .zoom_control_wrapper .zoom_out {
-        top: calc(-1 * (var(--ui-control-size, 50px) + 5px));
-        bottom: auto;
+        top: calc(-1 * (var(--ui-control-size, 50px) * 0.75 + 5px));
     }
 
     .zoom_control_wrapper .zoom_reset {
         top: 0px;
-        bottom: auto;
     }
 
     .item_selection_wrapper {

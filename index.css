@@ -139,33 +139,6 @@ ul li img {
     object-fit: scale-down;
 }
 
-.save_button_wrapper {
-    position: absolute;
-    top: 5px;
-    left: 4px;
-}
-
-.save_button {
-	display: inline-block;
-
-	background-color: var(--save-button-color, #555555);
-	border: 1px solid #000000;
-	border-radius: 5px;
-
-	cursor: pointer;
-	color: #ffffff;
-
-	font-size: 1.5rem;
-	font-weight: bold;
-	text-decoration: none;
-
-	padding: 6px 12px;
-}
-
-.save_button:hover {
-	filter: brightness(1.2);
-}
-
 .loading {
     position: absolute;
     font-size: 3vh;
@@ -457,21 +430,34 @@ ul li img {
 }
 
 .feature_buttons {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.feature_buttons div {
+.feature_buttons a {
     cursor: pointer;
 
-    border: 3px solid black;
+    text-decoration: none;
+
+    border: 1px solid black;
     border-radius: 3px;
 
-    padding: 3px 6px;
+    padding: 4px 8px;
     margin: 0 2px;
+
+    background-color: var(--random-purple-color, purple);
+	color: #ffffff;
+}
+
+.feature_buttons a:hover {
+	filter: brightness(1.2);
+}
+
+#save_button {
+	background-color: var(--save-button-color, green);
 }
 
 .info_modal {
@@ -546,6 +532,15 @@ ul li img {
     font-size: 110%;
 }
 
+.info_modal img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info_modal .modal-image {
+    border-radius: 5px;
+}
+
 .info_modal .cook-wrapper {
     display: grid;
 
@@ -556,11 +551,6 @@ ul li img {
     align-items: stretch;
 
     margin-bottom: 1.5rem;
-}
-
-.info_modal .cook-wrapper img {
-    max-width: 100%;
-    height: auto;
 }
 
 @media (max-width: 500px) {

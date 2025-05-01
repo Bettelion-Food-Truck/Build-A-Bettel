@@ -156,6 +156,10 @@
     {
       "uid": "debut",
       "name": "Debut"
+    },
+    {
+      "uid": "hakka",
+      "name": "Hakka"
     }
   ],
   "parts": [
@@ -377,6 +381,12 @@
           "outfits": [
             "octavio"
           ]
+        },
+        {
+          "item": "hakka-pants",
+          "outfits": [
+            "hakka"
+          ]
         }
       ],
       "colorMode": null,
@@ -526,6 +536,12 @@
             "octavio"
           ]
         },
+        {
+          "item": "hakka-undershirt",
+          "outfits": [
+            "hakka"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -576,6 +592,12 @@
           "item": "deadworld-harness",
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "hakka-halfcoat",
+          "outfits": [
+            "hakka"
           ]
         },
         "vesper-vest"
@@ -764,6 +786,12 @@
           "outfits": [
             "debut"
           ]
+        },
+        {
+          "item": "hakka-overcoat",
+          "outfits": [
+            "hakka"
+          ]
         }
       ],
       "colorMode": null,
@@ -892,6 +920,12 @@
           ],
           "outfits": [
             "bettelzebub"
+          ]
+        },
+        {
+          "item": "hakka-overcoat",
+          "outfits": [
+            "hakka"
           ]
         }
       ],
@@ -1263,6 +1297,16 @@
           "item": "octavio-shoes",
           "outfits": [
             "octavio"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "hakka-shoes",
+          "outfits": [
+            "hakka"
           ],
           "requires": {
             "part": "feet",

@@ -89,11 +89,13 @@ ul li img {
 
 .app_wrapper {
     display: block;
+    align-self: flex-start;
 
     position: relative;
     margin: 0 auto;
 
     height: 100%;
+    max-height: 1500px;
     max-width: calc(100% - 20px);
 
     border: 3px solid black;
@@ -111,6 +113,7 @@ ul li img {
 
     display: inline-flex;
     flex-direction: row;
+    align-items: center;
 
     background-color: var(--image-background-color, hsla(0, 0%, 93.3%, 0.5));
     background-position: center;

@@ -21,6 +21,7 @@ window.addEventListener('load', function (ev) {
 	const HEIGHT = canvas.height;
 
 	const loading = document.getElementById("loading");
+	let loadingTimer = null;
 
 	const randomButton = document.getElementById("random_button");
 	const resetButton = document.getElementById("reset_button");
@@ -86,6 +87,9 @@ window.addEventListener('load', function (ev) {
 	init();
 
 	async function init() {
+
+		showLoading(0);
+
 		await initData();
 
 		initButtons();
@@ -114,6 +118,8 @@ window.addEventListener('load', function (ev) {
 
 		initPanZoom();
 		initHorizontalScroll();
+
+		hideLoading();
 	}
 
 	/**
@@ -465,7 +471,7 @@ window.addEventListener('load', function (ev) {
 	async function renderLayerStack() {
 
 		clearCanvas(workingCanvas);
-		let timer = setTimeout(function () { loading.style.display = "block"; }, 500);
+		showLoading();
 
 		checkPartRequirements();
 
@@ -494,12 +500,32 @@ window.addEventListener('load', function (ev) {
 
 		clearCanvas(canvas);
 
-		clearTimeout(timer);
-		loading.style.display = "none";
+		hideLoading();
 
 		context.drawImage(workingCanvas, 0, 0);
 
 		await updateSave();
+	}
+
+	function showLoading(delay = 500) {
+
+		if (loadingTimer) {
+			clearTimeout(loadingTimer);
+			loadingTimer = null;
+		}
+
+		loadingTimer = setTimeout(function () {
+			loading.style.display = "block";
+		}, delay);
+	}
+
+	function hideLoading() {
+		if (loadingTimer) {
+			clearTimeout(loadingTimer);
+			loadingTimer = null;
+		}
+
+		loading.style.display = "none";
 	}
 
 	/**

@@ -5,43 +5,47 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<title>Bettel's Dream Makeover</title>
+	<title>Build-A-Bettel</title>
 	<meta name="description" content="Dress up game with Bettel. Built by the Bettelion Food Truck.">
 
 	<!-- Open Graph / Facebook Meta Tags -->
 	<meta property="og:url" content="https://bettelion-food-truck.github.io/bettel-hackrew/">
 	<meta property="og:type" content="website">
 
-	<meta property="og:title" content="Bettelion Hackrew">
+	<meta property="og:title" content="Build-A-Bettel">
 	<meta property="og:description" content="Dress up game with Bettel. Built by the Bettelion Food Truck.">
-	<meta property="og:image"
-		content="https://bettelion-food-truck.github.io/bettel-hackrew/assets/BettelionFoodTruck_logo.png">
+	<meta property="og:image" content="https://bettelion-food-truck.github.io/bettel-hackrew/assets/build-a-bettel.png">
 
 	<!-- Twitter / X Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="twitter:domain" content="bettelion-food-truck.github.io">
 	<meta property="twitter:url" content="https://bettelion-food-truck.github.io/bettel-hackrew/">
 
-	<meta name="twitter:title" content="Bettelion Hackrew">
+	<meta name="twitter:title" content="Build-A-Bettel">
 	<meta name="twitter:description" content="Dress up game with Bettel. Built by the Bettelion Food Truck.">
 	<meta name="twitter:image"
-		content="https://bettelion-food-truck.github.io/bettel-hackrew/assets/BettelionFoodTruck_logo.png">
+		content="https://bettelion-food-truck.github.io/bettel-hackrew/assets/build-a-bettel.png">
 
-	<link rel="icon" href="assets/favicon.png">
-	<link rel="stylesheet" href="index.css">
+	<!-- Favicon -->
+	<link rel="icon" href="./assets/favicon.png">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="./index.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet">
 
+	<!-- Scripts -->
+	<script src="./imagemaker.js"></script>
+
+	<!-- Script libraries -->
 	<script src="https://unpkg.com/@panzoom/panzoom@4.6.0/dist/panzoom.min.js"></script>
 </head>
 
 <body>
 	<noscript>This system requires javascript to function.</noscript>
-
-	<script src="imagemaker.js"></script>
 
 	<div class="app_wrapper">
 
@@ -50,7 +54,7 @@
 			<div class="canvas_wrapper">
 				<canvas id="main-canvas" width="1000" height="1000"></canvas>
 				<div class="save_button_wrapper">
-					<a id="save_button" class="save_button" download="gb.png">
+					<a id="save_button" class="save_button" href="#" download="gb.png">
 						Save
 					</a>
 				</div>
@@ -98,7 +102,7 @@
 						<div id="parts_menu" class="parts_menu">
 							<ul id="parts_list">
 								<li id="random_button">
-									<img src="assets/icons/ui/icon-random.png" alt="Randomize outfit"
+									<img src="./assets/icons/ui/icon-random.png" alt="Randomize outfit"
 										title="Randomize outfit" />
 								</li>
 							</ul>
@@ -126,15 +130,23 @@
 		<div id="info_modal" class="info_modal">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h2>Bettel's Dream Makeover</h2>
+					<h2>Build-A-Bettel</h2>
 					<span id="info_modal_close" class="close">&times;</span>
 				</div>
 				<div class="modal-body">
 
+					<img src="./assets/build-a-bettel.png" alt="Build-A-Bettel logo image" class="modal-image" />
+
 					<p>
-						<a href="https://github.com/Bettelion-Food-Truck/bettel-hackrew" target="_blank">Bettel's Dream
-							Makeover</a>
-						is built upon the open-source character creator framework <a
+						Build-A-Bettel is a dress-up game featuring the Bettel. You can customize Bettel with various
+						outfits and accessories.
+					</p>
+
+					<p>
+						This project is an <a href="https://github.com/Bettelion-Food-Truck/bettel-hackrew"
+							target="_blank">open source</a> creation by the <a
+							href="https://bettelion-food-truck.github.io/" target="_blank">Bettelion Food Truck</a>. It
+						is built upon the open source character creator framework <a
 							href="https://github.com/ksadov/hackrew" target="_blank">hackrew</a>.
 					</p>
 

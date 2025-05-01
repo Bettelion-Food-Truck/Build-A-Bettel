@@ -546,6 +546,15 @@ ul li img {
     font-size: 110%;
 }
 
+.info_modal img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info_modal .modal-image {
+    border-radius: 5px;
+}
+
 .info_modal .cook-wrapper {
     display: grid;
 
@@ -556,11 +565,6 @@ ul li img {
     align-items: stretch;
 
     margin-bottom: 1.5rem;
-}
-
-.info_modal .cook-wrapper img {
-    max-width: 100%;
-    height: auto;
 }
 
 @media (max-width: 500px) {

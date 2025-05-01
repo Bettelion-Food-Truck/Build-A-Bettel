@@ -28,8 +28,10 @@ window.addEventListener('load', function (ev) {
 	const outfitButton = document.getElementById("outfit_button");
 	const componentButton = document.getElementById("component_button");
 
-	const paletteButton = document.getElementById("palette_button");
 	const itemsButton = document.getElementById("items_button");
+	const paletteButton = document.getElementById("palette_button");
+	const moveButton = document.getElementById("move_button");
+
 	const saveButton = document.getElementById("save_button");
 
 	const zoomInButton = document.getElementById("zoom_in_button");
@@ -98,6 +100,7 @@ window.addEventListener('load', function (ev) {
 		initPartsElements();
 		initItemsElements();
 		initPalette();
+		initMove();
 
 		initOutfitElements();
 
@@ -214,8 +217,9 @@ window.addEventListener('load', function (ev) {
 		outfitButton.addEventListener('click', showOutfits);
 		componentButton.addEventListener('click', showComponents);
 
-		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
+		paletteButton.addEventListener('click', showPalette);
+		moveButton.addEventListener('click', showMove);
 
 		infoButton.addEventListener('click', toggleInfo);
 		infoModal.addEventListener('click', (event) => {
@@ -248,6 +252,14 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
+	}
+
+	/**
+	 * TODO Implement move menu
+	 */
+	function initMove() {
+
+		moveButton.style.display = "none";
 	}
 
 	/**
@@ -329,6 +341,8 @@ window.addEventListener('load', function (ev) {
 		} else {
 			paletteButton.style.display = "inline-flex";
 		}
+
+		// TODO handle move button display
 
 		updatePalette();
 		showItems();
@@ -772,19 +786,30 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Display palette menu, hide item menu
+	 * Display palette menu, hide others
 	 */
 	function showPalette() {
-		paletteWrapper.style.display = "flex";
 		itemWrapper.style.display = "none";
+		paletteWrapper.style.display = "flex";
+		// TODO hide moveWrapper
 	}
 
 	/**
-	 * Display item menu, hide palette menu
+	 * Display move menu, hide others
+	 */
+	function showMove() {
+		itemWrapper.style.display = "none";
+		paletteWrapper.style.display = "none";
+		// TODO show moveWrapper
+	}
+
+	/**
+	 * Display item menu, hide others
 	 */
 	function showItems() {
-		paletteWrapper.style.display = "none";
 		itemWrapper.style.display = "flex";
+		paletteWrapper.style.display = "none";
+		// TODO hide moveWrapper
 	}
 
 	/**

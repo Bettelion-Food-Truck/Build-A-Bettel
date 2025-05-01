@@ -730,7 +730,7 @@
           "multilayer": [
             {
               "item": "octavio-coat-back",
-            "layer": "jackets_back"
+              "layer": "jackets_back"
             }
           ],
           "outfits": [
@@ -850,7 +850,7 @@
           "multilayer": [
             {
               "item": "octavio-coat-back",
-            "layer": "jackets_back"
+              "layer": "jackets_back"
             }
           ]
         }
@@ -1487,7 +1487,7 @@
         },
         {
           "item": "closed",
-          "thumbnail":true
+          "thumbnail": true
         },
         {
           "item": "angry",

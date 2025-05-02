@@ -64,11 +64,6 @@ window.addEventListener('load', function (ev) {
 			"down": document.getElementById("move_down_button")
 		},
 
-		"rotate": {
-			"cw": document.getElementById("rotate_clockwise_button"),
-			"ccw": document.getElementById("rotate_counterclockwise_button")
-		},
-
 		"reset": document.getElementById("move_reset_button")
 	};
 
@@ -99,25 +94,13 @@ window.addEventListener('load', function (ev) {
 	where selectedItemIndex[i] is the index of the selected item for of part i */
 	let selectedItemIndex = []
 
-	/* Array of simple objects for part positioning and rotation for of part i */
-	/*
-		{
-			"x": 0,
-			"y": 0,
-			"rotation": 0,
-			"scale": 1
-		}
-	*/
+	/* Array of simple objects for positioning of part i; see DEFAULT_POSITION for structure */
 	let selectedPosition = [];
 	const DEFAULT_POSITION = {
 		"x": 0,
-		"y": 0,
-		"rotation": 0,
-		"scale": 1
+		"y": 0
 	};
 	const MOVEMENT_STEP = 10; // 10px
-	const ROTATION_STEP = 10; // 10 degrees
-	const SCALING_STEP = 0.1; // 10%
 
 	/* 1d array of canvases of items currently selected,
 	where layerCanvases[i] depicts the selected item of part i in the selected color */
@@ -301,9 +284,6 @@ window.addEventListener('load', function (ev) {
 		movementControls.movement.left.addEventListener('click', moveActiveLayerLeft);
 		movementControls.movement.right.addEventListener('click', moveActiveLayerRight);
 
-		movementControls.rotate.cw.addEventListener('click', rotateActiveLayerClockwise);
-		movementControls.rotate.ccw.addEventListener('click', rotateActiveLayerCounterClockwise);
-
 		movementControls.reset.addEventListener('click', resetActiveLayerPosition);
 
 		for (let i = 0; i < parts.length; i++) {
@@ -311,7 +291,6 @@ window.addEventListener('load', function (ev) {
 			selectedPosition[i] = {
 				"x": DEFAULT_POSITION.x,
 				"y": DEFAULT_POSITION.y,
-				"rotation": DEFAULT_POSITION.rotation,
 				"scale": DEFAULT_POSITION.scale
 			};
 		}
@@ -890,6 +869,7 @@ window.addEventListener('load', function (ev) {
 	 * Set of control functions for moving the active layer around. Each function adjusts the image position settings and then calls renderLayerStack to update the canvas.
 	 */
 	function moveActiveLayerUp() {
+
 		selectedPosition[selectedPart].y -= MOVEMENT_STEP;
 
 		// TODO if selected part is out of range, limit
@@ -898,6 +878,7 @@ window.addEventListener('load', function (ev) {
 	}
 
 	function moveActiveLayerDown() {
+
 		selectedPosition[selectedPart].y += MOVEMENT_STEP;
 
 		// TODO if selected part is out of range, limit
@@ -906,6 +887,7 @@ window.addEventListener('load', function (ev) {
 	}
 
 	function moveActiveLayerLeft() {
+
 		selectedPosition[selectedPart].x -= MOVEMENT_STEP;
 
 		// TODO if selected part is out of range, limit
@@ -914,6 +896,7 @@ window.addEventListener('load', function (ev) {
 	}
 
 	function moveActiveLayerRight() {
+
 		selectedPosition[selectedPart].x += MOVEMENT_STEP;
 
 		// TODO if selected part is out of range, limit
@@ -921,23 +904,10 @@ window.addEventListener('load', function (ev) {
 		renderLayerStack();
 	}
 
-	function rotateActiveLayerClockwise() {
-		console.log("Rotating layer clockwise");// TODO
-
-		renderLayerStack();
-	}
-
-	function rotateActiveLayerCounterClockwise() {
-		console.log("Rotating layer counterclockwise");// TODO
-
-		renderLayerStack();
-	}
-
 	function resetActiveLayerPosition(render = true) {
+
 		selectedPosition[selectedPart].x = DEFAULT_POSITION.x;
 		selectedPosition[selectedPart].y = DEFAULT_POSITION.y;
-		selectedPosition[selectedPart].rotation = DEFAULT_POSITION.rotation;
-		selectedPosition[selectedPart].scale = DEFAULT_POSITION.scale;
 
 		if (render) {
 
@@ -1086,9 +1056,12 @@ window.addEventListener('load', function (ev) {
 		clearCanvas(layerCanvases[layerIndex]);
 
 		let ctx = layerCanvases[layerIndex].getContext('2d');
+		ctx.save();
 
-		ctx.drawImage(img, position.x ?? 0, position.y ?? 0);
+		ctx.translate(position.x, position.y);
 
-		console.log(imgPath, position);
+		ctx.drawImage(img, 0, 0);
+
+		ctx.restore();
 	}
 }, false);

@@ -439,10 +439,6 @@ ul li img {
     cursor: pointer;
 }
 
-.movement_controls #move_down_button {
-    grid-column: 2;
-}
-
 .feature_buttons,
 .feature_buttons > div {
     display: flex;

@@ -160,6 +160,10 @@
     {
       "uid": "hakka",
       "name": "Hakka"
+    },
+    {
+      "uid": "daki",
+      "name": "Daki"
     }
   ],
   "parts": [
@@ -228,7 +232,8 @@
           "outfits": [
             "showman",
             "second-outfit",
-            "sims"
+            "sims",
+            "daki"
           ],
           "thumbnail": true
         },
@@ -698,10 +703,10 @@
           ]
         },
         {
-          "item": "bathrobe",
+          "item": "bathrobe-pink",
           "multilayer": [
             {
-              "item": "bathrobe-back",
+              "item": "bathrobe-pink-back",
               "layer": "jackets_back"
             }
           ],
@@ -792,6 +797,18 @@
           "outfits": [
             "hakka"
           ]
+        },
+        {
+          "item": "daki-robe",
+          "multilayer": [
+            {
+              "item": "daki-robe-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "daki"
+          ]
         }
       ],
       "colorMode": null,
@@ -863,10 +880,10 @@
         },
         "jester",
         {
-          "item": "bathrobe",
+          "item": "bathrobe-pink",
           "multilayer": [
             {
-              "item": "bathrobe-back",
+              "item": "bathrobe-pink-back",
               "layer": "jackets_back"
             }
           ]
@@ -926,6 +943,18 @@
           "item": "hakka-overcoat",
           "outfits": [
             "hakka"
+          ]
+        },
+        {
+          "item": "daki-robe",
+          "multilayer": [
+            {
+              "item": "daki-robe-back",
+              "layer": "jackets_2_back"
+            }
+          ],
+          "outfits": [
+            "daki"
           ]
         }
       ],
@@ -1114,7 +1143,8 @@
           "item": "debut-underlayer",
           "outfits": [
             "debut-underlayer",
-            "debut"
+            "debut",
+            "daki"
           ],
           "requires": {
             "part": "feet",
@@ -1203,7 +1233,7 @@
           }
         },
         {
-          "item": "bath-slippers",
+          "item": "bath-slippers-pink",
           "outfits": [
             "spa"
           ],
@@ -2019,8 +2049,10 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
-          ]
+            "debut-underlayer",
+            "daki"
+          ],
+          "layer": "accessories-front_under-jacket"
         },
         {
           "item": "bettelmaid",

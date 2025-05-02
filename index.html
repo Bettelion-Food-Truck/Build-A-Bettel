@@ -6,14 +6,14 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	<title>Build-A-Bettel</title>
-	<meta name="description" content="Dress up game with Bettel. Built by the Bettelion Food Truck.">
+	<meta name="description" content="An interactive fanart experience by the Bettelion Food Truck.">
 
 	<!-- Open Graph / Facebook Meta Tags -->
 	<meta property="og:url" content="https://bettelion-food-truck.github.io/bettel-hackrew/">
 	<meta property="og:type" content="website">
 
 	<meta property="og:title" content="Build-A-Bettel">
-	<meta property="og:description" content="Dress up game with Bettel. Built by the Bettelion Food Truck.">
+	<meta property="og:description" content="An interactive fanart experience by the Bettelion Food Truck.">
 	<meta property="og:image" content="https://bettelion-food-truck.github.io/bettel-hackrew/assets/build-a-bettel.png">
 
 	<!-- Twitter / X Meta Tags -->
@@ -22,7 +22,7 @@
 	<meta property="twitter:url" content="https://bettelion-food-truck.github.io/bettel-hackrew/">
 
 	<meta name="twitter:title" content="Build-A-Bettel">
-	<meta name="twitter:description" content="Dress up game with Bettel. Built by the Bettelion Food Truck.">
+	<meta name="twitter:description" content="An interactive fanart experience by the Bettelion Food Truck.">
 	<meta name="twitter:image"
 		content="https://bettelion-food-truck.github.io/bettel-hackrew/assets/build-a-bettel.png">
 
@@ -58,17 +58,19 @@
 					Loading...
 				</a>
 
-				<div class="part_control_wrapper">
-					<span id="items_button" class="items"></span>
-					<span id="palette_button" class="palette"></span>
-					<!-- TODO: implement movable parts -->
-					<span id="move_button" class="moves" style="display: none;"></span>
-				</div>
+				<div class="control_wrapper">
+					<div class="part_control_wrapper">
+						<span id="items_button" class="controls items"></span>
+						<span id="palette_button" class="controls palette"></span>
+						<!-- TODO: implement movable parts -->
+						<span id="move_button" class="controls moves"></span>
+					</div>
 
-				<div class="zoom_control_wrapper">
-					<span id="zoom_in_button" class="zoom_in"></span>
-					<span id="zoom_out_button" class="zoom_out"></span>
-					<span id="zoom_reset_button" class="zoom_reset"></span>
+					<div class="zoom_control_wrapper">
+						<span id="zoom_in_button" class="controls zoom_in"></span>
+						<span id="zoom_out_button" class="controls zoom_out"></span>
+						<span id="zoom_reset_button" class="controls zoom_reset"></span>
+					</div>
 				</div>
 			</div>
 
@@ -90,8 +92,8 @@
 					<div class="control_panel_wrapper">
 						<div class="control_panel">
 							<div class="item_list_wrapper">
-								<ul id="outfit_list">
-								</ul>
+								<div id="outfit_list" class="list">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -119,6 +121,21 @@
 								<ul id="color_palette_list">
 								</ul>
 							</div>
+							<div id="movement_wrapper" class="movement_wrapper">
+								<div class="movement_controls">
+									<div class="spacer"><!-- spacer --></div>
+									<button id="move_up_button" class="movement_button">Up</button>
+									<div class="spacer"><!-- spacer --></div>
+
+									<button id="move_left_button" class="movement_button">Left</button>
+									<button id="move_reset_button" class="movement_button">Reset</button>
+									<button id="move_right_button" class="movement_button">Right</button>
+
+									<div class="spacer"><!-- spacer --></div>
+									<button id="move_down_button" class="movement_button">Down</button>
+									<div class="spacer"><!-- spacer --></div>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -135,11 +152,12 @@
 				</div>
 				<div class="modal-body">
 
-					<img src="./assets/build-a-bettel.png" alt="Build-A-Bettel logo image" class="modal-image" />
+					<img src="./assets/build-a-bettel.png" alt="Build-A-Bettel logo image" class="modal-image"
+						loading="lazy" />
 
 					<p>
-						Build-A-Bettel is a dress-up game featuring the Bettel. You can customize Bettel with various
-						outfits and accessories.
+						Build-A-Bettel is an interactive fanart experience by the Bettelion Food Truck. You can
+						customize Bettel with various outfits and accessories.
 					</p>
 
 					<p>
@@ -154,7 +172,7 @@
 
 					<div class="cook-wrapper">
 
-						<img src="./cooks/finarael.png" />
+						<img src="./cooks/finarael.png" loading="lazy" />
 
 					</div>
 
@@ -162,15 +180,15 @@
 
 					<div class="cook-wrapper">
 
-						<img src="./cooks/spook.png" />
-						<img src="./cooks/jahgyong.png" />
-						<img src="./cooks/zmays.png" />
-						<img src="./cooks/atomicreih.png" />
-						<img src="./cooks/roseghostea.png" />
-						<img src="./cooks/pafufufun.png" />
-						<img src="./cooks/raisins0up.png" />
-						<img src="./cooks/aether.png" />
-						<img src="./cooks/hioko.png" />
+						<img src="./cooks/spook.png" loading="lazy" />
+						<img src="./cooks/jahgyong.png" loading="lazy" />
+						<img src="./cooks/zmays.png" loading="lazy" />
+						<img src="./cooks/atomicreih.png" loading="lazy" />
+						<img src="./cooks/roseghostea.png" loading="lazy" />
+						<img src="./cooks/pafufufun.png" loading="lazy" />
+						<img src="./cooks/raisins0up.png" loading="lazy" />
+						<img src="./cooks/aether.png" loading="lazy" />
+						<img src="./cooks/hioko.png" loading="lazy" />
 
 					</div>
 
@@ -178,7 +196,7 @@
 
 					<div class="cook-wrapper">
 
-						<img src="./cooks/glitchtech.png" />
+						<img src="./cooks/glitchtech.png" loading="lazy" />
 
 					</div>
 				</div>

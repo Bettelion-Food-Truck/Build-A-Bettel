@@ -21,14 +21,17 @@ window.addEventListener('load', function (ev) {
 	const HEIGHT = canvas.height;
 
 	const loading = document.getElementById("loading");
+	let loadingTimer = null;
 
 	const randomButton = document.getElementById("random_button");
 	const resetButton = document.getElementById("reset_button");
 	const outfitButton = document.getElementById("outfit_button");
 	const componentButton = document.getElementById("component_button");
 
-	const paletteButton = document.getElementById("palette_button");
 	const itemsButton = document.getElementById("items_button");
+	const paletteButton = document.getElementById("palette_button");
+	const moveButton = document.getElementById("move_button");
+
 	const saveButton = document.getElementById("save_button");
 
 	const zoomInButton = document.getElementById("zoom_in_button");
@@ -51,6 +54,18 @@ window.addEventListener('load', function (ev) {
 
 	const paletteWrapper = document.getElementById("color_palette_wrapper");
 	const paletteList = document.getElementById("color_palette_list");
+
+	const movementWrapper = document.getElementById("movement_wrapper");
+	const movementControls = {
+		"movement": {
+			"up": document.getElementById("move_up_button"),
+			"left": document.getElementById("move_left_button"),
+			"right": document.getElementById("move_right_button"),
+			"down": document.getElementById("move_down_button")
+		},
+
+		"reset": document.getElementById("move_reset_button")
+	};
 
 	const outfitList = document.getElementById("outfit_list");
 
@@ -76,16 +91,27 @@ window.addEventListener('load', function (ev) {
 	let selectedColors = []
 
 	/* 1d array of indices of items currently selected,
-	where selectedItemIndex[i] is the index of the selected item for of part i*/
+	where selectedItemIndex[i] is the index of the selected item for of part i */
 	let selectedItemIndex = []
 
+	/* Array of simple objects for positioning of part i; see DEFAULT_POSITION for structure */
+	let selectedPosition = [];
+	const DEFAULT_POSITION = {
+		"x": 0,
+		"y": 0
+	};
+	const MOVEMENT_BASE = 10; // 10px
+
 	/* 1d array of canvases of items currently selected,
-	where layerCanvases[i] depicts the selected item of part i in the selected color*/
+	where layerCanvases[i] depicts the selected item of part i in the selected color */
 	const layerCanvases = [];
 
 	init();
 
 	async function init() {
+
+		showLoading(0);
+
 		await initData();
 
 		initButtons();
@@ -94,10 +120,14 @@ window.addEventListener('load', function (ev) {
 		initPartsElements();
 		initItemsElements();
 		initPalette();
+		initMove();
 
 		initOutfitElements();
 
 		await initItemFunctions();
+
+		initPanZoom();
+		initHorizontalScroll();
 
 		// Load game into a default outfit
 		await selectOutfit(outfits[0].uid);
@@ -111,15 +141,24 @@ window.addEventListener('load', function (ev) {
 			break;
 		}
 		await updateSelectedPart(firstPart);
-
-		initPanZoom();
-		initHorizontalScroll();
 	}
 
 	/**
 	 * Fetch parts info from data.json and initialize the parts variable.
 	 */
 	async function initData() {
+
+		/*
+		// Disabled for now; might implement later.
+		fetch(ASSET_PATH + "data-compiled.json", { cache: "no-cache" }).then((res) => {
+			if (res.ok) {
+				console.log("compiled data.json found");
+			} else {
+				console.log("compiled data.json missing");
+			}
+		});
+		*/
+
 		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
 
@@ -210,8 +249,9 @@ window.addEventListener('load', function (ev) {
 		outfitButton.addEventListener('click', showOutfits);
 		componentButton.addEventListener('click', showComponents);
 
-		paletteButton.addEventListener('click', showPalette);
 		itemsButton.addEventListener('click', showItems);
+		paletteButton.addEventListener('click', showPalette);
+		moveButton.addEventListener('click', showMove);
 
 		infoButton.addEventListener('click', toggleInfo);
 		infoModal.addEventListener('click', (event) => {
@@ -244,6 +284,28 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Bind movement buttons to their functions
+	 */
+	function initMove() {
+
+		movementControls.movement.up.addEventListener('click', moveActiveLayerUp);
+		movementControls.movement.down.addEventListener('click', moveActiveLayerDown);
+		movementControls.movement.left.addEventListener('click', moveActiveLayerLeft);
+		movementControls.movement.right.addEventListener('click', moveActiveLayerRight);
+
+		movementControls.reset.addEventListener('click', resetActiveLayerPosition);
+
+		for (let i = 0; i < parts.length; i++) {
+
+			selectedPosition[i] = {
+				"x": DEFAULT_POSITION.x,
+				"y": DEFAULT_POSITION.y,
+				"scale": DEFAULT_POSITION.scale
+			};
+		}
 	}
 
 	/**
@@ -326,6 +388,12 @@ window.addEventListener('load', function (ev) {
 			paletteButton.style.display = "inline-flex";
 		}
 
+		if (!parts[partId].movement || Object.keys(parts[partId].movement).length === 0) {
+			moveButton.style.display = "none";
+		} else {
+			moveButton.style.display = "inline-flex";
+		}
+
 		updatePalette();
 		showItems();
 
@@ -385,6 +453,8 @@ window.addEventListener('load', function (ev) {
 					itemsElements[i][j].classList.remove("selected");
 				}
 			}
+
+			resetActiveLayerPosition(false);
 		}
 
 		if (render) {
@@ -465,7 +535,7 @@ window.addEventListener('load', function (ev) {
 	async function renderLayerStack() {
 
 		clearCanvas(workingCanvas);
-		let timer = setTimeout(function () { loading.style.display = "block"; }, 500);
+		showLoading();
 
 		checkPartRequirements();
 
@@ -494,12 +564,32 @@ window.addEventListener('load', function (ev) {
 
 		clearCanvas(canvas);
 
-		clearTimeout(timer);
-		loading.style.display = "none";
+		hideLoading();
 
 		context.drawImage(workingCanvas, 0, 0);
 
 		await updateSave();
+	}
+
+	function showLoading(delay = 500) {
+
+		if (loadingTimer) {
+			clearTimeout(loadingTimer);
+			loadingTimer = null;
+		}
+
+		loadingTimer = setTimeout(function () {
+			loading.style.display = "block";
+		}, delay);
+	}
+
+	function hideLoading() {
+		if (loadingTimer) {
+			clearTimeout(loadingTimer);
+			loadingTimer = null;
+		}
+
+		loading.style.display = "none";
 	}
 
 	/**
@@ -619,17 +709,20 @@ window.addEventListener('load', function (ev) {
 
 			let outfit = outfits[i];
 
-			let outfitWrapper = document.createElement('li');
+			let outfitWrapper = document.createElement('button');
 			let outfitIcon = document.createElement('img');
+			let outfitLabel = document.createElement('span');
 
 			outfitIcon.id = "outfit_icon_" + i.toString();
 			outfitIcon.src = OUTFIT_PATH +
 				outfit.uid + ".png";
 
 			outfitIcon.alt = outfit.name ? outfit.name : outfit.uid;
-			outfitIcon.title = outfit.name ? outfit.name : outfit.uid;
+			outfitLabel.innerText = outfit.name ? outfit.name : outfit.uid;
 
 			outfitWrapper.appendChild(outfitIcon);
+			outfitWrapper.appendChild(outfitLabel);
+
 			outfitWrapper.id = "outfit_" + i.toString();
 			outfitWrapper.className = "outfit";
 
@@ -748,19 +841,32 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Display palette menu, hide item menu
+	 * Display palette menu, hide others
 	 */
 	function showPalette() {
-		paletteWrapper.style.display = "flex";
 		itemWrapper.style.display = "none";
+		paletteWrapper.style.display = "flex";
+		movementWrapper.style.display = "none";
 	}
 
 	/**
-	 * Display item menu, hide palette menu
+	 * Display move menu, hide others
+	 */
+	function showMove() {
+		itemWrapper.style.display = "none";
+		paletteWrapper.style.display = "none";
+		movementWrapper.style.display = "flex";
+
+		updateMovementButtons();
+	}
+
+	/**
+	 * Display item menu, hide others
 	 */
 	function showItems() {
-		paletteWrapper.style.display = "none";
 		itemWrapper.style.display = "flex";
+		paletteWrapper.style.display = "none";
+		movementWrapper.style.display = "none";
 	}
 
 	/**
@@ -774,6 +880,167 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Set of control functions for moving the active layer around. Each function adjusts the image position settings and then calls renderLayerStack to update the canvas.
+	 */
+	function moveActiveLayerUp() {
+
+		if (movementControls.movement.up.classList.contains("disabled")) {
+			return;
+		}
+
+		selectedPosition[selectedPart].y -= MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
+
+		renderLayerStack();
+	}
+
+	function moveActiveLayerDown() {
+
+		if (movementControls.movement.down.classList.contains("disabled")) {
+			return;
+		}
+		selectedPosition[selectedPart].y += MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
+
+		renderLayerStack();
+	}
+
+	function moveActiveLayerLeft() {
+
+		if (movementControls.movement.left.classList.contains("disabled")) {
+			return;
+		}
+
+		selectedPosition[selectedPart].x -= MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
+
+		renderLayerStack();
+	}
+
+	function moveActiveLayerRight() {
+
+		if (movementControls.movement.right.classList.contains("disabled")) {
+			return;
+		}
+
+		selectedPosition[selectedPart].x += MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
+
+		renderLayerStack();
+	}
+
+	function resetActiveLayerPosition(render = true) {
+
+		selectedPosition[selectedPart].x = DEFAULT_POSITION.x;
+		selectedPosition[selectedPart].y = DEFAULT_POSITION.y;
+
+		if (render) {
+
+			renderLayerStack();
+			updateMovementButtons();
+		}
+	}
+
+	function getMovementScale() {
+
+		const movement = parts[selectedPart].movement;
+
+		return (movement.scale ? movement.scale : 1);
+
+	}
+
+	function checkMoveLimits() {
+
+		const movement = parts[selectedPart].movement;
+
+		if (movement.y.min && selectedPosition[selectedPart].y < movement.y.min) {
+
+			selectedPosition[selectedPart].y = movement.y.min;
+		}
+
+		if (movement.y.max && selectedPosition[selectedPart].y > movement.y.max) {
+
+			selectedPosition[selectedPart].y = movement.y.max;
+		}
+
+		if (movement.x.min && selectedPosition[selectedPart].x < movement.x.min) {
+
+			selectedPosition[selectedPart].x = movement.x.min;
+		}
+
+		if (movement.x.max && selectedPosition[selectedPart].x > movement.x.max) {
+
+			selectedPosition[selectedPart].x = movement.x.max;
+		}
+
+		updateMovementButtons();
+	}
+	/**
+	 * End of control functions
+	 */
+
+	/**
+	 * Enabled/disable movement buttons based on the selected part's movement options
+	 */
+	function updateMovementButtons() {
+
+		const movement = parts[selectedPart].movement;
+		const position = selectedPosition[selectedPart];
+
+		if (movement.y === false) {
+			// Axis is disabled, disable buttons
+
+			movementControls.movement.up.classList.add("disabled");
+			movementControls.movement.down.classList.add("disabled");
+		} else if (Object.keys(movement.y).length === 0) {
+			// No limits
+
+			movementControls.movement.up.classList.remove("disabled");
+			movementControls.movement.down.classList.remove("disabled");
+		} else {
+			// Check position vs limits
+
+			if (movement.y.min && position.y <= movement.y.min) {
+				movementControls.movement.up.classList.add("disabled");
+			} else {
+				movementControls.movement.up.classList.remove("disabled");
+			}
+
+			if (movement.y.max && position.y >= movement.y.max) {
+				movementControls.movement.down.classList.add("disabled");
+			} else {
+				movementControls.movement.down.classList.remove("disabled");
+			}
+		}
+
+		if (movement.x === false) {
+			// Axis is disabled, disable buttons
+
+			movementControls.movement.left.classList.add("disabled");
+			movementControls.movement.right.classList.add("disabled");
+		} else if (Object.keys(movement.x).length === 0) {
+			// No limits
+
+			movementControls.movement.left.classList.remove("disabled");
+			movementControls.movement.right.classList.remove("disabled");
+		} else {
+			// Check position vs limits
+
+			if (movement.x.min && position.x <= movement.x.min) {
+				movementControls.movement.left.classList.add("disabled");
+			} else {
+				movementControls.movement.left.classList.remove("disabled");
+			}
+
+			if (movement.x.max && position.x >= movement.x.max) {
+				movementControls.movement.right.classList.add("disabled");
+			} else {
+				movementControls.movement.right.classList.remove("disabled");
+			}
+		}
 	}
 
 	/**
@@ -854,6 +1121,7 @@ window.addEventListener('load', function (ev) {
 	async function renderItemToCanvas(layerIndex, partIndex, itemIndex, colorIndex) {
 
 		const item = parts[partIndex].items[itemIndex];
+		const position = selectedPosition[partIndex];
 
 		// Set color variant item
 		const color = (parts[partIndex].colors.length > 0) ?
@@ -866,7 +1134,7 @@ window.addEventListener('load', function (ev) {
 
 			const imgPath = ASSET_PATH + parts[partIndex].folder + "/" + item + color + ".png";
 
-			await (renderImage(imgPath, layerIndex));
+			await (renderImage(imgPath, layerIndex, position));
 		} else {
 			// Complex item
 
@@ -884,7 +1152,7 @@ window.addEventListener('load', function (ev) {
 					layerIndex = layers.findIndex(layer => layer.layer === item.layer);
 				}
 
-				await (renderImage(imgPath, layerIndex));
+				await (renderImage(imgPath, layerIndex, position));
 			}
 
 			// Render additional layers
@@ -895,13 +1163,13 @@ window.addEventListener('load', function (ev) {
 					const addImgPath = partLocation + "/" + item.multilayer[i].item + color + ".png";
 					const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
-					await (renderImage(addImgPath, addLayerIndex));
+					await (renderImage(addImgPath, addLayerIndex, position));
 				}
 			}
 		}
 	}
 
-	async function renderImage(imgPath, layerIndex) {
+	async function renderImage(imgPath, layerIndex, position) {
 
 		if (layerIndex < 0) {
 			// Somethings wrong, exit
@@ -911,7 +1179,14 @@ window.addEventListener('load', function (ev) {
 		let img = await (loadImage(imgPath));
 
 		clearCanvas(layerCanvases[layerIndex]);
+
 		let ctx = layerCanvases[layerIndex].getContext('2d');
+		ctx.save();
+
+		ctx.translate(position.x, position.y);
+
 		ctx.drawImage(img, 0, 0);
+
+		ctx.restore();
 	}
 }, false);

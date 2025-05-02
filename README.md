@@ -43,6 +43,7 @@ Parts have the following fields:
 - `"items"`: the names of the items belonging to the part
 - `"colorMode"`: Can be `"fill"`, `"multiply"`, `"manual"` or `null`. See the next section, item variants, for details.
 - `"colors"`: 6-character strings containing the the hexcodes of colors.
+- `"movement"`: Optional. Structure to define capability and limits of part movement. Sub values are `"x"`, `"y"`, and `"scale"`. X and Y may be true, false, or an object with `"min"` and `"max"`. Min and max are offsets limits. Scale adjusts how much the controls move the part.
 - `"noneAllowed"`: `true` if this part is optional, false otherwise
 - `"hidePartList"`: `true` to remove the category from the part list. This is used if there is only one option for a body.
 
@@ -53,6 +54,14 @@ Ex:
   "items": ["small", "big"],
   "colorMode": "manual",
   "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
+  "movement": {
+    "x": {
+      "min": -50,
+      "max": 50
+    },
+    "y": true,
+    "scale": 1
+  },
   "noneAllowed": true,
   "hidePartList": false
 }

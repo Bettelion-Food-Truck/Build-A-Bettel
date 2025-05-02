@@ -55,6 +55,9 @@ window.addEventListener('load', function (ev) {
 	const paletteWrapper = document.getElementById("color_palette_wrapper");
 	const paletteList = document.getElementById("color_palette_list");
 
+	const movementWrapper = document.getElementById("movement_wrapper");
+	// TODO bindings for up, down, left, right, rotate, reset, etc.
+
 	const outfitList = document.getElementById("outfit_list");
 
 	/* 1d array of part select button DOM elements */
@@ -259,7 +262,6 @@ window.addEventListener('load', function (ev) {
 	 */
 	function initMove() {
 
-		moveButton.style.display = "none";
 	}
 
 	/**
@@ -342,7 +344,11 @@ window.addEventListener('load', function (ev) {
 			paletteButton.style.display = "inline-flex";
 		}
 
-		// TODO handle move button display
+		if (!parts[partId].movement || Object.keys(parts[partId].movement).length === 0) {
+			moveButton.style.display = "none";
+		} else {
+			moveButton.style.display = "inline-flex";
+		}
 
 		updatePalette();
 		showItems();
@@ -791,7 +797,7 @@ window.addEventListener('load', function (ev) {
 	function showPalette() {
 		itemWrapper.style.display = "none";
 		paletteWrapper.style.display = "flex";
-		// TODO hide moveWrapper
+		movementWrapper.style.display = "none";
 	}
 
 	/**
@@ -800,7 +806,7 @@ window.addEventListener('load', function (ev) {
 	function showMove() {
 		itemWrapper.style.display = "none";
 		paletteWrapper.style.display = "none";
-		// TODO show moveWrapper
+		movementWrapper.style.display = "flex";
 	}
 
 	/**
@@ -809,7 +815,7 @@ window.addEventListener('load', function (ev) {
 	function showItems() {
 		itemWrapper.style.display = "flex";
 		paletteWrapper.style.display = "none";
-		// TODO hide moveWrapper
+		movementWrapper.style.display = "none";
 	}
 
 	/**

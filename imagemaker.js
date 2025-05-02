@@ -96,11 +96,31 @@ window.addEventListener('load', function (ev) {
 	let selectedColors = []
 
 	/* 1d array of indices of items currently selected,
-	where selectedItemIndex[i] is the index of the selected item for of part i*/
+	where selectedItemIndex[i] is the index of the selected item for of part i */
 	let selectedItemIndex = []
 
+	/* Array of simple objects for part positioning and rotation for of part i */
+	/*
+		{
+			"x": 0,
+			"y": 0,
+			"rotation": 0,
+			"scale": 1
+		}
+	*/
+	let selectedPosition = [];
+	const DEFAULT_POSITION = {
+		"x": 0,
+		"y": 0,
+		"rotation": 0,
+		"scale": 1
+	};
+	const MOVEMENT_STEP = 10; // 10px
+	const ROTATION_STEP = 10; // 10 degrees
+	const SCALING_STEP = 0.1; // 10%
+
 	/* 1d array of canvases of items currently selected,
-	where layerCanvases[i] depicts the selected item of part i in the selected color*/
+	where layerCanvases[i] depicts the selected item of part i in the selected color */
 	const layerCanvases = [];
 
 	init();
@@ -285,6 +305,16 @@ window.addEventListener('load', function (ev) {
 		movementControls.rotate.ccw.addEventListener('click', rotateActiveLayerCounterClockwise);
 
 		movementControls.reset.addEventListener('click', resetActiveLayerPosition);
+
+		for (let i = 0; i < parts.length; i++) {
+
+			selectedPosition[i] = {
+				"x": DEFAULT_POSITION.x,
+				"y": DEFAULT_POSITION.y,
+				"rotation": DEFAULT_POSITION.rotation,
+				"scale": DEFAULT_POSITION.scale
+			};
+		}
 	}
 
 	/**
@@ -432,6 +462,8 @@ window.addEventListener('load', function (ev) {
 					itemsElements[i][j].classList.remove("selected");
 				}
 			}
+
+			resetActiveLayerPosition(false);
 		}
 
 		if (render) {
@@ -854,33 +886,67 @@ window.addEventListener('load', function (ev) {
 		return null;
 	}
 
+	/**
+	 * Set of control functions for moving the active layer around. Each function adjusts the image position settings and then calls renderLayerStack to update the canvas.
+	 */
 	function moveActiveLayerUp() {
-		console.log("Moving layer up");
+		selectedPosition[selectedPart].y -= MOVEMENT_STEP;
+
+		// TODO if selected part is out of range, limit
+
+		renderLayerStack();
 	}
 
 	function moveActiveLayerDown() {
-		console.log("Moving layer down");
+		selectedPosition[selectedPart].y += MOVEMENT_STEP;
+
+		// TODO if selected part is out of range, limit
+
+		renderLayerStack();
 	}
 
 	function moveActiveLayerLeft() {
-		console.log("Moving layer left");
+		selectedPosition[selectedPart].x -= MOVEMENT_STEP;
+
+		// TODO if selected part is out of range, limit
+
+		renderLayerStack();
 	}
 
 	function moveActiveLayerRight() {
-		console.log("Moving layer right");
+		selectedPosition[selectedPart].x += MOVEMENT_STEP;
+
+		// TODO if selected part is out of range, limit
+
+		renderLayerStack();
 	}
 
 	function rotateActiveLayerClockwise() {
-		console.log("Rotating layer clockwise");
+		console.log("Rotating layer clockwise");// TODO
+
+		renderLayerStack();
 	}
 
 	function rotateActiveLayerCounterClockwise() {
-		console.log("Rotating layer counterclockwise");
+		console.log("Rotating layer counterclockwise");// TODO
+
+		renderLayerStack();
 	}
 
-	function resetActiveLayerPosition() {
-		console.log("Resetting layer position");
+	function resetActiveLayerPosition(render = true) {
+		selectedPosition[selectedPart].x = DEFAULT_POSITION.x;
+		selectedPosition[selectedPart].y = DEFAULT_POSITION.y;
+		selectedPosition[selectedPart].rotation = DEFAULT_POSITION.rotation;
+		selectedPosition[selectedPart].scale = DEFAULT_POSITION.scale;
+
+		if (render) {
+
+			renderLayerStack();
+		}
 	}
+	/**
+	 * End of control functions
+	 */
 
 	/**
 	 * Checks current selections for incompatible parts
@@ -960,6 +1026,7 @@ window.addEventListener('load', function (ev) {
 	async function renderItemToCanvas(layerIndex, partIndex, itemIndex, colorIndex) {
 
 		const item = parts[partIndex].items[itemIndex];
+		const position = selectedPosition[partIndex];
 
 		// Set color variant item
 		const color = (parts[partIndex].colors.length > 0) ?
@@ -972,7 +1039,7 @@ window.addEventListener('load', function (ev) {
 
 			const imgPath = ASSET_PATH + parts[partIndex].folder + "/" + item + color + ".png";
 
-			await (renderImage(imgPath, layerIndex));
+			await (renderImage(imgPath, layerIndex, position));
 		} else {
 			// Complex item
 
@@ -990,7 +1057,7 @@ window.addEventListener('load', function (ev) {
 					layerIndex = layers.findIndex(layer => layer.layer === item.layer);
 				}
 
-				await (renderImage(imgPath, layerIndex));
+				await (renderImage(imgPath, layerIndex, position));
 			}
 
 			// Render additional layers
@@ -1001,13 +1068,13 @@ window.addEventListener('load', function (ev) {
 					const addImgPath = partLocation + "/" + item.multilayer[i].item + color + ".png";
 					const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
-					await (renderImage(addImgPath, addLayerIndex));
+					await (renderImage(addImgPath, addLayerIndex, position));
 				}
 			}
 		}
 	}
 
-	async function renderImage(imgPath, layerIndex) {
+	async function renderImage(imgPath, layerIndex, position) {
 
 		if (layerIndex < 0) {
 			// Somethings wrong, exit
@@ -1017,7 +1084,11 @@ window.addEventListener('load', function (ev) {
 		let img = await (loadImage(imgPath));
 
 		clearCanvas(layerCanvases[layerIndex]);
+
 		let ctx = layerCanvases[layerIndex].getContext('2d');
-		ctx.drawImage(img, 0, 0);
+
+		ctx.drawImage(img, position.x ?? 0, position.y ?? 0);
+
+		console.log(imgPath, position);
 	}
 }, false);

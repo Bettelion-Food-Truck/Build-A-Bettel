@@ -439,6 +439,11 @@ ul li img {
     cursor: pointer;
 }
 
+.movement_controls .movement_button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 .feature_buttons,
 .feature_buttons > div {
     display: flex;

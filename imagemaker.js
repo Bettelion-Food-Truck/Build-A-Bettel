@@ -100,7 +100,7 @@ window.addEventListener('load', function (ev) {
 		"x": 0,
 		"y": 0
 	};
-	const MOVEMENT_STEP = 10; // 10px
+	const MOVEMENT_BASE = 10; // 10px
 
 	/* 1d array of canvases of items currently selected,
 	where layerCanvases[i] depicts the selected item of part i in the selected color */
@@ -841,6 +841,8 @@ window.addEventListener('load', function (ev) {
 		itemWrapper.style.display = "none";
 		paletteWrapper.style.display = "none";
 		movementWrapper.style.display = "flex";
+
+		updateMovementButtons();
 	}
 
 	/**
@@ -870,36 +872,47 @@ window.addEventListener('load', function (ev) {
 	 */
 	function moveActiveLayerUp() {
 
-		selectedPosition[selectedPart].y -= MOVEMENT_STEP;
+		if (movementControls.movement.up.classList.contains("disabled")) {
+			return;
+		}
 
-		// TODO if selected part is out of range, limit
+		selectedPosition[selectedPart].y -= MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
 
 		renderLayerStack();
 	}
 
 	function moveActiveLayerDown() {
 
-		selectedPosition[selectedPart].y += MOVEMENT_STEP;
-
-		// TODO if selected part is out of range, limit
+		if (movementControls.movement.down.classList.contains("disabled")) {
+			return;
+		}
+		selectedPosition[selectedPart].y += MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
 
 		renderLayerStack();
 	}
 
 	function moveActiveLayerLeft() {
 
-		selectedPosition[selectedPart].x -= MOVEMENT_STEP;
+		if (movementControls.movement.left.classList.contains("disabled")) {
+			return;
+		}
 
-		// TODO if selected part is out of range, limit
+		selectedPosition[selectedPart].x -= MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
 
 		renderLayerStack();
 	}
 
 	function moveActiveLayerRight() {
 
-		selectedPosition[selectedPart].x += MOVEMENT_STEP;
+		if (movementControls.movement.right.classList.contains("disabled")) {
+			return;
+		}
 
-		// TODO if selected part is out of range, limit
+		selectedPosition[selectedPart].x += MOVEMENT_BASE * getMovementScale();
+		checkMoveLimits();
 
 		renderLayerStack();
 	}
@@ -912,11 +925,108 @@ window.addEventListener('load', function (ev) {
 		if (render) {
 
 			renderLayerStack();
+			updateMovementButtons();
 		}
+	}
+
+	function getMovementScale() {
+
+		const movement = parts[selectedPart].movement;
+
+		return (movement.scale ? movement.scale : 1);
+
+	}
+
+	function checkMoveLimits() {
+
+		const movement = parts[selectedPart].movement;
+
+		if (movement.y.min && selectedPosition[selectedPart].y < movement.y.min) {
+
+			selectedPosition[selectedPart].y = movement.y.min;
+		}
+
+		if (movement.y.max && selectedPosition[selectedPart].y > movement.y.max) {
+
+			selectedPosition[selectedPart].y = movement.y.max;
+		}
+
+		if (movement.x.min && selectedPosition[selectedPart].x < movement.x.min) {
+
+			selectedPosition[selectedPart].x = movement.x.min;
+		}
+
+		if (movement.x.max && selectedPosition[selectedPart].x > movement.x.max) {
+
+			selectedPosition[selectedPart].x = movement.x.max;
+		}
+
+		updateMovementButtons();
 	}
 	/**
 	 * End of control functions
 	 */
+
+	/**
+	 * Enabled/disable movement buttons based on the selected part's movement options
+	 */
+	function updateMovementButtons() {
+
+		const movement = parts[selectedPart].movement;
+		const position = selectedPosition[selectedPart];
+
+		if (movement.y === false) {
+			// Axis is disabled, disable buttons
+
+			movementControls.movement.up.classList.add("disabled");
+			movementControls.movement.down.classList.add("disabled");
+		} else if (Object.keys(movement.y).length === 0) {
+			// No limits
+
+			movementControls.movement.up.classList.remove("disabled");
+			movementControls.movement.down.classList.remove("disabled");
+		} else {
+			// Check position vs limits
+
+			if (movement.y.min && position.y <= movement.y.min) {
+				movementControls.movement.up.classList.add("disabled");
+			} else {
+				movementControls.movement.up.classList.remove("disabled");
+			}
+
+			if (movement.y.max && position.y >= movement.y.max) {
+				movementControls.movement.down.classList.add("disabled");
+			} else {
+				movementControls.movement.down.classList.remove("disabled");
+			}
+		}
+
+		if (movement.x === false) {
+			// Axis is disabled, disable buttons
+
+			movementControls.movement.left.classList.add("disabled");
+			movementControls.movement.right.classList.add("disabled");
+		} else if (Object.keys(movement.x).length === 0) {
+			// No limits
+
+			movementControls.movement.left.classList.remove("disabled");
+			movementControls.movement.right.classList.remove("disabled");
+		} else {
+			// Check position vs limits
+
+			if (movement.x.min && position.x <= movement.x.min) {
+				movementControls.movement.left.classList.add("disabled");
+			} else {
+				movementControls.movement.left.classList.remove("disabled");
+			}
+
+			if (movement.x.max && position.x >= movement.x.max) {
+				movementControls.movement.right.classList.add("disabled");
+			} else {
+				movementControls.movement.right.classList.remove("disabled");
+			}
+		}
+	}
 
 	/**
 	 * Checks current selections for incompatible parts

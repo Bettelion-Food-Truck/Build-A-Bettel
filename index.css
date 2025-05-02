@@ -408,6 +408,41 @@ ul li img {
     font-size: 16px;
 }
 
+.movement_wrapper {
+    display: none;
+    /*display: flex;*/
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+}
+
+.movement_controls {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    place-items: stretch;
+
+    margin: auto;
+}
+
+.movement_controls > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movement_controls .movement_button {
+    cursor: pointer;
+}
+
+.movement_controls #move_down_button {
+    grid-column: 2;
+}
+
 .feature_buttons,
 .feature_buttons > div {
     display: flex;

@@ -168,6 +168,10 @@
     {
       "uid": "butler",
       "name": "Butler"
+    },
+    {
+      "uid": "when-youre-evil",
+      "name": "When You're Evil"
     }
   ],
   "parts": [
@@ -403,6 +407,12 @@
           "outfits": [
             "butler"
           ]
+        },
+        {
+          "item": "when-youre-evil-shorts",
+          "outfits": [
+            "when-youre-evil"
+          ]
         }
       ],
       "colorMode": null,
@@ -570,6 +580,12 @@
             "butler"
           ]
         },
+        {
+          "item": "when-youre-evil-shirt",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -626,6 +642,12 @@
           "item": "hakka-halfcoat",
           "outfits": [
             "hakka"
+          ]
+        },
+        {
+          "item": "when-youre-evil-vest",
+          "outfits": [
+            "when-youre-evil"
           ]
         },
         "vesper-vest"
@@ -841,6 +863,18 @@
               "layer": "jackets_back"
             }
           ]
+        },
+        {
+          "item": "when-youre-evil-cape",
+          "multilayer": [
+            {
+              "item": "when-youre-evil-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "when-youre-evil"
+          ]
         }
       ],
       "colorMode": null,
@@ -997,6 +1031,18 @@
               "layer": "jackets_2_back"
             }
           ]
+        },
+        {
+          "item": "when-youre-evil-cape",
+          "multilayer": [
+            {
+              "item": "when-youre-evil-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "when-youre-evil"
+          ]
         }
       ],
       "colorMode": null,
@@ -1043,6 +1089,12 @@
           "item": "octavio-belt",
           "outfits": [
             "octavio"
+          ]
+        },
+        {
+          "item": "when-youre-evil-belt",
+          "outfits": [
+            "when-youre-evil"
           ]
         }
       ],
@@ -1394,6 +1446,16 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "when-youre-evil-boots",
+          "outfits": [
+            "when-youre-evil"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -1486,6 +1548,12 @@
           "item": "octavio-tie",
           "outfits": [
             "octavio"
+          ]
+        },
+        {
+          "item": "when-youre-evil-scarf",
+          "outfits": [
+            "when-youre-evil"
           ]
         }
       ],
@@ -1618,6 +1686,12 @@
             "punk"
           ]
         },
+        {
+          "item": "when-youre-evil-hat",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
         "demon-horns",
@@ -1699,7 +1773,8 @@
         {
           "item": "pirate-facial-hair",
           "outfits": [
-            "pirate"
+            "pirate",
+            "when-youre-evil"
           ]
         },
         "pirate-mustache",
@@ -1962,7 +2037,8 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "when-youre-evil"
           ]
         },
         {
@@ -2285,6 +2361,12 @@
           "item": "bettelzebub-wings",
           "outfits": [
             "bettelzebub"
+          ]
+        },
+        {
+          "item": "when-youre-evil-hip-scarf",
+          "outfits": [
+            "when-youre-evil"
           ]
         }
       ],

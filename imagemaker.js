@@ -56,7 +56,21 @@ window.addEventListener('load', function (ev) {
 	const paletteList = document.getElementById("color_palette_list");
 
 	const movementWrapper = document.getElementById("movement_wrapper");
-	// TODO bindings for up, down, left, right, rotate, reset, etc.
+	const movementControls = {
+		"movement": {
+			"up": document.getElementById("move_up_button"),
+			"left": document.getElementById("move_left_button"),
+			"right": document.getElementById("move_right_button"),
+			"down": document.getElementById("move_down_button")
+		},
+
+		"rotate": {
+			"cw": document.getElementById("rotate_clockwise_button"),
+			"ccw": document.getElementById("rotate_counterclockwise_button")
+		},
+
+		"reset": document.getElementById("move_reset_button")
+	};
 
 	const outfitList = document.getElementById("outfit_list");
 
@@ -258,10 +272,19 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * TODO Implement move menu
+	 * Bind movement buttons to their functions
 	 */
 	function initMove() {
 
+		movementControls.movement.up.addEventListener('click', moveActiveLayerUp);
+		movementControls.movement.down.addEventListener('click', moveActiveLayerDown);
+		movementControls.movement.left.addEventListener('click', moveActiveLayerLeft);
+		movementControls.movement.right.addEventListener('click', moveActiveLayerRight);
+
+		movementControls.rotate.cw.addEventListener('click', rotateActiveLayerClockwise);
+		movementControls.rotate.ccw.addEventListener('click', rotateActiveLayerCounterClockwise);
+
+		movementControls.reset.addEventListener('click', resetActiveLayerPosition);
 	}
 
 	/**
@@ -829,6 +852,34 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
+	}
+
+	function moveActiveLayerUp() {
+		console.log("Moving layer up");
+	}
+
+	function moveActiveLayerDown() {
+		console.log("Moving layer down");
+	}
+
+	function moveActiveLayerLeft() {
+		console.log("Moving layer left");
+	}
+
+	function moveActiveLayerRight() {
+		console.log("Moving layer right");
+	}
+
+	function rotateActiveLayerClockwise() {
+		console.log("Rotating layer clockwise");
+	}
+
+	function rotateActiveLayerCounterClockwise() {
+		console.log("Rotating layer counterclockwise");
+	}
+
+	function resetActiveLayerPosition() {
+		console.log("Resetting layer position");
 	}
 
 	/**

@@ -172,6 +172,10 @@
     {
       "uid": "when-youre-evil",
       "name": "When You're Evil"
+    },
+    {
+      "uid": "pumpkin-king",
+      "name": "Pumpkin King"
     }
   ],
   "parts": [
@@ -208,7 +212,8 @@
           "outfits": [
             "second-outfit",
             "battel",
-            "butler"
+            "butler",
+            "pumpkin-king"
           ],
           "thumbnail": true
         },
@@ -413,6 +418,18 @@
           "outfits": [
             "when-youre-evil"
           ]
+        },
+        {
+          "item": "pumpkin-king-pants",
+          "multilayer": [
+            {
+              "item": "pumpkin-king-shirt-bottom",
+              "layer": "pants_elevated"
+            }
+          ],
+          "outfits": [
+            "pumpkin-king"
+          ]
         }
       ],
       "colorMode": null,
@@ -584,6 +601,18 @@
           "item": "when-youre-evil-shirt",
           "outfits": [
             "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-shirt",
+          "multilayer": [
+            {
+              "item": "pumpkin-king-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "pumpkin-king"
           ]
         },
         "snank"
@@ -1461,6 +1490,16 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "pumpkin-king-boots",
+          "outfits": [
+            "pumpkin-king"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -1695,6 +1734,18 @@
           "item": "when-youre-evil-hat",
           "outfits": [
             "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-hat",
+          "multilayer": [
+            {
+              "item": "pumpkin-king-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "outfits": [
+            "pumpkin-king"
           ]
         },
         "phantom-beanie",
@@ -1945,6 +1996,13 @@
             "betsy"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "pumpkin-king-necklace",
+          "outfits": [
+            "pumpkin-king"
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1993,6 +2051,10 @@
         },
         {
           "item": "betsy-earrings",
+          "thumbnail": true
+        },
+        {
+          "item": "pumpkin-king-necklace",
           "thumbnail": true
         }
       ],
@@ -2118,6 +2180,12 @@
           "item": "debut-gloves",
           "outfits": [
             "debut"
+          ]
+        },
+        {
+          "item": "pumpkin-king-gloves",
+          "outfits": [
+            "pumpkin-king"
           ]
         }
       ],
@@ -2372,6 +2440,12 @@
           "item": "when-youre-evil-hip-scarf",
           "outfits": [
             "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-cape",
+          "outfits": [
+            "pumpkin-king"
           ]
         }
       ],

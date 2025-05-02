@@ -127,6 +127,15 @@ window.addEventListener('load', function (ev) {
 	 * Fetch parts info from data.json and initialize the parts variable.
 	 */
 	async function initData() {
+		fetch(ASSET_PATH + "data-compiled.json", { cache: "no-cache" }
+		).then((res) => {
+			if (res.ok) {
+				console.log("compiled data.json found");
+			} else {
+				console.log("compiled data.json missing");
+			}
+		});
+
 		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
 

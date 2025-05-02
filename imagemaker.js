@@ -709,17 +709,20 @@ window.addEventListener('load', function (ev) {
 
 			let outfit = outfits[i];
 
-			let outfitWrapper = document.createElement('li');
+			let outfitWrapper = document.createElement('button');
 			let outfitIcon = document.createElement('img');
+			let outfitLabel = document.createElement('span');
 
 			outfitIcon.id = "outfit_icon_" + i.toString();
 			outfitIcon.src = OUTFIT_PATH +
 				outfit.uid + ".png";
 
 			outfitIcon.alt = outfit.name ? outfit.name : outfit.uid;
-			outfitIcon.title = outfit.name ? outfit.name : outfit.uid;
+			outfitLabel.innerText = outfit.name ? outfit.name : outfit.uid;
 
 			outfitWrapper.appendChild(outfitIcon);
+			outfitWrapper.appendChild(outfitLabel);
+
 			outfitWrapper.id = "outfit_" + i.toString();
 			outfitWrapper.className = "outfit";
 

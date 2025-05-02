@@ -164,6 +164,10 @@
     {
       "uid": "daki",
       "name": "Daki"
+    },
+    {
+      "uid": "butler",
+      "name": "Butler"
     }
   ],
   "parts": [
@@ -199,7 +203,8 @@
           "item": "second",
           "outfits": [
             "second-outfit",
-            "battel"
+            "battel",
+            "butler"
           ],
           "thumbnail": true
         },
@@ -392,6 +397,12 @@
           "outfits": [
             "hakka"
           ]
+        },
+        {
+          "item": "butler-pants",
+          "outfits": [
+            "butler"
+          ]
         }
       ],
       "colorMode": null,
@@ -545,6 +556,18 @@
           "item": "hakka-undershirt",
           "outfits": [
             "hakka"
+          ]
+        },
+        {
+          "item": "butler-shirt",
+          "multilayer": [
+            {
+              "item": "butler-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "butler"
           ]
         },
         "snank"
@@ -809,6 +832,15 @@
           "outfits": [
             "daki"
           ]
+        },
+        {
+          "item": "butler-jacket",
+          "multilayer": [
+            {
+              "item": "butler-back",
+              "layer": "jackets_back"
+            }
+          ]
         }
       ],
       "colorMode": null,
@@ -955,6 +987,15 @@
           ],
           "outfits": [
             "daki"
+          ]
+        },
+        {
+          "item": "butler-jacket",
+          "multilayer": [
+            {
+              "item": "butler-back",
+              "layer": "jackets_2_back"
+            }
           ]
         }
       ],
@@ -1337,6 +1378,17 @@
           "item": "hakka-shoes",
           "outfits": [
             "hakka"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "butler-shoes",
+          "layer": "shoes-covered-full",
+          "outfits": [
+            "butler"
           ],
           "requires": {
             "part": "feet",
@@ -1934,7 +1986,8 @@
         {
           "item": "unchained-gloves",
           "outfits": [
-            "unchained"
+            "unchained",
+            "butler"
           ]
         },
         {

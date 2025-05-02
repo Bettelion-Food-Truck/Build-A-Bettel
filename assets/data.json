@@ -176,6 +176,10 @@
     {
       "uid": "pumpkin-king",
       "name": "Pumpkin King"
+    },
+    {
+      "uid": "goldbullet",
+      "name": "Goldbullet"
     }
   ],
   "parts": [
@@ -430,6 +434,12 @@
           "outfits": [
             "pumpkin-king"
           ]
+        },
+        {
+          "item": "goldbullet-pants",
+          "outfits": [
+            "goldbullet"
+          ]
         }
       ],
       "colorMode": null,
@@ -615,6 +625,12 @@
             "pumpkin-king"
           ]
         },
+        {
+          "item": "goldbullet-shirt",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -677,6 +693,12 @@
           "item": "when-youre-evil-vest",
           "outfits": [
             "when-youre-evil"
+          ]
+        },
+        {
+          "item": "goldbullet-harness",
+          "outfits": [
+            "goldbullet"
           ]
         },
         "vesper-vest"
@@ -904,6 +926,21 @@
           "outfits": [
             "when-youre-evil"
           ]
+        },
+        {
+          "item": "goldbullet-jacket",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        {
+          "item": "goldbullet-cape",
+          "multilayer": [
+            {
+              "item": "goldbullet-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ]
         }
       ],
       "colorMode": null,
@@ -1072,7 +1109,20 @@
           "outfits": [
             "when-youre-evil"
           ]
-        }
+        },
+        {
+          "item": "goldbullet-cape",
+          "multilayer": [
+            {
+              "item": "goldbullet-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        "goldbullet-jacket"
       ],
       "colorMode": null,
       "colors": [],
@@ -1124,6 +1174,12 @@
           "item": "when-youre-evil-belt",
           "outfits": [
             "when-youre-evil"
+          ]
+        },
+        {
+          "item": "goldbullet-belts",
+          "outfits": [
+            "goldbullet"
           ]
         },
         "january-2025-small-belt",
@@ -1499,6 +1555,16 @@
           "requires": {
             "part": "feet",
             "item": "pointed"
+          }
+        },
+        {
+          "item": "goldbullet-boots",
+          "outfits": [
+            "goldbullet"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
           }
         }
       ],
@@ -2003,6 +2069,13 @@
             "pumpkin-king"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "goldbullet-necklace",
+          "outfits": [
+            "goldbullet"
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -2055,6 +2128,10 @@
         },
         {
           "item": "pumpkin-king-necklace",
+          "thumbnail": true
+        },
+        {
+          "item": "goldbullet-necklace",
           "thumbnail": true
         }
       ],
@@ -2186,6 +2263,12 @@
           "item": "pumpkin-king-gloves",
           "outfits": [
             "pumpkin-king"
+          ]
+        },
+        {
+          "item": "goldbullet-gloves",
+          "outfits": [
+            "goldbullet"
           ]
         }
       ],

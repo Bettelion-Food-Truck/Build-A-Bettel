@@ -1,7 +1,7 @@
 {
   "layers": [
     "backgrounds",
-    "accessories-rear_back",
+    "jackets_far_back",
     "accessories-rear",
     "hats_back",
     "jackets_2_back",
@@ -40,8 +40,8 @@
     "hair",
     "glasses",
     "mask_elevated",
-    "hats",
     "neck",
+    "hats",
     "accessories-front",
     "accessories-front_2",
     "accessories-front_3",
@@ -152,6 +152,54 @@
     {
       "uid": "octavio",
       "name": "Octavio"
+    },
+    {
+      "uid": "debut",
+      "name": "Debut"
+    },
+    {
+      "uid": "hakka",
+      "name": "Hakka"
+    },
+    {
+      "uid": "daki",
+      "name": "Daki"
+    },
+    {
+      "uid": "butler",
+      "name": "Butler"
+    },
+    {
+      "uid": "when-youre-evil",
+      "name": "When You're Evil"
+    },
+    {
+      "uid": "pumpkin-king",
+      "name": "Pumpkin King"
+    },
+    {
+      "uid": "goldbullet",
+      "name": "Goldbullet"
+    },
+    {
+      "uid": "shinri",
+      "name": "Shinri"
+    },
+    {
+      "uid": "last-game",
+      "name": "Last Game"
+    },
+    {
+      "uid": "deerttel",
+      "name": "Deerttel"
+    },
+    {
+      "uid": "ghost-bride",
+      "name": "Ghost Bride"
+    },
+    {
+      "uid": "2024-expo",
+      "name": "2024 Expo"
     }
   ],
   "parts": [
@@ -187,7 +235,10 @@
           "item": "second",
           "outfits": [
             "second-outfit",
-            "battel"
+            "battel",
+            "butler",
+            "pumpkin-king",
+            "ghost-bride"
           ],
           "thumbnail": true
         },
@@ -220,7 +271,9 @@
           "outfits": [
             "showman",
             "second-outfit",
-            "sims"
+            "sims",
+            "daki",
+            "ghost-bride"
           ],
           "thumbnail": true
         },
@@ -271,7 +324,8 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "deerttel"
           ]
         },
         {
@@ -373,6 +427,72 @@
           "outfits": [
             "octavio"
           ]
+        },
+        {
+          "item": "hakka-pants",
+          "outfits": [
+            "hakka"
+          ]
+        },
+        {
+          "item": "butler-pants",
+          "outfits": [
+            "butler"
+          ]
+        },
+        {
+          "item": "when-youre-evil-shorts",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-pants",
+          "multilayer": [
+            {
+              "item": "pumpkin-king-shirt-bottom",
+              "layer": "pants_elevated"
+            }
+          ],
+          "outfits": [
+            "pumpkin-king"
+          ]
+        },
+        {
+          "item": "goldbullet-pants",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        {
+          "item": "shinri-pants",
+          "outfits": [
+            "shinri"
+          ]
+        },
+        {
+          "item": "last-game-pants",
+          "outfits": [
+            "last-game"
+          ]
+        },
+        {
+          "item": "ghost-bride-skirt",
+          "multilayer": [
+            {
+              "item": "ghost-bride-skirt-back",
+              "layer": "pants_back"
+            }
+          ],
+          "outfits": [
+            "ghost-bride"
+          ]
+        },
+        {
+          "item": "2024-expo-shorts",
+          "outfits": [
+            "2024-expo"
+          ]
         }
       ],
       "colorMode": null,
@@ -403,7 +523,8 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "deerttel"
           ]
         },
         {
@@ -522,6 +643,78 @@
             "octavio"
           ]
         },
+        {
+          "item": "hakka-undershirt",
+          "outfits": [
+            "hakka"
+          ]
+        },
+        {
+          "item": "butler-shirt",
+          "multilayer": [
+            {
+              "item": "butler-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "butler"
+          ]
+        },
+        {
+          "item": "when-youre-evil-shirt",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-shirt",
+          "multilayer": [
+            {
+              "item": "pumpkin-king-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "pumpkin-king"
+          ]
+        },
+        {
+          "item": "goldbullet-shirt",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        {
+          "item": "shinri-shirt",
+          "outfits": [
+            "shinri"
+          ]
+        },
+        {
+          "item": "last-game-shirt",
+          "multilayer": [
+            {
+              "item": "last-game-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "last-game"
+          ]
+        },
+        {
+          "item": "ghost-bride-shirt",
+          "outfits": [
+            "ghost-bride"
+          ]
+        },
+        {
+          "item": "2024-expo-shirt",
+          "outfits": [
+            "2024-expo"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -540,7 +733,8 @@
             }
           ],
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "deerttel"
           ]
         },
         {
@@ -572,6 +766,30 @@
           "item": "deadworld-harness",
           "outfits": [
             "dead-world"
+          ]
+        },
+        {
+          "item": "hakka-halfcoat",
+          "outfits": [
+            "hakka"
+          ]
+        },
+        {
+          "item": "when-youre-evil-vest",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "goldbullet-harness",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        {
+          "item": "shinri-buckle-shirt",
+          "outfits": [
+            "shinri"
           ]
         },
         "vesper-vest"
@@ -672,10 +890,10 @@
           ]
         },
         {
-          "item": "bathrobe",
+          "item": "bathrobe-pink",
           "multilayer": [
             {
-              "item": "bathrobe-back",
+              "item": "bathrobe-pink-back",
               "layer": "jackets_back"
             }
           ],
@@ -735,6 +953,102 @@
           ],
           "outfits": [
             "octavio"
+          ]
+        },
+        {
+          "item": "bettelzebub-cape",
+          "multilayer": [
+            {
+              "item": "bettelzebub-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
+          ]
+        },
+        {
+          "item": "debut-jacket",
+          "multilayer": [
+            {
+              "item": "debut-jacket-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "debut"
+          ]
+        },
+        {
+          "item": "hakka-overcoat",
+          "outfits": [
+            "hakka"
+          ]
+        },
+        {
+          "item": "daki-robe",
+          "multilayer": [
+            {
+              "item": "daki-robe-back",
+              "layer": "jackets_back"
+            }
+          ],
+          "outfits": [
+            "daki"
+          ]
+        },
+        {
+          "item": "butler-jacket",
+          "multilayer": [
+            {
+              "item": "butler-back",
+              "layer": "jackets_back"
+            }
+          ]
+        },
+        {
+          "item": "when-youre-evil-cape",
+          "multilayer": [
+            {
+              "item": "when-youre-evil-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "goldbullet-jacket",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        {
+          "item": "goldbullet-cape",
+          "multilayer": [
+            {
+              "item": "goldbullet-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ]
+        },
+        {
+          "item": "shinri-jacket",
+          "outfits": [
+            "shinri"
+          ]
+        },
+        {
+          "item": "deerttel-cape",
+          "outfits": [
+            "deerttel"
+          ]
+        },
+        {
+          "item": "ghost-bride-jacket",
+          "outfits": [
+            "ghost-bride"
           ]
         }
       ],
@@ -807,10 +1121,10 @@
         },
         "jester",
         {
-          "item": "bathrobe",
+          "item": "bathrobe-pink",
           "multilayer": [
             {
-              "item": "bathrobe-back",
+              "item": "bathrobe-pink-back",
               "layer": "jackets_back"
             }
           ]
@@ -853,7 +1167,79 @@
               "layer": "jackets_back"
             }
           ]
-        }
+        },
+        {
+          "item": "bettelzebub-cape",
+          "multilayer": [
+            {
+              "item": "bettelzebub-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "bettelzebub"
+          ]
+        },
+        {
+          "item": "hakka-overcoat",
+          "outfits": [
+            "hakka"
+          ]
+        },
+        {
+          "item": "daki-robe",
+          "multilayer": [
+            {
+              "item": "daki-robe-back",
+              "layer": "jackets_2_back"
+            }
+          ],
+          "outfits": [
+            "daki"
+          ]
+        },
+        {
+          "item": "butler-jacket",
+          "multilayer": [
+            {
+              "item": "butler-back",
+              "layer": "jackets_2_back"
+            }
+          ]
+        },
+        {
+          "item": "when-youre-evil-cape",
+          "multilayer": [
+            {
+              "item": "when-youre-evil-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "goldbullet-cape",
+          "multilayer": [
+            {
+              "item": "goldbullet-cape-back",
+              "layer": "jackets_far_back"
+            }
+          ],
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        {
+          "item": "deerttel-cape",
+          "outfits": [
+            "deerttel"
+          ]
+        },
+        "goldbullet-jacket",
+        "shinri-jacket",
+        "ghost-bride-jacket"
       ],
       "colorMode": null,
       "colors": [],
@@ -900,7 +1286,24 @@
           "outfits": [
             "octavio"
           ]
-        }
+        },
+        {
+          "item": "when-youre-evil-belt",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "goldbullet-belts",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        "january-2025-small-belt",
+        "ruze-belt",
+        "pirate-belt",
+        "pirate-belt-sash",
+        "vesper-belt"
       ],
       "colorMode": null,
       "colors": [],
@@ -959,6 +1362,16 @@
         },
         {
           "item": "psock-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "shinri-socks",
+          "outfits": [
+            "shinri"
+          ],
           "requires": {
             "part": "feet",
             "item": "flat"
@@ -1039,7 +1452,10 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "debut",
+            "daki",
+            "deerttel"
           ],
           "requires": {
             "part": "feet",
@@ -1128,7 +1544,7 @@
           }
         },
         {
-          "item": "bath-slippers",
+          "item": "bath-slippers-pink",
           "outfits": [
             "spa"
           ],
@@ -1227,6 +1643,97 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "hakka-shoes",
+          "outfits": [
+            "hakka"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "butler-shoes",
+          "layer": "shoes-covered-full",
+          "outfits": [
+            "butler"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "when-youre-evil-boots",
+          "outfits": [
+            "when-youre-evil"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "pumpkin-king-boots",
+          "outfits": [
+            "pumpkin-king"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "goldbullet-boots",
+          "outfits": [
+            "goldbullet"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "shinri-shoes",
+          "outfits": [
+            "shinri"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "last-game-boots",
+          "outfits": [
+            "last-game"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "ghost-bride-boots",
+          "outfits": [
+            "ghost-bride"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "2024-expo-shoes",
+          "outfits": [
+            "2024-expo"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1251,7 +1758,8 @@
         {
           "item": "debut-underlayer-choker",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "2024-expo"
           ]
         },
         {
@@ -1319,6 +1827,18 @@
           "item": "octavio-tie",
           "outfits": [
             "octavio"
+          ]
+        },
+        {
+          "item": "when-youre-evil-scarf",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "ghost-bride-collar",
+          "outfits": [
+            "ghost-bride"
           ]
         }
       ],
@@ -1451,6 +1971,42 @@
             "punk"
           ]
         },
+        {
+          "item": "when-youre-evil-hat",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-hat",
+          "multilayer": [
+            {
+              "item": "pumpkin-king-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "outfits": [
+            "pumpkin-king"
+          ]
+        },
+        {
+          "item": "shinri-hat",
+          "outfits": [
+            "shinri"
+          ]
+        },
+        {
+          "item": "deerttel-antlers",
+          "outfits": [
+            "deerttel"
+          ]
+        },
+        {
+          "item": "ghost-bride-veil",
+          "outfits": [
+            "ghost-bride"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
         "demon-horns",
@@ -1532,7 +2088,8 @@
         {
           "item": "pirate-facial-hair",
           "outfits": [
-            "pirate"
+            "pirate",
+            "when-youre-evil"
           ]
         },
         "pirate-mustache",
@@ -1698,6 +2255,34 @@
             "betsy"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "pumpkin-king-necklace",
+          "outfits": [
+            "pumpkin-king"
+          ],
+          "thumbnail": true
+        },
+        {
+          "item": "goldbullet-necklace",
+          "outfits": [
+            "goldbullet"
+          ],
+          "thumbnail": true
+        },
+        {
+          "item": "shinri-earrings",
+          "outfits": [
+            "shinri"
+          ],
+          "thumbnail": true
+        },
+        {
+          "item": "2024-expo-bracelet",
+          "outfits": [
+            "2024-expo"
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1747,6 +2332,22 @@
         {
           "item": "betsy-earrings",
           "thumbnail": true
+        },
+        {
+          "item": "pumpkin-king-necklace",
+          "thumbnail": true
+        },
+        {
+          "item": "goldbullet-necklace",
+          "thumbnail": true
+        },
+        {
+          "item": "shinri-earrings",
+          "thumbnail": true
+        },
+        {
+          "item": "2024-expo-bracelet",
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -1795,7 +2396,10 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "when-youre-evil",
+            "deerttel",
+            "2024-expo"
           ]
         },
         {
@@ -1819,7 +2423,8 @@
         {
           "item": "unchained-gloves",
           "outfits": [
-            "unchained"
+            "unchained",
+            "butler"
           ]
         },
         {
@@ -1864,6 +2469,30 @@
         },
         {
           "item": "betsy-nail-polish-black"
+        },
+        {
+          "item": "debut-gloves",
+          "outfits": [
+            "debut"
+          ]
+        },
+        {
+          "item": "pumpkin-king-gloves",
+          "outfits": [
+            "pumpkin-king"
+          ]
+        },
+        {
+          "item": "goldbullet-gloves",
+          "outfits": [
+            "goldbullet"
+          ]
+        },
+        {
+          "item": "shinri-gloves",
+          "outfits": [
+            "shinri"
+          ]
         }
       ],
       "colorMode": null,
@@ -1909,6 +2538,12 @@
           "outfits": [
             "betsy"
           ]
+        },
+        {
+          "item": "2024-expo-flag",
+          "outfits": [
+            "2024-expo"
+          ]
         }
       ],
       "colorMode": null,
@@ -1928,8 +2563,11 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
-          ]
+            "debut-underlayer",
+            "daki",
+            "deerttel"
+          ],
+          "layer": "accessories-front_under-jacket"
         },
         {
           "item": "bettelmaid",
@@ -1977,7 +2615,18 @@
         },
         {
           "item": "braids"
-        }
+        },
+        {
+          "item": "debut-coat-charm"
+        },
+        {
+          "item": "debut-circus-whip",
+          "outfits": [
+            "debut"
+          ]
+        },
+        "deerttel-ears",
+        "deerttel-nose"
       ],
       "colorMode": null,
       "colors": [],
@@ -2020,6 +2669,22 @@
         },
         {
           "item": "braids"
+        },
+        {
+          "item": "debut-coat-charm",
+          "outfits": [
+            "debut"
+          ]
+        },
+        {
+          "item": "debut-circus-whip"
+        },
+        "deerttel-ears",
+        {
+          "item": "deerttel-nose",
+          "outfits": [
+            "deerttel"
+          ]
         }
       ],
       "colorMode": null,
@@ -2054,6 +2719,21 @@
         },
         {
           "item": "braids"
+        },
+        {
+          "item": "debut-coat-charm"
+        },
+        {
+          "item": "debut-circus-whip"
+        },
+        {
+          "item": "deerttel-ears",
+          "outfits": [
+            "deerttel"
+          ]
+        },
+        {
+          "item": "deerttel-nose"
         }
       ],
       "colorMode": null,
@@ -2078,20 +2758,26 @@
           ]
         },
         {
+          "item": "inkya-impulse-skirt",
+          "outfits": "inkya-impulse"
+        },
+        {
           "item": "bettelzebub-wings",
-          "multilayer": [
-            {
-              "item": "bettelzebub-cape",
-              "layer": "accessories-rear_back"
-            }
-          ],
           "outfits": [
             "bettelzebub"
           ]
         },
         {
-          "item": "inkya-impulse-skirt",
-          "outfits": "inkya-impulse"
+          "item": "when-youre-evil-hip-scarf",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-cape",
+          "outfits": [
+            "pumpkin-king"
+          ]
         }
       ],
       "colorMode": null,
@@ -2138,7 +2824,10 @@
         "mansion",
         "infinity",
         "blue-bettelion",
-        "trippy"
+        "trippy",
+        "da-tub",
+        "pink-night",
+        "waterfall"
       ],
       "colorMode": null,
       "colors": [],

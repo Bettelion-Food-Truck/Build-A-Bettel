@@ -184,6 +184,10 @@
     {
       "uid": "shinri",
       "name": "Shinri"
+    },
+    {
+      "uid": "last-game",
+      "name": "Last Game"
     }
   ],
   "parts": [
@@ -450,6 +454,12 @@
           "outfits": [
             "shinri"
           ]
+        },
+        {
+          "item": "last-game-pants",
+          "outfits": [
+            "last-game"
+          ]
         }
       ],
       "colorMode": null,
@@ -645,6 +655,18 @@
           "item": "shinri-shirt",
           "outfits": [
             "shinri"
+          ]
+        },
+        {
+          "item": "last-game-shirt",
+          "multilayer": [
+            {
+              "item": "last-game-shirt-back",
+              "layer": "shirts_back"
+            }
+          ],
+          "outfits": [
+            "last-game"
           ]
         },
         "snank"
@@ -1614,6 +1636,16 @@
           "requires": {
             "part": "feet",
             "item": "flat"
+          }
+        },
+        {
+          "item": "last-game-boots",
+          "outfits": [
+            "last-game"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
           }
         }
       ],

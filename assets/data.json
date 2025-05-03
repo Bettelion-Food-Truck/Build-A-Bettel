@@ -180,6 +180,10 @@
     {
       "uid": "goldbullet",
       "name": "Goldbullet"
+    },
+    {
+      "uid": "shinri",
+      "name": "Shinri"
     }
   ],
   "parts": [
@@ -440,6 +444,12 @@
           "outfits": [
             "goldbullet"
           ]
+        },
+        {
+          "item": "shinri-pants",
+          "outfits": [
+            "shinri"
+          ]
         }
       ],
       "colorMode": null,
@@ -631,6 +641,12 @@
             "goldbullet"
           ]
         },
+        {
+          "item": "shinri-shirt",
+          "outfits": [
+            "shinri"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -699,6 +715,12 @@
           "item": "goldbullet-harness",
           "outfits": [
             "goldbullet"
+          ]
+        },
+        {
+          "item": "shinri-buckle-shirt",
+          "outfits": [
+            "shinri"
           ]
         },
         "vesper-vest"
@@ -941,6 +963,12 @@
               "layer": "jackets_far_back"
             }
           ]
+        },
+        {
+          "item": "shinri-jacket",
+          "outfits": [
+            "shinri"
+          ]
         }
       ],
       "colorMode": null,
@@ -1122,7 +1150,8 @@
             "goldbullet"
           ]
         },
-        "goldbullet-jacket"
+        "goldbullet-jacket",
+        "shinri-jacket"
       ],
       "colorMode": null,
       "colors": [],
@@ -1245,6 +1274,16 @@
         },
         {
           "item": "psock-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "shinri-socks",
+          "outfits": [
+            "shinri"
+          ],
           "requires": {
             "part": "feet",
             "item": "flat"
@@ -1566,6 +1605,16 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "shinri-shoes",
+          "outfits": [
+            "shinri"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1812,6 +1861,12 @@
           ],
           "outfits": [
             "pumpkin-king"
+          ]
+        },
+        {
+          "item": "shinri-hat",
+          "outfits": [
+            "shinri"
           ]
         },
         "phantom-beanie",
@@ -2076,6 +2131,13 @@
             "goldbullet"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "shinri-earrings",
+          "outfits": [
+            "shinri"
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -2132,6 +2194,10 @@
         },
         {
           "item": "goldbullet-necklace",
+          "thumbnail": true
+        },
+        {
+          "item": "shinri-earrings",
           "thumbnail": true
         }
       ],
@@ -2269,6 +2335,12 @@
           "item": "goldbullet-gloves",
           "outfits": [
             "goldbullet"
+          ]
+        },
+        {
+          "item": "shinri-gloves",
+          "outfits": [
+            "shinri"
           ]
         }
       ],

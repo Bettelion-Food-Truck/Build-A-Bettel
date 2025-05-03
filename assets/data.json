@@ -188,6 +188,10 @@
     {
       "uid": "last-game",
       "name": "Last Game"
+    },
+    {
+      "uid": "deerttel",
+      "name": "Deerttel"
     }
   ],
   "parts": [
@@ -310,7 +314,8 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "deerttel"
           ]
         },
         {
@@ -490,7 +495,8 @@
         {
           "item": "debut-underlayer",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "deerttel"
           ]
         },
         {
@@ -687,7 +693,8 @@
             }
           ],
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "deerttel"
           ]
         },
         {
@@ -991,6 +998,12 @@
           "outfits": [
             "shinri"
           ]
+        },
+        {
+          "item": "deerttel-cape",
+          "outfits": [
+            "deerttel"
+          ]
         }
       ],
       "colorMode": null,
@@ -1170,6 +1183,12 @@
           ],
           "outfits": [
             "goldbullet"
+          ]
+        },
+        {
+          "item": "deerttel-cape",
+          "outfits": [
+            "deerttel"
           ]
         },
         "goldbullet-jacket",
@@ -1388,7 +1407,8 @@
           "outfits": [
             "debut-underlayer",
             "debut",
-            "daki"
+            "daki",
+            "deerttel"
           ],
           "requires": {
             "part": "feet",
@@ -1901,6 +1921,12 @@
             "shinri"
           ]
         },
+        {
+          "item": "deerttel-antlers",
+          "outfits": [
+            "deerttel"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
         "demon-horns",
@@ -2280,7 +2306,8 @@
           "item": "debut-underlayer",
           "outfits": [
             "debut-underlayer",
-            "when-youre-evil"
+            "when-youre-evil",
+            "deerttel"
           ]
         },
         {
@@ -2439,7 +2466,8 @@
           "item": "debut-underlayer",
           "outfits": [
             "debut-underlayer",
-            "daki"
+            "daki",
+            "deerttel"
           ],
           "layer": "accessories-front_under-jacket"
         },
@@ -2498,7 +2526,9 @@
           "outfits": [
             "debut"
           ]
-        }
+        },
+        "deerttel-ears",
+        "deerttel-nose"
       ],
       "colorMode": null,
       "colors": [],
@@ -2550,6 +2580,13 @@
         },
         {
           "item": "debut-circus-whip"
+        },
+        "deerttel-ears",
+        {
+          "item": "deerttel-nose",
+          "outfits": [
+            "deerttel"
+          ]
         }
       ],
       "colorMode": null,
@@ -2590,6 +2627,15 @@
         },
         {
           "item": "debut-circus-whip"
+        },
+        {
+          "item": "deerttel-ears",
+          "outfits": [
+            "deerttel"
+          ]
+        },
+        {
+          "item": "deerttel-nose"
         }
       ],
       "colorMode": null,

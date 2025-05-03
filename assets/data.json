@@ -196,6 +196,10 @@
     {
       "uid": "ghost-bride",
       "name": "Ghost Bride"
+    },
+    {
+      "uid": "2024-expo",
+      "name": "2024 Expo"
     }
   ],
   "parts": [
@@ -483,6 +487,12 @@
           "outfits": [
             "ghost-bride"
           ]
+        },
+        {
+          "item": "2024-expo-shorts",
+          "outfits": [
+            "2024-expo"
+          ]
         }
       ],
       "colorMode": null,
@@ -697,6 +707,12 @@
           "item": "ghost-bride-shirt",
           "outfits": [
             "ghost-bride"
+          ]
+        },
+        {
+          "item": "2024-expo-shirt",
+          "outfits": [
+            "2024-expo"
           ]
         },
         "snank"
@@ -1708,6 +1724,16 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "2024-expo-shoes",
+          "outfits": [
+            "2024-expo"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1732,7 +1758,8 @@
         {
           "item": "debut-underlayer-choker",
           "outfits": [
-            "debut-underlayer"
+            "debut-underlayer",
+            "2024-expo"
           ]
         },
         {
@@ -2249,6 +2276,13 @@
             "shinri"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "2024-expo-bracelet",
+          "outfits": [
+            "2024-expo"
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -2310,6 +2344,10 @@
         {
           "item": "shinri-earrings",
           "thumbnail": true
+        },
+        {
+          "item": "2024-expo-bracelet",
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -2360,7 +2398,8 @@
           "outfits": [
             "debut-underlayer",
             "when-youre-evil",
-            "deerttel"
+            "deerttel",
+            "2024-expo"
           ]
         },
         {
@@ -2498,6 +2537,12 @@
           "item": "betsy-cellphone",
           "outfits": [
             "betsy"
+          ]
+        },
+        {
+          "item": "2024-expo-flag",
+          "outfits": [
+            "2024-expo"
           ]
         }
       ],

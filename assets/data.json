@@ -40,8 +40,8 @@
     "hair",
     "glasses",
     "mask_elevated",
-    "hats",
     "neck",
+    "hats",
     "accessories-front",
     "accessories-front_2",
     "accessories-front_3",
@@ -192,6 +192,10 @@
     {
       "uid": "deerttel",
       "name": "Deerttel"
+    },
+    {
+      "uid": "ghost-bride",
+      "name": "Ghost Bride"
     }
   ],
   "parts": [
@@ -229,7 +233,8 @@
             "second-outfit",
             "battel",
             "butler",
-            "pumpkin-king"
+            "pumpkin-king",
+            "ghost-bride"
           ],
           "thumbnail": true
         },
@@ -465,6 +470,18 @@
           "outfits": [
             "last-game"
           ]
+        },
+        {
+          "item": "ghost-bride-skirt",
+          "multilayer": [
+            {
+              "item": "ghost-bride-skirt-back",
+              "layer": "pants_back"
+            }
+          ],
+          "outfits": [
+            "ghost-bride"
+          ]
         }
       ],
       "colorMode": null,
@@ -673,6 +690,12 @@
           ],
           "outfits": [
             "last-game"
+          ]
+        },
+        {
+          "item": "ghost-bride-shirt",
+          "outfits": [
+            "ghost-bride"
           ]
         },
         "snank"
@@ -1004,6 +1027,12 @@
           "outfits": [
             "deerttel"
           ]
+        },
+        {
+          "item": "ghost-bride-jacket",
+          "outfits": [
+            "ghost-bride"
+          ]
         }
       ],
       "colorMode": null,
@@ -1192,7 +1221,8 @@
           ]
         },
         "goldbullet-jacket",
-        "shinri-jacket"
+        "shinri-jacket",
+        "ghost-bride-jacket"
       ],
       "colorMode": null,
       "colors": [],
@@ -1667,6 +1697,16 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "ghost-bride-boots",
+          "outfits": [
+            "ghost-bride"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
         }
       ],
       "colorMode": null,
@@ -1765,6 +1805,12 @@
           "item": "when-youre-evil-scarf",
           "outfits": [
             "when-youre-evil"
+          ]
+        },
+        {
+          "item": "ghost-bride-collar",
+          "outfits": [
+            "ghost-bride"
           ]
         }
       ],
@@ -1925,6 +1971,12 @@
           "item": "deerttel-antlers",
           "outfits": [
             "deerttel"
+          ]
+        },
+        {
+          "item": "ghost-bride-veil",
+          "outfits": [
+            "ghost-bride"
           ]
         },
         "phantom-beanie",

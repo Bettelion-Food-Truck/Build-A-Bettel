@@ -3,6 +3,7 @@
     "backgrounds",
     "jackets_far_back",
     "accessories-rear",
+    "accessories-rear_2",
     "hats_back",
     "jackets_2_back",
     "jackets_back",
@@ -2829,6 +2830,7 @@
     },
     {
       "folder": "accessories-rear",
+      "icon": "icon-1",
       "items": [
         {
           "item": "showman-ribbon",
@@ -2865,7 +2867,55 @@
           "outfits": [
             "pumpkin-king"
           ]
-        }
+        },
+        "pole"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories-rear",
+      "layer": "accessories-rear_2",
+      "icon": "icon-2",
+      "items": [
+        {
+          "item": "showman-ribbon",
+          "outfits": [
+            "showman"
+          ]
+        },
+        "angel-wings",
+        "demon-tail",
+        {
+          "item": "goose-vp",
+          "outfits": [
+            "goose-vp"
+          ]
+        },
+        {
+          "item": "inkya-impulse-skirt",
+          "outfits": "inkya-impulse"
+        },
+        {
+          "item": "bettelzebub-wings",
+          "outfits": [
+            "bettelzebub"
+          ]
+        },
+        {
+          "item": "when-youre-evil-hip-scarf",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-cape",
+          "outfits": [
+            "pumpkin-king"
+          ]
+        },
+        "pole"
       ],
       "colorMode": null,
       "colors": [],
@@ -2917,7 +2967,13 @@
         "pink-night",
         "waterfall",
         "diamonds",
-        "diamonds-blue"
+        "diamonds-blue",
+        "white",
+        "carriage",
+        "stage",
+        "stage-alt",
+        "guild-hall",
+        "guild-hall-fire"
       ],
       "colorMode": null,
       "colors": [],

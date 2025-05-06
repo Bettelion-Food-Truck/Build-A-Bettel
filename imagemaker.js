@@ -1,14 +1,13 @@
 import Cooks from './scripts/cooks.js';
+import Outfits from './scripts/outfits.js';
 
 window.addEventListener('load', function (ev) {
 	let parts = [];
 	let layers = [];
-	let outfits = [];
 
 	/* relative path to the folder containing part folders */
 	const BASE_ASSET_PATH = "assets/";
 	const ASSET_PATH = BASE_ASSET_PATH;
-	const OUTFIT_PATH = BASE_ASSET_PATH + "outfits/";
 
 	const ICONS_PARTS = BASE_ASSET_PATH + "icons/parts/";
 	const UI_ASSETS = BASE_ASSET_PATH + "icons/ui/";
@@ -69,14 +68,10 @@ window.addEventListener('load', function (ev) {
 		"reset": document.getElementById("move_reset_button")
 	};
 
-	const outfitList = document.getElementById("outfit_list");
-
 	/* 1d array of part select button DOM elements */
 	const partsElements = [];
 	/* 2d array of item select button DOM elements */
 	const itemsElements = [];
-	/* 1d array of outfit select button DOM elements */
-	const outfitElements = [];
 
 	/* Render layers to this 1st and then canvas so that images render all at
 	   once instead of one layer at a time */
@@ -109,6 +104,7 @@ window.addEventListener('load', function (ev) {
 	const layerCanvases = [];
 
 	let cooks = null;
+	let outfits = null;
 
 	init();
 
@@ -129,7 +125,8 @@ window.addEventListener('load', function (ev) {
 		initPalette();
 		initMove();
 
-		initOutfitElements();
+		outfits = new Outfits();
+		outfits.init();
 
 		await initItemFunctions();
 
@@ -137,7 +134,12 @@ window.addEventListener('load', function (ev) {
 		initHorizontalScroll();
 
 		// Load game into a default outfit
-		await selectOutfit(outfits[0].uid);
+		if (await outfits.getCount() > 0) {
+			await selectOutfit(outfits.getOutfitUID(0));
+		} else {
+
+			reset();
+		}
 
 		let firstPart = 0;
 		for (let i = 0; i < parts.length; i++) {
@@ -168,8 +170,6 @@ window.addEventListener('load', function (ev) {
 
 		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
 		const json = await response.json();
-
-		outfits = json.outfits;
 
 		parts = json.parts;
 
@@ -473,7 +473,7 @@ window.addEventListener('load', function (ev) {
 	/**
 	 * Select outfit
 	 */
-	async function selectOutfit(outfit) {
+	async function selectOutfit(outfitId) {
 
 		for (let i = 0; i < parts.length; i++) {
 
@@ -491,7 +491,7 @@ window.addEventListener('load', function (ev) {
 			// Attempt to load outfit
 			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
 
-				if (items[itemIndex].outfits && items[itemIndex].outfits.indexOf(outfit) >= 0) {
+				if (items[itemIndex].outfits && items[itemIndex].outfits.indexOf(outfitId) >= 0) {
 
 					selectedItemIndex[i] = itemIndex;
 					break;
@@ -512,7 +512,7 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Assign item select callback functions to partsElements, itemsElements, and outfitElements members
+	 * Assign item select callback functions to partsElements, itemsElements members
 	 */
 	async function initItemFunctions() {
 
@@ -526,13 +526,6 @@ window.addEventListener('load', function (ev) {
 					updateSelectedItem(i, j);
 				});
 			}
-		}
-
-		for (let i = 0; i < outfits.length; i++) {
-			outfitElements[i].addEventListener('click', function () {
-				reset(false);
-				selectOutfit(outfits[i].uid);
-			});
 		}
 	}
 
@@ -707,40 +700,6 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
-	}
-
-	/**
-	 * Initialize outfitElements
-	 */
-	function initOutfitElements() {
-
-		for (let i = 0; i < outfits.length; i++) {
-
-			let outfit = outfits[i];
-
-			let outfitWrapper = document.createElement('button');
-			let outfitIcon = document.createElement('img');
-			let outfitLabel = document.createElement('span');
-
-			outfitIcon.id = "outfit_icon_" + i.toString();
-			outfitIcon.src = OUTFIT_PATH +
-				outfit.uid + ".png";
-
-			outfitIcon.alt = outfit.name ? outfit.name : outfit.uid;
-			outfitIcon.loading = "lazy";
-
-			outfitLabel.innerText = outfit.name ? outfit.name : outfit.uid;
-
-			outfitWrapper.appendChild(outfitIcon);
-			outfitWrapper.appendChild(outfitLabel);
-
-			outfitWrapper.id = "outfit_" + i.toString();
-			outfitWrapper.className = "outfit";
-
-			outfitList.appendChild(outfitWrapper);
-
-			outfitElements[i] = outfitWrapper;
-		}
 	}
 
 	function clearCanvas(canvas) {

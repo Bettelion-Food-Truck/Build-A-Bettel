@@ -806,6 +806,7 @@ window.addEventListener('load', function (ev) {
 		componentButton.style.display = "block";
 
 		outfitWrapper.style.display = "flex";
+		resetButton.style.display = "none";
 		componentWrapper.style.display = "none";
 	}
 
@@ -817,6 +818,7 @@ window.addEventListener('load', function (ev) {
 		componentButton.style.display = "none";
 
 		outfitWrapper.style.display = "none";
+		resetButton.style.display = "flex";
 		componentWrapper.style.display = "flex";
 	}
 

@@ -1,3 +1,5 @@
+import Cooks from './scripts/cooks.js';
+
 window.addEventListener('load', function (ev) {
 	let parts = [];
 	let layers = [];
@@ -109,6 +111,9 @@ window.addEventListener('load', function (ev) {
 	init();
 
 	async function init() {
+
+		var cooks = new Cooks();
+		cooks.test();
 
 		showLoading(0);
 
@@ -491,7 +496,7 @@ window.addEventListener('load', function (ev) {
 				}
 			}
 
-			for (j = 0; j < itemRange; j++) {
+			for (let j = 0; j < itemRange; j++) {
 
 				if (j == selectedItemIndex[i] + noneCount) {
 					itemsElements[i][j].classList.add("selected");

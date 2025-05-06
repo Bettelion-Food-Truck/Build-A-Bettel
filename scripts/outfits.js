@@ -16,6 +16,7 @@ export default class Outfits {
 
         this.container = document.getElementById(containerId);
         this.dataUrl = dataUrl;
+        this.onItemClick = onItemClick;
     }
 
     init() {

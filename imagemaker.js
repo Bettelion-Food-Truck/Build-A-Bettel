@@ -125,7 +125,7 @@ window.addEventListener('load', function (ev) {
 		initPalette();
 		initMove();
 
-		outfits = new Outfits();
+		outfits = new Outfits({ onItemClick: selectOutfit });
 		outfits.init();
 
 		await initItemFunctions();
@@ -474,6 +474,8 @@ window.addEventListener('load', function (ev) {
 	 * Select outfit
 	 */
 	async function selectOutfit(outfitId) {
+
+		reset(false);
 
 		for (let i = 0; i < parts.length; i++) {
 

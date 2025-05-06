@@ -2,16 +2,16 @@
     "path": "./assets/outfits/",
     "outfits": [
         {
-            "uid": "ruze",
-            "name": "Ruze Cosplay"
-        },
-        {
-            "uid": "second-outfit",
-            "name": "Second Outfit"
+            "uid": "debut",
+            "name": "Debut"
         },
         {
             "uid": "debut-underlayer",
             "name": "Debut - Underlayer"
+        },
+        {
+            "uid": "second-outfit",
+            "name": "Second Outfit"
         },
         {
             "uid": "showman",
@@ -102,8 +102,8 @@
             "name": "Octavio"
         },
         {
-            "uid": "debut",
-            "name": "Debut"
+            "uid": "ruze",
+            "name": "Ruze"
         },
         {
             "uid": "hakka",

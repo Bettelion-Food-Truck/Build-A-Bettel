@@ -209,6 +209,10 @@
     {
       "uid": "axel",
       "name": "Axel"
+    },
+    {
+      "uid": "2025-expo",
+      "name": "2025 Expo"
     }
   ],
   "parts": [
@@ -515,6 +519,12 @@
           "item": "axel-pants",
           "outfits": [
             "axel"
+          ]
+        },
+        {
+          "item": "2025-expo-shorts",
+          "outfits": [
+            "2025-expo"
           ]
         }
       ],
@@ -1097,6 +1107,12 @@
           "outfits": [
             "axel"
           ]
+        },
+        {
+          "item": "2025-expo-hoodie",
+          "outfits": [
+            "2025-expo"
+          ]
         }
       ],
       "colorMode": null,
@@ -1287,7 +1303,8 @@
         "goldbullet-jacket",
         "shinri-jacket",
         "ghost-bride-jacket",
-        "axel-jacket"
+        "axel-jacket",
+        "2025-expo-hoodie"
       ],
       "colorMode": null,
       "colors": [],
@@ -1443,6 +1460,16 @@
         },
         {
           "item": "betsy-grayson-fishnets-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "2025-expo-leggings",
+          "outfits": [
+            "2025-expo"
+          ],
           "requires": {
             "part": "feet",
             "item": "flat"
@@ -1825,6 +1852,16 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "2025-expo-shoes",
+          "outfits": [
+            "2025-expo"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1942,6 +1979,12 @@
           "item": "axel-tie",
           "outfits": [
             "axel"
+          ]
+        },
+        {
+          "item": "2025-expo-choker",
+          "outfits": [
+            "2025-expo"
           ]
         }
       ],
@@ -2625,6 +2668,12 @@
           "item": "axel-gloves",
           "outfits": [
             "axel"
+          ]
+        },
+        {
+          "item": "2025-expo-gloves",
+          "outfits": [
+            "2025-expo"
           ]
         }
       ],

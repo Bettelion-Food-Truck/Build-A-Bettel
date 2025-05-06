@@ -427,7 +427,7 @@ window.addEventListener('load', function (ev) {
 				selectedItemIndex[i] = itemIndex - noneCount;
 			}
 
-			for (j = 0; j < itemRange; j++) {
+			for (let j = 0; j < itemRange; j++) {
 
 				if (j == itemIndex) {
 					itemsElements[i][j].classList.add("selected");
@@ -452,7 +452,7 @@ window.addEventListener('load', function (ev) {
 				selectedItemIndex[i] = 0;
 			}
 
-			for (j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
+			for (let j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
 
 				if (j == selectedItemIndex[i]) {
 					itemsElements[i][j].classList.add("selected");
@@ -617,6 +617,7 @@ window.addEventListener('load', function (ev) {
 			partIcon.src = partIconSrc;
 			partIcon.alt = parts[i].name ? parts[i].name : parts[i].folder;
 			partIcon.title = parts[i].name ? parts[i].name : parts[i].folder;
+			partIcon.loading = "lazy";
 
 			part.appendChild(partIcon);
 
@@ -693,6 +694,7 @@ window.addEventListener('load', function (ev) {
 
 				itemIcon.alt = asset.name ? asset.name : itemName;
 				itemIcon.title = asset.name ? asset.name : itemName;
+				itemIcon.loading = "lazy";
 
 				item.appendChild(itemIcon);
 				item.id = "item_" + i.toString() + "_" + j.toString();
@@ -725,6 +727,8 @@ window.addEventListener('load', function (ev) {
 				outfit.uid + ".png";
 
 			outfitIcon.alt = outfit.name ? outfit.name : outfit.uid;
+			outfitIcon.loading = "lazy";
+
 			outfitLabel.innerText = outfit.name ? outfit.name : outfit.uid;
 
 			outfitWrapper.appendChild(outfitIcon);

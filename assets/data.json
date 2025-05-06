@@ -2976,6 +2976,12 @@
             "pumpkin-king"
           ]
         },
+        {
+          "item": "axel-tail",
+          "outfits": [
+            "axel"
+          ]
+        },
         "pole"
       ],
       "colorMode": null,
@@ -3023,7 +3029,8 @@
             "pumpkin-king"
           ]
         },
-        "pole"
+        "pole",
+        "axel-tail"
       ],
       "colorMode": null,
       "colors": [],

@@ -3,6 +3,7 @@
     "backgrounds",
     "jackets_far_back",
     "accessories-rear",
+    "accessories-rear_2",
     "hats_back",
     "jackets_2_back",
     "jackets_back",
@@ -200,6 +201,18 @@
     {
       "uid": "2024-expo",
       "name": "2024 Expo"
+    },
+    {
+      "uid": "betsy-grayson",
+      "name": "Betsy Grayson"
+    },
+    {
+      "uid": "axel",
+      "name": "Axel"
+    },
+    {
+      "uid": "2025-expo",
+      "name": "2025 Expo"
     }
   ],
   "parts": [
@@ -253,6 +266,13 @@
             "betsy"
           ],
           "thumbnail": true
+        },
+        {
+          "item": "betsy-grayson",
+          "outfits": [
+            "betsy-grayson"
+          ],
+          "thumbnail": true
         }
       ],
       "colorMode": null,
@@ -273,7 +293,8 @@
             "second-outfit",
             "sims",
             "daki",
-            "ghost-bride"
+            "ghost-bride",
+            "betsy-grayson"
           ],
           "thumbnail": true
         },
@@ -492,6 +513,18 @@
           "item": "2024-expo-shorts",
           "outfits": [
             "2024-expo"
+          ]
+        },
+        {
+          "item": "axel-pants",
+          "outfits": [
+            "axel"
+          ]
+        },
+        {
+          "item": "2025-expo-shorts",
+          "outfits": [
+            "2025-expo"
           ]
         }
       ],
@@ -715,6 +748,18 @@
             "2024-expo"
           ]
         },
+        {
+          "item": "betsy-grayson-bodysuit",
+          "outfits": [
+            "betsy-grayson"
+          ]
+        },
+        {
+          "item": "axel-shirt",
+          "outfits": [
+            "axel"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -790,6 +835,12 @@
           "item": "shinri-buckle-shirt",
           "outfits": [
             "shinri"
+          ]
+        },
+        {
+          "item": "axel-vest",
+          "outfits": [
+            "axel"
           ]
         },
         "vesper-vest"
@@ -1050,6 +1101,18 @@
           "outfits": [
             "ghost-bride"
           ]
+        },
+        {
+          "item": "axel-jacket",
+          "outfits": [
+            "axel"
+          ]
+        },
+        {
+          "item": "2025-expo-hoodie",
+          "outfits": [
+            "2025-expo"
+          ]
         }
       ],
       "colorMode": null,
@@ -1239,7 +1302,9 @@
         },
         "goldbullet-jacket",
         "shinri-jacket",
-        "ghost-bride-jacket"
+        "ghost-bride-jacket",
+        "axel-jacket",
+        "2025-expo-hoodie"
       ],
       "colorMode": null,
       "colors": [],
@@ -1297,6 +1362,12 @@
           "item": "goldbullet-belts",
           "outfits": [
             "goldbullet"
+          ]
+        },
+        {
+          "item": "betsy-grayson-hip-bows",
+          "outfits": [
+            "betsy-grayson"
           ]
         },
         "january-2025-small-belt",
@@ -1371,6 +1442,33 @@
           "item": "shinri-socks",
           "outfits": [
             "shinri"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "betsy-grayson-fishnets-heels",
+          "outfits": [
+            "betsy-grayson"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "betsy-grayson-fishnets-flat",
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "2025-expo-leggings",
+          "outfits": [
+            "2025-expo"
           ],
           "requires": {
             "part": "feet",
@@ -1734,6 +1832,36 @@
             "part": "feet",
             "item": "flat"
           }
+        },
+        {
+          "item": "betsy-grayson-boots",
+          "outfits": [
+            "betsy-grayson"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "pointed"
+          }
+        },
+        {
+          "item": "axel-shoes",
+          "outfits": [
+            "axel"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
+        },
+        {
+          "item": "2025-expo-shoes",
+          "outfits": [
+            "2025-expo"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1839,6 +1967,24 @@
           "item": "ghost-bride-collar",
           "outfits": [
             "ghost-bride"
+          ]
+        },
+        {
+          "item": "betsy-grayson-collar",
+          "outfits": [
+            "betsy-grayson"
+          ]
+        },
+        {
+          "item": "axel-tie",
+          "outfits": [
+            "axel"
+          ]
+        },
+        {
+          "item": "2025-expo-choker",
+          "outfits": [
+            "2025-expo"
           ]
         }
       ],
@@ -2007,6 +2153,18 @@
             "ghost-bride"
           ]
         },
+        {
+          "item": "betsy-grayson-hat",
+          "multilayer": [
+            {
+              "item": "betsy-grayson-hat-back",
+              "layer": "hats_back"
+            }
+          ],
+          "outfits": [
+            "betsy-grayson"
+          ]
+        },
         "phantom-beanie",
         "cat-ears",
         "demon-horns",
@@ -2160,6 +2318,12 @@
           "item": "spa-mask",
           "outfits": [
             "spa"
+          ]
+        },
+        {
+          "item": "betsy-grayson-mask",
+          "outfits": [
+            "betsy-grayson"
           ]
         }
       ],
@@ -2493,6 +2657,24 @@
           "outfits": [
             "shinri"
           ]
+        },
+        {
+          "item": "betsy-grayson-gloves",
+          "outfits": [
+            "betsy-grayson"
+          ]
+        },
+        {
+          "item": "axel-gloves",
+          "outfits": [
+            "axel"
+          ]
+        },
+        {
+          "item": "2025-expo-gloves",
+          "outfits": [
+            "2025-expo"
+          ]
         }
       ],
       "colorMode": null,
@@ -2543,6 +2725,12 @@
           "item": "2024-expo-flag",
           "outfits": [
             "2024-expo"
+          ]
+        },
+        {
+          "item": "betsy-grayson-cane",
+          "outfits": [
+            "betsy-grayson"
           ]
         }
       ],
@@ -2625,6 +2813,12 @@
             "debut"
           ]
         },
+        {
+          "item": "axel-braid",
+          "outfits": [
+            "axel"
+          ]
+        },
         "deerttel-ears",
         "deerttel-nose"
       ],
@@ -2685,7 +2879,8 @@
           "outfits": [
             "deerttel"
           ]
-        }
+        },
+        "axel-braid"
       ],
       "colorMode": null,
       "colors": [],
@@ -2734,7 +2929,8 @@
         },
         {
           "item": "deerttel-nose"
-        }
+        },
+        "axel-braid"
       ],
       "colorMode": null,
       "colors": [],
@@ -2742,6 +2938,7 @@
     },
     {
       "folder": "accessories-rear",
+      "icon": "icon-1",
       "items": [
         {
           "item": "showman-ribbon",
@@ -2778,7 +2975,62 @@
           "outfits": [
             "pumpkin-king"
           ]
-        }
+        },
+        {
+          "item": "axel-tail",
+          "outfits": [
+            "axel"
+          ]
+        },
+        "pole"
+      ],
+      "colorMode": null,
+      "colors": [],
+      "noneAllowed": true
+    },
+    {
+      "folder": "accessories-rear",
+      "layer": "accessories-rear_2",
+      "icon": "icon-2",
+      "items": [
+        {
+          "item": "showman-ribbon",
+          "outfits": [
+            "showman"
+          ]
+        },
+        "angel-wings",
+        "demon-tail",
+        {
+          "item": "goose-vp",
+          "outfits": [
+            "goose-vp"
+          ]
+        },
+        {
+          "item": "inkya-impulse-skirt",
+          "outfits": "inkya-impulse"
+        },
+        {
+          "item": "bettelzebub-wings",
+          "outfits": [
+            "bettelzebub"
+          ]
+        },
+        {
+          "item": "when-youre-evil-hip-scarf",
+          "outfits": [
+            "when-youre-evil"
+          ]
+        },
+        {
+          "item": "pumpkin-king-cape",
+          "outfits": [
+            "pumpkin-king"
+          ]
+        },
+        "pole",
+        "axel-tail"
       ],
       "colorMode": null,
       "colors": [],
@@ -2796,7 +3048,22 @@
         "skrunkly-phantom",
         "snank",
         "sock-puppet",
-        "sock-puppet-ears-two"
+        "sock-puppet-ears-two",
+        "jack-in-the-box",
+        "vestie",
+        "vestea",
+        "sorawrity",
+        "ruzader",
+        "phantom1",
+        "phantom2",
+        "phantom3",
+        "octoposse",
+        "magmite",
+        "machiroon",
+        "koipanion",
+        "hakkito",
+        "axelotl",
+        "altventurer"
       ],
       "colorMode": null,
       "colors": [],
@@ -2827,7 +3094,17 @@
         "trippy",
         "da-tub",
         "pink-night",
-        "waterfall"
+        "waterfall",
+        "diamonds",
+        "diamonds-blue",
+        "white",
+        "carriage",
+        "stage",
+        "stage-alt",
+        "guild-hall",
+        "guild-hall-fire",
+        "gala-red",
+        "gala-bettel"
       ],
       "colorMode": null,
       "colors": [],

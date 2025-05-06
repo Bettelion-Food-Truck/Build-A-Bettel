@@ -205,6 +205,10 @@
     {
       "uid": "betsy-grayson",
       "name": "Betsy Grayson"
+    },
+    {
+      "uid": "axel",
+      "name": "Axel"
     }
   ],
   "parts": [
@@ -506,6 +510,12 @@
           "outfits": [
             "2024-expo"
           ]
+        },
+        {
+          "item": "axel-pants",
+          "outfits": [
+            "axel"
+          ]
         }
       ],
       "colorMode": null,
@@ -734,6 +744,12 @@
             "betsy-grayson"
           ]
         },
+        {
+          "item": "axel-shirt",
+          "outfits": [
+            "axel"
+          ]
+        },
         "snank"
       ],
       "colorMode": null,
@@ -809,6 +825,12 @@
           "item": "shinri-buckle-shirt",
           "outfits": [
             "shinri"
+          ]
+        },
+        {
+          "item": "axel-vest",
+          "outfits": [
+            "axel"
           ]
         },
         "vesper-vest"
@@ -1069,6 +1091,12 @@
           "outfits": [
             "ghost-bride"
           ]
+        },
+        {
+          "item": "axel-jacket",
+          "outfits": [
+            "axel"
+          ]
         }
       ],
       "colorMode": null,
@@ -1258,7 +1286,8 @@
         },
         "goldbullet-jacket",
         "shinri-jacket",
-        "ghost-bride-jacket"
+        "ghost-bride-jacket",
+        "axel-jacket"
       ],
       "colorMode": null,
       "colors": [],
@@ -1786,6 +1815,16 @@
             "part": "feet",
             "item": "pointed"
           }
+        },
+        {
+          "item": "axel-shoes",
+          "outfits": [
+            "axel"
+          ],
+          "requires": {
+            "part": "feet",
+            "item": "flat"
+          }
         }
       ],
       "colorMode": null,
@@ -1897,6 +1936,12 @@
           "item": "betsy-grayson-collar",
           "outfits": [
             "betsy-grayson"
+          ]
+        },
+        {
+          "item": "axel-tie",
+          "outfits": [
+            "axel"
           ]
         }
       ],
@@ -2575,6 +2620,12 @@
           "outfits": [
             "betsy-grayson"
           ]
+        },
+        {
+          "item": "axel-gloves",
+          "outfits": [
+            "axel"
+          ]
         }
       ],
       "colorMode": null,
@@ -2713,6 +2764,12 @@
             "debut"
           ]
         },
+        {
+          "item": "axel-braid",
+          "outfits": [
+            "axel"
+          ]
+        },
         "deerttel-ears",
         "deerttel-nose"
       ],
@@ -2773,7 +2830,8 @@
           "outfits": [
             "deerttel"
           ]
-        }
+        },
+        "axel-braid"
       ],
       "colorMode": null,
       "colors": [],
@@ -2822,7 +2880,8 @@
         },
         {
           "item": "deerttel-nose"
-        }
+        },
+        "axel-braid"
       ],
       "colorMode": null,
       "colors": [],

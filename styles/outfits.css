@@ -1,10 +1,10 @@
-.outfit_list {
+.outfit-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
 }
 
-.outfit_list .outfit {
+.outfit-list .outfit {
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -20,13 +20,13 @@
     cursor: pointer;
 }
 
-.outfit_list .outfit img {
+.outfit-list .outfit img {
     width: 100%;
     height: auto;
     max-height: 100%;
 }
 
-.outfit_list .outfit span {
+.outfit-list .outfit span {
     border-top: 1px solid black;
     padding-top: 1px;
     margin-top: 1px;

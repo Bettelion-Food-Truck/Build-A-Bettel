@@ -6,6 +6,7 @@ window.addEventListener('load', function (ev) {
 	let layers = [];
 
 	/* relative path to the folder containing part folders */
+	const DATA_PATH = "./data/";
 	const BASE_ASSET_PATH = "assets/";
 	const ASSET_PATH = BASE_ASSET_PATH;
 
@@ -112,9 +113,6 @@ window.addEventListener('load', function (ev) {
 
 		showLoading(0);
 
-		cooks = new Cooks({ containerId: "cook-container" });
-		cooks.build();
-
 		await initData();
 
 		initButtons();
@@ -125,7 +123,17 @@ window.addEventListener('load', function (ev) {
 		initPalette();
 		initMove();
 
-		outfits = new Outfits({ onItemClick: selectOutfit });
+		cooks = new Cooks({
+			containerId: 'cook-container',
+			dataUrl: `${DATA_PATH}cooks.json`
+		});
+		cooks.build();
+
+		outfits = new Outfits({
+			onItemClick: selectOutfit,
+			containerId: 'outfit-list',
+			dataUrl: `${DATA_PATH}outfits.json`
+		});
 		outfits.init();
 
 		await initItemFunctions();

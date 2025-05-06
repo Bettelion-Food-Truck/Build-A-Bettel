@@ -12,7 +12,7 @@ export default class Outfits {
     outfitPath = null;
     outfits = [];
 
-    constructor({ onItemClick = null, containerId = 'outfit_list', dataUrl = "./data/outfits.json", ...otherArgs } = {}) {
+    constructor({ onItemClick = null, containerId = 'outfit-list', dataUrl = "outfits.json", ...otherArgs } = {}) {
 
         this.container = document.getElementById(containerId);
         this.dataUrl = dataUrl;

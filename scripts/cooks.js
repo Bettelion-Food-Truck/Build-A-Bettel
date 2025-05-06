@@ -5,7 +5,7 @@ export default class Cooks {
     container = null;
     dataUrl = null;
 
-    constructor({ containerId = 'cook-container', dataUrl = "./data/cooks.json", ...otherArgs } = {}) {
+    constructor({ containerId = 'cook-container', dataUrl = "cooks.json", ...otherArgs } = {}) {
 
         this.container = document.getElementById(containerId);
         this.dataUrl = dataUrl;

@@ -1,3 +1,5 @@
+@import url("./styles/cooks.css");
+
 :root {
     /* the color of the background of the loading sign*/
     --loading-bg-color: #ffffff;
@@ -560,7 +562,7 @@ ul li img {
     color: white;
 }
 
-.info_modal .modal-header h2 {
+.info_modal .modal-header h1 {
     flex-grow: 1;
 }
 
@@ -583,32 +585,10 @@ ul li img {
     font-size: 110%;
 }
 
-.info_modal img {
-    max-width: 100%;
-    height: auto;
-}
-
 .info_modal .modal-image {
     border-radius: 5px;
-}
-
-.info_modal .cook-wrapper {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
-    justify-items: center;
-    align-items: stretch;
-
-    margin-bottom: 1.5rem;
-}
-
-@media (max-width: 500px) {
-
-    .info_modal .cook-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    max-width: 100%;
+    height: auto;
 }
 
 /* Portrait layout changes */

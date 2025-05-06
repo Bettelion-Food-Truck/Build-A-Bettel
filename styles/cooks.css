@@ -1,0 +1,23 @@
+.cook-section-wrapper {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: center;
+    align-items: stretch;
+
+    margin-bottom: 1.5rem;
+}
+
+.cook-section-wrapper .cook img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 500px) {
+
+    .cook-section-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

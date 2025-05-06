@@ -108,14 +108,16 @@ window.addEventListener('load', function (ev) {
 	where layerCanvases[i] depicts the selected item of part i in the selected color */
 	const layerCanvases = [];
 
+	let cooks = null;
+
 	init();
 
 	async function init() {
 
-		var cooks = new Cooks();
-		cooks.test();
-
 		showLoading(0);
+
+		cooks = new Cooks({ containerId: "cook-container" });
+		cooks.build();
 
 		await initData();
 

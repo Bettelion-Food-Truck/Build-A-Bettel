@@ -1,0 +1,66 @@
+{
+    "roles": [
+        {
+            "name": "Project Lead",
+            "section": "lead"
+        },
+        {
+            "name": "Artists",
+            "section": "artists"
+        },
+        {
+            "name": "Developers",
+            "section": "developers"
+        }
+    ],
+    "lead": [
+        {
+            "name": "Finarael",
+            "image": "./cooks/finarael.png"
+        }
+    ],
+    "artists": [
+        {
+            "name": "Spook",
+            "image": "./cooks/spook.png"
+        },
+        {
+            "name": "Jahgyong",
+            "image": "./cooks/jahgyong.png"
+        },
+        {
+            "name": "Zmays",
+            "image": "./cooks/zmays.png"
+        },
+        {
+            "name": "AtomicReih",
+            "image": "./cooks/atomicreih.png"
+        },
+        {
+            "name": "RoseGhostea",
+            "image": "./cooks/roseghostea.png"
+        },
+        {
+            "name": "Pafufufun",
+            "image": "./cooks/pafufufun.png"
+        },
+        {
+            "name": "Raisins0up",
+            "image": "./cooks/raisins0up.png"
+        },
+        {
+            "name": "Aether",
+            "image": "./cooks/aether.png"
+        },
+        {
+            "name": "Hioko",
+            "image": "./cooks/hioko.png"
+        }
+    ],
+    "developers": [
+        {
+            "name": "GlitchTech",
+            "image": "./cooks/glitchtech.png"
+        }
+    ]
+}

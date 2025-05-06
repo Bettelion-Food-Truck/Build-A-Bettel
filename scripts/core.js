@@ -1,5 +1,5 @@
-import Cooks from './scripts/cooks.js';
-import Outfits from './scripts/outfits.js';
+import Cooks from './cooks.js';
+import Outfits from './outfits.js';
 
 window.addEventListener('load', function (ev) {
 	let parts = [];

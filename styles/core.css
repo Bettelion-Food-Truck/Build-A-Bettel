@@ -1,6 +1,11 @@
-@import url("./styles/cooks.css");
-@import url("./styles/outfits.css");
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* Module CSS */
+@import url("./cooks.css");
+@import url("./outfits.css");
+
+/* Base CSS */
 :root {
     /* the color of the background of the loading sign*/
     --loading-bg-color: #ffffff;
@@ -27,27 +32,27 @@
 
     /* the color/image filepath of the item menu toggle button */
     --item-toggle-color: #ffffff;
-    --item-toggle-img: url("assets/icons/ui/icon-grid.png");
+    --item-toggle-img: url("../assets/icons/ui/icon-grid.png");
 
     /* the color/image filepath of the palette toggle button */
     --palette-toggle-color: #ffffff;
-    --palette-toggle-img: url("assets/icons/ui/icon-colors.png");
+    --palette-toggle-img: url("../assets/icons/ui/icon-colors.png");
 
     /* the color/image filepath of the info button */
     --move-toggle-color: #ffffff;
-    --move-toggle-img: url("assets/icons/ui/icon-move.png");
+    --move-toggle-img: url("../assets/icons/ui/icon-move.png");
 
     /* the color/image filepath of the zoom in button */
     --zoom-in-color: #00000000;
-    --zoom-in-img: url("assets/icons/ui/zoom-in.png");
+    --zoom-in-img: url("../assets/icons/ui/zoom-in.png");
 
     /* the color/image filepath of the zoom out button */
     --zoom-out-color: #00000000;
-    --zoom-out-img: url("assets/icons/ui/zoom-out.png");
+    --zoom-out-img: url("../assets/icons/ui/zoom-out.png");
 
     /* the color/image filepath of the zoom reset button */
     --zoom-reset-color: #00000000;
-    --zoom-reset-img: url("assets/icons/ui/zoom-reset.png");
+    --zoom-reset-img: url("../assets/icons/ui/zoom-reset.png");
 
     /* save button vars */
     --save-button-color: #006400;

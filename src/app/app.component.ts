@@ -11,6 +11,7 @@ import { PaletteComponent } from "./components/palette/palette.component";
 import { OutfitsComponent } from "./components/outfits/outfits.component";
 
 import { InfoComponent } from './components/info/info.component';
+import { LogService } from '@services/log/log.service';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,17 @@ export class AppComponent {
 
   readonly dialog = inject(MatDialog);
 
+  constructor(
+    private logger: LogService
+  ) { }
+
+  ngOnInit() {
+    this.logger.info("AppComponent: ngOnInit()");
+  }
+
   showCredits() {
+    this.logger.info("AppComponent: showCredits()");
+
     this.dialog.open(InfoComponent);
   }
 }

@@ -18,7 +18,6 @@ export class AssetDataServiceService {
   private imageFolder = signal("");
   private thumbnailFolder = signal("");
 
-
   constructor(private logger: LogService) {
 
     this.loadAssetData();
@@ -54,6 +53,8 @@ export class AssetDataServiceService {
 
       this.parts[partIndex] = partData[partIndex] satisfies Part;
 
+      this.parts[partIndex].path = `${this.assetPath}${this.parts[partIndex].folder}`;
+
       if (!this.parts[partIndex].layer) {
         // Ensure layer is set
         this.parts[partIndex].layer = this.parts[partIndex].folder;
@@ -65,6 +66,16 @@ export class AssetDataServiceService {
 
   getParts(): Signal<Part[]> {
 
-    return this.partSignal;
+    return this.partSignal.asReadonly();
+  }
+
+  getImageFolder(): Signal<string> {
+
+    return this.imageFolder.asReadonly();
+  }
+
+  getThumbnailFolder(): Signal<string> {
+
+    return this.thumbnailFolder.asReadonly();
   }
 }

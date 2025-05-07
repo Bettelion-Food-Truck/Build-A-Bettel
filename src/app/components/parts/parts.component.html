@@ -4,6 +4,13 @@
             <li id="random_button">
                 <img src="./icons/icon-random.png" alt="Randomize outfit" title="Randomize outfit" />
             </li>
+
+            <ng-container *ngFor="let part of partSignal(); let i = index">
+                <li id="part_{{i}}" [class.hidden]="getPartVisibility(i)">
+                    <img [src]="part.path + '/' + part.icon" [alt]="part.name ? part.name : part.folder"
+                        [title]="part.name ? part.name : part.folder" />
+                </li>
+            </ng-container>
         </ul>
     </div>
 </div>

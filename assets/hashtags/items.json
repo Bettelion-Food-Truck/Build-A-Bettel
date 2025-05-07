@@ -1,0 +1,12 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        "bottom-left",
+        "bottom-right",
+        "top-left",
+        "top-right"
+    ]
+}

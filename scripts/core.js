@@ -151,7 +151,7 @@ window.addEventListener('load', function (ev) {
 
 		let firstPart = 0;
 		for (let i = 0; i < parts.length; i++) {
-			if (parts[i].hidePartList) {
+			if (parts[i].hideFromPartsList) {
 				continue;
 			}
 			firstPart = i;
@@ -165,23 +165,33 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function initData() {
 
-		/*
-		// Disabled for now; might implement later.
-		fetch(ASSET_PATH + "data-compiled.json", { cache: "no-cache" }).then((res) => {
-			if (res.ok) {
-				console.log("compiled data.json found");
-			} else {
-				console.log("compiled data.json missing");
-			}
-		});
-		*/
-
-		const response = await fetch(ASSET_PATH + "data.json", { cache: "no-cache" });
-		const json = await response.json();
+		let response = await fetch(DATA_PATH + "parts.json", { cache: "no-cache" });
+		let json = await response.json();
 
 		parts = json.parts;
 
+		let urls = [];
+
 		for (let partIndex = 0; partIndex < parts.length; partIndex++) {
+
+			urls.push(`${json.path}${parts[partIndex].folder}/${parts[partIndex].items}`);
+		}
+
+		const data = await Promise.all(
+			parts.map(
+				async part => {
+					const resp = await fetch(`${json.path}${part.folder}/${part.items}`, { cache: "no-cache" });
+
+					const jsonResp = await resp.json();
+
+					return { ...part, ...jsonResp };
+				}
+			)
+		);
+
+		for (let partIndex = 0; partIndex < data.length; partIndex++) {
+
+			parts[partIndex] = data[partIndex];
 
 			if (!parts[partIndex].layer) {
 				parts[partIndex].layer = parts[partIndex].folder;
@@ -189,6 +199,10 @@ window.addEventListener('load', function (ev) {
 		}
 
 		// Build layer data to know which part is associated
+
+		response = await fetch(DATA_PATH + "layers.json", { cache: "no-cache" });
+		json = await response.json();
+
 		let rawLayers = json.layers;
 		layers = []
 
@@ -612,10 +626,7 @@ window.addEventListener('load', function (ev) {
 			let part = document.createElement('li');
 			let partIcon = document.createElement('img');
 
-			let partIconSrc = `${ICONS_PARTS}${parts[i].folder}/icon.png`;
-			if (parts[i].icon) {
-				partIconSrc = `${ICONS_PARTS}${parts[i].folder}/${parts[i].icon}.png`;
-			}
+			let partIconSrc = `${ICONS_PARTS}${parts[i].folder}/${parts[i].icon}`;
 
 			partIcon.src = partIconSrc;
 			partIcon.alt = parts[i].name ? parts[i].name : parts[i].folder;
@@ -628,7 +639,7 @@ window.addEventListener('load', function (ev) {
 
 			// Hide if commanded or only one option with no variants
 			if (
-				parts[i].hidePartList || (
+				parts[i].hideFromPartsList || (
 					parts[i].items.length <= 1 &&
 					!parts[i].noneAllowed && (
 						!parts[i].colors || parts[i].colors.length === 0

@@ -1,0 +1,42 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": false,
+    "items": [
+        {
+            "item": "default",
+            "thumbnail": true
+        },
+        {
+            "item": "second",
+            "outfits": [
+                "second-outfit",
+                "battel",
+                "butler",
+                "pumpkin-king",
+                "ghost-bride"
+            ],
+            "thumbnail": true
+        },
+        {
+            "item": "betsy-hair",
+            "outfits": [
+                "betsy"
+            ],
+            "thumbnail": true
+        },
+        {
+            "item": "betsy-grayson",
+            "outfits": [
+                "betsy-grayson"
+            ],
+            "thumbnail": true
+        },
+        {
+            "item": "bald",
+            "hide": true,
+            "thumbnail": true
+        }
+    ]
+}

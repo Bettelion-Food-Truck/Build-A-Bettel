@@ -1,0 +1,148 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        {
+            "item": "showman-gloves",
+            "outfits": [
+                "showman"
+            ]
+        },
+        {
+            "item": "punk-rings",
+            "outfits": [
+                "punk"
+            ],
+            "thumbnail": true
+        },
+        {
+            "item": "punk-rings-right",
+            "thumbnail": true
+        },
+        {
+            "item": "punk-rings-left",
+            "thumbnail": true
+        },
+        {
+            "item": "debut-underlayer",
+            "outfits": [
+                "debut-underlayer",
+                "when-youre-evil",
+                "deerttel",
+                "2024-expo"
+            ]
+        },
+        {
+            "item": "second-outfit",
+            "outfits": [
+                "second-outfit"
+            ]
+        },
+        {
+            "item": "magni-gloves",
+            "outfits": [
+                "magni"
+            ]
+        },
+        {
+            "item": "sims-gloves",
+            "outfits": [
+                "sims"
+            ]
+        },
+        {
+            "item": "unchained-gloves",
+            "outfits": [
+                "unchained",
+                "butler"
+            ]
+        },
+        {
+            "item": "clown",
+            "outfits": [
+                "clown"
+            ]
+        },
+        {
+            "item": "deadworld-gloves",
+            "outfits": [
+                "dead-world"
+            ]
+        },
+        {
+            "item": "vesper-gloves",
+            "outfits": [
+                "vesper",
+                "octavio"
+            ]
+        },
+        {
+            "item": "woven-fates-gloves",
+            "outfits": [
+                "woven-fates"
+            ]
+        },
+        {
+            "item": "inkya-impulse-sleeves",
+            "outfits": [
+                "inkya-impulse"
+            ]
+        },
+        {
+            "item": "betsy-nail-polish",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "betsy-nail-polish-purple"
+        },
+        {
+            "item": "betsy-nail-polish-black"
+        },
+        {
+            "item": "debut-gloves",
+            "outfits": [
+                "debut"
+            ]
+        },
+        {
+            "item": "pumpkin-king-gloves",
+            "outfits": [
+                "pumpkin-king"
+            ]
+        },
+        {
+            "item": "goldbullet-gloves",
+            "outfits": [
+                "goldbullet"
+            ]
+        },
+        {
+            "item": "shinri-gloves",
+            "outfits": [
+                "shinri"
+            ]
+        },
+        {
+            "item": "betsy-grayson-gloves",
+            "outfits": [
+                "betsy-grayson"
+            ]
+        },
+        {
+            "item": "axel-gloves",
+            "outfits": [
+                "axel"
+            ]
+        },
+        {
+            "item": "2025-expo-gloves",
+            "outfits": [
+                "2025-expo"
+            ]
+        }
+    ]
+}

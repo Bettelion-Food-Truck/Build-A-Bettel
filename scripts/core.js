@@ -1,5 +1,6 @@
 import Cooks from './cooks.js';
 import Outfits from './outfits.js';
+import { Part, Parts } from './parts.js';
 
 window.addEventListener('load', function (ev) {
 	let parts = [];
@@ -197,6 +198,8 @@ window.addEventListener('load', function (ev) {
 				parts[partIndex].layer = parts[partIndex].folder;
 			}
 		}
+
+		console.log(parts);
 
 		// Build layer data to know which part is associated
 

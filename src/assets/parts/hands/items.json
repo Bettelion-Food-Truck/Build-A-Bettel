@@ -1,0 +1,15 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": false,
+    "items": [
+        "normal",
+        {
+            "item": "corrupted",
+            "outfits": [
+                "second-outfit"
+            ]
+        }
+    ]
+}

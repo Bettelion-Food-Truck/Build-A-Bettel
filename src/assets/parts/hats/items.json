@@ -1,0 +1,184 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        {
+            "item": "showman-hat-front",
+            "multilayer": [
+                {
+                    "item": "showman-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "showman"
+            ]
+        },
+        {
+            "item": "january-2025-hat",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "second-outfit",
+            "outfits": [
+                "second-outfit"
+            ]
+        },
+        {
+            "item": "bettelmaid",
+            "outfits": [
+                "bettelmaid"
+            ]
+        },
+        {
+            "item": "battel-hat",
+            "outfits": [
+                "battel"
+            ]
+        },
+        {
+            "item": "pirate-hat",
+            "outfits": [
+                "pirate"
+            ]
+        },
+        {
+            "item": "magni-hat",
+            "outfits": [
+                "magni"
+            ]
+        },
+        {
+            "item": "sims-hat",
+            "multilayer": [
+                {
+                    "item": "sims-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "sims"
+            ]
+        },
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "jester",
+            "outfits": [
+                "jester"
+            ],
+            "requires": {
+                "part": "hair",
+                "item": "bald"
+            }
+        },
+        {
+            "item": "hair-towel",
+            "outfits": [
+                "spa"
+            ],
+            "requires": {
+                "part": "hair",
+                "item": "bald"
+            }
+        },
+        {
+            "item": "clown",
+            "multilayer": [
+                {
+                    "item": "clown-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "clown"
+            ]
+        },
+        {
+            "item": "deadworld-hat-front",
+            "multilayer": [
+                {
+                    "item": "deadworld-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "dead-world"
+            ]
+        },
+        {
+            "item": "bettelzebub-crown",
+            "outfits": [
+                "bettelzebub"
+            ]
+        },
+        {
+            "item": "party-hat",
+            "outfits": [
+                "punk"
+            ]
+        },
+        {
+            "item": "when-youre-evil-hat",
+            "outfits": [
+                "when-youre-evil"
+            ]
+        },
+        {
+            "item": "pumpkin-king-hat",
+            "multilayer": [
+                {
+                    "item": "pumpkin-king-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "pumpkin-king"
+            ]
+        },
+        {
+            "item": "shinri-hat",
+            "outfits": [
+                "shinri"
+            ]
+        },
+        {
+            "item": "deerttel-antlers",
+            "outfits": [
+                "deerttel"
+            ]
+        },
+        {
+            "item": "ghost-bride-veil",
+            "outfits": [
+                "ghost-bride"
+            ]
+        },
+        {
+            "item": "betsy-grayson-hat",
+            "multilayer": [
+                {
+                    "item": "betsy-grayson-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "betsy-grayson"
+            ]
+        },
+        "phantom-beanie",
+        "cat-ears",
+        "demon-horns",
+        "halo",
+        "dog-ears",
+        "sleephat"
+    ]
+}

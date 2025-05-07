@@ -1,0 +1,17 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        "full-hearts",
+        "line-hearts",
+        "shoujo-bubbles",
+        "black",
+        "blue",
+        "pink",
+        "purple",
+        "white",
+        "yellow"
+    ]
+}

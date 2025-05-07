@@ -1,0 +1,51 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        {
+            "item": "showman-ribbon",
+            "outfits": [
+                "showman"
+            ]
+        },
+        "angel-wings",
+        "demon-tail",
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "inkya-impulse-skirt",
+            "outfits": "inkya-impulse"
+        },
+        {
+            "item": "bettelzebub-wings",
+            "outfits": [
+                "bettelzebub"
+            ]
+        },
+        {
+            "item": "when-youre-evil-hip-scarf",
+            "outfits": [
+                "when-youre-evil"
+            ]
+        },
+        {
+            "item": "pumpkin-king-cape",
+            "outfits": [
+                "pumpkin-king"
+            ]
+        },
+        {
+            "item": "axel-tail",
+            "outfits": [
+                "axel"
+            ]
+        },
+        "pole"
+    ]
+}

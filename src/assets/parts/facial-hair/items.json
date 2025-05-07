@@ -1,0 +1,18 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        {
+            "item": "pirate-facial-hair",
+            "outfits": [
+                "pirate",
+                "when-youre-evil"
+            ]
+        },
+        "pirate-mustache",
+        "pirate-beard",
+        "whiskers"
+    ]
+}

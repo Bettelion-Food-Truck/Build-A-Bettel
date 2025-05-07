@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    min-height: 0;
+    min-width: 0;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+@supports (max-height: 100dvh) {
+    body {
+        height:100dvh;
+    }
+}
+
+/* Base Variables */
+:root {
+    /* the color of the background of the loading sign*/
+    --loading-bg-color: #ffffff;
+
+    /* the color of the border around selected part and icon buttons */
+    --select-color: #660073;
+
+    /* the color/image filepath of the background of the image display area */
+    --image-background-color: hsla(0, 0%, 93.3%, 0.5);
+
+    /* the color/image filepath of the random button */
+    --random-button-color: #ffbd15;
+    --random-button-png: "none";
+
+    /* the color filepath of the parts menu background*/
+    --parts-menu-color: #eeeeee;
+
+    /* the color/image filepath of the items menu background*/
+    --control-panel-color: #cccccc;
+    --control-panel-png: "none";
+
+    /* the color of the item buttons */
+    --item-button-color: #ffffff;
+
+    /* the color/image filepath of the item menu toggle button */
+    --item-toggle-color: #ffffff;
+    --item-toggle-img: url("../public/icons/ui/icon-grid.png");
+
+    /* the color/image filepath of the palette toggle button */
+    --palette-toggle-color: #ffffff;
+    --palette-toggle-img: url("../public/icons/ui/icon-colors.png");
+
+    /* the color/image filepath of the info button */
+    --move-toggle-color: #ffffff;
+    --move-toggle-img: url("../public/icons/ui/icon-move.png");
+
+    /* the color/image filepath of the zoom in button */
+    --zoom-in-color: #00000000;
+    --zoom-in-img: url("../public/icons/ui/zoom-in.png");
+
+    /* the color/image filepath of the zoom out button */
+    --zoom-out-color: #00000000;
+    --zoom-out-img: url("../public/icons/ui/zoom-out.png");
+
+    /* the color/image filepath of the zoom reset button */
+    --zoom-reset-color: #00000000;
+    --zoom-reset-img: url("../public/icons/ui/zoom-reset.png");
+
+    /* save button vars */
+    --save-button-color: #006400;
+
+    /* random purple color */
+    --random-purple-color: #660073;
+
+    /* control sizes */
+    --ui-control-size: 50px;
+    --part-control-size: 60px;
+}
+
+/* Animations */
+@-webkit-keyframes animateFromTop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animateFromTop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}

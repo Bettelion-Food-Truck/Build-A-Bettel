@@ -1,0 +1,54 @@
+.parts_menu_wrapper {
+    position: relative;
+
+    background-color: var(--parts-menu-color, #eeeeee);
+
+    .parts_menu {
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: thin;
+        scrollbar-color: var(--random-purple-color, purple) lightgrey;
+        -webkit-overflow-scrolling: touch;
+
+        height: calc(var(--part-control-size, 60px) * 1.15);
+        margin: 0;
+        white-space: nowrap;
+
+        ul {
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            position: relative;
+            list-style: "none";
+
+            li {
+                width: var(--part-control-size, 60px);
+                height: var(--part-control-size, 60px);
+
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* Portrait layout changes */
+@media (orientation: portrait) {
+    .parts_menu_wrapper {
+        min-height: 10vh;
+
+        .parts_menu {
+            height: 100%;
+
+            ul {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+}

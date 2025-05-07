@@ -1,5 +1,14 @@
-/* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@use "@angular/material" as mat;
+
+html {
+    color-scheme: light;
+    @include mat.theme(
+        (
+            typography: Roboto,
+            density: 0
+        )
+    );
+}
 
 * {
     min-height: 0;
@@ -20,12 +29,6 @@ body {
     justify-content: center;
 
     overflow: hidden;
-
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
 }
 
 ul li img {
@@ -100,4 +103,11 @@ ul li img {
 
     /* Material Overrides */
     --mat-dialog-container-max-width: 650px;
+
+    @include mat.dialog-overrides(
+        (
+            container-color: #e0e0e0,
+            headline-padding: 0
+        )
+    );
 }

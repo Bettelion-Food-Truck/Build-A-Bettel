@@ -8,12 +8,12 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
+import { MatButton } from '@angular/material/button';
 
 import data from '@data/credits.json';
 import { Group, Contributor } from '@models/credits.model';
 
 import { LogService } from '../../services/log/log.service';
-import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-info',

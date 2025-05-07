@@ -30,7 +30,7 @@
           <button id="reset_button">Reset</button>
           <button id="outfit_button">Outfits</button>
           <button id="component_button" style="display: none;">Components</button>
-          <button id="info_button">Credits</button>
+          <button (click)="showCredits()">Credits</button>
         </div>
 
         <button id="save_button" href="#" download="gb.png">
@@ -58,34 +58,4 @@
       </div>
     </div>
   </div>
-
-  <!-- Project Credits and other information -->
-  <div id="info_modal" class="info_modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1>Build-A-Bettel</h1>
-        <span id="info_modal_close" class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-
-        <img src="./images/build-a-bettel.png" alt="Build-A-Bettel logo image" class="modal-image" loading="lazy" />
-
-        <p>
-          Build-A-Bettel is an interactive fanart experience by the Bettelion Food Truck. You can
-          customize Bettel with various outfits and accessories.
-        </p>
-
-        <p>
-          This project is an <a href="https://github.com/Bettelion-Food-Truck/Build-A-Bettel" target="_blank">open
-            source</a> creation by the <a href="https://bettelion-food-truck.github.io/" target="_blank">Bettelion Food
-            Truck</a>. It
-          is built upon the open source character creator framework <a href="https://github.com/ksadov/hackrew"
-            target="_blank">hackrew</a>.
-        </p>
-
-        <div id="cook-container"></div>
-      </div>
-    </div>
-  </div>
-
 </div>

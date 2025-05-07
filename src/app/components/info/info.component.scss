@@ -1,0 +1,34 @@
+.contributors {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: center;
+    align-items: stretch;
+
+    margin-bottom: 1.5rem;
+
+    .contributor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.dialog-actions {
+    background-color: var(--random-purple-color, purple);
+    color: white;
+}
+
+@media (max-width: 500px) {
+    .contributors {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

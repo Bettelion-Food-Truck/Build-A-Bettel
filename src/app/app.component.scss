@@ -1,8 +1,3 @@
-ul li img {
-    width: 100%;
-    height: 100%;
-}
-
 .app_wrapper {
     display: block;
     align-self: flex-start;
@@ -15,13 +10,6 @@ ul li img {
     max-width: calc(100% - 20px);
 
     border: 3px solid black;
-
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 16px;
 }
 
 .app_wrapper button {
@@ -232,86 +220,6 @@ ul li img {
 
 #save_button {
     background-color: var(--save-button-color, green);
-}
-
-.info_modal {
-    display: none;
-
-    position: fixed;
-
-    left: 0;
-    top: 0;
-    z-index: 1000;
-
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-
-    padding-top: 50px;
-    padding-bottom: 50px;
-
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.info_modal .modal-content {
-    position: relative;
-
-    width: 80%;
-    max-width: 800px;
-    margin: auto;
-    padding: 0;
-
-    background-color: #e0e0e0;
-    border-radius: 3px;
-    box-shadow:
-        0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    -webkit-animation-name: animateFromTop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animateFromTop;
-    animation-duration: 0.4s;
-}
-
-.info_modal .modal-header {
-    display: flex;
-    align-items: center;
-
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-
-    padding: 2px 16px;
-    background-color: var(--random-purple-color, purple);
-    color: white;
-}
-
-.info_modal .modal-header h1 {
-    flex-grow: 1;
-}
-
-.info_modal .modal-header .close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.info_modal .modal-header .close:hover,
-.info_modal .modal-header .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.info_modal .modal-body {
-    padding: 2px 16px;
-    font-size: 110%;
-}
-
-.info_modal .modal-image {
-    border-radius: 5px;
-    max-width: 100%;
-    height: auto;
 }
 
 /* Portrait layout changes */

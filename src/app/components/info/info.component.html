@@ -1,0 +1,35 @@
+<img mat-dialog-title src="./images/build-a-bettel.png" alt="Build-A-Bettel logo image" />
+
+<mat-dialog-content>
+  <p>
+    Build-A-Bettel is an interactive fanart experience by the Bettelion Food Truck. You can
+    customize Bettel with various outfits and accessories.
+  </p>
+
+  <p>
+    This project is an <a href="https://github.com/Bettelion-Food-Truck/Build-A-Bettel" target="_blank">open
+      source</a> creation by the <a href="https://bettelion-food-truck.github.io/" target="_blank">Bettelion Food
+      Truck</a>. It
+    is built upon the open source character creator framework <a href="https://github.com/ksadov/hackrew"
+      target="_blank">hackrew</a>.
+  </p>
+
+  <div id="contributor-container">
+
+    <div class="section-wrapper" *ngFor="let section of contributors">
+      <h2>{{section.name}}</h2>
+      <div class="contributors">
+
+        <div class="contributor" *ngFor="let contributor of section.contributors">
+          <img src="{{contributor.image}}" alt="{{contributor.name}}" loading="lazy" />
+          <!--<span>{{contributor.name}}</span>-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

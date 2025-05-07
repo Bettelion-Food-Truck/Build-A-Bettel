@@ -1,6 +1,6 @@
 {
-    "path": "./assets/",
-    "iconPath": "./assets/icons/parts/%folder%/",
+    "images": "items/",
+    "thumbnails": "thumbnails/",
     "parts": [
         {
             "name": "Body",

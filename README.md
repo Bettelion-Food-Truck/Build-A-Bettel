@@ -1,100 +1,59 @@
-# Bettel Hackrew
+# Bab
 
-## Info
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
 
-Bettel Hackrew is a dress up game focused on Gavis Bettel similar to [picrew](https://picrew.me/). This game is built upon [Hackrew](https://github.com/ksadov/hackrew). To use the image color generator, you will need Python 3 installed. You will also need to run it off a server if you want to use it locally; Python has a good option built in.
+## Development server
 
-## Developing
+To start a local development server, run:
 
-### Start a web server
-
-This game requires the use of a web server to run. The easiest way to launch it from your own machine is using Python (as the color tool is also built in python).
-
-- Open the command line
-- CD into the game directory
-- Run the command `python -m http.server`
-- Navigate to [http://localhost:8000/](http://localhost:8000/) in a web browser
-
-Success, it runs.
-
-### Create visual assets
-
-This game uses drawn assets as the different outfit options. Each outfit option, or asset, needs to be a .png file. It also must be the same size as the drawing surface; this game is set to use a size of 1000px by 1000px.
-
-To ensure all items line up correctly when layered, it is suggested to drawn all assets on different layers of the same file. Programs like GIMP or Procreate make this easy. Then when the assets are done, export each layer as a .png with a transparent background.
-
-### File structure
-
-All assets are stored in the `assets` folder in different groups. Each group is known as a part. A part could be a shirt, pants, hair, etc. Every asset, once arranged into part folders, is known as an item. Each part folder can have many items.
-
-All files should be in lowercase only. There should be no spaces. If there is a division between works, use a dash.
-
-### Data structure
-
-The game doesn't know anything about the image assets by itself. It requires the information stored within `assets/data.json`. There are two objects of data within this file: layers and parts.
-
-Layers defines the visual order of the indidual parts. Layers are rendered in order of this array. The first layer is on the bottom and the last layer is on the top.
-
-Parts defines all the individual parts of the character (ie body, ears, shirt, pants, etc). Parts also determines the order of the menu for building the character. Parts at the top of the object are first in the menu.
-
-Parts have the following fields:
-
-- `"folder"`: the name of the folder that will contain the part's visual assets
-- `"items"`: the names of the items belonging to the part
-- `"colorMode"`: Can be `"fill"`, `"multiply"`, `"manual"` or `null`. See the next section, item variants, for details.
-- `"colors"`: 6-character strings containing the the hexcodes of colors.
-- `"movement"`: Optional. Structure to define capability and limits of part movement. Sub values are `"x"`, `"y"`, and `"scale"`. X and Y may be true, false, or an object with `"min"` and `"max"`. Min and max are offsets limits. Scale adjusts how much the controls move the part.
-- `"noneAllowed"`: `true` if this part is optional, false otherwise
-- `"hidePartList"`: `true` to remove the category from the part list. This is used if there is only one option for a body.
-
-Ex:
-```
-{
-  "folder": "ears",
-  "items": ["small", "big"],
-  "colorMode": "manual",
-  "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
-  "movement": {
-    "x": {
-      "min": -50,
-      "max": 50
-    },
-    "y": true,
-    "scale": 1
-  },
-  "noneAllowed": true,
-  "hidePartList": false
-}
+```bash
+ng serve
 ```
 
-### Item variants
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-In addition to each part having multiple variantions of items, the items themselves can come in multiple colors. Above we mention `"colorMode"` and `"colors"`. These indicate additional variations of each item. If a part has color options, then the `"colorMode"` field determines whether the item files for each color are manually or automatically generated.
+## Code scaffolding
 
-To manually create color variants for each item of a part, set `"colorMode`" to `"manual"` and for each item and each color of hexcode `"XXXXXX"`, create a .png `assets/part/item_XXXXXX.png` depicting item in color `XXXXXX`.
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-To generate color variants automatically, you'll need to run the Python script `generate_colored_images.py`. The script uses files of the form `"assets/part/item.png`" as templates to generate colored versions of each item. If a part has `"colorMode"` `"fill"`, the script fills the template's pixels of RGB value `(123, 123, 123)` with the desired color, preserving alpha. If a part has `"colorMode"` `"multiply"`, the script treats the template as an alpha-preserving multiply layer over the desired color.
-
-This next stage requires Python 3. You will also need to install the python module `PIL` on your system first.
-
-```
-pip install pillow
+```bash
+ng generate component component-name
 ```
 
-Once that is installed, run the command below from the root directory of this game in a terminal.
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
+```bash
+ng generate --help
 ```
-python generate_colored_images.py
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
 ```
 
-The script might take a while to run, but at the end you'll have your color variant image files in the correct folders.
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-### Edit the UI
+## Running unit tests
 
-Easy UI changes can be done by editing index.css; specifically the variables allow for easy updates to colors and images.
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-## Deploying
+```bash
+ng test
+```
 
-Hosting the game is simple. You only need index.html, index.css, imagemaker.js, and the assets folder. Upload these files and the folder to your webhost and all is done. Ensure the file structure remains intact
+## Running end-to-end tests
 
-Hosting on GitHub Pages is even easier, just fork this project, customize as needed, then follow the the intrucutions [about creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

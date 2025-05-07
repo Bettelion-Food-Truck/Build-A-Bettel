@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bab": {
+    "build-a-bettel": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/bab",
+            "outputPath": "dist/build-a-bettel",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "bab:build:production"
+              "buildTarget": "build-a-bettel:build:production"
             },
             "development": {
-              "buildTarget": "bab:build:development"
+              "buildTarget": "build-a-bettel:build:development"
             }
           },
           "defaultConfiguration": "development"

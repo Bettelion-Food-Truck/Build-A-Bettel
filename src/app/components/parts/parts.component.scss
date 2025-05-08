@@ -31,7 +31,14 @@
                 justify-content: center;
                 align-items: center;
 
+                border: 3px solid transparent;
+                border-radius: 3px;
+
                 cursor: pointer;
+
+                &.selected {
+                    border-color: var(--select-color, #ff0000);
+                }
 
                 &.hidden {
                     display: none;

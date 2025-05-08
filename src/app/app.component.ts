@@ -45,4 +45,14 @@ export class AppComponent {
 
     this.dialog.open(InfoComponent);
   }
+
+  updateSelectedPart(index: number) {
+
+    this.logger.info("AppComponent: updateSelectedPart()", index);
+  }
+
+  randomize() {
+
+    this.logger.info("AppComponent: randomize()");
+  }
 }

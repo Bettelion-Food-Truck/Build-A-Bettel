@@ -42,7 +42,7 @@
 
       <div id="component_wrapper" class="component_wrapper">
 
-        <app-parts />
+        <app-parts (partChanged)="updateSelectedPart($event)" (randomizeOutfit)="randomize()" />
 
         <div class="control_panel_wrapper">
           <div class="control_panel">

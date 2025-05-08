@@ -1,16 +1,16 @@
-import { Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Part } from '@models/part.model';
 
 import { AssetDataServiceService } from '@services/asset-data/asset-data-service.service';
-import { LogService } from '@services/log/log.service';
 
 @Component({
   selector: 'app-parts',
   imports: [
     CommonModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './parts.component.html',
   styleUrl: './parts.component.scss'
 })
@@ -18,8 +18,11 @@ export class PartsComponent {
 
   partSignal: Signal<Part[]>;
 
+  selectedPart = input<number>(0);
+  partChanged = output<number>();
+  randomizeOutfit = output<void>();
+
   constructor(
-    private logger: LogService,
     private assetData: AssetDataServiceService
   ) {
 

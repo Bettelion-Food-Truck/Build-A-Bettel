@@ -1,6 +1,4 @@
-import Cooks from './cooks.js';
 import Outfits from './outfits.js';
-import { Part, Parts } from './parts.js';
 
 window.addEventListener('load', function (ev) {
 	let parts = [];
@@ -11,7 +9,6 @@ window.addEventListener('load', function (ev) {
 	const BASE_ASSET_PATH = "assets/";
 	const ASSET_PATH = BASE_ASSET_PATH;
 
-	const ICONS_PARTS = BASE_ASSET_PATH + "icons/parts/";
 	const UI_ASSETS = BASE_ASSET_PATH + "icons/ui/";
 
 	const THUMBNAIL_PATH = "thumbnails/";
@@ -119,16 +116,9 @@ window.addEventListener('load', function (ev) {
 		initButtons();
 		initCanvases()
 
-		initPartsElements();
 		initItemsElements();
 		initPalette();
 		initMove();
-
-		cooks = new Cooks({
-			containerId: 'cook-container',
-			dataUrl: `${DATA_PATH}cooks.json`
-		});
-		cooks.build();
 
 		outfits = new Outfits({
 			onItemClick: selectOutfit,
@@ -165,41 +155,6 @@ window.addEventListener('load', function (ev) {
 	 * Fetch parts info from data.json and initialize the parts variable.
 	 */
 	async function initData() {
-
-		let response = await fetch(DATA_PATH + "parts.json", { cache: "no-cache" });
-		let json = await response.json();
-
-		parts = json.parts;
-
-		let urls = [];
-
-		for (let partIndex = 0; partIndex < parts.length; partIndex++) {
-
-			urls.push(`${json.path}${parts[partIndex].folder}/${parts[partIndex].items}`);
-		}
-
-		const data = await Promise.all(
-			parts.map(
-				async part => {
-					const resp = await fetch(`${json.path}${part.folder}/${part.items}`, { cache: "no-cache" });
-
-					const jsonResp = await resp.json();
-
-					return { ...part, ...jsonResp };
-				}
-			)
-		);
-
-		for (let partIndex = 0; partIndex < data.length; partIndex++) {
-
-			parts[partIndex] = data[partIndex];
-
-			if (!parts[partIndex].layer) {
-				parts[partIndex].layer = parts[partIndex].folder;
-			}
-		}
-
-		console.log(parts);
 
 		// Build layer data to know which part is associated
 
@@ -544,9 +499,6 @@ window.addEventListener('load', function (ev) {
 	async function initItemFunctions() {
 
 		for (let i = 0; i < parts.length; i++) {
-			partsElements[i].addEventListener('click', function () {
-				updateSelectedPart(i);
-			});
 
 			for (let j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
 				itemsElements[i][j].addEventListener('click', function () {
@@ -617,44 +569,6 @@ window.addEventListener('load', function (ev) {
 		}
 
 		loading.style.display = "none";
-	}
-
-	/**
-	 * Initialize partsElements
-	 */
-	function initPartsElements() {
-
-		for (let i = 0; i < parts.length; i++) {
-
-			let part = document.createElement('li');
-			let partIcon = document.createElement('img');
-
-			let partIconSrc = `${ICONS_PARTS}${parts[i].folder}/${parts[i].icon}`;
-
-			partIcon.src = partIconSrc;
-			partIcon.alt = parts[i].name ? parts[i].name : parts[i].folder;
-			partIcon.title = parts[i].name ? parts[i].name : parts[i].folder;
-			partIcon.loading = "lazy";
-
-			part.appendChild(partIcon);
-
-			part.id = "part_" + i.toString();
-
-			// Hide if commanded or only one option with no variants
-			if (
-				parts[i].hideFromPartsList || (
-					parts[i].items.length <= 1 &&
-					!parts[i].noneAllowed && (
-						!parts[i].colors || parts[i].colors.length === 0
-					)
-				)
-			) {
-				part.style.display = "none";
-			}
-
-			partsList.appendChild(part);
-			partsElements[i] = part;
-		}
 	}
 
 	/**

@@ -18,7 +18,7 @@ export class PartsComponent {
 
   partSignal: Signal<Part[]>;
 
-  selectedPart = input<number>(0);
+  selectedPart = input.required<number>();
   partChanged = output<number>();
   randomizeOutfit = output<void>();
 

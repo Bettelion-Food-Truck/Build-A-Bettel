@@ -1,63 +1,60 @@
-<div class="app_wrapper">
+<!-- Game container -->
+<div class="container">
+  <div class="canvas_wrapper">
+    <app-canvas />
 
-  <!-- Game container -->
-  <div class="container">
-    <div class="canvas_wrapper">
-      <app-canvas />
+    <a class="loading" id="loading">
+      Loading...
+    </a>
 
-      <a class="loading" id="loading">
-        Loading...
-      </a>
+    <div class="control_wrapper">
+      <div class="part_control_wrapper">
+        <span id="items_button" class="controls items"></span>
+        <span id="palette_button" class="controls palette"></span>
+        <span id="move_button" class="controls moves"></span>
+      </div>
 
-      <div class="control_wrapper">
-        <div class="part_control_wrapper">
-          <span id="items_button" class="controls items"></span>
-          <span id="palette_button" class="controls palette"></span>
-          <span id="move_button" class="controls moves"></span>
-        </div>
-
-        <div class="zoom_control_wrapper">
-          <span id="zoom_in_button" class="controls zoom_in"></span>
-          <span id="zoom_out_button" class="controls zoom_out"></span>
-          <span id="zoom_reset_button" class="controls zoom_reset"></span>
-        </div>
+      <div class="zoom_control_wrapper">
+        <span id="zoom_in_button" class="controls zoom_in"></span>
+        <span id="zoom_out_button" class="controls zoom_out"></span>
+        <span id="zoom_reset_button" class="controls zoom_reset"></span>
       </div>
     </div>
+  </div>
 
-    <div class="item_selection_wrapper">
-      <div class="feature_buttons">
-        <div>
-          <button id="reset_button">Reset</button>
-          <button id="outfit_button">Outfits</button>
-          <button id="component_button" style="display: none;">Components</button>
-          <button (click)="showCredits()">Credits</button>
-        </div>
-
-        <button id="save_button" href="#" download="gb.png">
-          Save
-        </button>
+  <div class="item_selection_wrapper">
+    <div class="feature_buttons">
+      <div>
+        <button id="reset_button">Reset</button>
+        <button id="outfit_button">Outfits</button>
+        <button id="component_button" style="display: none;">Components</button>
+        <button (click)="showCredits()">Credits</button>
       </div>
 
-      <app-outfits />
+      <button id="save_button" href="#" download="gb.png">
+        Save
+      </button>
+    </div>
 
-      <div id="component_wrapper" class="component_wrapper">
+    <app-outfits />
 
-        <app-parts (partChanged)="updateSelectedPart($event)" (randomizeOutfit)="randomize()"
-          [selectedPart]="selectedPart" />
+    <div id="component_wrapper" class="component_wrapper">
 
-        <div class="control_panel_wrapper">
-          <div class="control_panel">
+      <app-parts (partChanged)="updateSelectedPart($event)" (randomizeOutfit)="randomize()"
+        [selectedPart]="selectedPart" />
 
-            <app-items (onChange)="updateSelectedItem($event)" [selectedPart]="selectedPart"
-              [selectedItems]="selectedItems" />
+      <div class="control_panel_wrapper">
+        <div class="control_panel">
 
-            <app-palette />
+          <app-items (onChange)="updateSelectedItem($event)" [selectedPart]="selectedPart"
+            [selectedItems]="selectedItems" />
 
-            <app-movement />
-          </div>
+          <app-palette style="display: none;" />
+
+          <app-movement style="display: none;" />
         </div>
-
       </div>
+
     </div>
   </div>
 </div>

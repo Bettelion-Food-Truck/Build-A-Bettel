@@ -116,7 +116,6 @@ window.addEventListener('load', function (ev) {
 		initButtons();
 		initCanvases()
 
-		initItemsElements();
 		initPalette();
 		initMove();
 
@@ -126,8 +125,6 @@ window.addEventListener('load', function (ev) {
 			dataUrl: `${DATA_PATH}outfits.json`
 		});
 		outfits.init();
-
-		await initItemFunctions();
 
 		initPanZoom();
 		initHorizontalScroll();
@@ -494,21 +491,6 @@ window.addEventListener('load', function (ev) {
 	}
 
 	/**
-	 * Assign item select callback functions to partsElements, itemsElements members
-	 */
-	async function initItemFunctions() {
-
-		for (let i = 0; i < parts.length; i++) {
-
-			for (let j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
-				itemsElements[i][j].addEventListener('click', function () {
-					updateSelectedItem(i, j);
-				});
-			}
-		}
-	}
-
-	/**
 	 * Render Images in layerStack to canvas and update save URL
 	 */
 	async function renderLayerStack() {
@@ -569,75 +551,6 @@ window.addEventListener('load', function (ev) {
 		}
 
 		loading.style.display = "none";
-	}
-
-	/**
-	 * Initialize itemsElements
-	 */
-	function initItemsElements() {
-
-		for (let i = 0; i < parts.length; i++) {
-			itemsElements.push([]);
-
-			for (let j = 0; j < parts[i].items.length; j++) {
-				itemsElements[i].push(null);
-			}
-		}
-
-		for (let i = 0; i < parts.length; i++) {
-
-			if (parts[i].noneAllowed) {
-				let noneButton = document.createElement('li');
-				let noneButtonIcon = document.createElement('img');
-
-				noneButton.id = "icon_" + i.toString() + "_none";
-				noneButtonIcon.src = UI_ASSETS + "none_button.svg";
-				noneButtonIcon.alt = "Icon indicating no item selected";
-				noneButtonIcon.title = "None";
-
-				noneButton.appendChild(noneButtonIcon);
-				itemList.appendChild(noneButton);
-				noneButton.style.display = "none";
-				itemsElements[i][0] = noneButton;
-			}
-
-			for (let j = 0; j < parts[i].items.length; j++) {
-
-				let item = document.createElement('li');
-				let itemIcon = document.createElement('img');
-
-				let asset = parts[i].items[j];
-
-				let itemName = parts[i].items[j];
-				let thumbnail = false;
-
-				if (typeof itemName !== "string") {
-					itemName = asset.item;
-
-					thumbnail = asset.thumbnail;
-				}
-
-				itemIcon.id = "icon_" + i.toString() + "_" + j.toString();
-				itemIcon.src = (ASSET_PATH +
-					(asset.folder ? asset.folder : parts[i].folder) + "/" +
-					(thumbnail ? THUMBNAIL_PATH : "") +
-					itemName + ".png");
-
-				itemIcon.alt = asset.name ? asset.name : itemName;
-				itemIcon.title = asset.name ? asset.name : itemName;
-				itemIcon.loading = "lazy";
-
-				item.appendChild(itemIcon);
-				item.id = "item_" + i.toString() + "_" + j.toString();
-				item.style.display = "none";
-
-				itemList.appendChild(item);
-
-				itemsElements[i][j + Number(parts[i].noneAllowed)] = item;
-			}
-		}
-
-		return null;
 	}
 
 	function clearCanvas(canvas) {

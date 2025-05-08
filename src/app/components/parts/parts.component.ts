@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, input, output, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ASSET_PATH } from '@data/paths';
+
 import { Part } from '@models/part.model';
 
 import { AssetDataServiceService } from '@services/asset-data/asset-data-service.service';
@@ -27,6 +29,18 @@ export class PartsComponent {
   ) {
 
     this.partSignal = this.assetData.getParts();
+  }
+
+  getPartIcon(partIndex: number): string {
+
+    let part = this.partSignal()[partIndex];
+
+    if (!part) {
+
+      return "";
+    }
+
+    return `${ASSET_PATH}${part.folder}/part.icon`;
   }
 
   getPartVisibility(index: number): boolean {

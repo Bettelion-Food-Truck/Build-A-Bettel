@@ -8,7 +8,7 @@
             <ng-container *ngFor="let part of partSignal(); let i = index">
                 <li id="part_{{i}}" [class.hidden]="getPartVisibility(i)"
                     [class.selected]="selectedPart() && selectedPart() === i" (click)="partChanged.emit(i)">
-                    <img [src]="part.path + '/' + part.icon" [alt]="part.name ? part.name : part.folder"
+                    <img [src]="getPartIcon(i)" [alt]="part.name ? part.name : part.folder"
                         [title]="part.name ? part.name : part.folder" />
                 </li>
             </ng-container>

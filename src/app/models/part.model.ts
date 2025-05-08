@@ -5,7 +5,6 @@ export interface Part {
 
     layer: string | null;
     folder: string;
-    path: string;
 
     icon: string;
 

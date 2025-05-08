@@ -1,5 +1,6 @@
 export interface Item {
     item: string;
+    name: string | null;
 
     outfits: string[];
 

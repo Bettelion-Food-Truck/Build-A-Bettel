@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CanvasComponent } from "./components/canvas/canvas.component";
 
 import { PartsComponent } from "./components/parts/parts.component";
-import { ItemsComponent } from "./components/items/items.component";
+import { ItemsComponent, ItemSelectedEvent } from "./components/items/items.component";
 
 import { MovementComponent } from './components/movement/movement.component';
 import { PaletteComponent } from "./components/palette/palette.component";
@@ -49,6 +49,11 @@ export class AppComponent {
   updateSelectedPart(index: number) {
 
     this.logger.info("AppComponent: updateSelectedPart()", index);
+  }
+
+  updateSelectedItem(data: ItemSelectedEvent) {
+
+    this.logger.info("AppComponent: updateSelectedItem()", data);
   }
 
   randomize() {

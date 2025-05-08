@@ -47,7 +47,7 @@
         <div class="control_panel_wrapper">
           <div class="control_panel">
 
-            <app-items />
+            <app-items (onChange)="updateSelectedItem($event)" [selectedPart]="0" [selectedItems]="[]" />
 
             <app-palette />
 

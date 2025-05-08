@@ -2,15 +2,16 @@ import { Injectable, Signal, signal } from '@angular/core';
 
 import { LogService } from '@services/log/log.service';
 
+import { ASSET_PATH } from '@data/paths';
+
 import Data from '@data/parts.json';
 import { Part } from '@models/part.model';
+import { Item } from '@models/item.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AssetDataServiceService {
-
-  private readonly assetPath = "assets/parts/";
 
   private parts: Part[] = [];
   private partSignal = signal(this.parts);
@@ -37,11 +38,21 @@ export class AssetDataServiceService {
 
           let part = dataItem satisfies Part as Part;
 
-          const resp = await fetch(`${this.assetPath}${part.folder}/${part.items}`, { cache: "no-cache" });
+          const resp = await fetch(`${ASSET_PATH}${part.folder}/${part.items}`, { cache: "no-cache" });
 
-          const jsonResp = await resp.json();
+          let jsonResp = await resp.json();
 
-          return { ...part, ...jsonResp };
+          for (let i = 0; i < jsonResp.items.length; i++) {
+
+            if (typeof jsonResp.items[i] === "string") {
+
+              jsonResp.items[i] = {
+                item: jsonResp.items[i]
+              } as Item;
+            }
+          }
+
+          return { ...part, ...jsonResp } as Part;
         }
       )
     );
@@ -52,8 +63,6 @@ export class AssetDataServiceService {
     for (let partIndex = 0; partIndex < partData.length; partIndex++) {
 
       this.parts[partIndex] = partData[partIndex] satisfies Part;
-
-      this.parts[partIndex].path = `${this.assetPath}${this.parts[partIndex].folder}`;
 
       if (!this.parts[partIndex].layer) {
         // Ensure layer is set

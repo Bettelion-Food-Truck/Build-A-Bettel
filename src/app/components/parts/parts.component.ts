@@ -40,7 +40,7 @@ export class PartsComponent {
       return "";
     }
 
-    return `${ASSET_PATH}${part.folder}/part.icon`;
+    return `${ASSET_PATH}${part.folder}/${part.icon}`;
   }
 
   getPartVisibility(index: number): boolean {

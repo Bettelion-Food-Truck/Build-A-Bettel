@@ -1,5 +1,5 @@
 <div class="list" *ngFor="let part of partSignal(); let i = index"
-    [class.hidden]="selectedPart() && selectedPart() === i">
+    [class.hidden]="!selectedPart() || selectedPart() !== i">
 
     <ng-container *ngIf="part.noneAllowed">
         <button id="icon_{{i}}_none" class="item" [class.selected]="selectedItems() && selectedItems()[i] === 0"

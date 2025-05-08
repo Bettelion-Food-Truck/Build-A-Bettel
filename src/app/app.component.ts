@@ -32,6 +32,9 @@ export class AppComponent {
 
   readonly dialog = inject(MatDialog);
 
+  selectedPart: number = 0;
+  selectedItems: number[] = [];
+
   constructor(
     private logger: LogService
   ) { }
@@ -49,11 +52,15 @@ export class AppComponent {
   updateSelectedPart(index: number) {
 
     this.logger.info("AppComponent: updateSelectedPart()", index);
+
+    this.selectedPart = index;
   }
 
   updateSelectedItem(data: ItemSelectedEvent) {
 
     this.logger.info("AppComponent: updateSelectedItem()", data);
+
+    this.selectedItems[data.part] = data.item;
   }
 
   randomize() {

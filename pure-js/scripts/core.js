@@ -34,10 +34,6 @@ window.addEventListener('load', function (ev) {
 
 	const saveButton = document.getElementById("save_button");
 
-	const zoomInButton = document.getElementById("zoom_in_button");
-	const zoomOutButton = document.getElementById("zoom_out_button");
-	const zoomResetButton = document.getElementById("zoom_reset_button");
-
 	const infoButton = document.getElementById("info_button");
 	const infoModal = document.getElementById("info_modal");
 	const infoModalClose = document.getElementById("info_modal_close");
@@ -126,7 +122,6 @@ window.addEventListener('load', function (ev) {
 		});
 		outfits.init();
 
-		initPanZoom();
 		initHorizontalScroll();
 
 		// Load game into a default outfit
@@ -290,38 +285,6 @@ window.addEventListener('load', function (ev) {
 				"scale": DEFAULT_POSITION.scale
 			};
 		}
-	}
-
-	/**
-	 * Sets up and binds elements for use with the PanZoom CDN import
-	 */
-	function initPanZoom() {
-
-		if (typeof Panzoom === "undefined") {
-
-			console.warn("PanZoom not found");
-
-			return;
-		}
-
-		const panzoom = Panzoom(canvas, {
-			maxScale: 3,
-			minScale: 1,
-			panOnlyWhenZoomed: true,
-		});
-
-		canvas.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
-		zoomInButton.addEventListener('click', panzoom.zoomIn);
-		zoomOutButton.addEventListener('click', panzoom.zoomOut);
-		zoomResetButton.addEventListener('click', panzoom.reset);
-
-		// Forces canvas back into center of view on no zoom to help with view reset
-		canvas.addEventListener('panzoomchange', (_) => {
-
-			if (panzoom.getScale() === 1) {
-				panzoom.reset();
-			}
-		})
 	}
 
 	/**

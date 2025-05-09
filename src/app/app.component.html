@@ -1,7 +1,7 @@
 <!-- Game container -->
 <div class="container">
   <div class="canvas_wrapper">
-    <app-canvas />
+    <app-canvas #canvas />
 
     <a class="loading" id="loading">
       Loading...
@@ -14,11 +14,7 @@
         <span id="move_button" class="controls moves"></span>
       </div>
 
-      <div class="zoom_control_wrapper">
-        <span id="zoom_in_button" class="controls zoom_in"></span>
-        <span id="zoom_out_button" class="controls zoom_out"></span>
-        <span id="zoom_reset_button" class="controls zoom_reset"></span>
-      </div>
+      <app-zoom [canvas]="canvas" />
     </div>
   </div>
 

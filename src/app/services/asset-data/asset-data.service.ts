@@ -28,10 +28,11 @@ export class AssetDataService {
     this.logger.info("AssetDataService: compute layerSignal");
 
     let layers = [];
+    const parts = this.partSignal();
 
     for (let layerIndex = 0; layerIndex < LayerDataJSON.layers.length; layerIndex++) {
 
-      let partList = this.parts
+      let partList = parts
         .map((part, i) => part.layer === LayerDataJSON.layers[layerIndex] ? i : undefined)
         .filter(x => x !== undefined);
 
@@ -40,7 +41,8 @@ export class AssetDataService {
         "partIndex": partList[0]
       } as Layer;
     }
-    return layers;
+
+    return [...layers];
   });
 
   constructor(

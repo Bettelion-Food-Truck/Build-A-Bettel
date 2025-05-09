@@ -70,7 +70,7 @@ export class AppComponent {
 
     // Initial load
     const initialLoadEffect = effect(() => {
-      console.log(`Parts: ${this.partSignal().length}`);
+      this.logger.debug(`Parts: ${this.partSignal().length}`);
 
       if (this.partSignal().length > 0) {
 
@@ -96,7 +96,8 @@ export class AppComponent {
         initialLoadEffect.destroy();
       }
     }, {
-      injector: this.injector
+      injector: this.injector,
+      manualCleanup: true
     });
   }
 

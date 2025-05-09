@@ -16,6 +16,7 @@ export interface Item {
     } | null;
 
     thumbnail: boolean;
+    hide: boolean;
 
     folder: string | null;
 }

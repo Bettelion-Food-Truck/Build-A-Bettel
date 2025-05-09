@@ -8,12 +8,6 @@ window.addEventListener('load', function (ev) {
 	const ASSET_PATH = BASE_ASSET_PATH;
 
 	// DOM Elements
-	const canvas = document.getElementById("main-canvas");
-	const context = canvas.getContext('2d');
-
-	const WIDTH = canvas.width;
-	const HEIGHT = canvas.height;
-
 	const loading = document.getElementById("loading");
 	let loadingTimer = null;
 
@@ -43,13 +37,6 @@ window.addEventListener('load', function (ev) {
 	/* 2d array of item select button DOM elements */
 	const itemsElements = [];
 
-	/* Render layers to this 1st and then canvas so that images render all at
-	   once instead of one layer at a time */
-	const workingCanvas = document.createElement('canvas');
-	workingCanvas.height = HEIGHT;
-	workingCanvas.width = WIDTH;
-	const workingContext = workingCanvas.getContext('2d');
-
 	// global state variables
 	/* Index of part whose menu is currently displayed */
 	let selectedPart = 0;
@@ -69,10 +56,6 @@ window.addEventListener('load', function (ev) {
 	};
 	const MOVEMENT_BASE = 10; // 10px
 
-	/* 1d array of canvases of items currently selected,
-	where layerCanvases[i] depicts the selected item of part i in the selected color */
-	const layerCanvases = [];
-
 	init();
 
 	async function init() {
@@ -87,56 +70,6 @@ window.addEventListener('load', function (ev) {
 
 		// part is selected
 		await updateSelectedPart(firstPart);
-	}
-
-	/**
-	 * Assign canvases to list of layer canvases
-	 */
-	function initCanvases() {
-
-		// Create layers noted in data.json
-		for (let i = 0; i < layers.length; i++) {
-
-			layerCanvases[i] = initCanvasLayer();
-		}
-
-		// Check each part folder has a layer
-		for (let i = 0; i < parts.length; i++) {
-
-			if (layers.filter(x => x.layer === parts[i].layer).length > 0) {
-				continue;
-			}
-
-			console.warn(`Part layer not found for ${parts[i].layer}`);
-
-			// No layer set, assign to the end
-			let layerIndex = layers.length;
-			layers[layerIndex] = {
-				"layer": parts[i].layer,
-				"partId": i
-			};
-			layerCanvases[layerIndex] = initCanvasLayer();
-		}
-
-		// Make blank layers in case of missing ones
-		for (let i = 0; i < layerCanvases.length; i++) {
-			if (typeof layerCanvases[i] === 'undefined') {
-				console.warn(`Building layer for ${layers[i].layer}`);
-				layerCanvases[i] = initCanvasLayer();
-			}
-		}
-	}
-
-	/**
-	 * @returns {HTMLCanvasElement} A new canvas element with the dimensions of the main canvas
-	 */
-	function initCanvasLayer() {
-
-		let canvas = document.createElement('canvas');
-		canvas.height = HEIGHT;
-		canvas.width = WIDTH;
-
-		return canvas;
 	}
 
 	/**
@@ -218,48 +151,6 @@ window.addEventListener('load', function (ev) {
 		return null;
 	}
 
-	/**
-	 * Render Images in layerStack to canvas and update save URL
-	 */
-	async function renderLayerStack() {
-
-		clearCanvas(workingCanvas);
-		showLoading();
-
-		checkPartRequirements();
-
-		// Clear layers
-		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
-			// Clearing layers is done first because sometimes layers are rendered out of order due to special logics
-			// Additional execution time is minimal for data set size
-
-			clearCanvas(layerCanvases[layerIndex]);
-		}
-
-		// Render images to layers
-		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
-
-			const partId = layers[layerIndex].partId;
-
-			if (selectedItemIndex[partId] !== null && selectedItemIndex[partId] !== undefined) {
-				await renderItemToCanvas(layerIndex, partId, selectedItemIndex[partId], selectedColors[partId]);
-			}
-		}
-
-		// Draw layers onto master
-		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
-			workingContext.drawImage(layerCanvases[layerIndex], 0, 0);
-		}
-
-		clearCanvas(canvas);
-
-		hideLoading();
-
-		context.drawImage(workingCanvas, 0, 0);
-
-		await updateSave();
-	}
-
 	function showLoading(delay = 500) {
 
 		if (loadingTimer) {
@@ -279,49 +170,6 @@ window.addEventListener('load', function (ev) {
 		}
 
 		loading.style.display = "none";
-	}
-
-	function clearCanvas(canvas) {
-		return (canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height));
-	}
-
-	/**
-	 * Update UI to visibly select a parts[partId].items[itemId] and render it to the canvas
-	 */
-	async function updateSelectedItem(partId, itemId) {
-
-		markSelectedItem(partId, itemId);
-		await renderLayerStack();
-	}
-
-	/**
-	 * Update UI to visibly select a parts[partId].items[itemId]
-	 */
-	async function markSelectedItem(partId, itemId) {
-
-		for (let j = 0; j < (parts[partId].items.length + Number(parts[partId].noneAllowed)); j++) {
-
-			if (j == itemId) {
-				itemsElements[partId][j].classList.add("selected");
-			} else {
-				itemsElements[partId][j].classList.remove("selected");
-			}
-		}
-
-		let selectedNone = (parts[partId].noneAllowed && itemId == 0);
-
-		if (selectedNone) {
-			selectedItemIndex[partId] = null;
-		} else {
-			selectedItemIndex[partId] = itemId - Number(parts[partId].noneAllowed);
-		}
-	}
-
-	/**
-	 * Update download save button with latest version of the canvas
-	 */
-	async function updateSave() {
-		saveButton.href = canvas.toDataURL("image/png");
 	}
 
 	/**
@@ -545,167 +393,5 @@ window.addEventListener('load', function (ev) {
 				movementControls.movement.right.classList.remove("disabled");
 			}
 		}
-	}
-
-	/**
-	 * Checks current selections for incompatible parts
-	 */
-	function checkPartRequirements() {
-
-		// Check for part requirements
-		for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
-
-			const partId = layers[layerIndex].partId;
-
-			if (selectedItemIndex[partId] !== null && selectedItemIndex[partId] !== undefined) {
-
-				const itemIndex = selectedItemIndex[partId];
-				const item = parts[partId].items[itemIndex];
-
-				if (typeof item !== "string" && item.requires) {
-					// Complex item with a requirement
-
-					// Locate part
-					for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
-
-						if (parts[neededPartIndex].layer === item.requires.part) {
-
-							const part = parts[neededPartIndex];
-							let neededPartFound = false;
-
-							// Locate the item
-							if (item.requires.item === "none" && part.noneAllowed) {
-
-								markSelectedItem(
-									neededPartIndex,
-									0
-								);
-
-								neededPartFound = true;
-							} else {
-								for (let neededItemIndex = 0; neededItemIndex < part.items.length; neededItemIndex++) {
-
-									let itemName = part.items[neededItemIndex];
-									if (typeof itemName !== "string") {
-										itemName = itemName.item;
-									}
-
-									if (itemName === item.requires.item) {
-
-										neededPartFound = true;
-
-										// Select the item
-										markSelectedItem(
-											neededPartIndex,
-											neededItemIndex + (part.noneAllowed ? 1 : 0)
-										);
-										break;
-									}
-
-									// TODO Need to indicate incompatible options
-								}
-							}
-
-							if (!neededPartFound) {
-
-								console.error("%c Error:", "color:red; font-weight: bold;", `Required item "${item.requires.item}" not found in part "${item.requires.part}"`);
-							}
-
-							break;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * Render parts[partIndex].items[itemIndex] (with variants + options) to layerCanvases[layerIndex]
-	 */
-	async function renderItemToCanvas(layerIndex, partIndex, itemIndex, colorIndex) {
-
-		const item = parts[partIndex].items[itemIndex];
-		const position = selectedPosition[partIndex];
-
-		// Set color variant item
-		const color = (parts[partIndex].colors.length > 0) ?
-			"_" + parts[partIndex].colors[colorIndex]
-			:
-			"";
-
-		if (typeof item === "string") {
-			// Simple item
-
-			const imgPath = ASSET_PATH + parts[partIndex].folder + "/" + item + color + ".png";
-
-			await (renderImage(imgPath, layerIndex, position));
-		} else {
-			// Complex item
-
-			// Set asset folder
-			const partLocation = ASSET_PATH + (item.folder ? item.folder : parts[partIndex].folder);
-
-			// Render the base layer
-			const imgPath = partLocation + "/" + item.item + color + ".png";
-
-			if (!item.hide) {
-
-				// Special different layer for some items
-				if (item.layer) {
-
-					layerIndex = layers.findIndex(layer => layer.layer === item.layer);
-				}
-
-				await (renderImage(imgPath, layerIndex, position));
-			}
-
-			// Render additional layers
-			if (item.multilayer) {
-
-				for (let i = 0; i < item.multilayer.length; i++) {
-
-					const addImgPath = partLocation + "/" + item.multilayer[i].item + color + ".png";
-					const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
-
-					await (renderImage(addImgPath, addLayerIndex, position));
-				}
-			}
-		}
-	}
-
-	async function renderImage(imgPath, layerIndex, position) {
-
-		if (layerIndex < 0) {
-			// Somethings wrong, exit
-			return;
-		}
-
-		let img = await (loadImage(imgPath));
-
-		clearCanvas(layerCanvases[layerIndex]);
-
-		let ctx = layerCanvases[layerIndex].getContext('2d');
-		ctx.save();
-
-		ctx.translate(position.x, position.y);
-
-		ctx.drawImage(img, 0, 0);
-
-		ctx.restore();
-	}
-
-	/**
-	 * Force newLayer to wait until an image is fully loaded before assigning it to layerStack
-	 *
-	 * @path {string} the path to the Image source .png
-	 */
-	function loadImage(path) {
-		return new Promise(resolve => {
-			const image = new Image();
-			image.addEventListener('load', () => {
-				resolve(image);
-			});
-			image.src = path;
-		});
 	}
 }, false);

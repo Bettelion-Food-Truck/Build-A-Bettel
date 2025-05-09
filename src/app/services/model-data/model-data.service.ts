@@ -44,7 +44,7 @@ export class ModelDataService {
 
       selectedItems[partIndex] = itemIndex;
 
-      return selectedItems;
+      return [...selectedItems];
     });
   }
 
@@ -76,7 +76,7 @@ export class ModelDataService {
         }
       }
 
-      return selectedItems;
+      return [...selectedItems];
     });
   }
 
@@ -100,7 +100,7 @@ export class ModelDataService {
         // TODO random color
       }
 
-      return selectedItems;
+      return [...selectedItems];
     });
   }
 
@@ -121,7 +121,7 @@ export class ModelDataService {
         }
       }
 
-      return selectedItems;
+      return [...selectedItems];
     });
   }
 }

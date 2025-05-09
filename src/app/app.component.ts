@@ -80,6 +80,7 @@ export class AppComponent {
           this.modalData.reset();
         }
 
+        // Initially visible part
         for (let i = 0; i < this.partSignal().length; i++) {
           if (this.partSignal()[i].hideFromPartsList) {
             continue;
@@ -121,7 +122,8 @@ export class AppComponent {
   }
 
   randomize() {
-
     this.logger.info("AppComponent: randomize()");
+
+    this.modalData.randomize();
   }
 }

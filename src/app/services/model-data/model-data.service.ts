@@ -48,27 +48,6 @@ export class ModelDataService {
     });
   }
 
-  reset() {
-
-    this.selectedItems.update(selectedItems => {
-
-      let parts = this.assetData.getParts()();
-
-      selectedItems = [];
-
-      for (let i = 0; i < parts.length; i++) {
-
-        if (parts[i].noneAllowed) {
-          selectedItems[i] = -1;
-        } else {
-          selectedItems[i] = 0;
-        }
-      }
-
-      return selectedItems;
-    });
-  }
-
   selectOutfit(outfit: Outfit) {
 
     this.selectedItems.update(selectedItems => {
@@ -94,6 +73,51 @@ export class ModelDataService {
             selectedItems[i] = j;
             break;
           }
+        }
+      }
+
+      return selectedItems;
+    });
+  }
+
+  randomize() {
+
+    this.selectedItems.update(selectedItems => {
+
+      let parts = this.assetData.getParts()();
+
+      for (let i = 0; i < parts.length; i++) {
+
+        let items = parts[i].items;
+
+        let max = items.length;
+        let min = (parts[i].noneAllowed) ? -1 : 0;
+
+        let randomItem = Math.floor(Math.random() * (max - min) + min);
+
+        selectedItems[i] = randomItem;
+
+        // TODO random color
+      }
+
+      return selectedItems;
+    });
+  }
+
+  reset() {
+
+    this.selectedItems.update(selectedItems => {
+
+      let parts = this.assetData.getParts()();
+
+      selectedItems = [];
+
+      for (let i = 0; i < parts.length; i++) {
+
+        if (parts[i].noneAllowed) {
+          selectedItems[i] = -1;
+        } else {
+          selectedItems[i] = 0;
         }
       }
 

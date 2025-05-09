@@ -17,10 +17,6 @@ window.addEventListener('load', function (ev) {
 	const loading = document.getElementById("loading");
 	let loadingTimer = null;
 
-	const randomButton = document.getElementById("random_button");
-
-	const componentButton = document.getElementById("component_button");
-
 	const itemsButton = document.getElementById("items_button");
 	const paletteButton = document.getElementById("palette_button");
 	const moveButton = document.getElementById("move_button");
@@ -220,39 +216,6 @@ window.addEventListener('load', function (ev) {
 		showItems();
 
 		return null;
-	}
-
-	/**
-	 * Display image with randomly selected items
-	 */
-	async function randomize() {
-
-		for (let i = 0; i < parts.length; i++) {
-
-			let noneCount = Number(parts[i].noneAllowed);
-			let itemRange = parts[i].items.length + noneCount;
-			let itemIndex = Math.floor(Math.random() * itemRange);
-			let colorRange = parts[i].colors.length;
-			let colorIndex = Math.floor(Math.random() * colorRange);
-			selectedColors[i] = colorIndex;
-
-			if (noneCount > 0 && itemIndex === 0) {
-				selectedItemIndex[i] = null;
-			} else {
-				selectedItemIndex[i] = itemIndex - noneCount;
-			}
-
-			for (let j = 0; j < itemRange; j++) {
-
-				if (j == itemIndex) {
-					itemsElements[i][j].classList.add("selected");
-				} else {
-					itemsElements[i][j].classList.remove("selected");
-				}
-			}
-		}
-
-		await renderLayerStack();
 	}
 
 	/**

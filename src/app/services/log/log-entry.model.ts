@@ -16,22 +16,32 @@ export class LogEntry {
   extraInfo: any[] = [];
   logWithDate: boolean = true;
 
-  /**
-   * Converts entry to string
-   * 
-   * @returns string
-   */
+  logToConsole() {
+
+    switch (this.level) {
+      case LogLevel.Debug:
+        console.debug(this.buildLogStringBase(), ...this.extraInfo);
+        break;
+      case LogLevel.Info:
+        console.info(this.buildLogStringBase(), ...this.extraInfo);
+        break;
+      case LogLevel.Warn:
+        console.warn(this.buildLogStringBase(), ...this.extraInfo);
+        break;
+      case LogLevel.Error:
+        console.error(this.buildLogStringBase(), ...this.extraInfo);
+        break;
+      case LogLevel.Fatal:
+        console.error(this.buildLogStringBase(), ...this.extraInfo);
+        break;
+      default:
+        console.log(this.buildLogStringBase(), ...this.extraInfo);
+    }
+  }
+
   buildLogString(): string {
 
-    let entryOutput: string = "";
-
-    if (this.logWithDate) {
-
-      entryOutput = new Date() + " - ";
-    }
-
-    entryOutput += "Type: " + LogLevel[this.level];
-    entryOutput += " - Message: " + this.message;
+    let entryOutput: string = this.buildLogStringBase();
 
     if (this.extraInfo.length) {
 
@@ -41,9 +51,23 @@ export class LogEntry {
     return entryOutput;
   }
 
+  private buildLogStringBase(): string {
+
+    let entryOutput: string = `[${LogLevel[this.level]}] `;
+
+    if (this.logWithDate) {
+
+      entryOutput += `${new Date()} - `;
+    }
+
+    entryOutput += this.message;
+
+    return entryOutput;
+  }
+
   /**
    * Converts extra data on the log message to a string
-   * 
+   *
    * @param params additional parameters
    * @returns string
    */

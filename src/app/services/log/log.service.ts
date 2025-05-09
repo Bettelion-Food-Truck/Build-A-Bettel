@@ -59,7 +59,7 @@ export class LogService {
       entry.logWithDate = this.logWithDate;
 
       // Output log message -- maybe change this in the future but works for now
-      console.log(entry.buildLogString());
+      entry.logToConsole();
     }
   }
 

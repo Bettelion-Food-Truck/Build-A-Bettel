@@ -346,26 +346,6 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function updateSelectedPart(partId) {
 
-		selectedPart = partId;
-
-		for (let i = 0; i < parts.length; i++) {
-
-			if (i == partId) {
-				partsElements[i].classList.add('selected');
-			} else {
-				partsElements[i].classList.remove('selected');;
-			}
-
-			for (let j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
-
-				if (i == partId) {
-					itemsElements[i][j].style.display = "inline-flex";
-				} else {
-					itemsElements[i][j].style.display = "none";
-				}
-			}
-		}
-
 		if (parts[partId].colors.length === 0) {
 			paletteButton.style.display = "none";
 		} else {

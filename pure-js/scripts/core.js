@@ -1,5 +1,3 @@
-import Outfits from './outfits.js';
-
 window.addEventListener('load', function (ev) {
 	let parts = [];
 	let layers = [];
@@ -8,10 +6,6 @@ window.addEventListener('load', function (ev) {
 	const DATA_PATH = "./data/";
 	const BASE_ASSET_PATH = "assets/";
 	const ASSET_PATH = BASE_ASSET_PATH;
-
-	const UI_ASSETS = BASE_ASSET_PATH + "icons/ui/";
-
-	const THUMBNAIL_PATH = "thumbnails/";
 
 	// DOM Elements
 	const canvas = document.getElementById("main-canvas");
@@ -25,7 +19,6 @@ window.addEventListener('load', function (ev) {
 
 	const randomButton = document.getElementById("random_button");
 
-	const outfitButton = document.getElementById("outfit_button");
 	const componentButton = document.getElementById("component_button");
 
 	const itemsButton = document.getElementById("items_button");
@@ -33,12 +26,6 @@ window.addEventListener('load', function (ev) {
 	const moveButton = document.getElementById("move_button");
 
 	const saveButton = document.getElementById("save_button");
-
-	const outfitWrapper = document.getElementById("outfit_wrapper");
-
-	const componentWrapper = document.getElementById("component_wrapper");
-
-	const partContainer = document.getElementById("parts_menu");
 
 	const itemWrapper = document.getElementById("item_list_wrapper");
 
@@ -57,8 +44,6 @@ window.addEventListener('load', function (ev) {
 		"reset": document.getElementById("move_reset_button")
 	};
 
-	/* 1d array of part select button DOM elements */
-	const partsElements = [];
 	/* 2d array of item select button DOM elements */
 	const itemsElements = [];
 
@@ -92,9 +77,6 @@ window.addEventListener('load', function (ev) {
 	where layerCanvases[i] depicts the selected item of part i in the selected color */
 	const layerCanvases = [];
 
-	let cooks = null;
-	let outfits = null;
-
 	init();
 
 	async function init() {
@@ -106,13 +88,6 @@ window.addEventListener('load', function (ev) {
 
 		initPalette();
 		initMove();
-
-		outfits = new Outfits({
-			onItemClick: selectOutfit,
-			containerId: 'outfit-list',
-			dataUrl: `${DATA_PATH}outfits.json`
-		});
-		outfits.init();
 
 		// part is selected
 		await updateSelectedPart(firstPart);
@@ -172,11 +147,6 @@ window.addEventListener('load', function (ev) {
 	 * Assign functions to buttons.
 	 */
 	function initButtons() {
-		randomButton.addEventListener('click', randomize);
-
-		outfitButton.addEventListener('click', showOutfits);
-		componentButton.addEventListener('click', showComponents);
-
 		itemsButton.addEventListener('click', showItems);
 		paletteButton.addEventListener('click', showPalette);
 		moveButton.addEventListener('click', showMove);
@@ -275,49 +245,6 @@ window.addEventListener('load', function (ev) {
 			for (let j = 0; j < itemRange; j++) {
 
 				if (j == itemIndex) {
-					itemsElements[i][j].classList.add("selected");
-				} else {
-					itemsElements[i][j].classList.remove("selected");
-				}
-			}
-		}
-
-		await renderLayerStack();
-	}
-
-	/**
-	 * Select outfit
-	 */
-	async function selectOutfit(outfitId) {
-
-		reset(false);
-
-		for (let i = 0; i < parts.length; i++) {
-
-			let items = parts[i].items;
-
-			let noneCount = Number(parts[i].noneAllowed);
-			let itemRange = items.length + noneCount;
-
-			if (!parts[i].noneAllowed) {
-				// Required items must be filled
-
-				selectedItemIndex[i] = 0;
-			}
-
-			// Attempt to load outfit
-			for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
-
-				if (items[itemIndex].outfits && items[itemIndex].outfits.indexOf(outfitId) >= 0) {
-
-					selectedItemIndex[i] = itemIndex;
-					break;
-				}
-			}
-
-			for (let j = 0; j < itemRange; j++) {
-
-				if (j == selectedItemIndex[i] + noneCount) {
 					itemsElements[i][j].classList.add("selected");
 				} else {
 					itemsElements[i][j].classList.remove("selected");
@@ -452,30 +379,6 @@ window.addEventListener('load', function (ev) {
 				}
 			}
 		}
-	}
-
-	/**
-	 * Display outfit menu, hide component menu
-	 */
-	function showOutfits() {
-		outfitButton.style.display = "none";
-		componentButton.style.display = "block";
-
-		outfitWrapper.style.display = "flex";
-		resetButton.style.display = "none";
-		componentWrapper.style.display = "none";
-	}
-
-	/**
-	 * Display component menu, hide outfit menu
-	 */
-	function showComponents() {
-		outfitButton.style.display = "block";
-		componentButton.style.display = "none";
-
-		outfitWrapper.style.display = "none";
-		resetButton.style.display = "flex";
-		componentWrapper.style.display = "flex";
 	}
 
 	/**

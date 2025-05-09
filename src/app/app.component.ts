@@ -45,6 +45,8 @@ export class AppComponent {
   private injector = inject(Injector);
   private partSignal: Signal<Part[]>;
 
+  outfitsVisible = false;
+
   constructor(
     private assetData: AssetDataService,
     private modalData: ModelDataService,
@@ -92,6 +94,18 @@ export class AppComponent {
     this.logger.info("AppComponent: reset()");
 
     this.modalData.reset();
+  }
+
+  showOutfits() {
+    this.logger.info("AppComponent: showOutfits()");
+
+    this.outfitsVisible = true;
+  }
+
+  showComponents() {
+    this.logger.info("AppComponent: showComponents()");
+
+    this.outfitsVisible = false;
   }
 
   showCredits() {

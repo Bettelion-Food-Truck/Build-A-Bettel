@@ -25,7 +25,7 @@ export class AssetDataService {
 
   private layerSignal: Signal<Layer[]> = computed(() => {
 
-    this.logger.info("AssetDataService: loadLayerData()");
+    this.logger.info("AssetDataService: compute layerSignal");
 
     let layers = [];
 
@@ -40,8 +40,6 @@ export class AssetDataService {
         "partIndex": partList[0]
       } as Layer;
     }
-
-    console.log("Layers: ", layers);
     return layers;
   });
 

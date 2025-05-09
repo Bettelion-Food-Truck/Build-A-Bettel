@@ -19,9 +19,9 @@
   <div class="item_selection_wrapper">
     <div class="feature_buttons">
       <div>
-        <button (click)="reset()">Reset</button>
-        <button id="outfit_button">Outfits</button>
-        <button id="component_button" style="display: none;">Components</button>
+        <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
+        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
+        <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
         <button (click)="showCredits()">Credits</button>
       </div>
 
@@ -30,9 +30,9 @@
       </button>
     </div>
 
-    <app-outfits />
+    <app-outfits [class.hidden]="!outfitsVisible" />
 
-    <div id="component_wrapper" class="component_wrapper">
+    <div id="component_wrapper" class="component_wrapper" [class.hidden]="outfitsVisible">
 
       <app-parts (randomizeOutfit)="randomize()" />
 

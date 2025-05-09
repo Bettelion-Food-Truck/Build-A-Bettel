@@ -1,4 +1,4 @@
-import { Component, input, Signal } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ASSET_PATH, ICON_PATH, ITEM_FOLDER, THUMBNAIL_FOLDER } from '@data/paths';

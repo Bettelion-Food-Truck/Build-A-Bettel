@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CONTRIBUTOR_PATH } from '@data/paths';
+
 import {
   MatDialogActions,
   MatDialogClose,
@@ -60,7 +62,7 @@ export class InfoComponent {
         group.contributors = data[group.section].map((contributor: any) => {
           return {
             name: contributor.name ?? "",
-            image: contributor.image ?? "",
+            image: contributor.image ? `${CONTRIBUTOR_PATH}${contributor.image}` : "",
             handle: contributor.handle ?? "",
             title: contributor.title ?? "",
             responsibilities: contributor.responsibilities ?? ""

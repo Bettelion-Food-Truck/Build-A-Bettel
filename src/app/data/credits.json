@@ -16,51 +16,51 @@
     "lead": [
         {
             "name": "Finarael",
-            "image": "./cooks/finarael.png"
+            "image": "finarael.png"
         }
     ],
     "artists": [
         {
             "name": "Spook",
-            "image": "./cooks/spook.png"
+            "image": "spook.png"
         },
         {
             "name": "Jahgyong",
-            "image": "./cooks/jahgyong.png"
+            "image": "jahgyong.png"
         },
         {
             "name": "Zmays",
-            "image": "./cooks/zmays.png"
+            "image": "zmays.png"
         },
         {
             "name": "AtomicReih",
-            "image": "./cooks/atomicreih.png"
+            "image": "atomicreih.png"
         },
         {
             "name": "RoseGhostea",
-            "image": "./cooks/roseghostea.png"
+            "image": "roseghostea.png"
         },
         {
             "name": "Pafufufun",
-            "image": "./cooks/pafufufun.png"
+            "image": "pafufufun.png"
         },
         {
             "name": "Raisins0up",
-            "image": "./cooks/raisins0up.png"
+            "image": "raisins0up.png"
         },
         {
             "name": "Aether",
-            "image": "./cooks/aether.png"
+            "image": "aether.png"
         },
         {
             "name": "Hioko",
-            "image": "./cooks/hioko.png"
+            "image": "hioko.png"
         }
     ],
     "developers": [
         {
             "name": "GlitchTech",
-            "image": "./cooks/glitchtech.png"
+            "image": "glitchtech.png"
         }
     ]
 }

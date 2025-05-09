@@ -1,17 +1,13 @@
-<div class="parts_menu_wrapper">
-    <div id="parts_menu" class="parts_menu">
-        <ul id="parts_list">
-            <li id="random_button" (click)="randomizeOutfit.emit()">
-                <img src="./icons/icon-random.png" alt="Randomize outfit" title="Randomize outfit" />
-            </li>
+<div #partmenu class="parts_menu" (wheel)="onScroll($event)">
+    <button (click)="randomizeOutfit.emit()">
+        <img src="./icons/icon-random.png" alt="Randomize outfit" title="Randomize outfit" />
+    </button>
 
-            <ng-container *ngFor="let part of partSignal(); let i = index">
-                <li id="part_{{i}}" [class.hidden]="getPartVisibility(i)"
-                    [class.selected]="activePart() && activePart() === i" (click)="onChange(i)">
-                    <img [src]="getPartIcon(i)" [alt]="part.name ? part.name : part.folder"
-                        [title]="part.name ? part.name : part.folder" />
-                </li>
-            </ng-container>
-        </ul>
-    </div>
+    <ng-container *ngFor="let part of partSignal(); let i = index">
+        <button [class.hidden]="getPartVisibility(i)" [class.selected]="activePart() && activePart() === i"
+            (click)="onChange(i)" [title]="part.name ? part.name : part.folder">
+            <img [src]="getPartIcon(i)" [alt]="part.name ? part.name : part.folder"
+                [title]="part.name ? part.name : part.folder" />
+        </button>
+    </ng-container>
 </div>

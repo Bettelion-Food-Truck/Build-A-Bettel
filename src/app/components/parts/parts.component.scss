@@ -1,61 +1,51 @@
-.parts_menu_wrapper {
-    position: relative;
-
+:host {
     background-color: var(--parts-menu-color, #eeeeee);
+}
 
-    .parts_menu {
-        overflow-x: auto;
-        overflow-y: hidden;
+.parts_menu {
+    overflow-x: auto;
+    overflow-y: hidden;
 
-        scrollbar-width: thin;
-        scrollbar-color: var(--random-purple-color, purple) lightgrey;
-        -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--random-purple-color, purple) lightgrey;
+    -webkit-overflow-scrolling: touch;
 
-        height: calc(var(--part-control-size, 60px) * 1.15);
-        margin: 0;
-        white-space: nowrap;
+    height: calc(var(--part-control-size, 60px) * 1.15);
+    margin: 0;
+    white-space: nowrap;
 
-        ul {
-            margin-right: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            padding: 0;
-            position: relative;
-            list-style: "none";
+    button {
+        width: var(--part-control-size, 60px);
+        height: var(--part-control-size, 60px);
 
-            li {
-                width: var(--part-control-size, 60px);
-                height: var(--part-control-size, 60px);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
 
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
+        background-color: var(--parts-menu-button-color, #eeeeee);
 
-                border: 3px solid transparent;
-                border-radius: 3px;
+        border: 3px solid transparent;
+        border-radius: 3px;
 
-                cursor: pointer;
+        cursor: pointer;
 
-                &.selected {
-                    border-color: var(--select-color, #ff0000);
-                }
-            }
+        &.selected {
+            border-color: var(--select-color, #ff0000);
+        }
+
+        &:hover:not(.selected) {
+            background-color: var(--parts-menu-button-hover-color, #dddddd);
         }
     }
 }
 
 /* Portrait layout changes */
 @media (orientation: portrait) {
-    .parts_menu_wrapper {
+    :host {
         min-height: 10vh;
+    }
 
-        .parts_menu {
-            height: 100%;
-
-            ul {
-                width: auto;
-                height: 100%;
-            }
-        }
+    .parts_menu {
+        height: 100%;
     }
 }

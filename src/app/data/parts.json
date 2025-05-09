@@ -55,6 +55,7 @@
         {
             "name": "Outer Jacket",
             "folder": "jackets",
+            "layer": "jackets_2",
             "items": "items-2.json",
             "icon": "icon-2.png"
         },
@@ -127,12 +128,14 @@
         {
             "name": "Jewelry 1",
             "folder": "jewelry",
+            "layer": "jewelry_1",
             "items": "items-1.json",
             "icon": "icon-1.png"
         },
         {
             "name": "Jewelry 2",
             "folder": "jewelry",
+            "layer": "jewelry_2",
             "items": "items-2.json",
             "icon": "icon-2.png"
         },
@@ -157,30 +160,35 @@
         {
             "name": "Front Accessory 1",
             "folder": "accessories-front",
+            "layer": "accessories-front_1",
             "items": "items-1.json",
             "icon": "icon-1.png"
         },
         {
             "name": "Front Accessory 2",
             "folder": "accessories-front",
+            "layer": "accessories-front_2",
             "items": "items-2.json",
             "icon": "icon-2.png"
         },
         {
             "name": "Front Accessory 3",
             "folder": "accessories-front",
+            "layer": "accessories-front_3",
             "items": "items-3.json",
             "icon": "icon-3.png"
         },
         {
             "name": "Rear Accessory 1",
             "folder": "accessories-rear",
+            "layer": "accessories-rear_1",
             "items": "items-1.json",
             "icon": "icon-1.png"
         },
         {
             "name": "Rear Accessory 2",
             "folder": "accessories-rear",
+            "layer": "accessories-rear_2",
             "items": "items-2.json",
             "icon": "icon-2.png"
         },

@@ -174,6 +174,7 @@ export class CanvasComponent implements AfterViewInit {
 
       this.logger.warn(`Part layer not found for ${parts[i].layer}`);
 
+      // TODO Doesn't actually work with current setup; Need to change from computed signal?
       // No layer set, assign to the end
       let layerIndex = layers.length;
       layers[layerIndex] = {
@@ -235,12 +236,6 @@ export class CanvasComponent implements AfterViewInit {
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
         await this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1);// TODO COLOR selectedColors[partIndex]);
-      } else if (partIndex === undefined) {
-
-        this.logger.error(`Layer ${layers[layerIndex].layer} has an undefined part (${partIndex})`);
-      } else {
-
-        this.logger.debug(`No item selected for part ${layers[layerIndex].layer} (${partIndex})`);
       }
     }
 

@@ -65,6 +65,9 @@ export class AppComponent {
   ngOnInit() {
     this.logger.info("AppComponent: ngOnInit()");
 
+    // TODO Show credits on initial load; Keeping this out until closer to production
+    // this.showCredits();
+
     // Initial load
     const initialLoadEffect = effect(() => {
       console.log(`Parts: ${this.partSignal().length}`);

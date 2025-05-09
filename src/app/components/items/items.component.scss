@@ -8,10 +8,6 @@
     flex: 1 1 auto;
 
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--random-purple-color, purple) lightgrey;
 
     .list {
         width: calc(100% - 10px);

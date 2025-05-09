@@ -6,10 +6,6 @@
     overflow-x: auto;
     overflow-y: hidden;
 
-    scrollbar-width: thin;
-    scrollbar-color: var(--random-purple-color, purple) lightgrey;
-    -webkit-overflow-scrolling: touch;
-
     height: calc(var(--part-control-size, 60px) * 1.15);
     margin: 0;
     white-space: nowrap;

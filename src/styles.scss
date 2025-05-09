@@ -14,6 +14,10 @@ html {
             density: 0
         )
     );
+
+    &.cdk-global-scrollblock {
+        overflow-y: hidden !important;
+    }
 }
 
 body {
@@ -41,6 +45,10 @@ body {
     box-sizing: border-box;
 
     font-size: 16px;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--random-purple-color, purple) lightgrey;
+    -webkit-overflow-scrolling: touch;
 }
 
 ul li img {

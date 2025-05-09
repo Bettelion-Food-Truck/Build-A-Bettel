@@ -1,6 +1,6 @@
 # Build-A-Bettel
 
-Bettel Hackrew is a dress up game focused on Gavis Bettel similar to [picrew](https://picrew.me/). This game is built upon [Hackrew](https://github.com/ksadov/hackrew).
+Bettel Hackrew is a dress up game focused on Gavis Bettel similar to [picrew](https://picrew.me/). This game is built upon [Hackrew](https://github.com/ksadov/hackrew). The game was migrated from simple JS to TS due to the growing complexity of the data structures and logical patterns. Maintenance was going to be a nightmare.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10. This game also has an image color generator which requires Python 3 installed (currently).
 

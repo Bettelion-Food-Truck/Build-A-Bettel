@@ -1,23 +1,26 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { Injectable, Signal, signal, WritableSignal } from '@angular/core';
 
 import { LogService } from '@services/log/log.service';
 
 import { ASSET_PATH } from '@data/paths';
 
-import Data from '@data/parts.json';
+import JSONData from '@data/parts.json';
 import { Part } from '@models/part.model';
 import { Item } from '@models/item.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AssetDataServiceService {
+export class AssetDataService {
+
+  private imageFolder: WritableSignal<string> = signal("");
+  private thumbnailFolder: WritableSignal<string> = signal("");
 
   private parts: Part[] = [];
-  private partSignal = signal(this.parts);
+  private partSignal: WritableSignal<Part[]> = signal([]);
 
-  private imageFolder = signal("");
-  private thumbnailFolder = signal("");
+  private activePart: WritableSignal<number> = signal(0);
+  private selectedItems: WritableSignal<number[]> = signal([]);
 
   constructor(private logger: LogService) {
 
@@ -26,14 +29,14 @@ export class AssetDataServiceService {
 
   async loadAssetData() {
 
-    this.logger.info("AssetDataServiceService: loadAssetData()");
+    this.logger.info("AssetDataService: loadAssetData()");
 
-    this.imageFolder.set(Data.images ?? "items/");
-    this.thumbnailFolder.set(Data.thumbnails ?? "thumbnails/");
+    this.imageFolder.set(JSONData.images ?? "items/");
+    this.thumbnailFolder.set(JSONData.thumbnails ?? "thumbnails/");
 
     // Fetch data from all the JSON files
     const partData = await Promise.all(
-      Data.parts.map(
+      JSONData.parts.map(
         async (dataItem: any) => {
 
           let part = dataItem satisfies Part as Part;
@@ -73,11 +76,6 @@ export class AssetDataServiceService {
     this.partSignal.set(this.parts);
   }
 
-  getParts(): Signal<Part[]> {
-
-    return this.partSignal.asReadonly();
-  }
-
   getImageFolder(): Signal<string> {
 
     return this.imageFolder.asReadonly();
@@ -86,5 +84,44 @@ export class AssetDataServiceService {
   getThumbnailFolder(): Signal<string> {
 
     return this.thumbnailFolder.asReadonly();
+  }
+
+  getParts(): Signal<Part[]> {
+
+    return this.partSignal.asReadonly();
+  }
+
+  getActivePart(): Signal<number> {
+
+    return this.activePart.asReadonly();
+  }
+
+  setActivePart(partIndex: number) {
+
+    this.activePart.set(partIndex);
+  }
+
+  getSelectedItems(): Signal<number[]> {
+
+    return this.selectedItems.asReadonly();
+  }
+
+  getSelectedItem(partIndex: number): number {
+
+    if (partIndex < 0 || partIndex >= this.selectedItems().length) {
+      return -1;
+    }
+
+    return this.selectedItems()[partIndex];
+  }
+
+  setSelectedItem(partIndex: number, itemIndex: number) {
+
+    this.selectedItems.update(selectedItems => {
+
+      selectedItems[partIndex] = itemIndex;
+
+      return selectedItems;
+    })
   }
 }

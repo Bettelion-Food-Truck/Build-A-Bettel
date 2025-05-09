@@ -1,11 +1,11 @@
-import { Component, input, output, Signal } from '@angular/core';
+import { Component, input, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ASSET_PATH, ICON_PATH, ITEM_FOLDER, THUMBNAIL_FOLDER } from '@data/paths';
 
 import { Part } from '@models/part.model';
 
-import { AssetDataServiceService } from '@services/asset-data/asset-data-service.service';
+import { AssetDataService } from '@services/asset-data/asset-data.service';
 
 @Component({
   selector: 'app-items',
@@ -19,16 +19,16 @@ export class ItemsComponent {
 
   partSignal: Signal<Part[]>;
 
-  selectedPart = input.required<number>();
-  selectedItems = input.required<number[]>();
-
-  onChange = output<{ part: number, item: number }>();
+  activePart: Signal<number>;
+  selectedItems: Signal<number[]>;
 
   constructor(
-    private assetData: AssetDataServiceService
+    private assetData: AssetDataService
   ) {
 
     this.partSignal = this.assetData.getParts();
+    this.activePart = this.assetData.getActivePart();
+    this.selectedItems = this.assetData.getSelectedItems();
   }
 
   getNonePath(): string {
@@ -57,9 +57,9 @@ export class ItemsComponent {
       (item.thumbnail ? THUMBNAIL_FOLDER : ITEM_FOLDER) +
       item.item + ".png";
   }
-}
 
-export interface ItemSelectedEvent {
-  part: number,
-  item: number
+  onChange(partIndex: number, itemIndex: number) {
+
+    this.assetData.setSelectedItem(partIndex, itemIndex);
+  }
 }

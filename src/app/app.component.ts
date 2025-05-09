@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CanvasComponent } from "@components/canvas/canvas.component";
 
 import { PartsComponent } from "@components/parts/parts.component";
-import { ItemsComponent, ItemSelectedEvent } from "@components/items/items.component";
+import { ItemsComponent } from "@components/items/items.component";
 
 import { ZoomComponent } from '@components/zoom/zoom.component';
 
@@ -15,9 +15,9 @@ import { OutfitsComponent } from "@components/outfits/outfits.component";
 import { InfoComponent } from '@components/info/info.component';
 
 import { LogService } from '@services/log/log.service';
-import { AssetDataServiceService } from '@services/asset-data/asset-data-service.service';
 
 import { Part } from '@models/part.model';
+import { AssetDataService } from '@services/asset-data/asset-data.service';
 
 @Component({
   selector: 'app-root',
@@ -39,14 +39,11 @@ export class AppComponent {
 
   readonly dialog = inject(MatDialog);
 
-  selectedPart: number = 0;
-  selectedItems: number[] = [];
-
   private injector = inject(Injector);
   private partSignal: Signal<Part[]>;
 
   constructor(
-    private assetData: AssetDataServiceService,
+    private assetData: AssetDataService,
     private logger: LogService
   ) {
 
@@ -65,7 +62,7 @@ export class AppComponent {
           if (this.partSignal()[i].hideFromPartsList) {
             continue;
           }
-          this.selectedPart = i;
+          // TODO this.selectedPart = i;
           break;
         }
 
@@ -80,20 +77,6 @@ export class AppComponent {
     this.logger.info("AppComponent: showCredits()");
 
     this.dialog.open(InfoComponent);
-  }
-
-  updateSelectedPart(index: number) {
-
-    this.logger.info("AppComponent: updateSelectedPart()", index);
-
-    this.selectedPart = index;
-  }
-
-  updateSelectedItem(data: ItemSelectedEvent) {
-
-    this.logger.info("AppComponent: updateSelectedItem()", data);
-
-    this.selectedItems[data.part] = data.item;
   }
 
   randomize() {

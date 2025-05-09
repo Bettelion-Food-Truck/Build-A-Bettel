@@ -36,14 +36,12 @@
 
     <div id="component_wrapper" class="component_wrapper">
 
-      <app-parts (partChanged)="updateSelectedPart($event)" (randomizeOutfit)="randomize()"
-        [selectedPart]="selectedPart" />
+      <app-parts (randomizeOutfit)="randomize()" />
 
       <div class="control_panel_wrapper">
         <div class="control_panel">
 
-          <app-items (onChange)="updateSelectedItem($event)" [selectedPart]="selectedPart"
-            [selectedItems]="selectedItems" />
+          <app-items />
 
           <app-palette style="display: none;" />
 

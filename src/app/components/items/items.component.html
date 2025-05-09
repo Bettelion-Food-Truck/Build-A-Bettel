@@ -1,16 +1,15 @@
-<div class="list" *ngFor="let part of partSignal(); let i = index"
-    [class.hidden]="!selectedPart() || selectedPart() !== i">
+<div class="list" *ngFor="let part of partSignal(); let i = index" [class.hidden]="!activePart() || activePart() !== i">
 
     <ng-container *ngIf="part.noneAllowed">
         <button id="icon_{{i}}_none" class="item" [class.selected]="selectedItems() && selectedItems()[i] === 0"
-            (click)="onChange.emit({ part: i, item: -1 })">
+            (click)="onChange(i, -1)">
             <img [src]="getNonePath()" alt="Icon indicating no item selected" title="None" />
         </button>
     </ng-container>
 
     <ng-container *ngFor="let item of part.items; let j = index">
         <button id="icon_{{i}}_{{j}}" class="item" [class.selected]="selectedItems() && selectedItems()[i] === j"
-            (click)="onChange.emit({ part: i, item: j })">
+            (click)="onChange(i, j)">
             <img [src]="getItemPath(i,j)" [alt]="item.name ? item.name : item.item"
                 [title]="part.name ? part.name : part.folder" />
         </button>

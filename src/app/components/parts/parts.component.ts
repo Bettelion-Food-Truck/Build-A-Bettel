@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, output, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, input, output, Signal, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ASSET_PATH } from '@data/paths';
@@ -19,6 +19,8 @@ import { ModelDataService } from '@services/model-data/model-data.service';
 })
 export class PartsComponent {
 
+  container = viewChild.required<ElementRef>('partmenu');
+
   partSignal: Signal<Part[]>;
   activePart: Signal<number>;
 
@@ -31,6 +33,16 @@ export class PartsComponent {
 
     this.partSignal = this.assetData.getParts();
     this.activePart = this.modalData.getActivePart();
+  }
+
+  onScroll(e: WheelEvent) {
+
+    if (Math.abs(e.deltaY) > 0) {
+
+      e.preventDefault();
+
+      this.container().nativeElement.scrollLeft += e.deltaY;
+    }
   }
 
   getPartIcon(partIndex: number): string {

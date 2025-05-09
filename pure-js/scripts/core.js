@@ -114,8 +114,6 @@ window.addEventListener('load', function (ev) {
 		});
 		outfits.init();
 
-		initHorizontalScroll();
-
 		// part is selected
 		await updateSelectedPart(firstPart);
 	}
@@ -228,22 +226,6 @@ window.addEventListener('load', function (ev) {
 				"scale": DEFAULT_POSITION.scale
 			};
 		}
-	}
-
-	/**
-	 * Enables horizontal scrolling of the parts menu when the mouse wheel is used
-	 */
-	function initHorizontalScroll() {
-
-		partContainer.addEventListener("wheel", function (e) {
-
-			if (Math.abs(e.deltaY) > 0) {
-
-				e.preventDefault();
-
-				partContainer.scrollLeft += e.deltaY;
-			}
-		});
 	}
 
 	/**

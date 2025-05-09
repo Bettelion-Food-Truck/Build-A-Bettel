@@ -19,6 +19,7 @@ import { LogService } from '@services/log/log.service';
 import { Part } from '@models/part.model';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
+import { LoadingComponent } from "./components/loading/loading.component";
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { ModelDataService } from '@services/model-data/model-data.service';
     ZoomComponent,
     MovementComponent,
     PaletteComponent,
-    OutfitsComponent
+    OutfitsComponent,
+    LoadingComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

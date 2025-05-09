@@ -1,0 +1,32 @@
+:host {
+    position: absolute;
+}
+
+.loading {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+
+    font-size: 3vh;
+    font-weight: bold;
+
+    background-color: var(--loading-bg-color, #ffffff);
+
+    opacity: 0.75;
+
+    padding: 15px;
+
+    border-radius: 5px;
+    border: 3px solid var(--random-purple-color, purple);
+
+    .mat-mdc-progress-spinner {
+        margin-right: 10px;
+    }
+}
+
+/* Portrait layout changes */
+@media (orientation: portrait) {
+    .loading {
+        font-size: 3vh;
+    }
+}

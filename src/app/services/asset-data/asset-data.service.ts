@@ -1,4 +1,4 @@
-import { Injectable, Signal, signal, WritableSignal } from '@angular/core';
+import { inject, Injectable, Signal, signal, WritableSignal } from '@angular/core';
 
 import { LogService } from '@services/log/log.service';
 
@@ -7,11 +7,16 @@ import { ASSET_PATH } from '@data/paths';
 import JSONData from '@data/parts.json';
 import { Part } from '@models/part.model';
 import { Item } from '@models/item.model';
+import { LoadingService } from '@services/loading/loading.service';
+import { HttpClient } from '@angular/common/http';
+import { forkJoin } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AssetDataService {
+
+  private http = inject(HttpClient);
 
   private imageFolder: WritableSignal<string> = signal("");
   private thumbnailFolder: WritableSignal<string> = signal("");
@@ -19,7 +24,10 @@ export class AssetDataService {
   private parts: Part[] = [];
   private partSignal: WritableSignal<Part[]> = signal([]);
 
-  constructor(private logger: LogService) {
+  constructor(
+    private logger: LogService,
+    private loading: LoadingService
+  ) {
 
     this.loadAssetData();
   }
@@ -27,6 +35,8 @@ export class AssetDataService {
   async loadAssetData() {
 
     this.logger.info("AssetDataService: loadAssetData()");
+
+    this.loading.addLoadingItem();
 
     this.imageFolder.set(JSONData.images ?? "items/");
     this.thumbnailFolder.set(JSONData.thumbnails ?? "thumbnails/");
@@ -76,6 +86,8 @@ export class AssetDataService {
 
     this.partSignal.set(this.parts);
     this.logger.info(`AssetDataService: loadAssetData() - ${partCount} items loaded`);
+
+    this.loading.removeLoadingItem();
   }
 
   getImageFolder(): Signal<string> {

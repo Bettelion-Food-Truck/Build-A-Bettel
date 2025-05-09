@@ -39,10 +39,6 @@
                 &.selected {
                     border-color: var(--select-color, #ff0000);
                 }
-
-                &.hidden {
-                    display: none;
-                }
             }
         }
     }

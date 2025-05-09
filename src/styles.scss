@@ -48,6 +48,10 @@ ul li img {
     height: 100%;
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* Base Variables */
 :root {
     /* the color of the background of the loading sign*/
@@ -114,6 +118,12 @@ ul li img {
         (
             container-color: #e0e0e0,
             headline-padding: 0
+        )
+    );
+
+    @include mat.progress-spinner-overrides(
+        (
+            active-indicator-color: var(--random-purple-color)
         )
     );
 }

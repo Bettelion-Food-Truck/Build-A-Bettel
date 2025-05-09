@@ -31,6 +31,8 @@ export class AssetDataService {
     this.imageFolder.set(JSONData.images ?? "items/");
     this.thumbnailFolder.set(JSONData.thumbnails ?? "thumbnails/");
 
+    let partCount = 0;
+
     // Fetch data from all the JSON files
     const partData = await Promise.all(
       JSONData.parts.map(
@@ -41,6 +43,8 @@ export class AssetDataService {
           const resp = await fetch(`${ASSET_PATH}${part.folder}/${part.items}`, { cache: "no-cache" });
 
           let jsonResp = await resp.json();
+
+          partCount += jsonResp.items.length;
 
           for (let i = 0; i < jsonResp.items.length; i++) {
 
@@ -71,6 +75,7 @@ export class AssetDataService {
     }
 
     this.partSignal.set(this.parts);
+    this.logger.info(`AssetDataService: loadAssetData() - ${partCount} items loaded`);
   }
 
   getImageFolder(): Signal<string> {

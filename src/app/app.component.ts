@@ -53,8 +53,18 @@ export class AppComponent {
   ngOnInit() {
     this.logger.info("AppComponent: ngOnInit()");
 
-    const firstPartEffect = effect(() => {
+    // Initial load
+    const initialPartLoadEffect = effect(() => {
       console.log(`Parts: ${this.partSignal().length}`);
+
+      // Load game into a default outfit
+      if (false) {// TODO outfits.getCount() > 0) {
+
+        // TODO selectOutfit(outfits.getOutfitUID(0));
+      } else {
+
+        this.assetData.reset();
+      }
 
       if (this.partSignal().length > 0) {
 
@@ -62,15 +72,22 @@ export class AppComponent {
           if (this.partSignal()[i].hideFromPartsList) {
             continue;
           }
-          // TODO this.selectedPart = i;
+
+          this.assetData.setActivePart(i);
           break;
         }
 
-        firstPartEffect.destroy();
+        initialPartLoadEffect.destroy();
       }
     }, {
       injector: this.injector
     });
+  }
+
+  reset() {
+    this.logger.info("AppComponent: reset()");
+
+    this.assetData.reset();
   }
 
   showCredits() {

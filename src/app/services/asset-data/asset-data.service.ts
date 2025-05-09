@@ -124,4 +124,30 @@ export class AssetDataService {
       return selectedItems;
     })
   }
+
+  reset(render: boolean = true) {
+
+    this.selectedItems.update(selectedItems => {
+
+      selectedItems = [];
+
+      for (let i = 0; i < this.parts.length; i++) {
+
+        if (this.parts[i].noneAllowed) {
+          selectedItems[i] = -1;
+        } else {
+          selectedItems[i] = 0;
+        }
+      }
+
+      return selectedItems;
+    });
+
+    // TODO reset movement data
+
+    if (render) {
+
+      // TODO await renderLayerStack();
+    }
+  }
 }

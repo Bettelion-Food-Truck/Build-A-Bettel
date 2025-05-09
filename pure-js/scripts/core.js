@@ -24,7 +24,7 @@ window.addEventListener('load', function (ev) {
 	let loadingTimer = null;
 
 	const randomButton = document.getElementById("random_button");
-	const resetButton = document.getElementById("reset_button");
+
 	const outfitButton = document.getElementById("outfit_button");
 	const componentButton = document.getElementById("component_button");
 
@@ -34,19 +34,13 @@ window.addEventListener('load', function (ev) {
 
 	const saveButton = document.getElementById("save_button");
 
-	const infoButton = document.getElementById("info_button");
-	const infoModal = document.getElementById("info_modal");
-	const infoModalClose = document.getElementById("info_modal_close");
-
 	const outfitWrapper = document.getElementById("outfit_wrapper");
 
 	const componentWrapper = document.getElementById("component_wrapper");
 
 	const partContainer = document.getElementById("parts_menu");
-	const partsList = document.getElementById("parts_list");
 
 	const itemWrapper = document.getElementById("item_list_wrapper");
-	const itemList = document.getElementById("item_list");
 
 	const paletteWrapper = document.getElementById("color_palette_wrapper");
 	const paletteList = document.getElementById("color_palette_list");
@@ -124,22 +118,7 @@ window.addEventListener('load', function (ev) {
 
 		initHorizontalScroll();
 
-		// Load game into a default outfit
-		if (await outfits.getCount() > 0) {
-			await selectOutfit(outfits.getOutfitUID(0));
-		} else {
-
-			reset();
-		}
-
-		let firstPart = 0;
-		for (let i = 0; i < parts.length; i++) {
-			if (parts[i].hideFromPartsList) {
-				continue;
-			}
-			firstPart = i;
-			break;
-		}
+		// part is selected
 		await updateSelectedPart(firstPart);
 	}
 
@@ -223,22 +202,12 @@ window.addEventListener('load', function (ev) {
 	function initButtons() {
 		randomButton.addEventListener('click', randomize);
 
-		resetButton.addEventListener('click', reset);
-
 		outfitButton.addEventListener('click', showOutfits);
 		componentButton.addEventListener('click', showComponents);
 
 		itemsButton.addEventListener('click', showItems);
 		paletteButton.addEventListener('click', showPalette);
 		moveButton.addEventListener('click', showMove);
-
-		infoButton.addEventListener('click', toggleInfo);
-		infoModal.addEventListener('click', (event) => {
-			if (event.target == infoModal) {
-				toggleInfo();
-			}
-		});
-		infoModalClose.addEventListener('click', toggleInfo);
 	}
 
 	/**
@@ -358,36 +327,6 @@ window.addEventListener('load', function (ev) {
 		}
 
 		await renderLayerStack();
-	}
-
-	async function reset(render = true) {
-
-		for (let i = 0; i < parts.length; i++) {
-
-			selectedItemIndex[i] = null;
-
-			if (!parts[i].noneAllowed) {
-				// Required items must be filled
-
-				selectedItemIndex[i] = 0;
-			}
-
-			for (let j = 0; j < (parts[i].items.length + Number(parts[i].noneAllowed)); j++) {
-
-				if (j == selectedItemIndex[i]) {
-					itemsElements[i][j].classList.add("selected");
-				} else {
-					itemsElements[i][j].classList.remove("selected");
-				}
-			}
-
-			resetActiveLayerPosition(false);
-		}
-
-		if (render) {
-
-			await renderLayerStack();
-		}
 	}
 
 	/**
@@ -552,14 +491,6 @@ window.addEventListener('load', function (ev) {
 			});
 			image.src = path;
 		});
-	}
-
-	/**
-	 * Display info menu if it's visible, hide it if it's invisible
-	 */
-	function toggleInfo() {
-
-		infoModal.style.display = infoModal.style.display === "block" ? "none" : "block";
 	}
 
 	/**

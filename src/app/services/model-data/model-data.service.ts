@@ -87,11 +87,11 @@ export class ModelDataService {
         }
 
         // Attempt to load outfit
-        for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
+        for (let j = 0; j < items.length; j++) {
 
-          if (items[itemIndex].outfits && items[itemIndex].outfits.indexOf(outfit.uid) >= 0) {
+          if (items[j].outfits && items[j].outfits.indexOf(outfit.uid) >= 0) {
 
-            selectedItems[i] = itemIndex;
+            selectedItems[i] = j;
             break;
           }
         }

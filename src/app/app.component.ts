@@ -17,9 +17,12 @@ import { InfoComponent } from '@components/info/info.component';
 import { LogService } from '@services/log/log.service';
 
 import { Part } from '@models/part.model';
+import { Outfit } from '@models/outfit.model';
+
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 import { LoadingComponent } from "./components/loading/loading.component";
+import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 
 @Component({
   selector: 'app-root',
@@ -44,35 +47,38 @@ export class AppComponent {
 
   private injector = inject(Injector);
   private partSignal: Signal<Part[]>;
+  private outfitSignal: Signal<Outfit[]>;
 
   outfitsVisible = false;
 
   constructor(
     private assetData: AssetDataService,
+    private outfitData: OutfitDataService,
     private modalData: ModelDataService,
     private logger: LogService
   ) {
 
     this.partSignal = this.assetData.getParts();
+    this.outfitSignal = this.outfitData.getOutfits();
   }
 
   ngOnInit() {
     this.logger.info("AppComponent: ngOnInit()");
 
     // Initial load
-    const initialPartLoadEffect = effect(() => {
+    const initialLoadEffect = effect(() => {
       console.log(`Parts: ${this.partSignal().length}`);
 
-      // Load game into a default outfit
-      if (false) {// TODO outfits.getCount() > 0) {
-
-        // TODO selectOutfit(outfits.getOutfitUID(0));
-      } else {
-
-        this.modalData.reset();
-      }
-
       if (this.partSignal().length > 0) {
+
+        // Load game into a default outfit
+        if (this.outfitSignal().length > 0) {
+
+          this.modalData.selectOutfit(this.outfitSignal()[0])
+        } else {
+
+          this.modalData.reset();
+        }
 
         for (let i = 0; i < this.partSignal().length; i++) {
           if (this.partSignal()[i].hideFromPartsList) {
@@ -83,7 +89,7 @@ export class AppComponent {
           break;
         }
 
-        initialPartLoadEffect.destroy();
+        initialLoadEffect.destroy();
       }
     }, {
       injector: this.injector

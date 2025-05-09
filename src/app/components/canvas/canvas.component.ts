@@ -232,9 +232,15 @@ export class CanvasComponent implements AfterViewInit {
 
       const partIndex = layers[layerIndex].partIndex;
 
-      if (this.currentlySelectedItems[partIndex] !== null && this.currentlySelectedItems[partIndex] !== undefined) {
+      if (this.currentlySelectedItems[partIndex] >= 0) {
 
         await this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1);// TODO COLOR selectedColors[partIndex]);
+      } else if (partIndex === undefined) {
+
+        this.logger.error(`Layer ${layers[layerIndex].layer} has an undefined part (${partIndex})`);
+      } else {
+
+        this.logger.debug(`No item selected for part ${layers[layerIndex].layer} (${partIndex})`);
       }
     }
 
@@ -337,6 +343,8 @@ export class CanvasComponent implements AfterViewInit {
     const position: Position = {} as Position;//TODO MOVEMENT this.currentlySelectedItems[partIndex];
 
     if (!item) {
+      this.logger.error(`Item not found for part ${partIndex} and item ${itemIndex}`);
+
       return;
     }
 

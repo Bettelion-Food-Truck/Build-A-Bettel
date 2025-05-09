@@ -1,28 +1,49 @@
-import { inject, Injectable, Signal, signal, WritableSignal } from '@angular/core';
+import { computed, Injectable, Signal, signal, WritableSignal } from '@angular/core';
 
 import { LogService } from '@services/log/log.service';
 
 import { ASSET_PATH } from '@data/paths';
 
-import JSONData from '@data/parts.json';
+import PartDataJSON from '@data/parts.json';
+import LayerDataJSON from '@data/layers.json';
+
 import { Part } from '@models/part.model';
 import { Item } from '@models/item.model';
 import { LoadingService } from '@services/loading/loading.service';
-import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
+import { Layer } from '@models/layer.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AssetDataService {
 
-  private http = inject(HttpClient);
-
   private imageFolder: WritableSignal<string> = signal("");
   private thumbnailFolder: WritableSignal<string> = signal("");
 
   private parts: Part[] = [];
   private partSignal: WritableSignal<Part[]> = signal([]);
+
+  private layerSignal: Signal<Layer[]> = computed(() => {
+
+    this.logger.info("AssetDataService: loadLayerData()");
+
+    let layers = [];
+
+    for (let layerIndex = 0; layerIndex < LayerDataJSON.layers.length; layerIndex++) {
+
+      let partList = this.parts
+        .map((part, i) => part.layer === LayerDataJSON.layers[layerIndex] ? i : undefined)
+        .filter(x => x !== undefined);
+
+      layers[layerIndex] = {
+        "layer": LayerDataJSON.layers[layerIndex],
+        "partIndex": partList[0]
+      } as Layer;
+    }
+
+    console.log("Layers: ", layers);
+    return layers;
+  });
 
   constructor(
     private logger: LogService,
@@ -38,14 +59,14 @@ export class AssetDataService {
 
     this.loading.addLoadingItem();
 
-    this.imageFolder.set(JSONData.images ?? "items/");
-    this.thumbnailFolder.set(JSONData.thumbnails ?? "thumbnails/");
+    this.imageFolder.set(PartDataJSON.images ?? "items/");
+    this.thumbnailFolder.set(PartDataJSON.thumbnails ?? "thumbnails/");
 
     let partCount = 0;
 
     // Fetch data from all the JSON files
     const partData = await Promise.all(
-      JSONData.parts.map(
+      PartDataJSON.parts.map(
         async (dataItem: any) => {
 
           let part = dataItem satisfies Part as Part;
@@ -103,5 +124,10 @@ export class AssetDataService {
   getParts(): Signal<Part[]> {
 
     return this.partSignal.asReadonly();
+  }
+
+  getLayers(): Signal<Layer[]> {
+
+    return this.layerSignal;
   }
 }

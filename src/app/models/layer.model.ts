@@ -1,4 +1,4 @@
 export interface Layer {
-    name: string;
-    weight: number;
+    layer: string;
+    partIndex: number;
 }

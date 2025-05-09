@@ -101,8 +101,6 @@ window.addEventListener('load', function (ev) {
 
 		showLoading(0);
 
-		await initData();
-
 		initButtons();
 		initCanvases()
 
@@ -120,30 +118,6 @@ window.addEventListener('load', function (ev) {
 
 		// part is selected
 		await updateSelectedPart(firstPart);
-	}
-
-	/**
-	 * Fetch parts info from data.json and initialize the parts variable.
-	 */
-	async function initData() {
-
-		// Build layer data to know which part is associated
-
-		response = await fetch(DATA_PATH + "layers.json", { cache: "no-cache" });
-		json = await response.json();
-
-		let rawLayers = json.layers;
-		layers = []
-
-		for (let layerIndex = 0; layerIndex < rawLayers.length; layerIndex++) {
-
-			let partList = parts.map((part, i) => part.layer === rawLayers[layerIndex] ? i : undefined).filter(x => x !== undefined);
-
-			layers[layerIndex] = {
-				"layer": rawLayers[layerIndex],
-				"partId": partList[0]
-			}
-		}
 	}
 
 	/**
@@ -476,21 +450,6 @@ window.addEventListener('load', function (ev) {
 	 */
 	async function updateSave() {
 		saveButton.href = canvas.toDataURL("image/png");
-	}
-
-	/**
-	 * Force newLayer to wait until an image is fully loaded before assigning it to layerStack
-	 *
-	 * @path {string} the path to the Image source .png
-	 */
-	function loadImage(path) {
-		return new Promise(resolve => {
-			const image = new Image();
-			image.addEventListener('load', () => {
-				resolve(image);
-			});
-			image.src = path;
-		});
 	}
 
 	/**
@@ -885,5 +844,20 @@ window.addEventListener('load', function (ev) {
 		ctx.drawImage(img, 0, 0);
 
 		ctx.restore();
+	}
+
+	/**
+	 * Force newLayer to wait until an image is fully loaded before assigning it to layerStack
+	 *
+	 * @path {string} the path to the Image source .png
+	 */
+	function loadImage(path) {
+		return new Promise(resolve => {
+			const image = new Image();
+			image.addEventListener('load', () => {
+				resolve(image);
+			});
+			image.src = path;
+		});
 	}
 }, false);

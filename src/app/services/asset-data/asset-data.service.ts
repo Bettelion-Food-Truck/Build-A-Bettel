@@ -19,9 +19,6 @@ export class AssetDataService {
   private parts: Part[] = [];
   private partSignal: WritableSignal<Part[]> = signal([]);
 
-  private activePart: WritableSignal<number> = signal(0);
-  private selectedItems: WritableSignal<number[]> = signal([]);
-
   constructor(private logger: LogService) {
 
     this.loadAssetData();
@@ -89,65 +86,5 @@ export class AssetDataService {
   getParts(): Signal<Part[]> {
 
     return this.partSignal.asReadonly();
-  }
-
-  getActivePart(): Signal<number> {
-
-    return this.activePart.asReadonly();
-  }
-
-  setActivePart(partIndex: number) {
-
-    this.activePart.set(partIndex);
-  }
-
-  getSelectedItems(): Signal<number[]> {
-
-    return this.selectedItems.asReadonly();
-  }
-
-  getSelectedItem(partIndex: number): number {
-
-    if (partIndex < 0 || partIndex >= this.selectedItems().length) {
-      return -1;
-    }
-
-    return this.selectedItems()[partIndex];
-  }
-
-  setSelectedItem(partIndex: number, itemIndex: number) {
-
-    this.selectedItems.update(selectedItems => {
-
-      selectedItems[partIndex] = itemIndex;
-
-      return selectedItems;
-    })
-  }
-
-  reset(render: boolean = true) {
-
-    this.selectedItems.update(selectedItems => {
-
-      selectedItems = [];
-
-      for (let i = 0; i < this.parts.length; i++) {
-
-        if (this.parts[i].noneAllowed) {
-          selectedItems[i] = -1;
-        } else {
-          selectedItems[i] = 0;
-        }
-      }
-
-      return selectedItems;
-    });
-
-    // TODO reset movement data
-
-    if (render) {
-
-      // TODO await renderLayerStack();
-    }
   }
 }

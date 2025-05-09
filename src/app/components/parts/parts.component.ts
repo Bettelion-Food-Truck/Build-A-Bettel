@@ -6,6 +6,7 @@ import { ASSET_PATH } from '@data/paths';
 import { Part } from '@models/part.model';
 
 import { AssetDataService } from '@services/asset-data/asset-data.service';
+import { ModelDataService } from '@services/model-data/model-data.service';
 
 @Component({
   selector: 'app-parts',
@@ -24,11 +25,12 @@ export class PartsComponent {
   randomizeOutfit = output<void>();
 
   constructor(
-    private assetData: AssetDataService
+    private assetData: AssetDataService,
+    private modalData: ModelDataService
   ) {
 
     this.partSignal = this.assetData.getParts();
-    this.activePart = this.assetData.getActivePart();
+    this.activePart = this.modalData.getActivePart();
   }
 
   getPartIcon(partIndex: number): string {
@@ -61,6 +63,6 @@ export class PartsComponent {
 
   onChange(partIndex: number) {
 
-    this.assetData.setActivePart(partIndex);
+    this.modalData.setActivePart(partIndex);
   }
 }

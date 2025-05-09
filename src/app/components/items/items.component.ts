@@ -6,6 +6,7 @@ import { ASSET_PATH, ICON_PATH, ITEM_FOLDER, THUMBNAIL_FOLDER } from '@data/path
 import { Part } from '@models/part.model';
 
 import { AssetDataService } from '@services/asset-data/asset-data.service';
+import { ModelDataService } from '@services/model-data/model-data.service';
 
 @Component({
   selector: 'app-items',
@@ -23,12 +24,13 @@ export class ItemsComponent {
   selectedItems: Signal<number[]>;
 
   constructor(
-    private assetData: AssetDataService
+    private assetData: AssetDataService,
+    private modalData: ModelDataService
   ) {
 
     this.partSignal = this.assetData.getParts();
-    this.activePart = this.assetData.getActivePart();
-    this.selectedItems = this.assetData.getSelectedItems();
+    this.activePart = this.modalData.getActivePart();
+    this.selectedItems = this.modalData.getSelectedItems();
   }
 
   getNonePath(): string {
@@ -60,6 +62,6 @@ export class ItemsComponent {
 
   onChange(partIndex: number, itemIndex: number) {
 
-    this.assetData.setSelectedItem(partIndex, itemIndex);
+    this.modalData.setSelectedItem(partIndex, itemIndex);
   }
 }

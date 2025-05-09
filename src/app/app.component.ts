@@ -18,6 +18,7 @@ import { LogService } from '@services/log/log.service';
 
 import { Part } from '@models/part.model';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
+import { ModelDataService } from '@services/model-data/model-data.service';
 
 @Component({
   selector: 'app-root',
@@ -44,6 +45,7 @@ export class AppComponent {
 
   constructor(
     private assetData: AssetDataService,
+    private modalData: ModelDataService,
     private logger: LogService
   ) {
 
@@ -63,7 +65,7 @@ export class AppComponent {
         // TODO selectOutfit(outfits.getOutfitUID(0));
       } else {
 
-        this.assetData.reset();
+        this.modalData.reset();
       }
 
       if (this.partSignal().length > 0) {
@@ -73,7 +75,7 @@ export class AppComponent {
             continue;
           }
 
-          this.assetData.setActivePart(i);
+          this.modalData.setActivePart(i);
           break;
         }
 
@@ -87,7 +89,7 @@ export class AppComponent {
   reset() {
     this.logger.info("AppComponent: reset()");
 
-    this.assetData.reset();
+    this.modalData.reset();
   }
 
   showCredits() {

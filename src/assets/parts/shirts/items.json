@@ -229,6 +229,12 @@
                 "axel"
             ]
         },
+        {
+            "item": "artist-shirt",
+            "outfits": [
+                "artist"
+            ]
+        },
         "snank"
     ]
 }

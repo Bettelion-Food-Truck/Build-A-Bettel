@@ -179,6 +179,12 @@
         "demon-horns",
         "halo",
         "dog-ears",
-        "sleephat"
+        "sleephat",
+        {
+            "item": "artist-hat",
+            "outfits": [
+                "artist"
+            ]
+        }
     ]
 }

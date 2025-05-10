@@ -220,6 +220,12 @@
             "outfits": [
                 "2025-expo"
             ]
+        },
+        {
+            "item": "artist-pants",
+            "outfits": [
+                "artist"
+            ]
         }
     ]
 }

@@ -383,6 +383,16 @@
                 "part": "feet",
                 "item": "flat"
             }
+        },
+        {
+            "item": "artist-flats",
+            "outfits": [
+                "artist"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
         }
     ]
 }

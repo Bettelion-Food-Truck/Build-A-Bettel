@@ -96,6 +96,13 @@
                 "2024-expo"
             ],
             "thumbnail": true
+        },
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo",
+            "outfits": [
+                "artist"
+            ]
         }
     ]
 }

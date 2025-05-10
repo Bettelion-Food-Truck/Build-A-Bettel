@@ -15,6 +15,12 @@
         "sleepmask",
         "silly-glasses",
         "raycon",
-        "pink-glasses"
+        "pink-glasses",
+        {
+            "item": "artist-glasses",
+            "outfits": [
+                "artist"
+            ]
+        }
     ]
 }

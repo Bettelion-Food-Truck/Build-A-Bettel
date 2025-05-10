@@ -159,6 +159,10 @@
         {
             "uid": "2025-expo",
             "name": "2025 Expo"
+        },
+        {
+            "uid": "artist",
+            "name": "Artist"
         }
     ]
 }

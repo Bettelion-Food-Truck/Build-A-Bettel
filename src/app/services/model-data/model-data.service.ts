@@ -3,6 +3,7 @@ import { Injectable, Signal, signal, WritableSignal } from '@angular/core';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 
 import { Outfit } from '@models/outfit.model';
+import { Position } from '@models/position.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class ModelDataService {
 
   private activePart: WritableSignal<number> = signal(0);
   private selectedItems: WritableSignal<number[]> = signal([]);
+  private selectedPositions: WritableSignal<Position[]> = signal([]);
 
   private imageDataString: WritableSignal<string> = signal("");
 
@@ -57,6 +59,30 @@ export class ModelDataService {
       selectedItems[partIndex] = itemIndex;
 
       return [...selectedItems];
+    });
+  }
+
+  getItemsPositions(): Signal<Position[]> {
+
+    return this.selectedPositions.asReadonly();
+  }
+
+  getItemsPosition(partIndex: number): Position {
+
+    if (partIndex < 0 || partIndex >= this.selectedPositions().length) {
+      return {} as Position;
+    }
+
+    return this.selectedPositions()[partIndex];
+  }
+
+  setItemsPosition(partIndex: number, position: Position) {
+
+    this.selectedPositions.update(selectedPositions => {
+
+      selectedPositions[partIndex] = position;
+
+      return [...selectedPositions];
     });
   }
 

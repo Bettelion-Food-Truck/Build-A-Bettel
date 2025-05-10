@@ -1,13 +1,17 @@
 <div class="movement_controls">
     <div class="spacer"><!-- spacer --></div>
-    <button class="movement_button" (click)="moveUp()" [class.disabled]="!upPotential">Up</button>
+    <button class="movement_button" (click)="moveUp()" [class.disabled]="!upPotential"
+        [disabled]="!upPotential">Up</button>
     <div class="spacer"><!-- spacer --></div>
 
-    <button class="movement_button" (click)="moveLeft()" [class.disabled]="!leftPotential">Left</button>
+    <button class="movement_button" (click)="moveLeft()" [class.disabled]="!leftPotential"
+        [disabled]="!leftPotential">Left</button>
     <button class="movement_button" (click)="reset()">Reset</button>
-    <button class="movement_button" (click)="moveRight()" [class.disabled]="!rightPotential">Right</button>
+    <button class="movement_button" (click)="moveRight()" [class.disabled]="!rightPotential"
+        [disabled]="!rightPotential">Right</button>
 
     <div class="spacer"><!-- spacer --></div>
-    <button class="movement_button" (click)="moveDown()" [class.disabled]="!downPotential">Down</button>
+    <button class="movement_button" (click)="moveDown()" [class.disabled]="!downPotential"
+        [disabled]="!downPotential">Down</button>
     <div class="spacer"><!-- spacer --></div>
 </div>

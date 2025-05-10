@@ -1,6 +1,6 @@
 import { Component, effect, Signal } from '@angular/core';
 import { Movement, Part } from '@models/part.model';
-import { Position } from '@models/position.model';
+import { Position, DEFAULT_POSITION } from '@models/position.model';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 
@@ -11,13 +11,6 @@ import { ModelDataService } from '@services/model-data/model-data.service';
   styleUrl: './movement.component.scss'
 })
 export class MovementComponent {
-
-  // TODO should this move elsewhere and provide a default object that way?
-  readonly DEFAULT_POSITION = {
-    "x": 0,
-    "y": 0,
-    "scale": 1
-  };
 
   readonly MOVEMENT_BASE = 10; // 10px
 
@@ -43,15 +36,9 @@ export class MovementComponent {
 
       const position = this.modelData.getItemsPosition(selectedPart);
 
-      if (!position) {
-        this.modelData.setItemsPosition(
-          selectedPart,
-          {
-            x: this.DEFAULT_POSITION.x,
-            y: this.DEFAULT_POSITION.y,
-            scale: this.DEFAULT_POSITION.scale
-          }
-        );
+      if (!position || Object.keys(position).length === 0) {
+
+        this.reset();
       }
 
       this.updateMovementButtons();
@@ -120,10 +107,10 @@ export class MovementComponent {
 
   reset() {
 
-    let position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position: Position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
 
-    position.x = this.DEFAULT_POSITION.x;
-    position.y = this.DEFAULT_POSITION.y;
+    position.x = DEFAULT_POSITION.x;
+    position.y = DEFAULT_POSITION.y;
 
     this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
 
@@ -177,7 +164,6 @@ export class MovementComponent {
   }
 
   updateMovementButtons() {
-    // TODO change to computed
 
     let selectedPart = this.modelData.getActivePart()();
 

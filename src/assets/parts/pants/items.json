@@ -232,6 +232,10 @@
             "outfits": [
                 "jurard"
             ]
+        },
+        {
+            "item": "plaid-pants",
+            "layer": "pants_elevated"
         }
     ]
 }

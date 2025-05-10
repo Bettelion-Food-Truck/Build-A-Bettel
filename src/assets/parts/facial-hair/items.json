@@ -13,6 +13,12 @@
         },
         "pirate-mustache",
         "pirate-beard",
-        "whiskers"
+        "whiskers",
+        {
+            "item": "fancy-facial-hair",
+            "outfits": [
+                "artist"
+            ]
+        }
     ]
 }

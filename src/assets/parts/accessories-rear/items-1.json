@@ -46,6 +46,12 @@
                 "axel"
             ]
         },
-        "pole"
+        "pole",
+        {
+            "item": "cow-tail",
+            "outfits": [
+                "cow"
+            ]
+        }
     ]
 }

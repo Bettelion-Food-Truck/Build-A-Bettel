@@ -55,6 +55,34 @@
         {
             "name": "Hioko",
             "image": "hioko.png"
+        },
+        {
+            "name": "genieart",
+            "image": "genie-art.png"
+        },
+        {
+            "name": "Leo Stone",
+            "image": "leo-stone.png"
+        },
+        {
+            "name": "natsu",
+            "image": "natsu.png"
+        },
+        {
+            "name": "r4bbit",
+            "image": "r4bbit.png"
+        },
+        {
+            "name": "Saku",
+            "image": "saku.png"
+        },
+        {
+            "name": "Skellitea",
+            "image": "skellitea.png"
+        },
+        {
+            "name": "Socktoebathtub",
+            "image": "socktoebathtub.png"
         }
     ],
     "developers": [

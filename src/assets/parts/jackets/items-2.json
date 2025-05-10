@@ -184,6 +184,15 @@
         "shinri-jacket",
         "ghost-bride-jacket",
         "axel-jacket",
-        "2025-expo-hoodie"
+        "2025-expo-hoodie",
+        {
+            "item": "jurard-cape-coat",
+            "multilayer": [
+                {
+                    "item": "jurard-cape-coat-back",
+                    "layer": "jackets_back"
+                }
+            ]
+        }
     ]
 }

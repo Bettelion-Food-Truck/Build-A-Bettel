@@ -229,6 +229,24 @@
                 "axel"
             ]
         },
+        {
+            "item": "artist-shirt",
+            "outfits": [
+                "artist"
+            ]
+        },
+        {
+            "item": "jurard-shirt",
+            "multilayer": [
+                {
+                    "item": "jurard-shirt-back",
+                    "layer": "shirts_back"
+                }
+            ],
+            "outfits": [
+                "jurard"
+            ]
+        },
         "snank"
     ]
 }

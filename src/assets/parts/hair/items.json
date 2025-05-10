@@ -6,6 +6,11 @@
     "items": [
         {
             "item": "default",
+            "outfits": [
+                "debut",
+                "debut-underlayer",
+                "artist"
+            ],
             "thumbnail": true
         },
         {
@@ -31,6 +36,11 @@
             "outfits": [
                 "betsy-grayson"
             ],
+            "thumbnail": true
+        },
+        {
+            "item": "twobert-hair",
+            "outfits": [],
             "thumbnail": true
         },
         {

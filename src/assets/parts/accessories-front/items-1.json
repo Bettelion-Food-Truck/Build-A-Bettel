@@ -75,13 +75,14 @@
                 "debut"
             ]
         },
+        "deerttel-ears",
+        "deerttel-nose",
+        "artist-phantom-sweater",
         {
             "item": "axel-braid",
             "outfits": [
                 "axel"
             ]
-        },
-        "deerttel-ears",
-        "deerttel-nose"
+        }
     ]
 }

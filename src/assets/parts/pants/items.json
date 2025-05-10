@@ -220,6 +220,32 @@
             "outfits": [
                 "2025-expo"
             ]
+        },
+        {
+            "item": "artist-pants",
+            "outfits": [
+                "artist"
+            ]
+        },
+        {
+            "item": "jurard-pants",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "plaid-pants",
+            "layer": "pants_elevated"
+        },
+        {
+            "item": "tank-treads",
+            "layer": "pants_elevated",
+            "multilayer": [
+                {
+                    "item": "tank-treads-back",
+                    "layer": "pants_back"
+                }
+            ]
         }
     ]
 }

@@ -173,6 +173,14 @@
             }
         },
         {
+            "item": "bath-slippers-white",
+            "outfits": [],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
             "item": "clown-shoes",
             "outfits": [
                 "clown"
@@ -378,6 +386,36 @@
             "item": "2025-expo-shoes",
             "outfits": [
                 "2025-expo"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "artist-flats",
+            "outfits": [
+                "artist"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "jurard-boots",
+            "outfits": [
+                "jurard"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "cow-slippers",
+            "outfits": [
+                "cow"
             ],
             "requires": {
                 "part": "feet",

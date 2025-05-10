@@ -18,33 +18,38 @@
 
   <div class="interface_wrapper">
     <div class="feature_buttons">
+      <!-- TODO Move save and credits elsewhere -->
       <div>
         <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
-        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
         <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
-        <button (click)="showCredits()">Credits</button>
+        <button (click)="showCredits()" [class.hidden]="outfitsVisible">Prompt</button>
+
+        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
       </div>
+    </div>
+    <div class="feature_buttons">
+      <button (click)="showCredits()">Credits</button>
 
       <a #save_button class="save" [href]="imageDataString()" download="gb.png">
         Save
       </a>
     </div>
 
-    <app-outfits [class.hidden]="!outfitsVisible" />
+    <div class="features">
+      <app-outfits [class.hidden]="!outfitsVisible" />
 
-    <div id="component_wrapper" class="component_wrapper" [class.hidden]="outfitsVisible">
+      <div class="component_wrapper" [class.hidden]="outfitsVisible">
 
-      <app-parts />
+        <app-parts />
 
-      <div class="control_panel_wrapper">
-        <div class="control_panel">
-
-          <app-items [class.hidden]="!itemsVisible" />
-          <app-palette [class.hidden]="!paletteVisible" /><!-- TODO -->
-          <app-movement [class.hidden]="!movementVisible" />
+        <div class="control_panel_wrapper">
+          <div class="control_panel">
+            <app-items [class.hidden]="!itemsVisible" />
+            <app-palette [class.hidden]="!paletteVisible" /><!-- TODO -->
+            <app-movement [class.hidden]="!movementVisible" />
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

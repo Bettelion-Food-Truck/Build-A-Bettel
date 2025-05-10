@@ -121,13 +121,6 @@
     border-color: var(--select-color, #ff0000);
 }
 
-.component_wrapper {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
 .control_panel_wrapper {
     position: relative;
     flex: 1;
@@ -146,19 +139,17 @@
     background-repeat: no-repeat;
 }
 
-.feature_buttons,
-.feature_buttons > div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .feature_buttons {
     margin: 5px 0;
     flex-wrap: wrap;
-}
 
-.feature_buttons {
+    &,
+    & > div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
     button,
     a {
         cursor: pointer;
@@ -182,6 +173,14 @@
             filter: brightness(1.2);
         }
     }
+}
+
+.features,
+.component_wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 /* Portrait layout changes */

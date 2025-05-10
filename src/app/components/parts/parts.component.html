@@ -1,0 +1,13 @@
+<div #partmenu class="parts_menu" (wheel)="onScroll($event)">
+    <button (click)="randomizeOutfit.emit()">
+        <img src="./icons/icon-random.png" alt="Randomize outfit" title="Randomize outfit" />
+    </button>
+
+    <ng-container *ngFor="let part of partSignal(); let i = index">
+        <button [class.hidden]="getPartVisibility(i)" [class.selected]="activePart() && activePart() === i"
+            (click)="onChange(i)" [title]="part.name ? part.name : part.folder">
+            <img [src]="getPartIcon(i)" [alt]="part.name ? part.name : part.folder"
+                [title]="part.name ? part.name : part.folder" />
+        </button>
+    </ng-container>
+</div>

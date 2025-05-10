@@ -1,0 +1,83 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        {
+            "item": "debut-underlayer",
+            "multilayer": [
+                {
+                    "item": "debut-underlayer-back",
+                    "layer": "vests_back"
+                }
+            ],
+            "outfits": [
+                "debut-underlayer",
+                "deerttel"
+            ]
+        },
+        {
+            "item": "second-outfit",
+            "outfits": [
+                "second-outfit",
+                "battel"
+            ]
+        },
+        {
+            "item": "bettelmaid",
+            "outfits": [
+                "bettelmaid"
+            ]
+        },
+        {
+            "item": "magni-vest",
+            "outfits": [
+                "magni"
+            ]
+        },
+        {
+            "item": "jester",
+            "outfits": [
+                "jester"
+            ]
+        },
+        {
+            "item": "deadworld-harness",
+            "outfits": [
+                "dead-world"
+            ]
+        },
+        {
+            "item": "hakka-halfcoat",
+            "outfits": [
+                "hakka"
+            ]
+        },
+        {
+            "item": "when-youre-evil-vest",
+            "outfits": [
+                "when-youre-evil"
+            ]
+        },
+        {
+            "item": "goldbullet-harness",
+            "outfits": [
+                "goldbullet"
+            ]
+        },
+        {
+            "item": "shinri-buckle-shirt",
+            "outfits": [
+                "shinri"
+            ]
+        },
+        {
+            "item": "axel-vest",
+            "outfits": [
+                "axel"
+            ]
+        },
+        "vesper-vest"
+    ]
+}

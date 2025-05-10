@@ -1,0 +1,140 @@
+@use "@angular/material" as mat;
+
+html {
+    color-scheme: light;
+    @include mat.theme(
+        (
+            typography: (
+                plain-family: Roboto,
+                brand-family: Open Sans,
+                bold-weight: 900,
+                medium-weight: 500,
+                regular-weight: 300
+            ),
+            density: 0
+        )
+    );
+
+    &.cdk-global-scrollblock {
+        overflow-y: hidden !important;
+    }
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+@supports (max-height: 100dvh) {
+    body {
+        height: 100dvh;
+    }
+}
+
+* {
+    min-height: 0;
+    min-width: 0;
+    word-wrap: break-word;
+    box-sizing: border-box;
+
+    font-size: 16px;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--random-purple-color, purple) lightgrey;
+    -webkit-overflow-scrolling: touch;
+}
+
+ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Base Variables */
+:root {
+    /* the color of the background of the loading sign*/
+    --loading-bg-color: #ffffff;
+
+    /* the color of the border around selected part and icon buttons */
+    --select-color: #660073;
+
+    /* the color/image filepath of the background of the image display area */
+    --image-background-color: hsla(0, 0%, 93.3%, 0.5);
+
+    /* the color/image filepath of the random button */
+    --random-button-color: #ffbd15;
+    --random-button-png: "none";
+
+    /* the color filepath of the parts menu background*/
+    --parts-menu-color: #eeeeee;
+    --parts-menu-button-color: #eeeeee;
+    --parts-menu-button-hover-color: #dddddd;
+
+    /* the color/image filepath of the items menu background*/
+    --control-panel-color: #cccccc;
+    --control-panel-png: "none";
+
+    /* the color of the item buttons */
+    --item-button-color: #ffffff;
+    --item-button-hover-color: #eeeeee;
+
+    /* the color/image filepath of the item menu toggle button */
+    --item-toggle-color: #ffffff;
+    --item-toggle-img: url("../public/icons/icon-grid.png");
+
+    /* the color/image filepath of the palette toggle button */
+    --palette-toggle-color: #ffffff;
+    --palette-toggle-img: url("../public/icons/icon-colors.png");
+
+    /* the color/image filepath of the info button */
+    --move-toggle-color: #ffffff;
+    --move-toggle-img: url("../public/icons/icon-move.png");
+
+    /* the color/image filepath of the zoom in button */
+    --zoom-in-color: #00000000;
+    --zoom-in-img: url("../public/icons/zoom-in.png");
+
+    /* the color/image filepath of the zoom out button */
+    --zoom-out-color: #00000000;
+    --zoom-out-img: url("../public/icons/zoom-out.png");
+
+    /* the color/image filepath of the zoom reset button */
+    --zoom-reset-color: #00000000;
+    --zoom-reset-img: url("../public/icons/zoom-reset.png");
+
+    /* save button vars */
+    --save-button-color: #006400;
+
+    /* random purple color */
+    --random-purple-color: #660073;
+
+    /* control sizes */
+    --ui-control-size: 50px;
+    --part-control-size: 60px;
+
+    /* Material Overrides */
+    --mat-dialog-container-max-width: 650px;
+
+    @include mat.dialog-overrides(
+        (
+            container-color: #e0e0e0,
+            headline-padding: 0
+        )
+    );
+
+    @include mat.progress-spinner-overrides(
+        (
+            active-indicator-color: var(--random-purple-color)
+        )
+    );
+}

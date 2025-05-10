@@ -1,0 +1,50 @@
+<!-- Game container -->
+<div class="container">
+  <div class="canvas_wrapper">
+    <app-canvas #canvas />
+
+    <app-loading />
+
+    <div class="control_wrapper">
+      <div class="part_control_wrapper"><!-- TODO -->
+        <span id="items_button" class="controls items"></span>
+        <span id="palette_button" class="controls palette"></span>
+        <span id="move_button" class="controls moves"></span>
+      </div>
+
+      <app-zoom [canvas]="canvas" />
+    </div>
+  </div>
+
+  <div class="item_selection_wrapper">
+    <div class="feature_buttons">
+      <div>
+        <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
+        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
+        <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
+        <button (click)="showCredits()">Credits</button>
+      </div>
+
+      <button id="save_button" href="#" download="gb.png">
+        Save<!-- TODO -->
+      </button>
+    </div>
+
+    <app-outfits [class.hidden]="!outfitsVisible" />
+
+    <div id="component_wrapper" class="component_wrapper" [class.hidden]="outfitsVisible">
+
+      <app-parts (randomizeOutfit)="randomize()" />
+
+      <div class="control_panel_wrapper">
+        <div class="control_panel">
+
+          <app-items />
+          <app-palette style="display: none;" /><!-- TODO -->
+          <app-movement style="display: none;" /><!-- TODO -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.movement_wrapper {
+    display: none;
+    /*display: flex;*/
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+}
+
+.movement_controls {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    place-items: stretch;
+
+    margin: auto;
+
+    & > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .movement_button {
+        cursor: pointer;
+
+        &.disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+}
+
+/* Portrait layout changes */
+@media (orientation: portrait) {
+    .movement_wrapper .movement_controls {
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+    }
+}

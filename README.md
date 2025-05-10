@@ -1,35 +1,69 @@
-# Bettel Hackrew
+# Build-A-Bettel
 
-## Info
+Bettel Hackrew is a dress up game focused on Gavis Bettel similar to [picrew](https://picrew.me/). This game is built upon [Hackrew](https://github.com/ksadov/hackrew). The game was migrated from simple JS to TS due to the growing complexity of the data structures and logical patterns. Maintenance was going to be a nightmare.
 
-Bettel Hackrew is a dress up game focused on Gavis Bettel similar to [picrew](https://picrew.me/). This game is built upon [Hackrew](https://github.com/ksadov/hackrew). To use the image color generator, you will need Python 3 installed. You will also need to run it off a server if you want to use it locally; Python has a good option built in.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10. This game also has an image color generator which requires Python 3 installed (currently).
 
-## Developing
+## Development server
 
-### Start a web server
+To start a local development server, run:
 
-This game requires the use of a web server to run. The easiest way to launch it from your own machine is using Python (as the color tool is also built in python).
+```bash
+npm start
+```
 
-- Open the command line
-- CD into the game directory
-- Run the command `python -m http.server`
-- Navigate to [http://localhost:8000/](http://localhost:8000/) in a web browser
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-Success, it runs.
+## Code scaffolding
 
-### Create visual assets
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+npm run build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed. Upload these files and the folder to your webhost and all is done. Ensure the file structure remains intact.
+
+TODO Add instructions about automate deployment of app to GitHub Pages using GitHub Actions.
+
+TODO Update the following: Hosting on GitHub Pages is even easier, just fork this project, customize as needed, then follow the the intrucutions [about creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## Create visual assets
 
 This game uses drawn assets as the different outfit options. Each outfit option, or asset, needs to be a .png file. It also must be the same size as the drawing surface; this game is set to use a size of 1000px by 1000px.
 
 To ensure all items line up correctly when layered, it is suggested to drawn all assets on different layers of the same file. Programs like GIMP or Procreate make this easy. Then when the assets are done, export each layer as a .png with a transparent background.
 
-### File structure
+## File structure
+
+TODO Update
 
 All assets are stored in the `assets` folder in different groups. Each group is known as a part. A part could be a shirt, pants, hair, etc. Every asset, once arranged into part folders, is known as an item. Each part folder can have many items.
 
 All files should be in lowercase only. There should be no spaces. If there is a division between works, use a dash.
 
-### Data structure
+## Data structure
+
+TODO Update
 
 The game doesn't know anything about the image assets by itself. It requires the information stored within `assets/data.json`. There are two objects of data within this file: layers and parts.
 
@@ -67,7 +101,9 @@ Ex:
 }
 ```
 
-### Item variants
+## Item variants
+
+TODO Update
 
 In addition to each part having multiple variantions of items, the items themselves can come in multiple colors. Above we mention `"colorMode"` and `"colors"`. These indicate additional variations of each item. If a part has color options, then the `"colorMode"` field determines whether the item files for each color are manually or automatically generated.
 
@@ -89,12 +125,8 @@ python generate_colored_images.py
 
 The script might take a while to run, but at the end you'll have your color variant image files in the correct folders.
 
-### Edit the UI
+## Edit the UI
+
+TODO Update
 
 Easy UI changes can be done by editing index.css; specifically the variables allow for easy updates to colors and images.
-
-## Deploying
-
-Hosting the game is simple. You only need index.html, index.css, imagemaker.js, and the assets folder. Upload these files and the folder to your webhost and all is done. Ensure the file structure remains intact
-
-Hosting on GitHub Pages is even easier, just fork this project, customize as needed, then follow the the intrucutions [about creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).

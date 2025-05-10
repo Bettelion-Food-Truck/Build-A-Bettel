@@ -1,0 +1,10 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        "flat",
+        "pointed"
+    ]
+}

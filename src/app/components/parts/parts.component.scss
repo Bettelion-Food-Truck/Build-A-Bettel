@@ -1,0 +1,47 @@
+:host {
+    background-color: var(--parts-menu-color, #eeeeee);
+}
+
+.parts_menu {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    height: calc(var(--part-control-size, 60px) * 1.15);
+    margin: 0;
+    white-space: nowrap;
+
+    button {
+        width: var(--part-control-size, 60px);
+        height: var(--part-control-size, 60px);
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--parts-menu-button-color, #eeeeee);
+
+        border: 3px solid transparent;
+        border-radius: 3px;
+
+        cursor: pointer;
+
+        &.selected {
+            border-color: var(--select-color, #ff0000);
+        }
+
+        &:hover:not(.selected) {
+            background-color: var(--parts-menu-button-hover-color, #dddddd);
+        }
+    }
+}
+
+/* Portrait layout changes */
+@media (orientation: portrait) {
+    :host {
+        min-height: 10vh;
+    }
+
+    .parts_menu {
+        height: 100%;
+    }
+}

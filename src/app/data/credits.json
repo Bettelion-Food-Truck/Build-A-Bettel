@@ -1,0 +1,66 @@
+{
+    "roles": [
+        {
+            "name": "Project Lead",
+            "section": "lead"
+        },
+        {
+            "name": "Artists",
+            "section": "artists"
+        },
+        {
+            "name": "Developers",
+            "section": "developers"
+        }
+    ],
+    "lead": [
+        {
+            "name": "Finarael",
+            "image": "finarael.png"
+        }
+    ],
+    "artists": [
+        {
+            "name": "Spook",
+            "image": "spook.png"
+        },
+        {
+            "name": "Jahgyong",
+            "image": "jahgyong.png"
+        },
+        {
+            "name": "Zmays",
+            "image": "zmays.png"
+        },
+        {
+            "name": "AtomicReih",
+            "image": "atomicreih.png"
+        },
+        {
+            "name": "RoseGhostea",
+            "image": "roseghostea.png"
+        },
+        {
+            "name": "Pafufufun",
+            "image": "pafufufun.png"
+        },
+        {
+            "name": "Raisins0up",
+            "image": "raisins0up.png"
+        },
+        {
+            "name": "Aether",
+            "image": "aether.png"
+        },
+        {
+            "name": "Hioko",
+            "image": "hioko.png"
+        }
+    ],
+    "developers": [
+        {
+            "name": "GlitchTech",
+            "image": "glitchtech.png"
+        }
+    ]
+}

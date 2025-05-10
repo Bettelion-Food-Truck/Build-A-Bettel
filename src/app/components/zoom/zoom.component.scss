@@ -1,0 +1,60 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    margin: 5px 0;
+}
+
+@media (hover: none) {
+    :host {
+        display: none;
+    }
+}
+
+.controls {
+    width: var(--ui-control-size, 50px);
+    height: var(--ui-control-size, 50px);
+
+    margin: 2.5px 0;
+
+    justify-content: center;
+    align-items: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
+    text-align: center;
+}
+
+.controls:first-child {
+    margin-top: 0;
+}
+
+.controls:last-child {
+    margin-bottom: 0;
+}
+
+.zoom_in {
+    background-color: var(--zoom-in-color, #ffffff);
+    background-image: var(--zoom-in-img, "none");
+}
+
+.zoom_out {
+    background-color: var(--zoom-out-color, #ffffff);
+    background-image: var(--zoom-out-img, "none");
+}
+
+.zoom_reset {
+    background-color: var(--zoom-reset-color, #ffffff);
+    background-image: var(--zoom-reset-img, "none");
+}
+
+/* Portrait layout changes */
+@media (orientation: portrait) {
+    .controls {
+        width: calc(var(--ui-control-size, 50px) * 0.75);
+        height: calc(var(--ui-control-size, 50px) * 0.75);
+    }
+}

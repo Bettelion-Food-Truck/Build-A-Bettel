@@ -193,6 +193,12 @@
             "icon": "icon-2.png"
         },
         {
+            "name": "Background",
+            "folder": "backgrounds",
+            "items": "items.json",
+            "icon": "icon.png"
+        },
+        {
             "name": "Companion 1",
             "folder": "companions",
             "layer": "companions_1",
@@ -205,12 +211,6 @@
             "layer": "companions_2",
             "items": "items.json",
             "icon": "icon-2.png"
-        },
-        {
-            "name": "Background",
-            "folder": "backgrounds",
-            "items": "items.json",
-            "icon": "icon.png"
         },
         {
             "name": "Frame",

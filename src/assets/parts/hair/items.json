@@ -39,6 +39,11 @@
             "thumbnail": true
         },
         {
+            "item": "twobert-hair",
+            "outfits": [],
+            "thumbnail": true
+        },
+        {
             "item": "bald",
             "hide": true,
             "thumbnail": true

@@ -173,6 +173,14 @@
             }
         },
         {
+            "item": "bath-slippers-white",
+            "outfits": [],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
             "item": "clown-shoes",
             "outfits": [
                 "clown"

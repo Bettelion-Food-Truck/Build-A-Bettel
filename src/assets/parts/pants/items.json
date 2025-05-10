@@ -236,6 +236,16 @@
         {
             "item": "plaid-pants",
             "layer": "pants_elevated"
+        },
+        {
+            "item": "tank-treads",
+            "layer": "pants_elevated",
+            "multilayer": [
+                {
+                    "item": "tank-treads-back",
+                    "layer": "pants_back"
+                }
+            ]
         }
     ]
 }

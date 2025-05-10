@@ -25,9 +25,9 @@
         <button (click)="showCredits()">Credits</button>
       </div>
 
-      <button id="save_button" href="#" download="gb.png">
-        Save<!-- TODO -->
-      </button>
+      <a #save_button class="save" [href]="imageDataString()" download="gb.png">
+        Save
+      </a>
     </div>
 
     <app-outfits [class.hidden]="!outfitsVisible" />

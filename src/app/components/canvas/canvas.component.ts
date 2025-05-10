@@ -248,11 +248,7 @@ export class CanvasComponent implements AfterViewInit {
 
     this.context!.drawImage(this.workingCanvas!, 0, 0);
 
-    /*
-    async function updateSave() {
-      saveButton.href = canvas.toDataURL("image/png");
-    }
-    */
+    this.modelData.setImageEncoded(this.canvas().nativeElement.toDataURL("image/png"));
 
     this.loading.removeLoadingItem();
   }

@@ -1,4 +1,4 @@
-.movement_wrapper {
+:host {
     display: flex;
 
     align-items: center;
@@ -35,7 +35,7 @@
 
 /* Portrait layout changes */
 @media (orientation: portrait) {
-    .movement_wrapper .movement_controls {
+    .movement_controls {
         grid-template-columns: repeat(3, 50px);
         grid-template-rows: repeat(3, 50px);
     }

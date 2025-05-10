@@ -48,6 +48,7 @@ export class AppComponent {
   private injector = inject(Injector);
   private partSignal: Signal<Part[]>;
   private outfitSignal: Signal<Outfit[]>;
+  imageDataString: Signal<string>;
 
   outfitsVisible = false;
 
@@ -60,6 +61,7 @@ export class AppComponent {
 
     this.partSignal = this.assetData.getParts();
     this.outfitSignal = this.outfitData.getOutfits();
+    this.imageDataString = this.modalData.getImageEncoded();
   }
 
   ngOnInit() {

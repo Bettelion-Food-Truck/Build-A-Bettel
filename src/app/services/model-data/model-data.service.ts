@@ -12,7 +12,19 @@ export class ModelDataService {
   private activePart: WritableSignal<number> = signal(0);
   private selectedItems: WritableSignal<number[]> = signal([]);
 
+  private imageDataString: WritableSignal<string> = signal("");
+
   constructor(private assetData: AssetDataService) { }
+
+  getImageEncoded(): Signal<string> {
+
+    return this.imageDataString.asReadonly();
+  }
+
+  setImageEncoded(imageDataString: string) {
+
+    this.imageDataString.set(imageDataString);
+  }
 
   getActivePart(): Signal<number> {
 

@@ -158,27 +158,30 @@
     flex-wrap: wrap;
 }
 
-.feature_buttons button {
-    cursor: pointer;
+.feature_buttons {
+    button,
+    a {
+        cursor: pointer;
 
-    text-decoration: none;
+        text-decoration: none;
 
-    border: 1px solid black;
-    border-radius: 3px;
+        border: 1px solid black;
+        border-radius: 3px;
 
-    padding: 4px 8px;
-    margin: 5px 2px;
+        padding: 4px 8px;
+        margin: 5px 2px;
 
-    background-color: var(--random-purple-color, purple);
-    color: #ffffff;
-}
+        background-color: var(--random-purple-color, purple);
+        color: #ffffff;
 
-.feature_buttons button:hover {
-    filter: brightness(1.2);
-}
+        &.save {
+            background-color: var(--save-button-color, green);
+        }
 
-#save_button {
-    background-color: var(--save-button-color, green);
+        &:hover {
+            filter: brightness(1.2);
+        }
+    }
 }
 
 /* Portrait layout changes */

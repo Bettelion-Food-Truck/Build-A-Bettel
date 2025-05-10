@@ -331,7 +331,7 @@ export class CanvasComponent implements AfterViewInit {
     const layers: Layer[] = this.layerSignal();
 
     const item: Item = parts[partIndex].items[itemIndex];
-    const position: Position = {} as Position;//TODO MOVEMENT this.currentlySelectedItems[partIndex];
+    const position: Position = (this.modelData.getItemsPosition(partIndex) ?? {}) as Position;
 
     if (!item) {
       this.logger.error(`Item not found for part ${partIndex} and item ${itemIndex}`);

@@ -126,6 +126,15 @@ export class AssetDataService {
     return this.partSignal.asReadonly();
   }
 
+  getPart(index: number): Part | null {
+
+    if (index < 0 || index >= this.partSignal().length) {
+      return null;
+    }
+
+    return this.partSignal()[index];
+  }
+
   getLayers(): Signal<Layer[]> {
 
     return this.layerSignal;

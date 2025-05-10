@@ -1,4 +1,4 @@
-import { Component, effect, inject, Injector, isDevMode, Signal } from '@angular/core';
+import { Component, computed, effect, inject, Injector, isDevMode, Signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { CanvasComponent } from "@components/canvas/canvas.component";
@@ -50,8 +50,46 @@ export class AppComponent {
   private partSignal: Signal<Part[]>;
   private outfitSignal: Signal<Outfit[]>;
   imageDataString: Signal<string>;
+  private activePart: Signal<number>;
 
   outfitsVisible = false;
+
+  potentialItems: Signal<boolean> = computed(() => {
+
+    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+      return false;
+    }
+
+    const part: Part = this.partSignal()[this.activePart()];
+
+    return part.items.length > 0;
+  });
+
+  potentialPalette: Signal<boolean> = computed(() => {
+
+    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+      return false;
+    }
+
+    const part: Part = this.partSignal()[this.activePart()];
+
+    return part.colors.length > 0;
+  });
+
+  potentialMovement: Signal<boolean> = computed(() => {
+
+    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+      return false;
+    }
+
+    const part: Part = this.partSignal()[this.activePart()];
+
+    return !(!part.movement || Object.keys(part.movement).length === 0);
+  });
+
+  itemsVisible = true;
+  paletteVisible = false;
+  movementVisible = false;
 
   constructor(
     private assetData: AssetDataService,
@@ -67,6 +105,7 @@ export class AppComponent {
 
     this.partSignal = this.assetData.getParts();
     this.outfitSignal = this.outfitData.getOutfits();
+    this.activePart = this.modalData.getActivePart();
     this.imageDataString = this.modalData.getImageEncoded();
   }
 
@@ -113,6 +152,27 @@ export class AppComponent {
     this.logger.info("AppComponent: reset()");
 
     this.modalData.reset();
+  }
+
+  showItems() {
+
+    this.itemsVisible = true;
+    this.paletteVisible = false;
+    this.movementVisible = false;
+  }
+
+  showPalette() {
+
+    this.itemsVisible = false;
+    this.paletteVisible = true;
+    this.movementVisible = false;
+  }
+
+  showMovement() {
+
+    this.itemsVisible = false;
+    this.paletteVisible = false;
+    this.movementVisible = true;
   }
 
   showOutfits() {

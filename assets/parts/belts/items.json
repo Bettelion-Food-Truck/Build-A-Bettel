@@ -1,0 +1,70 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        {
+            "item": "showman-skeleton-belt",
+            "outfits": [
+                "showman"
+            ]
+        },
+        {
+            "item": "january-2025-obi",
+            "layer": "belt_elevated",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "punk-belt",
+            "outfits": [
+                "punk"
+            ]
+        },
+        {
+            "item": "unchained-belt",
+            "layer": "belt_elevated",
+            "outfits": [
+                "unchained"
+            ]
+        },
+        {
+            "item": "inkya-impulse-belt",
+            "layer": "belt_elevated",
+            "outfits": [
+                "inkya-impulse"
+            ]
+        },
+        {
+            "item": "octavio-belt",
+            "outfits": [
+                "octavio"
+            ]
+        },
+        {
+            "item": "when-youre-evil-belt",
+            "outfits": [
+                "when-youre-evil"
+            ]
+        },
+        {
+            "item": "goldbullet-belts",
+            "outfits": [
+                "goldbullet"
+            ]
+        },
+        {
+            "item": "betsy-grayson-hip-bows",
+            "outfits": [
+                "betsy-grayson"
+            ]
+        },
+        "january-2025-small-belt",
+        "ruze-belt",
+        "pirate-belt",
+        "pirate-belt-sash",
+        "vesper-belt"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": false,
+    "items": [
+        {
+            "item": "default",
+            "thumbnail": true
+        },
+        {
+            "item": "surprise",
+            "thumbnail": true
+        },
+        {
+            "item": "sad",
+            "thumbnail": true
+        },
+        {
+            "item": "happy",
+            "thumbnail": true
+        },
+        {
+            "item": "disgust",
+            "thumbnail": true
+        }
+    ]
+}

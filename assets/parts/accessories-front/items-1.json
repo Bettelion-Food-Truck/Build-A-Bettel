@@ -1,0 +1,87 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        {
+            "item": "january-2025-keychain",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "debut-underlayer",
+            "outfits": [
+                "debut-underlayer",
+                "daki",
+                "deerttel"
+            ],
+            "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "bettelmaid",
+            "outfits": [
+                "bettelmaid"
+            ]
+        },
+        {
+            "item": "magni-front-accessory-1",
+            "outfits": [
+                "magni"
+            ]
+        },
+        "magni-front-accessory-2",
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "ruze-front-accessory-1",
+            "outfits": [
+                "ruze"
+            ],
+            "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "ruze-front-accessory-2",
+            "outfits": [],
+            "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "inkya-impulse-skirt-front",
+            "outfits": [
+                "inkya-impulse"
+            ],
+            "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "betsy-bow",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "braids"
+        },
+        {
+            "item": "debut-coat-charm"
+        },
+        {
+            "item": "debut-circus-whip",
+            "outfits": [
+                "debut"
+            ]
+        },
+        {
+            "item": "axel-braid",
+            "outfits": [
+                "axel"
+            ]
+        },
+        "deerttel-ears",
+        "deerttel-nose"
+    ]
+}

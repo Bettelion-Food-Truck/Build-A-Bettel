@@ -1,0 +1,29 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        "blush-heavy",
+        "eyeshadow",
+        "tictactoe",
+        {
+            "item": "jester",
+            "outfits": [
+                "jester"
+            ]
+        },
+        {
+            "item": "clown",
+            "outfits": [
+                "clown"
+            ]
+        },
+        {
+            "item": "deadworld-makeup",
+            "outfits": [
+                "dead-world"
+            ]
+        }
+    ]
+}

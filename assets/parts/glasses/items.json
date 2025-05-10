@@ -1,0 +1,20 @@
+{
+    "movement": false,
+    "colorMode": null,
+    "colors": [],
+    "noneAllowed": true,
+    "items": [
+        "pink-monocle",
+        {
+            "item": "cucumbers",
+            "outfits": [
+                "spa"
+            ]
+        },
+        "snail-eyes",
+        "sleepmask",
+        "silly-glasses",
+        "raycon",
+        "pink-glasses"
+    ]
+}

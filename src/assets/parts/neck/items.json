@@ -119,6 +119,12 @@
             "outfits": [
                 "2025-expo"
             ]
+        },
+        {
+            "item": "cowbell",
+            "outfits": [
+                "cow"
+            ]
         }
     ]
 }

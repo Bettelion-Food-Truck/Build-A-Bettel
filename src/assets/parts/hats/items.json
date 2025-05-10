@@ -191,6 +191,12 @@
             "outfits": [
                 "jurard"
             ]
+        },
+        {
+            "item": "cow-ears",
+            "outfits": [
+                "cow"
+            ]
         }
     ]
 }

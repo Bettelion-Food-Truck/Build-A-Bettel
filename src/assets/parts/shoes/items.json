@@ -403,6 +403,16 @@
                 "part": "feet",
                 "item": "flat"
             }
+        },
+        {
+            "item": "cow-slippers",
+            "outfits": [
+                "cow"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
         }
     ]
 }

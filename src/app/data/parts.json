@@ -193,10 +193,18 @@
             "icon": "icon-2.png"
         },
         {
-            "name": "Companion",
+            "name": "Companion 1",
             "folder": "companions",
+            "layer": "companions_1",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon-1.png"
+        },
+        {
+            "name": "Companion 2",
+            "folder": "companions",
+            "layer": "companions_2",
+            "items": "items.json",
+            "icon": "icon-2.png"
         },
         {
             "name": "Background",

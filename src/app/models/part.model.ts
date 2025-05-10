@@ -11,9 +11,20 @@ export interface Part {
     noneAllowed: boolean;
     hideFromPartsList: boolean;
 
-    movement: Object | null;
+    movement: Movement | null;
     colorMode: string | null;
     colors: string[];
 
     items: Item[];
+}
+
+export interface Movement {
+    x: Limits | null;
+    y: Limits | null;
+    scale: number | null;
+}
+
+export interface Limits {
+    min: number;
+    max: number;
 }

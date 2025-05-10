@@ -41,11 +41,6 @@ window.addEventListener('load', function (ev) {
 
 	/* Array of simple objects for positioning of part i; see DEFAULT_POSITION for structure */
 	let selectedPosition = [];
-	const DEFAULT_POSITION = {
-		"x": 0,
-		"y": 0
-	};
-	const MOVEMENT_BASE = 10; // 10px
 
 	init();
 
@@ -57,19 +52,9 @@ window.addEventListener('load', function (ev) {
 		initCanvases()
 
 		initPalette();
-		initMove();
 
 		// part is selected
 		await updateSelectedPart(firstPart);
-	}
-
-	/**
-	 * Assign functions to buttons.
-	 */
-	function initButtons() {
-		itemsButton.addEventListener('click', showItems);
-		paletteButton.addEventListener('click', showPalette);
-		moveButton.addEventListener('click', showMove);
 	}
 
 	/**
@@ -94,28 +79,6 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
-	}
-
-	/**
-	 * Bind movement buttons to their functions
-	 */
-	function initMove() {
-
-		movementControls.movement.up.addEventListener('click', moveActiveLayerUp);
-		movementControls.movement.down.addEventListener('click', moveActiveLayerDown);
-		movementControls.movement.left.addEventListener('click', moveActiveLayerLeft);
-		movementControls.movement.right.addEventListener('click', moveActiveLayerRight);
-
-		movementControls.reset.addEventListener('click', resetActiveLayerPosition);
-
-		for (let i = 0; i < parts.length; i++) {
-
-			selectedPosition[i] = {
-				"x": DEFAULT_POSITION.x,
-				"y": DEFAULT_POSITION.y,
-				"scale": DEFAULT_POSITION.scale
-			};
-		}
 	}
 
 	function showLoading(delay = 500) {
@@ -170,166 +133,5 @@ window.addEventListener('load', function (ev) {
 		}
 
 		return null;
-	}
-
-	/**
-	 * Set of control functions for moving the active layer around. Each function adjusts the image position settings and then calls renderLayerStack to update the canvas.
-	 */
-	function moveActiveLayerUp() {
-
-		if (movementControls.movement.up.classList.contains("disabled")) {
-			return;
-		}
-
-		selectedPosition[selectedPart].y -= MOVEMENT_BASE * getMovementScale();
-		checkMoveLimits();
-
-		renderLayerStack();
-	}
-
-	function moveActiveLayerDown() {
-
-		if (movementControls.movement.down.classList.contains("disabled")) {
-			return;
-		}
-		selectedPosition[selectedPart].y += MOVEMENT_BASE * getMovementScale();
-		checkMoveLimits();
-
-		renderLayerStack();
-	}
-
-	function moveActiveLayerLeft() {
-
-		if (movementControls.movement.left.classList.contains("disabled")) {
-			return;
-		}
-
-		selectedPosition[selectedPart].x -= MOVEMENT_BASE * getMovementScale();
-		checkMoveLimits();
-
-		renderLayerStack();
-	}
-
-	function moveActiveLayerRight() {
-
-		if (movementControls.movement.right.classList.contains("disabled")) {
-			return;
-		}
-
-		selectedPosition[selectedPart].x += MOVEMENT_BASE * getMovementScale();
-		checkMoveLimits();
-
-		renderLayerStack();
-	}
-
-	function resetActiveLayerPosition(render = true) {
-
-		selectedPosition[selectedPart].x = DEFAULT_POSITION.x;
-		selectedPosition[selectedPart].y = DEFAULT_POSITION.y;
-
-		if (render) {
-
-			renderLayerStack();
-			updateMovementButtons();
-		}
-	}
-
-	function getMovementScale() {
-
-		const movement = parts[selectedPart].movement;
-
-		return (movement.scale ? movement.scale : 1);
-
-	}
-
-	function checkMoveLimits() {
-
-		const movement = parts[selectedPart].movement;
-
-		if (movement.y.min && selectedPosition[selectedPart].y < movement.y.min) {
-
-			selectedPosition[selectedPart].y = movement.y.min;
-		}
-
-		if (movement.y.max && selectedPosition[selectedPart].y > movement.y.max) {
-
-			selectedPosition[selectedPart].y = movement.y.max;
-		}
-
-		if (movement.x.min && selectedPosition[selectedPart].x < movement.x.min) {
-
-			selectedPosition[selectedPart].x = movement.x.min;
-		}
-
-		if (movement.x.max && selectedPosition[selectedPart].x > movement.x.max) {
-
-			selectedPosition[selectedPart].x = movement.x.max;
-		}
-
-		updateMovementButtons();
-	}
-	/**
-	 * End of control functions
-	 */
-
-	/**
-	 * Enabled/disable movement buttons based on the selected part's movement options
-	 */
-	function updateMovementButtons() {
-
-		const movement = parts[selectedPart].movement;
-		const position = selectedPosition[selectedPart];
-
-		if (movement.y === false) {
-			// Axis is disabled, disable buttons
-
-			movementControls.movement.up.classList.add("disabled");
-			movementControls.movement.down.classList.add("disabled");
-		} else if (Object.keys(movement.y).length === 0) {
-			// No limits
-
-			movementControls.movement.up.classList.remove("disabled");
-			movementControls.movement.down.classList.remove("disabled");
-		} else {
-			// Check position vs limits
-
-			if (movement.y.min && position.y <= movement.y.min) {
-				movementControls.movement.up.classList.add("disabled");
-			} else {
-				movementControls.movement.up.classList.remove("disabled");
-			}
-
-			if (movement.y.max && position.y >= movement.y.max) {
-				movementControls.movement.down.classList.add("disabled");
-			} else {
-				movementControls.movement.down.classList.remove("disabled");
-			}
-		}
-
-		if (movement.x === false) {
-			// Axis is disabled, disable buttons
-
-			movementControls.movement.left.classList.add("disabled");
-			movementControls.movement.right.classList.add("disabled");
-		} else if (Object.keys(movement.x).length === 0) {
-			// No limits
-
-			movementControls.movement.left.classList.remove("disabled");
-			movementControls.movement.right.classList.remove("disabled");
-		} else {
-			// Check position vs limits
-
-			if (movement.x.min && position.x <= movement.x.min) {
-				movementControls.movement.left.classList.add("disabled");
-			} else {
-				movementControls.movement.left.classList.remove("disabled");
-			}
-
-			if (movement.x.max && position.x >= movement.x.max) {
-				movementControls.movement.right.classList.add("disabled");
-			} else {
-				movementControls.movement.right.classList.remove("disabled");
-			}
-		}
 	}
 }, false);

@@ -58,6 +58,20 @@
         {
             "item": "2024-expo-bracelet",
             "thumbnail": true
+        },
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo"
+        },
+        {
+            "item": "jurard-earrings",
+            "outfits": []
+        },
+        {
+            "item": "jurard-rings",
+            "outfits": [
+                "jurard"
+            ]
         }
     ]
 }

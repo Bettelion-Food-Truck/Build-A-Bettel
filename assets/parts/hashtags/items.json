@@ -4,9 +4,21 @@
     "colors": [],
     "noneAllowed": true,
     "items": [
-        "bottom-left",
-        "bottom-right",
-        "top-left",
-        "top-right"
+        {
+            "item": "top-left",
+            "thumbnail": true
+        },
+        {
+            "item": "top-right",
+            "thumbnail": true
+        },
+        {
+            "item": "bottom-left",
+            "thumbnail": true
+        },
+        {
+            "item": "bottom-right",
+            "thumbnail": true
+        }
     ]
 }

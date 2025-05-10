@@ -264,6 +264,18 @@
             "outfits": [
                 "2025-expo"
             ]
+        },
+        {
+            "item": "jurard-cape-coat",
+            "multilayer": [
+                {
+                    "item": "jurard-cape-coat-back",
+                    "layer": "jackets_back"
+                }
+            ],
+            "outfits": [
+                "jurard"
+            ]
         }
     ]
 }

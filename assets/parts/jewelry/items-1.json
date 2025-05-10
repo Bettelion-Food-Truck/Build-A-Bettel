@@ -96,6 +96,23 @@
                 "2024-expo"
             ],
             "thumbnail": true
+        },
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo",
+            "outfits": [
+                "artist"
+            ]
+        },
+        {
+            "item": "jurard-earrings",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "jurard-rings",
+            "outfits": []
         }
     ]
 }

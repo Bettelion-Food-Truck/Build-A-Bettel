@@ -1,11 +1,8 @@
 window.addEventListener('load', function (ev) {
 	let parts = [];
-	let layers = [];
 
 	/* relative path to the folder containing part folders */
-	const DATA_PATH = "./data/";
 	const BASE_ASSET_PATH = "assets/";
-	const ASSET_PATH = BASE_ASSET_PATH;
 
 	// DOM Elements
 	const loading = document.getElementById("loading");
@@ -15,14 +12,8 @@ window.addEventListener('load', function (ev) {
 	const paletteButton = document.getElementById("palette_button");
 	const moveButton = document.getElementById("move_button");
 
-	const saveButton = document.getElementById("save_button");
-
-	const itemWrapper = document.getElementById("item_list_wrapper");
-
-	const paletteWrapper = document.getElementById("color_palette_wrapper");
 	const paletteList = document.getElementById("color_palette_list");
 
-	const movementWrapper = document.getElementById("movement_wrapper");
 	const movementControls = {
 		"movement": {
 			"up": document.getElementById("move_up_button"),
@@ -127,30 +118,6 @@ window.addEventListener('load', function (ev) {
 		}
 	}
 
-	/**
-	 * Update UI to visibly select a part and display that part's items
-	 * @param {number} partId The id of the selected part
-	 */
-	async function updateSelectedPart(partId) {
-
-		if (parts[partId].colors.length === 0) {
-			paletteButton.style.display = "none";
-		} else {
-			paletteButton.style.display = "inline-flex";
-		}
-
-		if (!parts[partId].movement || Object.keys(parts[partId].movement).length === 0) {
-			moveButton.style.display = "none";
-		} else {
-			moveButton.style.display = "inline-flex";
-		}
-
-		updatePalette();
-		showItems();
-
-		return null;
-	}
-
 	function showLoading(delay = 500) {
 
 		if (loadingTimer) {
@@ -190,35 +157,6 @@ window.addEventListener('load', function (ev) {
 				}
 			}
 		}
-	}
-
-	/**
-	 * Display palette menu, hide others
-	 */
-	function showPalette() {
-		itemWrapper.style.display = "none";
-		paletteWrapper.style.display = "flex";
-		movementWrapper.style.display = "none";
-	}
-
-	/**
-	 * Display move menu, hide others
-	 */
-	function showMove() {
-		itemWrapper.style.display = "none";
-		paletteWrapper.style.display = "none";
-		movementWrapper.style.display = "flex";
-
-		updateMovementButtons();
-	}
-
-	/**
-	 * Display item menu, hide others
-	 */
-	function showItems() {
-		itemWrapper.style.display = "flex";
-		paletteWrapper.style.display = "none";
-		movementWrapper.style.display = "none";
 	}
 
 	/**

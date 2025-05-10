@@ -100,7 +100,7 @@
     background-image: var(--move-toggle-img, "none");
 }
 
-.item_selection_wrapper {
+.interface_wrapper {
     position: relative;
 
     display: flex;
@@ -112,12 +112,12 @@
     max-width: 375px;
 }
 
-.item_selection_wrapper li {
+.interface_wrapper li {
     border: 3px solid transparent;
     border-radius: 3px;
 }
 
-.item_selection_wrapper li.selected {
+.interface_wrapper li.selected {
     border-color: var(--select-color, #ff0000);
 }
 
@@ -209,7 +209,7 @@
         height: calc(var(--ui-control-size, 50px) * 0.75);
     }
 
-    .item_selection_wrapper {
+    .interface_wrapper {
         width: 100%;
         max-width: 100%;
     }

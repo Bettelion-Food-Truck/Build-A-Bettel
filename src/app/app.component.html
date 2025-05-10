@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="item_selection_wrapper">
+  <div class="interface_wrapper">
     <div class="feature_buttons">
       <div>
         <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
@@ -34,7 +34,7 @@
 
     <div id="component_wrapper" class="component_wrapper" [class.hidden]="outfitsVisible">
 
-      <app-parts (randomizeOutfit)="randomize()" />
+      <app-parts />
 
       <div class="control_panel_wrapper">
         <div class="control_panel">

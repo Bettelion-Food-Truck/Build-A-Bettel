@@ -192,10 +192,4 @@ export class AppComponent {
 
     this.dialog.open(InfoComponent);
   }
-
-  randomize() {
-    this.logger.info("AppComponent: randomize()");
-
-    this.modalData.randomize();
-  }
 }

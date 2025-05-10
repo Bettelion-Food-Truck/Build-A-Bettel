@@ -24,8 +24,6 @@ export class PartsComponent {
   partSignal: Signal<Part[]>;
   activePart: Signal<number>;
 
-  randomizeOutfit = output<void>();
-
   constructor(
     private assetData: AssetDataService,
     private modalData: ModelDataService
@@ -71,6 +69,11 @@ export class PartsComponent {
         !part.colors || part.colors.length === 0
       )
     );
+  }
+
+  randomize() {
+
+    this.modalData.randomize();
   }
 
   onChange(partIndex: number) {

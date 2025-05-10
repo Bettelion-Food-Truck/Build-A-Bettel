@@ -21,7 +21,7 @@ jobs:
               run: npm run build
             - name: Deploy to gh pages
               run: |
-                npx angular-cli-ghpages --dir=dist/build-a-bettel
+                npx angular-cli-ghpages --dir=dist/build-a-bettel --no-silent
               env:
                 CI: true
                 GH_TOKEN: ${{ secrets.GH_TOKEN }}

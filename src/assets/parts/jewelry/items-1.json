@@ -103,6 +103,16 @@
             "outfits": [
                 "artist"
             ]
+        },
+        {
+            "item": "jurard-earrings",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "jurard-rings",
+            "outfits": []
         }
     ]
 }

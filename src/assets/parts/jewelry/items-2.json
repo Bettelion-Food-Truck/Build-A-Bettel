@@ -62,6 +62,16 @@
         {
             "item": "friendship-tattoo",
             "layer": "body_tattoo"
+        },
+        {
+            "item": "jurard-earrings",
+            "outfits": []
+        },
+        {
+            "item": "jurard-rings",
+            "outfits": [
+                "jurard"
+            ]
         }
     ]
 }

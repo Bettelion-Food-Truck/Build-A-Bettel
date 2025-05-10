@@ -185,6 +185,12 @@
             "outfits": [
                 "artist"
             ]
+        },
+        {
+            "item": "jurard-crown",
+            "outfits": [
+                "jurard"
+            ]
         }
     ]
 }

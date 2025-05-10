@@ -393,6 +393,16 @@
                 "part": "feet",
                 "item": "flat"
             }
+        },
+        {
+            "item": "jurard-boots",
+            "outfits": [
+                "jurard"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
         }
     ]
 }

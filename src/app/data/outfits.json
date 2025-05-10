@@ -163,6 +163,10 @@
         {
             "uid": "artist",
             "name": "Artist"
+        },
+        {
+            "uid": "jurard",
+            "name": "Jurard"
         }
     ]
 }

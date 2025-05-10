@@ -65,6 +65,12 @@
         "ruze-belt",
         "pirate-belt",
         "pirate-belt-sash",
-        "vesper-belt"
+        "vesper-belt",
+        {
+            "item": "jurard-belt",
+            "outfits": [
+                "jurard"
+            ]
+        }
     ]
 }

@@ -28,19 +28,17 @@ For a complete list of available schematics (such as `components`, `directives`,
 ng generate --help
 ```
 
-## Building
+## Deploying
 
-To build the project run:
+To deploy the project run:
 
 ```bash
-npm run build
+ng deploy
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed. Upload these files and the folder to your webhost and all is done. Ensure the file structure remains intact.
+This will compile your project, clean it, and push it to the branch origin/gh-pages. Set GitHub pages to deploy from this branch's root and the game will be live.
 
-TODO Add instructions about automate deployment of app to GitHub Pages using GitHub Actions.
-
-TODO Update the following: Hosting on GitHub Pages is even easier, just fork this project, customize as needed, then follow the the intrucutions [about creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+Read more about [Angular deployment](https://angular.dev/tools/cli/deployment).
 
 ## Additional Resources
 

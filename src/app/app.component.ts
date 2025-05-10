@@ -1,4 +1,4 @@
-import { Component, effect, inject, Injector, Signal } from '@angular/core';
+import { Component, effect, inject, Injector, isDevMode, Signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { CanvasComponent } from "@components/canvas/canvas.component";
@@ -23,6 +23,7 @@ import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
+import { LogLevel } from '@services/log/log-entry.model';
 
 @Component({
   selector: 'app-root',
@@ -58,6 +59,11 @@ export class AppComponent {
     private modalData: ModelDataService,
     private logger: LogService
   ) {
+
+    if (!isDevMode()) {
+
+      this.logger.level = LogLevel.Error;
+    }
 
     this.partSignal = this.assetData.getParts();
     this.outfitSignal = this.outfitData.getOutfits();

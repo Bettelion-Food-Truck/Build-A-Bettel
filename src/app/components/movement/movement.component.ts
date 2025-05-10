@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { Component, effect, Signal } from '@angular/core';
 import { Movement, Part } from '@models/part.model';
 import { Position } from '@models/position.model';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
@@ -12,15 +12,16 @@ import { ModelDataService } from '@services/model-data/model-data.service';
 })
 export class MovementComponent {
 
+  // TODO should this move elsewhere and provide a default object that way?
   readonly DEFAULT_POSITION = {
     "x": 0,
-    "y": 0
+    "y": 0,
+    "scale": 1
   };
 
   readonly MOVEMENT_BASE = 10; // 10px
 
   private selectedPositions: Signal<Position[]>;
-  private parts: Signal<Part[]>;
 
   upPotential: boolean = false;
   downPotential: boolean = false;
@@ -31,22 +32,31 @@ export class MovementComponent {
     private assetData: AssetDataService,
     private modelData: ModelDataService
   ) {
-
-    this.parts = this.assetData.getParts();
     this.selectedPositions = this.modelData.getItemsPositions();
+
+    effect(() => {
+      let selectedPart = this.modelData.getActivePart()();
+
+      if (selectedPart === undefined || selectedPart < 0) {
+        return;
+      }
+
+      const position = this.modelData.getItemsPosition(selectedPart);
+
+      if (!position) {
+        this.modelData.setItemsPosition(
+          selectedPart,
+          {
+            x: this.DEFAULT_POSITION.x,
+            y: this.DEFAULT_POSITION.y,
+            scale: this.DEFAULT_POSITION.scale
+          }
+        );
+      }
+
+      this.updateMovementButtons();
+    });
   }
-
-  /*
-
-    for (let i = 0; i < parts.length; i++) {
-
-      selectedPosition[i] = {
-        "x": DEFAULT_POSITION.x,
-        "y": DEFAULT_POSITION.y,
-        "scale": DEFAULT_POSITION.scale
-      };
-    }
-  */
 
   moveUp() {
 
@@ -123,7 +133,7 @@ export class MovementComponent {
   getMovementScale(): number {
 
     let selectedPart = this.modelData.getActivePart()();
-    const movement = this.parts()[selectedPart].movement as Movement;
+    const movement = this.assetData.getParts()()[selectedPart].movement as Movement;
 
     return (movement.scale ? movement.scale : 1);
   }
@@ -131,7 +141,13 @@ export class MovementComponent {
   checkMoveLimits() {
 
     let selectedPart = this.modelData.getActivePart()();
-    const movement = this.parts()[selectedPart].movement as Movement;
+    const part = this.assetData.getPart(selectedPart);
+
+    if (!part || !part.movement) {
+      return;
+    }
+
+    const movement = part.movement as Movement;
 
     let position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
 
@@ -165,8 +181,14 @@ export class MovementComponent {
 
     let selectedPart = this.modelData.getActivePart()();
 
-    const movement = this.parts()[selectedPart].movement as Movement;
-    const position = this.selectedPositions()[selectedPart] as Position;
+    const part = this.assetData.getPart(selectedPart);
+
+    if (!part || !part.movement) {
+      return;
+    }
+
+    const movement = part.movement as Movement;
+    const position = (this.selectedPositions()[selectedPart] ?? {}) as Position;
 
     if (!movement.y) {
       // Axis is disabled, disable buttons

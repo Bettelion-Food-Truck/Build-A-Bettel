@@ -26,6 +26,10 @@
     .movement_button {
         cursor: pointer;
 
+        .mat-icon {
+            transform: scale(1.5);
+        }
+
         &.disabled {
             cursor: not-allowed;
             opacity: 0.5;

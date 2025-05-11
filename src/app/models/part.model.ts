@@ -9,6 +9,8 @@ export interface Part {
     icon: string;
 
     noneAllowed: boolean;
+    noneThumbnail: string | null;
+
     hideFromPartsList: boolean;
 
     movement: Movement | null;

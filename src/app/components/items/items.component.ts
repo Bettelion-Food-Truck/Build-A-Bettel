@@ -33,21 +33,28 @@ export class ItemsComponent {
     this.selectedItems = this.modalData.getSelectedItems();
   }
 
-  getNonePath(): string {
+  getNonePath(partIndex: number): string {
+
+    const part = this.partSignal()[partIndex];
+
+    if (part.noneThumbnail) {
+
+      return ASSET_PATH + part.folder + "/" + THUMBNAIL_FOLDER + part.noneThumbnail + ".png";
+    }
 
     return `${ICON_PATH}none_button.svg`;
   }
 
   getItemPath(partIndex: number, itemIndex: number): string {
 
-    let part = this.partSignal()[partIndex];
+    const part = this.partSignal()[partIndex];
 
     if (!part) {
 
       return "";
     }
 
-    let item = part.items[itemIndex];
+    const item = part.items[itemIndex];
 
     if (!item) {
 

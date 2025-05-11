@@ -93,17 +93,13 @@ ul li img {
     --item-button-color: #ffffff;
     --item-button-hover-color: #eeeeee;
 
-    /* the color/image filepath of the item menu toggle button */
-    --item-toggle-color: #ffffff;
-    --item-toggle-img: url("../public/icons/icon-grid.png");
-
     /* the color/image filepath of the palette toggle button */
     --palette-toggle-color: #ffffff;
     --palette-toggle-img: url("../public/icons/icon-colors.png");
 
-    /* the color/image filepath of the info button */
-    --move-toggle-color: #ffffff;
-    --move-toggle-img: url("../public/icons/icon-move.png");
+    /* active button vars */
+    --active-button-color: #00aa00;
+    --active-button-text-color: #ffffff;
 
     /* save button vars */
     --save-button-color: #006400;

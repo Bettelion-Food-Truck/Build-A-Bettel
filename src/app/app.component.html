@@ -6,13 +6,12 @@
     <app-loading />
 
     <div class="control_wrapper">
-      <div class="part_control_wrapper"><!-- TODO -->
-        <span (click)="showItems()" class="controls items" [class.hidden]="!potentialItems()"></span>
-        <span (click)="showPalette()" class="controls palette" [class.hidden]="!potentialPalette()"
-          [class.disabled]="!featuresEnabled()"></span>
-        <span (click)="showMovement()" class="controls moves" [class.hidden]="!potentialMovement()"
-          [class.disabled]="!featuresEnabled()"></span>
-      </div>
+      <button mat-mini-fab aria-label="Toggle movement control panel" title="Toggle movement control panel"
+        (click)="toggleMovement()" [class.hidden]="!potentialMovement()"
+        [class.active]="movementVisible && !outfitsVisible" [class.disabled]="!featuresEnabled()"
+        [disabled]="!featuresEnabled()">
+        <mat-icon aria-hidden="false" fontIcon="gamepad"></mat-icon>
+      </button>
 
       <app-zoom [canvas]="canvas" />
     </div>
@@ -23,9 +22,10 @@
       <!-- TODO Move save and credits elsewhere -->
       <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
       <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
-      <button (click)="generatePrompt()" [class.hidden]="outfitsVisible">Random Prompt</button>
 
       <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
+
+      <button (click)="generatePrompt()">Random Prompt</button>
 
       <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()">
         <mat-icon fontSet="material-icons-outlined">info</mat-icon>
@@ -47,10 +47,11 @@
 
         <app-parts />
 
+        <app-palette class="hidden" /><!-- TODO -->
+
         <div class="control_panel_wrapper">
           <div class="control_panel">
             <app-items [class.hidden]="!itemsVisible" />
-            <app-palette [class.hidden]="!paletteVisible" /><!-- TODO -->
             <app-movement [class.hidden]="!movementVisible" />
           </div>
         </div>

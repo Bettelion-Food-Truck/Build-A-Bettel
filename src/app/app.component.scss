@@ -44,11 +44,14 @@
     bottom: auto;
     left: auto;
 
-    width: var(--ui-control-size, 50px);
-    z-index: 0;
+    z-index: 10;
 
-    display: flex;
-    flex-direction: column;
+    button {
+        &.active {
+            background-color: var(--active-button-color, #00ff00);
+            color: var(--active-button-text-color, #000000);
+        }
+    }
 }
 
 .part_control_wrapper {
@@ -74,31 +77,6 @@
         cursor: pointer;
         text-align: center;
     }
-}
-
-.control_wrapper > div:first-child,
-.part_control_wrapper .controls:first-child {
-    margin-top: 0;
-}
-
-.control_wrapper > div:last-child,
-.part_control_wrapper .controls:last-child {
-    margin-bottom: 0;
-}
-
-.part_control_wrapper .items {
-    background-color: var(--item-toggle-color, #ffffff);
-    background-image: var(--item-toggle-img, "none");
-}
-
-.part_control_wrapper .palette {
-    background-color: var(--palette-toggle-color, #ffffff);
-    background-image: var(--palette-toggle-img, "none");
-}
-
-.part_control_wrapper .moves {
-    background-color: var(--move-toggle-color, #ffffff);
-    background-image: var(--move-toggle-img, "none");
 }
 
 .interface_wrapper {
@@ -196,11 +174,6 @@
         left: auto;
 
         width: calc(var(--ui-control-size, 50px) * 0.75);
-    }
-
-    .control_wrapper .part_control_wrapper .controls {
-        width: calc(var(--ui-control-size, 50px) * 0.75);
-        height: calc(var(--ui-control-size, 50px) * 0.75);
     }
 
     .interface_wrapper {

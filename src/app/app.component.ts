@@ -63,17 +63,6 @@ export class AppComponent {
 
   outfitsVisible = false;
 
-  potentialItems: Signal<boolean> = computed(() => {
-
-    if (this.isInvalidActivePart()) {
-      return false;
-    }
-
-    const part: Part = this.partSignal()[this.activePart()];
-
-    return part.items.length > 0;
-  });
-
   potentialPalette: Signal<boolean> = computed(() => {
 
     if (this.isInvalidActivePart()) {
@@ -174,40 +163,15 @@ export class AppComponent {
     });
   }
 
-  showItems() {
-    this.logger.info("AppComponent: showPalette()");
-
-    if (!this.potentialItems() || !this.featuresEnabled()) {
-      return;
-    }
-
-    this.itemsVisible = true;
-    this.paletteVisible = false;
-    this.movementVisible = false;
-  }
-
-  showPalette() {
-    this.logger.info("AppComponent: showPalette()");
-
-    if (!this.potentialPalette() || !this.featuresEnabled()) {
-      return;
-    }
-
-    this.itemsVisible = false;
-    this.paletteVisible = true;
-    this.movementVisible = false;
-  }
-
-  showMovement() {
-    this.logger.info("AppComponent: showMovement()");
+  toggleMovement() {
+    this.logger.info("AppComponent: toggleMovement()");
 
     if (!this.potentialMovement() || !this.featuresEnabled()) {
       return;
     }
 
-    this.itemsVisible = false;
-    this.paletteVisible = false;
-    this.movementVisible = true;
+    this.movementVisible = !this.movementVisible;
+    this.itemsVisible = !this.movementVisible;
   }
 
   reset() {

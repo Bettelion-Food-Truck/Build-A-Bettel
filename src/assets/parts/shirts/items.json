@@ -8,88 +8,102 @@
             "item": "showman-shirt",
             "outfits": [
                 "showman"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "january-2025-shirt",
             "outfits": [
                 "january-2025"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "punk-shirt",
             "outfits": [
                 "punk"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "debut-underlayer",
             "outfits": [
                 "debut-underlayer",
                 "deerttel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit",
                 "battel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "bettelmaid",
             "outfits": [
                 "bettelmaid"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "pirate-shirt",
             "outfits": [
                 "pirate"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "magni-shirt",
             "outfits": [
                 "magni"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "sims-blouse",
             "outfits": [
                 "sims"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "goose-vp",
             "outfits": [
                 "goose-vp"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "jester",
             "layer": "shirts-tucked-in",
             "outfits": [
                 "jester"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "clown",
             "outfits": [
                 "clown"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "ruze-top",
             "outfits": [
                 "ruze"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "deadworld-shirt",
             "outfits": [
                 "dead-world"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "vesper-shirt",
@@ -101,7 +115,8 @@
             ],
             "outfits": [
                 "vesper"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "bettelzebub-shirt",
@@ -113,25 +128,29 @@
             ],
             "outfits": [
                 "bettelzebub"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "woven-fates-shirt",
             "outfits": [
                 "woven-fates"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "inkya-impulse-shirt",
             "outfits": [
                 "inkya-impulse"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "betsy-sweatshirt",
             "outfits": [
                 "betsy"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "octavio-shirt",
@@ -143,13 +162,15 @@
             ],
             "outfits": [
                 "octavio"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "hakka-undershirt",
             "outfits": [
                 "hakka"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "butler-shirt",
@@ -161,13 +182,15 @@
             ],
             "outfits": [
                 "butler"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "when-youre-evil-shirt",
             "outfits": [
                 "when-youre-evil"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "pumpkin-king-shirt",
@@ -179,19 +202,22 @@
             ],
             "outfits": [
                 "pumpkin-king"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "goldbullet-shirt",
             "outfits": [
                 "goldbullet"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "shinri-shirt",
             "outfits": [
                 "shinri"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "last-game-shirt",
@@ -203,37 +229,43 @@
             ],
             "outfits": [
                 "last-game"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "ghost-bride-shirt",
             "outfits": [
                 "ghost-bride"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "2024-expo-shirt",
             "outfits": [
                 "2024-expo"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "betsy-grayson-bodysuit",
             "outfits": [
                 "betsy-grayson"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "axel-shirt",
             "outfits": [
                 "axel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "artist-shirt",
             "outfits": [
                 "artist"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "jurard-shirt",
@@ -245,8 +277,12 @@
             ],
             "outfits": [
                 "jurard"
-            ]
+            ],
+            "thumbnail": true
         },
-        "snank"
+        {
+            "item": "snank",
+            "thumbnail": true
+        }
     ]
 }

@@ -14,152 +14,176 @@
             ],
             "outfits": [
                 "showman"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "bettelgoose-pants",
             "layer": "pants_elevated",
             "outfits": [
                 "bettelgoose"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "punk-pants",
             "outfits": [
                 "punk"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "flex",
             "layer": "pants_elevated",
             "outfits": [
                 "flex"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "debut-underlayer",
             "outfits": [
                 "debut-underlayer",
                 "deerttel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit",
                 "battel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "bettelmaid",
             "layer": "pants_elevated",
             "outfits": [
                 "bettelmaid"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "pirate-pants",
             "outfits": [
                 "pirate"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "magni-pants",
             "outfits": [
                 "magni"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "sims-shorts",
             "outfits": [
                 "sims"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "goose-vp",
             "layer": "pants_elevated",
             "outfits": [
                 "goose-vp"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "jester",
             "outfits": [
                 "jester"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "clown-shorts",
             "outfits": [
                 "clown"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "ruze-pants",
             "outfits": [
                 "ruze"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "deadworld-pants",
             "outfits": [
                 "dead-world"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "vesper-pants",
             "outfits": [
                 "vesper"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "bettelzebub-pants",
             "outfits": [
                 "bettelzebub"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "woven-fates-pants",
             "outfits": [
                 "woven-fates"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "inkya-impulse-pants",
             "outfits": [
                 "inkya-impulse"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "betsy-skirt",
             "outfits": [
                 "betsy"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "octavio-pants",
             "layer": "pants_elevated",
             "outfits": [
                 "octavio"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "hakka-pants",
             "outfits": [
                 "hakka"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "butler-pants",
             "outfits": [
                 "butler"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "when-youre-evil-shorts",
             "outfits": [
                 "when-youre-evil"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "pumpkin-king-pants",
@@ -171,25 +195,29 @@
             ],
             "outfits": [
                 "pumpkin-king"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "goldbullet-pants",
             "outfits": [
                 "goldbullet"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "shinri-pants",
             "outfits": [
                 "shinri"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "last-game-pants",
             "outfits": [
                 "last-game"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "ghost-bride-skirt",
@@ -201,41 +229,48 @@
             ],
             "outfits": [
                 "ghost-bride"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "2024-expo-shorts",
             "outfits": [
                 "2024-expo"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "axel-pants",
             "outfits": [
                 "axel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "2025-expo-shorts",
             "outfits": [
                 "2025-expo"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "artist-pants",
             "outfits": [
                 "artist"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "jurard-pants",
             "outfits": [
                 "jurard"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "plaid-pants",
-            "layer": "pants_elevated"
+            "layer": "pants_elevated",
+            "thumbnail": true
         },
         {
             "item": "tank-treads",
@@ -245,7 +280,8 @@
                     "item": "tank-treads-back",
                     "layer": "pants_back"
                 }
-            ]
+            ],
+            "thumbnail": true
         }
     ]
 }

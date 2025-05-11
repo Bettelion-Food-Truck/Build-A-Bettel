@@ -84,6 +84,14 @@ export class ModelDataService {
 
   setItemsPosition(partIndex: number, position: Position) {
 
+    const currentPosition = this.selectedPositions()[partIndex];
+
+    if (currentPosition.x === position.x && currentPosition.y === position.y) {
+      // Unchanged
+
+      return;
+    }
+
     this.selectedPositions.update(selectedPositions => {
 
       selectedPositions[partIndex] = position;

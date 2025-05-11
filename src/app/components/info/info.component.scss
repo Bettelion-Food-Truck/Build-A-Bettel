@@ -28,7 +28,10 @@
 
 .dialog-actions {
     background-color: var(--random-purple-color, purple);
-    color: white;
+
+    button {
+        color: white;
+    }
 }
 
 @media (max-width: 500px) {

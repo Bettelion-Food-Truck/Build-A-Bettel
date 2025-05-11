@@ -13,6 +13,15 @@
         <mat-icon aria-hidden="false" fontIcon="gamepad"></mat-icon>
       </button>
 
+      <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()" class="show">
+        <mat-icon fontSet="material-icons-outlined">info</mat-icon>
+      </button>
+
+      <a #save_button mat-mini-fab aria-label="Save creation to device" title="Save creation to device"
+        class="show save" [href]="imageDataString()" download="gb.png">
+        <mat-icon>download</mat-icon>
+      </a>
+
       <app-zoom [canvas]="canvas" />
     </div>
   </div>
@@ -26,15 +35,6 @@
       <button mat-flat-button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
 
       <button mat-flat-button (click)="generatePrompt()">Random Prompt</button>
-
-      <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()">
-        <mat-icon fontSet="material-icons-outlined">info</mat-icon>
-      </button>
-
-      <a #save_button mat-mini-fab aria-label="Save creation to device" title="Save creation to device" class="save"
-        [href]="imageDataString()" download="gb.png">
-        <mat-icon>download</mat-icon>
-      </a>
     </div>
 
     <div class="features">

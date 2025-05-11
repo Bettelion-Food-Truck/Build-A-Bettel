@@ -46,27 +46,47 @@
 
     z-index: 10;
 
+    display: flex;
+    flex-direction: column;
+
+    place-items: center;
+
+    a,
     button {
-        opacity: 0;
-        display: none;
+        background-color: var(--random-purple-color, purple);
+        color: #ffffff;
 
-        transition:
-            background-color ease 0.4s,
-            opacity 0.3s ease,
-            display 0.3s ease allow-discrete;
+        border: 1px solid black;
+        border-radius: 3px;
 
-        &.show {
-            display: inline-flex;
-            opacity: 1;
+        margin: 2.5px 0;
 
-            @starting-style {
-                opacity: 0;
-            }
+        &.save {
+            background-color: var(--save-button-color, green);
         }
 
-        &.active {
-            background-color: var(--active-button-color, #00ff00);
-            color: var(--active-button-text-color, #000000);
+        &.animated {
+            opacity: 0;
+            display: none;
+
+            transition:
+                background-color ease 0.4s,
+                opacity 0.3s ease,
+                display 0.3s ease allow-discrete;
+
+            &.show {
+                display: inline-flex;
+                opacity: 1;
+
+                @starting-style {
+                    opacity: 0;
+                }
+            }
+
+            &.active {
+                background-color: var(--active-button-color, #00ff00);
+                color: var(--active-button-text-color, #000000);
+            }
         }
     }
 }

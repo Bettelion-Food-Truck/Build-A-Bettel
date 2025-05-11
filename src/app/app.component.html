@@ -19,19 +19,19 @@
   <div class="interface_wrapper">
     <div class="feature_buttons">
       <!-- TODO Move save and credits elsewhere -->
-      <div>
-        <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
-        <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
-        <button (click)="generatePrompt()" [class.hidden]="outfitsVisible">Random Prompt</button>
+      <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
+      <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
+      <button (click)="generatePrompt()" [class.hidden]="outfitsVisible">Random Prompt</button>
 
-        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
-      </div>
-    </div>
-    <div class="feature_buttons">
-      <button (click)="showCredits()">Credits</button>
+      <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
 
-      <a #save_button class="save" [href]="imageDataString()" download="gb.png">
-        Save
+      <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()">
+        <mat-icon fontSet="material-icons-outlined">info</mat-icon>
+      </button>
+
+      <a #save_button mat-mini-fab aria-label="Save creation to device" title="Save creation to device" class="save"
+        [href]="imageDataString()" download="gb.png">
+        <mat-icon>download</mat-icon>
       </a>
     </div>
 

@@ -144,34 +144,28 @@
     margin: 5px 0;
     flex-wrap: wrap;
 
-    &,
-    & > div {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     button,
     a {
         cursor: pointer;
 
-        text-decoration: none;
+        background-color: var(--random-purple-color, purple);
+        color: #ffffff;
 
         border: 1px solid black;
         border-radius: 3px;
 
-        padding: 4px 8px;
-        margin: 5px 2px;
-
-        background-color: var(--random-purple-color, purple);
-        color: #ffffff;
+        &:not(.mdc-fab) {
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 
         &.save {
             background-color: var(--save-button-color, green);
-        }
-
-        &:hover {
-            filter: brightness(1.2);
         }
     }
 }

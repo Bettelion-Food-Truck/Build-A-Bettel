@@ -1,4 +1,6 @@
 import { Component, computed, effect, inject, Injector, isDevMode, Signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 
 import { CanvasComponent } from "@components/canvas/canvas.component";
@@ -30,6 +32,9 @@ import { PromptService } from '@services/prompt/prompt.service';
 @Component({
   selector: 'app-root',
   imports: [
+    MatButtonModule,
+    MatIconModule,
+
     CanvasComponent,
     PartsComponent,
     ItemsComponent,

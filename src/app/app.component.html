@@ -8,8 +8,10 @@
     <div class="control_wrapper">
       <div class="part_control_wrapper"><!-- TODO -->
         <span (click)="showItems()" class="controls items" [class.hidden]="!potentialItems()"></span>
-        <span (click)="showPalette()" class="controls palette" [class.hidden]="!potentialPalette()"></span>
-        <span (click)="showMovement()" class="controls moves" [class.hidden]="!potentialMovement()"></span>
+        <span (click)="showPalette()" class="controls palette" [class.hidden]="!potentialPalette()"
+          [class.disabled]="!featuresEnabled()"></span>
+        <span (click)="showMovement()" class="controls moves" [class.hidden]="!potentialMovement()"
+          [class.disabled]="!featuresEnabled()"></span>
       </div>
 
       <app-zoom [canvas]="canvas" />

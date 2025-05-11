@@ -28,6 +28,7 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
+import { Item } from '@models/item.model';
 
 @Component({
   selector: 'app-root',
@@ -64,7 +65,7 @@ export class AppComponent {
 
   potentialItems: Signal<boolean> = computed(() => {
 
-    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+    if (this.isInvalidActivePart()) {
       return false;
     }
 
@@ -75,7 +76,7 @@ export class AppComponent {
 
   potentialPalette: Signal<boolean> = computed(() => {
 
-    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+    if (this.isInvalidActivePart()) {
       return false;
     }
 
@@ -86,13 +87,24 @@ export class AppComponent {
 
   potentialMovement: Signal<boolean> = computed(() => {
 
-    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+    if (this.isInvalidActivePart()) {
       return false;
     }
 
     const part: Part = this.partSignal()[this.activePart()];
 
     return !(!part.movement || Object.keys(part.movement).length === 0);
+  });
+
+  featuresEnabled: Signal<boolean> = computed(() => {
+
+    if (this.isInvalidActivePart()) {
+      return false;
+    }
+
+    const item: number = this.modalData.getSelectedItem(this.activePart());
+
+    return item >= 0;
   });
 
   itemsVisible = true;
@@ -158,6 +170,11 @@ export class AppComponent {
   }
 
   showItems() {
+    this.logger.info("AppComponent: showPalette()");
+
+    if (!this.potentialItems() || !this.featuresEnabled()) {
+      return;
+    }
 
     this.itemsVisible = true;
     this.paletteVisible = false;
@@ -165,6 +182,11 @@ export class AppComponent {
   }
 
   showPalette() {
+    this.logger.info("AppComponent: showPalette()");
+
+    if (!this.potentialPalette() || !this.featuresEnabled()) {
+      return;
+    }
 
     this.itemsVisible = false;
     this.paletteVisible = true;
@@ -172,6 +194,11 @@ export class AppComponent {
   }
 
   showMovement() {
+    this.logger.info("AppComponent: showMovement()");
+
+    if (!this.potentialMovement() || !this.featuresEnabled()) {
+      return;
+    }
 
     this.itemsVisible = false;
     this.paletteVisible = false;
@@ -206,5 +233,10 @@ export class AppComponent {
     this.logger.info("AppComponent: showCredits()");
 
     this.dialog.open(InfoComponent);
+  }
+
+  isInvalidActivePart() {
+
+    return (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart())
   }
 }

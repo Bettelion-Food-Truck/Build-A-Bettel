@@ -4,6 +4,9 @@ html {
     color-scheme: light;
     @include mat.theme(
         (
+            color: (
+                theme-type: light
+            ),
             typography: (
                 plain-family: Roboto,
                 brand-family: Open Sans,
@@ -99,18 +102,6 @@ ul li img {
     /* the color/image filepath of the info button */
     --move-toggle-color: #ffffff;
     --move-toggle-img: url("../public/icons/icon-move.png");
-
-    /* the color/image filepath of the zoom in button */
-    --zoom-in-color: #00000000;
-    --zoom-in-img: url("../public/icons/zoom-in.png");
-
-    /* the color/image filepath of the zoom out button */
-    --zoom-out-color: #00000000;
-    --zoom-out-img: url("../public/icons/zoom-out.png");
-
-    /* the color/image filepath of the zoom reset button */
-    --zoom-reset-color: #00000000;
-    --zoom-reset-img: url("../public/icons/zoom-reset.png");
 
     /* save button vars */
     --save-button-color: #006400;

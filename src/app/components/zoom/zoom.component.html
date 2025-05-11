@@ -1,3 +1,11 @@
-<span class="controls zoom_in" (click)="zoomIn()"></span>
-<span class="controls zoom_out" (click)="zoomOut()"></span>
-<span class="controls zoom_reset" (click)="reset()"></span>
+<button mat-mini-fab aria-label="Zoom in canvas" title="Zoom in canvas" (click)="zoomIn()">
+    <mat-icon aria-hidden="false" fontIcon="zoom_in"></mat-icon>
+</button>
+
+<button mat-mini-fab aria-label="Zoom out canvas" title="Zoom out canvas" (click)="zoomOut()">
+    <mat-icon aria-hidden="false" fontIcon="zoom_out"></mat-icon>
+</button>
+
+<button mat-mini-fab aria-label="Reset canvas zoom" title="Reset canvas zoom" (click)="reset()">
+    <mat-icon aria-hidden="false" fontIcon="fullscreen"></mat-icon>
+</button>

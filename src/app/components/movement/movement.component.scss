@@ -9,8 +9,8 @@
 
 .movement_controls {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     place-items: stretch;
@@ -21,10 +21,50 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        aspect-ratio: 1/1;
     }
 
     .movement_button {
         cursor: pointer;
+
+        padding: 15px;
+        border: 1px solid black;
+
+        &.up {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            border-bottom-width: 0;
+        }
+
+        &.right {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            border-left-width: 0;
+        }
+
+        &.down {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+
+            border-top-width: 0;
+        }
+
+        &.left {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            border-right-width: 0;
+        }
 
         .mat-icon {
             transform: scale(1.5);
@@ -35,13 +75,5 @@
             opacity: 0.5;
             filter: grayscale(1);
         }
-    }
-}
-
-/* Portrait layout changes */
-@media (orientation: portrait) {
-    .movement_controls {
-        grid-template-columns: repeat(3, 50px);
-        grid-template-rows: repeat(3, 50px);
     }
 }

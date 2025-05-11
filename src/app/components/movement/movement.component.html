@@ -1,25 +1,25 @@
 <div class="movement_controls">
     <div class="spacer"><!-- spacer --></div>
-    <button class="movement_button" aria-label="Move up" title="Move up" (click)="moveUp()"
+    <button class="movement_button up" aria-label="Move up" title="Move up" (click)="moveUp()"
         [class.disabled]="!upPotential" [disabled]="!upPotential">
         <mat-icon>north</mat-icon>
     </button>
     <div class="spacer"><!-- spacer --></div>
 
-    <button class="movement_button" aria-label="Move left" title="Move left" (click)="moveLeft()"
+    <button class="movement_button left" aria-label="Move left" title="Move left" (click)="moveLeft()"
         [class.disabled]="!leftPotential" [disabled]="!leftPotential">
         <mat-icon>west</mat-icon>
     </button>
-    <button class="movement_button" aria-label="Reset position" title="Reset position" (click)="reset()">
+    <button class="movement_button reset" aria-label="Reset position" title="Reset position" (click)="reset()">
         <mat-icon>restart_alt</mat-icon>
     </button>
-    <button class="movement_button" aria-label="Move right" title="Move right" (click)="moveRight()"
+    <button class="movement_button right" aria-label="Move right" title="Move right" (click)="moveRight()"
         [class.disabled]="!rightPotential" [disabled]="!rightPotential">
         <mat-icon>east</mat-icon>
     </button>
 
     <div class="spacer"><!-- spacer --></div>
-    <button class="movement_button" aria-label="Move down" title="Move down" (click)="moveDown()"
+    <button class="movement_button down" aria-label="Move down" title="Move down" (click)="moveDown()"
         [class.disabled]="!downPotential" [disabled]="!downPotential">
         <mat-icon>south</mat-icon>
     </button>

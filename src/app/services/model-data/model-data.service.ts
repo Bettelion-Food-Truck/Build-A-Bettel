@@ -86,7 +86,7 @@ export class ModelDataService {
 
     const currentPosition = this.selectedPositions()[partIndex];
 
-    if (currentPosition.x === position.x && currentPosition.y === position.y) {
+    if (currentPosition && currentPosition.x === position.x && currentPosition.y === position.y) {
       // Unchanged
 
       return;

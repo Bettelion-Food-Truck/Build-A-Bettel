@@ -112,7 +112,7 @@ export class MovementComponent {
 
   reset() {
 
-    let position: Position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position: Position = this.modelData.getItemsPosition(this.modelData.getActivePart()()) ?? {} as Position;
 
     position.x = DEFAULT_POSITION.x;
     position.y = DEFAULT_POSITION.y;

@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { OUTFIT_PATH } from '@data/paths';
@@ -11,6 +11,7 @@ import { Outfit } from '@models/outfit.model';
   imports: [
     CommonModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './outfits.component.html',
   styleUrl: './outfits.component.scss'
 })

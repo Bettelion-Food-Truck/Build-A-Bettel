@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ASSET_PATH, ICON_PATH, ITEM_FOLDER, THUMBNAIL_FOLDER } from '@data/paths';
@@ -7,12 +7,14 @@ import { Part } from '@models/part.model';
 
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
+import { LogService } from '@services/log/log.service';
 
 @Component({
   selector: 'app-items',
   imports: [
     CommonModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './items.component.html',
   styleUrl: './items.component.scss'
 })
@@ -24,6 +26,7 @@ export class ItemsComponent {
   selectedItems: Signal<number[]>;
 
   constructor(
+    private logger: LogService,
     private assetData: AssetDataService,
     private modalData: ModelDataService
   ) {
@@ -34,6 +37,7 @@ export class ItemsComponent {
   }
 
   getNonePath(partIndex: number): string {
+    this.logger.debug("ItemsComponent: getNonePath()", partIndex);
 
     const part = this.partSignal()[partIndex];
 
@@ -46,6 +50,7 @@ export class ItemsComponent {
   }
 
   getItemPath(partIndex: number, itemIndex: number): string {
+    this.logger.debug("ItemsComponent: getItemPath()", partIndex, itemIndex);
 
     const part = this.partSignal()[partIndex];
 
@@ -68,6 +73,7 @@ export class ItemsComponent {
   }
 
   onChange(partIndex: number, itemIndex: number) {
+    this.logger.info("ItemsComponent: onChange()", partIndex, itemIndex);
 
     this.modalData.setSelectedItem(partIndex, itemIndex);
   }

@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,6 +12,7 @@ import { PromptService } from '@services/prompt/prompt.service';
     MatButtonModule,
     MatIconModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './prompt.component.html',
   styleUrl: './prompt.component.scss',
   host: {

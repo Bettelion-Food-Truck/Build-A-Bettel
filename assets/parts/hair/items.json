@@ -5,7 +5,8 @@
     },
     "colorMode": null,
     "colors": [],
-    "noneAllowed": false,
+    "noneAllowed": true,
+    "noneThumbnail": "bald",
     "items": [
         {
             "item": "default",
@@ -44,11 +45,6 @@
         {
             "item": "twobert-hair",
             "outfits": [],
-            "thumbnail": true
-        },
-        {
-            "item": "bald",
-            "hide": true,
             "thumbnail": true
         }
     ]

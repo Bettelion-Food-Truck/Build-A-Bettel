@@ -119,8 +119,13 @@ export class AppComponent {
     private logger: LogService
   ) {
 
-    if (!isDevMode()) {
+    if (isDevMode()) {
+      // Enable up to Info level logging in dev mode
+      this.logger.level = LogLevel.Info;
 
+      // Debug level when trying to find strange behaviors
+      // this.logger.level = LogLevel.Debug;
+    } else {
       this.logger.level = LogLevel.Error;
     }
 

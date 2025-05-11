@@ -122,6 +122,12 @@ export class AppComponent {
     this.outfitSignal = this.outfitData.getOutfits();
     this.activePart = this.modalData.getActivePart();
     this.imageDataString = this.modalData.getImageEncoded();
+
+    effect(() => {
+      this.logger.debug(`AppComponent: partChangeEffect() ${this.activePart()}`);
+
+      this.showItems();
+    });
   }
 
   ngOnInit() {
@@ -132,7 +138,7 @@ export class AppComponent {
 
     // Initial load
     const initialLoadEffect = effect(() => {
-      this.logger.debug(`Parts: ${this.partSignal().length}`);
+      this.logger.debug(`AppComponent: initialLoadEffect() ${this.partSignal().length}`);
 
       if (this.partSignal().length > 0) {
 
@@ -170,8 +176,21 @@ export class AppComponent {
       return;
     }
 
-    this.movementVisible = !this.movementVisible;
-    this.itemsVisible = !this.movementVisible;
+    if (this.movementVisible) {
+      this.showItems();
+    } else {
+      this.showMovement();
+    }
+  }
+
+  private showItems() {
+    this.movementVisible = false;
+    this.itemsVisible = true;
+  }
+
+  private showMovement() {
+    this.movementVisible = true;
+    this.itemsVisible = false;
   }
 
   reset() {

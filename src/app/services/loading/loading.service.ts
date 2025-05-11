@@ -12,18 +12,21 @@ export class LoadingService {
     return this.loadingStatus;
   }
 
-  addLoadingItem() {
-    this.pendingRequests.update((count: number) => count + 1);
+  addLoadingItem(waitMS: number = 500) {
+    this.delay(waitMS).then(() => {
+      this.pendingRequests.update((count: number) => count + 1)
+    });
   }
 
   removeLoadingItem() {
     this.pendingRequests.update((count: number) => {
       count--;
-      if (count < 0) {
-        count = 0;
-      }
 
       return count;
     });
+  }
+
+  delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }

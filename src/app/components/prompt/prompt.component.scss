@@ -6,13 +6,11 @@
     align-content: center;
     justify-content: space-between;
 
-    padding: 10px 5px;
+    padding-left: 10px;
     margin-bottom: 5px;
 
-    border: 0px solid var(--select-color, #ff0000);
-    border-width: 3px;
-    margin-right: -3px;
-    border-radius: 5px;
+    border: 3px solid var(--select-color, #ff0000);
+    border-width: 3px 0;
 
     transition:
         opacity 0.3s ease,

@@ -38,6 +38,8 @@ export class CanvasComponent implements AfterViewInit {
   private partSignal: Signal<Part[]>;
   private itemSignal: Signal<number[]>;
 
+  private lastPartIndex: number = -1;
+
   private currentlySelectedItems: number[] = [];
 
   constructor(
@@ -74,11 +76,23 @@ export class CanvasComponent implements AfterViewInit {
 
     // Watch for item changes
     effect(() => {
-      this.logger.info("CanvasComponent: effect() - itemSignal() changed", this.itemSignal().length);
+      this.logger.info("CanvasComponent: effect() - renderLayerStack() Check");
+      this.logger.debug("CanvasComponent: effect() - itemSignal() count", this.itemSignal().length);
 
       if (!this.workingCanvas) {
+        this.logger.debug("CanvasComponent: effect() - working canvas not found");
+
         return;
       }
+
+      if (this.lastPartIndex >= 0 && this.lastPartIndex !== this.modelData.getActivePart()()) {
+        this.logger.debug("CanvasComponent: effect() - Part changed, do not render.");
+
+        this.lastPartIndex = this.modelData.getActivePart()();
+        return;
+      }
+
+      this.lastPartIndex = this.modelData.getActivePart()();
 
       this.renderLayerStack();
     }, {

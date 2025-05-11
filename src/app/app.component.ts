@@ -1,4 +1,6 @@
 import { Component, computed, effect, inject, Injector, isDevMode, Signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 
 import { CanvasComponent } from "@components/canvas/canvas.component";
@@ -26,10 +28,14 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
+import { Item } from '@models/item.model';
 
 @Component({
   selector: 'app-root',
   imports: [
+    MatButtonModule,
+    MatIconModule,
+
     CanvasComponent,
     PartsComponent,
     ItemsComponent,
@@ -57,20 +63,9 @@ export class AppComponent {
 
   outfitsVisible = false;
 
-  potentialItems: Signal<boolean> = computed(() => {
-
-    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
-      return false;
-    }
-
-    const part: Part = this.partSignal()[this.activePart()];
-
-    return part.items.length > 0;
-  });
-
   potentialPalette: Signal<boolean> = computed(() => {
 
-    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+    if (this.isInvalidActivePart()) {
       return false;
     }
 
@@ -81,13 +76,24 @@ export class AppComponent {
 
   potentialMovement: Signal<boolean> = computed(() => {
 
-    if (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart()) {
+    if (this.isInvalidActivePart()) {
       return false;
     }
 
     const part: Part = this.partSignal()[this.activePart()];
 
     return !(!part.movement || Object.keys(part.movement).length === 0);
+  });
+
+  featuresEnabled: Signal<boolean> = computed(() => {
+
+    if (this.isInvalidActivePart()) {
+      return false;
+    }
+
+    const item: number = this.modalData.getSelectedItem(this.activePart());
+
+    return item >= 0;
   });
 
   itemsVisible = true;
@@ -102,8 +108,13 @@ export class AppComponent {
     private logger: LogService
   ) {
 
-    if (!isDevMode()) {
+    if (isDevMode()) {
+      // Enable up to Info level logging in dev mode
+      this.logger.level = LogLevel.Info;
 
+      // Debug level when trying to find strange behaviors
+      // this.logger.level = LogLevel.Debug;
+    } else {
       this.logger.level = LogLevel.Error;
     }
 
@@ -111,6 +122,12 @@ export class AppComponent {
     this.outfitSignal = this.outfitData.getOutfits();
     this.activePart = this.modalData.getActivePart();
     this.imageDataString = this.modalData.getImageEncoded();
+
+    effect(() => {
+      this.logger.debug(`AppComponent: partChangeEffect() ${this.activePart()}`);
+
+      this.showItems();
+    });
   }
 
   ngOnInit() {
@@ -121,7 +138,7 @@ export class AppComponent {
 
     // Initial load
     const initialLoadEffect = effect(() => {
-      this.logger.debug(`Parts: ${this.partSignal().length}`);
+      this.logger.debug(`AppComponent: initialLoadEffect() ${this.partSignal().length}`);
 
       if (this.partSignal().length > 0) {
 
@@ -152,25 +169,28 @@ export class AppComponent {
     });
   }
 
-  showItems() {
+  toggleMovement() {
+    this.logger.info("AppComponent: toggleMovement()");
 
+    if (!this.potentialMovement() || !this.featuresEnabled()) {
+      return;
+    }
+
+    if (this.movementVisible) {
+      this.showItems();
+    } else {
+      this.showMovement();
+    }
+  }
+
+  private showItems() {
+    this.movementVisible = false;
     this.itemsVisible = true;
-    this.paletteVisible = false;
-    this.movementVisible = false;
   }
 
-  showPalette() {
-
-    this.itemsVisible = false;
-    this.paletteVisible = true;
-    this.movementVisible = false;
-  }
-
-  showMovement() {
-
-    this.itemsVisible = false;
-    this.paletteVisible = false;
+  private showMovement() {
     this.movementVisible = true;
+    this.itemsVisible = false;
   }
 
   reset() {
@@ -201,5 +221,10 @@ export class AppComponent {
     this.logger.info("AppComponent: showCredits()");
 
     this.dialog.open(InfoComponent);
+  }
+
+  isInvalidActivePart() {
+
+    return (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart())
   }
 }

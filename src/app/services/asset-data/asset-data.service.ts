@@ -57,7 +57,7 @@ export class AssetDataService {
 
     this.logger.info("AssetDataService: loadAssetData()");
 
-    this.loading.addLoadingItem();
+    this.loading.addLoadingItem(0);
 
     this.imageFolder.set(PartDataJSON.images ?? "items/");
     this.thumbnailFolder.set(PartDataJSON.thumbnails ?? "thumbnails/");

@@ -6,11 +6,21 @@
     <app-loading />
 
     <div class="control_wrapper">
-      <div class="part_control_wrapper"><!-- TODO -->
-        <span (click)="showItems()" class="controls items" [class.hidden]="!potentialItems()"></span>
-        <span (click)="showPalette()" class="controls palette" [class.hidden]="!potentialPalette()"></span>
-        <span (click)="showMovement()" class="controls moves" [class.hidden]="!potentialMovement()"></span>
-      </div>
+      <button mat-mini-fab aria-label="Toggle movement control panel" title="Toggle movement control panel"
+        (click)="toggleMovement()" class="animated" [class.show]="potentialMovement()"
+        [class.active]="movementVisible && !outfitsVisible" [class.disabled]="!featuresEnabled()"
+        [disabled]="!featuresEnabled()">
+        <mat-icon aria-hidden="false" fontIcon="gamepad"></mat-icon>
+      </button>
+
+      <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()" class="show">
+        <mat-icon fontSet="material-icons-outlined">info</mat-icon>
+      </button>
+
+      <a #save_button mat-mini-fab aria-label="Save creation to device" title="Save creation to device"
+        class="show save" [href]="imageDataString()" download="gb.png">
+        <mat-icon>download</mat-icon>
+      </a>
 
       <app-zoom [canvas]="canvas" />
     </div>
@@ -19,20 +29,12 @@
   <div class="interface_wrapper">
     <div class="feature_buttons">
       <!-- TODO Move save and credits elsewhere -->
-      <div>
-        <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
-        <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
-        <button (click)="generatePrompt()" [class.hidden]="outfitsVisible">Random Prompt</button>
+      <button mat-flat-button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
+      <button mat-flat-button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
 
-        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
-      </div>
-    </div>
-    <div class="feature_buttons">
-      <button (click)="showCredits()">Credits</button>
+      <button mat-flat-button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
 
-      <a #save_button class="save" [href]="imageDataString()" download="gb.png">
-        Save
-      </a>
+      <button mat-flat-button (click)="generatePrompt()">Random Prompt</button>
     </div>
 
     <div class="features">
@@ -45,10 +47,11 @@
 
         <app-parts />
 
+        <app-palette class="hidden" /><!-- TODO -->
+
         <div class="control_panel_wrapper">
           <div class="control_panel">
             <app-items [class.hidden]="!itemsVisible" />
-            <app-palette [class.hidden]="!paletteVisible" /><!-- TODO -->
             <app-movement [class.hidden]="!movementVisible" />
           </div>
         </div>

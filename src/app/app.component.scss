@@ -44,60 +44,76 @@
     bottom: auto;
     left: auto;
 
-    width: var(--ui-control-size, 50px);
-    z-index: 0;
+    z-index: 10;
 
     display: flex;
     flex-direction: column;
+
+    place-items: center;
+
+    a,
+    button {
+        background-color: var(--random-purple-color, purple);
+        color: #ffffff;
+
+        border: 1px solid black;
+        border-radius: 3px;
+
+        margin: 2.5px 0;
+
+        &.save {
+            background-color: var(--save-button-color, green);
+        }
+
+        &.animated {
+            opacity: 0;
+            display: none;
+
+            transition:
+                background-color ease 0.4s,
+                opacity 0.3s ease,
+                display 0.3s ease allow-discrete;
+
+            &.show {
+                display: inline-flex;
+                opacity: 1;
+
+                @starting-style {
+                    opacity: 0;
+                }
+            }
+
+            &.active {
+                background-color: var(--active-button-color, #00ff00);
+                color: var(--active-button-text-color, #000000);
+            }
+        }
+    }
 }
 
 .part_control_wrapper {
     display: flex;
     flex-direction: column;
+    place-items: center;
 
     margin: 5px 0;
-}
 
-.part_control_wrapper .controls {
-    width: var(--ui-control-size, 50px);
-    height: var(--ui-control-size, 50px);
+    .controls {
+        width: var(--ui-control-size, 50px);
+        height: var(--ui-control-size, 50px);
 
-    margin: 2.5px 0;
+        margin: 2.5px 0;
 
-    justify-content: center;
-    align-items: center;
+        justify-content: center;
+        align-items: center;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-    cursor: pointer;
-    text-align: center;
-}
-
-.control_wrapper > div:first-child,
-.part_control_wrapper .controls:first-child {
-    margin-top: 0;
-}
-
-.control_wrapper > div:last-child,
-.part_control_wrapper .controls:last-child {
-    margin-bottom: 0;
-}
-
-.part_control_wrapper .items {
-    background-color: var(--item-toggle-color, #ffffff);
-    background-image: var(--item-toggle-img, "none");
-}
-
-.part_control_wrapper .palette {
-    background-color: var(--palette-toggle-color, #ffffff);
-    background-image: var(--palette-toggle-img, "none");
-}
-
-.part_control_wrapper .moves {
-    background-color: var(--move-toggle-color, #ffffff);
-    background-image: var(--move-toggle-img, "none");
+        cursor: pointer;
+        text-align: center;
+    }
 }
 
 .interface_wrapper {
@@ -107,18 +123,21 @@
     flex: 1;
     flex-direction: column;
 
+    border: 0px solid black;
+    border-left-width: 3px;
+
     height: 100%;
     min-width: 275px;
     max-width: 375px;
-}
 
-.interface_wrapper li {
-    border: 3px solid transparent;
-    border-radius: 3px;
-}
+    li {
+        border: 3px solid transparent;
+        border-radius: 3px;
 
-.interface_wrapper li.selected {
-    border-color: var(--select-color, #ff0000);
+        &.selected {
+            border-color: var(--select-color, #ff0000);
+        }
+    }
 }
 
 .control_panel_wrapper {
@@ -143,34 +162,28 @@
     margin: 5px 0;
     flex-wrap: wrap;
 
-    &,
-    & > div {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     button,
     a {
         cursor: pointer;
 
-        text-decoration: none;
+        background-color: var(--random-purple-color, purple);
+        color: #ffffff;
 
         border: 1px solid black;
         border-radius: 3px;
 
-        padding: 4px 8px;
-        margin: 5px 2px;
-
-        background-color: var(--random-purple-color, purple);
-        color: #ffffff;
+        &:not(.mdc-fab) {
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 
         &.save {
             background-color: var(--save-button-color, green);
-        }
-
-        &:hover {
-            filter: brightness(1.2);
         }
     }
 }
@@ -203,13 +216,10 @@
         width: calc(var(--ui-control-size, 50px) * 0.75);
     }
 
-    .control_wrapper .part_control_wrapper .controls {
-        width: calc(var(--ui-control-size, 50px) * 0.75);
-        height: calc(var(--ui-control-size, 50px) * 0.75);
-    }
-
     .interface_wrapper {
         width: 100%;
         max-width: 100%;
+
+        border-left-width: 0px;
     }
 }

@@ -7,6 +7,7 @@ import { Part } from '@models/part.model';
 
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
+import { LogService } from '@services/log/log.service';
 
 @Component({
   selector: 'app-parts',
@@ -25,6 +26,7 @@ export class PartsComponent {
   activePart: Signal<number>;
 
   constructor(
+    private logger: LogService,
     private assetData: AssetDataService,
     private modalData: ModelDataService
   ) {
@@ -44,6 +46,7 @@ export class PartsComponent {
   }
 
   getPartIcon(partIndex: number): string {
+    this.logger.debug("PartsComponent: getPartIcon()", partIndex);
 
     let part = this.partSignal()[partIndex];
 
@@ -56,6 +59,7 @@ export class PartsComponent {
   }
 
   getPartVisibility(index: number): boolean {
+    this.logger.debug("PartsComponent: getPartVisibility()", index);
 
     if (this.partSignal().length < index) {
       return false;
@@ -72,11 +76,13 @@ export class PartsComponent {
   }
 
   randomize() {
+    this.logger.info("PartsComponent: randomize()");
 
     this.modalData.randomize();
   }
 
   onChange(partIndex: number) {
+    this.logger.info("PartsComponent: onChange()", partIndex);
 
     this.modalData.setActivePart(partIndex);
   }

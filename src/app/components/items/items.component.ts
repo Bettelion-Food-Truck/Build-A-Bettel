@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ASSET_PATH, ICON_PATH, ITEM_FOLDER, THUMBNAIL_FOLDER } from '@data/paths';
@@ -7,12 +7,14 @@ import { Part } from '@models/part.model';
 
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
+import { LogService } from '@services/log/log.service';
 
 @Component({
   selector: 'app-items',
   imports: [
     CommonModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './items.component.html',
   styleUrl: './items.component.scss'
 })
@@ -24,6 +26,7 @@ export class ItemsComponent {
   selectedItems: Signal<number[]>;
 
   constructor(
+    private logger: LogService,
     private assetData: AssetDataService,
     private modalData: ModelDataService
   ) {
@@ -33,21 +36,30 @@ export class ItemsComponent {
     this.selectedItems = this.modalData.getSelectedItems();
   }
 
-  getNonePath(): string {
+  getNonePath(partIndex: number): string {
+    this.logger.debug("ItemsComponent: getNonePath()", partIndex);
+
+    const part = this.partSignal()[partIndex];
+
+    if (part.noneThumbnail) {
+
+      return ASSET_PATH + part.folder + "/" + THUMBNAIL_FOLDER + part.noneThumbnail + ".png";
+    }
 
     return `${ICON_PATH}none_button.svg`;
   }
 
   getItemPath(partIndex: number, itemIndex: number): string {
+    this.logger.debug("ItemsComponent: getItemPath()", partIndex, itemIndex);
 
-    let part = this.partSignal()[partIndex];
+    const part = this.partSignal()[partIndex];
 
     if (!part) {
 
       return "";
     }
 
-    let item = part.items[itemIndex];
+    const item = part.items[itemIndex];
 
     if (!item) {
 
@@ -61,6 +73,7 @@ export class ItemsComponent {
   }
 
   onChange(partIndex: number, itemIndex: number) {
+    this.logger.info("ItemsComponent: onChange()", partIndex, itemIndex);
 
     this.modalData.setSelectedItem(partIndex, itemIndex);
   }

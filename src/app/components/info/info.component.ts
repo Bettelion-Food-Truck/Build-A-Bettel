@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CONTRIBUTOR_PATH } from '@data/paths';
@@ -27,6 +27,7 @@ import { LogService } from '../../services/log/log.service';
     MatDialogContent,
     CommonModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './info.component.html',
   styleUrl: './info.component.scss'
 })

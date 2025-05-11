@@ -15,69 +15,86 @@
             "outfits": [
                 "debut-underlayer",
                 "deerttel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit",
                 "battel"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "bettelmaid",
             "outfits": [
                 "bettelmaid"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "magni-vest",
             "outfits": [
                 "magni"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "jester",
             "outfits": [
                 "jester"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "deadworld-harness",
             "outfits": [
                 "dead-world"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "hakka-halfcoat",
             "outfits": [
                 "hakka"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "when-youre-evil-vest",
             "outfits": [
                 "when-youre-evil"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "goldbullet-harness",
             "outfits": [
                 "goldbullet"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "shinri-buckle-shirt",
             "outfits": [
                 "shinri"
-            ]
+            ],
+            "thumbnail": true
         },
         {
             "item": "axel-vest",
             "outfits": [
                 "axel"
-            ]
+            ],
+            "thumbnail": true
         },
-        "vesper-vest"
+        {
+            "item": "vesper-vest",
+            "outfits": [
+                "vesper"
+            ],
+            "thumbnail": true
+        }
     ]
 }

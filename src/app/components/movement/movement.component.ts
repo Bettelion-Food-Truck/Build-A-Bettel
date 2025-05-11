@@ -1,12 +1,17 @@
 import { Component, effect, Signal } from '@angular/core';
-import { Movement, Part } from '@models/part.model';
+import { MatIconModule } from '@angular/material/icon';
+
+import { Movement } from '@models/part.model';
 import { Position, DEFAULT_POSITION } from '@models/position.model';
+
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 
 @Component({
   selector: 'app-movement',
-  imports: [],
+  imports: [
+    MatIconModule
+  ],
   templateUrl: './movement.component.html',
   styleUrl: './movement.component.scss'
 })
@@ -107,7 +112,7 @@ export class MovementComponent {
 
   reset() {
 
-    let position: Position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position: Position = this.modelData.getItemsPosition(this.modelData.getActivePart()()) ?? {} as Position;
 
     position.x = DEFAULT_POSITION.x;
     position.y = DEFAULT_POSITION.y;

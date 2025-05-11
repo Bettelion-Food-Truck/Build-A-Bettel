@@ -1,8 +1,21 @@
 @use "@angular/material" as mat;
 @use "material-icons/iconfont/material-icons.scss";
 
+* {
+    min-height: 0;
+    min-width: 0;
+    word-wrap: break-word;
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--random-purple-color, purple) lightgrey;
+    -webkit-overflow-scrolling: touch;
+}
+
 html {
+    font-size: 16px;
     color-scheme: light;
+
     @include mat.theme(
         (
             color: (
@@ -34,25 +47,18 @@ body {
     justify-content: center;
 
     overflow: hidden;
+
+    font-family: var(--mat-sys-body-medium-font);
+    line-height: var(--mat-sys-body-medium-line-height);
+    font-size: var(--mat-sys-body-medium-size);
+    letter-spacing: var(--mat-sys-body-medium-tracking);
+    font-weight: var(--mat-sys-body-medium-weight);
 }
 
 @supports (max-height: 100dvh) {
     body {
         height: 100dvh;
     }
-}
-
-* {
-    min-height: 0;
-    min-width: 0;
-    word-wrap: break-word;
-    box-sizing: border-box;
-
-    font-size: 16px;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--random-purple-color, purple) lightgrey;
-    -webkit-overflow-scrolling: touch;
 }
 
 ul li img {

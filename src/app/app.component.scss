@@ -89,15 +89,15 @@
     height: 100%;
     min-width: 275px;
     max-width: 375px;
-}
 
-.interface_wrapper li {
-    border: 3px solid transparent;
-    border-radius: 3px;
-}
+    li {
+        border: 3px solid transparent;
+        border-radius: 3px;
 
-.interface_wrapper li.selected {
-    border-color: var(--select-color, #ff0000);
+        &.selected {
+            border-color: var(--select-color, #ff0000);
+        }
+    }
 }
 
 .control_panel_wrapper {

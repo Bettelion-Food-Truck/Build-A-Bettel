@@ -20,12 +20,12 @@
   <div class="interface_wrapper">
     <div class="feature_buttons">
       <!-- TODO Move save and credits elsewhere -->
-      <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
-      <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
+      <button mat-flat-button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
+      <button mat-flat-button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
 
-      <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
+      <button mat-flat-button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
 
-      <button (click)="generatePrompt()">Random Prompt</button>
+      <button mat-flat-button (click)="generatePrompt()">Random Prompt</button>
 
       <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()">
         <mat-icon fontSet="material-icons-outlined">info</mat-icon>

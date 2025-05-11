@@ -71,6 +71,12 @@ ul li img {
     display: none !important;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+    .animated {
+        animation: none !important;
+    }
+}
+
 /* Base Variables */
 :root {
     /* the color of the background of the loading sign*/

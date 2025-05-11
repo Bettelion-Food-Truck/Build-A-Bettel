@@ -16,6 +16,7 @@ import { PromptService } from '@services/prompt/prompt.service';
   templateUrl: './prompt.component.html',
   styleUrl: './prompt.component.scss',
   host: {
+    'class': "animated",
     '[class.show]': "lastPrompt().length > 0"
   }
 })

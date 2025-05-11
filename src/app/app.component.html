@@ -7,7 +7,7 @@
 
     <div class="control_wrapper">
       <button mat-mini-fab aria-label="Toggle movement control panel" title="Toggle movement control panel"
-        (click)="toggleMovement()" [class.hidden]="!potentialMovement()"
+        (click)="toggleMovement()" class="animated" [class.show]="potentialMovement()"
         [class.active]="movementVisible && !outfitsVisible" [class.disabled]="!featuresEnabled()"
         [disabled]="!featuresEnabled()">
         <mat-icon aria-hidden="false" fontIcon="gamepad"></mat-icon>

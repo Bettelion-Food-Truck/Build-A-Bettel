@@ -54,6 +54,12 @@ export class ModelDataService {
 
   setSelectedItem(partIndex: number, itemIndex: number) {
 
+    if (this.selectedItems()[partIndex] === itemIndex) {
+      // Unchanged
+
+      return;
+    }
+
     this.selectedItems.update(selectedItems => {
 
       selectedItems[partIndex] = itemIndex;

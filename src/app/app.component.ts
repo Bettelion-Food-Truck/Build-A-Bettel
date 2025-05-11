@@ -11,6 +11,7 @@ import { ZoomComponent } from '@components/zoom/zoom.component';
 import { MovementComponent } from '@components/movement/movement.component';
 import { PaletteComponent } from "@components/palette/palette.component";
 import { OutfitsComponent } from "@components/outfits/outfits.component";
+import { PromptComponent } from "@components/prompt/prompt.component";
 
 import { InfoComponent } from '@components/info/info.component';
 
@@ -24,6 +25,7 @@ import { ModelDataService } from '@services/model-data/model-data.service';
 import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
+import { PromptService } from '@services/prompt/prompt.service';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +37,8 @@ import { LogLevel } from '@services/log/log-entry.model';
     MovementComponent,
     PaletteComponent,
     OutfitsComponent,
-    LoadingComponent
+    LoadingComponent,
+    PromptComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -95,6 +98,7 @@ export class AppComponent {
     private assetData: AssetDataService,
     private outfitData: OutfitDataService,
     private modalData: ModelDataService,
+    private prompt: PromptService,
     private logger: LogService
   ) {
 
@@ -148,12 +152,6 @@ export class AppComponent {
     });
   }
 
-  reset() {
-    this.logger.info("AppComponent: reset()");
-
-    this.modalData.reset();
-  }
-
   showItems() {
 
     this.itemsVisible = true;
@@ -175,6 +173,12 @@ export class AppComponent {
     this.movementVisible = true;
   }
 
+  reset() {
+    this.logger.info("AppComponent: reset()");
+
+    this.modalData.reset();
+  }
+
   showOutfits() {
     this.logger.info("AppComponent: showOutfits()");
 
@@ -185,6 +189,12 @@ export class AppComponent {
     this.logger.info("AppComponent: showComponents()");
 
     this.outfitsVisible = false;
+  }
+
+  generatePrompt() {
+    this.logger.info("AppComponent: generatePrompt()");
+
+    this.prompt.generateRandomPrompt();
   }
 
   showCredits() {

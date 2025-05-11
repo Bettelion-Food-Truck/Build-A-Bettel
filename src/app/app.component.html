@@ -22,7 +22,7 @@
       <div>
         <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
         <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
-        <button (click)="showCredits()" [class.hidden]="outfitsVisible">Prompt</button>
+        <button (click)="generatePrompt()" [class.hidden]="outfitsVisible">Random Prompt</button>
 
         <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
       </div>
@@ -36,6 +36,9 @@
     </div>
 
     <div class="features">
+
+      <app-prompt />
+
       <app-outfits [class.hidden]="!outfitsVisible" />
 
       <div class="component_wrapper" [class.hidden]="outfitsVisible">

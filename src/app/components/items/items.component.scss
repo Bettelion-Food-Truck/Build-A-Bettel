@@ -38,12 +38,6 @@
                 border-color: var(--select-color, #ff0000);
             }
 
-            &.disabled {
-                cursor: not-allowed;
-                opacity: 0.5;
-                filter: grayscale(1);
-            }
-
             &:hover:not(.disabled):not(.selected) {
                 background-color: var(--item-button-hover-color, #eeeeee);
             }

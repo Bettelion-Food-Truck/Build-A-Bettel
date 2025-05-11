@@ -60,8 +60,15 @@ ul li img {
     height: 100%;
 }
 
+/* Global classes with style overrides. Unfortunately they use !important because of specificity. */
 .hidden {
     display: none !important;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+    filter: grayscale(1);
 }
 
 /* Base Variables */

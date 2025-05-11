@@ -16,35 +16,43 @@
     </div>
   </div>
 
-  <div class="item_selection_wrapper">
+  <div class="interface_wrapper">
     <div class="feature_buttons">
+      <!-- TODO Move save and credits elsewhere -->
       <div>
         <button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
-        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
         <button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
-        <button (click)="showCredits()">Credits</button>
+        <button (click)="generatePrompt()" [class.hidden]="outfitsVisible">Random Prompt</button>
+
+        <button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
       </div>
+    </div>
+    <div class="feature_buttons">
+      <button (click)="showCredits()">Credits</button>
 
       <a #save_button class="save" [href]="imageDataString()" download="gb.png">
         Save
       </a>
     </div>
 
-    <app-outfits [class.hidden]="!outfitsVisible" />
+    <div class="features">
 
-    <div id="component_wrapper" class="component_wrapper" [class.hidden]="outfitsVisible">
+      <app-prompt />
 
-      <app-parts (randomizeOutfit)="randomize()" />
+      <app-outfits [class.hidden]="!outfitsVisible" />
 
-      <div class="control_panel_wrapper">
-        <div class="control_panel">
+      <div class="component_wrapper" [class.hidden]="outfitsVisible">
 
-          <app-items [class.hidden]="!itemsVisible" />
-          <app-palette [class.hidden]="!paletteVisible" /><!-- TODO -->
-          <app-movement [class.hidden]="!movementVisible" /><!-- TODO -->
+        <app-parts />
+
+        <div class="control_panel_wrapper">
+          <div class="control_panel">
+            <app-items [class.hidden]="!itemsVisible" />
+            <app-palette [class.hidden]="!paletteVisible" /><!-- TODO -->
+            <app-movement [class.hidden]="!movementVisible" />
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

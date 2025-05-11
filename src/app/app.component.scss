@@ -103,6 +103,9 @@
     flex: 1;
     flex-direction: column;
 
+    border: 0px solid black;
+    border-left-width: 3px;
+
     height: 100%;
     min-width: 275px;
     max-width: 375px;
@@ -196,5 +199,7 @@
     .interface_wrapper {
         width: 100%;
         max-width: 100%;
+
+        border-left-width: 0px;
     }
 }

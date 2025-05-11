@@ -1,4 +1,6 @@
-<ng-container *ngIf="lastPrompt().length > 0">
-
+<span class="prompt">
     {{lastPrompt()}}
-</ng-container>
+</span>
+<button mat-icon-button aria-label="Close prompt" (click)="clearPrompt()">
+    <mat-icon aria-hidden="false" fontIcon="close"></mat-icon>
+</button>

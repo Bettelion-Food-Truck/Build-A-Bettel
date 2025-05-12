@@ -37,6 +37,7 @@ export class CanvasComponent implements AfterViewInit {
 
   private partSignal: Signal<Part[]>;
   private itemSignal: Signal<number[]>;
+  private positionSignal: Signal<Position[]>;
 
   private lastPartIndex: number = -1;
 
@@ -52,6 +53,7 @@ export class CanvasComponent implements AfterViewInit {
     this.layerSignal = this.assetData.getLayers();
     this.partSignal = this.assetData.getParts();
     this.itemSignal = this.modelData.getSelectedItems();
+    this.positionSignal = this.modelData.getItemsPositions();
   }
 
   ngAfterViewInit() {
@@ -77,7 +79,12 @@ export class CanvasComponent implements AfterViewInit {
     // Watch for item changes
     effect(() => {
       this.logger.info("CanvasComponent: effect() - renderLayerStack() Check");
-      this.logger.debug("CanvasComponent: effect() - itemSignal() count", this.itemSignal().length);
+      this.logger.debug(
+        "CanvasComponent: effect() - activePart(), itemSignal().length, positionSignal().length",
+        this.modelData.getActivePart()(),
+        this.itemSignal().length,
+        this.positionSignal().length
+      );
 
       if (!this.workingCanvas) {
         this.logger.debug("CanvasComponent: effect() - working canvas not found");

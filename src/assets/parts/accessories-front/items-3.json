@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         "january-2025-keychain",
         "debut-underlayer",
@@ -25,6 +26,7 @@
             ],
             "layer": "accessories-front_3_under-jacket"
         },
+        "betsy-bow",
         {
             "item": "braids"
         },
@@ -43,7 +45,23 @@
         {
             "item": "deerttel-nose"
         },
-        "artist-phantom-sweater",
-        "axel-braid"
+        "gavin-bettol-phantom-sweater",
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo",
+            "outfits": []
+        },
+        "axel-braid",
+        {
+            "item": "christmas-2024-chain",
+            "layer": "accessories-front_1_loweest-front",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-chain-back",
+                    "layer": "accessories-front_1_loweest-back"
+                }
+            ],
+            "outfits": []
+        }
     ]
 }

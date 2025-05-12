@@ -13,6 +13,7 @@ import { Item } from '@models/item.model';
 import { Layer } from '@models/layer.model';
 import { Part } from '@models/part.model';
 import { Position } from '@models/position.model';
+import { LayerRender } from '@models/layerRender.model';
 
 @Component({
   selector: 'app-canvas',
@@ -28,6 +29,9 @@ export class CanvasComponent implements AfterViewInit {
 
   canvas: Signal<ElementRef> = viewChild.required<ElementRef>('canvas');
   private context: CanvasRenderingContext2D | null = null;
+
+  private canvas_height: number = 0;
+  private canvas_width: number = 0;
 
   private workingCanvas: HTMLCanvasElement | null = null;
   private workingContext: CanvasRenderingContext2D | null = null;
@@ -171,10 +175,10 @@ export class CanvasComponent implements AfterViewInit {
   private buildWorkspace() {
     this.logger.info("CanvasComponent: buildWorkspace()");
 
-    const canvas_height = this.canvas().nativeElement.height;
-    const canvas_width = this.canvas().nativeElement.width;
+    this.canvas_height = this.canvas().nativeElement.height;
+    this.canvas_width = this.canvas().nativeElement.width;
 
-    this.workingCanvas = this.createCanvas(canvas_height, canvas_width);
+    this.workingCanvas = this.createCanvas();
     this.workingContext = this.workingCanvas.getContext('2d');
 
     let layers: Layer[] = this.layerSignal();
@@ -183,7 +187,7 @@ export class CanvasComponent implements AfterViewInit {
     // Create layers noted in layers.json
     for (let i = 0; i < layers.length; i++) {
 
-      this.layerCanvases[i] = this.createCanvas(canvas_height, canvas_width);
+      this.layerCanvases[i] = this.createCanvas();
     }
 
     // Check each part folder has a layer
@@ -202,7 +206,7 @@ export class CanvasComponent implements AfterViewInit {
         "layer": parts[i].layer ?? parts[i].folder,
         "partIndex": i
       };
-      this.layerCanvases[layerIndex] = this.createCanvas(canvas_height, canvas_width);
+      this.layerCanvases[layerIndex] = this.createCanvas();
     }
 
     // Make blank layers in case of missing ones
@@ -211,17 +215,21 @@ export class CanvasComponent implements AfterViewInit {
       if (typeof this.layerCanvases[i] === 'undefined') {
         this.logger.warn(`Building layerfor ${layers[i].layer}`);
 
-        this.layerCanvases[i] = this.createCanvas(canvas_height, canvas_width);
+        this.layerCanvases[i] = this.createCanvas();
       }
     }
   }
 
-  private createCanvas(height: number, width: number): HTMLCanvasElement {
+  private createCanvas(): HTMLCanvasElement {
+
+    if (this.canvas_height === 0 || this.canvas_width === 0) {
+      this.logger.error("CanvasComponent: createCanvas() - canvas size not set");
+    }
 
     let canvas = document.createElement('canvas');
 
-    canvas.height = height;
-    canvas.width = width;
+    canvas.height = this.canvas_height;
+    canvas.width = this.canvas_width;
 
     return canvas;
   }
@@ -229,7 +237,7 @@ export class CanvasComponent implements AfterViewInit {
   /**
    * Do the heavy lifting of figuring out what to draw and where
    */
-  private async renderLayerStack() {
+  private renderLayerStack() {
     this.logger.info("CanvasComponent: renderLayerStack()");
 
     this.clearCanvas(this.workingCanvas!);
@@ -241,37 +249,48 @@ export class CanvasComponent implements AfterViewInit {
 
     this.checkPartRequirements();
 
-    // Clear layers
-    for (let i = 0; i < layers.length; i++) {
-      // Clearing layers is done first because sometimes layers are rendered out of order due to special logics
-      // Additional execution time is minimal for data set size
-
-      this.clearCanvas(this.layerCanvases[i]);
-    }
-
     // Render images to layers
+    let renderPromises: Promise<LayerRender>[] = [];
+
     for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
       const partIndex = layers[layerIndex].partIndex;
 
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
-        await this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1);// TODO COLOR selectedColors[partIndex]);
+        // TODO turn into promise.all
+        renderPromises.push(...this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1));// TODO COLOR selectedColors[partIndex]);
       }
     }
 
-    // Draw layers onto master
-    for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
-      this.workingContext!.drawImage(this.layerCanvases[layerIndex], 0, 0);
-    }
+    Promise
+      .all(renderPromises)
+      .then((results) => {
 
-    this.clearCanvas(this.canvas().nativeElement);
+        // Draw layers onto master
+        for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
-    this.context!.drawImage(this.workingCanvas!, 0, 0);
+          let layer = results.find(x => x.id === layerIndex);
 
-    this.modelData.setImageEncoded(this.canvas().nativeElement.toDataURL("image/png"));
+          if (!layer || !layer.canvas) {
+            continue;
+          }
 
-    this.loading.removeLoadingItem();
+          this.layerCanvases[layerIndex] = layer.canvas;
+          this.workingContext!.drawImage(this.layerCanvases[layerIndex], 0, 0);
+        }
+
+        this.clearCanvas(this.canvas().nativeElement);
+
+        this.context!.drawImage(this.workingCanvas!, 0, 0);
+
+        this.modelData.setImageEncoded(this.canvas().nativeElement.toDataURL("image/png"));
+
+        this.loading.removeLoadingItem();
+      })
+      .catch((err) => {
+        this.logger.error("CanvasComponent: renderLayerStack() - Error rendering layers", err);
+      });
   }
 
   private clearCanvas(canvas: HTMLCanvasElement) {
@@ -346,18 +365,20 @@ export class CanvasComponent implements AfterViewInit {
     }
   }
 
-  private async renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number) {
+  private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number): Promise<LayerRender>[] {
 
     const parts: Part[] = this.partSignal();
     const layers: Layer[] = this.layerSignal();
 
     const item: Item = parts[partIndex].items[itemIndex];
-    const position: Position = (this.modelData.getItemsPosition(partIndex) ?? {}) as Position;
+    const position: Position = { ...(this.modelData.getItemsPosition(partIndex) ?? {}) } as Position;// shallow copy
+
+    let renderPromises: Promise<LayerRender>[] = [];
 
     if (!item) {
       this.logger.error(`Item not found for part ${partIndex} and item ${itemIndex}`);
 
-      return;
+      return renderPromises;
     }
 
     // Set color variant item
@@ -380,7 +401,7 @@ export class CanvasComponent implements AfterViewInit {
         layerIndex = layers.findIndex(layer => layer.layer === item.layer);
       }
 
-      await (this.renderImage(imgPath, layerIndex, position));
+      renderPromises.push(this.renderImage(layerIndex, imgPath, position));
     }
 
     // Render additional layers
@@ -391,38 +412,68 @@ export class CanvasComponent implements AfterViewInit {
         const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
         const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
-        await (this.renderImage(addImgPath, addLayerIndex, position));
+        renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position));
       }
     }
+
+    return renderPromises;
   }
 
-  private async renderImage(imgPath: string, layerIndex: number, position: Position) {
+  private renderImage(layerId: number, imgPath: string, position: Position): Promise<LayerRender> {
 
-    if (layerIndex < 0) {
-      // Somethings wrong, exit
-      return;
-    }
+    return new Promise<LayerRender>((resolve, reject) => {
 
-    let img = await this.loadImage(imgPath);
+      if (!imgPath || imgPath.length === 0) {
+        // Somethings wrong, exit
 
-    let ctx = this.layerCanvases[layerIndex].getContext('2d')!;
-    ctx.save();
+        this.logger.error(`Invalid image path sent`);
+        reject({
+          id: -1,
+          canvas: null
+        });
+      }
 
-    ctx.translate(position.x ?? 0, position.y ?? 0);
+      this.loadImage(imgPath).then((img) => {
 
-    ctx.drawImage(img, 0, 0);
+        const renderCanvas: HTMLCanvasElement = this.createCanvas();
+        const ctx: CanvasRenderingContext2D = renderCanvas.getContext('2d')!;
 
-    ctx.restore();
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        ctx.save();
+
+        ctx.translate(position.x ?? 0, position.y ?? 0);
+
+        ctx.drawImage(img, 0, 0);
+
+        ctx.restore();
+
+        resolve({
+          id: layerId,
+          canvas: renderCanvas
+        });
+      }).catch(() => {
+
+        reject({
+          id: -1,
+          canvas: null
+        });
+      });
+    });
   }
 
   private loadImage(path: string): Promise<HTMLImageElement> {
 
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
+
       const image = new Image();
 
-      image.addEventListener('load', () => {
-        resolve(image);
-      });
+      image.onload = () => resolve(image);
+      image.onerror = (err) => {
+        this.logger.error(`Image not found: ${path}`, err);
+
+        reject(null);
+      };
 
       image.src = path;
     });

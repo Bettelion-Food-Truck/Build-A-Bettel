@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": false,
+    "assumeThumbnails": true,
     "items": [
         "normal",
         {

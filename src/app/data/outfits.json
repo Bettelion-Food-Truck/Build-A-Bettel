@@ -91,7 +91,7 @@
         {
             "uid": "altare",
             "name": "Altare"
-        }
+        },
         {
             "uid": "axel",
             "name": "Axel"
@@ -111,7 +111,7 @@
         {
             "uid": "jurard",
             "name": "Jurard"
-        }
+        },
         {
             "uid": "magni",
             "name": "Magni"
@@ -131,7 +131,7 @@
         {
             "uid": "twobert",
             "name": "Twobert"
-        }
+        },
         {
             "uid": "vesper",
             "name": "Vesper"
@@ -187,6 +187,6 @@
         {
             "uid": "spa",
             "name": "Spa"
-        },
+        }
     ]
 }

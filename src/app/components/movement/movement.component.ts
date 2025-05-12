@@ -5,6 +5,7 @@ import { Movement } from '@models/part.model';
 import { Position, DEFAULT_POSITION } from '@models/position.model';
 
 import { AssetDataService } from '@services/asset-data/asset-data.service';
+import { LogService } from '@services/log/log.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 
 @Component({
@@ -27,6 +28,7 @@ export class MovementComponent {
   rightPotential: boolean = false;
 
   constructor(
+    private logger: LogService,
     private assetData: AssetDataService,
     private modelData: ModelDataService
   ) {
@@ -51,6 +53,7 @@ export class MovementComponent {
   }
 
   moveUp() {
+    this.logger.debug("MovementComponent: moveUp()", this.upPotential);
 
     if (!this.upPotential) {
       return;
@@ -66,6 +69,7 @@ export class MovementComponent {
   }
 
   moveDown() {
+    this.logger.debug("MovementComponent: moveDown()", this.downPotential);
 
     if (!this.downPotential) {
       return;
@@ -81,6 +85,7 @@ export class MovementComponent {
   }
 
   moveLeft() {
+    this.logger.debug("MovementComponent: moveLeft()", this.leftPotential);
 
     if (!this.leftPotential) {
       return;
@@ -96,6 +101,7 @@ export class MovementComponent {
   }
 
   moveRight() {
+    this.logger.debug("MovementComponent: moveRight()", this.rightPotential);
 
     if (!this.rightPotential) {
       return;
@@ -111,6 +117,7 @@ export class MovementComponent {
   }
 
   reset() {
+    this.logger.debug("MovementComponent: reset()");
 
     let position: Position = this.modelData.getItemsPosition(this.modelData.getActivePart()()) ?? {} as Position;
 
@@ -123,6 +130,7 @@ export class MovementComponent {
   }
 
   getMovementScale(): number {
+    this.logger.debug("MovementComponent: getMovementScale()");
 
     let selectedPart = this.modelData.getActivePart()();
     const movement = this.assetData.getParts()()[selectedPart].movement as Movement;
@@ -131,6 +139,7 @@ export class MovementComponent {
   }
 
   checkMoveLimits() {
+    this.logger.debug("MovementComponent: checkMoveLimits()");
 
     let selectedPart = this.modelData.getActivePart()();
     const part = this.assetData.getPart(selectedPart);
@@ -169,6 +178,7 @@ export class MovementComponent {
   }
 
   updateMovementButtons() {
+    this.logger.debug("MovementComponent: updateMovementButtons()");
 
     let selectedPart = this.modelData.getActivePart()();
 

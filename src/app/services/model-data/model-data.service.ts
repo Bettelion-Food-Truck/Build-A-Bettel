@@ -3,7 +3,7 @@ import { Injectable, Signal, signal, WritableSignal } from '@angular/core';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 
 import { Outfit } from '@models/outfit.model';
-import { Position } from '@models/position.model';
+import { Position, DEFAULT_POSITION } from '@models/position.model';
 
 @Injectable({
   providedIn: 'root'
@@ -75,14 +75,26 @@ export class ModelDataService {
 
   getItemsPosition(partIndex: number): Position {
 
-    if (partIndex < 0 || partIndex >= this.selectedPositions().length) {
-      return {} as Position;
+    if (partIndex < 0 || partIndex >= this.selectedPositions().length || Object.keys(this.selectedPositions()[partIndex]).length) {
+      return {
+        x: DEFAULT_POSITION.x,
+        y: DEFAULT_POSITION.y
+      } as Position;
     }
 
     return this.selectedPositions()[partIndex];
   }
 
   setItemsPosition(partIndex: number, position: Position) {
+
+    if (
+      this.selectedPositions()[partIndex].x === position.x &&
+      this.selectedPositions()[partIndex].y === position.y
+    ) {
+      // Unchanged
+
+      return;
+    }
 
     this.selectedPositions.update(selectedPositions => {
 

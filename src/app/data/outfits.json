@@ -6,95 +6,115 @@
         },
         {
             "uid": "debut-underlayer",
-            "name": "Debut - Underlayer"
+            "name": "Debut Underlayer"
         },
         {
             "uid": "second-outfit",
-            "name": "Second Outfit"
+            "name": "Phantom of the Circus"
         },
         {
-            "uid": "showman",
-            "name": "Showman"
-        },
-        {
-            "uid": "unchained",
-            "name": "Unchained"
-        },
-        {
-            "uid": "january-2025",
-            "name": "January 2025"
-        },
-        {
-            "uid": "battel",
-            "name": "Bat"
-        },
-        {
-            "uid": "bettelgoose",
-            "name": "Goose"
-        },
-        {
-            "uid": "bettelmaid",
-            "name": "Maid"
+            "uid": "gala",
+            "name": "Gala Suit"
         },
         {
             "uid": "clown",
-            "name": "Clown"
+            "name": "April Fool"
         },
         {
-            "uid": "flex",
-            "name": "Flex"
+            "uid": "butler",
+            "name": "Butler"
         },
         {
-            "uid": "goose-vp",
-            "name": "Goose VP"
+            "uid": "2024-christmas",
+            "name": "Christmas"
         },
         {
-            "uid": "jester",
-            "name": "Jester"
-        },
-        {
-            "uid": "magni",
-            "name": "Magni Cosplay"
-        },
-        {
-            "uid": "pirate",
-            "name": "Pirate"
-        },
-        {
-            "uid": "punk",
-            "name": "Punk"
-        },
-        {
-            "uid": "sims",
-            "name": "Sims"
-        },
-        {
-            "uid": "spa",
-            "name": "Spa Day"
+            "uid": "daki",
+            "name": "Dakimakura"
         },
         {
             "uid": "dead-world",
             "name": "Dead World"
         },
         {
-            "uid": "vesper",
-            "name": "Vesper Cosplay"
+            "uid": "2024-expo",
+            "name": "Expo 2024"
         },
         {
-            "uid": "bettelzebub",
-            "name": "Bettelzebub"
+            "uid": "2025-expo",
+            "name": "Expo 2025"
         },
         {
-            "uid": "woven-fates",
-            "name": "Woven Fates"
+            "uid": "flex",
+            "name": "Flex"
+        },
+        {
+            "uid": "artist",
+            "name": "Gavin Bett'ol"
+        },
+        {
+            "uid": "goose-vp",
+            "name": "Goose ASMR CP"
         },
         {
             "uid": "inkya-impulse",
             "name": "Inkya Impulse"
         },
         {
-            "uid": "betsy",
-            "name": "Betsy"
+            "uid": "january-2025",
+            "name": "January 2025 Calendar"
+        },
+        {
+            "uid": "last-game",
+            "name": "Last Game"
+        },
+        {
+            "uid": "showman",
+            "name": "Showman"
+        },
+        {
+            "uid": "sims",
+            "name": "Sims"
+        },
+        {
+            "uid": "unchained",
+            "name": "Unchained"
+        },
+        {
+            "uid": "when-youre-evil",
+            "name": "When You're Evil"
+        },
+        {
+            "uid": "woven-fates",
+            "name": "Woven Fates"
+        },
+        {
+            "uid": "altare",
+            "name": "Altare"
+        }
+        {
+            "uid": "axel",
+            "name": "Axel"
+        },
+        {
+            "uid": "flayon",
+            "name": "Flayon"
+        },
+        {
+            "uid": "goldbullet",
+            "name": "Goldbullet"
+        },
+        {
+            "uid": "hakka",
+            "name": "Hakka"
+        },
+        {
+            "uid": "jurard",
+            "name": "Jurard"
+        }
+        {
+            "uid": "magni",
+            "name": "Magni"
         },
         {
             "uid": "octavio",
@@ -105,36 +125,36 @@
             "name": "Ruze"
         },
         {
-            "uid": "hakka",
-            "name": "Hakka"
-        },
-        {
-            "uid": "daki",
-            "name": "Daki"
-        },
-        {
-            "uid": "butler",
-            "name": "Butler"
-        },
-        {
-            "uid": "when-youre-evil",
-            "name": "When You're Evil"
-        },
-        {
-            "uid": "pumpkin-king",
-            "name": "Pumpkin King"
-        },
-        {
-            "uid": "goldbullet",
-            "name": "Goldbullet"
-        },
-        {
             "uid": "shinri",
             "name": "Shinri"
         },
         {
-            "uid": "last-game",
-            "name": "Last Game"
+            "uid": "twobert",
+            "name": "Twobert"
+        }
+        {
+            "uid": "vesper",
+            "name": "Vesper"
+        },
+        {
+            "uid": "battel",
+            "name": "Battel"
+        },
+        {
+            "uid": "betsy",
+            "name": "Betsy-Chan"
+        },
+        {
+            "uid": "betsy-grayson",
+            "name": "Betsy Grayson"
+        },
+        {
+            "uid": "bettelgoose",
+            "name": "Bettelgoose"
+        },
+        {
+            "uid": "bettelzebub",
+            "name": "Bettelzebub"
         },
         {
             "uid": "deerttel",
@@ -145,28 +165,28 @@
             "name": "Ghost Bride"
         },
         {
-            "uid": "2024-expo",
-            "name": "2024 Expo"
+            "uid": "jester",
+            "name": "Jester"
         },
         {
-            "uid": "betsy-grayson",
-            "name": "Betsy Grayson"
+            "uid": "bettelmaid",
+            "name": "Maid"
         },
         {
-            "uid": "axel",
-            "name": "Axel"
+            "uid": "pirate",
+            "name": "Pirate"
         },
         {
-            "uid": "2025-expo",
-            "name": "2025 Expo"
+            "uid": "pumpkin-king",
+            "name": "Pumpkin King"
         },
         {
-            "uid": "artist",
-            "name": "Artist"
+            "uid": "punk",
+            "name": "Punk"
         },
         {
-            "uid": "jurard",
-            "name": "Jurard"
-        }
+            "uid": "spa",
+            "name": "Spa"
+        },
     ]
 }

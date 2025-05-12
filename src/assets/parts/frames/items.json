@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         "lace",
         "star",

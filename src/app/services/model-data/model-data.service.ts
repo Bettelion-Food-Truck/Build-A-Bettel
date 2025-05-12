@@ -75,7 +75,15 @@ export class ModelDataService {
 
   getItemsPosition(partIndex: number): Position {
 
-    if (partIndex < 0 || partIndex >= this.selectedPositions().length || Object.keys(this.selectedPositions()[partIndex]).length) {
+    if (
+      // Out of range
+      partIndex < 0 || partIndex >= this.selectedPositions().length ||
+      // Null or undefined
+      !this.selectedPositions()[partIndex] ||
+      // Empty
+      Object.keys(this.selectedPositions()[partIndex]).length === 0
+    ) {
+
       return {
         x: DEFAULT_POSITION.x,
         y: DEFAULT_POSITION.y
@@ -86,15 +94,6 @@ export class ModelDataService {
   }
 
   setItemsPosition(partIndex: number, position: Position) {
-
-    if (
-      this.selectedPositions()[partIndex].x === position.x &&
-      this.selectedPositions()[partIndex].y === position.y
-    ) {
-      // Unchanged
-
-      return;
-    }
 
     this.selectedPositions.update(selectedPositions => {
 

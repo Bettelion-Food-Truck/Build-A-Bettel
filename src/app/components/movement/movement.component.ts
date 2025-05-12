@@ -41,13 +41,6 @@ export class MovementComponent {
         return;
       }
 
-      const position = this.modelData.getItemsPosition(selectedPart);
-
-      if (!position || Object.keys(position).length === 0) {
-
-        this.reset();
-      }
-
       this.updateMovementButtons();
     });
   }

@@ -78,7 +78,7 @@
             ],
             "requires": {
                 "part": "hair",
-                "item": "bald"
+                "item": "none"
             }
         },
         {
@@ -88,7 +88,7 @@
             ],
             "requires": {
                 "part": "hair",
-                "item": "bald"
+                "item": "none"
             }
         },
         {

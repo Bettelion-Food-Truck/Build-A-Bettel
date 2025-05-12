@@ -13,6 +13,7 @@ import { Item } from '@models/item.model';
 import { Layer } from '@models/layer.model';
 import { Part } from '@models/part.model';
 import { Position } from '@models/position.model';
+import { LayerRender } from '@models/layerRender.model';
 
 @Component({
   selector: 'app-canvas',
@@ -45,7 +46,6 @@ export class CanvasComponent implements AfterViewInit {
   private lastPartIndex: number = -1;
 
   private currentlySelectedItems: number[] = [];
-  private latestRenderStamp: number = 0;
 
   constructor(
     private assetData: AssetDataService,
@@ -237,12 +237,8 @@ export class CanvasComponent implements AfterViewInit {
   /**
    * Do the heavy lifting of figuring out what to draw and where
    */
-  private async renderLayerStack() {
+  private renderLayerStack() {
     this.logger.info("CanvasComponent: renderLayerStack()");
-
-    const renderStamp = Date.now();
-    this.latestRenderStamp = renderStamp;
-    this.logger.debug("CanvasComponent: renderLayerStack() - timestamp", renderStamp);
 
     this.clearCanvas(this.workingCanvas!);
 
@@ -253,18 +249,9 @@ export class CanvasComponent implements AfterViewInit {
 
     this.checkPartRequirements();
 
-    // Clear layers
-    for (let i = 0; i < layers.length; i++) {
-      // Clearing layers is done first because sometimes layers are rendered out of order due to special logics
-      // Additional execution time is minimal for data set size
-
-      // TODO Do we need to clear the canvas here? Or should it be done in renderImage instead before drawing the new image?
-      // Testing for both cases
-
-      this.clearCanvas(this.layerCanvases[i]);
-    }
-
     // Render images to layers
+    let renderPromises: Promise<LayerRender>[] = [];
+
     for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
       const partIndex = layers[layerIndex].partIndex;
@@ -272,22 +259,38 @@ export class CanvasComponent implements AfterViewInit {
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
         // TODO turn into promise.all
-        await this.renderItemToCanvas(renderStamp, layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1);// TODO COLOR selectedColors[partIndex]);
+        renderPromises.push(...this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1));// TODO COLOR selectedColors[partIndex]);
       }
     }
 
-    // Draw layers onto master
-    for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
-      this.workingContext!.drawImage(this.layerCanvases[layerIndex], 0, 0);
-    }
+    Promise
+      .all(renderPromises)
+      .then((results) => {
 
-    this.clearCanvas(this.canvas().nativeElement);
+        // Draw layers onto master
+        for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
-    this.context!.drawImage(this.workingCanvas!, 0, 0);
+          let layer = results.find(x => x.id === layerIndex);
 
-    this.modelData.setImageEncoded(this.canvas().nativeElement.toDataURL("image/png"));
+          if (!layer || !layer.canvas) {
+            continue;
+          }
 
-    this.loading.removeLoadingItem();
+          this.layerCanvases[layerIndex] = layer.canvas;
+          this.workingContext!.drawImage(this.layerCanvases[layerIndex], 0, 0);
+        }
+
+        this.clearCanvas(this.canvas().nativeElement);
+
+        this.context!.drawImage(this.workingCanvas!, 0, 0);
+
+        this.modelData.setImageEncoded(this.canvas().nativeElement.toDataURL("image/png"));
+
+        this.loading.removeLoadingItem();
+      })
+      .catch((err) => {
+        this.logger.error("CanvasComponent: renderLayerStack() - Error rendering layers", err);
+      });
   }
 
   private clearCanvas(canvas: HTMLCanvasElement) {
@@ -362,18 +365,20 @@ export class CanvasComponent implements AfterViewInit {
     }
   }
 
-  private async renderItemToCanvas(renderStamp: number, layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number) {
+  private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number): Promise<LayerRender>[] {
 
     const parts: Part[] = this.partSignal();
     const layers: Layer[] = this.layerSignal();
 
     const item: Item = parts[partIndex].items[itemIndex];
-    const position: Position = (this.modelData.getItemsPosition(partIndex) ?? {}) as Position;
+    const position: Position = { ...(this.modelData.getItemsPosition(partIndex) ?? {}) } as Position;// shallow copy
+
+    let renderPromises: Promise<LayerRender>[] = [];
 
     if (!item) {
       this.logger.error(`Item not found for part ${partIndex} and item ${itemIndex}`);
 
-      return;
+      return renderPromises;
     }
 
     // Set color variant item
@@ -396,10 +401,7 @@ export class CanvasComponent implements AfterViewInit {
         layerIndex = layers.findIndex(layer => layer.layer === item.layer);
       }
 
-      const result = await (this.renderImage(renderStamp, imgPath, position));
-      if (result) {
-        this.layerCanvases[layerIndex] = result;
-      }
+      renderPromises.push(this.renderImage(layerIndex, imgPath, position));
     }
 
     // Render additional layers
@@ -410,33 +412,28 @@ export class CanvasComponent implements AfterViewInit {
         const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
         const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
-        const addResult = await (this.renderImage(renderStamp, addImgPath, position));
-        if (addResult) {
-          this.layerCanvases[addLayerIndex] = addResult;
-        }
+        renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position));
       }
     }
+
+    return renderPromises;
   }
 
-  private renderImage(renderStamp: number, imgPath: string, position: Position): Promise<HTMLCanvasElement | null> {
+  private renderImage(layerId: number, imgPath: string, position: Position): Promise<LayerRender> {
 
-    return new Promise<HTMLCanvasElement | null>((resolve, reject) => {
+    return new Promise<LayerRender>((resolve, reject) => {
 
       if (!imgPath || imgPath.length === 0) {
         // Somethings wrong, exit
 
         this.logger.error(`Invalid image path sent`);
-        reject(null);
+        reject({
+          id: -1,
+          canvas: null
+        });
       }
 
       this.loadImage(imgPath).then((img) => {
-
-        if (this.latestRenderStamp !== renderStamp) {
-          // Render stamp has changed
-          this.logger.debug(`CanvasComponent: renderImage(${imgPath}) - Render stamp changed, stopping draw`, this.latestRenderStamp, renderStamp);
-
-          resolve(null);
-        }
 
         const renderCanvas: HTMLCanvasElement = this.createCanvas();
         const ctx: CanvasRenderingContext2D = renderCanvas.getContext('2d')!;
@@ -451,9 +448,16 @@ export class CanvasComponent implements AfterViewInit {
 
         ctx.restore();
 
-        resolve(renderCanvas);
+        resolve({
+          id: layerId,
+          canvas: renderCanvas
+        });
       }).catch(() => {
-        reject(null);
+
+        reject({
+          id: -1,
+          canvas: null
+        });
       });
     });
   }

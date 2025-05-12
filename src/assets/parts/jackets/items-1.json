@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "showman-jacket",
@@ -275,6 +276,24 @@
             ],
             "outfits": [
                 "jurard"
+            ]
+        },
+        {
+            "item": "christmas-2024-coat",
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "flayon-jacket",
+            "multilayer": [
+                {
+                    "item": "flayon-jacket-back",
+                    "layer": "jackets_back"
+                }
+            ],
+            "outfits": [
+                "flayon"
             ]
         }
     ]

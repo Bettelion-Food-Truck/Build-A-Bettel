@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         "showman-jacket",
         {
@@ -193,6 +194,20 @@
                     "layer": "jackets_back"
                 }
             ]
+        },
+        {
+            "item": "christmas-2024-coat",
+            "outfits": []
+        },
+        {
+            "item": "flayon-jacket",
+            "multilayer": [
+                {
+                    "item": "flayon-jacket-back",
+                    "layer": "jackets_back"
+                }
+            ],
+            "outfits": []
         }
     ]
 }

@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         "pink-monocle",
         {
@@ -12,12 +13,15 @@
             ]
         },
         "snail-eyes",
-        "sleepmask",
+        {
+            "item": "sleepmask",
+            "thumbnail": false
+        },
         "silly-glasses",
         "raycon",
         "pink-glasses",
         {
-            "item": "artist-glasses",
+            "item": "gavin-bettol-glasses",
             "outfits": [
                 "artist"
             ]

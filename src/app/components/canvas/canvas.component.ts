@@ -256,6 +256,7 @@ export class CanvasComponent implements AfterViewInit {
 
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
+        // TODO turn into promise.all
         await this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1);// TODO COLOR selectedColors[partIndex]);
       }
     }
@@ -380,7 +381,9 @@ export class CanvasComponent implements AfterViewInit {
         layerIndex = layers.findIndex(layer => layer.layer === item.layer);
       }
 
-      await (this.renderImage(imgPath, layerIndex, position));
+      const ctx = this.layerCanvases[layerIndex].getContext('2d')!;
+
+      await (this.renderImage(imgPath, ctx, position));
     }
 
     // Render additional layers
@@ -390,39 +393,53 @@ export class CanvasComponent implements AfterViewInit {
 
         const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
         const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
+        const addCtx = this.layerCanvases[addLayerIndex].getContext('2d')!;
 
-        await (this.renderImage(addImgPath, addLayerIndex, position));
+        await (this.renderImage(addImgPath, addCtx, position));
       }
     }
   }
 
-  private async renderImage(imgPath: string, layerIndex: number, position: Position) {
+  private renderImage(imgPath: string, ctx: CanvasRenderingContext2D, position: Position): Promise<boolean> {
 
-    if (layerIndex < 0) {
-      // Somethings wrong, exit
-      return;
-    }
+    return new Promise<boolean>((resolve, reject) => {
 
-    let img = await this.loadImage(imgPath);
+      if (!ctx) {
+        // Somethings wrong, exit
 
-    let ctx = this.layerCanvases[layerIndex].getContext('2d')!;
-    ctx.save();
+        this.logger.error(`Invalid context sent for ${imgPath}`);
+        reject(false);
+      }
 
-    ctx.translate(position.x ?? 0, position.y ?? 0);
+      this.loadImage(imgPath).then((img) => {
 
-    ctx.drawImage(img, 0, 0);
+        ctx.save();
 
-    ctx.restore();
+        ctx.translate(position.x ?? 0, position.y ?? 0);
+
+        ctx.drawImage(img, 0, 0);
+
+        ctx.restore();
+
+        resolve(true);
+      }).catch(() => {
+        reject(false);
+      });
+    });
   }
 
   private loadImage(path: string): Promise<HTMLImageElement> {
 
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
+
       const image = new Image();
 
-      image.addEventListener('load', () => {
-        resolve(image);
-      });
+      image.onload = () => resolve(image);
+      image.onerror = (err) => {
+        this.logger.error(`Image not found: ${path}`, err);
+
+        reject(null);
+      };
 
       image.src = path;
     });

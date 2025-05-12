@@ -42,6 +42,7 @@ export class CanvasComponent implements AfterViewInit {
   private lastPartIndex: number = -1;
 
   private currentlySelectedItems: number[] = [];
+  private latestRenderStamp: number = 0;
 
   constructor(
     private assetData: AssetDataService,
@@ -232,6 +233,9 @@ export class CanvasComponent implements AfterViewInit {
   private async renderLayerStack() {
     this.logger.info("CanvasComponent: renderLayerStack()");
 
+    const renderStamp = Date.now();
+    this.latestRenderStamp = renderStamp;
+
     this.clearCanvas(this.workingCanvas!);
 
     this.loading.addLoadingItem();
@@ -246,6 +250,9 @@ export class CanvasComponent implements AfterViewInit {
       // Clearing layers is done first because sometimes layers are rendered out of order due to special logics
       // Additional execution time is minimal for data set size
 
+      // TODO Do we need to clear the canvas here? Or should it be done in renderImage instead before drawing the new image?
+      // Testing for both cases
+
       this.clearCanvas(this.layerCanvases[i]);
     }
 
@@ -257,7 +264,7 @@ export class CanvasComponent implements AfterViewInit {
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
         // TODO turn into promise.all
-        await this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1);// TODO COLOR selectedColors[partIndex]);
+        await this.renderItemToCanvas(renderStamp, layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1);// TODO COLOR selectedColors[partIndex]);
       }
     }
 
@@ -347,7 +354,7 @@ export class CanvasComponent implements AfterViewInit {
     }
   }
 
-  private async renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number) {
+  private async renderItemToCanvas(renderStamp: number, layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number) {
 
     const parts: Part[] = this.partSignal();
     const layers: Layer[] = this.layerSignal();
@@ -383,7 +390,7 @@ export class CanvasComponent implements AfterViewInit {
 
       const ctx = this.layerCanvases[layerIndex].getContext('2d')!;
 
-      await (this.renderImage(imgPath, ctx, position));
+      await (this.renderImage(renderStamp, imgPath, ctx, position));
     }
 
     // Render additional layers
@@ -395,12 +402,12 @@ export class CanvasComponent implements AfterViewInit {
         const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
         const addCtx = this.layerCanvases[addLayerIndex].getContext('2d')!;
 
-        await (this.renderImage(addImgPath, addCtx, position));
+        await (this.renderImage(renderStamp, addImgPath, addCtx, position));
       }
     }
   }
 
-  private renderImage(imgPath: string, ctx: CanvasRenderingContext2D, position: Position): Promise<boolean> {
+  private renderImage(renderStamp: number, imgPath: string, ctx: CanvasRenderingContext2D, position: Position): Promise<boolean> {
 
     return new Promise<boolean>((resolve, reject) => {
 
@@ -412,6 +419,15 @@ export class CanvasComponent implements AfterViewInit {
       }
 
       this.loadImage(imgPath).then((img) => {
+
+        if (this.latestRenderStamp !== renderStamp) {
+          // Render stamp has changed
+          this.logger.debug(`CanvasComponent: renderImage(${imgPath}) - Render stamp changed, stopping draw`, this.latestRenderStamp, renderStamp);
+
+          resolve(false);
+        }
+
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
         ctx.save();
 

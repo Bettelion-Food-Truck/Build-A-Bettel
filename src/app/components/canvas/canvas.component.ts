@@ -29,6 +29,9 @@ export class CanvasComponent implements AfterViewInit {
   canvas: Signal<ElementRef> = viewChild.required<ElementRef>('canvas');
   private context: CanvasRenderingContext2D | null = null;
 
+  private canvas_height: number = 0;
+  private canvas_width: number = 0;
+
   private workingCanvas: HTMLCanvasElement | null = null;
   private workingContext: CanvasRenderingContext2D | null = null;
 
@@ -172,10 +175,10 @@ export class CanvasComponent implements AfterViewInit {
   private buildWorkspace() {
     this.logger.info("CanvasComponent: buildWorkspace()");
 
-    const canvas_height = this.canvas().nativeElement.height;
-    const canvas_width = this.canvas().nativeElement.width;
+    this.canvas_height = this.canvas().nativeElement.height;
+    this.canvas_width = this.canvas().nativeElement.width;
 
-    this.workingCanvas = this.createCanvas(canvas_height, canvas_width);
+    this.workingCanvas = this.createCanvas();
     this.workingContext = this.workingCanvas.getContext('2d');
 
     let layers: Layer[] = this.layerSignal();
@@ -184,7 +187,7 @@ export class CanvasComponent implements AfterViewInit {
     // Create layers noted in layers.json
     for (let i = 0; i < layers.length; i++) {
 
-      this.layerCanvases[i] = this.createCanvas(canvas_height, canvas_width);
+      this.layerCanvases[i] = this.createCanvas();
     }
 
     // Check each part folder has a layer
@@ -203,7 +206,7 @@ export class CanvasComponent implements AfterViewInit {
         "layer": parts[i].layer ?? parts[i].folder,
         "partIndex": i
       };
-      this.layerCanvases[layerIndex] = this.createCanvas(canvas_height, canvas_width);
+      this.layerCanvases[layerIndex] = this.createCanvas();
     }
 
     // Make blank layers in case of missing ones
@@ -212,17 +215,21 @@ export class CanvasComponent implements AfterViewInit {
       if (typeof this.layerCanvases[i] === 'undefined') {
         this.logger.warn(`Building layerfor ${layers[i].layer}`);
 
-        this.layerCanvases[i] = this.createCanvas(canvas_height, canvas_width);
+        this.layerCanvases[i] = this.createCanvas();
       }
     }
   }
 
-  private createCanvas(height: number, width: number): HTMLCanvasElement {
+  private createCanvas(): HTMLCanvasElement {
+
+    if (this.canvas_height === 0 || this.canvas_width === 0) {
+      this.logger.error("CanvasComponent: createCanvas() - canvas size not set");
+    }
 
     let canvas = document.createElement('canvas');
 
-    canvas.height = height;
-    canvas.width = width;
+    canvas.height = this.canvas_height;
+    canvas.width = this.canvas_width;
 
     return canvas;
   }
@@ -235,6 +242,7 @@ export class CanvasComponent implements AfterViewInit {
 
     const renderStamp = Date.now();
     this.latestRenderStamp = renderStamp;
+    this.logger.debug("CanvasComponent: renderLayerStack() - timestamp", renderStamp);
 
     this.clearCanvas(this.workingCanvas!);
 
@@ -388,9 +396,10 @@ export class CanvasComponent implements AfterViewInit {
         layerIndex = layers.findIndex(layer => layer.layer === item.layer);
       }
 
-      const ctx = this.layerCanvases[layerIndex].getContext('2d')!;
-
-      await (this.renderImage(renderStamp, imgPath, ctx, position));
+      const result = await (this.renderImage(renderStamp, imgPath, position));
+      if (result) {
+        this.layerCanvases[layerIndex] = result;
+      }
     }
 
     // Render additional layers
@@ -400,22 +409,24 @@ export class CanvasComponent implements AfterViewInit {
 
         const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
         const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
-        const addCtx = this.layerCanvases[addLayerIndex].getContext('2d')!;
 
-        await (this.renderImage(renderStamp, addImgPath, addCtx, position));
+        const addResult = await (this.renderImage(renderStamp, addImgPath, position));
+        if (addResult) {
+          this.layerCanvases[addLayerIndex] = addResult;
+        }
       }
     }
   }
 
-  private renderImage(renderStamp: number, imgPath: string, ctx: CanvasRenderingContext2D, position: Position): Promise<boolean> {
+  private renderImage(renderStamp: number, imgPath: string, position: Position): Promise<HTMLCanvasElement | null> {
 
-    return new Promise<boolean>((resolve, reject) => {
+    return new Promise<HTMLCanvasElement | null>((resolve, reject) => {
 
-      if (!ctx) {
+      if (!imgPath || imgPath.length === 0) {
         // Somethings wrong, exit
 
-        this.logger.error(`Invalid context sent for ${imgPath}`);
-        reject(false);
+        this.logger.error(`Invalid image path sent`);
+        reject(null);
       }
 
       this.loadImage(imgPath).then((img) => {
@@ -424,8 +435,11 @@ export class CanvasComponent implements AfterViewInit {
           // Render stamp has changed
           this.logger.debug(`CanvasComponent: renderImage(${imgPath}) - Render stamp changed, stopping draw`, this.latestRenderStamp, renderStamp);
 
-          resolve(false);
+          resolve(null);
         }
+
+        const renderCanvas: HTMLCanvasElement = this.createCanvas();
+        const ctx: CanvasRenderingContext2D = renderCanvas.getContext('2d')!;
 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
@@ -437,9 +451,9 @@ export class CanvasComponent implements AfterViewInit {
 
         ctx.restore();
 
-        resolve(true);
+        resolve(renderCanvas);
       }).catch(() => {
-        reject(false);
+        reject(null);
       });
     });
   }

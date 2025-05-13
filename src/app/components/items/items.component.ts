@@ -66,9 +66,13 @@ export class ItemsComponent {
       return "";
     }
 
+    const hasThumbnail =
+      (part.assumeThumbnails === true && item.thumbnail !== false) ||
+      item.thumbnail === true;
+
     return ASSET_PATH +
       (item.folder ? item.folder : part.folder) + "/" +
-      (item.thumbnail ? THUMBNAIL_FOLDER : ITEM_FOLDER) +
+      (hasThumbnail ? THUMBNAIL_FOLDER : ITEM_FOLDER) +
       item.item + ".png";
   }
 

@@ -3,7 +3,9 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
+        "gavin-bettol-bkg",
         "pink-diamonds",
         "pink-and-checkered",
         "arcade",
@@ -38,6 +40,11 @@
         "gala-red",
         "gala-bettel",
         "foliage",
-        "badlands"
+        "badlands",
+        "basement",
+        "blender",
+        "cafe",
+        "coffin",
+        "star"
     ]
 }

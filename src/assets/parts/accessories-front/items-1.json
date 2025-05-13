@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "january-2025-keychain",
@@ -77,11 +78,31 @@
         },
         "deerttel-ears",
         "deerttel-nose",
-        "artist-phantom-sweater",
+        "gavin-bettol-phantom-sweater",
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo",
+            "outfits": [
+                "artist"
+            ]
+        },
         {
             "item": "axel-braid",
             "outfits": [
                 "axel"
+            ]
+        },
+        {
+            "item": "christmas-2024-chain",
+            "layer": "accessories-front_1_loweest-front",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-chain-back",
+                    "layer": "accessories-front_1_loweest-back"
+                }
+            ],
+            "outfits": [
+                "2024-christmas"
             ]
         }
     ]

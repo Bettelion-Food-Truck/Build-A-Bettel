@@ -3,39 +3,28 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
-        {
-            "item": "blush-heavy",
-            "thumbnail": true
-        },
-        {
-            "item": "eyeshadow",
-            "thumbnail": true
-        },
-        {
-            "item": "tictactoe",
-            "thumbnail": true
-        },
+        "blush-heavy",
+        "eyeshadow",
+        "tictactoe",
         {
             "item": "jester",
             "outfits": [
                 "jester"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "clown",
             "outfits": [
                 "clown"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "deadworld-makeup",
             "outfits": [
                 "dead-world"
-            ],
-            "thumbnail": true
+            ]
         }
     ]
 }

@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "showman-ribbon",
@@ -40,17 +41,23 @@
                 "pumpkin-king"
             ]
         },
+        "pole",
         {
             "item": "axel-tail",
             "outfits": [
                 "axel"
             ]
         },
-        "pole",
         {
             "item": "cow-tail",
             "outfits": [
                 "cow"
+            ]
+        },
+        {
+            "item": "flayon-tail",
+            "outfits": [
+                "flayon"
             ]
         }
     ]

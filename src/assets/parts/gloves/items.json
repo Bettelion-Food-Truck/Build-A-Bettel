@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "showman-gloves",
@@ -14,16 +15,13 @@
             "item": "punk-rings",
             "outfits": [
                 "punk"
-            ],
-            "thumbnail": true
+            ]
         },
         {
-            "item": "punk-rings-right",
-            "thumbnail": true
+            "item": "punk-rings-right"
         },
         {
-            "item": "punk-rings-left",
-            "thumbnail": true
+            "item": "punk-rings-left"
         },
         {
             "item": "debut-underlayer",
@@ -142,6 +140,18 @@
             "item": "2025-expo-gloves",
             "outfits": [
                 "2025-expo"
+            ]
+        },
+        {
+            "item": "jurard-rings",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "flayon-nails",
+            "outfits": [
+                "flayon"
             ]
         }
     ]

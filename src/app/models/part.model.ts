@@ -18,6 +18,7 @@ export interface Part {
     colors: string[];
 
     items: Item[];
+    assumeThumbnails: boolean;
 }
 
 export interface Movement {

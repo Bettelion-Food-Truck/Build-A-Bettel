@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "showman-ribbon",
@@ -44,6 +45,10 @@
         "axel-tail",
         {
             "item": "cow-tail",
+            "outfits": []
+        },
+        {
+            "item": "flayon-tail",
             "outfits": []
         }
     ]

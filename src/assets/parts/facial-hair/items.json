@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "pirate-facial-hair",
@@ -15,7 +16,7 @@
         "pirate-beard",
         "whiskers",
         {
-            "item": "fancy-facial-hair",
+            "item": "gavin-bettol-facial-hair",
             "outfits": [
                 "artist"
             ]

@@ -9,11 +9,7 @@
             "item": "2025-expo-leggings",
             "outfits": [
                 "2025-expo"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
+            ]
         },
         {
             "item": "sims-flat",
@@ -37,11 +33,7 @@
             "layer": "over-socks",
             "outfits": [
                 "betsy"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
+            ]
         },
         {
             "item": "flayon-socks",

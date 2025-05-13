@@ -12,6 +12,10 @@
             ]
         },
         {
+            "item": "bettelgoose",
+            "outfits": []
+        },
+        {
             "item": "january-2025-haori"
         },
         {
@@ -37,7 +41,7 @@
             "multilayer": [
                 {
                     "item": "second-outfit-jacket-1-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -49,7 +53,7 @@
             "multilayer": [
                 {
                     "item": "second-outfit-jacket-2-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -57,11 +61,21 @@
             ]
         },
         {
+            "item": "battel-jacket",
+            "multilayer": [
+                {
+                    "item": "battel-jacket-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": []
+        },
+        {
             "item": "pirate-coat",
             "multilayer": [
                 {
                     "item": "pirate-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -73,7 +87,7 @@
             "multilayer": [
                 {
                     "item": "magni-jacket-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -97,7 +111,7 @@
             "multilayer": [
                 {
                     "item": "bathrobe-pink-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -109,7 +123,7 @@
             "multilayer": [
                 {
                     "item": "ruze-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -121,7 +135,7 @@
             "multilayer": [
                 {
                     "item": "deadworld-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -133,7 +147,7 @@
             "multilayer": [
                 {
                     "item": "vesper-jacket-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -151,7 +165,7 @@
             "multilayer": [
                 {
                     "item": "octavio-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -163,19 +177,17 @@
             "multilayer": [
                 {
                     "item": "bettelzebub-cape-back",
-                    "layer": "jackets_far_back"
+                    "layer": "jackets_far_back_1"
                 }
             ],
-            "outfits": [
-                "bettelzebub"
-            ]
+            "outfits": []
         },
         {
             "item": "debut-jacket",
             "multilayer": [
                 {
                     "item": "debut-jacket-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -184,16 +196,14 @@
         },
         {
             "item": "hakka-overcoat",
-            "outfits": [
-                "hakka"
-            ]
+            "outfits": []
         },
         {
             "item": "daki-robe",
             "multilayer": [
                 {
                     "item": "daki-robe-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -205,7 +215,7 @@
             "multilayer": [
                 {
                     "item": "butler-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ]
         },
@@ -214,7 +224,7 @@
             "multilayer": [
                 {
                     "item": "when-youre-evil-cape-back",
-                    "layer": "jackets_far_back"
+                    "layer": "jackets_far_back_1"
                 }
             ],
             "outfits": [
@@ -232,7 +242,7 @@
             "multilayer": [
                 {
                     "item": "goldbullet-cape-back",
-                    "layer": "jackets_far_back"
+                    "layer": "jackets_far_back_1"
                 }
             ]
         },
@@ -271,7 +281,7 @@
             "multilayer": [
                 {
                     "item": "jurard-cape-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
@@ -289,7 +299,7 @@
             "multilayer": [
                 {
                     "item": "flayon-jacket-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_1_back"
                 }
             ],
             "outfits": [

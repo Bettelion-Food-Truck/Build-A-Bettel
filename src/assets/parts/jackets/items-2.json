@@ -5,7 +5,9 @@
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
-        "showman-jacket",
+        {
+            "item": "showman-jacket"
+        },
         {
             "item": "bettelgoose",
             "outfits": [
@@ -18,9 +20,15 @@
                 "january-2025"
             ]
         },
-        "january-2025-kimono-jacket",
-        "punk-jacket",
-        "flex",
+        {
+            "item": "january-2025-kimono-jacket"
+        },
+        {
+            "item": "punk-jacket"
+        },
+        {
+            "item": "flex"
+        },
         {
             "item": "second-outfit-jacket-1",
             "multilayer": [
@@ -37,9 +45,6 @@
                     "item": "second-outfit-jacket-2-back",
                     "layer": "jackets_2_back"
                 }
-            ],
-            "outfits": [
-                "second-outfit"
             ]
         },
         {
@@ -47,7 +52,7 @@
             "multilayer": [
                 {
                     "item": "battel-jacket-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ],
             "outfits": [
@@ -59,17 +64,31 @@
             "multilayer": [
                 {
                     "item": "pirate-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ]
         },
-        "jester",
+        {
+            "item": "magni-jacket",
+            "multilayer": [
+                {
+                    "item": "magni-jacket-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
+            "item": "unchained-robe"
+        },
+        {
+            "item": "jester"
+        },
         {
             "item": "bathrobe-pink",
             "multilayer": [
                 {
                     "item": "bathrobe-pink-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ]
         },
@@ -78,7 +97,7 @@
             "multilayer": [
                 {
                     "item": "ruze-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ]
         },
@@ -87,7 +106,7 @@
             "multilayer": [
                 {
                     "item": "deadworld-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ]
         },
@@ -96,7 +115,7 @@
             "multilayer": [
                 {
                     "item": "vesper-jacket-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ]
         },
@@ -108,7 +127,7 @@
             "multilayer": [
                 {
                     "item": "octavio-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ]
         },
@@ -125,6 +144,15 @@
             ]
         },
         {
+            "item": "debut-jacket",
+            "multilayer": [
+                {
+                    "item": "debut-jacket-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
             "item": "hakka-overcoat",
             "outfits": [
                 "hakka"
@@ -137,9 +165,6 @@
                     "item": "daki-robe-back",
                     "layer": "jackets_2_back"
                 }
-            ],
-            "outfits": [
-                "daki"
             ]
         },
         {
@@ -156,58 +181,57 @@
             "multilayer": [
                 {
                     "item": "when-youre-evil-cape-back",
-                    "layer": "jackets_far_back"
+                    "layer": "jackets_far_back_2"
                 }
-            ],
-            "outfits": [
-                "when-youre-evil"
             ]
+        },
+        {
+            "item": "goldbullet-jacket"
         },
         {
             "item": "goldbullet-cape",
             "multilayer": [
                 {
                     "item": "goldbullet-cape-back",
-                    "layer": "jackets_far_back"
+                    "layer": "jackets_far_back_2"
                 }
-            ],
-            "outfits": [
-                "goldbullet"
             ]
         },
         {
-            "item": "deerttel-cape",
-            "outfits": [
-                "deerttel"
-            ]
+            "item": "shinri-jacket"
         },
-        "goldbullet-jacket",
-        "shinri-jacket",
-        "ghost-bride-jacket",
-        "axel-jacket",
-        "2025-expo-hoodie",
+        {
+            "item": "deerttel-cape"
+        },
+        {
+            "item": "ghost-bride-jacket"
+        },
+        {
+            "item": "axel-jacket"
+        },
+        {
+            "item": "2025-expo-hoodie"
+        },
         {
             "item": "jurard-cape-coat",
             "multilayer": [
                 {
                     "item": "jurard-cape-coat-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
             ]
         },
         {
-            "item": "christmas-2024-coat",
-            "outfits": []
+            "item": "christmas-2024-coat"
         },
         {
             "item": "flayon-jacket",
             "multilayer": [
                 {
                     "item": "flayon-jacket-back",
-                    "layer": "jackets_back"
+                    "layer": "jackets_2_back"
                 }
-            ],
-            "outfits": []
+            ]
         }
     ]
 }

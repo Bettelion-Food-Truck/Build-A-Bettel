@@ -3,6 +3,11 @@
         <img src="./icons/icon-random.png" alt="Pixel art of a six sided die" />
     </button>
 
+    <button [class.hidden]="getPartVisibility(-1)" [class.selected]="activePart() && activePart() === -1"
+        (click)="onChange(-1)" title="Show outfit options">
+        <img src="./icons/icon-outfits.png" alt="Pixel art of a wardrobe" />
+    </button>
+
     <ng-container *ngFor="let part of partSignal(); let i = index">
         <button [class.hidden]="getPartVisibility(i)" [class.selected]="activePart() && activePart() === i"
             (click)="onChange(i)" [title]="part.name ? part.name : part.folder">

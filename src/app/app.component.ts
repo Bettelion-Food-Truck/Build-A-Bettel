@@ -60,8 +60,6 @@ export class AppComponent {
   imageDataString: Signal<string>;
   private activePart: Signal<number>;
 
-  outfitsVisible = false;
-
   potentialPalette: Signal<boolean> = computed(() => {
 
     if (this.isInvalidActivePart()) {
@@ -81,7 +79,7 @@ export class AppComponent {
 
     const part: Part = this.partSignal()[this.activePart()];
 
-    return !(!part.movement || Object.keys(part.movement).length === 0);
+    return !(!part || !part.movement || Object.keys(part.movement).length === 0);
   });
 
   featuresEnabled: Signal<boolean> = computed(() => {
@@ -95,8 +93,8 @@ export class AppComponent {
     return item >= 0;
   });
 
+  outfitsVisible = false;
   itemsVisible = true;
-  paletteVisible = false;
   movementVisible = false;
 
   constructor(
@@ -198,18 +196,6 @@ export class AppComponent {
     this.modalData.reset();
   }
 
-  showOutfits() {
-    this.logger.info("AppComponent: showOutfits()");
-
-    this.outfitsVisible = true;
-  }
-
-  showComponents() {
-    this.logger.info("AppComponent: showComponents()");
-
-    this.outfitsVisible = false;
-  }
-
   generatePrompt() {
     this.logger.info("AppComponent: generatePrompt()");
 
@@ -224,6 +210,6 @@ export class AppComponent {
 
   isInvalidActivePart() {
 
-    return (!this.partSignal() || !this.activePart() || this.partSignal().length < this.activePart())
+    return (!this.partSignal() || !this.activePart() || this.activePart() >= 0 || this.partSignal().length < this.activePart())
   }
 }

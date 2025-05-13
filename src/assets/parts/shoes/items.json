@@ -307,6 +307,16 @@
             }
         },
         {
+            "item": "twobert-shoes",
+            "outfits": [
+                "twobert"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
             "item": "vesper-boots",
             "outfits": [
                 "vesper"

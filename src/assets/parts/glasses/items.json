@@ -12,6 +12,12 @@
             ]
         },
         {
+            "item": "twobert-glasses",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "cucumbers",
             "outfits": [
                 "spa"

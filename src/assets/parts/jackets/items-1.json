@@ -223,6 +223,12 @@
             ]
         },
         {
+            "item": "twobert-outfit",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "vesper-jacket",
             "multilayer": [
                 {

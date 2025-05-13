@@ -114,6 +114,12 @@
             ]
         },
         {
+            "item": "twobert-hat",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "battel-hat",
             "outfits": [
                 "battel"

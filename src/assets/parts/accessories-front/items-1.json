@@ -20,10 +20,7 @@
         },
         {
             "item": "unchained-belt",
-            "layer": "belt_elevated",
-            "outfits": [
-                "unchained"
-            ]
+            "layer": "belt_elevated"
         },
         {
             "item": "debut-underlayer",
@@ -31,7 +28,8 @@
                 "debut",
                 "debut-underlayer",
                 "daki",
-                "deerttel"
+                "deerttel",
+                "unchained"
             ],
             "layer": "accessories-front_under-jacket"
         },
@@ -63,7 +61,6 @@
         },
         {
             "item": "ruze-front-accessory-2",
-            "outfits": [],
             "layer": "accessories-front_under-jacket"
         },
         {

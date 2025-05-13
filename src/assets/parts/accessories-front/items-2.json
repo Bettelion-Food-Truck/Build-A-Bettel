@@ -8,13 +8,14 @@
         "january-2025-keychain",
         {
             "item": "january-2025-obi",
-            "layer": "belt_elevated",
-            "outfits": []
+            "layer": "belt_elevated"
         },
         {
             "item": "unchained-belt",
             "layer": "belt_elevated",
-            "outfits": []
+            "outfits": [
+                "unchained"
+            ]
         },
         "debut-underlayer",
         "bettelmaid",
@@ -28,7 +29,6 @@
         "goose-vp",
         {
             "item": "ruze-front-accessory-1",
-            "outfits": [],
             "layer": "accessories-front_2_under-jacket"
         },
         {
@@ -61,8 +61,7 @@
         "gavin-bettol-phantom-sweater",
         {
             "item": "friendship-tattoo",
-            "layer": "body_tattoo",
-            "outfits": []
+            "layer": "body_tattoo"
         },
         "axel-braid",
         {
@@ -73,8 +72,7 @@
                     "item": "christmas-2024-chain-back",
                     "layer": "accessories-front_1_loweest-back"
                 }
-            ],
-            "outfits": []
+            ]
         }
     ]
 }

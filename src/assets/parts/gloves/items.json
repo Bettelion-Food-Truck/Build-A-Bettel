@@ -6,15 +6,9 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-gloves",
+            "item": "debut-gloves",
             "outfits": [
-                "showman"
-            ]
-        },
-        {
-            "item": "punk-rings",
-            "outfits": [
-                "punk"
+                "debut"
             ]
         },
         {
@@ -33,15 +27,9 @@
             ]
         },
         {
-            "item": "magni-gloves",
+            "item": "clown",
             "outfits": [
-                "magni"
-            ]
-        },
-        {
-            "item": "sims-gloves",
-            "outfits": [
-                "sims"
+                "clown"
             ]
         },
         {
@@ -52,22 +40,33 @@
             ]
         },
         {
-            "item": "clown",
-            "outfits": [
-                "clown"
-            ]
-        },
-        {
             "item": "deadworld-gloves",
             "outfits": [
                 "dead-world"
             ]
         },
         {
-            "item": "vesper-gloves",
+            "item": "2025-expo-gloves",
             "outfits": [
-                "vesper",
-                "octavio"
+                "2025-expo"
+            ]
+        },
+        {
+            "item": "inkya-impulse-sleeves",
+            "outfits": [
+                "inkya-impulse"
+            ]
+        },
+        {
+            "item": "showman-gloves",
+            "outfits": [
+                "showman"
+            ]
+        },
+        {
+            "item": "sims-gloves",
+            "outfits": [
+                "sims"
             ]
         },
         {
@@ -77,9 +76,40 @@
             ]
         },
         {
-            "item": "inkya-impulse-sleeves",
+            "item": "axel-gloves",
             "outfits": [
-                "inkya-impulse"
+                "axel"
+            ]
+        },
+        {
+            "item": "flayon-nails",
+            "outfits": [
+                "flayon"
+            ]
+        },
+        {
+            "item": "goldbullet-gloves",
+            "outfits": [
+                "goldbullet"
+            ]
+        },
+        {
+            "item": "jurard-rings",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "magni-gloves",
+            "outfits": [
+                "magni"
+            ]
+        },
+        {
+            "item": "vesper-gloves",
+            "outfits": [
+                "vesper",
+                "octavio"
             ]
         },
         {
@@ -95,9 +125,9 @@
             "item": "betsy-nail-polish-black"
         },
         {
-            "item": "debut-gloves",
+            "item": "betsy-grayson-gloves",
             "outfits": [
-                "debut"
+                "betsy-grayson"
             ]
         },
         {
@@ -107,45 +137,15 @@
             ]
         },
         {
-            "item": "goldbullet-gloves",
+            "item": "punk-rings",
             "outfits": [
-                "goldbullet"
+                "punk"
             ]
         },
         {
             "item": "shinri-gloves",
             "outfits": [
                 "shinri"
-            ]
-        },
-        {
-            "item": "betsy-grayson-gloves",
-            "outfits": [
-                "betsy-grayson"
-            ]
-        },
-        {
-            "item": "axel-gloves",
-            "outfits": [
-                "axel"
-            ]
-        },
-        {
-            "item": "2025-expo-gloves",
-            "outfits": [
-                "2025-expo"
-            ]
-        },
-        {
-            "item": "jurard-rings",
-            "outfits": [
-                "jurard"
-            ]
-        },
-        {
-            "item": "flayon-nails",
-            "outfits": [
-                "flayon"
             ]
         }
     ]

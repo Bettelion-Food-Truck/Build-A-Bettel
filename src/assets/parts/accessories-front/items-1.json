@@ -12,6 +12,20 @@
             ]
         },
         {
+            "item": "january-2025-obi",
+            "layer": "belt_elevated",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "unchained-belt",
+            "layer": "belt_elevated",
+            "outfits": [
+                "unchained"
+            ]
+        },
+        {
             "item": "debut-underlayer",
             "outfits": [
                 "debut-underlayer",

@@ -6,6 +6,16 @@
     "assumeThumbnails": true,
     "items": [
         "january-2025-keychain",
+        {
+            "item": "january-2025-obi",
+            "layer": "belt_elevated",
+            "outfits": []
+        },
+        {
+            "item": "unchained-belt",
+            "layer": "belt_elevated",
+            "outfits": []
+        },
         "debut-underlayer",
         "bettelmaid",
         "magni-front-accessory-1",

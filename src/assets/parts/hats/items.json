@@ -6,90 +6,10 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-hat-front",
-            "multilayer": [
-                {
-                    "item": "showman-hat-back",
-                    "layer": "hats_back"
-                }
-            ],
-            "outfits": [
-                "showman"
-            ]
-        },
-        {
-            "item": "january-2025-hat",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit"
             ]
-        },
-        {
-            "item": "bettelmaid",
-            "outfits": [
-                "bettelmaid"
-            ]
-        },
-        {
-            "item": "battel-hat",
-            "outfits": [
-                "battel"
-            ]
-        },
-        {
-            "item": "pirate-hat",
-            "outfits": [
-                "pirate"
-            ]
-        },
-        {
-            "item": "magni-hat",
-            "outfits": [
-                "magni"
-            ]
-        },
-        {
-            "item": "sims-hat",
-            "multilayer": [
-                {
-                    "item": "sims-hat-back",
-                    "layer": "hats_back"
-                }
-            ],
-            "outfits": [
-                "sims"
-            ]
-        },
-        {
-            "item": "goose-vp",
-            "outfits": [
-                "goose-vp"
-            ]
-        },
-        {
-            "item": "jester",
-            "outfits": [
-                "jester"
-            ],
-            "requires": {
-                "part": "hair",
-                "item": "none"
-            }
-        },
-        {
-            "item": "hair-towel",
-            "outfits": [
-                "spa"
-            ],
-            "requires": {
-                "part": "hair",
-                "item": "none"
-            }
         },
         {
             "item": "clown",
@@ -101,6 +21,12 @@
             ],
             "outfits": [
                 "clown"
+            ]
+        },
+        {
+            "item": "christmas-2024-antlers",
+            "outfits": [
+                "2024-christmas"
             ]
         },
         {
@@ -116,15 +42,45 @@
             ]
         },
         {
-            "item": "bettelzebub-crown",
+            "item": "gavin-bettol-hat",
             "outfits": [
-                "bettelzebub"
+                "artist"
             ]
         },
         {
-            "item": "party-hat",
+            "item": "goose-vp",
             "outfits": [
-                "punk"
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "january-2025-hat",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "showman-hat-front",
+            "multilayer": [
+                {
+                    "item": "showman-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "showman"
+            ]
+        },
+        {
+            "item": "sims-hat",
+            "multilayer": [
+                {
+                    "item": "sims-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "sims"
             ]
         },
         {
@@ -134,21 +90,51 @@
             ]
         },
         {
-            "item": "pumpkin-king-hat",
-            "multilayer": [
-                {
-                    "item": "pumpkin-king-hat-back",
-                    "layer": "hats_back"
-                }
-            ],
+            "item": "axel-ears",
             "outfits": [
-                "pumpkin-king"
+                "axel"
+            ]
+        },
+        {
+            "item": "jurard-crown",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "magni-hat",
+            "outfits": [
+                "magni"
             ]
         },
         {
             "item": "shinri-hat",
             "outfits": [
                 "shinri"
+            ]
+        },
+        {
+            "item": "battel-hat",
+            "outfits": [
+                "battel"
+            ]
+        },
+        {
+            "item": "betsy-grayson-hat",
+            "multilayer": [
+                {
+                    "item": "betsy-grayson-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "betsy-grayson"
+            ]
+        },
+        {
+            "item": "bettelzebub-crown",
+            "outfits": [
+                "bettelzebub"
             ]
         },
         {
@@ -164,55 +150,69 @@
             ]
         },
         {
-            "item": "betsy-grayson-hat",
+            "item": "jester",
+            "outfits": [
+                "jester"
+            ],
+            "requires": {
+                "part": "hair",
+                "item": "none"
+            }
+        },
+        {
+            "item": "bettelmaid",
+            "outfits": [
+                "bettelmaid"
+            ]
+        },
+        {
+            "item": "pirate-hat",
+            "outfits": [
+                "pirate"
+            ]
+        },
+        {
+            "item": "pumpkin-king-hat",
             "multilayer": [
                 {
-                    "item": "betsy-grayson-hat-back",
+                    "item": "pumpkin-king-hat-back",
                     "layer": "hats_back"
                 }
             ],
             "outfits": [
-                "betsy-grayson"
+                "pumpkin-king"
             ]
         },
-        "phantom-beanie",
+        {
+            "item": "party-hat",
+            "outfits": [
+                "punk"
+            ]
+        },
+        {
+            "item": "hair-towel",
+            "outfits": [
+                "spa"
+            ],
+            "requires": {
+                "part": "hair",
+                "item": "none"
+            }
+        },
         "cat-ears",
-        "demon-horns",
-        "halo",
-        "dog-ears",
-        "sleephat",
-        {
-            "item": "gavin-bettol-hat",
-            "outfits": [
-                "artist"
-            ]
-        },
-        {
-            "item": "jurard-crown",
-            "outfits": [
-                "jurard"
-            ]
-        },
         {
             "item": "cow-ears",
             "outfits": [
                 "cow"
             ]
         },
+        "demon-horns",
+        "dog-ears",
+        "glorp-headband",
         "hairclips",
+        "halo",
         "party-crown",
-        {
-            "item": "axel-ears",
-            "outfits": [
-                "axel"
-            ]
-        },
-        {
-            "item": "christmas-2024-antlers",
-            "outfits": [
-                "2024-christmas"
-            ]
-        },
-        "glorp-headband"
+        "phantom-beanie",
+        "sleephat"
     ]
 }

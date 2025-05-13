@@ -12,23 +12,9 @@
             ]
         },
         {
-            "item": "january-2025-obi",
-            "layer": "belt_elevated",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
             "item": "punk-belt",
             "outfits": [
                 "punk"
-            ]
-        },
-        {
-            "item": "unchained-belt",
-            "layer": "belt_elevated",
-            "outfits": [
-                "unchained"
             ]
         },
         {

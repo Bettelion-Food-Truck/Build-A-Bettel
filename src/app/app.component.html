@@ -25,10 +25,15 @@
     <div class="system_buttons">
       <button mat-flat-button title="Reset artwork" (click)="reset()">Reset</button>
 
-      <button mat-flat-button title="Generate random art prompt" (click)="generatePrompt()">Random Prompt</button>
+      <button mat-flat-button title="Generate random art prompt" (click)="generatePrompt()">Inspire me!</button>
 
-      <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()">
+      <button mat-mini-fab aria-label="Information" title="Information & Credits" id="credit-icon"
+        (click)="showCredits()">
         <mat-icon fontSet="material-icons-outlined">info</mat-icon>
+      </button>
+
+      <button mat-flat-button title="Information & Credits" id="credit-text" (click)="showCredits()">
+        Credits
       </button>
     </div>
 

@@ -131,8 +131,10 @@
     align-items: center;
 
     width: 100%;
-    max-width: 350px;
+    max-width: 500px;
     margin: 3px auto;
+
+    container: system-button-container / inline-size;
 
     button {
         cursor: pointer;
@@ -142,6 +144,24 @@
 
         border: 1px solid black;
         border-radius: 3px;
+    }
+
+    #credit-icon {
+        display: flex;
+    }
+
+    #credit-text {
+        display: none;
+    }
+
+    @container system-button-container (width > 350px) {
+        #credit-icon {
+            display: none;
+        }
+
+        #credit-text {
+            display: flex;
+        }
     }
 }
 

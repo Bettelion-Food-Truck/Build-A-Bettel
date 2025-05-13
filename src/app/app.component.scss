@@ -91,31 +91,6 @@
     }
 }
 
-.part_control_wrapper {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-
-    margin: 5px 0;
-
-    .controls {
-        width: var(--ui-control-size, 50px);
-        height: var(--ui-control-size, 50px);
-
-        margin: 2.5px 0;
-
-        justify-content: center;
-        align-items: center;
-
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        cursor: pointer;
-        text-align: center;
-    }
-}
-
 .interface_wrapper {
     position: relative;
 

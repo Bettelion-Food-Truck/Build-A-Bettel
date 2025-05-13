@@ -6,28 +6,13 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-jacket"
-        },
-        {
-            "item": "bettelgoose",
-            "outfits": [
-                "bettelgoose"
+            "item": "debut-jacket",
+            "multilayer": [
+                {
+                    "item": "debut-jacket-back",
+                    "layer": "jackets_2_back"
+                }
             ]
-        },
-        {
-            "item": "january-2025-haori",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
-            "item": "january-2025-kimono-jacket"
-        },
-        {
-            "item": "punk-jacket"
-        },
-        {
-            "item": "flex"
         },
         {
             "item": "second-outfit-jacket-1",
@@ -48,55 +33,22 @@
             ]
         },
         {
-            "item": "battel-jacket",
+            "item": "butler-jacket",
             "multilayer": [
                 {
-                    "item": "battel-jacket-back",
-                    "layer": "jackets_2_back"
-                }
-            ],
-            "outfits": [
-                "battel"
-            ]
-        },
-        {
-            "item": "pirate-coat",
-            "multilayer": [
-                {
-                    "item": "pirate-coat-back",
+                    "item": "butler-back",
                     "layer": "jackets_2_back"
                 }
             ]
         },
         {
-            "item": "magni-jacket",
+            "item": "christmas-2024-coat"
+        },
+        {
+            "item": "daki-robe",
             "multilayer": [
                 {
-                    "item": "magni-jacket-back",
-                    "layer": "jackets_2_back"
-                }
-            ]
-        },
-        {
-            "item": "unchained-robe"
-        },
-        {
-            "item": "jester"
-        },
-        {
-            "item": "bathrobe-pink",
-            "multilayer": [
-                {
-                    "item": "bathrobe-pink-back",
-                    "layer": "jackets_2_back"
-                }
-            ]
-        },
-        {
-            "item": "ruze-coat",
-            "multilayer": [
-                {
-                    "item": "ruze-coat-back",
+                    "item": "daki-robe-back",
                     "layer": "jackets_2_back"
                 }
             ]
@@ -111,70 +63,25 @@
             ]
         },
         {
-            "item": "vesper-jacket",
-            "multilayer": [
-                {
-                    "item": "vesper-jacket-back",
-                    "layer": "jackets_2_back"
-                }
-            ]
+            "item": "2025-expo-hoodie"
         },
         {
-            "item": "woven-fates-jacket"
+            "item": "flex"
         },
         {
-            "item": "octavio-coat",
-            "multilayer": [
-                {
-                    "item": "octavio-coat-back",
-                    "layer": "jackets_2_back"
-                }
-            ]
-        },
-        {
-            "item": "bettelzebub-cape",
-            "multilayer": [
-                {
-                    "item": "bettelzebub-cape-back",
-                    "layer": "jackets_far_back"
-                }
-            ],
+            "item": "january-2025-haori",
             "outfits": [
-                "bettelzebub"
+                "january-2025"
             ]
         },
         {
-            "item": "debut-jacket",
-            "multilayer": [
-                {
-                    "item": "debut-jacket-back",
-                    "layer": "jackets_2_back"
-                }
-            ]
+            "item": "january-2025-kimono-jacket"
         },
         {
-            "item": "hakka-overcoat",
-            "outfits": [
-                "hakka"
-            ]
+            "item": "showman-jacket"
         },
         {
-            "item": "daki-robe",
-            "multilayer": [
-                {
-                    "item": "daki-robe-back",
-                    "layer": "jackets_2_back"
-                }
-            ]
-        },
-        {
-            "item": "butler-jacket",
-            "multilayer": [
-                {
-                    "item": "butler-back",
-                    "layer": "jackets_2_back"
-                }
-            ]
+            "item": "unchained-robe"
         },
         {
             "item": "when-youre-evil-cape",
@@ -182,6 +89,21 @@
                 {
                     "item": "when-youre-evil-cape-back",
                     "layer": "jackets_far_back_2"
+                }
+            ]
+        },
+        {
+            "item": "woven-fates-jacket"
+        },
+        {
+            "item": "axel-jacket"
+        },
+        {
+            "item": "flayon-jacket",
+            "multilayer": [
+                {
+                    "item": "flayon-jacket-back",
+                    "layer": "jackets_2_back"
                 }
             ]
         },
@@ -198,19 +120,10 @@
             ]
         },
         {
-            "item": "shinri-jacket"
-        },
-        {
-            "item": "deerttel-cape"
-        },
-        {
-            "item": "ghost-bride-jacket"
-        },
-        {
-            "item": "axel-jacket"
-        },
-        {
-            "item": "2025-expo-hoodie"
+            "item": "hakka-overcoat",
+            "outfits": [
+                "hakka"
+            ]
         },
         {
             "item": "jurard-cape-coat",
@@ -222,13 +135,100 @@
             ]
         },
         {
-            "item": "christmas-2024-coat"
-        },
-        {
-            "item": "flayon-jacket",
+            "item": "magni-jacket",
             "multilayer": [
                 {
-                    "item": "flayon-jacket-back",
+                    "item": "magni-jacket-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
+            "item": "octavio-coat",
+            "multilayer": [
+                {
+                    "item": "octavio-coat-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
+            "item": "ruze-coat",
+            "multilayer": [
+                {
+                    "item": "ruze-coat-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
+            "item": "shinri-jacket"
+        },
+        {
+            "item": "vesper-jacket",
+            "multilayer": [
+                {
+                    "item": "vesper-jacket-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
+            "item": "battel-jacket",
+            "multilayer": [
+                {
+                    "item": "battel-jacket-back",
+                    "layer": "jackets_2_back"
+                }
+            ],
+            "outfits": [
+                "battel"
+            ]
+        },
+        {
+            "item": "bettelgoose",
+            "outfits": [
+                "bettelgoose"
+            ]
+        },
+        {
+            "item": "bettelzebub-cape",
+            "multilayer": [
+                {
+                    "item": "bettelzebub-cape-back",
+                    "layer": "jackets_far_back"
+                }
+            ],
+            "outfits": [
+                "bettelzebub"
+            ]
+        },
+        {
+            "item": "deerttel-cape"
+        },
+        {
+            "item": "ghost-bride-jacket"
+        },
+        {
+            "item": "jester"
+        },
+        {
+            "item": "pirate-coat",
+            "multilayer": [
+                {
+                    "item": "pirate-coat-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
+            "item": "punk-jacket"
+        },
+        {
+            "item": "bathrobe-pink",
+            "multilayer": [
+                {
+                    "item": "bathrobe-pink-back",
                     "layer": "jackets_2_back"
                 }
             ]

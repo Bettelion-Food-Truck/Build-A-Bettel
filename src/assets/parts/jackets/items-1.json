@@ -6,34 +6,15 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-jacket",
+            "item": "debut-jacket",
+            "multilayer": [
+                {
+                    "item": "debut-jacket-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
             "outfits": [
-                "showman"
-            ]
-        },
-        {
-            "item": "bettelgoose",
-            "outfits": []
-        },
-        {
-            "item": "january-2025-haori"
-        },
-        {
-            "item": "january-2025-kimono-jacket",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
-            "item": "punk-jacket",
-            "outfits": [
-                "punk"
-            ]
-        },
-        {
-            "item": "flex",
-            "outfits": [
-                "flex"
+                "debut"
             ]
         },
         {
@@ -61,73 +42,30 @@
             ]
         },
         {
-            "item": "battel-jacket",
+            "item": "butler-jacket",
             "multilayer": [
                 {
-                    "item": "battel-jacket-back",
+                    "item": "butler-back",
                     "layer": "jackets_1_back"
                 }
-            ],
-            "outfits": []
-        },
-        {
-            "item": "pirate-coat",
-            "multilayer": [
-                {
-                    "item": "pirate-coat-back",
-                    "layer": "jackets_1_back"
-                }
-            ],
-            "outfits": [
-                "pirate"
             ]
         },
         {
-            "item": "magni-jacket",
+            "item": "christmas-2024-coat",
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "daki-robe",
             "multilayer": [
                 {
-                    "item": "magni-jacket-back",
+                    "item": "daki-robe-back",
                     "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
-                "magni"
-            ]
-        },
-        {
-            "item": "unchained-robe",
-            "outfits": [
-                "unchained"
-            ]
-        },
-        {
-            "item": "jester",
-            "outfits": [
-                "jester"
-            ]
-        },
-        {
-            "item": "bathrobe-pink",
-            "multilayer": [
-                {
-                    "item": "bathrobe-pink-back",
-                    "layer": "jackets_1_back"
-                }
-            ],
-            "outfits": [
-                "spa"
-            ]
-        },
-        {
-            "item": "ruze-coat",
-            "multilayer": [
-                {
-                    "item": "ruze-coat-back",
-                    "layer": "jackets_1_back"
-                }
-            ],
-            "outfits": [
-                "ruze"
+                "daki"
             ]
         },
         {
@@ -143,80 +81,36 @@
             ]
         },
         {
-            "item": "vesper-jacket",
-            "multilayer": [
-                {
-                    "item": "vesper-jacket-back",
-                    "layer": "jackets_1_back"
-                }
-            ],
+            "item": "2025-expo-hoodie",
             "outfits": [
-                "vesper"
+                "2025-expo"
             ]
         },
         {
-            "item": "woven-fates-jacket",
+            "item": "flex",
             "outfits": [
-                "woven-fates"
+                "flex"
             ]
         },
         {
-            "item": "octavio-coat",
-            "multilayer": [
-                {
-                    "item": "octavio-coat-back",
-                    "layer": "jackets_1_back"
-                }
-            ],
+            "item": "january-2025-haori"
+        },
+        {
+            "item": "january-2025-kimono-jacket",
             "outfits": [
-                "octavio"
+                "january-2025"
             ]
         },
         {
-            "item": "bettelzebub-cape",
-            "multilayer": [
-                {
-                    "item": "bettelzebub-cape-back",
-                    "layer": "jackets_far_back_1"
-                }
-            ],
-            "outfits": []
-        },
-        {
-            "item": "debut-jacket",
-            "multilayer": [
-                {
-                    "item": "debut-jacket-back",
-                    "layer": "jackets_1_back"
-                }
-            ],
+            "item": "showman-jacket",
             "outfits": [
-                "debut"
+                "showman"
             ]
         },
         {
-            "item": "hakka-overcoat",
-            "outfits": []
-        },
-        {
-            "item": "daki-robe",
-            "multilayer": [
-                {
-                    "item": "daki-robe-back",
-                    "layer": "jackets_1_back"
-                }
-            ],
+            "item": "unchained-robe",
             "outfits": [
-                "daki"
-            ]
-        },
-        {
-            "item": "butler-jacket",
-            "multilayer": [
-                {
-                    "item": "butler-back",
-                    "layer": "jackets_1_back"
-                }
+                "unchained"
             ]
         },
         {
@@ -229,6 +123,30 @@
             ],
             "outfits": [
                 "when-youre-evil"
+            ]
+        },
+        {
+            "item": "woven-fates-jacket",
+            "outfits": [
+                "woven-fates"
+            ]
+        },
+        {
+            "item": "axel-jacket",
+            "outfits": [
+                "axel"
+            ]
+        },
+        {
+            "item": "flayon-jacket",
+            "multilayer": [
+                {
+                    "item": "flayon-jacket-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": [
+                "flayon"
             ]
         },
         {
@@ -247,34 +165,8 @@
             ]
         },
         {
-            "item": "shinri-jacket",
-            "outfits": [
-                "shinri"
-            ]
-        },
-        {
-            "item": "deerttel-cape",
-            "outfits": [
-                "deerttel"
-            ]
-        },
-        {
-            "item": "ghost-bride-jacket",
-            "outfits": [
-                "ghost-bride"
-            ]
-        },
-        {
-            "item": "axel-jacket",
-            "outfits": [
-                "axel"
-            ]
-        },
-        {
-            "item": "2025-expo-hoodie",
-            "outfits": [
-                "2025-expo"
-            ]
+            "item": "hakka-overcoat",
+            "outfits": []
         },
         {
             "item": "jurard-cape-coat",
@@ -289,21 +181,129 @@
             ]
         },
         {
-            "item": "christmas-2024-coat",
-            "outfits": [
-                "2024-christmas"
-            ]
-        },
-        {
-            "item": "flayon-jacket",
+            "item": "magni-jacket",
             "multilayer": [
                 {
-                    "item": "flayon-jacket-back",
+                    "item": "magni-jacket-back",
                     "layer": "jackets_1_back"
                 }
             ],
             "outfits": [
-                "flayon"
+                "magni"
+            ]
+        },
+        {
+            "item": "octavio-coat",
+            "multilayer": [
+                {
+                    "item": "octavio-coat-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": [
+                "octavio"
+            ]
+        },
+        {
+            "item": "ruze-coat",
+            "multilayer": [
+                {
+                    "item": "ruze-coat-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": [
+                "ruze"
+            ]
+        },
+        {
+            "item": "shinri-jacket",
+            "outfits": [
+                "shinri"
+            ]
+        },
+        {
+            "item": "vesper-jacket",
+            "multilayer": [
+                {
+                    "item": "vesper-jacket-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": [
+                "vesper"
+            ]
+        },
+        {
+            "item": "battel-jacket",
+            "multilayer": [
+                {
+                    "item": "battel-jacket-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": []
+        },
+        {
+            "item": "bettelgoose",
+            "outfits": []
+        },
+        {
+            "item": "bettelzebub-cape",
+            "multilayer": [
+                {
+                    "item": "bettelzebub-cape-back",
+                    "layer": "jackets_far_back_1"
+                }
+            ],
+            "outfits": []
+        },
+        {
+            "item": "deerttel-cape",
+            "outfits": [
+                "deerttel"
+            ]
+        },
+        {
+            "item": "ghost-bride-jacket",
+            "outfits": [
+                "ghost-bride"
+            ]
+        },
+        {
+            "item": "jester",
+            "outfits": [
+                "jester"
+            ]
+        },
+        {
+            "item": "pirate-coat",
+            "multilayer": [
+                {
+                    "item": "pirate-coat-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": [
+                "pirate"
+            ]
+        },
+        {
+            "item": "punk-jacket",
+            "outfits": [
+                "punk"
+            ]
+        },
+        {
+            "item": "bathrobe-pink",
+            "multilayer": [
+                {
+                    "item": "bathrobe-pink-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": [
+                "spa"
             ]
         }
     ]

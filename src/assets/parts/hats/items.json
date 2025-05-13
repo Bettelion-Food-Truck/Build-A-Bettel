@@ -12,6 +12,12 @@
             ]
         },
         {
+            "item": "gala-hat",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "clown",
             "multilayer": [
                 {

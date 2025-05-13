@@ -40,6 +40,16 @@
             }
         },
         {
+            "item": "gala-shoes",
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            },
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "clown-shoes",
             "outfits": [
                 "clown"

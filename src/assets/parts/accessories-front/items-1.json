@@ -23,6 +23,12 @@
             "item": "debut-circus-whip"
         },
         {
+            "item": "gala-bow",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "friendship-tattoo",
             "layer": "body_tattoo",
             "outfits": [

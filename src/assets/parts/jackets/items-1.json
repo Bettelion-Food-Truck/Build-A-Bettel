@@ -42,6 +42,12 @@
             ]
         },
         {
+            "item": "gala-jacket",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "butler-jacket",
             "multilayer": [
                 {

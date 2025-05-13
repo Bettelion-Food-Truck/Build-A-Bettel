@@ -20,6 +20,12 @@
             ]
         },
         {
+            "item": "gala-shirt",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "clown",
             "outfits": [
                 "clown"

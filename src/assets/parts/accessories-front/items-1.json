@@ -6,6 +6,50 @@
     "assumeThumbnails": true,
     "items": [
         {
+            "item": "debut-underlayer",
+            "outfits": [
+                "debut",
+                "debut-underlayer",
+                "daki",
+                "deerttel",
+                "unchained"
+            ],
+            "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "debut-coat-charm"
+        },
+        {
+            "item": "debut-circus-whip"
+        },
+        {
+            "item": "christmas-2024-chain",
+            "layer": "accessories-front_1_loweest-front",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-chain-back",
+                    "layer": "accessories-front_1_loweest-back"
+                }
+            ],
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo",
+            "outfits": [
+                "artist"
+            ]
+        },
+        "gavin-bettol-phantom-sweater",
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
             "item": "january-2025-keychain",
             "outfits": [
                 "january-2025"
@@ -20,20 +64,9 @@
             "layer": "belt_elevated"
         },
         {
-            "item": "debut-underlayer",
+            "item": "axel-braid",
             "outfits": [
-                "debut",
-                "debut-underlayer",
-                "daki",
-                "deerttel",
-                "unchained"
-            ],
-            "layer": "accessories-front_under-jacket"
-        },
-        {
-            "item": "bettelmaid",
-            "outfits": [
-                "bettelmaid"
+                "axel"
             ]
         },
         {
@@ -42,23 +75,28 @@
                 "magni"
             ]
         },
-        "magni-front-accessory-2",
         {
-            "item": "goose-vp",
-            "outfits": [
-                "goose-vp"
-            ]
+            "item": "magni-front-accessory-2"
         },
         {
             "item": "ruze-front-accessory-1",
+            "layer": "accessories-front_under-jacket",
             "outfits": [
                 "ruze"
-            ],
-            "layer": "accessories-front_under-jacket"
+            ]
         },
         {
             "item": "ruze-front-accessory-2",
             "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "deerttel-ears",
+            "outfits": [
+                "deerttel"
+            ]
+        },
+        {
+            "item": "deerttel-nose"
         },
         {
             "item": "betsy-bow",
@@ -67,45 +105,11 @@
             ]
         },
         {
-            "item": "braids"
-        },
-        {
-            "item": "debut-coat-charm"
-        },
-        {
-            "item": "debut-circus-whip",
+            "item": "bettelmaid",
             "outfits": [
-                "debut"
+                "bettelmaid"
             ]
         },
-        "deerttel-ears",
-        "deerttel-nose",
-        "gavin-bettol-phantom-sweater",
-        {
-            "item": "friendship-tattoo",
-            "layer": "body_tattoo",
-            "outfits": [
-                "artist"
-            ]
-        },
-        {
-            "item": "axel-braid",
-            "outfits": [
-                "axel"
-            ]
-        },
-        {
-            "item": "christmas-2024-chain",
-            "layer": "accessories-front_1_loweest-front",
-            "multilayer": [
-                {
-                    "item": "christmas-2024-chain-back",
-                    "layer": "accessories-front_1_loweest-back"
-                }
-            ],
-            "outfits": [
-                "2024-christmas"
-            ]
-        }
+        "braids"
     ]
 }

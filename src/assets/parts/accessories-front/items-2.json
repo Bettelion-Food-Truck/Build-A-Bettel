@@ -5,45 +5,9 @@
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
-        "january-2025-keychain",
         {
-            "item": "january-2025-obi",
-            "layer": "belt_elevated",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
-            "item": "unchained-belt",
-            "layer": "belt_elevated",
-            "outfits": [
-                "unchained"
-            ]
-        },
-        "debut-underlayer",
-        "bettelmaid",
-        "magni-front-accessory-1",
-        {
-            "item": "magni-front-accessory-2",
-            "outfits": [
-                "magni"
-            ]
-        },
-        "goose-vp",
-        {
-            "item": "ruze-front-accessory-1",
-            "layer": "accessories-front_2_under-jacket"
-        },
-        {
-            "item": "ruze-front-accessory-2",
-            "outfits": [
-                "ruze"
-            ],
-            "layer": "accessories-front_2_under-jacket"
-        },
-        "betsy-bow",
-        {
-            "item": "braids"
+            "item": "debut-underlayer",
+            "layer": "accessories-front_under-jacket"
         },
         {
             "item": "debut-coat-charm",
@@ -54,19 +18,6 @@
         {
             "item": "debut-circus-whip"
         },
-        "deerttel-ears",
-        {
-            "item": "deerttel-nose",
-            "outfits": [
-                "deerttel"
-            ]
-        },
-        "gavin-bettol-phantom-sweater",
-        {
-            "item": "friendship-tattoo",
-            "layer": "body_tattoo"
-        },
-        "axel-braid",
         {
             "item": "christmas-2024-chain",
             "layer": "accessories-front_1_loweest-front",
@@ -76,6 +27,67 @@
                     "layer": "accessories-front_1_loweest-back"
                 }
             ]
-        }
+        },
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo"
+        },
+        "gavin-bettol-phantom-sweater",
+        {
+            "item": "goose-vp"
+        },
+        {
+            "item": "january-2025-keychain"
+        },
+        {
+            "item": "january-2025-obi",
+            "layer": "belt_elevated",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "unchained-belt",
+            "layer": "belt_elevated"
+        },
+        {
+            "item": "axel-braid"
+        },
+        {
+            "item": "magni-front-accessory-1"
+        },
+        {
+            "item": "magni-front-accessory-2",
+            "outfits": [
+                "magni"
+            ]
+        },
+        {
+            "item": "ruze-front-accessory-1",
+            "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "ruze-front-accessory-2",
+            "layer": "accessories-front_under-jacket",
+            "outfits": [
+                "ruze"
+            ]
+        },
+        {
+            "item": "deerttel-ears"
+        },
+        {
+            "item": "deerttel-nose",
+            "outfits": [
+                "deerttel"
+            ]
+        },
+        {
+            "item": "betsy-bow"
+        },
+        {
+            "item": "bettelmaid"
+        },
+        "braids"
     ]
 }

@@ -38,6 +38,7 @@
         },
         {
             "item": "betsy-socks",
+            "layer": "over-socks",
             "outfits": [
                 "betsy"
             ],

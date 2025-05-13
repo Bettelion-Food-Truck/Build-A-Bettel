@@ -23,16 +23,9 @@
             "item": "debut-circus-whip"
         },
         {
-            "item": "christmas-2024-chain",
-            "layer": "accessories-front_1_loweest-front",
-            "multilayer": [
-                {
-                    "item": "christmas-2024-chain-back",
-                    "layer": "accessories-front_1_loweest-back"
-                }
-            ],
+            "item": "gala-bow",
             "outfits": [
-                "2024-christmas"
+                "gala"
             ]
         },
         {

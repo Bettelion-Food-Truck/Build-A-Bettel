@@ -83,6 +83,36 @@
         {
             "name": "Socktoebathtub",
             "image": "socktoebathtub.png"
+        },
+        {
+            "name": "CloudySky270",
+            "image": "cloudysky270.png"
+        },
+        {
+            "name": "Liv",
+            "image": "liv.png",
+            "note": "Place next to jestertamer"
+        },
+        {
+            "name": "JesterTamer",
+            "image": "jestertamer.png",
+            "note": "Place next to Liv"
+        },
+        {
+            "name": "MagiCupcake",
+            "image": "magicupcake.png"
+        },
+        {
+            "name": "Magmite80085",
+            "image": "magmite80085.png"
+        },
+        {
+            "name": "Roselight",
+            "image": "roselight.jpg"
+        },
+        {
+            "name": "Styx",
+            "image": "styx.png"
         }
     ],
     "developers": [

@@ -27,6 +27,12 @@
             ]
         },
         {
+            "item": "gala-vest",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "deadworld-harness",
             "outfits": [
                 "dead-world"

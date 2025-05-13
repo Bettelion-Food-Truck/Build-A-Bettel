@@ -58,6 +58,12 @@
             "thumbnail": true
         },
         {
+            "item": "gala-hair",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "twobert-hair",
             "outfits": [
                 "twobert"

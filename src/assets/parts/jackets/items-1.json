@@ -42,6 +42,12 @@
             ]
         },
         {
+            "item": "gala-jacket",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "butler-jacket",
             "multilayer": [
                 {
@@ -220,6 +226,12 @@
             "item": "shinri-jacket",
             "outfits": [
                 "shinri"
+            ]
+        },
+        {
+            "item": "twobert-outfit",
+            "outfits": [
+                "twobert"
             ]
         },
         {

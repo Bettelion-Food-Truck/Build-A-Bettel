@@ -12,6 +12,12 @@
             ]
         },
         {
+            "item": "gala-hat",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "clown",
             "multilayer": [
                 {
@@ -111,6 +117,12 @@
             "item": "shinri-hat",
             "outfits": [
                 "shinri"
+            ]
+        },
+        {
+            "item": "twobert-hat",
+            "outfits": [
+                "twobert"
             ]
         },
         {

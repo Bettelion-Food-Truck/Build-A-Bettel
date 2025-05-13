@@ -14,9 +14,25 @@
             ]
         },
         {
+            "item": "gala-lapel-chain",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "christmas-2024-pins",
             "outfits": [
                 "2024-christmas"
+            ]
+        },
+        {
+            "item": "christmas-2024-chain",
+            "layer": "jewerly_1_loweest-front",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-chain-back",
+                    "layer": "jewerly_1_loweest-back"
+                }
             ]
         },
         {

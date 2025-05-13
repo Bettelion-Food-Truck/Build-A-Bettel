@@ -40,6 +40,16 @@
             }
         },
         {
+            "item": "gala-shoes",
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            },
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "clown-shoes",
             "outfits": [
                 "clown"
@@ -307,6 +317,16 @@
             }
         },
         {
+            "item": "twobert-shoes",
+            "outfits": [
+                "twobert"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
             "item": "vesper-boots",
             "outfits": [
                 "vesper"
@@ -348,7 +368,7 @@
             }
         },
         {
-            "item": "ghost-bride-boots",
+            "item": "ghost-bride-shoes",
             "outfits": [
                 "ghost-bride"
             ],

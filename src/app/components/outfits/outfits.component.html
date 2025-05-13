@@ -1,7 +1,11 @@
+<div style="display: none; text-align: center; min-height: initial;">
+    <p>Put on an entire outfit at once!</p>
+</div>
+
 <div class="outfit-list">
     <ng-container *ngFor="let outfit of outfitSignal(); let i = index">
         <button (click)="onChange(i)">
-            <img [src]="getOutfitImage(i)" [alt]="outfit.name ? outfit.name : outfit.uid" loading="lazy" />
+            <img [src]="getOutfitImage(i)" [alt]="outfit.name ? outfit.name : outfit.uid" />
 
             <span>{{ outfit.name ? outfit.name : outfit.uid }}</span>
         </button>

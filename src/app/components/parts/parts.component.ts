@@ -8,6 +8,8 @@ import { Part } from '@models/part.model';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 import { LogService } from '@services/log/log.service';
+import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
+import { Outfit } from '@models/outfit.model';
 
 @Component({
   selector: 'app-parts',
@@ -24,15 +26,18 @@ export class PartsComponent {
 
   partSignal: Signal<Part[]>;
   activePart: Signal<number>;
+  outfitSignal: Signal<Outfit[]>;
 
   constructor(
     private logger: LogService,
+    private outfitData: OutfitDataService,
     private assetData: AssetDataService,
     private modalData: ModelDataService
   ) {
 
     this.partSignal = this.assetData.getParts();
     this.activePart = this.modalData.getActivePart();
+    this.outfitSignal = this.outfitData.getOutfits();
   }
 
   onScroll(e: WheelEvent) {
@@ -58,14 +63,19 @@ export class PartsComponent {
     return `${ASSET_PATH}${part.folder}/${part.icon}`;
   }
 
-  getPartVisibility(index: number): boolean {
-    this.logger.debug("PartsComponent: getPartVisibility()", index);
+  getPartVisibility(partIndex: number): boolean {
+    this.logger.debug("PartsComponent: getPartVisibility()", partIndex);
 
-    if (this.partSignal().length < index) {
+    if (partIndex === -1) {
+      // Special case for Outfits
+      return this.outfitSignal().length === 0;
+    }
+
+    if (this.partSignal().length < partIndex) {
       return false;
     }
 
-    let part = this.partSignal()[index];
+    let part = this.partSignal()[partIndex];
 
     return part.hideFromPartsList || (
       part.items.length <= 1 &&

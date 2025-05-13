@@ -7,18 +7,13 @@
 
     <div class="control_wrapper">
       <button mat-mini-fab aria-label="Toggle movement control panel" title="Toggle movement control panel"
-        (click)="toggleMovement()" class="animated" [class.show]="potentialMovement()"
-        [class.active]="movementVisible && !outfitsVisible" [class.disabled]="!featuresEnabled()"
-        [disabled]="!featuresEnabled()">
+        (click)="toggleMovement()" class="btn animated" [class.show]="potentialMovement()"
+        [class.active]="!movementHidden()" [class.disabled]="!featuresEnabled()" [disabled]="!featuresEnabled()">
         <mat-icon aria-hidden="false" fontIcon="gamepad"></mat-icon>
       </button>
 
-      <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()" class="show">
-        <mat-icon fontSet="material-icons-outlined">info</mat-icon>
-      </button>
-
       <a #save_button mat-mini-fab aria-label="Save creation to device" title="Save creation to device"
-        class="show save" [href]="imageDataString()" download="gb.png">
+        class="btn show save" [href]="imageDataString()" download="gb.png">
         <mat-icon>download</mat-icon>
       </a>
 
@@ -27,33 +22,30 @@
   </div>
 
   <div class="interface_wrapper">
-    <div class="feature_buttons">
-      <!-- TODO Move save and credits elsewhere -->
-      <button mat-flat-button (click)="reset()" [class.hidden]="outfitsVisible">Reset</button>
-      <button mat-flat-button (click)="showOutfits()" [class.hidden]="outfitsVisible">Outfits</button>
+    <div class="system_buttons">
+      <button mat-flat-button title="Reset artwork" (click)="reset()">Reset</button>
 
-      <button mat-flat-button (click)="showComponents()" [class.hidden]="!outfitsVisible">Components</button>
+      <button mat-flat-button title="Generate random art prompt" (click)="generatePrompt()">Random Prompt</button>
 
-      <button mat-flat-button (click)="generatePrompt()">Random Prompt</button>
+      <button mat-mini-fab aria-label="Information" title="Information" (click)="showCredits()">
+        <mat-icon fontSet="material-icons-outlined">info</mat-icon>
+      </button>
     </div>
 
     <div class="features">
 
       <app-prompt />
 
-      <app-outfits [class.hidden]="!outfitsVisible" />
-
-      <div class="component_wrapper" [class.hidden]="outfitsVisible">
+      <div class="component_wrapper">
 
         <app-parts />
 
         <app-palette class="hidden" /><!-- TODO -->
 
-        <div class="control_panel_wrapper">
-          <div class="control_panel">
-            <app-items [class.hidden]="!itemsVisible" />
-            <app-movement [class.hidden]="!movementVisible" />
-          </div>
+        <div class="control_panel">
+          <app-outfits [class.hidden]="outfitsHidden()" />
+          <app-items [class.hidden]="itemsHidden()" />
+          <app-movement [class.hidden]="movementHidden()" />
         </div>
       </div>
     </div>

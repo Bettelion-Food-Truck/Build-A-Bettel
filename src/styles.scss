@@ -8,7 +8,7 @@
     box-sizing: border-box;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--random-purple-color, purple) lightgrey;
+    scrollbar-color: var(--favorite-accent-color, purple) transparent;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -61,11 +61,6 @@ body {
     }
 }
 
-ul li img {
-    width: 100%;
-    height: 100%;
-}
-
 /* Global classes with style overrides. Unfortunately they use !important because of specificity. */
 .hidden {
     display: none !important;
@@ -88,36 +83,28 @@ ul li img {
     /* the color/image filepath of the background of the image display area */
     --image-background-color: hsla(0, 0%, 93.3%, 0.5);
 
-    /* the color/image filepath of the random button */
-    --random-button-color: #ffbd15;
-    --random-button-png: "none";
+    /* Control interface background */
+    --control-panel-background-color: #cccccc;
+    --control-panel-background: linear-gradient(45deg, #bbbbbb 0%, #dddddd 35%, #dddddd 65%, #bbbbbb 100%);
 
-    /* the color filepath of the parts menu background*/
-    --parts-menu-color: #eeeeee;
+    /* Parts menu button colors */
     --parts-menu-button-color: #eeeeee;
-    --parts-menu-button-hover-color: #dddddd;
-
-    /* the color/image filepath of the items menu background*/
-    --control-panel-color: #cccccc;
-    --control-panel-png: "none";
+    --parts-menu-button-hover-color: #e6e6fa;
 
     /* the color of the item buttons */
     --item-button-color: #ffffff;
-    --item-button-hover-color: #eeeeee;
-
-    /* the color/image filepath of the palette toggle button */
-    --palette-toggle-color: #ffffff;
-    --palette-toggle-img: url("../public/icons/icon-colors.png");
+    --item-button-hover-color: #e6e6fa;
 
     /* active button vars */
-    --active-button-color: #00aa00;
     --active-button-text-color: #ffffff;
+    --active-button-background-color: #00aa00;
+    --active-button-background: radial-gradient(circle, #00aa00 45%, #00ee00 100%);
 
     /* save button vars */
     --save-button-color: #006400;
 
-    /* random purple color */
-    --random-purple-color: #660073;
+    /* Favorite color to use as an accent */
+    --favorite-accent-color: #660073;
 
     /* control sizes */
     --ui-control-size: 50px;
@@ -135,7 +122,7 @@ ul li img {
 
     @include mat.progress-spinner-overrides(
         (
-            active-indicator-color: var(--random-purple-color)
+            active-indicator-color: var(--favorite-accent-color)
         )
     );
 }

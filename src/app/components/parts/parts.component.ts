@@ -58,14 +58,14 @@ export class PartsComponent {
     return `${ASSET_PATH}${part.folder}/${part.icon}`;
   }
 
-  getPartVisibility(index: number): boolean {
-    this.logger.debug("PartsComponent: getPartVisibility()", index);
+  getPartVisibility(partIndex: number): boolean {
+    this.logger.debug("PartsComponent: getPartVisibility()", partIndex);
 
-    if (this.partSignal().length < index) {
+    if (this.partSignal().length < partIndex) {
       return false;
     }
 
-    let part = this.partSignal()[index];
+    let part = this.partSignal()[partIndex];
 
     return part.hideFromPartsList || (
       part.items.length <= 1 &&

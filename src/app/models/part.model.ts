@@ -7,6 +7,7 @@ export interface Part {
     folder: string;
 
     icon: string;
+    alttext: string;
 
     noneAllowed: boolean;
     noneThumbnail: string | null;

@@ -28,7 +28,6 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
-import { Item } from '@models/item.model';
 
 @Component({
   selector: 'app-root',

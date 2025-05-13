@@ -81,6 +81,16 @@
             }
         },
         {
+            "item": "ghost-bride-socks",
+            "outfits": [
+                "ghost-bride"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
             "item": "fishnets-flat",
             "requires": {
                 "part": "feet",

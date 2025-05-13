@@ -118,7 +118,7 @@
             "multilayer": [
                 {
                     "item": "when-youre-evil-cape-back",
-                    "layer": "jackets_far_back_1"
+                    "layer": "jackets-far-back_1"
                 }
             ],
             "outfits": [
@@ -160,7 +160,7 @@
             "multilayer": [
                 {
                     "item": "goldbullet-cape-back",
-                    "layer": "jackets_far_back_1"
+                    "layer": "jackets-far-back_1"
                 }
             ]
         },
@@ -253,7 +253,7 @@
             "multilayer": [
                 {
                     "item": "bettelzebub-cape-back",
-                    "layer": "jackets_far_back_1"
+                    "layer": "jackets-far-back_1"
                 }
             ],
             "outfits": []

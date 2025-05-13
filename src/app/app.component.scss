@@ -36,6 +36,7 @@
     height: 100%;
 }
 
+/* Nested in .canvas_wrapper */
 .control_wrapper {
     position: absolute;
 
@@ -51,9 +52,8 @@
 
     place-items: center;
 
-    a,
-    button {
-        background-color: var(--random-purple-color, purple);
+    .btn {
+        background-color: var(--favorite-accent-color, purple);
         color: #ffffff;
 
         border: 1px solid black;
@@ -87,7 +87,7 @@
         &.active {
             color: var(--active-button-text-color, #000000);
             background: var(--active-button-background-color, #00ff00);
-            background: var(--active-button-background-image);
+            background: var(--active-button-background);
         }
 
         &.disabled {
@@ -118,36 +118,12 @@
     min-width: 275px;
     max-width: 375px;
 
-    li {
-        border: 3px solid transparent;
-        border-radius: 3px;
-
-        &.selected {
-            border-color: var(--select-color, #ff0000);
-        }
-    }
+    background: var(--control-panel-background-color, #eeeeee);
+    background: var(--control-panel-background);
 }
 
-.control_panel_wrapper {
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-    flex-grow: 1;
-}
-
-.control_panel {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-height: 100px;
-    background-color: var(--control-panel-color, #cccccc);
-    background-image: var(--control-panel-png, "none");
-    background-repeat: no-repeat;
-}
-
-.feature_buttons {
-    margin: 5px 0;
+/* Nested in .interface_wrapper */
+.system_buttons {
     flex-wrap: wrap;
 
     display: flex;
@@ -156,36 +132,34 @@
 
     width: 100%;
     max-width: 350px;
-    margin: auto;
-    margin-bottom: 3px;
+    margin: 3px auto;
 
-    button,
-    a {
+    button {
         cursor: pointer;
 
-        background-color: var(--random-purple-color, purple);
+        background-color: var(--favorite-accent-color, purple);
         color: #ffffff;
 
         border: 1px solid black;
         border-radius: 3px;
-
-        &:not(.mdc-fab) {
-            height: 40px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        &.save {
-            background-color: var(--save-button-color, green);
-        }
     }
 }
 
+/* Nested in .interface_wrapper */
 .features,
+/* Nested in .interface_wrapper > .features */
 .component_wrapper {
     display: flex;
     flex: 1;
     flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Nested in .interface_wrapper > .features > .component_wrapper */
+.control_panel {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
     flex-grow: 1;
 }
 

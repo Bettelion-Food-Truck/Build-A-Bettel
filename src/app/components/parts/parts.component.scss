@@ -1,7 +1,3 @@
-:host {
-    background-color: var(--parts-menu-color, #eeeeee);
-}
-
 .parts_menu {
     overflow-x: auto;
     overflow-y: hidden;
@@ -9,10 +5,13 @@
     height: calc(var(--part-control-size, 60px) * 1.15);
     margin: 0;
     white-space: nowrap;
+    align-content: center;
 
     button {
         width: var(--part-control-size, 60px);
         height: var(--part-control-size, 60px);
+
+        margin: 0 1px;
 
         display: inline-flex;
         justify-content: center;
@@ -31,6 +30,13 @@
 
         &:hover:not(.selected) {
             background-color: var(--parts-menu-button-hover-color, #dddddd);
+        }
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+        &:last-of-type {
+            margin-right: 0;
         }
     }
 }

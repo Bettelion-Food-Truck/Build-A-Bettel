@@ -116,6 +116,12 @@
             ]
         },
         {
+            "item": "cowbell",
+            "outfits": [
+                "cowttel"
+            ]
+        },
+        {
             "item": "ghost-bride-collar",
             "outfits": [
                 "ghost-bride"
@@ -137,12 +143,6 @@
             "item": "neck-towel",
             "outfits": [
                 "spa"
-            ]
-        },
-        {
-            "item": "cowbell",
-            "outfits": [
-                "cow"
             ]
         },
         "phantom-choker"

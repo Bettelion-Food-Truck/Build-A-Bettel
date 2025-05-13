@@ -42,15 +42,15 @@
             ]
         },
         {
-            "item": "pumpkin-king-cape",
+            "item": "cow-tail",
             "outfits": [
-                "pumpkin-king"
+                "cowttel"
             ]
         },
         {
-            "item": "cow-tail",
+            "item": "pumpkin-king-cape",
             "outfits": [
-                "cow"
+                "pumpkin-king"
             ]
         },
         "angel-wings",

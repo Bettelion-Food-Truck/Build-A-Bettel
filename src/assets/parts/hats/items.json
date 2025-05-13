@@ -150,6 +150,12 @@
             ]
         },
         {
+            "item": "cow-ears",
+            "outfits": [
+                "cowttel"
+            ]
+        },
+        {
             "item": "deerttel-antlers",
             "outfits": [
                 "deerttel"
@@ -212,12 +218,6 @@
             }
         },
         "cat-ears",
-        {
-            "item": "cow-ears",
-            "outfits": [
-                "cow"
-            ]
-        },
         "demon-horns",
         "dog-ears",
         "glorp-headband",

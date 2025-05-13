@@ -6,43 +6,31 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-ribbon",
-            "outfits": [
-                "showman"
-            ]
+            "item": "showman-ribbon"
         },
-        "angel-wings",
-        "demon-tail",
         {
-            "item": "goose-vp",
-            "outfits": [
-                "goose-vp"
-            ]
+            "item": "goose-vp"
+        },
+        {
+            "item": "when-youre-evil-hip-scarf"
+        },
+        {
+            "item": "axel-tail"
+        },
+        {
+            "item": "flayon-tail"
         },
         {
             "item": "bettelzebub-wings"
         },
         {
-            "item": "when-youre-evil-hip-scarf",
-            "outfits": [
-                "when-youre-evil"
-            ]
+            "item": "pumpkin-king-cape"
         },
         {
-            "item": "pumpkin-king-cape",
-            "outfits": [
-                "pumpkin-king"
-            ]
+            "item": "cow-tail"
         },
-        "pole",
-        "axel-tail",
-        {
-            "item": "cow-tail",
-            "outfits": []
-        },
-        {
-            "item": "flayon-tail",
-            "outfits": []
-        }
+        "angel-wings",
+        "demon-tail",
+        "pole"
     ]
 }

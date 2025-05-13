@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, Injector, isDevMode, Signal } from '@angular/core';
+import { Component, computed, effect, inject, Injector, isDevMode, signal, Signal, WritableSignal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
@@ -28,6 +28,12 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
+
+enum AppComponentState {
+  Movement,
+  Items,
+  Outfits
+}
 
 @Component({
   selector: 'app-root',
@@ -93,9 +99,39 @@ export class AppComponent {
     return item >= 0;
   });
 
-  outfitsVisible = false;
-  itemsVisible = true;
-  movementVisible = false;
+  private componentState: WritableSignal<AppComponentState> = signal(AppComponentState.Outfits);
+
+  outfitsHidden: Signal<boolean> = computed(() => {
+
+    if (this.activePart() && this.activePart() >= 0) {
+      // activePart is set and not -1 (which is outfits)
+      return true;
+    }
+
+    return this.componentState() !== AppComponentState.Outfits;
+  });
+
+  itemsHidden: Signal<boolean> = computed(() => {
+
+    if (this.isInvalidActivePart()) {
+      return true;
+    }
+
+    return this.componentState() !== AppComponentState.Items;
+  });
+
+  movementHidden: Signal<boolean> = computed(() => {
+
+    if (this.isInvalidActivePart()) {
+      return true;
+    }
+
+    return this.componentState() !== AppComponentState.Movement;
+  });
+
+  // TODO update visibility logic of outfits, items, and movement
+  // TODO do something to show outfits if selected is -1
+  // TODO update logic to show outfits on start if non-zero count of them
 
   constructor(
     private assetData: AssetDataService,
@@ -123,7 +159,16 @@ export class AppComponent {
     effect(() => {
       this.logger.debug(`AppComponent: partChangeEffect() ${this.activePart()}`);
 
-      this.showItems();
+      if (this.activePart() === -1) {
+
+        this.showOutfits();
+      } else if (this.activePart() >= 0) {
+
+        this.showItems();
+      } else {
+
+        this.logger.warn(`AppComponent: partChangeEffect() activePart state unknown.`, this.activePart());
+      }
     });
   }
 
@@ -154,7 +199,7 @@ export class AppComponent {
             continue;
           }
 
-          this.modalData.setActivePart(i);
+          this.modalData.setActivePart(-1);
           break;
         }
 
@@ -173,21 +218,23 @@ export class AppComponent {
       return;
     }
 
-    if (this.movementVisible) {
-      this.showItems();
-    } else {
+    if (this.movementHidden()) {
       this.showMovement();
+    } else {
+      this.showItems();
     }
   }
 
+  private showOutfits() {
+    this.componentState.set(AppComponentState.Outfits);
+  }
+
   private showItems() {
-    this.movementVisible = false;
-    this.itemsVisible = true;
+    this.componentState.set(AppComponentState.Items);
   }
 
   private showMovement() {
-    this.movementVisible = true;
-    this.itemsVisible = false;
+    this.componentState.set(AppComponentState.Movement);
   }
 
   reset() {
@@ -210,6 +257,9 @@ export class AppComponent {
 
   isInvalidActivePart() {
 
-    return (!this.partSignal() || !this.activePart() || this.activePart() >= 0 || this.partSignal().length < this.activePart())
+    return !this.partSignal() ||
+      !this.activePart() ||
+      this.activePart() < 0 ||
+      this.partSignal().length < this.activePart()
   }
 }

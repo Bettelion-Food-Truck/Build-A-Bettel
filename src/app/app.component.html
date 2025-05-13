@@ -8,7 +8,7 @@
     <div class="control_wrapper">
       <button mat-mini-fab aria-label="Toggle movement control panel" title="Toggle movement control panel"
         (click)="toggleMovement()" class="animated" [class.show]="potentialMovement()"
-        [class.active]="movementVisible && !outfitsVisible" [class.disabled]="!featuresEnabled()"
+        [class.active]="!movementHidden && outfitsHidden" [class.disabled]="!featuresEnabled()"
         [disabled]="!featuresEnabled()">
         <mat-icon aria-hidden="false" fontIcon="gamepad"></mat-icon>
       </button>
@@ -45,9 +45,9 @@
 
         <div class="control_panel_wrapper">
           <div class="control_panel">
-            <app-outfits [class.hidden]="!outfitsVisible" />
-            <app-items [class.hidden]="!itemsVisible" />
-            <app-movement [class.hidden]="!movementVisible" />
+            <app-outfits [class.hidden]="outfitsHidden()" />
+            <app-items [class.hidden]="itemsHidden()" />
+            <app-movement [class.hidden]="movementHidden()" />
           </div>
         </div>
       </div>

@@ -264,7 +264,7 @@
         },
         {
             "item": "tank-treads",
-            "layer": "pants_elevated",
+            "layer": "tank-treads",
             "multilayer": [
                 {
                     "item": "tank-treads-back",

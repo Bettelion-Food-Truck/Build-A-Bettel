@@ -19,7 +19,16 @@
         },
         {
             "item": "inkya-impulse-belt",
-            "layer": "belt_elevated",
+            "multilayer": [
+                {
+                    "item": "inkya-impulse-skirt-front",
+                    "layer": "accessories-front_under-jacket"
+                },
+                {
+                    "item": "inkya-impulse-skirt-back",
+                    "layer": "pants_back"
+                }
+            ],
             "outfits": [
                 "inkya-impulse"
             ]

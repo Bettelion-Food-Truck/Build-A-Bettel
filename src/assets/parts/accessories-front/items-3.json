@@ -29,13 +29,6 @@
             "item": "ruze-front-accessory-2",
             "layer": "accessories-front_3_under-jacket"
         },
-        {
-            "item": "inkya-impulse-skirt-front",
-            "outfits": [
-                "inkya-impulse"
-            ],
-            "layer": "accessories-front_3_under-jacket"
-        },
         "betsy-bow",
         {
             "item": "braids"

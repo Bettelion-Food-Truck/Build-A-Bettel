@@ -3,148 +3,142 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "showman-cravat",
             "outfits": [
                 "showman"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "january-2025-neck-ribbon",
             "outfits": [
                 "january-2025"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "debut-underlayer-choker",
             "outfits": [
                 "debut-underlayer",
                 "2024-expo"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit",
                 "battel"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "bettelmaid",
             "outfits": [
                 "bettelmaid"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "unchained-scarf",
             "outfits": [
                 "unchained"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "goose-vp",
             "outfits": [
                 "goose-vp"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "jester",
             "outfits": [
                 "jester"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "neck-towel",
             "outfits": [
                 "spa"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "clown-ruffle",
             "outfits": [
                 "clown"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "deadworld-cravat",
             "outfits": [
                 "dead-world"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "bettelzebub-necklace",
             "outfits": [
                 "bettelzebub"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "betsy-choker",
             "outfits": [
                 "betsy"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "octavio-tie",
             "outfits": [
                 "octavio"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "when-youre-evil-scarf",
             "outfits": [
                 "when-youre-evil"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "ghost-bride-collar",
             "outfits": [
                 "ghost-bride"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "betsy-grayson-collar",
             "outfits": [
                 "betsy-grayson"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "axel-tie",
             "outfits": [
                 "axel"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "2025-expo-choker",
             "outfits": [
                 "2025-expo"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "cowbell",
             "outfits": [
                 "cow"
-            ],
-            "thumbnail": true
-        }
+            ]
+        },
+        {
+            "item": "christmas-2024-scarf",
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "flayon-choker",
+            "outfits": [
+                "flayon"
+            ]
+        },
+        "phantom-choker"
     ]
 }

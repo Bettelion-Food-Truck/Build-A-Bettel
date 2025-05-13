@@ -3,105 +3,85 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "showman-heart-brooch",
             "outfits": [
                 "showman"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "punk-earrings",
             "outfits": [
                 "punk"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "punk-necklace",
             "outfits": [
                 "punk"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit",
                 "battel"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "magni-jewelry-1",
             "outfits": [
                 "magni"
-            ],
-            "thumbnail": true
+            ]
         },
         {
-            "item": "magni-jewelry-2",
-            "thumbnail": true
+            "item": "magni-jewelry-2"
         },
         {
-            "item": "memento",
-            "thumbnail": true
+            "item": "memento"
         },
         {
             "item": "deadworld-jewelry",
             "outfits": [
                 "dead-world"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "vesper-jewelry",
             "outfits": [
                 "vesper"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "betsy-earrings",
             "outfits": [
                 "betsy"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "pumpkin-king-necklace",
             "outfits": [
                 "pumpkin-king"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "goldbullet-necklace",
             "outfits": [
                 "goldbullet"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "shinri-earrings",
             "outfits": [
                 "shinri"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "2024-expo-bracelet",
             "outfits": [
                 "2024-expo"
-            ],
-            "thumbnail": true
-        },
-        {
-            "item": "friendship-tattoo",
-            "layer": "body_tattoo",
-            "outfits": [
-                "artist"
             ]
         },
         {
@@ -110,9 +90,18 @@
                 "jurard"
             ]
         },
+        "bettelion-earrings",
         {
-            "item": "jurard-rings",
-            "outfits": []
+            "item": "christmas-2024-pins",
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "flayon-earring",
+            "outfits": [
+                "flayon"
+            ]
         }
     ]
 }

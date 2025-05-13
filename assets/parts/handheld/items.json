@@ -3,6 +3,7 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "pirate-handheld",
@@ -51,6 +52,19 @@
             "item": "betsy-grayson-cane",
             "outfits": [
                 "betsy-grayson"
+            ]
+        },
+        {
+            "item": "christmas-2024-sack",
+            "layer": "handheld_foward",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-sack-back",
+                    "layer": "handheld_far-back"
+                }
+            ],
+            "outfits": [
+                "2024-christmas"
             ]
         }
     ]

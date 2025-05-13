@@ -3,48 +3,62 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "showman-mask",
             "outfits": [
                 "showman"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "battel-mask",
             "outfits": [
                 "battel"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "pirate-eyepatch",
             "outfits": [
                 "pirate"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "spa-mask",
             "outfits": [
                 "spa"
-            ],
-            "thumbnail": true
+            ]
         },
         {
             "item": "betsy-grayson-mask",
             "outfits": [
                 "betsy-grayson"
-            ],
-            "thumbnail": true
-        }
+            ]
+        },
+        {
+            "item": "blindfold-lace",
+            "multilayer": [
+                {
+                    "item": "blindfold-lace-back",
+                    "layer": "masks_back"
+                }
+            ]
+        },
+        {
+            "item": "blindfold-solid",
+            "multilayer": [
+                {
+                    "item": "blindfold-solid-back",
+                    "layer": "masks_back"
+                }
+            ]
+        },
+        "sleepmask"
     ]
 }

@@ -3,75 +3,59 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-heart-brooch",
-            "thumbnail": true
+            "item": "showman-heart-brooch"
         },
         {
-            "item": "punk-earrings",
-            "thumbnail": true
+            "item": "punk-earrings"
         },
         {
-            "item": "punk-necklace",
-            "thumbnail": true
+            "item": "punk-necklace"
         },
         {
-            "item": "second-outfit",
-            "thumbnail": true
+            "item": "second-outfit"
         },
         {
-            "item": "magni-jewelry-1",
-            "thumbnail": true
+            "item": "magni-jewelry-1"
         },
         {
             "item": "magni-jewelry-2",
             "outfits": [
                 "magni"
-            ],
-            "thumbnail": true
+            ]
         },
         {
-            "item": "memento",
-            "thumbnail": true
+            "item": "memento"
         },
         {
-            "item": "deadworld-jewelry",
-            "thumbnail": true
+            "item": "deadworld-jewelry"
         },
         {
-            "item": "betsy-earrings",
-            "thumbnail": true
+            "item": "vesper-jewelry"
         },
         {
-            "item": "pumpkin-king-necklace",
-            "thumbnail": true
+            "item": "betsy-earrings"
         },
         {
-            "item": "goldbullet-necklace",
-            "thumbnail": true
+            "item": "pumpkin-king-necklace"
         },
         {
-            "item": "shinri-earrings",
-            "thumbnail": true
+            "item": "goldbullet-necklace"
         },
         {
-            "item": "2024-expo-bracelet",
-            "thumbnail": true
+            "item": "shinri-earrings"
         },
         {
-            "item": "friendship-tattoo",
-            "layer": "body_tattoo"
+            "item": "2024-expo-bracelet"
         },
         {
             "item": "jurard-earrings",
             "outfits": []
         },
-        {
-            "item": "jurard-rings",
-            "outfits": [
-                "jurard"
-            ]
-        }
+        "bettelion-earrings",
+        "christmas-2024-pins",
+        "flayon-earring"
     ]
 }

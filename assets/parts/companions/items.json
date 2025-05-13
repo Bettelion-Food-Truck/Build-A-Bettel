@@ -12,11 +12,13 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         "feed-me-phantom",
         "sock-puppet-ears",
         "jerry",
         "left-shoulder-phantom",
+        "right-shoulder-phantom",
         "phantompy",
         "skeleton",
         "skrunkly-phantom",

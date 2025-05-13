@@ -8,7 +8,10 @@
         "january-2025-keychain",
         {
             "item": "january-2025-obi",
-            "layer": "belt_elevated"
+            "layer": "belt_elevated",
+            "outfits": [
+                "january-2025"
+            ]
         },
         {
             "item": "unchained-belt",

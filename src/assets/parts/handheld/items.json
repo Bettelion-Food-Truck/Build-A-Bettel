@@ -43,6 +43,12 @@
             ]
         },
         {
+            "item": "balloons",
+            "outfits": [
+                "punk"
+            ]
+        },
+        {
             "item": "water-bottle",
             "outfits": [
                 "spa"
@@ -65,7 +71,6 @@
                     "layer": "handheld_back"
                 }
             ]
-        },
-        "balloons"
+        }
     ]
 }

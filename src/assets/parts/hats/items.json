@@ -168,7 +168,7 @@
             ],
             "requires": {
                 "part": "hair",
-                "item": "none"
+                "item": "bald"
             }
         },
         {
@@ -208,7 +208,7 @@
             ],
             "requires": {
                 "part": "hair",
-                "item": "none"
+                "item": "bald"
             }
         },
         "cat-ears",

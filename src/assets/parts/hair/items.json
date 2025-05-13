@@ -10,7 +10,39 @@
             "outfits": [
                 "debut",
                 "debut-underlayer",
-                "artist"
+                "artist",
+                "daki",
+                "dead-world",
+                "2024-expo",
+                "2025-expo",
+                "flex",
+                "goose-vp",
+                "inkya-impulse",
+                "january-2025",
+                "last-game",
+                "showman",
+                "sims",
+                "unchained",
+                "when-youre-evil",
+                "woven-fates",
+                "altare",
+                "axel",
+                "flayon",
+                "goldbullet",
+                "hakka",
+                "jurard",
+                "magni",
+                "octavio",
+                "ruze",
+                "shinri",
+                "vesper",
+                "bettelzebub",
+                "deerttel",
+                "pirate",
+                "punk",
+                "bettelmaid",
+                "clown",
+                "2024-christmas"
             ],
             "thumbnail": true
         },
@@ -41,7 +73,9 @@
         },
         {
             "item": "twobert-hair",
-            "outfits": [],
+            "outfits": [
+                "twobert"
+            ],
             "thumbnail": true
         }
     ]

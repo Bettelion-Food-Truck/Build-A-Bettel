@@ -4,7 +4,17 @@ Bettel Hackrew is a dress up game focused on Gavis Bettel similar to [picrew](ht
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10. This game also has an image color generator which requires Python 3 installed (currently).
 
-## Development server
+## Development
+
+Start off by [installing Angular](https://angular.dev/installation). This is the framework that the game runs on. It helps to keep the files separate and clean to understand while compressing them into a small file load for the end user upon deployment.
+
+Next clone the repository to your local machine. Once it is down, run:
+
+```bash
+npm install
+```
+
+This will install all the libraries and get it functional.
 
 To start a local development server, run:
 
@@ -13,20 +23,6 @@ npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Deploying
 

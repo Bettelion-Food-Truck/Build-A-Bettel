@@ -17,12 +17,6 @@
             "hideFromPartsList": true
         },
         {
-            "name": "Hair",
-            "folder": "hair",
-            "items": "items.json",
-            "icon": "icon.png"
-        },
-        {
             "name": "Undies",
             "folder": "undies",
             "items": "items.json",
@@ -47,6 +41,12 @@
             "icon": "icon.png"
         },
         {
+            "name": "Belt",
+            "folder": "belts",
+            "items": "items.json",
+            "icon": "icon.png"
+        },
+        {
             "name": "Jacket",
             "folder": "jackets",
             "items": "items-1.json",
@@ -58,12 +58,6 @@
             "layer": "jackets_2",
             "items": "items-2.json",
             "icon": "icon-2.png"
-        },
-        {
-            "name": "Belt",
-            "folder": "belts",
-            "items": "items.json",
-            "icon": "icon.png"
         },
         {
             "name": "Socks",
@@ -80,6 +74,12 @@
         {
             "name": "Neck",
             "folder": "neck",
+            "items": "items.json",
+            "icon": "icon.png"
+        },
+        {
+            "name": "Hair",
+            "folder": "hair",
             "items": "items.json",
             "icon": "icon.png"
         },

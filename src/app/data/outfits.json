@@ -133,6 +133,10 @@
             "name": "Vesper"
         },
         {
+            "uid": "blank",
+            "name": "Blank Slate"
+        },
+        {
             "uid": "battel",
             "name": "Battel"
         },

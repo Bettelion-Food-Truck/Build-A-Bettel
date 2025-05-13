@@ -12,7 +12,8 @@
             "requires": {
                 "part": "feet",
                 "item": "none"
-            }
+            },
+            "thumbnail": false
         },
         {
             "item": "showman-shoes",

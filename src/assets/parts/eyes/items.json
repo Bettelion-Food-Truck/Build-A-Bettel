@@ -3,34 +3,15 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": false,
+    "assumeThumbnails": true,
     "items": [
-        {
-            "item": "default",
-            "thumbnail": true
-        },
-        {
-            "item": "wink-right",
-            "thumbnail": true
-        },
-        {
-            "item": "wink-left",
-            "thumbnail": true
-        },
-        {
-            "item": "surprise",
-            "thumbnail": true
-        },
-        {
-            "item": "sad",
-            "thumbnail": true
-        },
-        {
-            "item": "closed",
-            "thumbnail": true
-        },
-        {
-            "item": "angry",
-            "thumbnail": true
-        }
+        "default",
+        "wink-right",
+        "wink-left",
+        "surprise",
+        "sad",
+        "closed",
+        "angry",
+        "black-sclera"
     ]
 }

@@ -25,6 +25,12 @@
             ]
         },
         {
+            "item": "twobert-handheld",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "betsy-cellphone",
             "outfits": [
                 "betsy"

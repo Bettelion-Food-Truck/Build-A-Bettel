@@ -12,6 +12,12 @@
             ]
         },
         {
+            "item": "gala-hat",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "clown",
             "multilayer": [
                 {
@@ -114,6 +120,12 @@
             ]
         },
         {
+            "item": "twobert-hat",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "battel-hat",
             "outfits": [
                 "battel"
@@ -156,7 +168,7 @@
             ],
             "requires": {
                 "part": "hair",
-                "item": "none"
+                "item": "bald"
             }
         },
         {
@@ -196,7 +208,7 @@
             ],
             "requires": {
                 "part": "hair",
-                "item": "none"
+                "item": "bald"
             }
         },
         "cat-ears",

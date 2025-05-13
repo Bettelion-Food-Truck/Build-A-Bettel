@@ -22,6 +22,12 @@
             ]
         },
         {
+            "item": "gala-pants",
+            "outfits": [
+                "gala"
+            ]
+        },
+        {
             "item": "clown-shorts",
             "outfits": [
                 "clown"

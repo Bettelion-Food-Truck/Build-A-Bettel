@@ -5,17 +5,30 @@
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
+        "bettelion-earrings",
+        {
+            "item": "second-outfit"
+        },
+        {
+            "item": "christmas-2024-pins"
+        },
+        {
+            "item": "deadworld-jewelry"
+        },
+        {
+            "item": "2024-expo-bracelet"
+        },
         {
             "item": "showman-heart-brooch"
         },
         {
-            "item": "punk-earrings"
+            "item": "flayon-earring"
         },
         {
-            "item": "punk-necklace"
+            "item": "goldbullet-necklace"
         },
         {
-            "item": "second-outfit"
+            "item": "jurard-earrings"
         },
         {
             "item": "magni-jewelry-1"
@@ -27,10 +40,7 @@
             ]
         },
         {
-            "item": "memento"
-        },
-        {
-            "item": "deadworld-jewelry"
+            "item": "shinri-earrings"
         },
         {
             "item": "vesper-jewelry"
@@ -42,20 +52,14 @@
             "item": "pumpkin-king-necklace"
         },
         {
-            "item": "goldbullet-necklace"
+            "item": "punk-earrings"
         },
         {
-            "item": "shinri-earrings"
+            "item": "punk-necklace",
+            "outfits": [
+                "punk"
+            ]
         },
-        {
-            "item": "2024-expo-bracelet"
-        },
-        {
-            "item": "jurard-earrings",
-            "outfits": []
-        },
-        "bettelion-earrings",
-        "christmas-2024-pins",
-        "flayon-earring"
+        "memento"
     ]
 }

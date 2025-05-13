@@ -5,25 +5,25 @@
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
-        "pink-monocle",
-        {
-            "item": "cucumbers",
-            "outfits": [
-                "spa"
-            ]
-        },
-        "snail-eyes",
-        "silly-glasses",
-        "raycon",
-        "pink-glasses",
         {
             "item": "gavin-bettol-glasses",
             "outfits": [
                 "artist"
             ]
         },
+        {
+            "item": "cucumbers",
+            "outfits": [
+                "spa"
+            ]
+        },
         "aviator-glasses",
         "glasses",
+        "pink-glasses",
+        "pink-monocle",
+        "raycon",
+        "silly-glasses",
+        "snail-eyes",
         "sunglasses"
     ]
 }

@@ -5,6 +5,7 @@
         {
             "name": "Body",
             "folder": "body",
+            "layer": "body",
             "items": "items.json",
             "icon": "icon.png",
             "hideFromPartsList": true
@@ -12,43 +13,50 @@
         {
             "name": "Feet",
             "folder": "feet",
+            "layer": "feet",
             "items": "items.json",
             "icon": "icon.png",
             "hideFromPartsList": true
         },
         {
-            "name": "Hair",
-            "folder": "hair",
-            "items": "items.json",
-            "icon": "icon.png"
-        },
-        {
             "name": "Undies",
             "folder": "undies",
+            "layer": "undies",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Pants",
             "folder": "pants",
+            "layer": "pants",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Shirt",
             "folder": "shirts",
+            "layer": "shirts",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Vest",
             "folder": "vests",
+            "layer": "vests",
+            "items": "items.json",
+            "icon": "icon.png"
+        },
+        {
+            "name": "Belt",
+            "folder": "belts",
+            "layer": "belts",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Jacket",
             "folder": "jackets",
+            "layer": "jackets_1",
             "items": "items-1.json",
             "icon": "icon-1.png"
         },
@@ -60,68 +68,79 @@
             "icon": "icon-2.png"
         },
         {
-            "name": "Belt",
-            "folder": "belts",
+            "name": "Neck",
+            "folder": "neck",
+            "layer": "neck",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Socks",
             "folder": "socks",
+            "layer": "socks",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Shoes",
             "folder": "shoes",
+            "layer": "shoes",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
-            "name": "Neck",
-            "folder": "neck",
+            "name": "Hair",
+            "folder": "hair",
+            "layer": "hair",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Hat",
             "folder": "hats",
+            "layer": "hats",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Eyes",
             "folder": "eyes",
+            "layer": "eyes",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Mouth",
             "folder": "mouth",
+            "layer": "mouth",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Facial Hair",
             "folder": "facial-hair",
+            "layer": "facial-hair",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Makeup",
             "folder": "makeup",
+            "layer": "makeup",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Mask",
             "folder": "mask",
+            "layer": "mask",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Glasses",
             "folder": "glasses",
+            "layer": "glasses",
             "items": "items.json",
             "icon": "icon.png"
         },
@@ -142,18 +161,21 @@
         {
             "name": "Hands",
             "folder": "hands",
+            "layer": "hands",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Gloves",
             "folder": "gloves",
+            "layer": "gloves",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Handheld Item",
             "folder": "handheld",
+            "layer": "handheld",
             "items": "items.json",
             "icon": "icon.png"
         },
@@ -193,12 +215,6 @@
             "icon": "icon-2.png"
         },
         {
-            "name": "Background",
-            "folder": "backgrounds",
-            "items": "items.json",
-            "icon": "icon.png"
-        },
-        {
             "name": "Companion 1",
             "folder": "companions",
             "layer": "companions_1",
@@ -213,20 +229,30 @@
             "icon": "icon-2.png"
         },
         {
-            "name": "Frame",
-            "folder": "frames",
+            "name": "Background",
+            "folder": "backgrounds",
+            "layer": "backgrounds",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Filter",
             "folder": "filters",
+            "layer": "filters",
+            "items": "items.json",
+            "icon": "icon.png"
+        },
+        {
+            "name": "Frame",
+            "folder": "frames",
+            "layer": "frames",
             "items": "items.json",
             "icon": "icon.png"
         },
         {
             "name": "Hashtag",
             "folder": "hashtags",
+            "layer": "hashtags",
             "items": "items.json",
             "icon": "icon.png"
         }

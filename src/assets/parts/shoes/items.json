@@ -16,61 +16,6 @@
             "thumbnail": false
         },
         {
-            "item": "showman-shoes",
-            "outfits": [
-                "showman"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "january-2025-shoes-heels",
-            "outfits": [
-                "january-2025"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "punk-boots",
-            "layer": "shoes-covered",
-            "outfits": [
-                "punk"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "tabi-flats",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "tabi-heels",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "flex",
-            "outfits": [
-                "flex"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
             "item": "debut-underlayer",
             "outfits": [
                 "debut-underlayer",
@@ -88,6 +33,334 @@
             "outfits": [
                 "second-outfit",
                 "battel"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "clown-shoes",
+            "outfits": [
+                "clown"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "butler-shoes",
+            "layer": "shoes-covered-full",
+            "outfits": [
+                "butler"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "christmas-2024-boot",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-boot-back",
+                    "layer": "shoes_back"
+                }
+            ],
+            "outfits": [
+                "2024-christmas"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "deadworld-shoes",
+            "outfits": [
+                "dead-world"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "2024-expo-shoes",
+            "outfits": [
+                "2024-expo"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "2025-expo-shoes",
+            "outfits": [
+                "2025-expo"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "flex",
+            "outfits": [
+                "flex"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "gavin-bettol-flats",
+            "outfits": [
+                "artist"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "inkya-impulse-shoes",
+            "outfits": [
+                "inkya-impulse"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "january-2025-shoes-heels",
+            "outfits": [
+                "january-2025"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "last-game-boots",
+            "outfits": [
+                "last-game"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "showman-shoes",
+            "outfits": [
+                "showman"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "sims-shoes",
+            "outfits": [
+                "sims"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "unchained-boots",
+            "outfits": [
+                "unchained"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "when-youre-evil-boots",
+            "outfits": [
+                "when-youre-evil"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "woven-fates-shoes",
+            "outfits": [
+                "woven-fates"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "axel-shoes",
+            "outfits": [
+                "axel"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "flayon-shoes",
+            "outfits": [
+                "flayon"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "goldbullet-boots",
+            "outfits": [
+                "goldbullet"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "hakka-shoes",
+            "outfits": [
+                "hakka"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "jurard-boots",
+            "outfits": [
+                "jurard"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "magni-boots",
+            "outfits": [
+                "magni"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "octavio-shoes",
+            "outfits": [
+                "octavio"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "ruze-shoes",
+            "outfits": [
+                "ruze"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "shinri-shoes",
+            "outfits": [
+                "shinri"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "vesper-boots",
+            "outfits": [
+                "vesper"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "betsy-loafers",
+            "layer": "shoes-covered-full",
+            "outfits": [
+                "betsy"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
+            "item": "betsy-grayson-boots",
+            "outfits": [
+                "betsy-grayson"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "bettelzebub-shoes",
+            "outfits": [
+                "bettelzebub"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "ghost-bride-boots",
+            "outfits": [
+                "ghost-bride"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "jester",
+            "outfits": [
+                "jester"
             ],
             "requires": {
                 "part": "feet",
@@ -115,19 +388,9 @@
             }
         },
         {
-            "item": "magni-boots",
+            "item": "pumpkin-king-boots",
             "outfits": [
-                "magni"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "sims-shoes",
-            "outfits": [
-                "sims"
+                "pumpkin-king"
             ],
             "requires": {
                 "part": "feet",
@@ -135,29 +398,10 @@
             }
         },
         {
-            "item": "unchained-boots",
+            "item": "punk-boots",
+            "layer": "shoes-covered",
             "outfits": [
-                "unchained"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "goose-vp",
-            "outfits": [
-                "goose-vp"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "jester",
-            "outfits": [
-                "jester"
+                "punk"
             ],
             "requires": {
                 "part": "feet",
@@ -183,238 +427,6 @@
             }
         },
         {
-            "item": "clown-shoes",
-            "outfits": [
-                "clown"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "ruze-shoes",
-            "outfits": [
-                "ruze"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "deadworld-shoes",
-            "outfits": [
-                "dead-world"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "vesper-boots",
-            "outfits": [
-                "vesper"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "bettelzebub-shoes",
-            "outfits": [
-                "bettelzebub"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "woven-fates-shoes",
-            "outfits": [
-                "woven-fates"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "inkya-impulse-shoes",
-            "outfits": [
-                "inkya-impulse"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "betsy-loafers",
-            "layer": "shoes-covered-full",
-            "outfits": [
-                "betsy"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "octavio-shoes",
-            "outfits": [
-                "octavio"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "hakka-shoes",
-            "outfits": [
-                "hakka"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "butler-shoes",
-            "layer": "shoes-covered-full",
-            "outfits": [
-                "butler"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "when-youre-evil-boots",
-            "outfits": [
-                "when-youre-evil"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "pumpkin-king-boots",
-            "outfits": [
-                "pumpkin-king"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "goldbullet-boots",
-            "outfits": [
-                "goldbullet"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "shinri-shoes",
-            "outfits": [
-                "shinri"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "last-game-boots",
-            "outfits": [
-                "last-game"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "ghost-bride-boots",
-            "outfits": [
-                "ghost-bride"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "2024-expo-shoes",
-            "outfits": [
-                "2024-expo"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "betsy-grayson-boots",
-            "outfits": [
-                "betsy-grayson"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "axel-shoes",
-            "outfits": [
-                "axel"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "2025-expo-shoes",
-            "outfits": [
-                "2025-expo"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "gavin-bettol-flats",
-            "outfits": [
-                "artist"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "jurard-boots",
-            "outfits": [
-                "jurard"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
             "item": "cow-slippers",
             "outfits": [
                 "cow"
@@ -425,29 +437,17 @@
             }
         },
         {
-            "item": "christmas-2024-boot",
-            "multilayer": [
-                {
-                    "item": "christmas-2024-boot-back",
-                    "layer": "shoes_back"
-                }
-            ],
-            "outfits": [
-                "2024-christmas"
-            ],
+            "item": "tabi-flats",
             "requires": {
                 "part": "feet",
                 "item": "flat"
             }
         },
         {
-            "item": "flayon-shoes",
-            "outfits": [
-                "flayon"
-            ],
+            "item": "tabi-heels",
             "requires": {
                 "part": "feet",
-                "item": "flat"
+                "item": "pointed"
             }
         }
     ]

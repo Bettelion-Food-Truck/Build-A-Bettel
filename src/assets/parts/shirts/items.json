@@ -6,24 +6,6 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-shirt",
-            "outfits": [
-                "showman"
-            ]
-        },
-        {
-            "item": "january-2025-shirt",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
-            "item": "punk-shirt",
-            "outfits": [
-                "punk"
-            ]
-        },
-        {
             "item": "debut-underlayer",
             "outfits": [
                 "debut-underlayer",
@@ -38,118 +20,9 @@
             ]
         },
         {
-            "item": "bettelmaid",
-            "outfits": [
-                "bettelmaid"
-            ]
-        },
-        {
-            "item": "pirate-shirt",
-            "outfits": [
-                "pirate"
-            ]
-        },
-        {
-            "item": "magni-shirt",
-            "outfits": [
-                "magni"
-            ]
-        },
-        {
-            "item": "sims-blouse",
-            "outfits": [
-                "sims"
-            ]
-        },
-        {
-            "item": "goose-vp",
-            "outfits": [
-                "goose-vp"
-            ]
-        },
-        {
-            "item": "jester",
-            "layer": "shirts-tucked-in",
-            "outfits": [
-                "jester"
-            ]
-        },
-        {
             "item": "clown",
             "outfits": [
                 "clown"
-            ]
-        },
-        {
-            "item": "ruze-top",
-            "outfits": [
-                "ruze"
-            ]
-        },
-        {
-            "item": "deadworld-shirt",
-            "outfits": [
-                "dead-world"
-            ]
-        },
-        {
-            "item": "vesper-shirt",
-            "multilayer": [
-                {
-                    "item": "vesper-shirt-back",
-                    "layer": "shirts_back"
-                }
-            ],
-            "outfits": [
-                "vesper"
-            ]
-        },
-        {
-            "item": "bettelzebub-shirt",
-            "multilayer": [
-                {
-                    "item": "bettelzebub-shirt-back",
-                    "layer": "shirts_back"
-                }
-            ],
-            "outfits": [
-                "bettelzebub"
-            ]
-        },
-        {
-            "item": "woven-fates-shirt",
-            "outfits": [
-                "woven-fates"
-            ]
-        },
-        {
-            "item": "inkya-impulse-shirt",
-            "outfits": [
-                "inkya-impulse"
-            ]
-        },
-        {
-            "item": "betsy-sweatshirt",
-            "outfits": [
-                "betsy"
-            ]
-        },
-        {
-            "item": "octavio-shirt",
-            "multilayer": [
-                {
-                    "item": "octavio-shirt-back",
-                    "layer": "shirts_back"
-                }
-            ],
-            "outfits": [
-                "octavio"
-            ]
-        },
-        {
-            "item": "hakka-undershirt",
-            "outfits": [
-                "hakka"
             ]
         },
         {
@@ -165,33 +38,45 @@
             ]
         },
         {
-            "item": "when-youre-evil-shirt",
+            "item": "christmas-2024-shirt",
             "outfits": [
-                "when-youre-evil"
+                "2024-christmas"
             ]
         },
         {
-            "item": "pumpkin-king-shirt",
-            "multilayer": [
-                {
-                    "item": "pumpkin-king-shirt-back",
-                    "layer": "shirts_back"
-                }
-            ],
+            "item": "deadworld-shirt",
             "outfits": [
-                "pumpkin-king"
+                "dead-world"
             ]
         },
         {
-            "item": "goldbullet-shirt",
+            "item": "2024-expo-shirt",
             "outfits": [
-                "goldbullet"
+                "2024-expo"
             ]
         },
         {
-            "item": "shinri-shirt",
+            "item": "gavin-bettol-shirt",
             "outfits": [
-                "shinri"
+                "artist"
+            ]
+        },
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "inkya-impulse-shirt",
+            "outfits": [
+                "inkya-impulse"
+            ]
+        },
+        {
+            "item": "january-2025-shirt",
+            "outfits": [
+                "january-2025"
             ]
         },
         {
@@ -207,21 +92,27 @@
             ]
         },
         {
-            "item": "ghost-bride-shirt",
+            "item": "showman-shirt",
             "outfits": [
-                "ghost-bride"
+                "showman"
             ]
         },
         {
-            "item": "2024-expo-shirt",
+            "item": "sims-blouse",
             "outfits": [
-                "2024-expo"
+                "sims"
             ]
         },
         {
-            "item": "betsy-grayson-bodysuit",
+            "item": "when-youre-evil-shirt",
             "outfits": [
-                "betsy-grayson"
+                "when-youre-evil"
+            ]
+        },
+        {
+            "item": "woven-fates-shirt",
+            "outfits": [
+                "woven-fates"
             ]
         },
         {
@@ -231,9 +122,25 @@
             ]
         },
         {
-            "item": "gavin-bettol-shirt",
+            "item": "flayon-shirt",
             "outfits": [
-                "artist"
+                "flayon"
+            ],
+            "requires": {
+                "part": "undies",
+                "item": "leaf"
+            }
+        },
+        {
+            "item": "goldbullet-shirt",
+            "outfits": [
+                "goldbullet"
+            ]
+        },
+        {
+            "item": "hakka-undershirt",
+            "outfits": [
+                "hakka"
             ]
         },
         {
@@ -249,20 +156,113 @@
             ]
         },
         {
-            "item": "christmas-2024-shirt",
+            "item": "magni-shirt",
             "outfits": [
-                "2024-christmas"
+                "magni"
             ]
         },
         {
-            "item": "flayon-shirt",
-            "outfits": [
-                "flayon"
+            "item": "octavio-shirt",
+            "multilayer": [
+                {
+                    "item": "octavio-shirt-back",
+                    "layer": "shirts_back"
+                }
             ],
-            "requires": {
-                "part": "undies",
-                "item": "leaf"
-            }
+            "outfits": [
+                "octavio"
+            ]
+        },
+        {
+            "item": "ruze-top",
+            "outfits": [
+                "ruze"
+            ]
+        },
+        {
+            "item": "shinri-shirt",
+            "outfits": [
+                "shinri"
+            ]
+        },
+        {
+            "item": "vesper-shirt",
+            "multilayer": [
+                {
+                    "item": "vesper-shirt-back",
+                    "layer": "shirts_back"
+                }
+            ],
+            "outfits": [
+                "vesper"
+            ]
+        },
+        {
+            "item": "betsy-sweatshirt",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "betsy-grayson-bodysuit",
+            "outfits": [
+                "betsy-grayson"
+            ]
+        },
+        {
+            "item": "bettelzebub-shirt",
+            "multilayer": [
+                {
+                    "item": "bettelzebub-shirt-back",
+                    "layer": "shirts_back"
+                }
+            ],
+            "outfits": [
+                "bettelzebub"
+            ]
+        },
+        {
+            "item": "ghost-bride-shirt",
+            "outfits": [
+                "ghost-bride"
+            ]
+        },
+        {
+            "item": "jester",
+            "layer": "shirts-tucked-in",
+            "outfits": [
+                "jester"
+            ]
+        },
+        {
+            "item": "bettelmaid",
+            "outfits": [
+                "bettelmaid"
+            ]
+        },
+        {
+            "item": "pirate-shirt",
+            "outfits": [
+                "pirate"
+            ]
+        },
+        {
+            "item": "pumpkin-king-shirt",
+            "multilayer": [
+                {
+                    "item": "pumpkin-king-shirt-back",
+                    "layer": "shirts_back"
+                }
+            ],
+            "outfits": [
+                "pumpkin-king"
+            ]
+        },
+        {
+            "item": "punk-shirt",
+            "outfits": [
+                "punk"
+            ]
         },
         "snank"
     ]

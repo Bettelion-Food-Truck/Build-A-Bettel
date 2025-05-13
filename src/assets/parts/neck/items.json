@@ -6,18 +6,6 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-cravat",
-            "outfits": [
-                "showman"
-            ]
-        },
-        {
-            "item": "january-2025-neck-ribbon",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
             "item": "debut-underlayer-choker",
             "outfits": [
                 "debut-underlayer",
@@ -32,99 +20,9 @@
             ]
         },
         {
-            "item": "bettelmaid",
-            "outfits": [
-                "bettelmaid"
-            ]
-        },
-        {
-            "item": "unchained-scarf",
-            "outfits": [
-                "unchained"
-            ]
-        },
-        {
-            "item": "goose-vp",
-            "outfits": [
-                "goose-vp"
-            ]
-        },
-        {
-            "item": "jester",
-            "outfits": [
-                "jester"
-            ]
-        },
-        {
-            "item": "neck-towel",
-            "outfits": [
-                "spa"
-            ]
-        },
-        {
             "item": "clown-ruffle",
             "outfits": [
                 "clown"
-            ]
-        },
-        {
-            "item": "deadworld-cravat",
-            "outfits": [
-                "dead-world"
-            ]
-        },
-        {
-            "item": "bettelzebub-necklace",
-            "outfits": [
-                "bettelzebub"
-            ]
-        },
-        {
-            "item": "betsy-choker",
-            "outfits": [
-                "betsy"
-            ]
-        },
-        {
-            "item": "octavio-tie",
-            "outfits": [
-                "octavio"
-            ]
-        },
-        {
-            "item": "when-youre-evil-scarf",
-            "outfits": [
-                "when-youre-evil"
-            ]
-        },
-        {
-            "item": "ghost-bride-collar",
-            "outfits": [
-                "ghost-bride"
-            ]
-        },
-        {
-            "item": "betsy-grayson-collar",
-            "outfits": [
-                "betsy-grayson"
-            ]
-        },
-        {
-            "item": "axel-tie",
-            "outfits": [
-                "axel"
-            ]
-        },
-        {
-            "item": "2025-expo-choker",
-            "outfits": [
-                "2025-expo"
-            ]
-        },
-        {
-            "item": "cowbell",
-            "outfits": [
-                "cow"
             ]
         },
         {
@@ -134,9 +32,111 @@
             ]
         },
         {
+            "item": "deadworld-cravat",
+            "outfits": [
+                "dead-world"
+            ]
+        },
+        {
+            "item": "2025-expo-choker",
+            "outfits": [
+                "2025-expo"
+            ]
+        },
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "january-2025-neck-ribbon",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "showman-cravat",
+            "outfits": [
+                "showman"
+            ]
+        },
+        {
+            "item": "unchained-scarf",
+            "outfits": [
+                "unchained"
+            ]
+        },
+        {
+            "item": "when-youre-evil-scarf",
+            "outfits": [
+                "when-youre-evil"
+            ]
+        },
+        {
+            "item": "axel-tie",
+            "outfits": [
+                "axel"
+            ]
+        },
+        {
             "item": "flayon-choker",
             "outfits": [
                 "flayon"
+            ]
+        },
+        {
+            "item": "octavio-tie",
+            "outfits": [
+                "octavio"
+            ]
+        },
+        {
+            "item": "betsy-choker",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "betsy-grayson-collar",
+            "outfits": [
+                "betsy-grayson"
+            ]
+        },
+        {
+            "item": "bettelzebub-necklace",
+            "outfits": [
+                "bettelzebub"
+            ]
+        },
+        {
+            "item": "ghost-bride-collar",
+            "outfits": [
+                "ghost-bride"
+            ]
+        },
+        {
+            "item": "jester",
+            "outfits": [
+                "jester"
+            ]
+        },
+        {
+            "item": "bettelmaid",
+            "outfits": [
+                "bettelmaid"
+            ]
+        },
+        {
+            "item": "neck-towel",
+            "outfits": [
+                "spa"
+            ]
+        },
+        {
+            "item": "cowbell",
+            "outfits": [
+                "cow"
             ]
         },
         "phantom-choker"

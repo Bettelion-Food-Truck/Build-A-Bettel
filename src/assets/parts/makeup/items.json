@@ -5,15 +5,6 @@
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
-        "blush-heavy",
-        "eyeshadow",
-        "tictactoe",
-        {
-            "item": "jester",
-            "outfits": [
-                "jester"
-            ]
-        },
         {
             "item": "clown",
             "outfits": [
@@ -26,10 +17,19 @@
                 "dead-world"
             ]
         },
-        "freckles-body-and-face",
+        {
+            "item": "jester",
+            "outfits": [
+                "jester"
+            ]
+        },
+        "blush-heavy",
+        "eyeshadow",
         "freckles-face",
+        "freckles-body-and-face",
         "ghastly",
         "glam-goth",
+        "tictactoe",
         "pretty-pop",
         "running-mascara",
         "subtle"

@@ -6,18 +6,6 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-skeleton-belt",
-            "outfits": [
-                "showman"
-            ]
-        },
-        {
-            "item": "punk-belt",
-            "outfits": [
-                "punk"
-            ]
-        },
-        {
             "item": "inkya-impulse-belt",
             "multilayer": [
                 {
@@ -33,10 +21,11 @@
                 "inkya-impulse"
             ]
         },
+        "january-2025-small-belt",
         {
-            "item": "octavio-belt",
+            "item": "showman-skeleton-belt",
             "outfits": [
-                "octavio"
+                "showman"
             ]
         },
         {
@@ -52,20 +41,31 @@
             ]
         },
         {
+            "item": "jurard-belt",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "octavio-belt",
+            "outfits": [
+                "octavio"
+            ]
+        },
+        "ruze-belt",
+        "vesper-belt",
+        {
             "item": "betsy-grayson-hip-bows",
             "outfits": [
                 "betsy-grayson"
             ]
         },
-        "january-2025-small-belt",
-        "ruze-belt",
         "pirate-belt",
         "pirate-belt-sash",
-        "vesper-belt",
         {
-            "item": "jurard-belt",
+            "item": "punk-belt",
             "outfits": [
-                "jurard"
+                "punk"
             ]
         }
     ]

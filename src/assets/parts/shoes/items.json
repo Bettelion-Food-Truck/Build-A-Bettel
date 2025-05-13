@@ -12,8 +12,7 @@
             "requires": {
                 "part": "feet",
                 "item": "none"
-            },
-            "thumbnail": false
+            }
         },
         {
             "item": "debut-underlayer",

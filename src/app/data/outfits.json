@@ -133,10 +133,6 @@
             "name": "Vesper"
         },
         {
-            "uid": "blank",
-            "name": "Blank Slate"
-        },
-        {
             "uid": "battel",
             "name": "Battel"
         },
@@ -187,6 +183,10 @@
         {
             "uid": "spa",
             "name": "Spa"
+        },
+        {
+            "uid": "blank",
+            "name": "Start from Scratch"
         }
     ]
 }

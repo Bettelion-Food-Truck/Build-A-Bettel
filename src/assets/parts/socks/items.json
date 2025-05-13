@@ -6,17 +6,13 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "fishnets-flat",
+            "item": "2025-expo-leggings",
+            "outfits": [
+                "2025-expo"
+            ],
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
-        },
-        {
-            "item": "fishnets-pointed",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
             }
         },
         {
@@ -48,14 +44,10 @@
             }
         },
         {
-            "item": "psock-heel",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "psock-flat",
+            "item": "flayon-socks",
+            "outfits": [
+                "flayon"
+            ],
             "requires": {
                 "part": "feet",
                 "item": "flat"
@@ -72,6 +64,13 @@
             }
         },
         {
+            "item": "betsy-grayson-fishnets-flat",
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
             "item": "betsy-grayson-fishnets-heels",
             "outfits": [
                 "betsy-grayson"
@@ -82,30 +81,31 @@
             }
         },
         {
-            "item": "betsy-grayson-fishnets-flat",
+            "item": "fishnets-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
             }
         },
         {
-            "item": "2025-expo-leggings",
-            "outfits": [
-                "2025-expo"
-            ],
+            "item": "fishnets-pointed",
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        },
+        {
+            "item": "psock-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
             }
         },
         {
-            "item": "flayon-socks",
-            "outfits": [
-                "flayon"
-            ],
+            "item": "psock-heel",
             "requires": {
                 "part": "feet",
-                "item": "flat"
+                "item": "pointed"
             }
         }
     ]

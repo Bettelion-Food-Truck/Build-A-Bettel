@@ -3,30 +3,28 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "fishnets-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "fishnets-pointed",
             "requires": {
                 "part": "feet",
                 "item": "pointed"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "sims-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "sims-pointed",
@@ -36,8 +34,7 @@
             "requires": {
                 "part": "feet",
                 "item": "pointed"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "betsy-socks",
@@ -47,24 +44,21 @@
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "psock-heel",
             "requires": {
                 "part": "feet",
                 "item": "pointed"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "psock-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "shinri-socks",
@@ -74,8 +68,7 @@
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "betsy-grayson-fishnets-heels",
@@ -85,16 +78,14 @@
             "requires": {
                 "part": "feet",
                 "item": "pointed"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "betsy-grayson-fishnets-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            },
-            "thumbnail": true
+            }
         },
         {
             "item": "2025-expo-leggings",
@@ -104,8 +95,17 @@
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            },
-            "thumbnail": true
+            }
+        },
+        {
+            "item": "flayon-socks",
+            "outfits": [
+                "flayon"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
         }
     ]
 }

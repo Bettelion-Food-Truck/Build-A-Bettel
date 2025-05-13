@@ -368,6 +368,16 @@
             }
         },
         {
+            "item": "cow-slippers",
+            "outfits": [
+                "cowttel"
+            ],
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            }
+        },
+        {
             "item": "ghost-bride-shoes",
             "outfits": [
                 "ghost-bride"
@@ -441,16 +451,6 @@
         {
             "item": "bath-slippers-white",
             "outfits": [],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "cow-slippers",
-            "outfits": [
-                "cow"
-            ],
             "requires": {
                 "part": "feet",
                 "item": "flat"

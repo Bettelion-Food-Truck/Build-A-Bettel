@@ -1,5 +1,9 @@
 {
-    "movement": false,
+    "movement": {
+        "x": true,
+        "y": true,
+        "scale": 0.5
+    },
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
@@ -150,6 +154,12 @@
             ]
         },
         {
+            "item": "cow-ears",
+            "outfits": [
+                "cowttel"
+            ]
+        },
+        {
             "item": "deerttel-antlers",
             "outfits": [
                 "deerttel"
@@ -212,12 +222,6 @@
             }
         },
         "cat-ears",
-        {
-            "item": "cow-ears",
-            "outfits": [
-                "cow"
-            ]
-        },
         "demon-horns",
         "dog-ears",
         "glorp-headband",

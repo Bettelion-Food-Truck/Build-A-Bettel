@@ -1,5 +1,8 @@
 {
-    "movement": false,
+    "movement": {
+        "x": true,
+        "y": true
+    },
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,

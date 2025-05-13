@@ -200,6 +200,16 @@
             ]
         },
         {
+            "item": "cowttel-shorts",
+            "requires": {
+                "part": "undies",
+                "item": "briefs"
+            },
+            "outfits": [
+                "cowttel"
+            ]
+        },
+        {
             "item": "ghost-bride-skirt",
             "multilayer": [
                 {

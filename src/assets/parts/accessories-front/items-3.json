@@ -19,16 +19,6 @@
             ]
         },
         {
-            "item": "christmas-2024-chain",
-            "layer": "accessories-front_1_loweest-front",
-            "multilayer": [
-                {
-                    "item": "christmas-2024-chain-back",
-                    "layer": "accessories-front_1_loweest-back"
-                }
-            ]
-        },
-        {
             "item": "friendship-tattoo",
             "layer": "body_tattoo"
         },

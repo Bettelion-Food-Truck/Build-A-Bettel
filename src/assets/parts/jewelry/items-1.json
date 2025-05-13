@@ -20,6 +20,16 @@
             ]
         },
         {
+            "item": "christmas-2024-chain",
+            "layer": "jewerly_1_loweest-front",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-chain-back",
+                    "layer": "jewerly_1_loweest-back"
+                }
+            ]
+        },
+        {
             "item": "deadworld-jewelry",
             "outfits": [
                 "dead-world"

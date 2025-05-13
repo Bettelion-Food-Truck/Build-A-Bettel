@@ -13,6 +13,19 @@
             "item": "christmas-2024-pins"
         },
         {
+            "item": "christmas-2024-chain",
+            "layer": "jewerly_2_loweest-front",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-chain-back",
+                    "layer": "jewerly_2_loweest-back"
+                }
+            ],
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
             "item": "deadworld-jewelry"
         },
         {

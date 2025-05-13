@@ -6,6 +6,14 @@
     "assumeThumbnails": true,
     "items": [
         {
+            "item": "debut-underlayer",
+            "outfits": [
+                "debut-underlayer",
+                "debut",
+                "deerttel"
+            ]
+        },
+        {
             "item": "showman-pant-front",
             "multilayer": [
                 {
@@ -35,13 +43,6 @@
             "layer": "pants_elevated",
             "outfits": [
                 "flex"
-            ]
-        },
-        {
-            "item": "debut-underlayer",
-            "outfits": [
-                "debut-underlayer",
-                "deerttel"
             ]
         },
         {

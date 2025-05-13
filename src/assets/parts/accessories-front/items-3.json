@@ -37,7 +37,10 @@
             "item": "debut-coat-charm"
         },
         {
-            "item": "debut-circus-whip"
+            "item": "debut-circus-whip",
+            "outfits": [
+                "debut"
+            ]
         },
         {
             "item": "deerttel-ears",

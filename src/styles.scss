@@ -110,8 +110,9 @@ ul li img {
     --palette-toggle-img: url("../public/icons/icon-colors.png");
 
     /* active button vars */
-    --active-button-color: #00aa00;
     --active-button-text-color: #ffffff;
+    --active-button-background-color: #00aa00;
+    --active-button-background-image: radial-gradient(circle, #00aa00 45%, #00ee00 100%);
 
     /* save button vars */
     --save-button-color: #006400;

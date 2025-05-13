@@ -73,19 +73,32 @@
                 background-color ease 0.4s,
                 opacity 0.3s ease,
                 display 0.3s ease allow-discrete;
+        }
 
-            &.show {
-                display: inline-flex;
-                opacity: 1;
+        &.show {
+            display: inline-flex;
+            opacity: 1;
 
-                @starting-style {
-                    opacity: 0;
-                }
+            @starting-style {
+                opacity: 0;
             }
+        }
 
-            &.active {
-                background-color: var(--active-button-color, #00ff00);
-                color: var(--active-button-text-color, #000000);
+        &.active {
+            color: var(--active-button-text-color, #000000);
+            background: var(--active-button-background-color, #00ff00);
+            background: var(--active-button-background-image);
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            filter: grayscale(1);
+
+            /* Material overrides */
+            pointer-events: initial;
+            &:hover {
+                box-shadow: none;
             }
         }
     }

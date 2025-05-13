@@ -1,4 +1,5 @@
 import { Component, effect, Signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
 import { Movement } from '@models/part.model';
@@ -11,6 +12,7 @@ import { ModelDataService } from '@services/model-data/model-data.service';
 @Component({
   selector: 'app-movement',
   imports: [
+    CommonModule,
     MatIconModule
   ],
   templateUrl: './movement.component.html',
@@ -19,6 +21,7 @@ import { ModelDataService } from '@services/model-data/model-data.service';
 export class MovementComponent {
 
   readonly MOVEMENT_BASE = 10; // 10px
+  movementScaleAdjustment: number = 1;
 
   private selectedPositions: Signal<Position[]>;
 
@@ -26,6 +29,10 @@ export class MovementComponent {
   downPotential: boolean = false;
   leftPotential: boolean = false;
   rightPotential: boolean = false;
+  scaleDecreasePotential: boolean = true;
+  scaleIncreasePotential: boolean = true;
+
+  private lastSelectedPart: number = -1;
 
   constructor(
     private logger: LogService,
@@ -42,6 +49,12 @@ export class MovementComponent {
       }
 
       this.updateMovementButtons();
+
+      if (this.lastSelectedPart !== selectedPart) {
+
+        this.lastSelectedPart = selectedPart;
+        this.movementScaleAdjustment = 1;
+      }
     });
   }
 
@@ -109,6 +122,22 @@ export class MovementComponent {
     this.checkMoveLimits();
   }
 
+  decreaseMovementScale() {
+    this.logger.debug("MovementComponent: decreaseMovementScale()");
+
+    this.movementScaleAdjustment = this.movementScaleAdjustment * 0.5;
+
+    this.checkScalePotential();
+  }
+
+  increaseMovementScale() {
+    this.logger.debug("MovementComponent: increaseMovementScale()");
+
+    this.movementScaleAdjustment = this.movementScaleAdjustment * 2;
+
+    this.checkScalePotential();
+  }
+
   reset() {
     this.logger.debug("MovementComponent: reset()");
 
@@ -119,7 +148,10 @@ export class MovementComponent {
 
     this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
 
+    this.movementScaleAdjustment = 1;
+
     this.checkMoveLimits();
+    this.checkScalePotential();
   }
 
   getMovementScale(): number {
@@ -128,7 +160,7 @@ export class MovementComponent {
     let selectedPart = this.modelData.getActivePart()();
     const movement = this.assetData.getParts()()[selectedPart].movement as Movement;
 
-    return (movement.scale ? movement.scale : 1);
+    return (movement.scale ? movement.scale : 1) * this.movementScaleAdjustment;
   }
 
   checkMoveLimits() {
@@ -217,5 +249,12 @@ export class MovementComponent {
       this.leftPotential = !(movement.x.min && position.x <= movement.x.min);
       this.rightPotential = !(movement.x.max && position.x >= movement.x.max);
     }
+  }
+
+  private checkScalePotential() {
+    this.logger.debug("MovementComponent: checkScalePotential()");
+
+    this.scaleDecreasePotential = this.movementScaleAdjustment > 0.125;
+    this.scaleIncreasePotential = this.movementScaleAdjustment < 16;
   }
 }

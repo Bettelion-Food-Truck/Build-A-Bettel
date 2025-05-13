@@ -60,6 +60,12 @@
             "icon": "icon-2.png"
         },
         {
+            "name": "Neck",
+            "folder": "neck",
+            "items": "items.json",
+            "icon": "icon.png"
+        },
+        {
             "name": "Socks",
             "folder": "socks",
             "items": "items.json",
@@ -68,12 +74,6 @@
         {
             "name": "Shoes",
             "folder": "shoes",
-            "items": "items.json",
-            "icon": "icon.png"
-        },
-        {
-            "name": "Neck",
-            "folder": "neck",
             "items": "items.json",
             "icon": "icon.png"
         },

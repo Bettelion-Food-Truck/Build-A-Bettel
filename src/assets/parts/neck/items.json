@@ -1,5 +1,9 @@
 {
-    "movement": false,
+    "movement": {
+        "x": true,
+        "y": true,
+        "scale": 0.5
+    },
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
@@ -116,6 +120,12 @@
             ]
         },
         {
+            "item": "cowbell",
+            "outfits": [
+                "cowttel"
+            ]
+        },
+        {
             "item": "ghost-bride-collar",
             "outfits": [
                 "ghost-bride"
@@ -137,12 +147,6 @@
             "item": "neck-towel",
             "outfits": [
                 "spa"
-            ]
-        },
-        {
-            "item": "cowbell",
-            "outfits": [
-                "cow"
             ]
         },
         "phantom-choker"

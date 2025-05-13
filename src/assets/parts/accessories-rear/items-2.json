@@ -1,5 +1,8 @@
 {
-    "movement": false,
+    "movement": {
+        "x": true,
+        "y": true
+    },
     "colorMode": null,
     "colors": [],
     "noneAllowed": true,
@@ -24,10 +27,10 @@
             "item": "bettelzebub-wings"
         },
         {
-            "item": "pumpkin-king-cape"
+            "item": "cow-tail"
         },
         {
-            "item": "cow-tail"
+            "item": "pumpkin-king-cape"
         },
         "angel-wings",
         "cattail",

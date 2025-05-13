@@ -18,10 +18,20 @@
         <mat-icon>east</mat-icon>
     </button>
 
-    <div class="spacer"><!-- spacer --></div>
+    <button class="movement_button move_scale_decrease" aria-label="Decrease distance per move"
+        title="Decrease distance per move" (click)="decreaseMovementScale()" [class.disabled]="!scaleDecreasePotential"
+        [disabled]="!scaleDecreasePotential">
+        <mat-icon>unfold_less</mat-icon>
+    </button>
     <button class="movement_button down" aria-label="Move down" title="Move down" (click)="moveDown()"
         [class.disabled]="!downPotential" [disabled]="!downPotential">
         <mat-icon>south</mat-icon>
     </button>
-    <div class="spacer"><!-- spacer --></div>
+    <button class="movement_button move_scale_increase" aria-label="Increase distance per move"
+        title="Increase distance per move" (click)="increaseMovementScale()" [class.disabled]="!scaleIncreasePotential"
+        [disabled]="!scaleIncreasePotential">
+        <mat-icon style="transform: scale(1.5) rotate(45deg);">unfold_more</mat-icon>
+    </button>
 </div>
+
+<div>Movement scale: {{movementScaleAdjustment}}</div>

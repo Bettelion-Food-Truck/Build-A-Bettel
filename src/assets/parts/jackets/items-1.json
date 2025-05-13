@@ -271,6 +271,12 @@
             "outfits": []
         },
         {
+            "item": "cowttel-jacket",
+            "outfits": [
+                "cowttel"
+            ]
+        },
+        {
             "item": "deerttel-cape",
             "outfits": [
                 "deerttel"

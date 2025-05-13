@@ -58,6 +58,13 @@
             "thumbnail": true
         },
         {
+            "item": "twobert-hair",
+            "outfits": [
+                "twobert"
+            ],
+            "thumbnail": true
+        },
+        {
             "item": "betsy-hair",
             "outfits": [
                 "betsy"
@@ -68,13 +75,6 @@
             "item": "betsy-grayson",
             "outfits": [
                 "betsy-grayson"
-            ],
-            "thumbnail": true
-        },
-        {
-            "item": "twobert-hair",
-            "outfits": [
-                "twobert"
             ],
             "thumbnail": true
         }

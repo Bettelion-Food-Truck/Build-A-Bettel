@@ -6,42 +6,26 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-skeleton-belt",
-            "outfits": [
-                "showman"
-            ]
-        },
-        {
-            "item": "january-2025-obi",
-            "layer": "belt_elevated",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
-            "item": "punk-belt",
-            "outfits": [
-                "punk"
-            ]
-        },
-        {
-            "item": "unchained-belt",
-            "layer": "belt_elevated",
-            "outfits": [
-                "unchained"
-            ]
-        },
-        {
             "item": "inkya-impulse-belt",
-            "layer": "belt_elevated",
+            "multilayer": [
+                {
+                    "item": "inkya-impulse-skirt-front",
+                    "layer": "accessories-front_under-jacket"
+                },
+                {
+                    "item": "inkya-impulse-skirt-back",
+                    "layer": "pants_back"
+                }
+            ],
             "outfits": [
                 "inkya-impulse"
             ]
         },
+        "january-2025-small-belt",
         {
-            "item": "octavio-belt",
+            "item": "showman-skeleton-belt",
             "outfits": [
-                "octavio"
+                "showman"
             ]
         },
         {
@@ -57,20 +41,31 @@
             ]
         },
         {
+            "item": "jurard-belt",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "octavio-belt",
+            "outfits": [
+                "octavio"
+            ]
+        },
+        "ruze-belt",
+        "vesper-belt",
+        {
             "item": "betsy-grayson-hip-bows",
             "outfits": [
                 "betsy-grayson"
             ]
         },
-        "january-2025-small-belt",
-        "ruze-belt",
         "pirate-belt",
         "pirate-belt-sash",
-        "vesper-belt",
         {
-            "item": "jurard-belt",
+            "item": "punk-belt",
             "outfits": [
-                "jurard"
+                "punk"
             ]
         }
     ]

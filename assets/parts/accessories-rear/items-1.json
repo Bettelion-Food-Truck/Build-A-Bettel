@@ -11,22 +11,10 @@
                 "showman"
             ]
         },
-        "angel-wings",
-        "demon-tail",
         {
             "item": "goose-vp",
             "outfits": [
                 "goose-vp"
-            ]
-        },
-        {
-            "item": "inkya-impulse-skirt",
-            "outfits": "inkya-impulse"
-        },
-        {
-            "item": "bettelzebub-wings",
-            "outfits": [
-                "bettelzebub"
             ]
         },
         {
@@ -36,16 +24,27 @@
             ]
         },
         {
-            "item": "pumpkin-king-cape",
-            "outfits": [
-                "pumpkin-king"
-            ]
-        },
-        "pole",
-        {
             "item": "axel-tail",
             "outfits": [
                 "axel"
+            ]
+        },
+        {
+            "item": "flayon-tail",
+            "outfits": [
+                "flayon"
+            ]
+        },
+        {
+            "item": "bettelzebub-wings",
+            "outfits": [
+                "bettelzebub"
+            ]
+        },
+        {
+            "item": "pumpkin-king-cape",
+            "outfits": [
+                "pumpkin-king"
             ]
         },
         {
@@ -54,11 +53,8 @@
                 "cow"
             ]
         },
-        {
-            "item": "flayon-tail",
-            "outfits": [
-                "flayon"
-            ]
-        }
+        "angel-wings",
+        "demon-tail",
+        "pole"
     ]
 }

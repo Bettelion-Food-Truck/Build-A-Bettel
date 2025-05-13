@@ -6,91 +6,21 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "january-2025-keychain",
-            "outfits": [
-                "january-2025"
-            ]
-        },
-        {
             "item": "debut-underlayer",
             "outfits": [
+                "debut",
                 "debut-underlayer",
                 "daki",
-                "deerttel"
+                "deerttel",
+                "unchained"
             ],
             "layer": "accessories-front_under-jacket"
-        },
-        {
-            "item": "bettelmaid",
-            "outfits": [
-                "bettelmaid"
-            ]
-        },
-        {
-            "item": "magni-front-accessory-1",
-            "outfits": [
-                "magni"
-            ]
-        },
-        "magni-front-accessory-2",
-        {
-            "item": "goose-vp",
-            "outfits": [
-                "goose-vp"
-            ]
-        },
-        {
-            "item": "ruze-front-accessory-1",
-            "outfits": [
-                "ruze"
-            ],
-            "layer": "accessories-front_under-jacket"
-        },
-        {
-            "item": "ruze-front-accessory-2",
-            "outfits": [],
-            "layer": "accessories-front_under-jacket"
-        },
-        {
-            "item": "inkya-impulse-skirt-front",
-            "outfits": [
-                "inkya-impulse"
-            ],
-            "layer": "accessories-front_under-jacket"
-        },
-        {
-            "item": "betsy-bow",
-            "outfits": [
-                "betsy"
-            ]
-        },
-        {
-            "item": "braids"
         },
         {
             "item": "debut-coat-charm"
         },
         {
-            "item": "debut-circus-whip",
-            "outfits": [
-                "debut"
-            ]
-        },
-        "deerttel-ears",
-        "deerttel-nose",
-        "gavin-bettol-phantom-sweater",
-        {
-            "item": "friendship-tattoo",
-            "layer": "body_tattoo",
-            "outfits": [
-                "artist"
-            ]
-        },
-        {
-            "item": "axel-braid",
-            "outfits": [
-                "axel"
-            ]
+            "item": "debut-circus-whip"
         },
         {
             "item": "christmas-2024-chain",
@@ -104,6 +34,82 @@
             "outfits": [
                 "2024-christmas"
             ]
-        }
+        },
+        {
+            "item": "friendship-tattoo",
+            "layer": "body_tattoo",
+            "outfits": [
+                "artist"
+            ]
+        },
+        "gavin-bettol-phantom-sweater",
+        {
+            "item": "goose-vp",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "january-2025-keychain",
+            "outfits": [
+                "january-2025"
+            ]
+        },
+        {
+            "item": "january-2025-obi",
+            "layer": "belt_elevated"
+        },
+        {
+            "item": "unchained-belt",
+            "layer": "belt_elevated"
+        },
+        {
+            "item": "axel-braid",
+            "outfits": [
+                "axel"
+            ]
+        },
+        {
+            "item": "magni-front-accessory-1",
+            "outfits": [
+                "magni"
+            ]
+        },
+        {
+            "item": "magni-front-accessory-2"
+        },
+        {
+            "item": "ruze-front-accessory-1",
+            "layer": "accessories-front_under-jacket",
+            "outfits": [
+                "ruze"
+            ]
+        },
+        {
+            "item": "ruze-front-accessory-2",
+            "layer": "accessories-front_under-jacket"
+        },
+        {
+            "item": "deerttel-ears",
+            "outfits": [
+                "deerttel"
+            ]
+        },
+        {
+            "item": "deerttel-nose"
+        },
+        {
+            "item": "betsy-bow",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "bettelmaid",
+            "outfits": [
+                "bettelmaid"
+            ]
+        },
+        "braids"
     ]
 }

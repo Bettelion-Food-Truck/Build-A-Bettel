@@ -6,21 +6,33 @@
     "assumeThumbnails": true,
     "items": [
         {
-            "item": "showman-mask",
-            "outfits": [
-                "showman"
-            ]
-        },
-        {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit"
             ]
         },
         {
+            "item": "showman-mask",
+            "outfits": [
+                "showman"
+            ]
+        },
+        {
+            "item": "axel-mask",
+            "outfits": [
+                "axel"
+            ]
+        },
+        {
             "item": "battel-mask",
             "outfits": [
                 "battel"
+            ]
+        },
+        {
+            "item": "betsy-grayson-mask",
+            "outfits": [
+                "betsy-grayson"
             ]
         },
         {
@@ -33,12 +45,6 @@
             "item": "spa-mask",
             "outfits": [
                 "spa"
-            ]
-        },
-        {
-            "item": "betsy-grayson-mask",
-            "outfits": [
-                "betsy-grayson"
             ]
         },
         {

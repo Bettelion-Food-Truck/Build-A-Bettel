@@ -6,6 +6,90 @@
     "assumeThumbnails": true,
     "items": [
         {
+            "item": "debut-underlayer",
+            "outfits": [
+                "debut-underlayer",
+                "debut",
+                "deerttel",
+                "unchained"
+            ]
+        },
+        {
+            "item": "second-outfit",
+            "outfits": [
+                "second-outfit",
+                "battel"
+            ]
+        },
+        {
+            "item": "clown-shorts",
+            "outfits": [
+                "clown"
+            ]
+        },
+        {
+            "item": "butler-pants",
+            "outfits": [
+                "butler"
+            ]
+        },
+        {
+            "item": "christmas-2024-pants",
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "deadworld-pants",
+            "outfits": [
+                "dead-world"
+            ]
+        },
+        {
+            "item": "2024-expo-shorts",
+            "outfits": [
+                "2024-expo"
+            ]
+        },
+        {
+            "item": "2025-expo-shorts",
+            "outfits": [
+                "2025-expo"
+            ]
+        },
+        {
+            "item": "flex",
+            "layer": "pants_elevated",
+            "outfits": [
+                "flex"
+            ]
+        },
+        {
+            "item": "gavin-bettol-pants",
+            "outfits": [
+                "artist"
+            ]
+        },
+        {
+            "item": "goose-vp",
+            "layer": "pants_elevated",
+            "outfits": [
+                "goose-vp"
+            ]
+        },
+        {
+            "item": "inkya-impulse-pants",
+            "outfits": [
+                "inkya-impulse"
+            ]
+        },
+        {
+            "item": "last-game-pants",
+            "outfits": [
+                "last-game"
+            ]
+        },
+        {
             "item": "showman-pant-front",
             "multilayer": [
                 {
@@ -18,105 +102,15 @@
             ]
         },
         {
-            "item": "bettelgoose-pants",
-            "layer": "pants_elevated",
-            "outfits": [
-                "bettelgoose"
-            ]
-        },
-        {
-            "item": "punk-pants",
-            "outfits": [
-                "punk"
-            ]
-        },
-        {
-            "item": "flex",
-            "layer": "pants_elevated",
-            "outfits": [
-                "flex"
-            ]
-        },
-        {
-            "item": "debut-underlayer",
-            "outfits": [
-                "debut-underlayer",
-                "deerttel"
-            ]
-        },
-        {
-            "item": "second-outfit",
-            "outfits": [
-                "second-outfit",
-                "battel"
-            ]
-        },
-        {
-            "item": "bettelmaid",
-            "layer": "pants_elevated",
-            "outfits": [
-                "bettelmaid"
-            ]
-        },
-        {
-            "item": "pirate-pants",
-            "outfits": [
-                "pirate"
-            ]
-        },
-        {
-            "item": "magni-pants",
-            "outfits": [
-                "magni"
-            ]
-        },
-        {
             "item": "sims-shorts",
             "outfits": [
                 "sims"
             ]
         },
         {
-            "item": "goose-vp",
-            "layer": "pants_elevated",
+            "item": "when-youre-evil-shorts",
             "outfits": [
-                "goose-vp"
-            ]
-        },
-        {
-            "item": "jester",
-            "outfits": [
-                "jester"
-            ]
-        },
-        {
-            "item": "clown-shorts",
-            "outfits": [
-                "clown"
-            ]
-        },
-        {
-            "item": "ruze-pants",
-            "outfits": [
-                "ruze"
-            ]
-        },
-        {
-            "item": "deadworld-pants",
-            "outfits": [
-                "dead-world"
-            ]
-        },
-        {
-            "item": "vesper-pants",
-            "outfits": [
-                "vesper"
-            ]
-        },
-        {
-            "item": "bettelzebub-pants",
-            "outfits": [
-                "bettelzebub"
+                "when-youre-evil"
             ]
         },
         {
@@ -126,15 +120,33 @@
             ]
         },
         {
-            "item": "inkya-impulse-pants",
+            "item": "axel-pants",
             "outfits": [
-                "inkya-impulse"
+                "axel"
             ]
         },
         {
-            "item": "betsy-skirt",
+            "item": "goldbullet-pants",
             "outfits": [
-                "betsy"
+                "goldbullet"
+            ]
+        },
+        {
+            "item": "hakka-pants",
+            "outfits": [
+                "hakka"
+            ]
+        },
+        {
+            "item": "jurard-pants",
+            "outfits": [
+                "jurard"
+            ]
+        },
+        {
+            "item": "magni-pants",
+            "outfits": [
+                "magni"
             ]
         },
         {
@@ -145,39 +157,9 @@
             ]
         },
         {
-            "item": "hakka-pants",
+            "item": "ruze-pants",
             "outfits": [
-                "hakka"
-            ]
-        },
-        {
-            "item": "butler-pants",
-            "outfits": [
-                "butler"
-            ]
-        },
-        {
-            "item": "when-youre-evil-shorts",
-            "outfits": [
-                "when-youre-evil"
-            ]
-        },
-        {
-            "item": "pumpkin-king-pants",
-            "multilayer": [
-                {
-                    "item": "pumpkin-king-shirt-bottom",
-                    "layer": "pants_elevated"
-                }
-            ],
-            "outfits": [
-                "pumpkin-king"
-            ]
-        },
-        {
-            "item": "goldbullet-pants",
-            "outfits": [
-                "goldbullet"
+                "ruze"
             ]
         },
         {
@@ -187,9 +169,28 @@
             ]
         },
         {
-            "item": "last-game-pants",
+            "item": "vesper-pants",
             "outfits": [
-                "last-game"
+                "vesper"
+            ]
+        },
+        {
+            "item": "betsy-skirt",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "bettelgoose-pants",
+            "layer": "pants_elevated",
+            "outfits": [
+                "bettelgoose"
+            ]
+        },
+        {
+            "item": "bettelzebub-pants",
+            "outfits": [
+                "bettelzebub"
             ]
         },
         {
@@ -205,33 +206,16 @@
             ]
         },
         {
-            "item": "2024-expo-shorts",
+            "item": "jester",
             "outfits": [
-                "2024-expo"
+                "jester"
             ]
         },
         {
-            "item": "axel-pants",
+            "item": "bettelmaid",
+            "layer": "pants_elevated",
             "outfits": [
-                "axel"
-            ]
-        },
-        {
-            "item": "2025-expo-shorts",
-            "outfits": [
-                "2025-expo"
-            ]
-        },
-        {
-            "item": "gavin-bettol-pants",
-            "outfits": [
-                "artist"
-            ]
-        },
-        {
-            "item": "jurard-pants",
-            "outfits": [
-                "jurard"
+                "bettelmaid"
             ]
         },
         {
@@ -239,9 +223,27 @@
             "layer": "pants_elevated"
         },
         {
-            "item": "christmas-2024-pants",
+            "item": "pirate-pants",
             "outfits": [
-                "2024-christmas"
+                "pirate"
+            ]
+        },
+        {
+            "item": "pumpkin-king-pants",
+            "multilayer": [
+                {
+                    "item": "pumpkin-king-shirt-bottom",
+                    "layer": "pants_elevated"
+                }
+            ],
+            "outfits": [
+                "pumpkin-king"
+            ]
+        },
+        {
+            "item": "punk-pants",
+            "outfits": [
+                "punk"
             ]
         },
         {

@@ -5,6 +5,32 @@
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
+        "bettelion-earrings",
+        {
+            "item": "second-outfit",
+            "outfits": [
+                "second-outfit",
+                "battel"
+            ]
+        },
+        {
+            "item": "christmas-2024-pins",
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "deadworld-jewelry",
+            "outfits": [
+                "dead-world"
+            ]
+        },
+        {
+            "item": "2024-expo-bracelet",
+            "outfits": [
+                "2024-expo"
+            ]
+        },
         {
             "item": "showman-heart-brooch",
             "outfits": [
@@ -12,22 +38,21 @@
             ]
         },
         {
-            "item": "punk-earrings",
+            "item": "flayon-earring",
             "outfits": [
-                "punk"
+                "flayon"
             ]
         },
         {
-            "item": "punk-necklace",
+            "item": "goldbullet-necklace",
             "outfits": [
-                "punk"
+                "goldbullet"
             ]
         },
         {
-            "item": "second-outfit",
+            "item": "jurard-earrings",
             "outfits": [
-                "second-outfit",
-                "battel"
+                "jurard"
             ]
         },
         {
@@ -40,12 +65,9 @@
             "item": "magni-jewelry-2"
         },
         {
-            "item": "memento"
-        },
-        {
-            "item": "deadworld-jewelry",
+            "item": "shinri-earrings",
             "outfits": [
-                "dead-world"
+                "shinri"
             ]
         },
         {
@@ -67,41 +89,14 @@
             ]
         },
         {
-            "item": "goldbullet-necklace",
+            "item": "punk-earrings",
             "outfits": [
-                "goldbullet"
+                "punk"
             ]
         },
         {
-            "item": "shinri-earrings",
-            "outfits": [
-                "shinri"
-            ]
+            "item": "punk-necklace"
         },
-        {
-            "item": "2024-expo-bracelet",
-            "outfits": [
-                "2024-expo"
-            ]
-        },
-        {
-            "item": "jurard-earrings",
-            "outfits": [
-                "jurard"
-            ]
-        },
-        "bettelion-earrings",
-        {
-            "item": "christmas-2024-pins",
-            "outfits": [
-                "2024-christmas"
-            ]
-        },
-        {
-            "item": "flayon-earring",
-            "outfits": [
-                "flayon"
-            ]
-        }
+        "memento"
     ]
 }

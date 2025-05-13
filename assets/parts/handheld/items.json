@@ -6,19 +6,52 @@
     "assumeThumbnails": true,
     "items": [
         {
+            "item": "christmas-2024-sack",
+            "layer": "handheld_foward",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-sack-back",
+                    "layer": "handheld_far-back"
+                }
+            ],
+            "outfits": [
+                "2024-christmas"
+            ]
+        },
+        {
+            "item": "2024-expo-flag",
+            "outfits": [
+                "2024-expo"
+            ]
+        },
+        {
+            "item": "betsy-cellphone",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "betsy-grayson-cane",
+            "outfits": [
+                "betsy-grayson"
+            ]
+        },
+        {
             "item": "pirate-handheld",
             "outfits": [
                 "pirate"
             ]
         },
-        "balloons",
         {
-            "item": "rose",
-            "multilayer": [
-                {
-                    "item": "rose-back",
-                    "layer": "handheld_back"
-                }
+            "item": "balloons",
+            "outfits": [
+                "punk"
+            ]
+        },
+        {
+            "item": "water-bottle",
+            "outfits": [
+                "spa"
             ]
         },
         {
@@ -31,40 +64,12 @@
             ]
         },
         {
-            "item": "water-bottle",
-            "outfits": [
-                "spa"
-            ]
-        },
-        {
-            "item": "betsy-cellphone",
-            "outfits": [
-                "betsy"
-            ]
-        },
-        {
-            "item": "2024-expo-flag",
-            "outfits": [
-                "2024-expo"
-            ]
-        },
-        {
-            "item": "betsy-grayson-cane",
-            "outfits": [
-                "betsy-grayson"
-            ]
-        },
-        {
-            "item": "christmas-2024-sack",
-            "layer": "handheld_foward",
+            "item": "rose",
             "multilayer": [
                 {
-                    "item": "christmas-2024-sack-back",
-                    "layer": "handheld_far-back"
+                    "item": "rose-back",
+                    "layer": "handheld_back"
                 }
-            ],
-            "outfits": [
-                "2024-christmas"
             ]
         }
     ]

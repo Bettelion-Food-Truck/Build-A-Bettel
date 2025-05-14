@@ -70,6 +70,15 @@
             ]
         },
         {
+            "item": "twobert-front-shoulder-belt"
+        },
+        {
+            "item": "twobert-flower",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "deerttel-ears"
         },
         {

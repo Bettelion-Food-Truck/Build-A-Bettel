@@ -175,6 +175,12 @@
             ]
         },
         {
+            "item": "twobert-pants",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "vesper-pants",
             "outfits": [
                 "vesper"

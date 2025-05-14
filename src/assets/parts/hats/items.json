@@ -125,6 +125,12 @@
         },
         {
             "item": "twobert-hat",
+            "multilayer": [
+                {
+                    "item": "twobert-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
             "outfits": [
                 "twobert"
             ]

@@ -86,6 +86,15 @@
             "layer": "accessories-front_under-jacket"
         },
         {
+            "item": "twobert-front-shoulder-belt",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
+            "item": "twobert-flower"
+        },
+        {
             "item": "deerttel-ears",
             "outfits": [
                 "deerttel"

@@ -192,6 +192,15 @@
             ]
         },
         {
+            "item": "twobert-shirt-long"
+        },
+        {
+            "item": "twobert-shirt-short",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "vesper-shirt",
             "multilayer": [
                 {

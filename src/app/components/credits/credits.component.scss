@@ -2,36 +2,34 @@
     padding-top: 20px !important;
 }
 
-.contributors {
-    display: grid;
+.mat-mdc-dialog-content {
+    position: relative;
+    padding-bottom: 150px;
 
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
-    justify-items: center;
-    align-items: stretch;
+    h2 {
+        position: sticky;
+        top: -20px;
 
-    margin-bottom: 1.5rem;
+        padding: 10px 0;
 
-    .contributor {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        z-index: 15;
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+        background-color: var(--mdc-dialog-container-color, var(--mat-sys-surface, white));
     }
 }
 
-.flex-end-wrapper {
+a {
     display: flex;
     flex-direction: row;
-
     align-items: center;
-    justify-content: end;
+    justify-content: start;
+
+    color: inherit;
+    text-decoration: none;
+
+    .mat-icon {
+        transform: scale(0.7);
+    }
 }
 
 .dialog-actions {
@@ -39,11 +37,5 @@
 
     button {
         color: white;
-    }
-}
-
-@media (max-width: 500px) {
-    .contributors {
-        grid-template-columns: repeat(2, 1fr);
     }
 }

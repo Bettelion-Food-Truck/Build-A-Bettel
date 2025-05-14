@@ -8,9 +8,9 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
-
-import { SortContributorsPipe } from 'app/pipes/sort-contrib/sort-contributors.pipe';
+import { MatIcon } from '@angular/material/icon';
 
 import { CONTRIBUTOR_PATH } from '@data/paths';
 
@@ -28,7 +28,8 @@ import { LogService } from '../../services/log/log.service';
     MatDialogTitle,
     MatDialogContent,
     CommonModule,
-    SortContributorsPipe
+    MatCardModule,
+    MatIcon
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './credits.component.html',

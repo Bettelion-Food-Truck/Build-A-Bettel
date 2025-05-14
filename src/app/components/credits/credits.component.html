@@ -1,29 +1,30 @@
 <img mat-dialog-title src="./images/build-a-bettel.png" alt="Build-A-Bettel logo image" />
 
 <mat-dialog-content>
-    <div id="contributor-container">
+    <p>Thank everyone for all their hard work.</p>
 
-        <div class="section-wrapper" *ngFor="let section of contributors">
-            <h2>{{section.name}}</h2>
-            <div>
+    <ng-container class="section-wrapper" *ngFor="let section of contributors">
+        <h2>{{section.name}}</h2>
+        <div>
 
-                <div *ngFor="let contributor of section.contributors">
+            <div *ngFor="let contributor of section.contributors">
+                <h3>
+                    @if (contributor.social) {
+                    <a href="{{contributor.social}}" target="_blank">
+                        {{contributor.name}} <mat-icon>open_in_new</mat-icon>
+                    </a>
+                    } @else {
+                    {{contributor.name}}
+                    }
+                </h3>
 
-                    <ng-container *ngIf="contributor.social">
-                        <a href="{{contributor.social}}" target="_blank">
-                            {{contributor.name}}
-                        </a>
-                    </ng-container>
-                    <ng-container *ngIf="!contributor.social">
-                        {{contributor.name}}
-                    </ng-container>
-
-                    <div *ngFor="let credit of contributor.credits" [innerHTML]="credit"></div>
-                </div>
-
+                <ul>
+                    <li *ngFor="let credit of contributor.credits" [innerHTML]="credit"></li>
+                </ul>
             </div>
+
         </div>
-    </div>
+    </ng-container>
 </mat-dialog-content>
 
 <mat-dialog-actions class="dialog-actions">

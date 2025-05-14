@@ -113,6 +113,22 @@
         {
             "name": "Styx",
             "image": "styx.png"
+        },
+        {
+            "name": "Fishsticks",
+            "image": "fishsticks.png"
+        },
+        {
+            "name": "Maryonet",
+            "image": "maryonet.png"
+        },
+        {
+            "name": "Myobi",
+            "image": "myobi.png"
+        },
+        {
+            "name": "Vivi",
+            "image": "vivi.png"
         }
     ],
     "developers": [

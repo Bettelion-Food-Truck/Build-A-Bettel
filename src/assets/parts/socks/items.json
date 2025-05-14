@@ -12,29 +12,22 @@
             ]
         },
         {
-            "item": "sims-flat",
+            "item": "sims-pointed",
+            "outfits": [
+                "sims"
+            ],
             "requires": {
                 "part": "feet",
-                "item": "flat"
+                "item": "pointed"
             },
             "variants": [
                 {
-                    "item": "sims-pointed",
-                    "outfits": [
-                        "sims"
-                    ],
+                    "item": "sims-flat",
                     "requires": {
                         "part": "feet",
-                        "item": "pointed"
+                        "item": "flat"
                     }
                 }
-            ]
-        },
-        {
-            "item": "betsy-socks",
-            "layer": "over-socks",
-            "outfits": [
-                "betsy"
             ]
         },
         {
@@ -58,20 +51,27 @@
             }
         },
         {
-            "item": "betsy-grayson-fishnets-flat",
+            "item": "betsy-socks",
+            "layer": "over-socks",
+            "outfits": [
+                "betsy"
+            ]
+        },
+        {
+            "item": "betsy-grayson-fishnets-heels",
+            "outfits": [
+                "betsy-grayson"
+            ],
             "requires": {
                 "part": "feet",
-                "item": "flat"
+                "item": "pointed"
             },
             "variants": [
                 {
-                    "item": "betsy-grayson-fishnets-heels",
-                    "outfits": [
-                        "betsy-grayson"
-                    ],
+                    "item": "betsy-grayson-fishnets-flat",
                     "requires": {
                         "part": "feet",
-                        "item": "pointed"
+                        "item": "flat"
                     }
                 }
             ]

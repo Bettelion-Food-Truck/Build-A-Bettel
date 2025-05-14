@@ -14,6 +14,7 @@ export interface Item {
         part: string,
         item: string
     } | null;
+    variants: Item[];
 
     thumbnail: boolean;
     hide: boolean;

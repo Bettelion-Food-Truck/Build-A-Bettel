@@ -48,6 +48,25 @@
                 opacity: 0.5;
                 filter: grayscale(1);
             }
+
+            &.variants {
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    top: -3px;
+                    right: -3px;
+
+                    height: 6px;
+                    width: 6px;
+                    border-radius: 3px;
+
+                    background: var(--favorite-accent-color, "#ff0000");
+                    /* TODO uncomment opacity: 0.05; */
+
+                    content: "\a";
+                }
+            }
         }
     }
 }

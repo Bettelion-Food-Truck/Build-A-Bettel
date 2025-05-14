@@ -25,6 +25,7 @@
         },
         {
             "item": "gala-tie",
+            "layer": "ties",
             "outfits": [
                 "gala"
             ]

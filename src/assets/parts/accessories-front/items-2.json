@@ -44,7 +44,10 @@
         },
         {
             "item": "unchained-belt",
-            "layer": "belt_elevated"
+            "layer": "belt_elevated",
+            "outfits": [
+                "unchained"
+            ]
         },
         {
             "item": "axel-braid"

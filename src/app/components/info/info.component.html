@@ -13,12 +13,11 @@
       href="https://github.com/ksadov/hackrew" target="_blank">hackrew</a>.
   </p>
 
-  <div id="photo-wall">
-    <h2>Employee Photo Wall</h2>
+  <div class="photo-wall">
+    <h2>Employee Photos</h2>
     <div class="contributors">
-      <div class="contributor" *ngFor="let contributor of fullList|sortContributors">
-        <img src="{{contributor.image}}" alt="{{contributor.name}}" />
-      </div>
+      <img src="{{contributor.image}}" alt="{{contributor.name}}"
+        *ngFor="let contributor of fullList|sortContributors" />
     </div>
   </div>
 </mat-dialog-content>

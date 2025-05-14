@@ -1,0 +1,23 @@
+<div id="contributor-container">
+
+    <div class="section-wrapper" *ngFor="let section of contributors">
+        <h2>{{section.name}}</h2>
+        <div>
+
+            <div *ngFor="let contributor of section.contributors">
+
+                <ng-container *ngIf="contributor.social">
+                    <a href="{{contributor.social}}" target="_blank">
+                        {{contributor.name}}
+                    </a>
+                </ng-container>
+                <ng-container *ngIf="!contributor.social">
+                    {{contributor.name}}
+                </ng-container>
+
+                <div *ngFor="let credit of contributor.credits" [innerHTML]="credit"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

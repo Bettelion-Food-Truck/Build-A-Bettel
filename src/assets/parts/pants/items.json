@@ -126,6 +126,12 @@
             ]
         },
         {
+            "item": "altare-pants",
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
             "item": "axel-pants",
             "outfits": [
                 "axel"

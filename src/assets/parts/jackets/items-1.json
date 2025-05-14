@@ -138,6 +138,27 @@
             ]
         },
         {
+            "item": "altare-jacket",
+            "multilayer": [
+                {
+                    "item": "altare-jacket-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
+            "item": "altare-jacket2",
+            "multilayer": [
+                {
+                    "item": "altare-jacket2-back",
+                    "layer": "jackets_1_back"
+                }
+            ]
+        },
+        {
             "item": "axel-jacket",
             "outfits": [
                 "axel"

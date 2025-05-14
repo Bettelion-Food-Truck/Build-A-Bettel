@@ -1,6 +1,10 @@
 {
     "outfits": [
         {
+            "uid": "altare",
+            "name": "Altare"
+        },
+        {
             "uid": "debut",
             "name": "Debut"
         },
@@ -87,6 +91,10 @@
         {
             "uid": "woven-fates",
             "name": "Woven Fates"
+        },
+        {
+            "uid": "altare",
+            "name": "Altare"
         },
         {
             "uid": "axel",

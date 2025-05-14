@@ -122,6 +122,12 @@
             ]
         },
         {
+            "item": "altare-shirt",
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
             "item": "axel-shirt",
             "outfits": [
                 "axel"

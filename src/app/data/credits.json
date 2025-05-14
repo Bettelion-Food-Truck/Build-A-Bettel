@@ -41,14 +41,50 @@
     ],
     "artists": [
         {
-            "name": "Gavis Bettel",
-            "image": "bettel.png",
-            "social": "https://x.com/gavisbettel",
+            "name": "Aether",
+            "image": "aether.png",
+            "social": "https://x.com/a_ether_17",
             "credits": [
-                "Portrait of Finarael in Gavin Bett'ol background",
-                "Cameo photos in basement background"
-            ],
-            "weight": -50
+                "<strong>Outfits:</strong> Pumpkin King, Ruze"
+            ]
+        },
+        {
+            "name": "BatVenom",
+            "social": "https://x.com/bat_venom_",
+            "credits": [
+                "<strong>Outfits:</strong> When You're Evil"
+            ]
+        },
+        {
+            "name": "CloudySky",
+            "image": "cloudysky270.png",
+            "social": "https://x.com/CloudySky270",
+            "credits": [
+                "<strong>Outfits:</strong> 2024 Expo (gloves and choker by Hioko-Chi-Sensei)",
+                "<strong>Accessories:</strong> Phantom choker, Bettelion earrings"
+            ]
+        },
+        {
+            "name": "delta",
+            "image": "delta.png",
+            "social": "https://x.com/delta",
+            "credits": [
+                "<strong>Outfits:</strong> 2025 Expo"
+            ]
+        },
+        {
+            "name": "Dulce @lasercutlegends",
+            "social": "https://x.com/LasercutLegends",
+            "credits": [
+                "<strong>Outfits:</strong> Butler"
+            ]
+        },
+        {
+            "name": "emiku",
+            "social": "https://x.com/_emiku",
+            "credits": [
+                "<strong>Outfits:</strong> Debut overlayer (hat by LIV [ 54BPM ])"
+            ]
         },
         {
             "name": "Finarael",
@@ -61,63 +97,37 @@
             ]
         },
         {
-            "name": "@sp00kysalmon",
-            "image": "spook.png",
-            "social": "https://x.com/sp00kysalmon",
+            "name": "Fishsticks",
+            "image": "fishsticks.png",
+            "social": "https://x.com/lurkdeer",
             "credits": [
-                "<strong>Outfits:</strong> January 2025 Calendar",
-                "<strong>Accessories:</strong> Tabi heels, tabi flats"
+                "<strong>Outfits:</strong> Shinri"
             ]
         },
         {
-            "name": "jahgyong",
-            "image": "jahgyong.png",
-            "social": "https://x.com/jahgyong",
+            "name": "Gavis Bettel",
+            "image": "bettel.png",
+            "social": "https://x.com/gavisbettel",
             "credits": [
-                "<strong>Outfits:</strong> Magni"
+                "Portrait of Finarael in Gavin Bett'ol background",
+                "Cameo photos in basement background"
+            ],
+            "weight": -50
+        },
+        {
+            "name": "genie",
+            "image": "genie-art.png",
+            "social": "https://x.com/genieart_",
+            "credits": [
+                "<strong>Outfits:</strong> Twobert"
             ]
         },
         {
-            "name": "ZZ_Mays",
-            "image": "zmays.png",
-            "social": "https://x.com/zz_mays",
+            "name": "GGGhoulish",
+            "social": "https://x.com/ggghoulish",
             "credits": [
-                "<strong>Outfits:</strong> Bettelgoose, Bettelzebub, Flex, Goose ASMR VP"
-            ]
-        },
-        {
-            "name": "REIH",
-            "image": "atomicreih.png",
-            "social": "https://x.com/atomicreih",
-            "credits": [
-                "<strong>Outfits:</strong> Betsy-Chan, Pirate, Showman, Spa",
-                "<strong>Accessories:</strong> Plaid pants, glasses, sunglasses, aviators, white slippers, Daki robe, purple nail polish, black nail polish"
-            ]
-        },
-        {
-            "name": "roseghostea",
-            "image": "roseghostea.png",
-            "social": "https://x.com/roseghostea",
-            "credits": [
-                "<strong>Accessories:</strong> Angel wings, demon horns, demon tail, dog ears, sheer fishnets, halo, monocle, party crown",
-                "<strong>Backgrounds:</strong> Black glitter, cotton candy diamonds, pink diamonds, pink curtain, pink lilies, pink night, purple lace, purple sky, waterfall",
-                "<strong>Filters:</strong> full hearts, line hearts, shoujo bubbles"
-            ]
-        },
-        {
-            "name": "Raisins0up",
-            "image": "raisins0up.png",
-            "social": "https://x.com/raisins0up",
-            "credits": [
-                "<strong>Outfits:</strong> Battel"
-            ]
-        },
-        {
-            "name": "Aether",
-            "image": "aether.png",
-            "social": "https://x.com/a_ether_17",
-            "credits": [
-                "<strong>Outfits:</strong> Pumpkin King, Ruze"
+                "<strong>Outfits:</strong> Inkya Impulse",
+                "<strong>Backgrounds:</strong> Diamonds (pink), diamonds (blue)"
             ]
         },
         {
@@ -131,11 +141,35 @@
             ]
         },
         {
-            "name": "genie",
-            "image": "genie-art.png",
-            "social": "https://x.com/genieart_",
+            "name": "jahgyong",
+            "image": "jahgyong.png",
+            "social": "https://x.com/jahgyong",
             "credits": [
-                "<strong>Outfits:</strong> Twobert"
+                "<strong>Outfits:</strong> Magni"
+            ]
+        },
+        {
+            "name": "jestertamer",
+            "image": "jestertamer.png",
+            "social": "https://x.com/jestertamer",
+            "credits": [
+                "<strong>Outfits:</strong> Gavin Bett'ol, Cowttel",
+                "<strong>Accessories:</strong> Several makeup items"
+            ],
+            "note": "Place next to Liv"
+        },
+        {
+            "name": "Jun @junstarias",
+            "social": "https://x.com/junstarias",
+            "credits": [
+                "<strong>Accessories:</strong> Clown wig"
+            ]
+        },
+        {
+            "name": "Khasnh",
+            "social": "https://x.com/kagemeomeo",
+            "credits": [
+                "<strong>Outfits:</strong> Last Game"
             ]
         },
         {
@@ -146,42 +180,6 @@
                 "<strong>Accessories:</strong> (P)hat, Memento necklace, Snank t-shirt",
                 "<strong>Companions:</strong> Medium Air, The Grape, Gooagalonomorigad",
                 "<strong>Filters:</strong> Color filters"
-            ]
-        },
-        {
-            "name": "natsu",
-            "image": "natsu.png",
-            "social": "https://x.com/appurupii",
-            "credits": [
-                "<strong>Outfits:</strong> Hakka"
-            ]
-        },
-        {
-            "name": "R4bbit",
-            "image": "r4bbit.png",
-            "social": "https://x.com/rabbitdr4gon",
-            "credits": [
-                "<strong>Accessories:</strong> Tank tread legs"
-            ]
-        },
-        {
-            "name": "skellitea",
-            "image": "skellitea.png",
-            "social": "https://x.com/skellitea",
-            "credits": [
-                "<strong>Accessories:</strong> Dual hair braids, pink glasses, (p)socks, shutter shades, sleep hat, sleep mask, snail eyes, spring glasses",
-                "<strong>Companions:</strong> Jerry, Feed-me Phantom, skrunkly Phantom, shoulder Phantom, Phantompy, skeleton, Snank, sock puppets",
-                "<strong>Backgrounds:</strong> Trippy background",
-                "<strong>Frames:</strong> 2 bones, candle, 4 eyes, 2 ghosts, gooses"
-            ]
-        },
-        {
-            "name": "CloudySky",
-            "image": "cloudysky270.png",
-            "social": "https://x.com/CloudySky270",
-            "credits": [
-                "<strong>Outfits:</strong> 2024 Expo (gloves and choker by Hioko-Chi-Sensei)",
-                "<strong>Accessories:</strong> Phantom choker, Bettelion earrings"
             ]
         },
         {
@@ -196,14 +194,11 @@
             "note": "Place next to jestertamer"
         },
         {
-            "name": "jestertamer",
-            "image": "jestertamer.png",
-            "social": "https://x.com/jestertamer",
+            "name": "Lynnear",
+            "social": "https://x.com/_lynnear",
             "credits": [
-                "<strong>Outfits:</strong> Gavin Bett'ol, Cowttel",
-                "<strong>Accessories:</strong> Several makeup items"
-            ],
-            "note": "Place next to Liv"
+                "<strong>Outfits:</strong> Altare"
+            ]
         },
         {
             "name": "MagiCupcake",
@@ -223,31 +218,6 @@
             ]
         },
         {
-            "name": "RoseLight",
-            "image": "roselight.jpg",
-            "social": "https://x.com/riverharmonic",
-            "credits": [
-                "Brainstormer, beta tester"
-            ]
-        },
-        {
-            "name": "Styx",
-            "image": "styx.png",
-            "social": "https://x.com/styx_ogawa",
-            "credits": [
-                "<strong>Outfits:</strong> Jurard",
-                "<strong>Accessories:</strong> Blindfold, lace blindfold, cat tail"
-            ]
-        },
-        {
-            "name": "Fishsticks",
-            "image": "fishsticks.png",
-            "social": "https://x.com/lurkdeer",
-            "credits": [
-                "<strong>Outfits:</strong> Shinri"
-            ]
-        },
-        {
             "name": "Maryonet",
             "image": "maryonet.png",
             "social": "https://x.com/_Maryonet_",
@@ -256,27 +226,10 @@
             ]
         },
         {
-            "name": "Myobi",
-            "image": "myobi.png",
-            "social": "https://x.com/stressed_nerd",
+            "name": "Mira @keigokisses",
+            "social": "https://x.com/keigokisses",
             "credits": [
-                "<strong>Outfits:</strong> Ghost Bride"
-            ]
-        },
-        {
-            "name": "Vivi",
-            "image": "vivi.png",
-            "social": "https://x.com/cerulean_vivi",
-            "credits": [
-                "UI/UX review, sensitivity reading"
-            ]
-        },
-        {
-            "name": "delta",
-            "image": "delta.png",
-            "social": "https://x.com/delta",
-            "credits": [
-                "<strong>Outfits:</strong> 2025 Expo"
+                "<strong>Accessories:</strong> Bunny ears"
             ]
         },
         {
@@ -288,67 +241,26 @@
             ]
         },
         {
-            "name": "BatVenom",
-            "social": "https://x.com/bat_venom_",
-            "credits": [
-                "<strong>Outfits:</strong> When You're Evil"
-            ]
-        },
-        {
-            "name": "Dulce @lasercutlegends",
-            "social": "https://x.com/LasercutLegends",
-            "credits": [
-                "<strong>Outfits:</strong> Butler"
-            ]
-        },
-        {
-            "name": "emiku",
-            "social": "https://x.com/_emiku",
-            "credits": [
-                "<strong>Outfits:</strong> Debut overlayer (hat by LIV [ 54BPM ])"
-            ]
-        },
-        {
-            "name": "GGGhoulish",
-            "social": "https://x.com/ggghoulish",
-            "credits": [
-                "<strong>Outfits:</strong> Inkya Impulse",
-                "<strong>Backgrounds:</strong> Diamonds (pink), diamonds (blue)"
-            ]
-        },
-        {
-            "name": "Khasnh",
-            "social": "https://x.com/kagemeomeo",
-            "credits": [
-                "<strong>Outfits:</strong> Last Game"
-            ]
-        },
-        {
-            "name": "Jun @junstarias",
-            "social": "https://x.com/junstarias",
-            "credits": [
-                "<strong>Accessories:</strong> Clown wig"
-            ]
-        },
-        {
-            "name": "Lynnear",
-            "social": "https://x.com/_lynnear",
-            "credits": [
-                "<strong>Outfits:</strong> Altare"
-            ]
-        },
-        {
-            "name": "Mira @keigokisses",
-            "social": "https://x.com/keigokisses",
-            "credits": [
-                "<strong>Accessories:</strong> Bunny ears"
-            ]
-        },
-        {
             "name": "MOMICHI",
             "social": "https://x.com/momichiword",
             "credits": [
                 "<strong>Outfits:</strong> Woven Fates"
+            ]
+        },
+        {
+            "name": "Myobi",
+            "image": "myobi.png",
+            "social": "https://x.com/stressed_nerd",
+            "credits": [
+                "<strong>Outfits:</strong> Ghost Bride"
+            ]
+        },
+        {
+            "name": "natsu",
+            "image": "natsu.png",
+            "social": "https://x.com/appurupii",
+            "credits": [
+                "<strong>Outfits:</strong> Hakka"
             ]
         },
         {
@@ -361,11 +273,36 @@
             ]
         },
         {
+            "name": "R4bbit",
+            "image": "r4bbit.png",
+            "social": "https://x.com/rabbitdr4gon",
+            "credits": [
+                "<strong>Accessories:</strong> Tank tread legs"
+            ]
+        },
+        {
             "name": "Raienn",
             "social": "https://x.com/Raienn_k",
             "credits": [
                 "<strong>Accessories:</strong> Jerry's hat",
                 "<strong>Companions:</strong> Bettelgoose"
+            ]
+        },
+        {
+            "name": "Raisins0up",
+            "image": "raisins0up.png",
+            "social": "https://x.com/raisins0up",
+            "credits": [
+                "<strong>Outfits:</strong> Battel"
+            ]
+        },
+        {
+            "name": "REIH",
+            "image": "atomicreih.png",
+            "social": "https://x.com/atomicreih",
+            "credits": [
+                "<strong>Outfits:</strong> Betsy-Chan, Pirate, Showman, Spa",
+                "<strong>Accessories:</strong> Plaid pants, glasses, sunglasses, aviators, white slippers, Daki robe, purple nail polish, black nail polish"
             ]
         },
         {
@@ -383,10 +320,13 @@
             ]
         },
         {
-            "name": "sharp hands",
-            "social": "https://x.com/homuralilly",
+            "name": "roseghostea",
+            "image": "roseghostea.png",
+            "social": "https://x.com/roseghostea",
             "credits": [
-                "<strong>Outfits:</strong> Flayon (lines and flats, with Finarael)"
+                "<strong>Accessories:</strong> Angel wings, demon horns, demon tail, dog ears, sheer fishnets, halo, monocle, party crown",
+                "<strong>Backgrounds:</strong> Black glitter, cotton candy diamonds, pink diamonds, pink curtain, pink lilies, pink night, purple lace, purple sky, waterfall",
+                "<strong>Filters:</strong> full hearts, line hearts, shoujo bubbles"
             ]
         },
         {
@@ -398,11 +338,47 @@
             ]
         },
         {
+            "name": "sharp hands",
+            "social": "https://x.com/homuralilly",
+            "credits": [
+                "<strong>Outfits:</strong> Flayon (lines and flats, with Finarael)"
+            ]
+        },
+        {
+            "name": "skellitea",
+            "image": "skellitea.png",
+            "social": "https://x.com/skellitea",
+            "credits": [
+                "<strong>Accessories:</strong> Dual hair braids, pink glasses, (p)socks, shutter shades, sleep hat, sleep mask, snail eyes, spring glasses",
+                "<strong>Companions:</strong> Jerry, Feed-me Phantom, skrunkly Phantom, shoulder Phantom, Phantompy, skeleton, Snank, sock puppets",
+                "<strong>Backgrounds:</strong> Trippy background",
+                "<strong>Frames:</strong> 2 bones, candle, 4 eyes, 2 ghosts, gooses"
+            ]
+        },
+        {
             "name": "spaced",
             "social": "https://x.com/spacedoutpup",
             "credits": [
                 "<strong>Companions:</strong> Axelotl, Bubby, Hakkito, Koipanion, Machiroon, Magmite, Octoposse, Phantom (jack-in-the-box), Phantom (second outfit), Phantom (smiling), Phantom (Valentine's), Ruzader, Sorawrity, Vestea, Vestie",
                 "<strong>Companions:</strong> Altventurer"
+            ]
+        },
+        {
+            "name": "@sp00kysalmon",
+            "image": "spook.png",
+            "social": "https://x.com/sp00kysalmon",
+            "credits": [
+                "<strong>Outfits:</strong> January 2025 Calendar",
+                "<strong>Accessories:</strong> Tabi heels, tabi flats"
+            ]
+        },
+        {
+            "name": "Styx",
+            "image": "styx.png",
+            "social": "https://x.com/styx_ogawa",
+            "credits": [
+                "<strong>Outfits:</strong> Jurard",
+                "<strong>Accessories:</strong> Blindfold, lace blindfold, cat tail"
             ]
         },
         {
@@ -422,9 +398,25 @@
             ]
         },
         {
+            "name": "Vivi",
+            "image": "vivi.png",
+            "social": "https://x.com/cerulean_vivi",
+            "credits": [
+                "UI/UX review, sensitivity reading"
+            ]
+        },
+        {
             "name": "_Wren_pov",
             "credits": [
                 "<strong>Outfits:</strong> Vesper"
+            ]
+        },
+        {
+            "name": "ZZ_Mays",
+            "image": "zmays.png",
+            "social": "https://x.com/zz_mays",
+            "credits": [
+                "<strong>Outfits:</strong> Bettelgoose, Bettelzebub, Flex, Goose ASMR VP"
             ]
         }
     ],
@@ -454,6 +446,14 @@
             "social": "https://x.com/SakuraMikage",
             "credits": [
                 "UI assistant"
+            ]
+        },
+        {
+            "name": "RoseLight",
+            "image": "roselight.jpg",
+            "social": "https://x.com/riverharmonic",
+            "credits": [
+                "Brainstormer, beta tester"
             ]
         }
     ]

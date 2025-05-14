@@ -237,13 +237,14 @@
         },
         {
             "item": "axel-shoes",
-            "outfits": [
-                "axel"
-            ],
+            "layer": "shoes-covered",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
+            },
+            "outfits": [
+                "axel"
+            ]
         },
         {
             "item": "flayon-shoes",

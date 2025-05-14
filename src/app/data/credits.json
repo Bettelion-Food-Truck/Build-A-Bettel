@@ -1,16 +1,16 @@
 {
     "roles": [
         {
-            "name": "Project Lead",
+            "name": "Project Leads",
             "section": "lead"
+        },
+        {
+            "name": "Developers & Assistants",
+            "section": "developers"
         },
         {
             "name": "Artists",
             "section": "artists"
-        },
-        {
-            "name": "Developers",
-            "section": "developers"
         }
     ],
     "lead": [
@@ -19,24 +19,45 @@
             "image": "finarael.png",
             "social": "https://x.com/Finarael",
             "credits": [
-                "Head Chef, Discord administrator, Bettelion wrangler, asset editor",
-                "<strong>Outfits:</strong> Gala suit, maid, Octavio (gloves by _Wren_pov), Phantom of the Circus, Punk, Flayon (details and shading, with sharp hands), Twobert (splitting and filling in gaps, with genie)",
-                "<strong>Accessories:</strong> Build-a-Bettel logo, Bettelion Food Truck logo, bouquet, microphone, tic tac toe makeup, whiskers, Yatta leaf, alternate expressions, balloons",
-                "<strong>Backgrounds:</strong> Arcade, Bettel text, city at night, Holostars logo, rainbow, jungle, Albuquerque art contest",
-                "<strong>Frames:</strong> star frame, pearl frame, chaotic pearl frame, lightning frame, bubble frame, rose frame, zipper frame, crystal frame, light Celtic knot frame, bright Celtic knot frame, golden flower frame"
+                "Head Chef, Discord administrator, Bettelion wrangler, asset editor"
             ],
             "weight": -100
+        },
+        {
+            "name": "TobiArts",
+            "social": "https://x.com/_TobiArts",
+            "credits": [
+                "Sous Chef, Discord moderator, employee photo background"
+            ]
+        },
+        {
+            "name": "Sakura \"Saku\" Mikage",
+            "image": "saku.png",
+            "social": "https://x.com/SakuraMikage",
+            "credits": [
+                "Sous chef, Discord moderator"
+            ]
         }
     ],
     "artists": [
         {
-            "name": "Bettel",
+            "name": "Gavis Bettel",
             "image": "bettel.png",
-            "weight": -50,
             "social": "https://x.com/gavisbettel",
             "credits": [
                 "Portrait of Finarael in Gavin Bett'ol background",
                 "Cameo photos in basement background"
+            ],
+            "weight": -50
+        },
+        {
+            "name": "Finarael",
+            "social": "https://x.com/Finarael",
+            "credits": [
+                "<strong>Outfits:</strong> Gala suit, maid, Octavio (gloves by _Wren_pov), Phantom of the Circus, Punk, Flayon (details and shading, with sharp hands), Twobert (splitting and filling in gaps, with genie)",
+                "<strong>Accessories:</strong> Build-a-Bettel logo, Bettelion Food Truck logo, bouquet, microphone, tic tac toe makeup, whiskers, Yatta leaf, alternate expressions, balloons",
+                "<strong>Backgrounds:</strong> Arcade, Bettel text, city at night, Holostars logo, rainbow, jungle, Albuquerque art contest",
+                "<strong>Frames:</strong> star, pearl, chaotic pearl, lightning, bubble, rose, zipper, crystal, light Celtic knot, bright Celtic knot, golden flower"
             ]
         },
         {
@@ -49,7 +70,7 @@
             ]
         },
         {
-            "name": "Jahgyong",
+            "name": "jahgyong",
             "image": "jahgyong.png",
             "social": "https://x.com/jahgyong",
             "credits": [
@@ -84,10 +105,6 @@
             ]
         },
         {
-            "name": "Pafufufun",
-            "image": "pafufufun.png"
-        },
-        {
             "name": "Raisins0up",
             "image": "raisins0up.png",
             "social": "https://x.com/raisins0up",
@@ -104,7 +121,7 @@
             ]
         },
         {
-            "name": "Hioko",
+            "name": "Hioko_Chi",
             "image": "hioko.png",
             "social": "https://x.com/hioko_chi",
             "credits": [
@@ -127,7 +144,7 @@
             "credits": [
                 "<strong>Outfits:</strong> April Fool, Jester, Sims",
                 "<strong>Accessories:</strong> (P)hat, Memento necklace, Snank t-shirt",
-                "<storng>Companions:</strong> Medium Air, The Grape, Gooagalonomorigad",
+                "<strong>Companions:</strong> Medium Air, The Grape, Gooagalonomorigad",
                 "<strong>Filters:</strong> Color filters"
             ]
         },
@@ -148,14 +165,6 @@
             ]
         },
         {
-            "name": "Sakura \"Saku\" Mikage",
-            "image": "saku.png",
-            "social": "https://x.com/SakuraMikage",
-            "credits": [
-                "Sous chef, Discord moderator, UI assistant"
-            ]
-        },
-        {
             "name": "skellitea",
             "image": "skellitea.png",
             "social": "https://x.com/skellitea",
@@ -163,15 +172,7 @@
                 "<strong>Accessories:</strong> Dual hair braids, pink glasses, (p)socks, shutter shades, sleep hat, sleep mask, snail eyes, spring glasses",
                 "<strong>Companions:</strong> Jerry, Feed-me Phantom, skrunkly Phantom, shoulder Phantom, Phantompy, skeleton, Snank, sock puppets",
                 "<strong>Backgrounds:</strong> Trippy background",
-                "<strong>Frames:</strong> 2 bone frames, candle frame, 4 eye frames, 2 ghost frames, goose frames"
-            ]
-        },
-        {
-            "name": "Socktoebathtub",
-            "image": "socktoebathtub.png",
-            "social": "https://x.com/socktoebathtub",
-            "credits": [
-                "Data manager"
+                "<strong>Frames:</strong> 2 bones, candle, 4 eyes, 2 ghosts, gooses"
             ]
         },
         {
@@ -352,6 +353,7 @@
         },
         {
             "name": "Paufufufun",
+            "image": "pafufufun.png",
             "social": "https://x.com/paufufufun",
             "credits": [
                 "<strong>Outfits:</strong> Dead World",
@@ -392,7 +394,7 @@
             "social": "https://x.com/sh1oni_nath",
             "credits": [
                 "<strong>Backgrounds:</strong> Tempus Gala curtains (red), Tempus Gala curtains (pink/purple/blue)",
-                "<strong>Frames:</strong> gold frame, silver frame"
+                "<strong>Frames:</strong> gold, silver"
             ]
         },
         {
@@ -407,7 +409,7 @@
             "name": "TobiArts",
             "social": "https://x.com/_TobiArts",
             "credits": [
-                "Sous Chef, Discord moderator, employee photo background",
+                "Employee photo background",
                 "<strong>Outfits:</strong> Betsy Grayson",
                 "<strong>Companions:</strong> Carnotaurus"
             ]
@@ -437,10 +439,22 @@
         {
             "name": "Evie",
             "image": "evie.png",
-            "credits": [
-                "Developer consultant"
-            ],
             "weight": 500
+        },
+        {
+            "name": "Socktoebathtub",
+            "image": "socktoebathtub.png",
+            "social": "https://x.com/socktoebathtub",
+            "credits": [
+                "Data manager"
+            ]
+        },
+        {
+            "name": "Sakura \"Saku\" Mikage",
+            "social": "https://x.com/SakuraMikage",
+            "credits": [
+                "UI assistant"
+            ]
         }
     ]
 }

@@ -21,6 +21,11 @@
     ],
     "artists": [
         {
+            "name": "Bettel",
+            "image": "bettel.png",
+            "weight": -50
+        },
+        {
             "name": "Spook",
             "image": "spook.png"
         },
@@ -143,6 +148,11 @@
         {
             "name": "GlitchTech",
             "image": "glitchtech.png"
+        },
+        {
+            "name": "Evie",
+            "image": "evie.png",
+            "weight": 500
         }
     ]
 }

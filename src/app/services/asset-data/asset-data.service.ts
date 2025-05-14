@@ -126,7 +126,7 @@ export class AssetDataService {
       }
     }
 
-    console.log("CONNECTIONS", connectons);
+    //console.log("CONNECTIONS", connectons);
     //x.filter( entry => entry.source.part === "Socks" )
 
     this.partSignal.set(this.parts);

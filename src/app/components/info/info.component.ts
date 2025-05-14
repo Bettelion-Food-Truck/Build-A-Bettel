@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CONTRIBUTOR_PATH } from '@data/paths';
-
 import {
   MatDialogActions,
   MatDialogClose,
@@ -11,6 +9,10 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { MatButton } from '@angular/material/button';
+
+import { SortContributorsPipe } from 'app/pipes/sort-contrib/sort-contributors.pipe';
+
+import { CONTRIBUTOR_PATH } from '@data/paths';
 
 import data from '@data/credits.json';
 import { Group, Contributor } from '@models/credits.model';
@@ -25,7 +27,8 @@ import { LogService } from '../../services/log/log.service';
     MatDialogClose,
     MatDialogTitle,
     MatDialogContent,
-    CommonModule
+    CommonModule,
+    SortContributorsPipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './info.component.html',
@@ -34,7 +37,8 @@ import { LogService } from '../../services/log/log.service';
 export class InfoComponent {
   readonly dialogRef = inject(MatDialogRef<InfoComponent>);
 
-  contributors?: Group[];
+  contributors: Group[] = [];
+  fullList: Contributor[] = [];
 
   constructor(private logger: LogService) { }
 
@@ -64,14 +68,21 @@ export class InfoComponent {
           return {
             name: contributor.name ?? "",
             image: contributor.image ? `${CONTRIBUTOR_PATH}${contributor.image}` : "",
-            handle: contributor.handle ?? "",
-            title: contributor.title ?? "",
-            responsibilities: contributor.responsibilities ?? ""
+            social: contributor.social ?? "",
+            credits: contributor.credits ?? [],
+            weight: contributor.weight ?? 0
           } as Contributor;
         });
       }
 
       return group;
+    });
+
+    this.fullList = [];
+
+    this.contributors.forEach((group: Group) => {
+
+      this.fullList.push(...group.contributors);
     });
   }
 }

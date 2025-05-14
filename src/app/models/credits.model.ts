@@ -2,15 +2,16 @@ export interface Group {
     name: string;
     section: string;
 
-    contributors?: Contributor[];
+    contributors: Contributor[];
 }
 
 export interface Contributor {
     name: string;
+
     image?: string;
+    social?: string;
 
-    handle?: string;
-    title?: string;
+    credits?: string[];
 
-    responsibilities?: string;
+    weight: number;
 }

@@ -16,7 +16,15 @@
     "lead": [
         {
             "name": "Finarael",
-            "image": "finarael.png"
+            "image": "finarael.png",
+            "social": "https://x.com/Finarael",
+            "credits": [
+                "<strong>Outfits:</strong> Gala suit, maid, Octavio (gloves by _Wren_pov), Phantom of the Circus, Punk, Flayon (details and shading, with sharp hands), Twobert (splitting and filling in gaps, with genie)",
+                "<strong>Accessories:</strong> Build-a-Bettel logo, Bettelion Food Truck logo, bouquet, microphone, tic tac toe makeup, whiskers, Yatta leaf, alternate expressions, balloons",
+                "<strong>Backgrounds, filters, &amp; frames:</strong> Arcade, Bettel text, city at night, Holostars logo, rainbow, jungle, Albuquerque art contest, star frame, pearl frame, chaotic pearl frame, lightning frame, bubble frame, rose frame, zipper frame, crystal frame, light Celtic knot frame, bright Celtic knot frame, golden flower frame",
+                "<strong>Other:</strong> Head Chef, Discord administrator, Bettelion wrangler, asset editor"
+            ],
+            "weight": -100
         }
     ],
     "artists": [

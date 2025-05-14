@@ -81,7 +81,10 @@
         },
         {
             "item": "bald",
-            "hide": true
+            "hide": true,
+            "outfits": [
+                "bettelgoose"
+            ]
         }
     ]
 }

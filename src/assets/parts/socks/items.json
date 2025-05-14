@@ -16,17 +16,19 @@
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
-        },
-        {
-            "item": "sims-pointed",
-            "outfits": [
-                "sims"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "sims-pointed",
+                    "outfits": [
+                        "sims"
+                    ],
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
             "item": "betsy-socks",
@@ -60,17 +62,19 @@
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
-        },
-        {
-            "item": "betsy-grayson-fishnets-heels",
-            "outfits": [
-                "betsy-grayson"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "betsy-grayson-fishnets-heels",
+                    "outfits": [
+                        "betsy-grayson"
+                    ],
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
             "item": "ghost-bride-socks",
@@ -87,28 +91,32 @@
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
-        },
-        {
-            "item": "fishnets-pointed",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "fishnets-pointed",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
             "item": "psock-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
-        },
-        {
-            "item": "psock-heel",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "psock-heel",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         }
     ]
 }

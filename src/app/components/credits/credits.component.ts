@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
+import { SortContributorsPipe } from 'app/pipes/sort-contrib/sort-contributors.pipe';
+
 import { CONTRIBUTOR_PATH } from '@data/paths';
 
 import data from '@data/credits.json';
@@ -29,7 +31,8 @@ import { LogService } from '../../services/log/log.service';
     MatDialogContent,
     CommonModule,
     MatCardModule,
-    MatIcon
+    MatIcon,
+    SortContributorsPipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './credits.component.html',

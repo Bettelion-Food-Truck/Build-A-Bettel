@@ -53,11 +53,19 @@ body {
     font-size: var(--mat-sys-body-medium-size);
     letter-spacing: var(--mat-sys-body-medium-tracking);
     font-weight: var(--mat-sys-body-medium-weight);
+
+    .mat-mdc-dialog-container {
+        max-height: 100vh;
+    }
 }
 
 @supports (max-height: 100dvh) {
     body {
         height: 100dvh;
+
+        .mat-mdc-dialog-container {
+            max-height: 100dvh;
+        }
     }
 }
 

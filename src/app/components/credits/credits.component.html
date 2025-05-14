@@ -3,11 +3,10 @@
 <mat-dialog-content>
     <p>Thank everyone for all their hard work.</p>
 
-    <ng-container class="section-wrapper" *ngFor="let section of contributors">
+    <ng-container *ngFor="let section of contributors">
         <h2>{{section.name}}</h2>
-        <div>
-
-            <div *ngFor="let contributor of section.contributors">
+        <ng-container *ngFor="let contributor of section.contributors|sortContributors">
+            <div class="contributor" *ngIf="contributor.credits && contributor.credits.length > 0">
                 <h3>
                     @if (contributor.social) {
                     <a href="{{contributor.social}}" target="_blank">
@@ -22,8 +21,7 @@
                     <li *ngFor="let credit of contributor.credits" [innerHTML]="credit"></li>
                 </ul>
             </div>
-
-        </div>
+        </ng-container>
     </ng-container>
 </mat-dialog-content>
 

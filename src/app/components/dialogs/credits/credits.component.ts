@@ -20,6 +20,8 @@ import { CONTRIBUTOR_PATH } from '@data/paths';
 import data from '@data/credits.json';
 import { Group, Contributor } from '@models/credits.model';
 
+import { DialogType } from '@components/dialogs/dialogs.enum';
+
 @Component({
   selector: 'app-info',
   imports: [
@@ -39,6 +41,8 @@ import { Group, Contributor } from '@models/credits.model';
 })
 export class CreditsComponent {
   readonly dialogRef = inject(MatDialogRef<CreditsComponent>);
+
+  readonly types = DialogType;
 
   contributors: Group[] = [];
   fullList: Contributor[] = [];

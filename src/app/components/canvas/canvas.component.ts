@@ -244,7 +244,7 @@ export class CanvasComponent implements AfterViewInit {
 
     this.loading.addLoadingItem();
 
-    this.currentlySelectedItems = this.itemSignal();
+    this.currentlySelectedItems = { ...this.itemSignal() };
     const layers: Layer[] = this.layerSignal();
 
     this.checkPartRequirements();

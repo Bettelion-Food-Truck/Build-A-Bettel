@@ -94,16 +94,40 @@ export class AssetDataService {
 
     // Build functional structure
     this.parts = [];
+    let connectons = [];
 
-    for (let partIndex = 0; partIndex < partData.length; partIndex++) {
+    for (let i = 0; i < partData.length; i++) {
 
-      this.parts[partIndex] = partData[partIndex] satisfies Part;
+      this.parts[i] = partData[i] satisfies Part;
 
-      if (!this.parts[partIndex].layer) {
+      if (!this.parts[i].layer) {
         // Ensure layer is set
-        this.parts[partIndex].layer = this.parts[partIndex].folder;
+        this.parts[i].layer = this.parts[i].folder;
+      }
+
+      for (let j = 0; j < this.parts[i].items.length; j++) {
+
+        if (this.parts[i].items[j].requires) {
+          // Check if the item has a requirement
+
+          let item = this.parts[i].items[j];
+
+          connectons.push({
+            "source": {
+              part: this.parts[i].name,
+              item: item.item
+            },
+            "target": {
+              part: item.requires!.part,
+              item: item.requires!.item
+            }
+          });
+        }
       }
     }
+
+    //console.log("CONNECTIONS", connectons);
+    //x.filter( entry => entry.source.part === "Socks" )
 
     this.partSignal.set(this.parts);
     this.logger.info(`AssetDataService: loadAssetData() - ${partCount} items loaded`);

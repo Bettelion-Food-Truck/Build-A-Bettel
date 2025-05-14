@@ -203,7 +203,7 @@
             "item": "cowttel-shorts",
             "requires": {
                 "part": "undies",
-                "item": "briefs"
+                "item": "leaf"
             },
             "outfits": [
                 "cowttel"

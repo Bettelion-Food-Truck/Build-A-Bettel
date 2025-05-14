@@ -1,3 +1,4 @@
+
 import { Component, inject } from '@angular/core';
 
 import {
@@ -22,11 +23,11 @@ import { DialogType } from '@components/dialogs/dialogs.enum';
     MatDialogContent,
     MatCardModule
   ],
-  templateUrl: './safe-to-stream.component.html',
-  styleUrl: './safe-to-stream.component.scss'
+  templateUrl: './introduction.component.html',
+  styleUrl: './introduction.component.scss'
 })
-export class SafeToStreamComponent {
-  readonly dialogRef = inject(MatDialogRef<SafeToStreamComponent>);
+export class IntroductionComponent {
+  readonly dialogRef = inject(MatDialogRef<IntroductionComponent>);
 
   readonly types = DialogType;
 }

@@ -17,7 +17,7 @@ import { PromptComponent } from "@components/prompt/prompt.component";
 
 import { InfoComponent } from '@components/dialogs/info/info.component';
 import { CreditsComponent } from '@components/dialogs/credits/credits.component';
-import { SafeToStreamComponent } from '@components/dialogs/safe-to-stream/safe-to-stream.component';
+import { IntroductionComponent } from '@components/dialogs/introduction/introduction.component';
 
 import { LogService } from '@services/log/log.service';
 
@@ -259,7 +259,7 @@ export class AppComponent {
   showIntro() {
     this.logger.debug("AppComponent: showInfo()");
 
-    const dialogRef = this.dialog.open(SafeToStreamComponent);
+    const dialogRef = this.dialog.open(IntroductionComponent);
 
     dialogRef.afterClosed().subscribe(result => {
 

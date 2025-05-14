@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SafeToStreamComponent } from './safe-to-stream.component';
+import { IntroductionComponent } from './introduction.component';
 
-describe('SafeToStreamComponent', () => {
-  let component: SafeToStreamComponent;
-  let fixture: ComponentFixture<SafeToStreamComponent>;
+describe('IntroductionComponent', () => {
+  let component: IntroductionComponent;
+  let fixture: ComponentFixture<IntroductionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SafeToStreamComponent]
+      imports: [IntroductionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SafeToStreamComponent);
+    fixture = TestBed.createComponent(IntroductionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

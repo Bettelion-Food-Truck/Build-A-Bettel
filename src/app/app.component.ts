@@ -15,7 +15,9 @@ import { PaletteComponent } from "@components/palette/palette.component";
 import { OutfitsComponent } from "@components/outfits/outfits.component";
 import { PromptComponent } from "@components/prompt/prompt.component";
 
-import { InfoComponent } from '@components/info/info.component';
+import { InfoComponent } from '@components/dialogs/info/info.component';
+import { CreditsComponent } from '@components/dialogs/credits/credits.component';
+import { SafeToStreamComponent } from '@components/dialogs/safe-to-stream/safe-to-stream.component';
 
 import { LogService } from '@services/log/log.service';
 
@@ -28,7 +30,6 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
-import { CreditsComponent } from '@components/credits/credits.component';
 
 enum AppComponentState {
   Movement,
@@ -178,7 +179,7 @@ export class AppComponent {
 
     // Show credits on initial load in production mode
     if (!isDevMode()) {
-      this.showInfo();
+      this.showIntro();
     }
 
     // Initial load
@@ -250,6 +251,24 @@ export class AppComponent {
     this.logger.info("AppComponent: generatePrompt()");
 
     this.prompt.generateRandomPrompt();
+  }
+
+  showIntro() {
+    this.logger.info("AppComponent: showInfo()");
+
+    const dialogRef = this.dialog.open(SafeToStreamComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      switch (result) {
+        case "credits":
+          this.showCredits();
+          break;
+        case "info":
+          this.showInfo();
+          break;
+      }
+    });
   }
 
   showInfo() {

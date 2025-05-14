@@ -8,9 +8,7 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
-import { MatCardModule } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
 
 import { SortContributorsPipe } from 'app/pipes/sort-contrib/sort-contributors.pipe';
 
@@ -19,7 +17,7 @@ import { CONTRIBUTOR_PATH } from '@data/paths';
 import data from '@data/credits.json';
 import { Group, Contributor } from '@models/credits.model';
 
-import { LogService } from '../../services/log/log.service';
+import { LogService } from '../../../services/log/log.service';
 
 @Component({
   selector: 'app-info',
@@ -30,16 +28,14 @@ import { LogService } from '../../services/log/log.service';
     MatDialogTitle,
     MatDialogContent,
     CommonModule,
-    MatCardModule,
-    MatIcon,
     SortContributorsPipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './credits.component.html',
-  styleUrl: './credits.component.scss'
+  templateUrl: './info.component.html',
+  styleUrl: './info.component.scss'
 })
-export class CreditsComponent {
-  readonly dialogRef = inject(MatDialogRef<CreditsComponent>);
+export class InfoComponent {
+  readonly dialogRef = inject(MatDialogRef<InfoComponent>);
 
   contributors: Group[] = [];
   fullList: Contributor[] = [];
@@ -48,7 +44,7 @@ export class CreditsComponent {
 
   ngOnInit() {
 
-    this.logger.info('CreditsComponent: ngOnInit()');
+    this.logger.info('InfoComponent: ngOnInit()');
 
     this.processCredits(data);
   }
@@ -57,7 +53,7 @@ export class CreditsComponent {
    * Process the JSON data.
    */
   processCredits(data: any) {
-    this.logger.info('CreditsComponent: processCredits()');
+    this.logger.info('InfoComponent: processCredits()');
 
     this.contributors = data.roles.map((role: any) => {
 

@@ -122,6 +122,12 @@
             ]
         },
         {
+            "item": "altare-shirt",
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
             "item": "axel-shirt",
             "outfits": [
                 "axel"
@@ -189,6 +195,15 @@
             "item": "shinri-shirt",
             "outfits": [
                 "shinri"
+            ]
+        },
+        {
+            "item": "twobert-shirt-long"
+        },
+        {
+            "item": "twobert-shirt-short",
+            "outfits": [
+                "twobert"
             ]
         },
         {

@@ -12,8 +12,7 @@
             "requires": {
                 "part": "feet",
                 "item": "none"
-            },
-            "thumbnail": false
+            }
         },
         {
             "item": "debut-underlayer",
@@ -43,7 +42,7 @@
             "item": "gala-shoes",
             "requires": {
                 "part": "feet",
-                "item": "flat"
+                "item": "pointed"
             },
             "outfits": [
                 "gala"
@@ -227,14 +226,25 @@
             }
         },
         {
-            "item": "axel-shoes",
-            "outfits": [
-                "axel"
-            ],
+            "item": "altare-shoes",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
+            },
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
+            "item": "axel-shoes",
+            "layer": "shoes-covered",
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            },
+            "outfits": [
+                "axel"
+            ]
         },
         {
             "item": "flayon-shoes",

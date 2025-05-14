@@ -126,6 +126,12 @@
             ]
         },
         {
+            "item": "altare-pants",
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
             "item": "axel-pants",
             "outfits": [
                 "axel"
@@ -175,6 +181,12 @@
             ]
         },
         {
+            "item": "twobert-pants",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "vesper-pants",
             "outfits": [
                 "vesper"
@@ -203,7 +215,7 @@
             "item": "cowttel-shorts",
             "requires": {
                 "part": "undies",
-                "item": "briefs"
+                "item": "leaf"
             },
             "outfits": [
                 "cowttel"
@@ -264,7 +276,7 @@
         },
         {
             "item": "tank-treads",
-            "layer": "pants_elevated",
+            "layer": "tank-treads",
             "multilayer": [
                 {
                     "item": "tank-treads-back",

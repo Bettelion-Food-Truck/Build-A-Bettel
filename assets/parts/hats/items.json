@@ -125,6 +125,12 @@
         },
         {
             "item": "twobert-hat",
+            "multilayer": [
+                {
+                    "item": "twobert-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
             "outfits": [
                 "twobert"
             ]
@@ -221,6 +227,9 @@
                 "item": "bald"
             }
         },
+        "bunny-ears-white",
+        "bunny-ears-black",
+        "demon-horns",
         "cat-ears",
         "demon-horns",
         "dog-ears",

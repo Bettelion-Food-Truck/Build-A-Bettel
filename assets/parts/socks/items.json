@@ -9,18 +9,7 @@
             "item": "2025-expo-leggings",
             "outfits": [
                 "2025-expo"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "sims-flat",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
+            ]
         },
         {
             "item": "sims-pointed",
@@ -30,18 +19,26 @@
             "requires": {
                 "part": "feet",
                 "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "sims-flat",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                }
+            ]
         },
         {
-            "item": "betsy-socks",
-            "layer": "over-socks",
-            "outfits": [
-                "betsy"
-            ],
+            "item": "altare-socks",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
+            },
+            "outfits": [
+                "altare"
+            ]
         },
         {
             "item": "flayon-socks",
@@ -64,11 +61,11 @@
             }
         },
         {
-            "item": "betsy-grayson-fishnets-flat",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
+            "item": "betsy-socks",
+            "layer": "over-socks",
+            "outfits": [
+                "betsy"
+            ]
         },
         {
             "item": "betsy-grayson-fishnets-heels",
@@ -78,7 +75,16 @@
             "requires": {
                 "part": "feet",
                 "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "betsy-grayson-fishnets-flat",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                }
+            ]
         },
         {
             "item": "ghost-bride-socks",
@@ -95,28 +101,32 @@
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
-        },
-        {
-            "item": "fishnets-pointed",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "fishnets-pointed",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
             "item": "psock-flat",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
-        },
-        {
-            "item": "psock-heel",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            },
+            "variants": [
+                {
+                    "item": "psock-heel",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         }
     ]
 }

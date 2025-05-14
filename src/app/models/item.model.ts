@@ -7,7 +7,11 @@ export interface Item {
     layer: string | null;
     multilayer: {
         item: string,
-        layer: string
+        layer: string,
+        requires: {
+            part: string,
+            item: string
+        } | null
     }[];
 
     requires: {

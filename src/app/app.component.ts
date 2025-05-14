@@ -28,6 +28,7 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
+import { CreditsComponent } from '@components/credits/credits.component';
 
 enum AppComponentState {
   Movement,
@@ -175,8 +176,10 @@ export class AppComponent {
   ngOnInit() {
     this.logger.info("AppComponent: ngOnInit()");
 
-    // TODO Show credits on initial load; Keeping this out until closer to production
-    // this.showCredits();
+    // Show credits on initial load in production mode
+    if (!isDevMode()) {
+      this.showInfo();
+    }
 
     // Initial load
     const initialLoadEffect = effect(() => {
@@ -249,10 +252,30 @@ export class AppComponent {
     this.prompt.generateRandomPrompt();
   }
 
+  showInfo() {
+    this.logger.info("AppComponent: showInfo()");
+
+    const dialogRef = this.dialog.open(InfoComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result === "credits") {
+        this.showCredits();
+      }
+    });
+  }
+
   showCredits() {
     this.logger.info("AppComponent: showCredits()");
 
-    this.dialog.open(InfoComponent);
+    const dialogRef = this.dialog.open(CreditsComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result === "info") {
+        this.showInfo();
+      }
+    });
   }
 
   isInvalidActivePart() {

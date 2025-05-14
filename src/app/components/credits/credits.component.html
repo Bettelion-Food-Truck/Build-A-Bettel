@@ -1,23 +1,32 @@
-<div id="contributor-container">
+<img mat-dialog-title src="./images/build-a-bettel.png" alt="Build-A-Bettel logo image" />
 
-    <div class="section-wrapper" *ngFor="let section of contributors">
-        <h2>{{section.name}}</h2>
-        <div>
+<mat-dialog-content>
+    <div id="contributor-container">
 
-            <div *ngFor="let contributor of section.contributors">
+        <div class="section-wrapper" *ngFor="let section of contributors">
+            <h2>{{section.name}}</h2>
+            <div>
 
-                <ng-container *ngIf="contributor.social">
-                    <a href="{{contributor.social}}" target="_blank">
+                <div *ngFor="let contributor of section.contributors">
+
+                    <ng-container *ngIf="contributor.social">
+                        <a href="{{contributor.social}}" target="_blank">
+                            {{contributor.name}}
+                        </a>
+                    </ng-container>
+                    <ng-container *ngIf="!contributor.social">
                         {{contributor.name}}
-                    </a>
-                </ng-container>
-                <ng-container *ngIf="!contributor.social">
-                    {{contributor.name}}
-                </ng-container>
+                    </ng-container>
 
-                <div *ngFor="let credit of contributor.credits" [innerHTML]="credit"></div>
+                    <div *ngFor="let credit of contributor.credits" [innerHTML]="credit"></div>
+                </div>
+
             </div>
-
         </div>
     </div>
-</div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button mat-button mat-dialog-close="info">Information</button>
+    <button mat-stroked-button mat-dialog-close cdkFocusInitial>Close</button>
+</mat-dialog-actions>

@@ -26,6 +26,14 @@
     }
 }
 
+.flex-end-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: end;
+}
+
 .dialog-actions {
     background-color: var(--favorite-accent-color, purple);
 

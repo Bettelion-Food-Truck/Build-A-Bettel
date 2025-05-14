@@ -264,13 +264,22 @@ export class CanvasComponent implements AfterViewInit {
     }
 
     Promise
-      .all(renderPromises)
+      .allSettled(renderPromises)
       .then((results) => {
+
+        let resultLayers: LayerRender[] = [];
+        results.forEach((result) => {
+          if (result.status === "fulfilled") {
+            resultLayers.push(result.value);
+          } else {
+            this.logger.error("CanvasComponent: renderLayerStack() - Error rendering layer", result.reason);
+          }
+        });
 
         // Draw layers onto master
         for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
-          let layer = results.find(x => x.id === layerIndex);
+          let layer = resultLayers.find(result => result.id === layerIndex);
 
           if (!layer || !layer.canvas) {
             continue;
@@ -287,9 +296,6 @@ export class CanvasComponent implements AfterViewInit {
         this.modelData.setImageEncoded(this.canvas().nativeElement.toDataURL("image/png"));
 
         this.loading.removeLoadingItem();
-      })
-      .catch((err) => {
-        this.logger.error("CanvasComponent: renderLayerStack() - Error rendering layers", err);
       });
   }
 

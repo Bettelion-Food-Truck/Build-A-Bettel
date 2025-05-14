@@ -16,8 +16,9 @@
   <div class="photo-wall">
     <h2>Employee Photos</h2>
     <div class="contributors">
-      <img src="{{contributor.image}}" alt="{{contributor.name}}"
-        *ngFor="let contributor of fullList|sortContributors" />
+      <ng-container *ngFor="let contributor of fullList|sortContributors">
+        <img src="{{contributor.image}}" alt="{{contributor.name}}" *ngIf="contributor.image" />
+      </ng-container>
     </div>
   </div>
 </mat-dialog-content>

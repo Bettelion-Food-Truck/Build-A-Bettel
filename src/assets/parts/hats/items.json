@@ -10,6 +10,18 @@
     "assumeThumbnails": true,
     "items": [
         {
+            "item": "debut-hat",
+            "multilayer": [
+                {
+                    "item": "debut-hat-back",
+                    "layer": "hats_back"
+                }
+            ],
+            "outfits": [
+                "debut"
+            ]
+        },
+        {
             "item": "second-outfit",
             "outfits": [
                 "second-outfit"
@@ -236,6 +248,7 @@
         "glorp-headband",
         "hairclips",
         "halo",
+        "clown-wig-hat",
         "party-crown",
         "phantom-beanie",
         "sleephat"

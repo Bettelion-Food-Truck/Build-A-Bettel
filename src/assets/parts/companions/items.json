@@ -39,6 +39,15 @@
         "sorawrity",
         "the-grape",
         "vestea",
-        "vestie"
+        "vestie",
+        {
+            "item": "carnotaurus",
+            "multilayer": [
+                {
+                    "item": "carnotaurus-back",
+                    "layer": "companions_back"
+                }
+            ]
+        }
     ]
 }

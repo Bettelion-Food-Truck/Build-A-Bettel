@@ -45,7 +45,17 @@
             ]
         },
         {
-            "item": "christmas-2024-coat"
+            "item": "christmas-2024-coat",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-coat+sweater",
+                    "layer": "jackets_2_right-sleeve",
+                    "requires": {
+                        "part": "shirts",
+                        "item": "christmas-2024-shirt"
+                    }
+                }
+            ]
         },
         {
             "item": "daki-robe",

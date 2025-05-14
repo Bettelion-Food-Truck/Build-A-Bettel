@@ -264,13 +264,22 @@ export class CanvasComponent implements AfterViewInit {
     }
 
     Promise
-      .all(renderPromises)
+      .allSettled(renderPromises)
       .then((results) => {
+
+        let resultLayers: LayerRender[] = [];
+        results.forEach((result) => {
+          if (result.status === "fulfilled") {
+            resultLayers.push(result.value);
+          } else {
+            this.logger.error("CanvasComponent: renderLayerStack() - Error rendering layer", result.reason);
+          }
+        });
 
         // Draw layers onto master
         for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 
-          let layer = results.find(x => x.id === layerIndex);
+          let layer = resultLayers.find(result => result.id === layerIndex);
 
           if (!layer || !layer.canvas) {
             continue;
@@ -287,9 +296,6 @@ export class CanvasComponent implements AfterViewInit {
         this.modelData.setImageEncoded(this.canvas().nativeElement.toDataURL("image/png"));
 
         this.loading.removeLoadingItem();
-      })
-      .catch((err) => {
-        this.logger.error("CanvasComponent: renderLayerStack() - Error rendering layers", err);
       });
   }
 
@@ -319,50 +325,81 @@ export class CanvasComponent implements AfterViewInit {
         if (item && item.requires) {
           // Complex item with a requirement
 
-          // Locate part
-          for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
+          let results = this.locatedPart(item.requires.part, item.requires.item);
 
-            if (parts[neededPartIndex].layer === item.requires.part) {
-              // Found the part;
+          if (results.part !== null && results.item !== null) {
 
-              const part = parts[neededPartIndex];
-              let neededPartFound = false;
-
-              if (item.requires.item === "none" && part.noneAllowed) {
-                // No item wanted & allowed
-
-                this.currentlySelectedItems[neededPartIndex] = -1;
-                neededPartFound = true;
-              } else {
-                // Check through items
-
-                for (let neededItemIndex = 0; neededItemIndex < part.items.length; neededItemIndex++) {
-
-                  let currentItem: Item = part.items[neededItemIndex];
-
-                  if (currentItem.item === item.requires.item) {
-
-                    neededPartFound = true;
-                    this.currentlySelectedItems[neededPartIndex] = neededItemIndex;
-                    break;
-                  }
-
-                  // TODO Need to indicate incompatible options
-                  // Just a toggle or something to check and add 'disabled' class to the item
-                }
-              }
-
-              if (!neededPartFound) {
-
-                this.logger.error(`Required item "${item.requires.item}" not found in part "${item.requires.part}"`);
-              }
-
-              break;
-            }
+            this.currentlySelectedItems[results.part] = results.item;
           }
         }
       }
     }
+  }
+
+  /**
+   * Find the part and item index/id based on the given strings
+   *
+   * @param partName
+   * @param itemName
+   * @returns
+   */
+  private locatedPart(partName: string, itemName: string): { part: number | null, item: number | null } {
+    this.logger.info("CanvasComponent: locatedPart()", partName, itemName);
+
+    let parts: Part[] = this.partSignal();
+
+    let foundPart: number | null = null;
+    let foundItem: number | null = null;
+
+    for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
+      // Loop through parts to find the one we want
+
+      if (parts[neededPartIndex].layer === partName) {
+        // Found the part;
+
+        foundPart = neededPartIndex;
+
+        const part = parts[neededPartIndex];
+        let neededPartFound = false;
+
+        if (itemName === "none" && part.noneAllowed) {
+          // No item wanted & allowed
+
+          this.currentlySelectedItems[neededPartIndex] = -1;
+          neededPartFound = true;
+        } else {
+          // Check through items
+
+          for (let neededItemIndex = 0; neededItemIndex < part.items.length; neededItemIndex++) {
+            // Check each item in the part for a match
+
+            let currentItem: Item = part.items[neededItemIndex];
+
+            if (currentItem.item === itemName) {
+
+              neededPartFound = true;
+              foundItem = neededItemIndex;
+              break;
+            }
+
+            // TODO Need to indicate incompatible options
+            // Just a toggle or something to check and add 'disabled' class to the item
+          }
+        }
+
+        if (!neededPartFound) {
+
+          this.logger.error(`Required item "${itemName}" not found in part "${partName}"`);
+        }
+
+        break;
+      }
+    }
+
+    return {
+      part: foundPart,
+      item: foundItem
+    };
   }
 
   private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number): Promise<LayerRender>[] {
@@ -409,10 +446,33 @@ export class CanvasComponent implements AfterViewInit {
 
       for (let i = 0; i < item.multilayer.length; i++) {
 
-        const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
-        const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
+        let buildLayer = true;
 
-        renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position));
+        if (item.multilayer[i].requires) {
+
+          let requirements = item.multilayer[i].requires!;
+
+          // Find the part/item
+          let results = this.locatedPart(requirements.part, requirements.item);
+
+          if (results.part !== null && results.item !== null) {
+
+            // Check if they match a selected item
+            if (this.currentlySelectedItems[results.part] !== results.item) {
+
+              // Not the same item, so don't build this layer
+              buildLayer = false;
+            }
+          }
+        }
+
+        if (buildLayer) {
+
+          const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
+          const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
+
+          renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position));
+        }
       }
     }
 

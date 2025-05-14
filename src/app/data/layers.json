@@ -1,6 +1,7 @@
 {
   "layers": [
     "backgrounds",
+    "companions_back",
     "handheld_far-back",
     "jackets-far-back_1",
     "jackets-far-back_2",
@@ -53,8 +54,11 @@
     "accessories-front_3_under-jacket",
     "jackets_1",
     "belt_elevated",
+    "jackets_1_right-sleeve",
     "jackets_2",
+    "jackets_2_right-sleeve",
     "jackets_3",
+    "jackets_3_right-sleeve",
     "handheld_foward",
     "hair",
     "glasses",

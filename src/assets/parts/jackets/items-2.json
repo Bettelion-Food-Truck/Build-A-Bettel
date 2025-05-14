@@ -99,6 +99,27 @@
             "item": "woven-fates-jacket"
         },
         {
+            "item": "altare-jacket",
+            "multilayer": [
+                {
+                    "item": "altare-jacket-back",
+                    "layer": "jackets_2_back"
+                }
+            ]
+        },
+        {
+            "item": "altare-jacket2",
+            "multilayer": [
+                {
+                    "item": "altare-jacket2-back",
+                    "layer": "jackets_2_back"
+                }
+            ],
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
             "item": "axel-jacket"
         },
         {
@@ -171,7 +192,7 @@
             "item": "shinri-jacket"
         },
         {
-            "item": "twobert-outfit"
+            "item": "twobert-jacket"
         },
         {
             "item": "vesper-jacket",

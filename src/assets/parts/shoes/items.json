@@ -226,14 +226,25 @@
             }
         },
         {
-            "item": "axel-shoes",
-            "outfits": [
-                "axel"
-            ],
+            "item": "altare-shoes",
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
+            },
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
+            "item": "axel-shoes",
+            "layer": "shoes-covered",
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            },
+            "outfits": [
+                "axel"
+            ]
         },
         {
             "item": "flayon-shoes",

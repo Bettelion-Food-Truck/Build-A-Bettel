@@ -106,6 +106,12 @@
             ]
         },
         {
+            "item": "twobert-gloves",
+            "outfits": [
+                "twobert"
+            ]
+        },
+        {
             "item": "vesper-gloves",
             "outfits": [
                 "vesper",

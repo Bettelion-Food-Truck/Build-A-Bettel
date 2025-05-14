@@ -126,6 +126,12 @@
             ]
         },
         {
+            "item": "altare-pants",
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
             "item": "axel-pants",
             "outfits": [
                 "axel"
@@ -172,6 +178,12 @@
             "item": "shinri-pants",
             "outfits": [
                 "shinri"
+            ]
+        },
+        {
+            "item": "twobert-pants",
+            "outfits": [
+                "twobert"
             ]
         },
         {

@@ -31,6 +31,16 @@
             ]
         },
         {
+            "item": "altare-socks",
+            "requires": {
+                "part": "feet",
+                "item": "flat"
+            },
+            "outfits": [
+                "altare"
+            ]
+        },
+        {
             "item": "flayon-socks",
             "outfits": [
                 "flayon"

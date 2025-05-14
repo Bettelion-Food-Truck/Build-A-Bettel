@@ -76,11 +76,7 @@
                     "item": "rose-back",
                     "layer": "handheld_back"
                 }
-            ]
-        },
-        {
-            "item": "gala-bouquet",
-            "layer": "handheld_foward",
+            ],
             "outfits": [
                 "gala"
             ]

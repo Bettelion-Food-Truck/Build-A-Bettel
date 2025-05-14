@@ -129,6 +129,14 @@
         {
             "name": "Vivi",
             "image": "vivi.png"
+        },
+        {
+            "name": "delta",
+            "image": "delta.png"
+        },
+        {
+            "name": "mochijam",
+            "image": "mochijam.png"
         }
     ],
     "developers": [

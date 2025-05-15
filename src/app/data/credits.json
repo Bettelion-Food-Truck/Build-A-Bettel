@@ -21,6 +21,7 @@
             "credits": [
                 "Head Chef, Discord administrator, imp wrangler, assignment manager, asset editor"
             ],
+            "imageWeight": -100,
             "weight": -100
         },
         {
@@ -36,17 +37,28 @@
             "social": "https://x.com/SakuraMikage",
             "credits": [
                 "Sous Chef, Discord moderator"
-            ]
+            ],
+            "imageWeight": 5
         }
     ],
     "artists": [
+        {
+            "name": "Gavis Bettel",
+            "image": "bettel.png",
+            "social": "https://x.com/gavisbettel",
+            "credits": [
+                "Cameos in basement background, portrait of Finarael in Albuquerque art contest background"
+            ],
+            "imageWeight": -50
+        },
         {
             "name": "Aether",
             "image": "aether.png",
             "social": "https://x.com/a_ether_17",
             "credits": [
                 "<strong>Outfits:</strong> Pumpkin King, Ruze"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "BatVenom",
@@ -62,7 +74,8 @@
             "credits": [
                 "<strong>Outfits:</strong> 2024 Expo (gloves and choker by Hioko_Chi)",
                 "<strong>Accessories:</strong> Bettelion earrings, Phantom choker"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "delta",
@@ -70,7 +83,8 @@
             "social": "https://x.com/deltacures",
             "credits": [
                 "<strong>Outfits:</strong> 2025 Expo"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "Dulce @lasercutlegends",
@@ -103,16 +117,8 @@
             "social": "https://x.com/lurkdeer",
             "credits": [
                 "<strong>Outfits:</strong> Shinri"
-            ]
-        },
-        {
-            "name": "Gavis Bettel",
-            "image": "bettel.png",
-            "social": "https://x.com/gavisbettel",
-            "credits": [
-                "Cameos in basement background, portrait of Finarael in Albuquerque art contest background"
             ],
-            "weight": -50
+            "imageWeight": -5
         },
         {
             "name": "genie",
@@ -120,7 +126,8 @@
             "social": "https://x.com/genieart_",
             "credits": [
                 "<strong>Outfits:</strong> Twobert"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "GGGhoulish",
@@ -138,7 +145,8 @@
                 "<strong>Body: </strong> Base body model, debut hair, second outfit hair",
                 "<strong>Outfits:</strong> Debut underlayer",
                 "<strong>Accessories:</strong> Tempantsu, cat ears, several makeup items"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "jahgyong",
@@ -146,7 +154,8 @@
             "social": "https://x.com/jahgyong",
             "credits": [
                 "<strong>Outfits:</strong> Magni"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "jestertamer",
@@ -156,7 +165,20 @@
                 "<strong>Outfits:</strong> Cowttel, Gavin Bett'ol",
                 "<strong>Accessories:</strong> Several makeup items"
             ],
-            "note": "Place next to Liv"
+            "note": "Place next to Liv",
+            "imageWeight": 0
+        },
+        {
+            "name": "LIV [ 54BPM ]",
+            "image": "liv.png",
+            "social": "https://x.com/54BPM_",
+            "credits": [
+                "<strong>Outfits:</strong> Christmas",
+                "<strong>Accessories:</strong> Debut hat, pole",
+                "<strong>Backgrounds:</strong> Basement prison, bathtub, blender, cat cafe, dakimakura coffin, guild hall, guild hall on fire, stage, stage (spotlight), stars"
+            ],
+            "note": "Place next to jestertamer",
+            "imageWeight": 0
         },
         {
             "name": "Jun @junstarias",
@@ -180,18 +202,8 @@
                 "<strong>Accessories:</strong> Memento necklace, (p)hat, Snank t-shirt",
                 "<strong>Companions:</strong> Gooagalonomorigad, The Grape, Medium Air",
                 "<strong>Filters:</strong> Solid color filters"
-            ]
-        },
-        {
-            "name": "LIV [ 54BPM ]",
-            "image": "liv.png",
-            "social": "https://x.com/54BPM_",
-            "credits": [
-                "<strong>Outfits:</strong> Christmas",
-                "<strong>Accessories:</strong> Debut hat, pole",
-                "<strong>Backgrounds:</strong> Basement prison, bathtub, blender, cat cafe, dakimakura coffin, guild hall, guild hall on fire, stage, stage (spotlight), stars"
             ],
-            "note": "Place next to jestertamer"
+            "imageWeight": 5
         },
         {
             "name": "Lynnear",
@@ -206,7 +218,8 @@
             "social": "https://x.com/CupcakeMagi",
             "credits": [
                 "<strong>Accessories:</strong> Hair clips, glorp headband"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Magmite80085",
@@ -215,7 +228,8 @@
             "credits": [
                 "<strong>Companions:</strong> Back-facing Phantom",
                 "<strong>Other:</strong> Demo video"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Maryonet",
@@ -223,7 +237,8 @@
             "social": "https://x.com/_Maryonet_",
             "credits": [
                 "<strong>Outfits:</strong> Deerttel"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Mira @keigokisses",
@@ -238,7 +253,8 @@
             "social": "https://x.com/itsmochijam",
             "credits": [
                 "<strong>Outfits:</strong> Axel"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "MOMICHI",
@@ -253,7 +269,8 @@
             "social": "https://x.com/stressed_nerd",
             "credits": [
                 "<strong>Outfits:</strong> Ghost Bride"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "natsu",
@@ -261,7 +278,8 @@
             "social": "https://x.com/appurupii",
             "credits": [
                 "<strong>Outfits:</strong> Hakka"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Paufufufun",
@@ -270,7 +288,8 @@
             "credits": [
                 "<strong>Outfits:</strong> Dead World",
                 "<strong>Other:</strong> Bettelionsonas for Sakura \"Saku\" Mikage, Socktoebathtub, and Vivi"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "R4bbit",
@@ -278,7 +297,8 @@
             "social": "https://x.com/rabbitdr4gon",
             "credits": [
                 "<strong>Accessories:</strong> Tank tread legs"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Raienn",
@@ -294,7 +314,8 @@
             "social": "https://x.com/raisins0up",
             "credits": [
                 "<strong>Outfits:</strong> Battel"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "REIH",
@@ -303,7 +324,8 @@
             "credits": [
                 "<strong>Outfits:</strong> Betsy-Chan, Pirate, Showman, Spa",
                 "<strong>Accessories:</strong> Dakimakura robe, white slippers, aviator sunglasses, glasses, sunglasses, nail polish (purple), nail polish (black), plaid pants"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "@ri_rieri_",
@@ -327,7 +349,8 @@
                 "<strong>Accessories:</strong> Angel wings, demon horns, demon tail, dog ears, halo, monocle, party crown, sheer fishnets",
                 "<strong>Backgrounds:</strong> Black glitter, cotton candy diamonds, pink diamonds, pink curtain, pink lilies, pink night, purple lace, purple sky, waterfall",
                 "<strong>Filters:</strong> Hearts (full), hearts (outlines), shoujo bubbles"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "@Sh1oni_Nath",
@@ -354,7 +377,8 @@
                 "<strong>Backgrounds:</strong> Trippy",
                 "<strong>Frames:</strong> Bones, candles, eyes (4 types), ghosts (2 types), geese",
                 "<strong>Other:</strong> UI icons"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "spaced",
@@ -370,7 +394,8 @@
             "credits": [
                 "<strong>Outfits:</strong> January 2025 Calendar",
                 "<strong>Accessories:</strong> Tabi heels, tabi flats"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Styx",
@@ -379,7 +404,8 @@
             "credits": [
                 "<strong>Outfits:</strong> Jurard",
                 "<strong>Accessories:</strong> Blindfold (solid), blindfold (lace), cat tail"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "TobiArts",
@@ -404,7 +430,8 @@
             "credits": [
                 "<strong>Outfits:</strong> Bettelgoose, Bettelzebub, Flex, Goose ASMR VP",
                 "<strong>Backgrounds:</strong> Bettelion (blue), Bettelion (yellow), infinity, mansion, mountain, paper"
-            ]
+            ],
+            "imageWeight": 5
         }
     ],
     "developers": [
@@ -413,12 +440,21 @@
             "image": "glitchtech.png",
             "credits": [
                 "Lead developer"
+            ],
+            "imageWeight": -5,
+            "weight": -100
+        },
+        {
+            "name": "Finarael",
+            "social": "https://x.com/Finarael",
+            "credits": [
+                "UI assistant and data manager"
             ]
         },
         {
             "name": "Evie",
             "image": "evie.png",
-            "weight": 500
+            "imageWeight": 500
         },
         {
             "name": "Socktoebathtub",
@@ -426,7 +462,8 @@
             "social": "https://x.com/socktoebathtub",
             "credits": [
                 "Data manager"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Sakura \"Saku\" Mikage",
@@ -441,7 +478,8 @@
             "social": "https://x.com/riverharmonic",
             "credits": [
                 "Creative consultant"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Verdandi",
@@ -456,7 +494,8 @@
             "social": "https://x.com/cerulean_vivi",
             "credits": [
                 "UI/UX review, sensitivity reading"
-            ]
+            ],
+            "imageWeight": 5
         }
     ]
 }

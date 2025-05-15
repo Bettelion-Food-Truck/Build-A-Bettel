@@ -13,5 +13,6 @@ export interface Contributor {
 
     credits?: string[];
 
+    imageWeight: number;
     weight: number;
 }

@@ -33,6 +33,9 @@
       ],
       "@intercetors/*": [
         "app/interceptors/*"
+      ],
+      "@pipes/*": [
+        "app/pipes/*"
       ]
     },
     "resolveJsonModule": true

@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CONTRIBUTOR_PATH } from '@data/paths';
-
 import {
   MatDialogActions,
   MatDialogClose,
@@ -10,12 +8,19 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+
+import { LogService } from '@services/log/log.service';
+import { SortContributorsPipe } from '@pipes/sort-contrib/sort-contributors.pipe';
+
+import { CONTRIBUTOR_PATH } from '@data/paths';
 
 import data from '@data/credits.json';
-import { Group, Contributor } from '@models/credits.model';
+import { Group, Contributor, ParseCreditJSON } from '@models/credits.model';
 
-import { LogService } from '../../services/log/log.service';
+import { DialogType } from '@components/dialogs/dialogs.enum';
 
 @Component({
   selector: 'app-info',
@@ -25,22 +30,28 @@ import { LogService } from '../../services/log/log.service';
     MatDialogClose,
     MatDialogTitle,
     MatDialogContent,
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatIcon,
+    SortContributorsPipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './info.component.html',
-  styleUrl: './info.component.scss'
+  templateUrl: './credits.component.html',
+  styleUrl: './credits.component.scss'
 })
-export class InfoComponent {
-  readonly dialogRef = inject(MatDialogRef<InfoComponent>);
+export class CreditsComponent {
+  readonly dialogRef = inject(MatDialogRef<CreditsComponent>);
 
-  contributors?: Group[];
+  readonly types = DialogType;
+
+  contributors: Group[] = [];
+  fullList: Contributor[] = [];
 
   constructor(private logger: LogService) { }
 
   ngOnInit() {
 
-    this.logger.info('InfoComponent: ngOnInit()');
+    this.logger.info('CreditsComponent: ngOnInit()');
 
     this.processCredits(data);
   }
@@ -49,7 +60,7 @@ export class InfoComponent {
    * Process the JSON data.
    */
   processCredits(data: any) {
-    this.logger.info('InfoComponent: processCredits()');
+    this.logger.info('CreditsComponent: processCredits()');
 
     this.contributors = data.roles.map((role: any) => {
 
@@ -61,17 +72,18 @@ export class InfoComponent {
 
       if (group.section.length > 0 && data[group.section]) {
         group.contributors = data[group.section].map((contributor: any) => {
-          return {
-            name: contributor.name ?? "",
-            image: contributor.image ? `${CONTRIBUTOR_PATH}${contributor.image}` : "",
-            handle: contributor.handle ?? "",
-            title: contributor.title ?? "",
-            responsibilities: contributor.responsibilities ?? ""
-          } as Contributor;
+          return ParseCreditJSON(contributor);
         });
       }
 
       return group;
+    });
+
+    this.fullList = [];
+
+    this.contributors.forEach((group: Group) => {
+
+      this.fullList.push(...group.contributors);
     });
   }
 }

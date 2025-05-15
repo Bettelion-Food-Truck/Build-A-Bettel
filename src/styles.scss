@@ -1,5 +1,6 @@
 @use "@angular/material" as mat;
 @use "material-icons/iconfont/material-icons.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
 * {
     min-height: 0;
@@ -53,17 +54,45 @@ body {
     font-size: var(--mat-sys-body-medium-size);
     letter-spacing: var(--mat-sys-body-medium-tracking);
     font-weight: var(--mat-sys-body-medium-weight);
+
+    .mat-mdc-dialog-container {
+        max-height: 100vh;
+    }
 }
 
 @supports (max-height: 100dvh) {
     body {
         height: 100dvh;
+
+        .mat-mdc-dialog-container {
+            max-height: 100dvh;
+        }
     }
 }
 
 /* Global classes with style overrides. Unfortunately they use !important because of specificity. */
 .hidden {
     display: none !important;
+}
+
+.no-break {
+    text-wrap: nowrap;
+}
+
+.heavy {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.smaller {
+    font-size: 90%;
+}
+
+.bi {
+    font-size: 80%;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

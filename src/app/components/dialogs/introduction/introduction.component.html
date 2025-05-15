@@ -1,0 +1,31 @@
+<img mat-dialog-title src="./images/build-a-bettel.png" alt="Build-A-Bettel logo image" />
+
+<mat-dialog-content>
+    <p>
+        <span class="no-break heavy">Build-A-Bettel</span> is an interactive fanart experience by the Bettelion Food
+        Truck. Customize Bettel with hundreds of fan-made assets!
+    </p>
+
+    <p>
+        Bettelion Food Truck hereby grants permission for the usage of their game <span
+            class="no-break">Build-A-Bettel</span> in the creation of recorded or streaming content, and for the
+        monetization of that content through advertising, donations, or other means.
+    </p>
+
+    <div class="text-center">
+        <p class="heavy"><span class="no-break">Build-A-Bettel</span> is a stream-safe game!</p>
+    </div>
+
+    <p class="smaller">
+        Please do not use this game for purposes that conflict with COVER Corp. Derivative Works Guidelines. Thank you!
+    </p>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button mat-button mat-dialog-close="{{types.Info}}">Information</button>
+    <button mat-button mat-dialog-close="{{types.Credits}}">Full Credits</button>
+
+    <div class="spacer"></div>
+
+    <button mat-stroked-button mat-dialog-close cdkFocusInitial>Confirm</button>
+</mat-dialog-actions>

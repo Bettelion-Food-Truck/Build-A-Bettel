@@ -15,7 +15,9 @@ import { PaletteComponent } from "@components/palette/palette.component";
 import { OutfitsComponent } from "@components/outfits/outfits.component";
 import { PromptComponent } from "@components/prompt/prompt.component";
 
-import { InfoComponent } from '@components/info/info.component';
+import { InfoComponent } from '@components/dialogs/info/info.component';
+import { CreditsComponent } from '@components/dialogs/credits/credits.component';
+import { IntroductionComponent } from '@components/dialogs/introduction/introduction.component';
 
 import { LogService } from '@services/log/log.service';
 
@@ -28,6 +30,7 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
+import { DialogType } from '@components/dialogs/dialogs.enum';
 
 enum AppComponentState {
   Movement,
@@ -157,7 +160,7 @@ export class AppComponent {
     this.imageDataString = this.modalData.getImageEncoded();
 
     effect(() => {
-      this.logger.debug(`AppComponent: partChangeEffect() ${this.activePart()}`);
+      this.logger.info(`AppComponent: partChangeEffect() ${this.activePart()}`);
 
       if (this.activePart() === -1) {
 
@@ -173,10 +176,12 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.logger.info("AppComponent: ngOnInit()");
+    this.logger.debug("AppComponent: ngOnInit()");
 
-    // TODO Show credits on initial load; Keeping this out until closer to production
-    // this.showCredits();
+    // Show credits on initial load in production mode
+    if (!isDevMode()) {
+      this.showIntro();
+    }
 
     // Initial load
     const initialLoadEffect = effect(() => {
@@ -212,7 +217,7 @@ export class AppComponent {
   }
 
   toggleMovement() {
-    this.logger.info("AppComponent: toggleMovement()");
+    this.logger.debug("AppComponent: toggleMovement()");
 
     if (!this.potentialMovement() || !this.featuresEnabled()) {
       return;
@@ -238,21 +243,64 @@ export class AppComponent {
   }
 
   reset() {
-    this.logger.info("AppComponent: reset()");
+    this.logger.debug("AppComponent: reset()");
 
     this.modalData.reset();
   }
 
   generatePrompt() {
-    this.logger.info("AppComponent: generatePrompt()");
+    this.logger.debug("AppComponent: generatePrompt()");
 
     this.prompt.generateRandomPrompt();
   }
 
-  showCredits() {
-    this.logger.info("AppComponent: showCredits()");
+  showIntro() {
+    this.logger.debug("AppComponent: showInfo()");
 
-    this.dialog.open(InfoComponent);
+    const dialogRef = this.dialog.open(IntroductionComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.showDialog(result);
+    });
+  }
+
+  showInfo() {
+    this.logger.debug("AppComponent: showInfo()");
+
+    const dialogRef = this.dialog.open(InfoComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.showDialog(result);
+    });
+  }
+
+  showCredits() {
+    this.logger.debug("AppComponent: showCredits()");
+
+    const dialogRef = this.dialog.open(CreditsComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.showDialog(result);
+    });
+  }
+
+  private showDialog(type: string) {
+    this.logger.debug("AppComponent: showDialog()");
+
+    switch (type) {
+      case DialogType.Credits:
+        this.showCredits();
+        break;
+      case DialogType.Info:
+        this.showInfo();
+        break;
+      case DialogType.Intro:
+        this.showIntro();
+        break;
+    }
   }
 
   isInvalidActivePart() {

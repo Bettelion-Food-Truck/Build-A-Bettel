@@ -1,0 +1,22 @@
+.mat-mdc-dialog-content {
+    padding-top: 20px !important;
+    padding-bottom: 30px;
+
+    font-size: 115%;
+}
+
+.dialog-actions {
+    background-color: var(--favorite-accent-color, purple);
+
+    button {
+        color: white;
+
+        &:last-of-type {
+            font-size: 120%;
+        }
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+}

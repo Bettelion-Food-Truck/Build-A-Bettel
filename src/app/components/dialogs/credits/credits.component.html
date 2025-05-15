@@ -1,0 +1,49 @@
+<img mat-dialog-title src="./images/build-a-bettel.png" alt="Build-A-Bettel logo image" />
+
+<mat-dialog-content>
+
+    <p>
+        A huge thank you to everyone who poured their time and talent into bringing <span
+            class="no-break">Build-A-Bettel</span> into existence. Their dedication made it all possible! This project
+        is an <a href="https://github.com/Bettelion-Food-Truck/Build-A-Bettel" target="_blank"><strong>open-source
+                creation</strong></a>
+        by the <a href="https://bettelion-food-truck.github.io/" target="_blank"><strong>Bettelion Food
+                Truck</strong></a> (based upon
+        the open-source character creator framework <a href="https://github.com/ksadov/hackrew"
+            target="_blank">hackrew</a>).
+    </p>
+    <p>
+        The journey of creating this game has been an incredible one, fueled by passion and shared effort. We hope you
+        enjoy playing it as much as we enjoyed making it. Thank you again to each and every contributor!
+    </p>
+
+    <ng-container *ngFor="let section of contributors">
+        <h2>{{section.name}}</h2>
+        <ng-container *ngFor="let contributor of section.contributors|sortContributors">
+            <div class="contributor" *ngIf="contributor.credits && contributor.credits.length > 0">
+                <h3>
+                    @if (contributor.social) {
+                    <a href="{{contributor.social}}" target="_blank">
+                        {{contributor.name}} <mat-icon>open_in_new</mat-icon>
+                    </a>
+                    } @else {
+                    {{contributor.name}}
+                    }
+                </h3>
+
+                <ul>
+                    <li *ngFor="let credit of contributor.credits" [innerHTML]="credit"></li>
+                </ul>
+            </div>
+        </ng-container>
+    </ng-container>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+    <button mat-button mat-dialog-close="{{types.Intro}}">Disclaimer</button>
+    <button mat-button mat-dialog-close="{{types.Info}}">Information</button>
+
+    <div class="spacer"></div>
+
+    <button mat-stroked-button mat-dialog-close cdkFocusInitial>Close</button>
+</mat-dialog-actions>

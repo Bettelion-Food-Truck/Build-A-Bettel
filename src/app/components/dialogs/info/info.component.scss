@@ -1,11 +1,13 @@
 .mat-mdc-dialog-content {
     padding-top: 20px !important;
+
+    font-size: 115%;
 }
 
 .contributors {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
     row-gap: 10px;
     justify-items: center;
@@ -13,17 +15,18 @@
 
     margin-bottom: 1.5rem;
 
-    .contributor {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    img {
+        max-width: 100%;
+        height: auto;
     }
+}
+
+.credit-button-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .dialog-actions {
@@ -31,10 +34,18 @@
 
     button {
         color: white;
+
+        &:last-of-type {
+            font-size: 120%;
+        }
+    }
+
+    .spacer {
+        flex: 1 1 auto;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .contributors {
         grid-template-columns: repeat(2, 1fr);
     }

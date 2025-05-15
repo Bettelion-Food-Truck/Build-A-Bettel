@@ -97,13 +97,28 @@
         },
         {
             "item": "ghost-bride-socks",
+            "hide": true,
             "outfits": [
                 "ghost-bride"
             ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            "multilayer": [
+                {
+                    "item": "ghost-bride-socks-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "ghost-bride-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
             "item": "fishnets",

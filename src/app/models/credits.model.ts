@@ -1,3 +1,5 @@
+import { CONTRIBUTOR_PATH } from "@data/paths";
+
 export interface Group {
     name: string;
     section: string;
@@ -15,4 +17,16 @@ export interface Contributor {
 
     imageWeight: number;
     weight: number;
+}
+
+export function ParseCreditJSON(contributor: any): Contributor {
+
+    return {
+        name: contributor.name ?? "",
+        image: contributor.image ? `${CONTRIBUTOR_PATH}${contributor.image}` : "",
+        social: contributor.social ?? "",
+        credits: contributor.credits ?? [],
+        imageWeight: contributor.imageWeight ?? 0,
+        weight: contributor.weight ?? 0
+    } as Contributor;
 }

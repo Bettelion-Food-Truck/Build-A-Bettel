@@ -18,7 +18,7 @@ import { SortContributorsPipe } from '@pipes/sort-contrib/sort-contributors.pipe
 import { CONTRIBUTOR_PATH } from '@data/paths';
 
 import data from '@data/credits.json';
-import { Group, Contributor } from '@models/credits.model';
+import { Group, Contributor, ParseCreditJSON } from '@models/credits.model';
 
 import { DialogType } from '@components/dialogs/dialogs.enum';
 
@@ -72,13 +72,7 @@ export class CreditsComponent {
 
       if (group.section.length > 0 && data[group.section]) {
         group.contributors = data[group.section].map((contributor: any) => {
-          return {
-            name: contributor.name ?? "",
-            image: contributor.image ? `${CONTRIBUTOR_PATH}${contributor.image}` : "",
-            social: contributor.social ?? "",
-            credits: contributor.credits ?? [],
-            weight: contributor.weight ?? 0
-          } as Contributor;
+          return ParseCreditJSON(contributor);
         });
       }
 

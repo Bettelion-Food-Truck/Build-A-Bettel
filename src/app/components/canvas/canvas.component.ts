@@ -470,7 +470,9 @@ export class CanvasComponent implements AfterViewInit {
         if (buildLayer) {
 
           const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
-          const addLayerIndex = layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
+          const addLayerIndex = (item.multilayer[i].layer === "::host") ?
+            layerIndex :
+            layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
           renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position));
         }

@@ -7,11 +7,10 @@
     "items": [
         {
             "item": "flat",
-            "folder": "feet",
-            "layer": "feet",
+            "hide": true,
             "requires": {
                 "part": "feet",
-                "item": "none"
+                "item": "flat"
             }
         },
         {

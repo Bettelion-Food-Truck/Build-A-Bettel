@@ -182,8 +182,6 @@ export class AppComponent {
     if (!isDevMode()) {
       this.showIntro();
     }
-    // TODO REMOVE FOLLOWING
-    else { this.showCredits(); }
 
     // Initial load
     const initialLoadEffect = effect(() => {

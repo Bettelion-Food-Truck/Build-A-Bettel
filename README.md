@@ -49,31 +49,58 @@ To ensure all items line up correctly when layered, it is suggested to drawn all
 
 ## File structure
 
-TODO Update
+The file structure is not simple at first glance but hopefully makes sense. There are two primary folders when updating Assets in the game.
 
-All assets are stored in the `assets` folder in different groups. Each group is known as a part. A part could be a shirt, pants, hair, etc. Every asset, once arranged into part folders, is known as an item. Each part folder can have many items.
+The first is the `data` folder located at `app\data`. This holds the major static data for the game. This includes the layers the game draws on, the listing of all the parts, prompts, outfits, and creator credits. These items are updated less frequently but are directly imported into the game code.
 
-All files should be in lowercase only. There should be no spaces. If there is a division between works, use a dash.
+The second is the `assets` folder located at `app\assets`. This holds all the more dynamic imagery and data files. It has three subfolders, each dedicated to a single type of asset. These are `contributors`, `outfits`, and `parts`. These are hopefully self explanitory.
+
+ * The `contributors` folder holds the 'employee photos'.
+ * The `outfits` folder holds the completed outfit preview images.
+ * The `parts` folder holds each and every individual item that the game can display.
+
+The parts are each in different folders. Each part is a different group of assets that can be displayed, usually grouped by type like pants or shirts. To keep things cross browser and platform compatible, every item in these folders should be lower case only with no spaces (dashes are fine). The images also should all be png (currently, we are looking at adding webp as a compatible format).
+
+In each part folder, there are two subfolders: `items` and `thumbnails`. The folder `items` contains the item's images that are drawn on the canvas. These should be proper resolution and able to be overlayed directly. The folder `thumbnails` thus contains the thumbnails of these items. Thumbnails are optional and set in the JSON data files.
+
+In the root of each part folder are also two (usually) files; one for the JSON data and one for the icon for the part. The JSON data file structure is described below. The part icon should be a png file. The size of the PNG file is defined in `src\styles.scss` by the CSS variable `--part-control-size`.
 
 ## Data structure
 
-TODO Update
+The game doesn't know anything about the image assets by itself. It requires the information stored within `app\data\parts.json`. This file tells the game where to look for the main asset image and thumbnail in each part folder as well as what parts there are.
 
-The game doesn't know anything about the image assets by itself. It requires the information stored within `assets/data.json`. There are two objects of data within this file: layers and parts.
+Example
+```
+{
+  "images": "items/",
+  "thumbnails": "thumbnails/",
+  "parts": [
+    {
+        "name": "Body",
+        "folder": "body",
+        "layer": "body",
+        "items": "items.json",
+        "icon": "icon.png",
+        "hideFromPartsList": true
+    }
+  ]
+}
+```
 
-Layers defines the visual order of the indidual parts. Layers are rendered in order of this array. The first layer is on the bottom and the last layer is on the top.
+Each part is defined in the array called `parts`. Parts listed here have the following fields:
+ - **name**: The display name for each part. This is used for mouse hover and accessiblity systems. While it is technically optional, it is recommended to be filled out.
+ - **folder**: This required field is the name of the folder where the items for this part are stored. See the above section `File Structure` for more information on that arrangement.
+ - **layer**: This required field is the layer in which any non-special item will be rendered for this part. These layers are defined in the `src\app\data\layers.json` file. Each layer is just a string so adding, removing, and re-arranging layers is easy as updating the array contained within that file
+ - **items**: This required field is the name of the JSON file where the items that belong to this part are defined.
+ - **icon**: This required field is the name of the image file that is shown for this part in the game.
+ - **hideFromPartsList**: This is an optional field. When `true`, the part will not display in the listing at the top of the control area. This is useful for parts that only have one option or are used to set up other parts (like the body).
 
-Parts defines all the individual parts of the character (ie body, ears, shirt, pants, etc). Parts also determines the order of the menu for building the character. Parts at the top of the object are first in the menu.
+TODO Update the information for the items.json file structure in each part folder. Ensure to mark all the options.
 
-Parts have the following fields:
-
-- `"folder"`: the name of the folder that will contain the part's visual assets
-- `"items"`: the names of the items belonging to the part
 - `"colorMode"`: Can be `"fill"`, `"multiply"`, `"manual"` or `null`. See the next section, item variants, for details.
 - `"colors"`: 6-character strings containing the the hexcodes of colors.
 - `"movement"`: Optional. Structure to define capability and limits of part movement. Sub values are `"x"`, `"y"`, and `"scale"`. X and Y may be true, false, or an object with `"min"` and `"max"`. Min and max are offsets limits. Scale adjusts how much the controls move the part.
 - `"noneAllowed"`: `true` if this part is optional, false otherwise
-- `"hidePartList"`: `true` to remove the category from the part list. This is used if there is only one option for a body.
 
 Ex:
 ```
@@ -97,7 +124,7 @@ Ex:
 
 ## Item variants
 
-TODO Update
+TODO Update after item/color variants is rebuilt.
 
 In addition to each part having multiple variantions of items, the items themselves can come in multiple colors. Above we mention `"colorMode"` and `"colors"`. These indicate additional variations of each item. If a part has color options, then the `"colorMode"` field determines whether the item files for each color are manually or automatically generated.
 
@@ -121,6 +148,4 @@ The script might take a while to run, but at the end you'll have your color vari
 
 ## Edit the UI
 
-TODO Update
-
-Easy UI changes can be done by editing index.css; specifically the variables allow for easy updates to colors and images.
+Simple UI changes can be done by editing `src\styles.scss`; specifically the variables allow for easy updates to colors and sizes at the bottom of the file. For more complicated UI updates, you have to look into each component and update the individual component .scss files. It is not recommended unless you are familiar with the Angular framework as well as CSS and SCSS.

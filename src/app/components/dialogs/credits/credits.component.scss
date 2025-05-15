@@ -27,25 +27,30 @@
 .contributor {
     h3 {
         margin-bottom: 0;
+    }
 
-        a {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: start;
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
 
-            color: inherit;
-            text-decoration: none;
+        color: inherit;
+        text-decoration: none;
 
-            .mat-icon {
-                transform: scale(0.7);
-            }
+        .mat-icon {
+            transform: scale(0.7);
         }
     }
 
     ul {
         margin-top: 0;
     }
+}
+
+.special-thanks {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .dialog-actions {

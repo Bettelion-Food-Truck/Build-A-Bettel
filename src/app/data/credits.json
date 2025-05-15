@@ -258,10 +258,12 @@
         },
         {
             "name": "MOMICHI",
+            "image": "momichi.png",
             "social": "https://x.com/momichiword",
             "credits": [
                 "<strong>Outfits:</strong> Woven Fates"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Myobi",
@@ -485,7 +487,7 @@
             "name": "Verdandi",
             "social": "https://x.com/nogoldenapples",
             "credits": [
-                "<strong>Writer:</strong> Disclaimer statement writer"
+                "Disclaimer statement writer"
             ]
         },
         {

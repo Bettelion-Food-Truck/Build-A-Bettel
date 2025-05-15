@@ -14,6 +14,7 @@ import { Layer } from '@models/layer.model';
 import { Part } from '@models/part.model';
 import { Position } from '@models/position.model';
 import { LayerRender } from '@models/layerRender.model';
+import { NumericalPart } from '@models/numericalPart.model';
 
 @Component({
   selector: 'app-canvas',
@@ -325,7 +326,7 @@ export class CanvasComponent implements AfterViewInit {
         if (item && item.requires) {
           // Complex item with a requirement
 
-          let results = this.locatedPart(item.requires.part, item.requires.item);
+          let results: NumericalPart = this.locatedPart(item.requires.part, item.requires.item);
 
           if (results.part !== null && results.item !== null) {
 
@@ -339,11 +340,11 @@ export class CanvasComponent implements AfterViewInit {
   /**
    * Find the part and item index/id based on the given strings
    *
-   * @param partName
-   * @param itemName
-   * @returns
+   * @param partName: string
+   * @param itemName: string
+   * @returns NumericalPart
    */
-  private locatedPart(partName: string, itemName: string): { part: number | null, item: number | null } {
+  private locatedPart(partName: string, itemName: string): NumericalPart {
     this.logger.info("CanvasComponent: locatedPart()", partName, itemName);
 
     let parts: Part[] = this.partSignal();
@@ -399,7 +400,7 @@ export class CanvasComponent implements AfterViewInit {
     return {
       part: foundPart,
       item: foundItem
-    };
+    } as NumericalPart;
   }
 
   private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number): Promise<LayerRender>[] {

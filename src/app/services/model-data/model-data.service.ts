@@ -66,6 +66,12 @@ export class ModelDataService {
 
       return [...selectedItems];
     });
+
+    // Reset position on item change
+    this.setItemsPosition(partIndex, {
+      x: DEFAULT_POSITION.x,
+      y: DEFAULT_POSITION.y
+    } as Position);
   }
 
   getItemsPositions(): Signal<Position[]> {

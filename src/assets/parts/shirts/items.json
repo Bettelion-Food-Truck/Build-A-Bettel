@@ -226,6 +226,7 @@
         },
         {
             "item": "betsy-grayson-bodysuit",
+            "layer": "shirts-tucked-in",
             "outfits": [
                 "betsy-grayson"
             ]
@@ -244,6 +245,7 @@
         },
         {
             "item": "ghost-bride-shirt",
+            "layer": "shirts-tucked-in",
             "outfits": [
                 "ghost-bride"
             ]
@@ -272,7 +274,7 @@
             "multilayer": [
                 {
                     "item": "pumpkin-king-shirt-back",
-                    "layer": "shirts_back"
+                    "layer": "shirts-shallow-back"
                 }
             ],
             "outfits": [

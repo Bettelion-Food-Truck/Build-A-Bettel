@@ -137,7 +137,8 @@ export class AssetDataService {
     }
 
     /*
-    TODO - Maybe
+    TODO
+    Maybe
     Then when checking, if part is targeted, mark all things that target not the same item as incompatible (if they are NOT in the same part as the source)
     When selecting an incompatible item, confirm that the user wants to change the item
     */

@@ -11,7 +11,7 @@ import {
 import { MatButton } from '@angular/material/button';
 
 import { LogService } from '@services/log/log.service';
-import { SortContributorsPipe } from '@pipes/sort-contrib/sort-contributors.pipe';
+import { SortContributorImagesPipe } from '@pipes/sort-contrib-images/sort-contributors-images.pipe';
 
 import { CONTRIBUTOR_PATH } from '@data/paths';
 
@@ -29,7 +29,7 @@ import { DialogType } from '@components/dialogs/dialogs.enum';
     MatDialogTitle,
     MatDialogContent,
     CommonModule,
-    SortContributorsPipe
+    SortContributorImagesPipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './info.component.html',
@@ -73,6 +73,7 @@ export class InfoComponent {
             image: contributor.image ? `${CONTRIBUTOR_PATH}${contributor.image}` : "",
             social: contributor.social ?? "",
             credits: contributor.credits ?? [],
+            imageWeight: contributor.imageWeight ?? 0,
             weight: contributor.weight ?? 0
           } as Contributor;
         });

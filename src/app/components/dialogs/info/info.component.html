@@ -16,7 +16,7 @@
     <div class="photo-wall">
         <h2>Employee Photos</h2>
         <div class="contributors">
-            <ng-container *ngFor="let contributor of fullList|sortContributors">
+            <ng-container *ngFor="let contributor of fullList|sortContributorImages">
                 <img src="{{contributor.image}}" alt="{{contributor.name}}" *ngIf="contributor.image" />
             </ng-container>
         </div>

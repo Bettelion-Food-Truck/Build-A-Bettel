@@ -105,20 +105,69 @@ TODO Update the information for the items.json file structure in each part folde
 Ex:
 ```
 {
-  "folder": "ears",
-  "items": ["small", "big"],
-  "colorMode": "manual",
-  "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
-  "movement": {
-    "x": {
-      "min": -50,
-      "max": 50
+    "movement": {
+        "x": true,
+        "y": true
     },
-    "y": true,
-    "scale": 1
-  },
-  "noneAllowed": true,
-  "hidePartList": false
+    "movement": {
+        "x": true,
+        "y": true,
+        "scale": 0.5
+    },
+    "movement": {
+      "x": {
+        "min": -50,
+        "max": 50
+      },
+      "y": true,
+      "scale": 1
+    },
+    "colorMode": "manual",
+    "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
+    "noneAllowed": true,
+    "assumeThumbnails": true,
+    "items": [
+        {
+            "item": "debut-underlayer",
+            "hide": true,
+            "outfits": [
+                "debut",
+                "debut-underlayer",
+                "daki",
+                "deerttel",
+                "unchained"
+            ],
+            "layer": "accessories-front_under-jacket"
+            "multilayer": [
+                {
+                    "item": "second-outfit-jacket-1-back",
+                    "layer": "jackets_1_back"
+                }
+            ],
+            "multilayer": [
+                {
+                    "item": "sims-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "sims-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
+            "requires": {
+                "part": "feet",
+                "item": "pointed"
+            }
+        }
+    ]
 }
 ```
 

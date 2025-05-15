@@ -12,21 +12,26 @@
             ]
         },
         {
-            "item": "sims-flat",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "sims-pointed",
-            "outfits": [
-                "sims"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            "item": "sims",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "sims-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "sims-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
             "item": "altare-socks",
@@ -66,59 +71,98 @@
             ]
         },
         {
-            "item": "betsy-grayson-fishnets-flat",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "betsy-grayson-fishnets-heels",
+            "item": "betsy-grayson-fishnets",
             "outfits": [
                 "betsy-grayson"
             ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "betsy-grayson-fishnets-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "betsy-grayson-fishnets-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
             "item": "ghost-bride-socks",
+            "hide": true,
             "outfits": [
                 "ghost-bride"
             ],
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            "multilayer": [
+                {
+                    "item": "ghost-bride-socks-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "ghost-bride-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
-            "item": "fishnets-flat",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
+            "item": "fishnets",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "fishnets-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "fishnets-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         },
         {
-            "item": "fishnets-pointed",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
-        },
-        {
-            "item": "psock-flat",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
-        },
-        {
-            "item": "psock-heel",
-            "requires": {
-                "part": "feet",
-                "item": "pointed"
-            }
+            "item": "psock",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "psock-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "psock-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
         }
     ]
 }

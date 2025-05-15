@@ -132,10 +132,6 @@ export class AppComponent {
     return this.componentState() !== AppComponentState.Movement;
   });
 
-  // TODO update visibility logic of outfits, items, and movement
-  // TODO do something to show outfits if selected is -1
-  // TODO update logic to show outfits on start if non-zero count of them
-
   constructor(
     private assetData: AssetDataService,
     private outfitData: OutfitDataService,

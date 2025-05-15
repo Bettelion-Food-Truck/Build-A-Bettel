@@ -259,7 +259,6 @@ export class CanvasComponent implements AfterViewInit {
 
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
-        // TODO turn into promise.all
         renderPromises.push(...this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1));// TODO COLOR selectedColors[partIndex]);
       }
     }

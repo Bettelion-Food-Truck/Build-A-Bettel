@@ -58,6 +58,16 @@
         },
         {
             "item": "christmas-2024-coat",
+            "multilayer": [
+                {
+                    "item": "christmas-2024-coat+sweater",
+                    "layer": "jackets_1_right-sleeve",
+                    "requires": {
+                        "part": "shirts",
+                        "item": "christmas-2024-shirt"
+                    }
+                }
+            ],
             "outfits": [
                 "2024-christmas"
             ]

@@ -1,6 +1,24 @@
 .mat-mdc-dialog-content {
     padding-top: 20px !important;
     padding-bottom: 30px;
+
+    font-size: 115%;
+}
+
+.game-name {
+    text-wrap: nowrap;
+}
+
+.heavy {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.smaller {
+    font-size: 90%;
 }
 
 .dialog-actions {

@@ -3,7 +3,6 @@ export interface PartConnection {
         [key: string]: {
             part: string;
             item: string;
-            isVariant: boolean;
         }[]
     }
 }

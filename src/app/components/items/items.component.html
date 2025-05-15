@@ -9,7 +9,7 @@
 
     <ng-container *ngFor="let item of part.items; let j = index">
         <button id="icon_{{i}}_{{j}}" class="item" [class.selected]="selectedItems() && selectedItems()[i] === j"
-            [class.variants]="item.variants && item.variants.length > 0" (click)="onChange(i, j)">
+            (click)="onChange(i, j)">
             <img [src]="getItemPath(i,j)" [alt]="item.name ? item.name : item.item"
                 [title]="item.name ? item.name : item.item" />
         </button>

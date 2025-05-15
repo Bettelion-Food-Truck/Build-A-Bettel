@@ -11,6 +11,7 @@ import { Part } from '@models/part.model';
 import { Item } from '@models/item.model';
 import { LoadingService } from '@services/loading/loading.service';
 import { Layer } from '@models/layer.model';
+import { PartConnection } from '@models/partConnection.model';
 
 @Injectable({
   providedIn: 'root'
@@ -94,9 +95,9 @@ export class AssetDataService {
 
     // Build functional structure
     this.parts = [];
-    let connectons = [];
+    let partConnections: PartConnection = {};
 
-    for (let i = 0; i < partData.length; i++) {
+    for (let i: number = 0; i < partData.length; i++) {
 
       this.parts[i] = partData[i] satisfies Part;
 
@@ -105,31 +106,47 @@ export class AssetDataService {
         this.parts[i].layer = this.parts[i].folder;
       }
 
-      for (let j = 0; j < this.parts[i].items.length; j++) {
+      for (let j: number = 0; j < this.parts[i].items.length; j++) {
 
-        if (this.parts[i].items[j].requires) {
+        if (!this.parts[i].items[j].requires) {
           // Check if the item has a requirement
 
-          let item = this.parts[i].items[j];
-
-          connectons.push({
-            "source": {
-              part: this.parts[i].name,
-              item: item.item
-            },
-            "target": {
-              part: item.requires!.part,
-              item: item.requires!.item
-            }
-          });
+          continue;
         }
+
+        const item = this.parts[i].items[j];
+
+        let targetPart = item.requires!.part;
+        let targetItem = item.requires!.item;
+
+        if (!partConnections[targetPart] || partConnections[targetPart] === undefined) {
+
+          partConnections[targetPart] = {};
+        }
+
+        if (!partConnections[targetPart][targetItem] || partConnections[targetPart][targetItem] === undefined) {
+
+          partConnections[targetPart][targetItem] = [];
+        }
+
+        partConnections[targetPart][targetItem].push({
+          part: this.parts[i].name,
+          item: item.item
+        });
       }
     }
 
-    //console.log("CONNECTIONS", connectons);
+    /*
+    TODO - Maybe
+    Then when checking, if part is targeted, mark all things that target not the same item as incompatible (if they are NOT in the same part as the source)
+    When selecting an incompatible item, confirm that the user wants to change the item
+    */
+
+    // console.log("CONNECTIONS", this.partConnections);
     //x.filter( entry => entry.source.part === "Socks" )
 
     this.partSignal.set(this.parts);
+
     this.logger.info(`AssetDataService: loadAssetData() - ${partCount} items loaded`);
 
     this.loading.removeLoadingItem();

@@ -69,6 +69,13 @@ body {
     }
 }
 
+picture {
+    & > * {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 /* Global classes with style overrides. Unfortunately they use !important because of specificity. */
 .hidden {
     display: none !important;

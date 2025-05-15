@@ -150,6 +150,10 @@
                 "spa"
             ]
         },
+        {
+            "item": "bettelgoose-scarf",
+            "layer": "neck-behind-hair"
+        },
         "phantom-choker"
     ]
 }

@@ -274,7 +274,7 @@
             "multilayer": [
                 {
                     "item": "pumpkin-king-shirt-back",
-                    "layer": "shirts_back"
+                    "layer": "shirts-shallow-back"
                 }
             ],
             "outfits": [

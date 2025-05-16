@@ -3,11 +3,23 @@
 </div>
 
 <div class="outfit-list">
-    <ng-container *ngFor="let outfit of outfitSignal(); let i = index">
-        <button (click)="onChange(i)">
-            <img [src]="getOutfitImage(i)" [alt]="outfit.name ? outfit.name : outfit.uid" />
 
-            <span>{{ outfit.name ? outfit.name : outfit.uid }}</span>
-        </button>
-    </ng-container>
+    @if(isWebPEnabled()) {
+    <button (click)="onChange(i)" *ngFor="let outfit of outfitSignal(); let i = index">
+        <picture>
+            <source [srcset]="getOutfitImage(i, 'webp')" type="image/webp">
+            <source [srcset]="getOutfitImage(i, 'png')" type="image/jpeg">
+            <img [src]="getOutfitImage(i, 'png')" [alt]="outfit.name ? outfit.name : outfit.uid" />
+        </picture>
+
+        <span>{{ outfit.name ? outfit.name : outfit.uid }}</span>
+    </button>
+    } @else {
+    <button (click)="onChange(i)" *ngFor="let outfit of outfitSignal(); let i = index">
+        <img [src]="getOutfitImage(i, 'png')" [alt]="outfit.name ? outfit.name : outfit.uid" />
+
+        <span>{{ outfit.name ? outfit.name : outfit.uid }}</span>
+    </button>
+    }
+
 </div>

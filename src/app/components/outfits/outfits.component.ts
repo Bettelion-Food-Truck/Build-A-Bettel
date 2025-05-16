@@ -27,7 +27,7 @@ export class OutfitsComponent {
     this.outfitSignal = this.outfitData.getOutfits();
   }
 
-  getOutfitImage(index: number): string {
+  getOutfitImage(index: number, ext: string = "png"): string {
 
     let outfit = this.outfitSignal()[index];
 
@@ -36,11 +36,16 @@ export class OutfitsComponent {
       return "";
     }
 
-    return `${OUTFIT_PATH}${outfit.uid}.png`;
+    return `${OUTFIT_PATH}${outfit.uid}.${ext}`;
   }
 
   onChange(partIndex: number) {
 
     this.modalData.selectOutfit(this.outfitSignal()[partIndex]);
+  }
+
+  isWebPEnabled(): boolean {
+
+    return this.outfitData.isWebPEnabled();
   }
 }

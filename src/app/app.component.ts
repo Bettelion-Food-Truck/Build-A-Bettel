@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, Injector, isDevMode, signal, Signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, HostListener, inject, Injector, isDevMode, signal, Signal, WritableSignal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
@@ -252,6 +252,19 @@ export class AppComponent {
     this.logger.debug("AppComponent: reset()");
 
     this.modalData.reset();
+  }
+
+  @HostListener('document:keydown.control.z', ['$event'])
+  @HostListener('document:keydown.meta.z', ['$event'])
+  onUndo(event: KeyboardEvent) {
+    this.logger.warn('Ctrl+Z detected - undo');
+  }
+
+  @HostListener('document:keydown.control.y', ['$event'])
+  @HostListener('document:keydown.control.shift.z', ['$event'])
+  @HostListener('document:keydown.meta.shift.z', ['$event'])
+  onRedo(event: KeyboardEvent) {
+    this.logger.warn('Ctrl+Y detected - redo');
   }
 
   generatePrompt() {

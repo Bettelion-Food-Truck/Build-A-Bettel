@@ -59,7 +59,11 @@ The second is the `assets` folder located at `app\assets`. This holds all the mo
  * The `outfits` folder holds the completed outfit preview images.
  * The `parts` folder holds each and every individual item that the game can display.
 
-The parts are each in different folders. Each part is a different group of assets that can be displayed, usually grouped by type like pants or shirts. To keep things cross browser and platform compatible, every item in these folders should be lower case only with no spaces (dashes are fine). The images also should all be png (currently, we are looking at adding webp as a compatible format).
+The parts are each in different folders. Each part is a different group of assets that can be displayed, usually grouped by type like pants or shirts. To keep things cross browser and platform compatible, every item in these folders should be lower case only with no spaces (dashes are fine).
+
+All images will work without additional settings as png files. In this case, all primary data files should have the setting `webP` (or a variant there of) set to `false`. If all the images in a section have both png and webp versions, then set the value of `webP` in the JSON file to `true`. The code will attempt to use the webP versions first; this will save a lot in terms of file transfer sizes and thus speed up the game rendering. If you are confident that your target audience will all be capable of using webP files, then you do not need to include the fallback png files.
+
+**Note**: Small images, like the icons, do not benefit from webP file format and are not included in this feature.
 
 In each part folder, there are two subfolders: `items` and `thumbnails`. The folder `items` contains the item's images that are drawn on the canvas. These should be proper resolution and able to be overlayed directly. The folder `thumbnails` thus contains the thumbnails of these items. Thumbnails are optional and set in the JSON data files.
 
@@ -72,8 +76,8 @@ The game doesn't know anything about the image assets by itself. It requires the
 Example
 ```
 {
-  "images": "items/",
-  "thumbnails": "thumbnails/",
+  "imageWebP": false,
+  "thumbnailWebP": false,
   "parts": [
     {
         "name": "Body",

@@ -18,9 +18,6 @@ import { PartConnection } from '@models/partConnection.model';
 })
 export class AssetDataService {
 
-  private imageFolder: WritableSignal<string> = signal("");
-  private thumbnailFolder: WritableSignal<string> = signal("");
-
   private parts: Part[] = [];
   private partSignal: WritableSignal<Part[]> = signal([]);
 
@@ -59,9 +56,6 @@ export class AssetDataService {
     this.logger.info("AssetDataService: loadAssetData()");
 
     this.loading.addLoadingItem(0);
-
-    this.imageFolder.set(PartDataJSON.images ?? "items/");
-    this.thumbnailFolder.set(PartDataJSON.thumbnails ?? "thumbnails/");
 
     let partCount = 0;
 
@@ -153,14 +147,14 @@ export class AssetDataService {
     this.loading.removeLoadingItem();
   }
 
-  getImageFolder(): Signal<string> {
+  imageWebPEnabled(): boolean {
 
-    return this.imageFolder.asReadonly();
+    return PartDataJSON.imageWebP;
   }
 
-  getThumbnailFolder(): Signal<string> {
+  thumbnailWebPEnabled(): boolean {
 
-    return this.thumbnailFolder.asReadonly();
+    return PartDataJSON.thumbnailWebP;
   }
 
   getParts(): Signal<Part[]> {

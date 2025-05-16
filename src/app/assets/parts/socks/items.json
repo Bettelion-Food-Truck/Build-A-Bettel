@@ -166,6 +166,28 @@
             ]
         },
         {
+            "item": "ankle-socks",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "ankle-socks",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "ankle-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
+        },
+        {
             "item": "fishnets",
             "hide": true,
             "multilayer": [

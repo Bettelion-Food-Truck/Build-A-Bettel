@@ -8,7 +8,10 @@ import { ModelDataService } from '@services/model-data/model-data.service';
 })
 export class SaveStateService {
 
-  private readonly KEY_LIST = "buildabettel-key-list";
+  private readonly PAST_KEY_LIST = "buildabettel-past-key-list";
+  private readonly ACTIVE_KEY = "buildabettel-active-key";
+  private readonly FUTURE_KEY_LIST = "buildabettel-future-key-list";
+
   private readonly STATE_KEY_PREFIX = "buildabettel-state-";
 
   constructor(
@@ -18,9 +21,6 @@ export class SaveStateService {
 
   saveState(storage: Storage = sessionStorage) {
     this.logger.debug('SaveStateService: saveState()');
-
-    // Get current key list
-    let keyList: string[] = JSON.parse(storage.getItem(this.KEY_LIST) ?? "[]");
 
     // Build current fit object & key
     const currentFit: SimpleFit = this.modalData.getCurrentFitObject();
@@ -32,48 +32,76 @@ export class SaveStateService {
       return;
     }
 
+    // Get current key list
+    let pastKeys: string[] = JSON.parse(storage.getItem(this.PAST_KEY_LIST) ?? "[]");
+    let activeKey: string = storage.getItem(this.ACTIVE_KEY) ?? "";
+    let futureKeys: string[] = JSON.parse(storage.getItem(this.FUTURE_KEY_LIST) ?? "[]");
+
     // Check if current fit matches previous fit
-    const previousFitKey = keyList[keyList.length - 1];
-    const previousFit: string = storage.getItem(previousFitKey) ?? "{}";
-    if (JSON.stringify(currentFit) === previousFit) {
-      this.logger.debug('SaveStateService: saveState() - current fit matches previous fit');
-      return;
+    if (activeKey.length > 0) {
+      const previousFit: string = storage.getItem(activeKey) ?? "{}";
+
+      if (JSON.stringify(currentFit) === previousFit) {
+        this.logger.debug('SaveStateService: saveState() - current fit matches previous fit');
+        return;
+      }
     }
 
-    // Save fit to storage
-    storage.setItem(currentFitKey, JSON.stringify(currentFit));
+    // Update keys
+    if (activeKey.length > 0) {
+
+      pastKeys.push(activeKey);
+    }
+
+    activeKey = currentFitKey;
+
+    // Save current fit to storage
+    storage.setItem(activeKey, JSON.stringify(currentFit));
+
+    if (futureKeys.length > 0) {
+      // Remove future keys
+
+      let key = futureKeys.pop();
+
+      while (key !== undefined) {
+        storage.removeItem(key);
+        key = futureKeys.pop();
+      }
+    }
 
     // Save updated key list
-    keyList.push(currentFitKey);
-    storage.setItem(this.KEY_LIST, JSON.stringify(keyList));
+    storage.setItem(this.PAST_KEY_LIST, JSON.stringify(pastKeys));
+    storage.setItem(this.ACTIVE_KEY, activeKey);
+    storage.setItem(this.FUTURE_KEY_LIST, JSON.stringify(futureKeys));
   }
 
   undo(storage: Storage = sessionStorage) {
     this.logger.debug('SaveStateService: undo()');
 
     // Get current key list
-    let keyList: string[] = JSON.parse(storage.getItem(this.KEY_LIST) ?? "[]");
+    let pastKeys: string[] = JSON.parse(storage.getItem(this.PAST_KEY_LIST) ?? "[]");
+    let activeKey: string = storage.getItem(this.ACTIVE_KEY) ?? "";
+    let futureKeys: string[] = JSON.parse(storage.getItem(this.FUTURE_KEY_LIST) ?? "[]");
 
-    if (keyList.length <= 1) {
+    if (pastKeys.length === 0) {
       this.logger.debug('SaveStateService: undo() - no previous fit to undo');
       return;
     }
 
-    // Remove the previous fit
-    const currentFitKey = keyList.pop();
+    // Update keys
+    futureKeys.unshift(activeKey);// Stick it on the front
+    activeKey = pastKeys.pop() ?? "";
 
-    // Get previous fit
-    const previousFitKey = keyList[keyList.length - 1];
-    const previousFit: string = storage.getItem(previousFitKey) ?? "{}";
+    // Save updated key list
+    storage.setItem(this.PAST_KEY_LIST, JSON.stringify(pastKeys));
+    storage.setItem(this.ACTIVE_KEY, activeKey);
+    storage.setItem(this.FUTURE_KEY_LIST, JSON.stringify(futureKeys));
 
-    // Remove the previous fit
-    storage.setItem(this.KEY_LIST, JSON.stringify(keyList));
-    if (currentFitKey) {
-      storage.removeItem(currentFitKey);
+    if (activeKey.length > 0) {
+      const activeFit: string = storage.getItem(activeKey) ?? "{}";
+
+      this.modalData.setCurrentFitObject(JSON.parse(activeFit));
     }
-
-    // Update the fit
-    this.modalData.setCurrentFitObject(JSON.parse(previousFit));
   }
 
   loadState() {

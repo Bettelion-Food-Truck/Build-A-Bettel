@@ -59,7 +59,6 @@
         },
         {
             "item": "butler-shoes",
-            "layer": "shoes-covered-full",
             "outfits": [
                 "butler"
             ],

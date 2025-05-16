@@ -158,7 +158,7 @@ export class AppComponent {
     this.imageDataString = this.modalData.getImageEncoded();
 
     effect(() => {
-      this.logger.info(`AppComponent: partChangeEffect() ${this.activePart()}`);
+      this.logger.debug(`AppComponent: partChangeEffect() ${this.activePart()}`);
 
       if (this.activePart() === -1) {
 

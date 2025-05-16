@@ -1,4 +1,5 @@
 {
+    "webP": true,
     "roles": [
         {
             "name": "Project Leads",
@@ -16,7 +17,7 @@
     "lead": [
         {
             "name": "Finarael",
-            "image": "finarael.png",
+            "image": "finarael",
             "social": "https://x.com/Finarael",
             "credits": [
                 "Head Chef, Discord administrator, imp wrangler, assignment manager"
@@ -33,7 +34,7 @@
         },
         {
             "name": "Sakura \"Saku\" Mikage",
-            "image": "saku.png",
+            "image": "saku",
             "social": "https://x.com/SakuraMikage",
             "credits": [
                 "Sous Chef, Discord moderator"
@@ -44,7 +45,7 @@
     "artists": [
         {
             "name": "Gavis Bettel",
-            "image": "bettel.png",
+            "image": "bettel",
             "social": "https://x.com/gavisbettel",
             "credits": [
                 "Cameos in basement background",
@@ -54,7 +55,7 @@
         },
         {
             "name": "Aether",
-            "image": "aether.png",
+            "image": "aether",
             "social": "https://x.com/a_ether_17",
             "credits": [
                 "<strong>Outfits:</strong> Pumpkin King, Ruze"
@@ -70,7 +71,7 @@
         },
         {
             "name": "CloudySky",
-            "image": "cloudysky270.png",
+            "image": "cloudysky270",
             "social": "https://x.com/CloudySky270",
             "credits": [
                 "<strong>Outfits:</strong> 2024 Expo (gloves and choker by Hioko_Chi)",
@@ -80,7 +81,7 @@
         },
         {
             "name": "delta",
-            "image": "delta.png",
+            "image": "delta",
             "social": "https://x.com/deltacures",
             "credits": [
                 "<strong>Outfits:</strong> 2025 Expo"
@@ -114,7 +115,7 @@
         },
         {
             "name": "Fishsticks",
-            "image": "fishsticks.png",
+            "image": "fishsticks",
             "social": "https://x.com/lurkdeer",
             "credits": [
                 "<strong>Outfits:</strong> Shinri"
@@ -123,7 +124,7 @@
         },
         {
             "name": "genie",
-            "image": "genie-art.png",
+            "image": "genie-art",
             "social": "https://x.com/genieart_",
             "credits": [
                 "<strong>Outfits:</strong> Twobert"
@@ -140,7 +141,7 @@
         },
         {
             "name": "Hioko_Chi",
-            "image": "hioko.png",
+            "image": "hioko",
             "social": "https://x.com/hioko_chi",
             "credits": [
                 "<strong>Body: </strong> Base body model, debut hair, second outfit hair",
@@ -151,7 +152,7 @@
         },
         {
             "name": "jahgyong",
-            "image": "jahgyong.png",
+            "image": "jahgyong",
             "social": "https://x.com/jahgyong",
             "credits": [
                 "<strong>Outfits:</strong> Magni"
@@ -160,7 +161,7 @@
         },
         {
             "name": "jestertamer",
-            "image": "jestertamer.png",
+            "image": "jestertamer",
             "social": "https://x.com/jestertamer",
             "credits": [
                 "<strong>Outfits:</strong> Cowttel, Gavin Bett'ol",
@@ -171,7 +172,7 @@
         },
         {
             "name": "LIV [ 54BPM ]",
-            "image": "liv.png",
+            "image": "liv",
             "social": "https://x.com/54BPM_",
             "credits": [
                 "<strong>Outfits:</strong> Christmas",
@@ -197,7 +198,7 @@
         },
         {
             "name": "Leo Stone",
-            "image": "leo-stone.png",
+            "image": "leo-stone",
             "credits": [
                 "<strong>Outfits:</strong> April Fool, Jester, Sims",
                 "<strong>Accessories:</strong> Memento necklace, (p)hat, Snank t-shirt",
@@ -215,7 +216,7 @@
         },
         {
             "name": "MagiCupcake",
-            "image": "magicupcake.png",
+            "image": "magicupcake",
             "social": "https://x.com/CupcakeMagi",
             "credits": [
                 "<strong>Accessories:</strong> Hair clips, glorp headband"
@@ -224,7 +225,7 @@
         },
         {
             "name": "Magmite80085",
-            "image": "magmite80085.png",
+            "image": "magmite80085",
             "social": "https://x.com/Magmite80085",
             "credits": [
                 "<strong>Companions:</strong> Back-facing Phantom",
@@ -234,7 +235,7 @@
         },
         {
             "name": "Maryonet",
-            "image": "maryonet.png",
+            "image": "maryonet",
             "social": "https://x.com/_Maryonet_",
             "credits": [
                 "<strong>Outfits:</strong> Deerttel"
@@ -250,7 +251,7 @@
         },
         {
             "name": "mochijam",
-            "image": "mochijam.png",
+            "image": "mochijam",
             "social": "https://x.com/itsmochijam",
             "credits": [
                 "<strong>Outfits:</strong> Axel"
@@ -259,7 +260,7 @@
         },
         {
             "name": "MOMICHI",
-            "image": "momichi.png",
+            "image": "momichi",
             "social": "https://x.com/momichiword",
             "credits": [
                 "<strong>Outfits:</strong> Woven Fates"
@@ -268,7 +269,7 @@
         },
         {
             "name": "Myobi",
-            "image": "myobi.png",
+            "image": "myobi",
             "social": "https://x.com/stressed_nerd",
             "credits": [
                 "<strong>Outfits:</strong> Ghost Bride"
@@ -277,7 +278,7 @@
         },
         {
             "name": "natsu",
-            "image": "natsu.png",
+            "image": "natsu",
             "social": "https://x.com/appurupii",
             "credits": [
                 "<strong>Outfits:</strong> Hakka"
@@ -286,7 +287,7 @@
         },
         {
             "name": "Paufufufun",
-            "image": "pafufufun.png",
+            "image": "pafufufun",
             "social": "https://x.com/paufufufun",
             "credits": [
                 "<strong>Outfits:</strong> Dead World",
@@ -296,7 +297,7 @@
         },
         {
             "name": "R4bbit",
-            "image": "r4bbit.png",
+            "image": "r4bbit",
             "social": "https://x.com/rabbitdr4gon",
             "credits": [
                 "<strong>Accessories:</strong> Tank tread legs"
@@ -312,7 +313,7 @@
         },
         {
             "name": "Raisins0up",
-            "image": "raisins0up.png",
+            "image": "raisins0up",
             "social": "https://x.com/raisins0up",
             "credits": [
                 "<strong>Outfits:</strong> Battel"
@@ -321,7 +322,7 @@
         },
         {
             "name": "REIH",
-            "image": "atomicreih.png",
+            "image": "atomicreih",
             "social": "https://x.com/atomicreih",
             "credits": [
                 "<strong>Outfits:</strong> Betsy-Chan, Pirate, Showman, Spa",
@@ -345,7 +346,7 @@
         },
         {
             "name": "roseghostea",
-            "image": "roseghostea.png",
+            "image": "roseghostea",
             "social": "https://x.com/roseghostea",
             "credits": [
                 "<strong>Accessories:</strong> Angel wings, demon horns, demon tail, dog ears, halo, monocle, party crown, sheer fishnets",
@@ -371,7 +372,7 @@
         },
         {
             "name": "skellitea",
-            "image": "skellitea.png",
+            "image": "skellitea",
             "social": "https://x.com/skellitea",
             "credits": [
                 "<strong>Accessories:</strong> Dual hair braids, pink glasses, (p)socks, shutter shades, sleep hat, sleep mask, snail eyes, spring glasses",
@@ -391,7 +392,7 @@
         },
         {
             "name": "@sp00kysalmon",
-            "image": "spook.png",
+            "image": "spook",
             "social": "https://x.com/sp00kysalmon",
             "credits": [
                 "<strong>Outfits:</strong> January 2025 Calendar",
@@ -401,7 +402,7 @@
         },
         {
             "name": "Styx",
-            "image": "styx.png",
+            "image": "styx",
             "social": "https://x.com/styx_ogawa",
             "credits": [
                 "<strong>Outfits:</strong> Jurard",
@@ -427,7 +428,7 @@
         },
         {
             "name": "ZZ_Mays",
-            "image": "zmays.png",
+            "image": "zmays",
             "social": "https://x.com/zz_mays",
             "credits": [
                 "<strong>Outfits:</strong> Bettelgoose, Bettelzebub, Flex, Goose ASMR VP",
@@ -439,7 +440,7 @@
     "developers": [
         {
             "name": "GlitchTech",
-            "image": "glitchtech.png",
+            "image": "glitchtech",
             "credits": [
                 "Lead developer"
             ],
@@ -455,12 +456,12 @@
         },
         {
             "name": "Evie",
-            "image": "evie.png",
+            "image": "evie",
             "imageWeight": 500
         },
         {
             "name": "Socktoebathtub",
-            "image": "socktoebathtub.png",
+            "image": "socktoebathtub",
             "social": "https://x.com/socktoebathtub",
             "credits": [
                 "Data manager"
@@ -476,7 +477,7 @@
         },
         {
             "name": "RoseLight",
-            "image": "roselight.jpg",
+            "image": "roselight",
             "social": "https://x.com/riverharmonic",
             "credits": [
                 "Creative consultant"
@@ -492,7 +493,7 @@
         },
         {
             "name": "Vivi",
-            "image": "vivi.png",
+            "image": "vivi",
             "social": "https://x.com/cerulean_vivi",
             "credits": [
                 "UI/UX review, sensitivity reading"

@@ -13,8 +13,6 @@ import { MatButton } from '@angular/material/button';
 import { LogService } from '@services/log/log.service';
 import { SortContributorImagesPipe } from '@pipes/sort-contrib-images/sort-contributors-images.pipe';
 
-import { CONTRIBUTOR_PATH } from '@data/paths';
-
 import data from '@data/credits.json';
 import { Group, Contributor, ParseCreditJSON } from '@models/credits.model';
 
@@ -81,5 +79,10 @@ export class InfoComponent {
 
       this.fullList.push(...group.contributors);
     });
+  }
+
+  isWebPEnabled(): boolean {
+
+    return data.webP;
   }
 }

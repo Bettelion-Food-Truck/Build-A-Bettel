@@ -201,8 +201,11 @@ export class ModelDataService {
       if (itemIndex >= 0) {
         // Item is selected
 
-        items[part.layer] = part.items[itemIndex].item;
-        // TODO add movement and color information to each item
+        items[part.layer] = {
+          item: part.items[itemIndex].item,
+          position: {} as Position,// TODO add movement
+          color: "" // TODO add color
+        };
       }
     });
 
@@ -226,17 +229,17 @@ export class ModelDataService {
 
         const partLayer = parts[i].layer;
 
-        if (partLayer in fitItems && fitItems[partLayer].length !== undefined && fitItems[partLayer].length > 0) {
+        if (partLayer in fitItems && fitItems[partLayer].item.length !== undefined && fitItems[partLayer].item.length > 0) {
           // Valid part in fitItems
 
-          const fitItemName = fitItems[partLayer];
+          const fitItem = fitItems[partLayer];
 
           let items = parts[i].items;
 
           // Attempt to load item
           for (let j = 0; j < items.length; j++) {
 
-            if (items[j].item === fitItemName) {
+            if (items[j].item === fitItem.item) {
 
               selectedItems[i] = j;
               break;

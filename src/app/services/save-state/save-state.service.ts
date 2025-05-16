@@ -133,6 +133,19 @@ export class SaveStateService {
     }
   }
 
+  loadLastActiveState(storage: Storage = sessionStorage) {
+    this.logger.debug('SaveStateService: loadState()');
+
+    // Get current key list
+    let activeKey: string = storage.getItem(this.ACTIVE_KEY) ?? "";
+
+    if (activeKey.length > 0) {
+      const activeFit: string = storage.getItem(activeKey) ?? "{}";
+
+      this.modalData.setCurrentFitObject(JSON.parse(activeFit));
+    }
+  }
+
   private getRandomUUID(): string {
 
     let uuid: string = "";

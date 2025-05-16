@@ -32,6 +32,7 @@ import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
 import { WebPService } from '@services/web-p/web-p.service';
+import { SaveStateService } from '@services/save-state/save-state.service';
 
 enum AppComponentState {
   Movement,
@@ -138,6 +139,7 @@ export class AppComponent {
     private assetData: AssetDataService,
     private outfitData: OutfitDataService,
     private modalData: ModelDataService,
+    private saveState: SaveStateService,
     private prompt: PromptService,
     private logger: LogService
   ) {
@@ -170,6 +172,12 @@ export class AppComponent {
 
         this.logger.warn(`AppComponent: partChangeEffect() activePart state unknown.`, this.activePart());
       }
+    });
+
+    effect(() => {
+      this.logger.debug("AppComponent: selectedItemsChangeEffect()");
+
+      this.saveState.saveState();
     });
   }
 

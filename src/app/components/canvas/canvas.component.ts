@@ -276,6 +276,8 @@ export class CanvasComponent implements AfterViewInit {
           }
         });
 
+        this.clearCanvas(this.workingCanvas!);
+
         // Draw layers onto master
         for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
 

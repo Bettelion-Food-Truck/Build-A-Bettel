@@ -9,9 +9,10 @@
         "badlands",
         "basement",
         "bettel-text",
+        "bettelion-blue",
+        "bettelion-yellow",
         "black-glitter",
         "blender",
-        "blue-bettelion",
         "cafe",
         "carriage",
         "city",
@@ -24,9 +25,10 @@
         "gala-bettel",
         "gala-red",
         "gavin-bettol-bkg",
-        "grayscale-holostars",
         "guild-hall",
         "guild-hall-fire",
+        "holostars-grayscale",
+        "holostars-rainbow",
         "infinity",
         "mansion",
         "mountain",
@@ -38,13 +40,11 @@
         "purple-lace",
         "purple-sky",
         "rainbow-cloud",
-        "rainbow-holostars",
         "stage",
         "stage-alt",
         "star",
         "trippy",
         "waterfall",
-        "white",
-        "yellow-bettelion"
+        "white"
     ]
 }

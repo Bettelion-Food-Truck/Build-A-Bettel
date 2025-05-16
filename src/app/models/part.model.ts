@@ -2,8 +2,7 @@ import { Item } from './item.model';
 
 export interface Part {
     name: string;
-
-    layer: string | null;
+    layer: string;
     folder: string;
 
     icon: string;

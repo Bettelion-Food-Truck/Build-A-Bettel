@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, Injector, isDevMode, signal, Signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, HostListener, inject, Injector, isDevMode, signal, Signal, WritableSignal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
@@ -32,6 +32,7 @@ import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
 import { WebPService } from '@services/web-p/web-p.service';
+import { SaveStateService } from '@services/save-state/save-state.service';
 
 enum AppComponentState {
   Movement,
@@ -138,6 +139,7 @@ export class AppComponent {
     private assetData: AssetDataService,
     private outfitData: OutfitDataService,
     private modalData: ModelDataService,
+    private saveState: SaveStateService,
     private prompt: PromptService,
     private logger: LogService
   ) {
@@ -158,7 +160,7 @@ export class AppComponent {
     this.imageDataString = this.modalData.getImageEncoded();
 
     effect(() => {
-      this.logger.info(`AppComponent: partChangeEffect() ${this.activePart()}`);
+      this.logger.debug(`AppComponent: partChangeEffect() ${this.activePart()}`);
 
       if (this.activePart() === -1) {
 
@@ -170,6 +172,15 @@ export class AppComponent {
 
         this.logger.warn(`AppComponent: partChangeEffect() activePart state unknown.`, this.activePart());
       }
+    });
+
+    effect(() => {
+      this.logger.debug("AppComponent: selectedItemsChangeEffect()");
+
+      // TODO set up to call on movement change finish
+      // TODO set up to call on color change
+
+      this.saveState.saveState();
     });
   }
 
@@ -244,6 +255,21 @@ export class AppComponent {
     this.logger.debug("AppComponent: reset()");
 
     this.modalData.reset();
+  }
+
+  @HostListener('document:keydown.control.z')
+  @HostListener('document:keydown.meta.z')
+  onUndo() {
+
+    this.saveState.undo();
+  }
+
+  @HostListener('document:keydown.control.y')
+  @HostListener('document:keydown.control.shift.z')
+  @HostListener('document:keydown.meta.shift.z')
+  onRedo() {
+
+    this.saveState.redo();
   }
 
   generatePrompt() {

@@ -4,6 +4,8 @@ import { AssetDataService } from '@services/asset-data/asset-data.service';
 
 import { Outfit } from '@models/outfit.model';
 import { Position, DEFAULT_POSITION } from '@models/position.model';
+import { Part } from '@models/part.model';
+import { SimpleFit } from '@models/simpleFit.modal';
 
 @Injectable({
   providedIn: 'root'
@@ -179,6 +181,70 @@ export class ModelDataService {
           selectedItems[i] = -1;
         } else {
           selectedItems[i] = 0;
+        }
+      }
+
+      return [...selectedItems];
+    });
+  }
+
+  getCurrentFitObject(): SimpleFit {
+
+    let items: SimpleFit = {};
+
+    let parts = this.assetData.getParts()();
+
+    this.selectedItems().forEach((itemIndex, partIndex) => {
+
+      const part: Part = parts[partIndex];
+
+      if (itemIndex >= 0) {
+        // Item is selected
+
+        items[part.layer] = {
+          item: part.items[itemIndex].item,
+          position: {} as Position,// TODO add movement
+          color: "" // TODO add color
+        };
+      }
+    });
+
+    return items;
+  }
+
+  setCurrentFitObject(fitItems: SimpleFit) {
+
+    this.selectedItems.update(selectedItems => {
+
+      let parts = this.assetData.getParts()();
+
+      for (let i = 0; i < parts.length; i++) {
+
+        // Reset part
+        if (parts[i].noneAllowed) {
+          selectedItems[i] = -1;
+        } else {
+          selectedItems[i] = 0;
+        }
+
+        const partLayer = parts[i].layer;
+
+        if (partLayer in fitItems && fitItems[partLayer].item.length !== undefined && fitItems[partLayer].item.length > 0) {
+          // Valid part in fitItems
+
+          const fitItem = fitItems[partLayer];
+
+          let items = parts[i].items;
+
+          // Attempt to load item
+          for (let j = 0; j < items.length; j++) {
+
+            if (items[j].item === fitItem.item) {
+
+              selectedItems[i] = j;
+              break;
+            }
+          }
         }
       }
 

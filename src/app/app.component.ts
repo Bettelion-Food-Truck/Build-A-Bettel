@@ -254,16 +254,17 @@ export class AppComponent {
     this.modalData.reset();
   }
 
-  @HostListener('document:keydown.control.z', ['$event'])
-  @HostListener('document:keydown.meta.z', ['$event'])
-  onUndo(event: KeyboardEvent) {
-    this.logger.warn('Ctrl+Z detected - undo');
+  @HostListener('document:keydown.control.z')
+  @HostListener('document:keydown.meta.z')
+  onUndo() {
+
+    this.saveState.undo();
   }
 
-  @HostListener('document:keydown.control.y', ['$event'])
-  @HostListener('document:keydown.control.shift.z', ['$event'])
-  @HostListener('document:keydown.meta.shift.z', ['$event'])
-  onRedo(event: KeyboardEvent) {
+  @HostListener('document:keydown.control.y')
+  @HostListener('document:keydown.control.shift.z')
+  @HostListener('document:keydown.meta.shift.z')
+  onRedo() {
     this.logger.warn('Ctrl+Y detected - redo');
   }
 

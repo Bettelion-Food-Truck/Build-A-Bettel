@@ -48,6 +48,34 @@ export class SaveStateService {
     storage.setItem(this.KEY_LIST, JSON.stringify(keyList));
   }
 
+  undo(storage: Storage = sessionStorage) {
+    this.logger.debug('SaveStateService: undo()');
+
+    // Get current key list
+    let keyList: string[] = JSON.parse(storage.getItem(this.KEY_LIST) ?? "[]");
+
+    if (keyList.length <= 1) {
+      this.logger.debug('SaveStateService: undo() - no previous fit to undo');
+      return;
+    }
+
+    // Remove the previous fit
+    const currentFitKey = keyList.pop();
+
+    // Get previous fit
+    const previousFitKey = keyList[keyList.length - 1];
+    const previousFit: string = storage.getItem(previousFitKey) ?? "{}";
+
+    // Remove the previous fit
+    storage.setItem(this.KEY_LIST, JSON.stringify(keyList));
+    if (currentFitKey) {
+      storage.removeItem(currentFitKey);
+    }
+
+    // Update the fit
+    this.modalData.setCurrentFitObject(JSON.parse(previousFit));
+  }
+
   loadState() {
     this.logger.debug('SaveStateService: loadState()');
 

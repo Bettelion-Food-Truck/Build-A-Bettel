@@ -9,6 +9,13 @@ import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { LogService } from '@services/log/log.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 
+enum movementmentOptions {
+  UP = 'up',
+  DOWN = 'down',
+  LEFT = 'left',
+  RIGHT = 'right'
+}
+
 @Component({
   selector: 'app-movement',
   imports: [
@@ -20,8 +27,12 @@ import { ModelDataService } from '@services/model-data/model-data.service';
 })
 export class MovementComponent {
 
+  readonly MOVEMENT_OPTIONS = movementmentOptions;
   readonly MOVEMENT_BASE = 10; // 10px
   movementScaleAdjustment: number = 1;
+
+  private readonly movementInterval: number = 50; // ms
+  private movementPressId: any = null;
 
   private selectedPositions: Signal<Position[]>;
 
@@ -58,7 +69,54 @@ export class MovementComponent {
     });
   }
 
-  moveUp() {
+  startPress(event: MouseEvent | TouchEvent, movement: movementmentOptions) {
+
+    if (!this.movementPressId) {
+      this.logger.debug("MovementComponent: startPress()", movement, event);
+
+      event.preventDefault();
+
+      this.handleMouseAction(movement);
+
+      this.movementPressId = setInterval(() => {
+
+        this.handleMouseAction(movement);
+
+      }, this.movementInterval);
+    }
+  }
+
+  endPress(event: MouseEvent | TouchEvent, movement: movementmentOptions) {
+
+    if (this.movementPressId) {
+      this.logger.debug("MovementComponent: endPress()", movement, event);
+
+      event.preventDefault();
+
+      clearInterval(this.movementPressId);
+      this.movementPressId = null;
+    }
+  }
+
+  handleMouseAction(movement: movementmentOptions) {
+
+    switch (movement) {
+      case movementmentOptions.UP:
+        this.moveUp();
+        break;
+      case movementmentOptions.DOWN:
+        this.moveDown();
+        break;
+      case movementmentOptions.LEFT:
+        this.moveLeft();
+        break;
+      case movementmentOptions.RIGHT:
+        this.moveRight();
+        break;
+    }
+  }
+
+  private moveUp() {
     this.logger.debug("MovementComponent: moveUp()", this.upPotential);
 
     if (!this.upPotential) {
@@ -74,7 +132,7 @@ export class MovementComponent {
     this.checkMoveLimits();
   }
 
-  moveDown() {
+  private moveDown() {
     this.logger.debug("MovementComponent: moveDown()", this.downPotential);
 
     if (!this.downPotential) {
@@ -90,7 +148,7 @@ export class MovementComponent {
     this.checkMoveLimits();
   }
 
-  moveLeft() {
+  private moveLeft() {
     this.logger.debug("MovementComponent: moveLeft()", this.leftPotential);
 
     if (!this.leftPotential) {
@@ -106,7 +164,7 @@ export class MovementComponent {
     this.checkMoveLimits();
   }
 
-  moveRight() {
+  private moveRight() {
     this.logger.debug("MovementComponent: moveRight()", this.rightPotential);
 
     if (!this.rightPotential) {
@@ -160,7 +218,7 @@ export class MovementComponent {
     let selectedPart = this.modelData.getActivePart()();
     const movement = this.assetData.getParts()()[selectedPart].movement as Movement;
 
-    return (movement.scale ? movement.scale : 1) * this.movementScaleAdjustment;
+    return (movement.scale ? movement.scale : 1) * this.movementScaleAdjustment * (this.movementPressId ? 0.5 : 1);
   }
 
   checkMoveLimits() {

@@ -1,20 +1,32 @@
 <div class="movement_controls">
     <div class="spacer"><!-- spacer --></div>
-    <button class="movement_button up" aria-label="Move up" title="Move up" (click)="moveUp()"
-        [class.disabled]="!upPotential" [disabled]="!upPotential">
+    <button class="movement_button up" aria-label="Move up" title="Move up" [class.disabled]="!upPotential"
+        [disabled]="!upPotential" (mousedown)="startPress($event, MOVEMENT_OPTIONS.UP)"
+        (mouseup)="endPress($event, MOVEMENT_OPTIONS.UP)" (mouseleave)="endPress($event, MOVEMENT_OPTIONS.UP)"
+        (touchstart)="startPress($event, MOVEMENT_OPTIONS.UP)" (touchend)="endPress($event, MOVEMENT_OPTIONS.UP)"
+        (touchcancel)="endPress($event, MOVEMENT_OPTIONS.UP)">
+
         <mat-icon>north</mat-icon>
     </button>
     <div class="spacer"><!-- spacer --></div>
 
-    <button class="movement_button left" aria-label="Move left" title="Move left" (click)="moveLeft()"
-        [class.disabled]="!leftPotential" [disabled]="!leftPotential">
+    <button class="movement_button left" aria-label="Move left" title="Move left" [class.disabled]="!leftPotential"
+        [disabled]="!leftPotential" (mousedown)="startPress($event, MOVEMENT_OPTIONS.LEFT)"
+        (mouseup)="endPress($event, MOVEMENT_OPTIONS.LEFT)" (mouseleave)="endPress($event, MOVEMENT_OPTIONS.LEFT)"
+        (touchstart)="startPress($event, MOVEMENT_OPTIONS.LEFT)" (touchend)="endPress($event, MOVEMENT_OPTIONS.LEFT)"
+        (touchcancel)="endPress($event, MOVEMENT_OPTIONS.LEFT)">
+
         <mat-icon>west</mat-icon>
     </button>
     <button class="movement_button reset" aria-label="Reset position" title="Reset position" (click)="reset()">
         <mat-icon>restart_alt</mat-icon>
     </button>
-    <button class="movement_button right" aria-label="Move right" title="Move right" (click)="moveRight()"
-        [class.disabled]="!rightPotential" [disabled]="!rightPotential">
+    <button class="movement_button right" aria-label="Move right" title="Move right" [class.disabled]="!rightPotential"
+        [disabled]="!rightPotential" (mousedown)="startPress($event, MOVEMENT_OPTIONS.RIGHT)"
+        (mouseup)="endPress($event, MOVEMENT_OPTIONS.RIGHT)" (mouseleave)="endPress($event, MOVEMENT_OPTIONS.RIGHT)"
+        (touchstart)="startPress($event, MOVEMENT_OPTIONS.RIGHT)" (touchend)="endPress($event, MOVEMENT_OPTIONS.RIGHT)"
+        (touchcancel)="endPress($event, MOVEMENT_OPTIONS.RIGHT)">
+
         <mat-icon>east</mat-icon>
     </button>
 
@@ -23,8 +35,12 @@
         [disabled]="!scaleDecreasePotential">
         <mat-icon>unfold_less</mat-icon>
     </button>
-    <button class="movement_button down" aria-label="Move down" title="Move down" (click)="moveDown()"
-        [class.disabled]="!downPotential" [disabled]="!downPotential">
+    <button class="movement_button down" aria-label="Move down" title="Move down" [class.disabled]="!downPotential"
+        [disabled]="!downPotential" (mousedown)="startPress($event, MOVEMENT_OPTIONS.DOWN)"
+        (mouseup)="endPress($event, MOVEMENT_OPTIONS.DOWN)" (mouseleave)="endPress($event, MOVEMENT_OPTIONS.DOWN)"
+        (touchstart)="startPress($event, MOVEMENT_OPTIONS.DOWN)" (touchend)="endPress($event, MOVEMENT_OPTIONS.DOWN)"
+        (touchcancel)="endPress($event, MOVEMENT_OPTIONS.DOWN)">
+
         <mat-icon>south</mat-icon>
     </button>
     <button class="movement_button move_scale_increase" aria-label="Increase distance per move"

@@ -4,6 +4,7 @@ import { AssetDataService } from '@services/asset-data/asset-data.service';
 
 import { Outfit } from '@models/outfit.model';
 import { Position, DEFAULT_POSITION } from '@models/position.model';
+import { Part } from '@models/part.model';
 
 @Injectable({
   providedIn: 'root'
@@ -184,5 +185,25 @@ export class ModelDataService {
 
       return [...selectedItems];
     });
+  }
+
+  getCurrentFitObject(): { [key: string]: string } {
+
+    let items: { [key: string]: string } = {};
+
+    let parts = this.assetData.getParts()();
+
+    this.selectedItems().forEach((itemIndex, partIndex) => {
+
+      const part: Part = parts[partIndex];
+
+      if (itemIndex >= 0) {
+        // Item is selected
+
+        items[part.layer] = part.items[itemIndex].item;
+      }
+    });
+
+    return items;
   }
 }

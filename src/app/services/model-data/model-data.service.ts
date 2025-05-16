@@ -206,4 +206,44 @@ export class ModelDataService {
 
     return items;
   }
+
+  setCurrentFitObject(fitItems: { [key: string]: string }) {
+
+    this.selectedItems.update(selectedItems => {
+
+      let parts = this.assetData.getParts()();
+
+      for (let i = 0; i < parts.length; i++) {
+
+        // Reset part
+        if (parts[i].noneAllowed) {
+          selectedItems[i] = -1;
+        } else {
+          selectedItems[i] = 0;
+        }
+
+        const partLayer = parts[i].layer;
+
+        if (partLayer in fitItems && fitItems[partLayer].length !== undefined && fitItems[partLayer].length > 0) {
+          // Valid part in fitItems
+
+          const fitItemName = fitItems[partLayer];
+
+          let items = parts[i].items;
+
+          // Attempt to load item
+          for (let j = 0; j < items.length; j++) {
+
+            if (items[j].item === fitItemName) {
+
+              selectedItems[i] = j;
+              break;
+            }
+          }
+        }
+      }
+
+      return [...selectedItems];
+    });
+  }
 }

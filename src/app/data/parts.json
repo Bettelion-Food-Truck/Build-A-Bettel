@@ -1,13 +1,13 @@
 {
-    "images": "items/",
-    "thumbnails": "thumbnails/",
+    "imageWebP": false,
+    "thumbnailWebP": false,
     "parts": [
         {
             "name": "Body",
             "folder": "body",
             "layer": "body",
             "items": "items.json",
-            "icon": "icon.png",
+            "icon": "icon",
             "hideFromPartsList": true
         },
         {
@@ -15,7 +15,7 @@
             "folder": "feet",
             "layer": "feet",
             "items": "items.json",
-            "icon": "icon.png",
+            "icon": "icon",
             "hideFromPartsList": true
         },
         {
@@ -23,238 +23,238 @@
             "folder": "undies",
             "layer": "undies",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Pants",
             "folder": "pants",
             "layer": "pants",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Shirt",
             "folder": "shirts",
             "layer": "shirts",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Vest",
             "folder": "vests",
             "layer": "vests",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Belt",
             "folder": "belts",
             "layer": "belts",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Jacket",
             "folder": "jackets",
             "layer": "jackets_1",
             "items": "items-1.json",
-            "icon": "icon-1.png"
+            "icon": "icon-1"
         },
         {
             "name": "Outer Jacket",
             "folder": "jackets",
             "layer": "jackets_2",
             "items": "items-2.json",
-            "icon": "icon-2.png"
+            "icon": "icon-2"
         },
         {
             "name": "Neck",
             "folder": "neck",
             "layer": "neck",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Socks",
             "folder": "socks",
             "layer": "socks",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Shoes",
             "folder": "shoes",
             "layer": "shoes",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Hair",
             "folder": "hair",
             "layer": "hair",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Hat",
             "folder": "hats",
             "layer": "hats",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Eyes",
             "folder": "eyes",
             "layer": "eyes",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Mouth",
             "folder": "mouth",
             "layer": "mouth",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Facial Hair",
             "folder": "facial-hair",
             "layer": "facial-hair",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Makeup",
             "folder": "makeup",
             "layer": "makeup",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Mask",
             "folder": "mask",
             "layer": "mask",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Glasses",
             "folder": "glasses",
             "layer": "glasses",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Jewelry 1",
             "folder": "jewelry",
             "layer": "jewelry_1",
             "items": "items-1.json",
-            "icon": "icon-1.png"
+            "icon": "icon-1"
         },
         {
             "name": "Jewelry 2",
             "folder": "jewelry",
             "layer": "jewelry_2",
             "items": "items-2.json",
-            "icon": "icon-2.png"
+            "icon": "icon-2"
         },
         {
             "name": "Hands",
             "folder": "hands",
             "layer": "hands",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Gloves",
             "folder": "gloves",
             "layer": "gloves",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Handheld Item",
             "folder": "handheld",
             "layer": "handheld",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Front Accessory 1",
             "folder": "accessories-front",
             "layer": "accessories-front_1",
             "items": "items-1.json",
-            "icon": "icon-1.png"
+            "icon": "icon-1"
         },
         {
             "name": "Front Accessory 2",
             "folder": "accessories-front",
             "layer": "accessories-front_2",
             "items": "items-2.json",
-            "icon": "icon-2.png"
+            "icon": "icon-2"
         },
         {
             "name": "Front Accessory 3",
             "folder": "accessories-front",
             "layer": "accessories-front_3",
             "items": "items-3.json",
-            "icon": "icon-3.png"
+            "icon": "icon-3"
         },
         {
             "name": "Rear Accessory 1",
             "folder": "accessories-rear",
             "layer": "accessories-rear_1",
             "items": "items-1.json",
-            "icon": "icon-1.png"
+            "icon": "icon-1"
         },
         {
             "name": "Rear Accessory 2",
             "folder": "accessories-rear",
             "layer": "accessories-rear_2",
             "items": "items-2.json",
-            "icon": "icon-2.png"
+            "icon": "icon-2"
         },
         {
             "name": "Companion 1",
             "folder": "companions",
             "layer": "companions_1",
             "items": "items.json",
-            "icon": "icon-1.png"
+            "icon": "icon-1"
         },
         {
             "name": "Companion 2",
             "folder": "companions",
             "layer": "companions_2",
             "items": "items.json",
-            "icon": "icon-2.png"
+            "icon": "icon-2"
         },
         {
             "name": "Background",
             "folder": "backgrounds",
             "layer": "backgrounds",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Filter",
             "folder": "filters",
             "layer": "filters",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Frame",
             "folder": "frames",
             "layer": "frames",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         },
         {
             "name": "Hashtag",
             "folder": "hashtags",
             "layer": "hashtags",
             "items": "items.json",
-            "icon": "icon.png"
+            "icon": "icon"
         }
     ]
 }

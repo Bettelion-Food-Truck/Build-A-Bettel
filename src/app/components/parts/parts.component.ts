@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { ASSET_PATH } from '@data/paths';
 
 import { Part } from '@models/part.model';
+import { Outfit } from '@models/outfit.model';
 
 import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
 import { LogService } from '@services/log/log.service';
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
-import { Outfit } from '@models/outfit.model';
 
 @Component({
   selector: 'app-parts',
@@ -60,7 +60,7 @@ export class PartsComponent {
       return "";
     }
 
-    return `${ASSET_PATH}${part.folder}/${part.icon}`;
+    return `${ASSET_PATH}${part.folder}/${part.icon}.png`;
   }
 
   getPartVisibility(partIndex: number): boolean {

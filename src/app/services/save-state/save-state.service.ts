@@ -133,12 +133,6 @@ export class SaveStateService {
     }
   }
 
-  loadState() {
-    this.logger.debug('SaveStateService: loadState()');
-
-    console.log("Do something with this.modalData.setCurrentFitObject(OBJ)");
-  }
-
   private getRandomUUID(): string {
 
     let uuid: string = "";

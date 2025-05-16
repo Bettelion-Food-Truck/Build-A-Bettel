@@ -177,6 +177,9 @@ export class AppComponent {
     effect(() => {
       this.logger.debug("AppComponent: selectedItemsChangeEffect()");
 
+      // TODO set up to call on movement change finish
+      // TODO set up to call on color change
+
       this.saveState.saveState();
     });
   }

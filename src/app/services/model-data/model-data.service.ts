@@ -5,6 +5,7 @@ import { AssetDataService } from '@services/asset-data/asset-data.service';
 import { Outfit } from '@models/outfit.model';
 import { Position, DEFAULT_POSITION } from '@models/position.model';
 import { Part } from '@models/part.model';
+import { SimpleFit } from '@models/simpleFit.modal';
 
 @Injectable({
   providedIn: 'root'
@@ -187,9 +188,9 @@ export class ModelDataService {
     });
   }
 
-  getCurrentFitObject(): { [key: string]: string } {
+  getCurrentFitObject(): SimpleFit {
 
-    let items: { [key: string]: string } = {};
+    let items: SimpleFit = {};
 
     let parts = this.assetData.getParts()();
 
@@ -201,13 +202,14 @@ export class ModelDataService {
         // Item is selected
 
         items[part.layer] = part.items[itemIndex].item;
+        // TODO add movement and color information to each item
       }
     });
 
     return items;
   }
 
-  setCurrentFitObject(fitItems: { [key: string]: string }) {
+  setCurrentFitObject(fitItems: SimpleFit) {
 
     this.selectedItems.update(selectedItems => {
 

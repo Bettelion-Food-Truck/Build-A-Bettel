@@ -223,6 +223,7 @@
         },
         {
             "item": "ghost-bride-skirt",
+            "layer": "pants_elevated",
             "multilayer": [
                 {
                     "item": "ghost-bride-skirt-back",

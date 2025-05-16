@@ -28,7 +28,7 @@
             ]
         },
         {
-            "item": "gala-hat",
+            "item": "gala-top-hat",
             "outfits": [
                 "gala"
             ]
@@ -245,6 +245,7 @@
         "clown-wig-hat",
         "demon-horns",
         "dog-ears",
+        "gala-hat",
         "glorp-headband",
         "hairclips",
         "halo",

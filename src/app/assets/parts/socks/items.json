@@ -35,33 +35,79 @@
         },
         {
             "item": "altare-socks",
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            },
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "altare-socks",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "altare-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ],
             "outfits": [
                 "altare"
             ]
         },
         {
             "item": "flayon-socks",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "flayon-socks",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "flayon-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ],
             "outfits": [
                 "flayon"
-            ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
+            ]
         },
         {
             "item": "shinri-socks",
-            "outfits": [
-                "shinri"
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "shinri-socks",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "shinri-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
             ],
-            "requires": {
-                "part": "feet",
-                "item": "flat"
-            }
+            "outfits": [
+                "shinri",
+                "butler"
+            ]
         },
         {
             "item": "betsy-socks",
@@ -112,6 +158,28 @@
                 },
                 {
                     "item": "ghost-bride-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ]
+        },
+        {
+            "item": "ankle-socks",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "ankle-socks",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "ankle-socks-pointed",
                     "layer": "::host",
                     "requires": {
                         "part": "feet",

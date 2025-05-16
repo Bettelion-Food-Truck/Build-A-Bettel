@@ -144,7 +144,7 @@
             "image": "hioko",
             "social": "https://x.com/hioko_chi",
             "credits": [
-                "<strong>Body: </strong> Base body model, debut hair, second outfit hair",
+                "<strong>Body:</strong> Base body model, debut hair, second outfit hair",
                 "<strong>Outfits:</strong> Debut underlayer",
                 "<strong>Accessories:</strong> Tempantsu, cat ears, several makeup items"
             ],
@@ -155,7 +155,8 @@
             "image": "jahgyong",
             "social": "https://x.com/jahgyong",
             "credits": [
-                "<strong>Outfits:</strong> Magni"
+                "<strong>Outfits:</strong> Magni",
+                "<strong>Companions:</strong> Phantwo"
             ],
             "imageWeight": -5
         },

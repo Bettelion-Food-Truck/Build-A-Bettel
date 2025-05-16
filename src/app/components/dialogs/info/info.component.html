@@ -20,9 +20,19 @@
     <div class="photo-wall">
         <h2>Employee Photos</h2>
         <div class="contributors">
+            @if(isWebPEnabled()) {
             <ng-container *ngFor="let contributor of fullList|sortContributorImages">
-                <img src="{{contributor.image}}" alt="{{contributor.name}}" *ngIf="contributor.image" />
+                <picture *ngIf="contributor.image">
+                    <source [srcset]="contributor.image + '.webp'" type="image/webp">
+                    <source [srcset]="contributor.image + '.png'" type="image/jpeg">
+                    <img [src]="contributor.image + '.png'" [alt]="contributor.name" />
+                </picture>
             </ng-container>
+            } @else {
+            <ng-container *ngFor="let contributor of fullList|sortContributorImages">
+                <img [src]="contributor.image + '.png'" [alt]="contributor.name" *ngIf="contributor.image" />
+            </ng-container>
+            }
         </div>
     </div>
 </mat-dialog-content>

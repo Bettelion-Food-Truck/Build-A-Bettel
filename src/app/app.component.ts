@@ -18,6 +18,7 @@ import { PromptComponent } from "@components/prompt/prompt.component";
 import { InfoComponent } from '@components/dialogs/info/info.component';
 import { CreditsComponent } from '@components/dialogs/credits/credits.component';
 import { IntroductionComponent } from '@components/dialogs/introduction/introduction.component';
+import { DialogType } from '@components/dialogs/dialogs.enum';
 
 import { LogService } from '@services/log/log.service';
 
@@ -30,7 +31,7 @@ import { LoadingComponent } from "./components/loading/loading.component";
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { LogLevel } from '@services/log/log-entry.model';
 import { PromptService } from '@services/prompt/prompt.service';
-import { DialogType } from '@components/dialogs/dialogs.enum';
+import { WebPService } from '@services/web-p/web-p.service';
 
 enum AppComponentState {
   Movement,
@@ -133,6 +134,7 @@ export class AppComponent {
   });
 
   constructor(
+    private webPService: WebPService,
     private assetData: AssetDataService,
     private outfitData: OutfitDataService,
     private modalData: ModelDataService,

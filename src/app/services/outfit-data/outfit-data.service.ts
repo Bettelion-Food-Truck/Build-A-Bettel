@@ -43,6 +43,11 @@ export class OutfitDataService {
     this.loading.removeLoadingItem();
   }
 
+  isWebPEnabled(): boolean {
+
+    return OutfitDataJSON.webP;
+  }
+
   getOutfits(): Signal<Outfit[]> {
 
     return this.outfitSignal.asReadonly();

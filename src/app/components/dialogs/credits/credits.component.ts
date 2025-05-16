@@ -15,8 +15,6 @@ import { MatIcon } from '@angular/material/icon';
 import { LogService } from '@services/log/log.service';
 import { SortContributorsPipe } from '@pipes/sort-contrib/sort-contributors.pipe';
 
-import { CONTRIBUTOR_PATH } from '@data/paths';
-
 import data from '@data/credits.json';
 import { Group, Contributor, ParseCreditJSON } from '@models/credits.model';
 

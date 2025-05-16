@@ -412,13 +412,15 @@
         },
         {
             "name": "TobiArts",
+            "image": "tobi",
             "social": "https://x.com/_TobiArts",
             "credits": [
                 "<strong>Outfits:</strong> Betsy Grayson",
                 "<strong>Companions:</strong> Carnotaurus, corruption beasts",
                 "<strong>Backgrounds:</strong> Badlands",
                 "<strong>Other:</strong> Bettelion Food Truck design, employee photo background"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "_Wren_pov",

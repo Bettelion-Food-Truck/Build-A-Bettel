@@ -265,7 +265,8 @@ export class AppComponent {
   @HostListener('document:keydown.control.shift.z')
   @HostListener('document:keydown.meta.shift.z')
   onRedo() {
-    this.logger.warn('Ctrl+Y detected - redo');
+
+    this.saveState.redo();
   }
 
   generatePrompt() {

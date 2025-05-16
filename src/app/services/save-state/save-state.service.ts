@@ -104,6 +104,35 @@ export class SaveStateService {
     }
   }
 
+  redo(storage: Storage = sessionStorage) {
+    this.logger.debug('SaveStateService: redo()');
+
+    // Get current key list
+    let pastKeys: string[] = JSON.parse(storage.getItem(this.PAST_KEY_LIST) ?? "[]");
+    let activeKey: string = storage.getItem(this.ACTIVE_KEY) ?? "";
+    let futureKeys: string[] = JSON.parse(storage.getItem(this.FUTURE_KEY_LIST) ?? "[]");
+
+    if (futureKeys.length === 0) {
+      this.logger.debug('SaveStateService: redo() - no future fit to redo');
+      return;
+    }
+
+    // Update keys
+    pastKeys.push(activeKey);
+    activeKey = futureKeys.shift() ?? "";
+
+    // Save updated key list
+    storage.setItem(this.PAST_KEY_LIST, JSON.stringify(pastKeys));
+    storage.setItem(this.ACTIVE_KEY, activeKey);
+    storage.setItem(this.FUTURE_KEY_LIST, JSON.stringify(futureKeys));
+
+    if (activeKey.length > 0) {
+      const activeFit: string = storage.getItem(activeKey) ?? "{}";
+
+      this.modalData.setCurrentFitObject(JSON.parse(activeFit));
+    }
+  }
+
   loadState() {
     this.logger.debug('SaveStateService: loadState()');
 

@@ -30,4 +30,11 @@ export class IntroductionComponent {
   readonly dialogRef = inject(MatDialogRef<IntroductionComponent>);
 
   readonly types = DialogType;
+
+  email(event: Event) {
+
+    window.open('mailto:BettelionFoodTruck@gmail.com?subject=Build-A-Bettel', 'mail');
+
+    event.preventDefault();
+  }
 }

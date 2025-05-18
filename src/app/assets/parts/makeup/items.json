@@ -18,6 +18,18 @@
             ]
         },
         {
+            "item": "matryoshka-bettel-makeup",
+            "outfits": [
+                "matryoshka-bettel"
+            ]
+        },
+        {
+            "item": "matryoshka-twobert-makeup",
+            "outfits": [
+                "matryoshka-twobert"
+            ]
+        },
+        {
             "item": "jester",
             "outfits": [
                 "jester"

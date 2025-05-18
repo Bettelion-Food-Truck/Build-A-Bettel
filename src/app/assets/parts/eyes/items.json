@@ -10,9 +10,26 @@
         "wink-left",
         "surprise",
         "sad",
-        "closed",
         "angry",
+        {
+            "item": "eyes-matryoshka",
+            "outfits": [
+                "matryoshka-bettel"
+            ]
+        },
+        "closed",
         "black-sclera",
-        "twobert-eyes"
+        "eyes-twobert-default",
+        "eyes-twobert-wink-right",
+        "eyes-twobert-wink-left",
+        "eyes-twobert-surprise",
+        "eyes-twobert-sad",
+        "eyes-twobert-angry",
+        {
+            "item": "eyes-twobert-matryoshka",
+            "outfits": [
+                "matryoshka-twobert"
+            ]
+        }
     ]
 }

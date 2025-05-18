@@ -91,6 +91,16 @@
             "item": "january-2025-kimono-jacket"
         },
         {
+            "item": "matryoshka-bettel-hoodie",
+            "requires": {
+                "part": "hair",
+                "item": "bald"
+            }
+        },
+        {
+            "item": "matryoshka-twobert-hoodie"
+        },
+        {
             "item": "showman-jacket"
         },
         {

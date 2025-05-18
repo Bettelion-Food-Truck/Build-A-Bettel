@@ -75,7 +75,8 @@
             "social": "https://x.com/CloudySky270",
             "credits": [
                 "<strong>Outfits:</strong> 2024 Expo (gloves and choker by Hioko_Chi)",
-                "<strong>Accessories:</strong> Bettelion earrings, Phantom choker"
+                "<strong>Accessories:</strong> Bettelion earrings, Matryoshka building halos, Matryoshka masks, Phantom choker",
+                "<strong>Backgrounds:</strong> Matryoshka"
             ],
             "imageWeight": -5
         },
@@ -107,7 +108,7 @@
             "social": "https://x.com/Finarael",
             "credits": [
                 "<strong>Outfits:</strong> Gala suit (with hat lily by genie), maid, Phantom of the Circus, Punk, Octavio (gloves by _Wren_pov), Flayon (details and shading, with sharp hands), Twobert (asset splitting/gap filling, with genie)",
-                "<strong>Accessories:</strong> Alternate expressions, balloons, boater hat, bouquet, microphone, tic tac toe, whiskers, Yatta leaf",
+                "<strong>Accessories:</strong> Alternate Bettel and Twobert expressions, balloons, boater hat, bouquet, Matryoshka hoodies, Matryoshka makeup, Matryoshka socks, microphone, tic tac toe, whiskers, Yatta leaf",
                 "<strong>Backgrounds:</strong> Albuquerque art contest, arcade, Bettel text, city at night, foliage, Holostars logos, rainbow, stained glass",
                 "<strong>Frames:</strong> Bubbles, Celtic knot (bright), Celtic knot (light), crystals, gold flowers, lightning, pearls (square), pearls (strands), Phantom's zipper, roses, stars",
                 "<strong>Other:</strong> Build-A-Bettel logo, Bettelion Food Truck logo, star filter, wardrobe and hashtag UI icons"
@@ -366,10 +367,12 @@
         },
         {
             "name": "sharp hands",
+            "image": "sharp-hands",
             "social": "https://x.com/homuralilly",
             "credits": [
                 "<strong>Outfits:</strong> Flayon (lines and flats, with Finarael)"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "skellitea",

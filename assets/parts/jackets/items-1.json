@@ -118,6 +118,22 @@
             ]
         },
         {
+            "item": "matryoshka-bettel-hoodie",
+            "requires": {
+                "part": "hair",
+                "item": "bald"
+            },
+            "outfits": [
+                "matryoshka-bettel"
+            ]
+        },
+        {
+            "item": "matryoshka-twobert-hoodie",
+            "outfits": [
+                "matryoshka-twobert"
+            ]
+        },
+        {
             "item": "showman-jacket",
             "outfits": [
                 "showman"

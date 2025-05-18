@@ -42,6 +42,9 @@
                 "january-2025"
             ]
         },
+        "matryoshka-bettel-front-acc",
+        "matryoshka-twobert-front-acc",
+        "matryoshka-roon-front-acc",
         {
             "item": "unchained-belt",
             "layer": "belt_elevated",

@@ -12,6 +12,12 @@
             ]
         },
         {
+            "item": "matryoshka-twobert-glasses",
+            "outfits": [
+                "matryoshka-twobert"
+            ]
+        },
+        {
             "item": "twobert-glasses",
             "outfits": [
                 "twobert"

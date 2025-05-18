@@ -115,13 +115,15 @@
         },
         {
             "item": "flex",
-            "outfits": [
-                "flex"
-            ],
             "requires": {
                 "part": "feet",
                 "item": "flat"
-            }
+            },
+            "outfits": [
+                "flex",
+                "matryoshka-bettel",
+                "matryoshka-twobert"
+            ]
         },
         {
             "item": "gavin-bettol-flats",

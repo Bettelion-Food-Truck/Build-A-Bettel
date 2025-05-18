@@ -55,6 +55,9 @@
             "item": "january-2025-obi",
             "layer": "belt_elevated"
         },
+        "matryoshka-bettel-front-acc",
+        "matryoshka-twobert-front-acc",
+        "matryoshka-roon-front-acc",
         {
             "item": "unchained-belt",
             "layer": "belt_elevated"

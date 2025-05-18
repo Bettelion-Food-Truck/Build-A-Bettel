@@ -21,6 +21,18 @@
             ]
         },
         {
+            "item": "matryoshka-bettel-rear-acc",
+            "outfits": [
+                "matryoshka-bettel"
+            ]
+        },
+        {
+            "item": "matryoshka-twobert-rear-acc",
+            "outfits": [
+                "matryoshka-twobert"
+            ]
+        },
+        {
             "item": "when-youre-evil-hip-scarf",
             "outfits": [
                 "when-youre-evil"

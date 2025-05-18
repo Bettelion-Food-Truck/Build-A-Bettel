@@ -66,7 +66,7 @@
             "name": "BatVenom",
             "social": "https://x.com/bat_venom_",
             "credits": [
-                "<strong>Outfits:</strong> When You're Evil (facial hair by REIH)",
+                "<strong>Outfits:</strong> When You're Evil (facial hair by REIH)"
             ]
         },
         {
@@ -367,10 +367,12 @@
         },
         {
             "name": "sharp hands",
+            "image": "sharp-hands",
             "social": "https://x.com/homuralilly",
             "credits": [
                 "<strong>Outfits:</strong> Flayon (lines and flats, with Finarael)"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "skellitea",

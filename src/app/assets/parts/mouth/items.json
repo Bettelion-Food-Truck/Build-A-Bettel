@@ -23,6 +23,18 @@
         {
             "item": "disgust",
             "thumbnail": true
+        },
+        {
+            "item": "matryoshka-bettel-mouth",
+            "outfits": [
+                "matryoshka-bettel"
+            ]
+        },
+        {
+            "item": "matryoshka-twobert-mouth",
+            "outfits": [
+                "matryoshka-twobert"
+            ]
         }
     ]
 }

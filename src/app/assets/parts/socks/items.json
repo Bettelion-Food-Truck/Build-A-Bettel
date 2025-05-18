@@ -12,6 +12,32 @@
             ]
         },
         {
+            "item": "matryoshka-socks",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "matryoshka-socks",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "matryoshka-socks-pointy",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ],
+            "outfits": [
+                "matryoshka-bettel",
+                "matryoshka-twobert"
+            ]
+        },
+        {
             "item": "sims",
             "hide": true,
             "multilayer": [
@@ -31,6 +57,9 @@
                         "item": "pointed"
                     }
                 }
+            ],
+            "outfits": [
+                "sims"
             ]
         },
         {

@@ -308,10 +308,12 @@
         },
         {
             "name": "Raienn",
+            "image": "raienn_k",
             "social": "https://x.com/Raienn_k",
             "credits": [
                 "<strong>Accessories:</strong> Bettelgoose, Jerry's hat"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Raisins0up",
@@ -341,10 +343,12 @@
         },
         {
             "name": "Riz",
+            "image": "riz",
             "social": "https://x.com/riz_tempura",
             "credits": [
                 "<strong>Backgrounds:</strong> Carriage"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "roseghostea",

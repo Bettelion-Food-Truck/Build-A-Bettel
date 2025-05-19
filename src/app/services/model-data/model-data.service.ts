@@ -192,8 +192,6 @@ export class ModelDataService {
         let randomItem = Math.floor(Math.random() * (max - min) + min);
 
         selectedItems[i] = randomItem;
-
-        // TODO random color
       }
 
       return [...selectedItems];

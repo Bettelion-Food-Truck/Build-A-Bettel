@@ -104,6 +104,7 @@ export class PaletteComponent {
       colorString = `#${hex}${transparency}`;
     }
 
+    // TODO check and apply color to other parts if they are color linked (hands, feet, body)
     this.modelData.setItemColor(this.modelData.getActivePart()(), colorString);
   }
 }

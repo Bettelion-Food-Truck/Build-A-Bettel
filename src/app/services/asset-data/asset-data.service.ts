@@ -6,6 +6,7 @@ import { ASSET_PATH } from '@data/paths';
 
 import PartDataJSON from '@data/parts.json';
 import LayerDataJSON from '@data/layers.json';
+import ColorDataJSON from '@data/colors.json';
 
 import { Part } from '@models/part.model';
 import { Item } from '@models/item.model';
@@ -79,6 +80,10 @@ export class AssetDataService {
               jsonResp.items[i] = {
                 item: jsonResp.items[i]
               } as Item;
+            }
+
+            if (jsonResp.colors === "STANDARD") {
+              jsonResp.colors = ColorDataJSON.colors;
             }
           }
 

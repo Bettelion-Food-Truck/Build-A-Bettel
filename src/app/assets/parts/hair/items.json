@@ -1,48 +1,7 @@
 {
     "movement": false,
     "colorMode": "multiply",
-    "colors": [
-        {
-            "name": "black",
-            "hex": "000000",
-            "transparency": 0.44
-        },
-        {
-            "name": "white",
-            "hex": "FFFFFF",
-            "transparency": 0.44
-        },
-        {
-            "name": "red",
-            "hex": "FF0000",
-            "transparency": 0.44
-        },
-        {
-            "name": "green",
-            "hex": "00FF00",
-            "transparency": 0.44
-        },
-        {
-            "name": "blue",
-            "hex": "0000FF",
-            "transparency": 0.44
-        },
-        {
-            "name": "yellow",
-            "hex": "FFFF00",
-            "transparency": 0.44
-        },
-        {
-            "name": "magenta",
-            "hex": "FF00FF",
-            "transparency": 0.44
-        },
-        {
-            "name": "cyan",
-            "hex": "00FFFF",
-            "transparency": 0.44
-        }
-    ],
+    "colors": "STANDARD",
     "noneAllowed": false,
     "assumeThumbnails": true,
     "items": [

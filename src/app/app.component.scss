@@ -250,5 +250,10 @@
         max-width: 100%;
 
         border-left-width: 0px;
+
+        .selector_wrapper {
+            display: flex;
+            flex-direction: row;
+        }
     }
 }

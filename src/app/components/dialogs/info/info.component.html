@@ -25,12 +25,13 @@
                 <picture *ngIf="contributor.image">
                     <source [srcset]="contributor.image + '.webp'" type="image/webp">
                     <source [srcset]="contributor.image + '.png'" type="image/jpeg">
-                    <img [src]="contributor.image + '.png'" [alt]="contributor.name" />
+                    <img [src]="contributor.image + '.png'" [alt]="contributor.name" [title]="contributor.name" />
                 </picture>
             </ng-container>
             } @else {
             <ng-container *ngFor="let contributor of fullList|sortContributorImages">
-                <img [src]="contributor.image + '.png'" [alt]="contributor.name" *ngIf="contributor.image" />
+                <img [src]="contributor.image + '.png'" [alt]="contributor.name" [title]="contributor.name"
+                    *ngIf="contributor.image" />
             </ng-container>
             }
         </div>

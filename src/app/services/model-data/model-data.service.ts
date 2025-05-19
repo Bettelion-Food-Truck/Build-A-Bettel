@@ -15,6 +15,7 @@ export class ModelDataService {
   private activePart: WritableSignal<number> = signal(0);
   private selectedItems: WritableSignal<number[]> = signal([]);
   private selectedPositions: WritableSignal<Position[]> = signal([]);
+  private selectedColors: WritableSignal<string[]> = signal([]);
 
   private imageDataString: WritableSignal<string> = signal("");
 
@@ -70,18 +71,18 @@ export class ModelDataService {
     });
 
     // Reset position on item change
-    this.setItemsPosition(partIndex, {
+    this.setItemPosition(partIndex, {
       x: DEFAULT_POSITION.x,
       y: DEFAULT_POSITION.y
     } as Position);
   }
 
-  getItemsPositions(): Signal<Position[]> {
+  getItemPositions(): Signal<Position[]> {
 
     return this.selectedPositions.asReadonly();
   }
 
-  getItemsPosition(partIndex: number): Position {
+  getItemPosition(partIndex: number): Position {
 
     if (
       // Out of range
@@ -101,7 +102,7 @@ export class ModelDataService {
     return this.selectedPositions()[partIndex];
   }
 
-  setItemsPosition(partIndex: number, position: Position) {
+  setItemPosition(partIndex: number, position: Position) {
 
     this.selectedPositions.update(selectedPositions => {
 

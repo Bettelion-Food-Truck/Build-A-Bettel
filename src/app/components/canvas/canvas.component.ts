@@ -410,7 +410,7 @@ export class CanvasComponent implements AfterViewInit {
     const layers: Layer[] = this.layerSignal();
 
     const item: Item = parts[partIndex].items[itemIndex];
-    const position: Position = { ...(this.modelData.getItemsPosition(partIndex) ?? {}) } as Position;// shallow copy
+    const position: Position = { ...(this.modelData.getItemPosition(partIndex) ?? {}) } as Position;// shallow copy
 
     let renderPromises: Promise<LayerRender>[] = [];
 

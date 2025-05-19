@@ -50,7 +50,7 @@ export class MovementComponent {
     private assetData: AssetDataService,
     private modelData: ModelDataService
   ) {
-    this.selectedPositions = this.modelData.getItemsPositions();
+    this.selectedPositions = this.modelData.getItemPositions();
 
     effect(() => {
       let selectedPart = this.modelData.getActivePart()();
@@ -123,11 +123,11 @@ export class MovementComponent {
       return;
     }
 
-    let position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position = this.modelData.getItemPosition(this.modelData.getActivePart()());
 
     position.y -= this.MOVEMENT_BASE * this.getMovementScale();
 
-    this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
+    this.modelData.setItemPosition(this.modelData.getActivePart()(), position);
 
     this.checkMoveLimits();
   }
@@ -139,11 +139,11 @@ export class MovementComponent {
       return;
     }
 
-    let position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position = this.modelData.getItemPosition(this.modelData.getActivePart()());
 
     position.y += this.MOVEMENT_BASE * this.getMovementScale();
 
-    this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
+    this.modelData.setItemPosition(this.modelData.getActivePart()(), position);
 
     this.checkMoveLimits();
   }
@@ -155,11 +155,11 @@ export class MovementComponent {
       return;
     }
 
-    let position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position = this.modelData.getItemPosition(this.modelData.getActivePart()());
 
     position.x -= this.MOVEMENT_BASE * this.getMovementScale();
 
-    this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
+    this.modelData.setItemPosition(this.modelData.getActivePart()(), position);
 
     this.checkMoveLimits();
   }
@@ -171,11 +171,11 @@ export class MovementComponent {
       return;
     }
 
-    let position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position = this.modelData.getItemPosition(this.modelData.getActivePart()());
 
     position.x += this.MOVEMENT_BASE * this.getMovementScale();
 
-    this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
+    this.modelData.setItemPosition(this.modelData.getActivePart()(), position);
 
     this.checkMoveLimits();
   }
@@ -199,12 +199,12 @@ export class MovementComponent {
   reset() {
     this.logger.debug("MovementComponent: reset()");
 
-    let position: Position = this.modelData.getItemsPosition(this.modelData.getActivePart()()) ?? {} as Position;
+    let position: Position = this.modelData.getItemPosition(this.modelData.getActivePart()()) ?? {} as Position;
 
     position.x = DEFAULT_POSITION.x;
     position.y = DEFAULT_POSITION.y;
 
-    this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
+    this.modelData.setItemPosition(this.modelData.getActivePart()(), position);
 
     this.movementScaleAdjustment = 1;
 
@@ -233,7 +233,7 @@ export class MovementComponent {
 
     const movement = part.movement as Movement;
 
-    let position = this.modelData.getItemsPosition(this.modelData.getActivePart()());
+    let position = this.modelData.getItemPosition(this.modelData.getActivePart()());
 
     if (movement.y && movement.y.min && position.y < movement.y.min) {
 
@@ -255,7 +255,7 @@ export class MovementComponent {
       position.x = movement.x.max;
     }
 
-    this.modelData.setItemsPosition(this.modelData.getActivePart()(), position);
+    this.modelData.setItemPosition(this.modelData.getActivePart()(), position);
 
     this.updateMovementButtons();
   }

@@ -1,7 +1,11 @@
 {
     "movement": false,
-    "colorMode": null,
-    "colors": [],
+    "colorMode": "multiply",
+    "colors": [
+        "FF0000",
+        "00FF00",
+        "0000FF"
+    ],
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [

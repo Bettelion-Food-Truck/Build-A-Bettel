@@ -2,14 +2,46 @@
     "movement": false,
     "colorMode": "multiply",
     "colors": [
-        "00000070",
-        "FFFFFF70",
-        "FF000070",
-        "00FF0070",
-        "0000FF70",
-        "FFFF0070",
-        "FF00FF70",
-        "00FFFF70"
+        {
+            "name": "black",
+            "hex": "000000",
+            "transparency": 0.44
+        },
+        {
+            "name": "white",
+            "hex": "FFFFFF",
+            "transparency": 0.44
+        },
+        {
+            "name": "red",
+            "hex": "FF0000",
+            "transparency": 0.44
+        },
+        {
+            "name": "green",
+            "hex": "00FF00",
+            "transparency": 0.44
+        },
+        {
+            "name": "blue",
+            "hex": "0000FF",
+            "transparency": 0.44
+        },
+        {
+            "name": "yellow",
+            "hex": "FFFF00",
+            "transparency": 0.44
+        },
+        {
+            "name": "magenta",
+            "hex": "FF00FF",
+            "transparency": 0.44
+        },
+        {
+            "name": "cyan",
+            "hex": "00FFFF",
+            "transparency": 0.44
+        }
     ],
     "noneAllowed": false,
     "assumeThumbnails": true,

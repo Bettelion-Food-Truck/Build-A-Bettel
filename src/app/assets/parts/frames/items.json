@@ -2,9 +2,21 @@
     "movement": false,
     "colorMode": "overlay",
     "colors": [
-        "FF0000",
-        "00FF00",
-        "0000FF"
+        {
+            "name": "Red",
+            "hex": "FF0000",
+            "transparency": 0.44
+        },
+        {
+            "name": "Green",
+            "hex": "00FF00",
+            "transparency": 0.44
+        },
+        {
+            "name": "Blue",
+            "hex": "0000FF",
+            "transparency": 0.44
+        }
     ],
     "noneAllowed": true,
     "assumeThumbnails": true,

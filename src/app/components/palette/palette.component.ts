@@ -51,13 +51,19 @@ export class PaletteComponent {
 
   container = viewChild.required<ElementRef>('colormenu');
 
+  activePartIndex: Signal<number>;
   activePart: WritableSignal<Part | null> = signal(null);
+
+  itemColors: Signal<string[]>;
 
   constructor(
     private logger: LogService,
     private assetData: AssetDataService,
     private modelData: ModelDataService
   ) {
+
+    this.activePartIndex = this.modelData.getActivePart();
+    this.itemColors = this.modelData.getItemColors();
 
     effect(() => {
       this.logger.debug('PaletteComponent: effect() - Change active part');

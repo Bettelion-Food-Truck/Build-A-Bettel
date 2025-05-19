@@ -1,6 +1,6 @@
 {
     "movement": false,
-    "colorMode": "multiply",
+    "colorMode": "overlay",
     "colors": [
         "FF0000",
         "00FF00",

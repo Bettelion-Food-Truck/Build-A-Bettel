@@ -483,7 +483,7 @@ export class CanvasComponent implements AfterViewInit {
     return renderPromises;
   }
 
-  private renderImage(layerId: number, imgPath: string, position: Position): Promise<LayerRender> {
+  private renderImage(layerId: number, imgPath: string, position: Position, color: string = "", colorMode: string = ""): Promise<LayerRender> {
 
     return new Promise<LayerRender>((resolve, reject) => {
 
@@ -502,7 +502,7 @@ export class CanvasComponent implements AfterViewInit {
         const renderCanvas: HTMLCanvasElement = this.createCanvas();
         const ctx: CanvasRenderingContext2D = renderCanvas.getContext('2d')!;
 
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.clearRect(0, 0, renderCanvas.width, renderCanvas.height);
 
         ctx.save();
 
@@ -511,6 +511,19 @@ export class CanvasComponent implements AfterViewInit {
         ctx.drawImage(img, 0, 0);
 
         ctx.restore();
+
+        //if (color.length > 0 && colorMode.length > 0 ) {
+        if (imgPath.indexOf("body") > -1 || imgPath.indexOf("hands") > -1 || imgPath.indexOf("feet") > -1) {
+
+          ctx.fillStyle = '#7F00FF';
+          ctx.globalCompositeOperation = 'multiply';
+          ctx.fillRect(0, 0, renderCanvas.width, renderCanvas.height);
+
+          // Restore transparent areas
+          ctx.globalAlpha = 1;
+          ctx.globalCompositeOperation = 'destination-in';
+          ctx.drawImage(img, 0, 0);
+        }
 
         resolve({
           id: layerId,

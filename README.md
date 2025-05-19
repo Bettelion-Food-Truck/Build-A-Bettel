@@ -104,7 +104,7 @@ Each part is defined in the array called `parts`. Parts listed here have the fol
 TODO Update the information for the items.json file structure in each part folder. Ensure to mark all the options.
 
 - `colorMode`: Can be `fill`, `multiply`, `manual` or `null`. See the next section, item variants, for details.
-- `colors`: 6 character strings containing the the hexcodes of colors.
+- `colors`: TODO Update for new structure - 6 character strings containing the the hexcodes of colors.
 - `movement`: Optional. Structure to define capability and limits of part movement. Sub values are `x`, `y`, and `scale`. X and Y may be true, false, or an object with `min` and `max`. Min and max are offsets limits. Scale adjusts how much the controls move the part.
 - `noneAllowed`: `true` if this part is optional, false otherwise
 
@@ -129,7 +129,13 @@ Ex:
       "scale": 1
     },
     "colorMode": "manual",
-    "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
+    "colors": [
+        {
+            "name": "Black",
+            "hex": "000000",
+            "transparency": 0.5
+        }
+    ],
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [

@@ -4,8 +4,8 @@
         "y": true,
         "scale": 0.5
     },
-    "colorMode": null,
-    "colors": [],
+    "colorMode": "multiply",
+    "colors": "STANDARD",
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [

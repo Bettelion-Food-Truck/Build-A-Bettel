@@ -255,6 +255,7 @@ export class AppComponent {
     this.logger.debug("AppComponent: reset()");
 
     this.modalData.reset();
+    this.showItems();
   }
 
   @HostListener('document:keydown.control.z')

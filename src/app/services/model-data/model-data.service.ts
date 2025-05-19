@@ -217,6 +217,18 @@ export class ModelDataService {
 
       return [...selectedItems];
     });
+
+    this.selectedColors.update(colors => {
+
+      let parts = this.assetData.getParts()();
+
+      for (let i = 0; i < parts.length; i++) {
+
+        colors[i] = "";
+      }
+
+      return [...colors];
+    });
   }
 
   getCurrentFitObject(): SimpleFit {

@@ -1,10 +1,12 @@
-<ng-container *ngIf="activePart() !== null">
+<div #colormenu class="color-menu" (wheel)="onScroll($event)">
+    @if(activePart() !== null) {
 
     <button (click)="selectColor('')">
         <mat-icon>deselect</mat-icon>
     </button>
 
-    <button *ngFor="let color of activePart()!.colors" class="color-button" [style]="`background-color: #${color}`"
-        (click)="selectColor(color)"></button>
+    <button @enterExitTrigger *ngFor="let color of activePart()!.colors" class="color-button"
+        [style]="`background-color: #${color}`" (click)="selectColor(color)"></button>
 
-</ng-container>
+    }
+</div>

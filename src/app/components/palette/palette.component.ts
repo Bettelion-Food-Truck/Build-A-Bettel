@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, effect, signal, Signal, WritableSignal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, ElementRef, signal, Signal, viewChild, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 import { MatIconModule } from '@angular/material/icon';
 
@@ -17,9 +18,38 @@ import { ModelDataService } from '@services/model-data/model-data.service';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './palette.component.html',
-  styleUrl: './palette.component.scss'
+  styleUrl: './palette.component.scss',
+  animations: [
+    trigger(
+      'enterExitTrigger', [
+      transition(':enter', [
+        style({
+          opacity: 0,
+          width: 0
+        }),
+        animate(
+          '50ms',
+          style({
+            opacity: 1,
+            width: '36px'
+          })
+        )
+      ]),
+      transition(':leave', [
+        animate(
+          '50ms',
+          style({
+            opacity: 0,
+            width: 0
+          })
+        )
+      ])
+    ])
+  ]
 })
 export class PaletteComponent {
+
+  container = viewChild.required<ElementRef>('colormenu');
 
   activePart: WritableSignal<Part | null> = signal(null);
 
@@ -40,6 +70,20 @@ export class PaletteComponent {
 
       this.activePart.set(this.assetData.getPart(selectedPart()));
     });
+  }
+
+  onScroll(e: WheelEvent) {
+
+    if (window.matchMedia("(orientation: portrait)").matches) {
+      return;
+    }
+
+    if (Math.abs(e.deltaY) > 0) {
+
+      e.preventDefault();
+
+      this.container().nativeElement.scrollLeft += e.deltaY;
+    }
   }
 
   selectColor(color: string) {

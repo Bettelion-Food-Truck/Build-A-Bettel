@@ -1,5 +1,10 @@
-<div id="color_palette_wrapper" class="color_palette_wrapper">
-    <ul id="color_palette_list">
-        <li>Palette temp text</li>
-    </ul>
-</div>
+<ng-container *ngIf="activePart() !== null">
+
+    <button (click)="selectColor('')">
+        <mat-icon>deselect</mat-icon>
+    </button>
+
+    <button *ngFor="let color of activePart()!.colors" [style]="`background-color: #${color}`"
+        (click)="selectColor(color)"></button>
+
+</ng-container>

@@ -219,6 +219,8 @@
 
 /* Nested in .interface_wrapper > .features > .component_wrapper */
 .control_panel {
+    display: flex;
+    flex-direction: column;
     position: relative;
     flex: 1;
     overflow: hidden;
@@ -251,8 +253,7 @@
 
         border-left-width: 0px;
 
-        .selector_wrapper {
-            display: flex;
+        .control_panel {
             flex-direction: row;
         }
     }

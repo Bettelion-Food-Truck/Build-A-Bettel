@@ -45,15 +45,13 @@
 
         <app-parts />
 
-        <div class="selector_wrapper">
+        <div class="control_panel">
 
           <app-palette class="palette" [class.hidden]="itemsHidden()" />
 
-          <div class="control_panel">
-            <app-outfits [class.hidden]="outfitsHidden()" />
-            <app-items [class.hidden]="itemsHidden()" />
-            <app-movement [class.hidden]="movementHidden()" />
-          </div>
+          <app-outfits [class.hidden]="outfitsHidden()" />
+          <app-items [class.hidden]="itemsHidden()" />
+          <app-movement [class.hidden]="movementHidden()" />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 
 import { MatIconModule } from '@angular/material/icon';
 
-import { Part } from '@models/part.model';
+import { Color, Part } from '@models/part.model';
 
 import { LogService } from '@services/log/log.service';
 import { AssetDataService } from '@services/asset-data/asset-data.service';
@@ -92,9 +92,18 @@ export class PaletteComponent {
     }
   }
 
-  selectColor(color: string) {
+  selectColor(color: Color = {} as Color) {
     this.logger.debug('PaletteComponent: selectColor()', color);
 
-    this.modelData.setItemColor(this.modelData.getActivePart()(), color);
+    let colorString: string = "";
+
+    if (color.hex) {
+
+      const transparency: string = Math.floor((color.transparency || 1) * 255).toString(16);
+      const hex: string = color.hex || '000000';
+      colorString = `#${hex}${transparency}`;
+    }
+
+    this.modelData.setItemColor(this.modelData.getActivePart()(), colorString);
   }
 }

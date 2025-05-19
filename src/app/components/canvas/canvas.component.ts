@@ -513,7 +513,7 @@ export class CanvasComponent implements AfterViewInit {
 
         if (color.length > 0 && colorMode.length > 0) {
 
-          ctx.fillStyle = `#${color}`;
+          ctx.fillStyle = color;
           ctx.globalCompositeOperation = colorMode as GlobalCompositeOperation;
           ctx.fillRect(0, 0, renderCanvas.width, renderCanvas.height);
 

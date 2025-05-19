@@ -15,7 +15,7 @@ export interface Part {
 
     movement: Movement | null;
     colorMode: string | null;
-    colors: string[];
+    colors: Color[];
 
     items: Item[];
     assumeThumbnails: boolean;
@@ -30,4 +30,10 @@ export interface Movement {
 export interface Limits {
     min: number;
     max: number;
+}
+
+export interface Color {
+    name: string;
+    hex: string;
+    transparency: number;
 }

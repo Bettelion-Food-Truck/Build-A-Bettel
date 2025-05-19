@@ -1,7 +1,53 @@
 {
     "movement": false,
     "colorMode": "multiply",
-    "colors": "STANDARD",
+    "colors": [
+        {
+            "name": "red",
+            "hex": "FF0000",
+            "transparency": 0.44
+        },
+        {
+            "name": "orange",
+            "hex": "FFA500",
+            "transparency": 0.44
+        },
+        {
+            "name": "yellow",
+            "hex": "FFFF00",
+            "transparency": 0.44
+        },
+        {
+            "name": "green",
+            "hex": "00FF00",
+            "transparency": 0.44
+        },
+        {
+            "name": "cyan",
+            "hex": "00FFFF",
+            "transparency": 0.44
+        },
+        {
+            "name": "blue",
+            "hex": "0000FF",
+            "transparency": 0.44
+        },
+        {
+            "name": "purple",
+            "hex": "800080",
+            "transparency": 0.44
+        },
+        {
+            "name": "pink",
+            "hex": "FFC0CB",
+            "transparency": 0.44
+        },
+        {
+            "name": "magenta",
+            "hex": "FF00FF",
+            "transparency": 0.44
+        }
+    ],
     "noneAllowed": false,
     "assumeThumbnails": true,
     "items": [

@@ -112,6 +112,38 @@ export class ModelDataService {
     });
   }
 
+  getItemColors(): Signal<string[]> {
+
+    return this.selectedColors.asReadonly();
+  }
+
+  getItemColor(partIndex: number): string {
+
+    if (
+      // Out of range
+      partIndex < 0 || partIndex >= this.selectedColors().length ||
+      // Null or undefined
+      !this.selectedColors()[partIndex] ||
+      // Empty
+      Object.keys(this.selectedColors()[partIndex]).length === 0
+    ) {
+
+      return "";
+    }
+
+    return this.selectedColors()[partIndex];
+  }
+
+  setItemColor(partIndex: number, color: string) {
+
+    this.selectedColors.update(colors => {
+
+      colors[partIndex] = color;
+
+      return [...colors];
+    });
+  }
+
   selectOutfit(outfit: Outfit) {
 
     this.selectedItems.update(selectedItems => {

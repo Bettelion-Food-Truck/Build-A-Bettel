@@ -87,17 +87,8 @@ export class PaletteComponent {
   }
 
   selectColor(color: string) {
-    this.logger.warn('PaletteComponent: selectColor()', color);
-  }
+    this.logger.debug('PaletteComponent: selectColor()', color);
 
-  /**
-   * Validates hex color as 3 or 6 digit version.
-   *
-   * @param hexColor
-   * @returns boolean
-   */
-  isValidColor(hexColor: string): boolean {
-
-    return /^#([0-9A-F]{3}){1,2}$/i.test(hexColor);
+    this.modelData.setItemColor(this.modelData.getActivePart()(), color);
   }
 }

@@ -43,6 +43,7 @@ export class CanvasComponent implements AfterViewInit {
   private partSignal: Signal<Part[]>;
   private itemSignal: Signal<number[]>;
   private positionSignal: Signal<Position[]>;
+  private colorSignal: Signal<string[]>;
 
   private lastPartIndex: number = -1;
 
@@ -58,7 +59,8 @@ export class CanvasComponent implements AfterViewInit {
     this.layerSignal = this.assetData.getLayers();
     this.partSignal = this.assetData.getParts();
     this.itemSignal = this.modelData.getSelectedItems();
-    this.positionSignal = this.modelData.getItemsPositions();
+    this.positionSignal = this.modelData.getItemPositions();
+    this.colorSignal = this.modelData.getItemColors();
   }
 
   ngAfterViewInit() {
@@ -85,10 +87,11 @@ export class CanvasComponent implements AfterViewInit {
     effect(() => {
       this.logger.info("CanvasComponent: effect() - renderLayerStack() Check");
       this.logger.debug(
-        "CanvasComponent: effect() - activePart(), itemSignal().length, positionSignal().length",
+        "CanvasComponent: effect() - activePart(), itemSignal().length, positionSignal().length, colorSignal().length",
         this.modelData.getActivePart()(),
         this.itemSignal().length,
-        this.positionSignal().length
+        this.positionSignal().length,
+        this.colorSignal().length
       );
 
       if (!this.workingCanvas) {
@@ -411,6 +414,8 @@ export class CanvasComponent implements AfterViewInit {
 
     const item: Item = parts[partIndex].items[itemIndex];
     const position: Position = { ...(this.modelData.getItemPosition(partIndex) ?? {}) } as Position;// shallow copy
+    const color: string = this.modelData.getItemColor(partIndex) ?? "";
+    const colorMode: string = parts[partIndex].colorMode ?? "";
 
     let renderPromises: Promise<LayerRender>[] = [];
 
@@ -420,17 +425,11 @@ export class CanvasComponent implements AfterViewInit {
       return renderPromises;
     }
 
-    // Set color variant item
-    const color = (parts[partIndex].colors.length > 0) ?
-      "_" + parts[partIndex].colors[colorIndex]
-      :
-      "";
-
     // Set asset folder
     const partLocation = ASSET_PATH + (item.folder ? item.folder : parts[partIndex].folder) + "/" + ITEM_FOLDER;
 
     // Render the base layer
-    const imgPath = partLocation + item.item + color + ".png";
+    const imgPath = partLocation + item.item + ".png";
 
     if (!item.hide) {
 
@@ -440,7 +439,7 @@ export class CanvasComponent implements AfterViewInit {
         layerIndex = layers.findIndex(layer => layer.layer === item.layer);
       }
 
-      renderPromises.push(this.renderImage(layerIndex, imgPath, position));
+      renderPromises.push(this.renderImage(layerIndex, imgPath, position, color, colorMode));
     }
 
     // Render additional layers
@@ -470,12 +469,12 @@ export class CanvasComponent implements AfterViewInit {
 
         if (buildLayer) {
 
-          const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
+          const addImgPath = partLocation + item.multilayer[i].item + ".png";
           const addLayerIndex = (item.multilayer[i].layer === "::host") ?
             layerIndex :
             layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
-          renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position));
+          renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position, color, colorMode));
         }
       }
     }
@@ -512,11 +511,10 @@ export class CanvasComponent implements AfterViewInit {
 
         ctx.restore();
 
-        //if (color.length > 0 && colorMode.length > 0 ) {
-        if (imgPath.indexOf("body") > -1 || imgPath.indexOf("hands") > -1 || imgPath.indexOf("feet") > -1) {
+        if (color.length > 0 && colorMode.length > 0) {
 
-          ctx.fillStyle = '#7F00FF';
-          ctx.globalCompositeOperation = 'multiply';
+          ctx.fillStyle = `#${color}`;
+          ctx.globalCompositeOperation = colorMode as GlobalCompositeOperation;
           ctx.fillRect(0, 0, renderCanvas.width, renderCanvas.height);
 
           // Restore transparent areas

@@ -1,6 +1,6 @@
 {
     "movement": false,
-    "colorMode": "multiply",
+    "colorMode": "screen",
     "colors": [
         "000000",
         "FFFFFF",

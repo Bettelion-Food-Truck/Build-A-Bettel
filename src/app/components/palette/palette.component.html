@@ -4,7 +4,7 @@
         <mat-icon>deselect</mat-icon>
     </button>
 
-    <button *ngFor="let color of activePart()!.colors" [style]="`background-color: #${color}`"
+    <button *ngFor="let color of activePart()!.colors" class="color-button" [style]="`background-color: #${color}`"
         (click)="selectColor(color)"></button>
 
 </ng-container>

@@ -237,7 +237,7 @@ export class ModelDataService {
         items[part.layer] = {
           item: part.items[itemIndex].item,
           position: {} as Position,// TODO add movement
-          color: "" // TODO add color
+          color: this.selectedColors()[partIndex] || ""
         };
       }
     });
@@ -282,6 +282,29 @@ export class ModelDataService {
       }
 
       return [...selectedItems];
+    });
+
+    this.selectedColors.update(colors => {
+
+      let parts = this.assetData.getParts()();
+
+      for (let i = 0; i < parts.length; i++) {
+
+        const partLayer = parts[i].layer;
+
+        if (partLayer in fitItems && fitItems[partLayer].color !== undefined && fitItems[partLayer].color.length > 0) {
+
+          if (parts[i].colorMode && parts[i].colors.length > 0) {
+            // Set color
+
+            colors[i] = fitItems[parts[i].layer].color ?? "";
+          }
+
+          break;
+        }
+      }
+
+      return [...colors];
     });
   }
 }

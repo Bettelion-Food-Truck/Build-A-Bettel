@@ -262,7 +262,7 @@ export class CanvasComponent implements AfterViewInit {
 
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
-        renderPromises.push(...this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1));// TODO COLOR selectedColors[partIndex]);
+        renderPromises.push(...this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex]));
       }
     }
 
@@ -407,7 +407,7 @@ export class CanvasComponent implements AfterViewInit {
     } as NumericalPart;
   }
 
-  private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number): Promise<LayerRender>[] {
+  private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number): Promise<LayerRender>[] {
 
     const parts: Part[] = this.partSignal();
     const layers: Layer[] = this.layerSignal();

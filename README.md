@@ -78,8 +78,8 @@ The game doesn't know anything about the image assets by itself. It requires the
 Example
 ```
 {
-  "imageWebP": false,
-  "thumbnailWebP": false,
+  "imageWebP": false, <-- Only used by employee photos and outfits at the moment
+  "thumbnailWebP": false, <--  Only used by employee photos and outfits at the moment
   "parts": [
     {
         "name": "Body",
@@ -136,6 +136,7 @@ Ex:
             "transparency": 0.5
         }
     ],
+    "colors": "STANDARD",
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
@@ -187,7 +188,7 @@ Ex:
 
 In addition to each part having multiple variantions of items, the items themselves can come in multiple colors. Above was mention `colorMode` and `colors`. These indicate additional variations of each item. If a part has color options, then the `colorMode` field determines whether the item files for each color are manually or automatically generated.
 
-TODO confirm manual functionality
+TODO Create manual functionality
 
 To manually create color variants for each item of a part, set `colorMode` to `manual` and for each item and each color of hexcode `XXXXXX`, create a .png `assets/part/item_XXXXXX.png` depicting item in color `XXXXXX`.
 

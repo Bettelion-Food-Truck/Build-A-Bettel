@@ -3,8 +3,8 @@
         "x": true,
         "y": true
     },
-    "colorMode": null,
-    "colors": [],
+    "colorMode": "multiply",
+    "colors": "STANDARD",
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
@@ -118,6 +118,7 @@
                 "bettelmaid"
             ]
         },
-        "braids"
+        "braids",
+        "metal-patch-front-acc"
     ]
 }

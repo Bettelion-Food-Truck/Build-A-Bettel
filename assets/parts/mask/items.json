@@ -1,7 +1,7 @@
 {
     "movement": false,
-    "colorMode": null,
-    "colors": [],
+    "colorMode": "multiply",
+    "colors": "STANDARD",
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
@@ -65,6 +65,8 @@
                 }
             ]
         },
-        "sleepmask"
+        "sleepmask",
+        "unlucky-mask-happy",
+        "unlucky-mask-sad"
     ]
 }

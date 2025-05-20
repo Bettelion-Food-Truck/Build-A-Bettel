@@ -1,7 +1,62 @@
 {
     "movement": false,
-    "colorMode": null,
-    "colors": [],
+    "colorMode": "multiply",
+    "colors": [
+        {
+            "name": "Red",
+            "hex": "ff0000",
+            "transparency": 0.44
+        },
+        {
+            "name": "Orange",
+            "hex": "ffa500",
+            "transparency": 0.44
+        },
+        {
+            "name": "Yellow",
+            "hex": "ffff00",
+            "transparency": 0.44
+        },
+        {
+            "name": "Bright Green",
+            "hex": "00ff00",
+            "transparency": 0.44
+        },
+        {
+            "name": "Green",
+            "hex": "008000",
+            "transparency": 0.44
+        },
+        {
+            "name": "Cyan",
+            "hex": "00ffff",
+            "transparency": 0.44
+        },
+        {
+            "name": "Blue",
+            "hex": "0000ff",
+            "transparency": 0.44
+        },
+        {
+            "name": "Purple",
+            "hex": "660073",
+            "transparency": 0.44
+        },
+        {
+            "name": "Pink",
+            "hex": "ffc0cb",
+            "transparency": 0.44
+        },
+        {
+            "name": "Magenta",
+            "hex": "ff00ff",
+            "transparency": 0.44
+        }
+    ],
+    "colorLinked": [
+        "feet",
+        "body"
+    ],
     "noneAllowed": false,
     "assumeThumbnails": true,
     "items": [

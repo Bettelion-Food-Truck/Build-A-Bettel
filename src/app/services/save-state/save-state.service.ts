@@ -58,15 +58,20 @@ export class SaveStateService {
     // Save current fit to storage
     storage.setItem(activeKey, JSON.stringify(currentFit));
 
-    if (futureKeys.length > 0) {
-      // Remove future keys
+    let key: string = "";
 
-      let key = futureKeys.pop();
+    // Remove future keys
+    while (futureKeys.length > 0) {
 
-      while (key !== undefined) {
-        storage.removeItem(key);
-        key = futureKeys.pop();
-      }
+      key = futureKeys.pop() ?? "";
+      storage.removeItem(key);
+    }
+
+    // Trim past keys to 100
+    while (pastKeys.length > 100) {
+
+      key = pastKeys.shift() ?? "";
+      storage.removeItem(key);
     }
 
     // Save updated key list

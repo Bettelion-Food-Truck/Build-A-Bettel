@@ -158,6 +158,10 @@ export class ModelDataService {
 
   selectOutfit(outfit: Outfit) {
 
+    // Reset colors and positions
+    this.selectedPositions.set([]);
+    this.selectedColors.set([]);
+
     this.selectedItems.update(selectedItems => {
 
       let parts = this.assetData.getParts()();
@@ -189,6 +193,9 @@ export class ModelDataService {
   }
 
   randomize() {
+
+    this.selectedPositions.set([]);
+    this.selectedColors.set([]);// TODO randomize the colors
 
     this.selectedItems.update(selectedItems => {
 
@@ -230,17 +237,8 @@ export class ModelDataService {
       return [...selectedItems];
     });
 
-    this.selectedColors.update(colors => {
-
-      let parts = this.assetData.getParts()();
-
-      for (let i = 0; i < parts.length; i++) {
-
-        colors[i] = "";
-      }
-
-      return [...colors];
-    });
+    this.selectedPositions.set([]);
+    this.selectedColors.set([]);
   }
 
   getCurrentFitObject(): SimpleFit {

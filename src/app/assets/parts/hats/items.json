@@ -252,6 +252,13 @@
         "jerry-hat",
         "party-crown",
         "phantom-beanie",
+        {
+            "item": "plate-helm",
+            "requires": {
+                "part": "hair",
+                "item": "bald"
+            }
+        },
         "sleephat"
     ]
 }

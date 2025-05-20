@@ -35,6 +35,12 @@
                 "jester"
             ]
         },
+        {
+            "item": "spa-mask",
+            "outfits": [
+                "spa"
+            ]
+        },
         "blush-heavy",
         "eyeshadow",
         "freckles-face",

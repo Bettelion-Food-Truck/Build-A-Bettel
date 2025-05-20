@@ -340,10 +340,12 @@
         },
         {
             "name": "@ri_rieri_",
+            "image": "ri_rieri_",
             "social": "https://x.com/ri_rieri_",
             "credits": [
                 "<strong>Outfits:</strong> Goldbullet, Unchained"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Riz",

@@ -331,7 +331,6 @@ export class AppComponent {
   isInvalidActivePart() {
 
     return !this.partSignal() ||
-      !this.activePart() ||
       this.activePart() < 0 ||
       this.partSignal().length < this.activePart()
   }

@@ -95,14 +95,7 @@ export class PaletteComponent {
   selectColor(color: Color = {} as Color) {
     this.logger.debug('PaletteComponent: selectColor()', color);
 
-    let colorString: string = "";
-
-    if (color.hex) {
-
-      const transparency: string = Math.floor((color.transparency || 1) * 255).toString(16);
-      const hex: string = color.hex || '000000';
-      colorString = `#${hex}${transparency}`;
-    }
+    const colorString: string = this.getColorString(color);
 
     let itemIndexs: number[] = [this.modelData.getActivePart()()];
 
@@ -120,5 +113,29 @@ export class PaletteComponent {
     }
 
     this.modelData.setItemsColor(itemIndexs, colorString);
+  }
+
+  isColorSelected(color: Color): boolean {
+
+    if (this.itemColors() && this.itemColors()[this.activePartIndex()]) {
+
+      return this.getColorString(color) === this.itemColors()[this.activePartIndex()];
+    }
+
+    return false;
+  }
+
+  private getColorString(color: Color): string {
+
+    let colorString: string = "";
+
+    if (color.hex) {
+
+      const transparency: string = Math.floor((color.transparency || 1) * 255).toString(16);
+      const hex: string = color.hex || '000000';
+      colorString = `#${hex}${transparency}`;
+    }
+
+    return colorString;
   }
 }

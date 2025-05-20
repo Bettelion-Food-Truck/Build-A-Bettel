@@ -6,8 +6,8 @@
 
     @if(activePart() !== null && ( !activePart()?.colorLinkedTo || activePart()?.colorLinkedTo!.length <= 0 )) { <button
         @enterExitTrigger *ngFor="let color of activePart()!.colors" class="color-button"
-        [style]="`background-color: #${color.hex}`" [title]="color.name"
-        [class.selected]="itemColors() && itemColors()[activePartIndex()] === color.hex" (click)="selectColor(color)">
+        [style]="`background-color: #${color.hex}`" [title]="color.name" [class.selected]="isColorSelected(color)"
+        (click)="selectColor(color)">
         </button>
         }
 </div>

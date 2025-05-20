@@ -2,6 +2,9 @@ import { Component, computed, effect, HostListener, inject, Injector, isDevMode,
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { KonamiCodeDirective } from 'app/directives/konami-code/konami-code.directive';
 
 import { CanvasComponent } from "@components/canvas/canvas.component";
 
@@ -46,6 +49,8 @@ enum AppComponentState {
     MatButtonModule,
     MatIconModule,
 
+    KonamiCodeDirective,
+
     CanvasComponent,
     PartsComponent,
     ItemsComponent,
@@ -63,7 +68,8 @@ export class AppComponent {
 
   title = 'Build-A-Bettel';
 
-  readonly dialog = inject(MatDialog);
+  private readonly dialog = inject(MatDialog);
+  private readonly snackBar = inject(MatSnackBar);
 
   private injector = inject(Injector);
   private partSignal: Signal<Part[]>;
@@ -338,5 +344,29 @@ export class AppComponent {
     return !this.partSignal() ||
       this.activePart() < 0 ||
       this.partSignal().length < this.activePart()
+  }
+
+  konami() {
+    this.logger.debug("AppComponent: konami()");
+
+    this.snackBar.open(
+      "All power-ups unlocked!",
+      "",
+      {
+        duration: 3000
+      }
+    );
+
+    window.setTimeout(() => {
+
+      this.snackBar.open(
+        "There are no special extras. Yet.",
+        "",
+        {
+          duration: 300
+        }
+      );
+    },
+      3000);
   }
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { OUTFIT_PATH } from '@data/paths';
 import { OutfitDataService } from '@services/outfit-data/outfit-data.service';
 import { ModelDataService } from '@services/model-data/model-data.service';
+
 import { Outfit } from '@models/outfit.model';
 
 @Component({

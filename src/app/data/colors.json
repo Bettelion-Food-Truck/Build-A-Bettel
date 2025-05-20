@@ -1,68 +1,73 @@
 {
     "colors": [
         {
-            "name": "red",
-            "hex": "FF0000",
+            "name": "Red",
+            "hex": "ff0000",
             "transparency": 0.44
         },
         {
-            "name": "orange",
-            "hex": "FFA500",
+            "name": "Orange",
+            "hex": "ffa500",
             "transparency": 0.44
         },
         {
-            "name": "yellow",
-            "hex": "FFFF00",
+            "name": "Yellow",
+            "hex": "ffff00",
             "transparency": 0.44
         },
         {
-            "name": "green",
-            "hex": "00FF00",
+            "name": "Bright Green",
+            "hex": "00ff00",
             "transparency": 0.44
         },
         {
-            "name": "cyan",
-            "hex": "00FFFF",
+            "name": "Green",
+            "hex": "008000",
             "transparency": 0.44
         },
         {
-            "name": "blue",
-            "hex": "0000FF",
+            "name": "Cyan",
+            "hex": "00ffff",
             "transparency": 0.44
         },
         {
-            "name": "purple",
-            "hex": "800080",
+            "name": "Blue",
+            "hex": "0000ff",
             "transparency": 0.44
         },
         {
-            "name": "pink",
-            "hex": "FFC0CB",
+            "name": "Purple",
+            "hex": "660073",
             "transparency": 0.44
         },
         {
-            "name": "magenta",
-            "hex": "FF00FF",
+            "name": "Pink",
+            "hex": "ffc0cb",
             "transparency": 0.44
         },
         {
-            "name": "white",
-            "hex": "FFFFFF",
+            "name": "Magenta",
+            "hex": "ff00ff",
             "transparency": 0.44
         },
         {
-            "name": "gray",
+            "name": "White",
+            "hex": "ffffff",
+            "transparency": 0.44
+        },
+        {
+            "name": "Gray",
             "hex": "808080",
             "transparency": 0.44
         },
         {
-            "name": "black",
+            "name": "Black",
             "hex": "000000",
             "transparency": 0.44
         },
         {
-            "name": "brown",
-            "hex": "964B00",
+            "name": "Brown",
+            "hex": "964b00",
             "transparency": 0.44
         }
     ]

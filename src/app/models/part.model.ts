@@ -16,6 +16,8 @@ export interface Part {
     movement: Movement | null;
     colorMode: string | null;
     colors: Color[];
+    colorLinked: string[];
+    colorLinkedTo: string;
 
     items: Item[];
     assumeThumbnails: boolean;

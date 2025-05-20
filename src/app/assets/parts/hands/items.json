@@ -48,6 +48,10 @@
             "transparency": 0.44
         }
     ],
+    "colorLinked": [
+        "feet",
+        "body"
+    ],
     "noneAllowed": false,
     "assumeThumbnails": true,
     "items": [

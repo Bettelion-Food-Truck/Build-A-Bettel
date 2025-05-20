@@ -144,6 +144,18 @@ export class ModelDataService {
     });
   }
 
+  setItemsColor(partIndex: number[], color: string) {
+
+    this.selectedColors.update(colors => {
+
+      partIndex.forEach((index: number) => {
+        colors[index] = color;
+      });
+
+      return [...colors];
+    });
+  }
+
   selectOutfit(outfit: Outfit) {
 
     this.selectedItems.update(selectedItems => {

@@ -176,6 +176,24 @@ export class AssetDataService {
     return this.partSignal()[index];
   }
 
+  getPartIdByName(name: string): number {
+
+    let parts: Part[] = this.partSignal();
+
+    let foundPart: number = -1;
+
+    for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
+
+      if (parts[neededPartIndex].layer === name) {
+
+        foundPart = neededPartIndex;
+        break;
+      }
+    }
+
+    return foundPart;
+  }
+
   getLayers(): Signal<Layer[]> {
 
     return this.layerSignal;

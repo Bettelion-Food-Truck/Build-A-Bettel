@@ -63,6 +63,8 @@ The parts are each in different folders. Each part is a different group of asset
 
 All images will work without additional settings as png files. In this case, all primary data files should have the setting `webP` (or a variant there of) set to `false`. If all the images in a section have both png and webp versions, then set the value of `webP` in the JSON file to `true`. The code will attempt to use the webP versions first; this will save a lot in terms of file transfer sizes and thus speed up the game rendering. If you are confident that your target audience will all be capable of using webP files, then you do not need to include the fallback png files.
 
+**Note**: This feature is only functional for Outfit and Contributor images at this time.
+
 **Note**: Small images, like the icons, do not benefit from webP file format and are not included in this feature.
 
 In each part folder, there are two subfolders: `items` and `thumbnails`. The folder `items` contains the item's images that are drawn on the canvas. These should be proper resolution and able to be overlayed directly. The folder `thumbnails` thus contains the thumbnails of these items. Thumbnails are optional and set in the JSON data files.
@@ -101,10 +103,10 @@ Each part is defined in the array called `parts`. Parts listed here have the fol
 
 TODO Update the information for the items.json file structure in each part folder. Ensure to mark all the options.
 
-- `"colorMode"`: Can be `"fill"`, `"multiply"`, `"manual"` or `null`. See the next section, item variants, for details.
-- `"colors"`: 6-character strings containing the the hexcodes of colors.
-- `"movement"`: Optional. Structure to define capability and limits of part movement. Sub values are `"x"`, `"y"`, and `"scale"`. X and Y may be true, false, or an object with `"min"` and `"max"`. Min and max are offsets limits. Scale adjusts how much the controls move the part.
-- `"noneAllowed"`: `true` if this part is optional, false otherwise
+- `colorMode`: Can be `fill`, `multiply`, `manual` or `null`. See the next section, item variants, for details.
+- `colors`: TODO Update for new structure - 6 character strings containing the the hexcodes of colors.
+- `movement`: Optional. Structure to define capability and limits of part movement. Sub values are `x`, `y`, and `scale`. X and Y may be true, false, or an object with `min` and `max`. Min and max are offsets limits. Scale adjusts how much the controls move the part.
+- `noneAllowed`: `true` if this part is optional, false otherwise
 
 Ex:
 ```
@@ -127,7 +129,13 @@ Ex:
       "scale": 1
     },
     "colorMode": "manual",
-    "colors": ["FFFFFF", "FFBD6C", "BBDE49"],
+    "colors": [
+        {
+            "name": "Black",
+            "hex": "000000",
+            "transparency": 0.5
+        }
+    ],
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [
@@ -177,27 +185,13 @@ Ex:
 
 ## Item variants
 
-TODO Update after item/color variants is rebuilt.
+In addition to each part having multiple variantions of items, the items themselves can come in multiple colors. Above was mention `colorMode` and `colors`. These indicate additional variations of each item. If a part has color options, then the `colorMode` field determines whether the item files for each color are manually or automatically generated.
 
-In addition to each part having multiple variantions of items, the items themselves can come in multiple colors. Above we mention `"colorMode"` and `"colors"`. These indicate additional variations of each item. If a part has color options, then the `"colorMode"` field determines whether the item files for each color are manually or automatically generated.
+TODO confirm manual functionality
 
-To manually create color variants for each item of a part, set `"colorMode`" to `"manual"` and for each item and each color of hexcode `"XXXXXX"`, create a .png `assets/part/item_XXXXXX.png` depicting item in color `XXXXXX`.
+To manually create color variants for each item of a part, set `colorMode` to `manual` and for each item and each color of hexcode `XXXXXX`, create a .png `assets/part/item_XXXXXX.png` depicting item in color `XXXXXX`.
 
-To generate color variants automatically, you'll need to run the Python script `generate_colored_images.py`. The script uses files of the form `"assets/part/item.png`" as templates to generate colored versions of each item. If a part has `"colorMode"` `"fill"`, the script fills the template's pixels of RGB value `(123, 123, 123)` with the desired color, preserving alpha. If a part has `"colorMode"` `"multiply"`, the script treats the template as an alpha-preserving multiply layer over the desired color.
-
-This next stage requires Python 3. You will also need to install the python module `PIL` on your system first.
-
-```
-pip install pillow
-```
-
-Once that is installed, run the command below from the root directory of this game in a terminal.
-
-```
-python generate_colored_images.py
-```
-
-The script might take a while to run, but at the end you'll have your color variant image files in the correct folders.
+If you would rather the game automatically mix the colors, use `multiply`, `screen`, or `overlay` in the `colorMode` field. Technically you can use any of the options from the Canvas setting [globalCompositeOperation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) but `multiply`, `screen`, and `overlay` yield the best results for color mixing.
 
 ## Edit the UI
 

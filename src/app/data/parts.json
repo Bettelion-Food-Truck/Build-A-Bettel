@@ -19,6 +19,13 @@
             "hideFromPartsList": true
         },
         {
+            "name": "Hands",
+            "folder": "hands",
+            "layer": "hands",
+            "items": "items.json",
+            "icon": "icon"
+        },
+        {
             "name": "Undies",
             "folder": "undies",
             "layer": "undies",
@@ -145,27 +152,6 @@
             "icon": "icon"
         },
         {
-            "name": "Jewelry 1",
-            "folder": "jewelry",
-            "layer": "jewelry_1",
-            "items": "items-1.json",
-            "icon": "icon-1"
-        },
-        {
-            "name": "Jewelry 2",
-            "folder": "jewelry",
-            "layer": "jewelry_2",
-            "items": "items-2.json",
-            "icon": "icon-2"
-        },
-        {
-            "name": "Hands",
-            "folder": "hands",
-            "layer": "hands",
-            "items": "items.json",
-            "icon": "icon"
-        },
-        {
             "name": "Gloves",
             "folder": "gloves",
             "layer": "gloves",
@@ -178,6 +164,20 @@
             "layer": "handheld",
             "items": "items.json",
             "icon": "icon"
+        },
+        {
+            "name": "Jewelry 1",
+            "folder": "jewelry",
+            "layer": "jewelry_1",
+            "items": "items-1.json",
+            "icon": "icon-1"
+        },
+        {
+            "name": "Jewelry 2",
+            "folder": "jewelry",
+            "layer": "jewelry_2",
+            "items": "items-2.json",
+            "icon": "icon-2"
         },
         {
             "name": "Front Accessory 1",

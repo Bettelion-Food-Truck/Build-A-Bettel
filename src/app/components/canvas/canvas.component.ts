@@ -43,6 +43,7 @@ export class CanvasComponent implements AfterViewInit {
   private partSignal: Signal<Part[]>;
   private itemSignal: Signal<number[]>;
   private positionSignal: Signal<Position[]>;
+  private colorSignal: Signal<string[]>;
 
   private lastPartIndex: number = -1;
 
@@ -58,7 +59,8 @@ export class CanvasComponent implements AfterViewInit {
     this.layerSignal = this.assetData.getLayers();
     this.partSignal = this.assetData.getParts();
     this.itemSignal = this.modelData.getSelectedItems();
-    this.positionSignal = this.modelData.getItemsPositions();
+    this.positionSignal = this.modelData.getItemPositions();
+    this.colorSignal = this.modelData.getItemColors();
   }
 
   ngAfterViewInit() {
@@ -85,10 +87,11 @@ export class CanvasComponent implements AfterViewInit {
     effect(() => {
       this.logger.info("CanvasComponent: effect() - renderLayerStack() Check");
       this.logger.debug(
-        "CanvasComponent: effect() - activePart(), itemSignal().length, positionSignal().length",
+        "CanvasComponent: effect() - activePart(), itemSignal().length, positionSignal().length, colorSignal().length",
         this.modelData.getActivePart()(),
         this.itemSignal().length,
-        this.positionSignal().length
+        this.positionSignal().length,
+        this.colorSignal().length
       );
 
       if (!this.workingCanvas) {
@@ -259,7 +262,7 @@ export class CanvasComponent implements AfterViewInit {
 
       if (this.currentlySelectedItems[partIndex] >= 0) {
 
-        renderPromises.push(...this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex], -1));// TODO COLOR selectedColors[partIndex]);
+        renderPromises.push(...this.renderItemToCanvas(layerIndex, partIndex, this.currentlySelectedItems[partIndex]));
       }
     }
 
@@ -404,13 +407,15 @@ export class CanvasComponent implements AfterViewInit {
     } as NumericalPart;
   }
 
-  private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number, colorIndex: number): Promise<LayerRender>[] {
+  private renderItemToCanvas(layerIndex: number, partIndex: number, itemIndex: number): Promise<LayerRender>[] {
 
     const parts: Part[] = this.partSignal();
     const layers: Layer[] = this.layerSignal();
 
     const item: Item = parts[partIndex].items[itemIndex];
-    const position: Position = { ...(this.modelData.getItemsPosition(partIndex) ?? {}) } as Position;// shallow copy
+    const position: Position = { ...(this.modelData.getItemPosition(partIndex) ?? {}) } as Position;// shallow copy
+    const color: string = this.modelData.getItemColor(partIndex) ?? "";
+    const colorMode: string = parts[partIndex].colorMode ?? "";
 
     let renderPromises: Promise<LayerRender>[] = [];
 
@@ -420,17 +425,11 @@ export class CanvasComponent implements AfterViewInit {
       return renderPromises;
     }
 
-    // Set color variant item
-    const color = (parts[partIndex].colors.length > 0) ?
-      "_" + parts[partIndex].colors[colorIndex]
-      :
-      "";
-
     // Set asset folder
     const partLocation = ASSET_PATH + (item.folder ? item.folder : parts[partIndex].folder) + "/" + ITEM_FOLDER;
 
     // Render the base layer
-    const imgPath = partLocation + item.item + color + ".png";
+    const imgPath = partLocation + item.item + ".png";
 
     if (!item.hide) {
 
@@ -440,7 +439,7 @@ export class CanvasComponent implements AfterViewInit {
         layerIndex = layers.findIndex(layer => layer.layer === item.layer);
       }
 
-      renderPromises.push(this.renderImage(layerIndex, imgPath, position));
+      renderPromises.push(this.renderImage(layerIndex, imgPath, position, color, colorMode));
     }
 
     // Render additional layers
@@ -470,12 +469,12 @@ export class CanvasComponent implements AfterViewInit {
 
         if (buildLayer) {
 
-          const addImgPath = partLocation + item.multilayer[i].item + color + ".png";
+          const addImgPath = partLocation + item.multilayer[i].item + ".png";
           const addLayerIndex = (item.multilayer[i].layer === "::host") ?
             layerIndex :
             layers.findIndex(layer => layer.layer === item.multilayer[i].layer);
 
-          renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position));
+          renderPromises.push(this.renderImage(addLayerIndex, addImgPath, position, color, colorMode));
         }
       }
     }
@@ -483,7 +482,7 @@ export class CanvasComponent implements AfterViewInit {
     return renderPromises;
   }
 
-  private renderImage(layerId: number, imgPath: string, position: Position): Promise<LayerRender> {
+  private renderImage(layerId: number, imgPath: string, position: Position, color: string = "", colorMode: string = ""): Promise<LayerRender> {
 
     return new Promise<LayerRender>((resolve, reject) => {
 
@@ -502,7 +501,7 @@ export class CanvasComponent implements AfterViewInit {
         const renderCanvas: HTMLCanvasElement = this.createCanvas();
         const ctx: CanvasRenderingContext2D = renderCanvas.getContext('2d')!;
 
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.clearRect(0, 0, renderCanvas.width, renderCanvas.height);
 
         ctx.save();
 
@@ -511,6 +510,18 @@ export class CanvasComponent implements AfterViewInit {
         ctx.drawImage(img, 0, 0);
 
         ctx.restore();
+
+        if (color.length > 0 && colorMode.length > 0) {
+
+          ctx.fillStyle = color;
+          ctx.globalCompositeOperation = colorMode as GlobalCompositeOperation;
+          ctx.fillRect(0, 0, renderCanvas.width, renderCanvas.height);
+
+          // Restore transparent areas
+          ctx.globalAlpha = 1;
+          ctx.globalCompositeOperation = 'destination-in';
+          ctx.drawImage(img, 0, 0);
+        }
 
         resolve({
           id: layerId,

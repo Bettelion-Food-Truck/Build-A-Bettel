@@ -6,6 +6,7 @@ import { ASSET_PATH } from '@data/paths';
 
 import PartDataJSON from '@data/parts.json';
 import LayerDataJSON from '@data/layers.json';
+import ColorDataJSON from '@data/colors.json';
 
 import { Part } from '@models/part.model';
 import { Item } from '@models/item.model';
@@ -79,6 +80,10 @@ export class AssetDataService {
               jsonResp.items[i] = {
                 item: jsonResp.items[i]
               } as Item;
+            }
+
+            if (jsonResp.colors === "STANDARD") {
+              jsonResp.colors = ColorDataJSON.colors;
             }
           }
 
@@ -169,6 +174,24 @@ export class AssetDataService {
     }
 
     return this.partSignal()[index];
+  }
+
+  getPartIdByName(name: string): number {
+
+    let parts: Part[] = this.partSignal();
+
+    let foundPart: number = -1;
+
+    for (let neededPartIndex = 0; neededPartIndex < parts.length; neededPartIndex++) {
+
+      if (parts[neededPartIndex].layer === name) {
+
+        foundPart = neededPartIndex;
+        break;
+      }
+    }
+
+    return foundPart;
   }
 
   getLayers(): Signal<Layer[]> {

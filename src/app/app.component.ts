@@ -255,6 +255,7 @@ export class AppComponent {
     this.logger.debug("AppComponent: reset()");
 
     this.modalData.reset();
+    this.showItems();
   }
 
   @HostListener('document:keydown.control.z')
@@ -330,7 +331,6 @@ export class AppComponent {
   isInvalidActivePart() {
 
     return !this.partSignal() ||
-      !this.activePart() ||
       this.activePart() < 0 ||
       this.partSignal().length < this.activePart()
   }

@@ -72,11 +72,14 @@ export class PartsComponent {
     }
 
     if (this.partSignal().length < partIndex) {
+      // Out of bounds
       return false;
     }
 
     let part = this.partSignal()[partIndex];
 
+    // Part manually hidden OR
+    // Part has 0|1 items, no color variants, and is required
     return part.hideFromPartsList || (
       part.items.length <= 1 &&
       !part.noneAllowed && (

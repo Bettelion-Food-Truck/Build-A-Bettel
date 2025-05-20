@@ -1,5 +1,13 @@
-<div id="color_palette_wrapper" class="color_palette_wrapper">
-    <ul id="color_palette_list">
-        <li>Palette temp text</li>
-    </ul>
+<div #colormenu class="color-menu" (wheel)="onScroll($event)">
+    <button (click)="selectColor()"
+        [class.selected]="itemColors() && (!itemColors()[activePartIndex()] || itemColors()[activePartIndex()].length <= 0 )">
+        <mat-icon>deselect</mat-icon>
+    </button>
+
+    @if(activePart() !== null && ( !activePart()?.colorLinkedTo || activePart()?.colorLinkedTo!.length <= 0 )) { <button
+        @enterExitTrigger *ngFor="let color of activePart()!.colors" class="color-button"
+        [style]="`background-color: #${color.hex}`" [title]="color.name"
+        [class.selected]="itemColors() && itemColors()[activePartIndex()] === color.hex" (click)="selectColor(color)">
+        </button>
+        }
 </div>

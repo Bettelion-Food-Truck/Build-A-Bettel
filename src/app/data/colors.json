@@ -1,6 +1,4 @@
 {
-    "movement": false,
-    "colorMode": "multiply",
     "colors": [
         {
             "name": "Red",
@@ -51,21 +49,26 @@
             "name": "Magenta",
             "hex": "ff00ff",
             "transparency": 0.44
-        }
-    ],
-    "colorLinked": [
-        "feet",
-        "body"
-    ],
-    "noneAllowed": false,
-    "assumeThumbnails": true,
-    "items": [
-        "normal",
+        },
         {
-            "item": "corrupted",
-            "outfits": [
-                "second-outfit"
-            ]
+            "name": "White",
+            "hex": "ffffff",
+            "transparency": 0.44
+        },
+        {
+            "name": "Gray",
+            "hex": "808080",
+            "transparency": 0.44
+        },
+        {
+            "name": "Black",
+            "hex": "000000",
+            "transparency": 0.44
+        },
+        {
+            "name": "Brown",
+            "hex": "964b00",
+            "transparency": 0.44
         }
     ]
 }

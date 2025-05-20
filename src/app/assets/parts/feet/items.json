@@ -1,7 +1,8 @@
 {
     "movement": false,
-    "colorMode": null,
-    "colors": [],
+    "colorMode": "multiply",
+    "colors": "STANDARD",
+    "colorLinkedTo": "hands",
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [

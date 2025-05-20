@@ -53,7 +53,11 @@
 }
 /* Portrait layout changes */
 @media (orientation: portrait) {
-    :host .list .item {
-        width: calc(100% / 5 - 6px);
+    :host .list {
+        margin-top: 0px;
+
+        .item {
+            width: calc(100% / 5 - 6px);
+        }
     }
 }

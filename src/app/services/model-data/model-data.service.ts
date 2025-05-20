@@ -15,6 +15,7 @@ export class ModelDataService {
   private activePart: WritableSignal<number> = signal(0);
   private selectedItems: WritableSignal<number[]> = signal([]);
   private selectedPositions: WritableSignal<Position[]> = signal([]);
+  private selectedColors: WritableSignal<string[]> = signal([]);
 
   private imageDataString: WritableSignal<string> = signal("");
 
@@ -70,18 +71,18 @@ export class ModelDataService {
     });
 
     // Reset position on item change
-    this.setItemsPosition(partIndex, {
+    this.setItemPosition(partIndex, {
       x: DEFAULT_POSITION.x,
       y: DEFAULT_POSITION.y
     } as Position);
   }
 
-  getItemsPositions(): Signal<Position[]> {
+  getItemPositions(): Signal<Position[]> {
 
     return this.selectedPositions.asReadonly();
   }
 
-  getItemsPosition(partIndex: number): Position {
+  getItemPosition(partIndex: number): Position {
 
     if (
       // Out of range
@@ -101,7 +102,7 @@ export class ModelDataService {
     return this.selectedPositions()[partIndex];
   }
 
-  setItemsPosition(partIndex: number, position: Position) {
+  setItemPosition(partIndex: number, position: Position) {
 
     this.selectedPositions.update(selectedPositions => {
 
@@ -111,7 +112,55 @@ export class ModelDataService {
     });
   }
 
+  getItemColors(): Signal<string[]> {
+
+    return this.selectedColors.asReadonly();
+  }
+
+  getItemColor(partIndex: number): string {
+
+    if (
+      // Out of range
+      partIndex < 0 || partIndex >= this.selectedColors().length ||
+      // Null or undefined
+      !this.selectedColors()[partIndex] ||
+      // Empty
+      Object.keys(this.selectedColors()[partIndex]).length === 0
+    ) {
+
+      return "";
+    }
+
+    return this.selectedColors()[partIndex];
+  }
+
+  setItemColor(partIndex: number, color: string) {
+
+    this.selectedColors.update(colors => {
+
+      colors[partIndex] = color;
+
+      return [...colors];
+    });
+  }
+
+  setItemsColor(partIndex: number[], color: string) {
+
+    this.selectedColors.update(colors => {
+
+      partIndex.forEach((index: number) => {
+        colors[index] = color;
+      });
+
+      return [...colors];
+    });
+  }
+
   selectOutfit(outfit: Outfit) {
+
+    // Reset colors and positions
+    this.selectedPositions.set([]);
+    this.selectedColors.set([]);
 
     this.selectedItems.update(selectedItems => {
 
@@ -145,6 +194,9 @@ export class ModelDataService {
 
   randomize() {
 
+    this.selectedPositions.set([]);
+    this.selectedColors.set([]);// TODO randomize the colors
+
     this.selectedItems.update(selectedItems => {
 
       let parts = this.assetData.getParts()();
@@ -159,8 +211,6 @@ export class ModelDataService {
         let randomItem = Math.floor(Math.random() * (max - min) + min);
 
         selectedItems[i] = randomItem;
-
-        // TODO random color
       }
 
       return [...selectedItems];
@@ -186,6 +236,9 @@ export class ModelDataService {
 
       return [...selectedItems];
     });
+
+    this.selectedPositions.set([]);
+    this.selectedColors.set([]);
   }
 
   getCurrentFitObject(): SimpleFit {
@@ -204,7 +257,7 @@ export class ModelDataService {
         items[part.layer] = {
           item: part.items[itemIndex].item,
           position: {} as Position,// TODO add movement
-          color: "" // TODO add color
+          color: this.selectedColors()[partIndex] || ""
         };
       }
     });
@@ -249,6 +302,29 @@ export class ModelDataService {
       }
 
       return [...selectedItems];
+    });
+
+    this.selectedColors.update(colors => {
+
+      let parts = this.assetData.getParts()();
+
+      for (let i = 0; i < parts.length; i++) {
+
+        const partLayer = parts[i].layer;
+
+        if (partLayer in fitItems && fitItems[partLayer].color !== undefined && fitItems[partLayer].color.length > 0) {
+
+          if (parts[i].colorMode && parts[i].colors.length > 0) {
+            // Set color
+
+            colors[i] = fitItems[parts[i].layer].color ?? "";
+          }
+
+          break;
+        }
+      }
+
+      return [...colors];
     });
   }
 }

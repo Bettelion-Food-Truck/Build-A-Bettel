@@ -45,9 +45,10 @@
 
         <app-parts />
 
-        <app-palette class="hidden" /><!-- TODO -->
-
         <div class="control_panel">
+
+          <app-palette class="palette" [class.hidden]="itemsHidden()" />
+
           <app-outfits [class.hidden]="outfitsHidden()" />
           <app-items [class.hidden]="itemsHidden()" />
           <app-movement [class.hidden]="movementHidden()" />

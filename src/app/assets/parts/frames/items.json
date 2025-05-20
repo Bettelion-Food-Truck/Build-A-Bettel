@@ -1,7 +1,7 @@
 {
     "movement": false,
-    "colorMode": null,
-    "colors": [],
+    "colorMode": "overlay",
+    "colors": "STANDARD",
     "noneAllowed": true,
     "assumeThumbnails": true,
     "items": [

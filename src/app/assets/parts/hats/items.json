@@ -250,6 +250,10 @@
         "hairclips",
         "halo",
         "jerry-hat",
+        {
+            "item": "mooster-hat",
+            "outfits": []
+        },
         "party-crown",
         "phantom-beanie",
         {

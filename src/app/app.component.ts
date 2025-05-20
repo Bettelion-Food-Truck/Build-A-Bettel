@@ -108,8 +108,6 @@ export class AppComponent {
 
   outfitsHidden: Signal<boolean> = computed(() => {
 
-    console.log(this.activePart(), this.componentState(), AppComponentState.Outfits);
-
     if (this.activePart() && this.activePart() >= 0) {
       // activePart is set and not -1 (which is outfits)
       return true;

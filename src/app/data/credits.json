@@ -64,10 +64,12 @@
         },
         {
             "name": "BatVenom",
+            "image": "batvenom",
             "social": "https://x.com/bat_venom_",
             "credits": [
                 "<strong>Outfits:</strong> When You're Evil (facial hair by REIH)"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "CloudySky",
@@ -134,11 +136,13 @@
         },
         {
             "name": "GGGhoulish",
+            "image": "ggghoulish",
             "social": "https://x.com/ggghoulish",
             "credits": [
                 "<strong>Outfits:</strong> Inkya Impulse",
                 "<strong>Backgrounds:</strong> Diamonds (pink), diamonds (blue)"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "Hioko_Chi",
@@ -393,10 +397,12 @@
         },
         {
             "name": "spaced",
+            "image": "spaced",
             "social": "https://x.com/spacedoutpup",
             "credits": [
                 "<strong>Companions:</strong> Altventurer, Axelotl, Bubby, Gliptonians, Hakkito, Koipanion, Machiroon, Magmite, Octoposse, Phantom (jack-in-the-box), Phantom (second outfit), Phantom (smiling), Phantom (Valentine's), Ruzader, Sorawrity, Vestea, Vestie"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "@sp00kysalmon",
@@ -496,10 +502,12 @@
         },
         {
             "name": "Verdandi",
+            "image": "verdandi",
             "social": "https://x.com/nogoldenapples",
             "credits": [
                 "Disclaimer statement writer"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "Vivi",

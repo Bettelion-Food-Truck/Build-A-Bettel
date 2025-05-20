@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, ElementRef, inject, Injector, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ASSET_PATH, ICON_PATH, ITEM_FOLDER, THUMBNAIL_FOLDER } from '@data/paths';
@@ -20,12 +20,16 @@ import { LogService } from '@services/log/log.service';
 })
 export class ItemsComponent {
 
+  private injector = inject(Injector);
+
   partSignal: Signal<Part[]>;
 
   activePart: Signal<number>;
   selectedItems: Signal<number[]>;
 
   constructor(
+    private hostElement: ElementRef,
+
     private logger: LogService,
     private assetData: AssetDataService,
     private modalData: ModelDataService
@@ -34,6 +38,17 @@ export class ItemsComponent {
     this.partSignal = this.assetData.getParts();
     this.activePart = this.modalData.getActivePart();
     this.selectedItems = this.modalData.getSelectedItems();
+  }
+
+  ngAfterViewInit() {
+
+    effect(() => {
+      this.logger.debug("ItemsComponent: activePart() chaged", this.activePart());
+
+      this.hostElement.nativeElement.scrollTop = 0;
+    }, {
+      injector: this.injector
+    });
   }
 
   getNonePath(partIndex: number): string {

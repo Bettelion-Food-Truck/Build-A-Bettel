@@ -3,27 +3,18 @@
     "colorMode": null,
     "colors": [],
     "noneAllowed": false,
+    "assumeThumbnails": true,
     "items": [
         {
             "item": "default",
-            "thumbnail": true
+            "outfits": [
+                "ALL"
+            ]
         },
-        {
-            "item": "surprise",
-            "thumbnail": true
-        },
-        {
-            "item": "sad",
-            "thumbnail": true
-        },
-        {
-            "item": "happy",
-            "thumbnail": true
-        },
-        {
-            "item": "disgust",
-            "thumbnail": true
-        },
+        "surprise",
+        "sad",
+        "happy",
+        "disgust",
         {
             "item": "matryoshka-bettel-mouth",
             "outfits": [

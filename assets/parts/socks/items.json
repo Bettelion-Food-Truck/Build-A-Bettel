@@ -88,6 +88,31 @@
             ]
         },
         {
+            "item": "axel-socks",
+            "hide": true,
+            "multilayer": [
+                {
+                    "item": "axel-socks-flat",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "flat"
+                    }
+                },
+                {
+                    "item": "axel-socks-pointed",
+                    "layer": "::host",
+                    "requires": {
+                        "part": "feet",
+                        "item": "pointed"
+                    }
+                }
+            ],
+            "outfits": [
+                "axel"
+            ]
+        },
+        {
             "item": "flayon-socks",
             "hide": true,
             "multilayer": [

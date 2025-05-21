@@ -85,6 +85,10 @@
         {
             "item": "rapier",
             "layer": "right-handheld"
+        },
+        {
+            "item": "rapier-whip",
+            "layer": "right-handheld"
         }
     ]
 }

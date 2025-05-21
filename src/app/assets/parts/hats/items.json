@@ -191,13 +191,13 @@
         },
         {
             "item": "jester",
-            "outfits": [
-                "jester"
-            ],
             "requires": {
                 "part": "hair",
                 "item": "bald"
-            }
+            },
+            "outfits": [
+                "jester"
+            ]
         },
         {
             "item": "bettelmaid",
@@ -231,13 +231,13 @@
         },
         {
             "item": "hair-towel",
-            "outfits": [
-                "spa"
-            ],
             "requires": {
                 "part": "hair",
                 "item": "bald"
-            }
+            },
+            "outfits": [
+                "spa"
+            ]
         },
         "bunny-ears-white",
         "bunny-ears-black",
@@ -250,8 +250,19 @@
         "hairclips",
         "halo",
         "jerry-hat",
+        {
+            "item": "mooster-hat",
+            "outfits": []
+        },
         "party-crown",
         "phantom-beanie",
+        {
+            "item": "plate-helm",
+            "requires": {
+                "part": "hair",
+                "item": "bald"
+            }
+        },
         "sleephat"
     ]
 }

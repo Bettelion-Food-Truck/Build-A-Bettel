@@ -111,6 +111,7 @@
         },
         {
             "item": "betsy-grayson-collar",
+            "layer": "neck-behind-hair",
             "outfits": [
                 "betsy-grayson"
             ]

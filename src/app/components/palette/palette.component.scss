@@ -26,18 +26,30 @@
         width: 36px;
 
         padding: 0;
-        margin: 0;
+        margin: 0 1px;
 
         border: 3px solid transparent;
         border-radius: 3px;
+
+        outline: 2px solid transparent;
+        outline-offset: -5px;
 
         background-color: #ffffff;
         color: #000000;
 
         cursor: pointer;
 
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
         &.selected {
             border-color: var(--select-color, #ff0000);
+            outline-color: #ffffff;
         }
 
         &:hover:not(.selected) {

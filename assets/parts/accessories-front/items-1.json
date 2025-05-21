@@ -17,7 +17,7 @@
                 "deerttel",
                 "unchained"
             ],
-            "layer": "accessories-front_under-jacket"
+            "layer": "accessories-front_1_under-jacket"
         },
         {
             "item": "debut-coat-charm"
@@ -79,14 +79,14 @@
         },
         {
             "item": "ruze-front-accessory-1",
-            "layer": "accessories-front_under-jacket",
+            "layer": "accessories-front_1_under-jacket",
             "outfits": [
                 "ruze"
             ]
         },
         {
             "item": "ruze-front-accessory-2",
-            "layer": "accessories-front_under-jacket"
+            "layer": "accessories-front_1_under-jacket"
         },
         {
             "item": "twobert-front-shoulder-belt",

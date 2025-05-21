@@ -10,11 +10,11 @@
             "multilayer": [
                 {
                     "item": "inkya-impulse-skirt-front",
-                    "layer": "accessories-front_under-jacket"
+                    "layer": "belts_under-jacket"
                 },
                 {
                     "item": "inkya-impulse-skirt-back",
-                    "layer": "pants_back"
+                    "layer": "belts_back"
                 }
             ],
             "outfits": [

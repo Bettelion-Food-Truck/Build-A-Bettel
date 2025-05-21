@@ -10,7 +10,7 @@
     "items": [
         {
             "item": "debut-underlayer",
-            "layer": "accessories-front_under-jacket"
+            "layer": "accessories-front_2_under-jacket"
         },
         {
             "item": "debut-coat-charm",
@@ -66,11 +66,11 @@
         },
         {
             "item": "ruze-front-accessory-1",
-            "layer": "accessories-front_under-jacket"
+            "layer": "accessories-front_2_under-jacket"
         },
         {
             "item": "ruze-front-accessory-2",
-            "layer": "accessories-front_under-jacket",
+            "layer": "accessories-front_2_under-jacket",
             "outfits": [
                 "ruze"
             ]

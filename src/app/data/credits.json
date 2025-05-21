@@ -215,10 +215,12 @@
         },
         {
             "name": "Lynnear",
+            "image": "lynnear",
             "social": "https://x.com/_lynnear",
             "credits": [
                 "<strong>Outfits:</strong> Altare"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "MagiCupcake",
@@ -250,10 +252,12 @@
         },
         {
             "name": "Mira @keigokisses",
+            "image": "mira",
             "social": "https://x.com/keigokisses",
             "credits": [
                 "<strong>Accessories:</strong> Bunny ears"
-            ]
+            ],
+            "imageWeight": 5
         },
         {
             "name": "mochijam",

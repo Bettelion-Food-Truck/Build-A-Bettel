@@ -220,7 +220,7 @@ export class MovementComponent {
     let selectedPart = this.modelData.getActivePart()();
     const movement = this.assetData.getParts()()[selectedPart].movement as Movement;
 
-    return (movement.scale ? movement.scale : 1) * this.movementScaleAdjustment * (this.movementPressId ? 0.5 : 1);
+    return (movement.scale ? movement.scale : 1) * this.movementScaleAdjustment;
   }
 
   checkMoveLimits() {

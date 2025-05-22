@@ -31,6 +31,7 @@ export class MovementComponent {
   readonly MOVEMENT_BASE = 10; // 10px
   movementScaleAdjustment: number = 1;
 
+  private readonly initialMovementDelay: number = 500; // ms
   private readonly movementInterval: number = 50; // ms
   private movementPressId: any = null;
 
@@ -71,18 +72,22 @@ export class MovementComponent {
 
   startPress(event: MouseEvent | TouchEvent, movement: movementmentOptions) {
 
+    event.preventDefault();
+
     if (!this.movementPressId) {
       this.logger.debug("MovementComponent: startPress()", movement, event);
 
-      event.preventDefault();
-
       this.handleMouseAction(movement);
 
-      this.movementPressId = setInterval(() => {
+      this.movementPressId = setTimeout(() => {
+        // Wait for initial delay before starting movement
 
-        this.handleMouseAction(movement);
+        this.movementPressId = setInterval(() => {
 
-      }, this.movementInterval);
+          this.handleMouseAction(movement);
+
+        }, this.movementInterval);
+      }, this.initialMovementDelay);
     }
   }
 
@@ -91,9 +96,8 @@ export class MovementComponent {
     if (this.movementPressId) {
       this.logger.debug("MovementComponent: endPress()", movement, event);
 
-      event.preventDefault();
-
       clearInterval(this.movementPressId);
+      clearTimeout(this.movementPressId);
       this.movementPressId = null;
     }
   }
@@ -218,7 +222,7 @@ export class MovementComponent {
     let selectedPart = this.modelData.getActivePart()();
     const movement = this.assetData.getParts()()[selectedPart].movement as Movement;
 
-    return (movement.scale ? movement.scale : 1) * this.movementScaleAdjustment * (this.movementPressId ? 0.5 : 1);
+    return (movement.scale ? movement.scale : 1) * this.movementScaleAdjustment;
   }
 
   checkMoveLimits() {

@@ -100,10 +100,12 @@
         },
         {
             "name": "emiku",
+            "image": "emiku",
             "social": "https://x.com/_emiku",
             "credits": [
                 "<strong>Outfits:</strong> Debut overlayer (hat by LIV [ 54BPM ])"
-            ]
+            ],
+            "imageWeight": -5
         },
         {
             "name": "Finarael",

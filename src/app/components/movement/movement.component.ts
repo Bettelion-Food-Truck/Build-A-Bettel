@@ -72,6 +72,8 @@ export class MovementComponent {
 
   startPress(event: MouseEvent | TouchEvent, movement: movementmentOptions) {
 
+    event.preventDefault();
+
     if (!this.movementPressId) {
       this.logger.debug("MovementComponent: startPress()", movement, event);
 

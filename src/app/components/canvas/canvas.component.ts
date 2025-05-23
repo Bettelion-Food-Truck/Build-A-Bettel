@@ -509,8 +509,6 @@ export class CanvasComponent implements AfterViewInit {
 
         ctx.drawImage(img, 0, 0);
 
-        ctx.restore();
-
         if (color.length > 0 && colorMode.length > 0) {
 
           ctx.fillStyle = color;
@@ -522,6 +520,8 @@ export class CanvasComponent implements AfterViewInit {
           ctx.globalCompositeOperation = 'destination-in';
           ctx.drawImage(img, 0, 0);
         }
+
+        ctx.restore();
 
         resolve({
           id: layerId,
